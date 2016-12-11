@@ -1,0 +1,225 @@
+ B InterfaceReg::s_pInterfaceRegs
+ B s_NoEscConversion
+ B s_StringCharConversion
+ D g_CeltVersion
+ D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlNoEscConversion
+ D typeinfo for IFrameEncoder
+ D typeinfo for IVoiceCodec
+ D typeinfo for VoiceCodec_Frame
+ D typeinfo for VoiceEncoder_Celt
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlCharConversion
+ D vtable for CUtlNoEscConversion
+ D vtable for VoiceCodec_Frame
+ D vtable for VoiceEncoder_Celt
+ R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlNoEscConversion
+ R typeinfo name for IFrameEncoder
+ R typeinfo name for IVoiceCodec
+ R typeinfo name for VoiceCodec_Frame
+ R typeinfo name for VoiceEncoder_Celt
+ T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+ T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlNoEscConversion::FindConversion(char const*, int*)
+ T CreateCeltVoiceCodec()
+ T CreateInterface
+ T CreateVoiceCodec_Frame(IFrameEncoder*)
+ T InterfaceReg::InterfaceReg(void* (*)(), char const*)
+ T VoiceCodec_Frame::Compress(char const*, int, char*, int, bool)
+ T VoiceCodec_Frame::Decompress(char const*, int, char*, int)
+ T VoiceCodec_Frame::Init(int)
+ T VoiceCodec_Frame::Release()
+ T VoiceCodec_Frame::ResetState()
+ T VoiceCodec_Frame::~VoiceCodec_Frame()
+ T VoiceEncoder_Celt::DecodeFrame(char const*, char*)
+ T VoiceEncoder_Celt::EncodeFrame(char const*, char*)
+ T VoiceEncoder_Celt::Init(int, int&, int&)
+ T VoiceEncoder_Celt::Release()
+ T VoiceEncoder_Celt::ResetState()
+ T VoiceEncoder_Celt::~VoiceEncoder_Celt()
+ T __clang_call_terminate
+ T _celt_autocorr
+ T _celt_lpc
+ T alg_quant
+ T alg_unquant
+ T amp2Log2
+ T anti_collapse
+ T celt_decode
+ T celt_decode_float
+ T celt_decode_with_ec
+ T celt_decode_with_ec_float
+ T celt_decoder_create
+ T celt_decoder_create_custom
+ T celt_decoder_ctl
+ T celt_decoder_destroy
+ T celt_decoder_get_size
+ T celt_decoder_get_size_custom
+ T celt_decoder_init
+ T celt_decoder_init_custom
+ T celt_encode
+ T celt_encode_float
+ T celt_encode_with_ec
+ T celt_encode_with_ec_float
+ T celt_encoder_create
+ T celt_encoder_create_custom
+ T celt_encoder_ctl
+ T celt_encoder_destroy
+ T celt_encoder_get_size
+ T celt_encoder_get_size_custom
+ T celt_encoder_init
+ T celt_encoder_init_custom
+ T celt_mode_create
+ T celt_mode_destroy
+ T celt_strerror
+ T clt_mdct_backward
+ T clt_mdct_clear
+ T clt_mdct_forward
+ T clt_mdct_init
+ T compute_allocation
+ T compute_band_energies
+ T compute_pulse_cache
+ T decode_pulses
+ T denormalise_bands
+ T dyld_stub_binding_helper
+ T ec_dec_bit_logp
+ T ec_dec_bits
+ T ec_dec_icdf
+ T ec_dec_init
+ T ec_dec_uint
+ T ec_dec_update
+ T ec_decode
+ T ec_decode_bin
+ T ec_enc_bit_logp
+ T ec_enc_bits
+ T ec_enc_done
+ T ec_enc_icdf
+ T ec_enc_init
+ T ec_enc_patch_initial_bits
+ T ec_enc_shrink
+ T ec_enc_uint
+ T ec_encode
+ T ec_encode_bin
+ T ec_ilog
+ T ec_laplace_decode
+ T ec_laplace_encode
+ T ec_tell_frac
+ T encode_pulses
+ T fir
+ T get_required_bits
+ T haar1
+ T icwrs
+ T iir
+ T isqrt32
+ T kiss_fft
+ T kiss_fft_alloc
+ T kiss_fft_alloc_twiddles
+ T kiss_fft_free
+ T kiss_ifft
+ T lcg_rand
+ T log2Amp
+ T log2_frac
+ T normalise_bands
+ T operator delete(void*)
+ T operator delete[](void*)
+ T operator new(unsigned long)
+ T operator new[](unsigned long)
+ T pitch_downsample
+ T pitch_search
+ T quant_all_bands
+ T quant_coarse_energy
+ T quant_energy_finalise
+ T quant_fine_energy
+ T remove_doubling
+ T renormalise_vector
+ T spreading_decision
+ T stereo_itheta
+ T unquant_coarse_energy
+ T unquant_energy_finalise
+ T unquant_fine_energy
+ _Unwind_Resume
+ __bzero
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __gxx_personality_v0
+ __stack_chk_fail
+ __stack_chk_guard
+ atan2
+ b __g_CreateIVoiceCodec_reg
+ b vec2_invalid
+ b vec2_origin
+ calloc
+ cos
+ d celt_strerror.error_strings
+ d dyld__mach_header
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ exp
+ floor
+ floorf
+ free
+ g_pMemAlloc
+ log
+ memcpy
+ memmove
+ memset
+ r INV_TABLE
+ r LOG2_FRAC_TABLE
+ r band_allocation
+ r bark_freq
+ r beta_coef
+ r comb_filter.gains
+ r compute_qn.exp2_table8
+ r eMeans
+ r e_prob_model
+ r eband5ms
+ r exp_rotation.SPREAD_FACTOR
+ r fits_in32.maxK
+ r fits_in32.maxN
+ r fromOpusTable
+ r l1_metric.sqrtM_1
+ r ordery_table
+ r pred_coef
+ r quant_band.bit_deinterleave_table
+ r quant_band.bit_interleave_table
+ r second_check
+ r small_energy_icdf
+ r spread_icdf
+ r tapset_icdf
+ r tf_select_table
+ r toOpusTable
+ r trim_icdf
+ sin
+ std::terminate()
+ strcmp
+ strlen
+ t comb_filter
+ t compute_bitrev_table
+ t compute_inv_mdcts
+ t cwrsi3
+ t cwrsi4
+ t deemphasis
+ t deinterleave_hadamard
+ t ec_dec_normalize
+ t ec_enc_carry_out
+ t ec_enc_normalize
+ t exp_rotation
+ t exp_rotation1
+ t extract_collapse_mask
+ t find_best_pitch
+ t global constructors keyed to a
+ t init_caps
+ t intensity_stereo
+ t interleave_hadamard
+ t kf_work
+ t ki_work
+ t l1_metric
+ t ncwrs_urow
+ t quant_band
+ t quant_coarse_energy_impl
+ typeinfo for std::bad_alloc
+ vtable for __cxxabiv1::__class_type_info
+ vtable for __cxxabiv1::__si_class_type_info

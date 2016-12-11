@@ -1,0 +1,260 @@
+ B ConCommandBase::s_pAccessor
+ B ConCommandBase::s_pConCommandBases
+ B InterfaceReg::s_pInterfaceRegs
+ B colorcorrection
+ B cvar
+ B g_VBAllocTracker
+ B g_pCVar
+ B g_pDataCache
+ B g_pDmeMakefileUtils
+ B g_pFullFileSystem
+ B g_pInputSystem
+ B g_pLauncherMgr
+ B g_pMDLCache
+ B g_pMatSystemSurface
+ B g_pMaterialSystem
+ B g_pMaterialSystemDebugTextureInfo
+ B g_pMaterialSystemHardwareConfig
+ B g_pNetworkSystem
+ B g_pPhysicsCollision
+ B g_pProcessUtils
+ B g_pQueuedLoader
+ B g_pSoundEmitterSystem
+ B g_pStudioRender
+ B g_pVGui
+ B g_pVGuiInput
+ B g_pVGuiLocalize
+ B g_pVGuiPanel
+ B g_pVGuiSchemeManager
+ B g_pVGuiSurface
+ B g_pVGuiSystem
+ B g_pVTex
+ B g_pVideo
+ B materials
+ B mdlcache
+ B mdllib
+ B p4
+ B s_NoEscConversion
+ B s_StringCharConversion
+ B studiorender
+ CGEventSourceKeyState
+ CommandLine_Tier0
+ D typeinfo for CBaseAppSystem<IVideoServices>
+ D typeinfo for CDefaultAccessor
+ D typeinfo for CEmptyConVar
+ D typeinfo for CTier0AppSystem<IVideoServices>
+ D typeinfo for CTier1AppSystem<IVideoServices, 0>
+ D typeinfo for CTier2AppSystem<IVideoServices, 0>
+ D typeinfo for CTier3AppSystem<IVideoServices, 0>
+ D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlNoEscConversion
+ D typeinfo for CValveVideoServices
+ D typeinfo for CVideoCommonServices
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
+ D typeinfo for IAppSystem
+ D typeinfo for IConCommandBaseAccessor
+ D typeinfo for IConVar
+ D typeinfo for IVideoCommonServices
+ D typeinfo for IVideoServices
+ D vtable for CDefaultAccessor
+ D vtable for CEmptyConVar
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlCharConversion
+ D vtable for CUtlNoEscConversion
+ D vtable for CValveVideoServices
+ D vtable for CVideoCommonServices
+ D vtable for ConVar
+ DevWarning(char const*, ...)
+ Error
+ Msg
+ Plat_FloatTime
+ Plat_IsInDebugSession
+ R typeinfo name for CBaseAppSystem<IVideoServices>
+ R typeinfo name for CDefaultAccessor
+ R typeinfo name for CEmptyConVar
+ R typeinfo name for CTier0AppSystem<IVideoServices>
+ R typeinfo name for CTier1AppSystem<IVideoServices, 0>
+ R typeinfo name for CTier2AppSystem<IVideoServices, 0>
+ R typeinfo name for CTier3AppSystem<IVideoServices, 0>
+ R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlNoEscConversion
+ R typeinfo name for CValveVideoServices
+ R typeinfo name for CVideoCommonServices
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
+ R typeinfo name for IAppSystem
+ R typeinfo name for IConCommandBaseAccessor
+ R typeinfo name for IConVar
+ R typeinfo name for IVideoCommonServices
+ R typeinfo name for IVideoServices
+ T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+ T CEmptyConVar::GetName() const
+ T CEmptyConVar::IsFlagSet(int) const
+ T CEmptyConVar::SetValue(char const*)
+ T CEmptyConVar::SetValue(float)
+ T CEmptyConVar::SetValue(int)
+ T CEmptyConVar::~CEmptyConVar()
+ T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+ T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlNoEscConversion::FindConversion(char const*, int*)
+ T CUtlVector<CActiveVideoObjectRecord_t, CUtlMemory<CActiveVideoObjectRecord_t, int> >::AddToTail(CActiveVideoObjectRecord_t const&)
+ T CUtlVector<CActiveVideoObjectRecord_t, CUtlMemory<CActiveVideoObjectRecord_t, int> >::~CUtlVector()
+ T CUtlVector<VideoFileExtensionInfo_t, CUtlMemory<VideoFileExtensionInfo_t, int> >::~CUtlVector()
+ T CValveVideoServices::Connect(void* (*)(char const*, int*))
+ T CValveVideoServices::ConnectVideoLibraries(void* (*)(char const*, int*))
+ T CValveVideoServices::CreateVideoMaterial(char const*, char const*, char const*, VideoPlaybackFlags::EVideoPlaybackFlags_t, VideoSystem::EVideoSystem_t, bool)
+ T CValveVideoServices::CreateVideoRecorder(VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::DestroyVideoMaterial(IVideoMaterial*)
+ T CValveVideoServices::DestroyVideoRecorder(IVideoRecorder*)
+ T CValveVideoServices::Disconnect()
+ T CValveVideoServices::DisconnectVideoLibraries()
+ T CValveVideoServices::FindNextSystemWithFeature(VideoSystemFeature::EVideoSystemFeature_t, VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::GetAvailableVideoSystem(int)
+ T CValveVideoServices::GetAvailableVideoSystemCount()
+ T CValveVideoServices::GetCodecName(VideoEncodeCodec::EVideoEncodeCodec_t)
+ T CValveVideoServices::GetLastResult()
+ T CValveVideoServices::GetSupportedFileExtension(VideoSystem::EVideoSystem_t, int)
+ T CValveVideoServices::GetSupportedFileExtensionCount(VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::GetSupportedFileExtensionFeatures(VideoSystem::EVideoSystem_t, int)
+ T CValveVideoServices::GetUniqueMaterialID()
+ T CValveVideoServices::GetVideoSystemFeatures(VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::GetVideoSystemName(VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::GetVideoSystemStatus(VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::Init()
+ T CValveVideoServices::IsRecordCodecAvailable(VideoSystem::EVideoSystem_t, VideoEncodeCodec::EVideoEncodeCodec_t)
+ T CValveVideoServices::IsVideoSystemAvailable(VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::LocatePlayableVideoFile(char const*, char const*, VideoSystem::EVideoSystem_t*, char*, int, VideoSystemFeature::EVideoSystemFeature_t)
+ T CValveVideoServices::LocateSystemAndFeaturesForFileName(char const*, VideoSystemFeature::EVideoSystemFeature_t*, VideoSystemFeature::EVideoSystemFeature_t)
+ T CValveVideoServices::LocateVideoSystemForPlayingFile(char const*, VideoSystemFeature::EVideoSystemFeature_t)
+ T CValveVideoServices::PlayVideoFileFullScreen(char const*, char const*, void*, int, int, int, int, bool, float, VideoPlaybackFlags::EVideoPlaybackFlags_t, VideoSystem::EVideoSystem_t, bool)
+ T CValveVideoServices::QueryInterface(char const*)
+ T CValveVideoServices::ResolveToPlayableVideoFile(char const*, char const*, VideoSystem::EVideoSystem_t, VideoSystemFeature::EVideoSystemFeature_t, bool, char*, int, VideoSystem::EVideoSystem_t*)
+ T CValveVideoServices::Shutdown()
+ T CValveVideoServices::SoundDeviceCommand(VideoSoundDeviceOperation::EVideoSoundDeviceOperation_t, void*, void*, VideoSystem::EVideoSystem_t)
+ T CValveVideoServices::~CValveVideoServices()
+ T CVideoCommonServices::CalculateVideoDimensions(int, int, int, int, VideoPlaybackFlags::EVideoPlaybackFlags_t, int*, int*, int*, int*)
+ T CVideoCommonServices::GetSystemVolume()
+ T CVideoCommonServices::InitFullScreenPlaybackInputHandler(VideoPlaybackFlags::EVideoPlaybackFlags_t, float, bool)
+ T CVideoCommonServices::ProcessFullScreenInput(bool&, bool&, bool&)
+ T CVideoCommonServices::TerminateFullScreenPlaybackInputHandler()
+ T CVideoCommonServices::~CVideoCommonServices()
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar::~ConVar()
+ T ConVarRef::ConVarRef(char const*)
+ T ConVarRef::IsValid() const
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar_Unregister()
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier3Libraries(void* (**)(char const*, int*), int)
+ T CreateInterface
+ T InterfaceReg::InterfaceReg(void* (*)(), char const*)
+ T Sys_GetFactory(CSysModule*)
+ T Sys_LoadLibrary(char const*, Sys_Flags)
+ T Sys_LoadModule(char const*, Sys_Flags)
+ T Sys_UnloadModule(CSysModule*)
+ T V_ExtractFilePath(char const*, char*, int)
+ T V_FixSlashes(char*, char)
+ T V_GetFileExtension(char const*)
+ T V_IsAbsolutePath(char const*)
+ T V_SetExtension(char*, char const*, int)
+ T V_atof(char const*)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_strlower(char*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T __clang_call_terminate
+ T dyld_stub_binding_helper
+ T non-virtual thunk to CEmptyConVar::GetName() const
+ T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
+ T non-virtual thunk to CEmptyConVar::SetValue(char const*)
+ T non-virtual thunk to CEmptyConVar::SetValue(float)
+ T non-virtual thunk to CEmptyConVar::SetValue(int)
+ T non-virtual thunk to ConVar::GetName() const
+ T non-virtual thunk to ConVar::IsFlagSet(int) const
+ T non-virtual thunk to ConVar::SetValue(char const*)
+ T non-virtual thunk to ConVar::SetValue(float)
+ T non-virtual thunk to ConVar::SetValue(int)
+ T operator delete(void*)
+ T operator delete[](void*)
+ T operator new(unsigned long)
+ T operator new[](unsigned long)
+ Warning
+ _Unwind_Resume
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __gxx_personality_v0
+ __stack_chk_fail
+ __stack_chk_guard
+ __tolower
+ atof
+ atoi
+ b ConVarRef::Init(char const*, bool)::bFirst
+ b __g_CreateCValveVideoServicesIVideoServices_reg
+ b g_VALVEVIDEOCommon
+ b g_VALVeVIDEO
+ b s_EmptyConVar
+ b s_VideoAppSystems
+ b s_bConnected
+ b s_bRegistered
+ b s_bRunningWithDebugModules
+ b s_nCVarFlag
+ b vec2_invalid
+ b vec2_origin
+ b vec4_invalid
+ b vec4_origin
+ d CValveVideoServices::GetCodecName(VideoEncodeCodec::EVideoEncodeCodec_t)::s_pCodecLookup
+ d dyld__mach_header
+ d s_DefaultAccessor
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ dlclose
+ dlerror
+ dlopen
+ dlsym
+ g_pMemAlloc
+ getcwd
+ memcpy
+ memmove
+ memset
+ pow
+ std::terminate()
+ strcasecmp
+ strcmp
+ strlen
+ strncat
+ strncmp
+ strncpy
+ strstr
+ t __CreateCValveVideoServicesIVideoServices_interface()
+ t global constructors keyed to a
+ typeinfo for std::bad_alloc
+ vsnprintf
+ vtable for __cxxabiv1::__class_type_info
+ vtable for __cxxabiv1::__si_class_type_info
+ vtable for __cxxabiv1::__vmi_class_type_info
