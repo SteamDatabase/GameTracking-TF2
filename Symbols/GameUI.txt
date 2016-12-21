@@ -295,7 +295,8 @@
  D CCvarSlider::GetKBMap()::s_pMap
  D CCvarSlider::GetMessageMap()::s_pMap
  D CCvarSlider::KB_ChainToMap()::chained
- D CCvarSlider::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
+ D CCvarSlider::PanelAnimationVar_m_bUseConVarMinMax::InitVar()::bAdded
+ D CCvarSlider::PanelMessageFunc_OnSliderDragEnd::InitVar()::bAdded
  D CCvarSlider::PanelMessageFunc_OnSliderMoved::InitVar()::bAdded
  D CCvarToggleCheckButton::ChainToAnimationMap()::chained
  D CCvarToggleCheckButton::ChainToMap()::chained
@@ -3148,6 +3149,7 @@
  T CCvarNegateCheckButton::Reset()
  T CCvarNegateCheckButton::SetSelected(bool)
  T CCvarNegateCheckButton::~CCvarNegateCheckButton()
+ T CCvarSlider::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T CCvarSlider::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T CCvarSlider::ApplyChanges()
  T CCvarSlider::ApplySettings(KeyValues*)
@@ -3159,12 +3161,14 @@
  T CCvarSlider::GetPanelClassName()
  T CCvarSlider::GetSettings(KeyValues*)
  T CCvarSlider::GetSliderValue()
+ T CCvarSlider::GetVar_m_bUseConVarMinMax(vgui::Panel*)
  T CCvarSlider::HasBeenModified()
- T CCvarSlider::OnApplyChanges()
+ T CCvarSlider::OnSliderDragEnd()
  T CCvarSlider::OnSliderMoved()
  T CCvarSlider::Paint()
  T CCvarSlider::Reset()
  T CCvarSlider::SetSliderValue(float)
+ T CCvarSlider::SetupSlider(float, float, char const*, bool)
  T CCvarSlider::~CCvarSlider()
  T CCvarToggleCheckButton::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T CCvarToggleCheckButton::ApplyChanges()
@@ -4600,6 +4604,8 @@
  T ConVar::ConVar(char const*, char const*, int, char const*)
  T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
  T ConVar::GetHelpText() const
+ T ConVar::GetMax(float&) const
+ T ConVar::GetMin(float&) const
  T ConVar::GetName() const
  T ConVar::Init()
  T ConVar::InternalSetFloatValue(float, bool)

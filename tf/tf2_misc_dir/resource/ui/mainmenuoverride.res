@@ -216,31 +216,6 @@
 		{
 			"image"		"../console/background_xmas2011_widescreen"
 		}
-
-		if_meet_your_match_0
-		{
-			"xpos"		"rs1"
-			"image"		"../console/title_team_heavy01_blu_widescreen"
-		}
-		if_meet_your_match_1
-		{
-			"xpos"		"rs1"
-			"image"		"../console/title_team_heavy01_red_widescreen"
-		}
-		if_meet_your_match_2
-		{
-			"xpos"		"rs1"
-			"image"		"../console/title_team_pyro01_blu_widescreen"
-		}
-		if_meet_your_match_3
-		{
-			"xpos"		"rs1"
-			"image"		"../console/title_team_pyro01_red_widescreen"
-		}
-		if_meet_your_match_4
-		{
-			"image"		"../console/title_team_competitive_widescreen"
-		}
 	}
 					
 	"TFLogoImage"
@@ -262,47 +237,6 @@
 //		{
 //			"image"		"../logo/tough_break_logo"
 //		}
-
-		if_meet_your_match_0
-		{
-			"xpos"			"c-300"
-			"ypos"			"0"
-			"wide"			"o2"
-			"tall"			"145"
-			"image"		"../logo/meet_your_match_logo"
-		}
-		if_meet_your_match_1
-		{
-			"xpos"			"c-300"
-			"ypos"			"0"
-			"wide"			"o2"
-			"tall"			"145"
-			"image"		"../logo/meet_your_match_logo"
-		}
-		if_meet_your_match_2
-		{
-			"xpos"			"c-300"
-			"ypos"			"0"
-			"wide"			"o2"
-			"tall"			"145"
-			"image"		"../logo/meet_your_match_logo"
-		}
-		if_meet_your_match_3
-		{
-			"xpos"			"c-300"
-			"ypos"			"0"
-			"wide"			"o2"
-			"tall"			"145"
-			"image"		"../logo/meet_your_match_logo"
-		}
-		if_meet_your_match_4
-		{
-			"xpos"			"c-300"
-			"ypos"			"0"
-			"wide"			"o2"
-			"tall"			"145"
-			"image"		"../logo/meet_your_match_logo"
-		}
 	}	
 	
 	"TFCharacterImage"
@@ -1970,27 +1904,22 @@
 				{
 					"0"
 					{
-						"item"		"Halloween 2016 Key"
+						"item"		"Keyless Winter 2016 Case"
 						"show_market"	"0"
 					}
 					"1"
 					{
-						"item"		"Halloween 2016 Case"
-						"show_market"	"1"
+						"item"		"Taunt: The Table Tantrum"
+						"show_market"	"0"
 					}
 					"2"
 					{
-						"item"		"Taunt: The Victory Lap"
+						"item"		"Taunt: Didgeridrongo"
 						"show_market"	"0"
 					}
 					"3"
 					{
-						"item"		"Taunt: Second Rate Sorcery"
-						"show_market"	"0"
-					}
-					"4"
-					{
-						"item"		"Competitive Matchmaking Official"
+						"item"		"Taunt: Scotsmann's Stagger"
 						"show_market"	"0"
 					}
 				}

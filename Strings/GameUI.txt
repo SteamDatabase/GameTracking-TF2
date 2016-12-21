@@ -24,6 +24,7 @@
 	// Original shader: BaseTimesVertexColorAlphaBlendNoOverbright
 	0P@@
 	wBF1
+	wDA1
      
       
         %3d %3d %3d %3d %3d %3d %3d %3d
@@ -35,7 +36,7 @@
    @@
    p pp pp pp p000 P` p p00
   00 
-  00  
+  00    
   00@
   Does nothing to multiple selections.
   Panel will be created where the menu was opened.
@@ -1933,6 +1934,7 @@ CCvarNegateCheckButton::Reset()
 CCvarNegateCheckButton::SetSelected(bool)
 CCvarNegateCheckButton::~CCvarNegateCheckButton()
 CCvarSlider
+CCvarSlider::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
 CCvarSlider::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
 CCvarSlider::ApplyChanges()
 CCvarSlider::ApplySettings(KeyValues*)
@@ -1948,15 +1950,18 @@ CCvarSlider::GetMessageMap()::s_pMap
 CCvarSlider::GetPanelClassName()
 CCvarSlider::GetSettings(KeyValues*)
 CCvarSlider::GetSliderValue()
+CCvarSlider::GetVar_m_bUseConVarMinMax(vgui::Panel*)
 CCvarSlider::HasBeenModified()
 CCvarSlider::KB_ChainToMap()::chained
-CCvarSlider::OnApplyChanges()
+CCvarSlider::OnSliderDragEnd()
 CCvarSlider::OnSliderMoved()
 CCvarSlider::Paint()
-CCvarSlider::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
+CCvarSlider::PanelAnimationVar_m_bUseConVarMinMax::InitVar()::bAdded
+CCvarSlider::PanelMessageFunc_OnSliderDragEnd::InitVar()::bAdded
 CCvarSlider::PanelMessageFunc_OnSliderMoved::InitVar()::bAdded
 CCvarSlider::Reset()
 CCvarSlider::SetSliderValue(float)
+CCvarSlider::SetupSlider(float, float, char const*, bool)
 CCvarSlider::~CCvarSlider()
 CCvarToggleCheckButton
 CCvarToggleCheckButton::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
@@ -4022,6 +4027,8 @@ ConVar::ConVar(char const*, char const*, int)
 ConVar::ConVar(char const*, char const*, int, char const*)
 ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
 ConVar::GetHelpText() const
+ConVar::GetMax(float&) const
+ConVar::GetMin(float&) const
 ConVar::GetName() const
 ConVar::Init()
 ConVar::InternalSetFloatValue(float, bool)
@@ -8351,6 +8358,7 @@ m_bAutoHideButtons
 m_bAutoHideScrollbar
 m_bShowColumns
 m_bTabFitText
+m_bUseConVarMinMax
 m_clrProgressBar
 m_customaccel
 m_customaccel_exponent
@@ -9402,6 +9410,7 @@ unsigned short%ffff.
 unsigned short'ffffff.
 unsigned short`I+N 
 update_box(jpeg_decompress_struct*, box*)
+use_convar_minmax
 use_merged_upsample(jpeg_decompress_struct*)
 use_proportional_insets
 userange

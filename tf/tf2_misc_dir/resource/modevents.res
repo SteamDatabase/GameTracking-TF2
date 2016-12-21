@@ -1805,7 +1805,7 @@
 	"begin_xp_lerp"
 	{}
 
-	"casual_criteria_updated"
+	"matchmaker_stats_updated"
 	{}
 
 	"rematch_vote_period_over"
@@ -1817,6 +1817,18 @@
 	{}
 
 	"player_rematch_change"
+	{}
+
+	"ping_updated"
+	{}
+
+	"player_next_map_vote_change"
+	{
+		"map_index"	"byte"	// what they voted for
+		"vote"		"byte"	// what the vote was
+	}
+
+	"vote_maps_changed"
 	{}
 }
 

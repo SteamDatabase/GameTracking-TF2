@@ -1781,12 +1781,12 @@ event CasualCategory_NotSelected
 	Animate Title		FgColor TanDark Deaccel 0 0.2
 }
 
-event CategoryMap_Selected
+event HealthProgressBar_Selected
 {
 	Animate HealthProgressBar	Alpha 255 Deaccel 0 0.2
 }
 
-event CategoryMap_NotSelected
+event HealthProgressBar_NotSelected
 {
 	Animate HealthProgressBar	Alpha 50 Deaccel 0 0.2
 }
@@ -1893,6 +1893,22 @@ event SurveyHideSequence
 	Animate Survey		ypos	130		Deaccel 0 0.3
 	Animate Survey		ypos	480		Accel	0.3 0.2
 	RunEventChild Survey SurveyDelete 0.6
+}
+
+event MapVoted
+{
+	Animate VotesLabel	ypos	30		Deaccel 0	0.05
+	Animate VotesLabel	ypos	40		Deaccel 0.05 0.1
+}
+
+event WinningNextMapVote
+{
+	Animate VotesLabel	FgColor	CreditsGreen Deaccel	0	0.1.5
+}
+
+event LosingNextMapVote
+{
+	Animate VotesLabel	FgColor	TanLight	Deaccel		0	0.1.5
 }
 
 //
