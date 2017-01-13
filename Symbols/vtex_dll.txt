@@ -1,19 +1,31 @@
+ access
+ atof
+ atoi
+ b (anonymous namespace)::GetSuggestGameInfoDirFn()::s_pfnSuggestGameInfoDir
+ B colorcorrection
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- B InterfaceReg::s_pInterfaceRegs
- B SinCosTable
- B VTFFileBaseHeader_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderV7_1_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderV7_2_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderV7_3_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderX360_t_DataDescInit::g_DataMapHolder
- B VTFFileHeader_t_DataDescInit::g_DataMapHolder
- B colorcorrection
  B cvar
+ b f05
+ b f3
+ B gamedir
+ b g_bNoPsd
+ b g_bNoTga
+ b g_bUsedAsLaunchableDLL
+ b g_bUseStandardError
+ b g_bWarningsAsErrors
  B g_CleanupFunctions
+ b __g_CreateCVTexILaunchableDLL_reg
+ b __g_CreateCVTexIVTex_reg
+ b g_CreateDir
+ b g_eMode
  B g_ExtraSpewHooks
- B g_VBAllocTracker
- B g_VTex
+ b g_FileSystemError
+ b g_ForcedOutputDir
+ b g_Mathlib_GammaToLinear
+ b g_Mathlib_LinearToGamma
+ b g_NoPause
+ b g_NumVMTParams
  B g_pCVar
  B g_pFileSystem
  B g_pFullFileSystem
@@ -25,28 +37,87 @@
  B g_pNetworkSystem
  B g_pProcessUtils
  B g_pQueuedLoader
- B gamedir
+ b g_Quiet
+ b g_ShaderName
+ b g_suggestGameDirHelper
+ b g_UseGameDir
+ B g_VBAllocTracker
+ b g_VMTParams
+ B g_VTex
+ b ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::gamma
+ b ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::gammaToLinear
+ b ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::kernelCache
+ b ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::pInvKernelCache
+ B InterfaceReg::s_pInterfaceRegs
  B lineartolightmap
+ b lineartoscreen
+ b lineartotexture
  B lineartovertex
+ b LoadSourceImages(IVTFTexture*, char const*, bool*, VTexConfigInfo_t&)::pSrcName
  B materials
  B mdllib
  B p4
  B qdir
- B s_NoEscConversion
- B s_StringCharConversion
+ b s_bConnected
  B s_bMathlibInitialized
- COM_TimestampedLog
+ b s_bMMXEnabled
+ b s_bRegistered
+ b s_bRunningWithDebugModules
+ b s_bSSE2Enabled
+ b s_bSSEEnabled
+ b s_bUseVProjectBinDir
+ b s_EmptyConVar
+ B SinCosTable
+ b s_nCVarFlag
+ B s_NoEscConversion
+ b s_pTokenBuf
+ b s_static_p4_factory
+ B s_StringCharConversion
+ b stb_compress_dxt_block(unsigned char*, unsigned char const*, int, int)::init
+ b stb__Expand5
+ b stb__Expand6
+ b stb__OMatch5
+ b stb__OMatch6
+ b stb__QuantGTab
+ b stb__QuantRBTab
+ b texturetolinear
+ b TGALoader::g_ColorMap
+ b TGALoader::g_IsRunLengthPacket
+ b TGALoader::g_PixelsLeftInPacket
+ b vec2_invalid
+ b vec2_origin
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ b void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ B VTFFileBaseHeader_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeader_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderV7_1_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderV7_2_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderV7_3_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderX360_t_DataDescInit::g_DataMapHolder
+ ceil
+ ceilf
  CommandLine_Tier0
- D KeyValues::s_pfGetStringForSymbol
- D KeyValues::s_pfGetSymbolForString
- D VTFFileBaseHeader_t::m_DataMap
- D VTFFileHeaderV7_1_t::m_DataMap
- D VTFFileHeaderV7_2_t::m_DataMap
- D VTFFileHeaderV7_3_t::m_DataMap
- D VTFFileHeaderX360_t::m_DataMap
- D VTFFileHeader_t::m_DataMap
+ COM_TimestampedLog
+ cosf
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_acquire
+ __cxa_guard_release
  D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
  D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
  D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
  D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
@@ -55,30 +126,46 @@
  D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
  D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
  D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
- D g_FaceVerts
- D g_KeyValuesErrorStack
+ d dyld__mach_header
+ _DefaultRuneLocale
+ DevMsg(char const*, ...)
+ DevWarning(char const*, ...)
  D g_backFaceVerts
+ d g_CubemapFacingNames
  D g_downFaceVerts
+ D g_FaceVerts
+ d g_FileSystemErrorMode
  D g_frontFaceVerts
+ d g_ImageFormatInfo
+ D g_KeyValuesErrorStack
  D g_leftFaceVerts
  D g_p4factory
  D g_rightFaceVerts
- D g_skybox_FaceVerts
  D g_skybox_backFaceVerts
  D g_skybox_downFaceVerts
+ D g_skybox_FaceVerts
  D g_skybox_frontFaceVerts
  D g_skybox_leftFaceVerts
  D g_skybox_rightFaceVerts
  D g_skybox_upFaceVerts
- D g_upFaceVerts
  D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+ D g_upFaceVerts
+ d ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::lastDstGamma
+ d ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::lastSrcGamma
+ d ImageLoader::g_KernelFunc
+ d ImageLoader::g_KernelFuncNice
+ d ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::lastSrcGamma
+ D KeyValues::s_pfGetStringForSymbol
+ D KeyValues::s_pfGetSymbolForString
+ dlclose
+ dlerror
+ dlopen
+ dlsym
  D pfFastCos
  D pfFastSinCos
  D pfInvRSquared
@@ -87,101 +174,199 @@
  D pfSqrt
  D pfVectorNormalize
  D pfVectorNormalizeFast
+ d s_DefaultAccessor
+ d s_LastFileLoadingFrom
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
  D typeinfo for CBaseAppSystem<IVTex>
  D typeinfo for CDefaultAccessor
  D typeinfo for CEmptyConVar
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
  D typeinfo for CP4File
  D typeinfo for CP4File_Dummy
  D typeinfo for CTier0AppSystem<IVTex>
  D typeinfo for CTier1AppSystem<IVTex, 0>
  D typeinfo for CTier2AppSystem<IVTex, 0>
- D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlNoEscConversion
- D typeinfo for CVTFTexture
  D typeinfo for CVTex
- D typeinfo for ConCommandBase
- D typeinfo for ConVar
+ D typeinfo for CVTFTexture
  D typeinfo for IAppSystem
  D typeinfo for IConCommandBaseAccessor
  D typeinfo for IConVar
  D typeinfo for ILaunchableDLL
- D typeinfo for IVTFTexture
  D typeinfo for IVTex
+ D typeinfo for IVTFTexture
  D vtable for CDefaultAccessor
  D vtable for CEmptyConVar
+ D vtable for ConVar
  D vtable for CP4File
  D vtable for CP4File_Dummy
- D vtable for CUtlCStringConversion
  D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
  D vtable for CUtlNoEscConversion
- D vtable for CVTFTexture
  D vtable for CVTex
- D vtable for ConVar
- DevMsg(char const*, ...)
- DevWarning(char const*, ...)
+ D vtable for CVTFTexture
+ D VTFFileBaseHeader_t::m_DataMap
+ D VTFFileHeader_t::m_DataMap
+ D VTFFileHeaderV7_1_t::m_DataMap
+ D VTFFileHeaderV7_2_t::m_DataMap
+ D VTFFileHeaderV7_3_t::m_DataMap
+ D VTFFileHeaderX360_t::m_DataMap
+ __error
  Error
+ exit
+ fclose
+ fopen
+ fprintf
+ fread
+ fseek
+ ftell
+ fwrite
+ fwrite$UNIX2003
  GetCPUInformation
+ getcwd
+ getenv
+ g_pMemAlloc
+ __gxx_personality_v0
  KeyValuesSystem
+ __maskrune
+ memcpy
+ memmove
+ memset
+ memset_pattern16
+ mkdir
  Msg
  Plat_IsInDebugSession
+ pow
+ printf
+ putchar
+ puts
+ qsort
+ r .memset_pattern
+ roundf
+ r pulCRCTable
+ r s_pChannelIndex
+ r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::prods
+ r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::w1Tab
  R typeinfo name for CBaseAppSystem<IVTex>
  R typeinfo name for CDefaultAccessor
  R typeinfo name for CEmptyConVar
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
  R typeinfo name for CP4File
  R typeinfo name for CP4File_Dummy
  R typeinfo name for CTier0AppSystem<IVTex>
  R typeinfo name for CTier1AppSystem<IVTex, 0>
  R typeinfo name for CTier2AppSystem<IVTex, 0>
- R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlNoEscConversion
- R typeinfo name for CVTFTexture
  R typeinfo name for CVTex
- R typeinfo name for ConCommandBase
- R typeinfo name for ConVar
+ R typeinfo name for CVTFTexture
  R typeinfo name for IAppSystem
  R typeinfo name for IConCommandBaseAccessor
  R typeinfo name for IConVar
  R typeinfo name for ILaunchableDLL
- R typeinfo name for IVTFTexture
  R typeinfo name for IVTex
+ R typeinfo name for IVTFTexture
+ r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
+ setenv$UNIX2003
+ sin
  SpewOutputFunc
+ sprintf
+ __stack_chk_fail
+ __stack_chk_guard
+ stat
+ __stderrp
+ std::terminate()
+ strcasecmp
+ strcat
+ strchr
+ strcmp
+ strcpy
+ strlen
+ strncat
+ strncmp
+ strncpy
+ strpbrk
+ strspn
+ strstr
+ strtod$UNIX2003
+ strtol
+ strtoul
+ t AttachShtFile(char const*, IVTFTexture*, unsigned int*)
  T Bitmap_t::Clear()
  T Bitmap_t::GetColor(int, int) const
  T Bitmap_t::Init(int, int, ImageFormat, int)
  T BuildGammaTable(float, float, float, int)
+ t CalcColor(SphereCalc_t*, int, Vector const&, unsigned char*)
+ t CalcHemisphereColor(SphereCalc_t*, float, float)
+ t CalcSphereColor(SphereCalc_t*, float, float)
  T CBaseAppSystem<IVTex>::QueryInterface(char const*)
  T CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+ T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CEmptyConVar::~CEmptyConVar()
  T CFSLoadModuleInfo::CFSLoadModuleInfo()
  T CFSMountContentInfo::CFSMountContentInfo()
  T CFSSearchPathsInit::CFSSearchPathsInit()
  T CKeyValuesErrorStack::ReportError(char const*)
+ T __clang_call_terminate
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::~ConVar()
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar_Unregister()
  T CP4AutoEditAddFile::~CP4AutoEditAddFile()
  T CP4Factory::AccessFile(char const*) const
  T CP4Factory::SetDummyMode(bool)
  T CP4Factory::SetOpenFileChangeList(char const*)
  T CP4File::Add()
+ T CP4File::~CP4File()
+ T CP4File_Dummy::Add()
+ T CP4File_Dummy::~CP4File_Dummy()
+ T CP4File_Dummy::Edit()
+ T CP4File_Dummy::IsFileInPerforce()
+ T CP4File_Dummy::SetFileType(CUtlString const&)
  T CP4File::Edit()
  T CP4File::IsFileInPerforce()
  T CP4File::Revert()
  T CP4File::SetFileType(CUtlString const&)
- T CP4File::~CP4File()
- T CP4File_Dummy::Add()
- T CP4File_Dummy::Edit()
- T CP4File_Dummy::IsFileInPerforce()
- T CP4File_Dummy::SetFileType(CUtlString const&)
- T CP4File_Dummy::~CP4File_Dummy()
  T CRC32_Final(unsigned int*)
  T CRC32_Init(unsigned int*)
  T CRC32_ProcessBuffer(unsigned int*, void const*, int)
+ t __CreateCVTexILaunchableDLL_interface()
+ t __CreateCVTexIVTex_interface()
+ T CreateInterface
+ T CreateInterfaceInternal(char const*, int*)
+ T CreateVTFTexture()
  T CSuggestGameDirHelper::SuggestFn(CFSSteamSetupInfo const*, char*, int, bool*)
  T CTier2AppSystem<IVTex, 0>::Connect(void* (*)(char const*, int*))
  T CTier2AppSystem<IVTex, 0>::Disconnect()
@@ -189,53 +374,56 @@
  T CTier2AppSystem<IVTex, 0>::Shutdown()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::AssumeMemory(void*, int, int, int)
- T CUtlBuffer::CUtlBuffer(int, int, int)
- T CUtlBuffer::CUtlBuffer(void const*, int, int)
  T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::CheckGet(int)
+ T CUtlBuffer::CUtlBuffer(int, int, int)
+ T CUtlBuffer::CUtlBuffer(void const*, int, int)
  T CUtlBuffer::EatCPPComment()
  T CUtlBuffer::EatWhiteSpace()
  T CUtlBuffer::EnsureCapacity(int)
- T CUtlBuffer::Get(void*, int)
  T CUtlBuffer::GetDelimitedCharInternal(CUtlCharConversion*)
  T CUtlBuffer::GetDelimitedString(CUtlCharConversion*, char*, int)
  T CUtlBuffer::GetLine(char*, int)
  T CUtlBuffer::GetOverflow(int)
  T CUtlBuffer::GetStringInternal(char*, unsigned long)
+ T CUtlBuffer::Get(void*, int)
  T CUtlBuffer::PeekGet(int, int)
  T CUtlBuffer::PeekLineLength()
  T CUtlBuffer::PeekStringLength()
  T CUtlBuffer::PeekStringMatch(int, char const*, int)
  T CUtlBuffer::PeekWhiteSpace(int)
- T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::PutOverflow(int)
+ T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::Scanf(char const*, ...)
  T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::VaScanf(char const*, char*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlLinkedList<void (*)(), unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<void (*)(), unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<void (*)(char const*), unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<void (*)(char const*), unsigned short>, unsigned short> >::~CUtlLinkedList()
+ T CUtlLinkedList<void (*)(), unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<void (*)(), unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlNoEscConversion::FindConversion(char const*, int*)
  T CUtlString::Get() const
+ T CUtlStringList::CopyAndAddToTail(char const*)
+ T CUtlString::operator=(char const*)
  T CUtlString::Purge()
  T CUtlString::Set(char const*)
- T CUtlString::operator=(char const*)
- T CUtlStringList::CopyAndAddToTail(char const*)
- T CUtlVector<CVTFTexture::ResourceMemorySection, CUtlMemory<CVTFTexture::ResourceMemorySection, int> >::GrowVector(int)
- T CUtlVector<CVTFTexture::ResourceMemorySection, CUtlMemory<CVTFTexture::ResourceMemorySection, int> >::~CUtlVector()
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
- T CUtlVector<ResourceEntryInfo, CUtlMemory<ResourceEntryInfo, int> >::GrowVector(int)
- T CUtlVector<ResourceEntryInfo, CUtlMemory<ResourceEntryInfo, int> >::~CUtlVector()
- T CUtlVector<S3RGBA, CUtlMemory<S3RGBA, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<S3RGBA, CUtlMemory<S3RGBA, int> >::~CUtlVector()
  T CUtlVector<char*, CUtlMemory<char*, int> >::AddToTail(char* const&)
+ T CUtlVector<char, CUtlMemory<char, int> >::~CUtlVector()
  T CUtlVector<char*, CUtlMemory<char*, int> >::~CUtlVector()
  T CUtlVector<char, CUtlMemory<char, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<char, CUtlMemory<char, int> >::~CUtlVector()
+ T CUtlVector<CVTFTexture::ResourceMemorySection, CUtlMemory<CVTFTexture::ResourceMemorySection, int> >::~CUtlVector()
+ T CUtlVector<CVTFTexture::ResourceMemorySection, CUtlMemory<CVTFTexture::ResourceMemorySection, int> >::GrowVector(int)
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
+ T CUtlVector<ResourceEntryInfo, CUtlMemory<ResourceEntryInfo, int> >::~CUtlVector()
+ T CUtlVector<ResourceEntryInfo, CUtlMemory<ResourceEntryInfo, int> >::GrowVector(int)
+ T CUtlVector<S3RGBA, CUtlMemory<S3RGBA, int> >::~CUtlVector()
+ T CUtlVector<S3RGBA, CUtlMemory<S3RGBA, int> >::InsertMultipleBefore(int, int)
+ T CVTex::main(int, char**)
+ T CVTex::VTex(int, char**)
+ T CVTex::VTex(void* (*)(char const*, int*), char const*, int, char**)
  T CVTFTexture::BlendCubeMapCornerPalettes(int, int, CCornerMatch const*)
  T CVTFTexture::BlendCubeMapEdgePalettes(int, int, CEdgeMatch const*)
  T CVTFTexture::BlendCubeMapFaceCorners(int, int, CCornerMatch const*)
@@ -253,6 +441,7 @@
  T CVTFTexture::ComputeTotalSize() const
  T CVTFTexture::ConstructLowResImage()
  T CVTFTexture::ConvertImageFormat(ImageFormat, bool)
+ T CVTFTexture::~CVTFTexture()
  T CVTFTexture::Depth() const
  T CVTFTexture::FaceCount() const
  T CVTFTexture::FaceSizeInBytes(int) const
@@ -308,40 +497,12 @@
  T CVTFTexture::Unserialize(CUtlBuffer&, bool, int)
  T CVTFTexture::UnserializeEx(CUtlBuffer&, bool, int, int)
  T CVTFTexture::Width() const
- T CVTFTexture::~CVTFTexture()
- T CVTex::VTex(int, char**)
- T CVTex::VTex(void* (*)(char const*, int*), char const*, int, char**)
- T CVTex::main(int, char**)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar::~ConVar()
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar_Unregister()
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T CreateInterface
- T CreateInterfaceInternal(char const*, int*)
- T CreateVTFTexture()
  T DestroyVTFTexture(IVTFTexture*)
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
+ T dyld_stub_binding_helper
  T EvaluateConditional(char const*)
+ t FileSystem_AddLoadedSearchPath(CFSSearchPathsInit&, char const*, char const*, bool)
  T FileSystem_AddSearchPath_Platform(IFileSystem*, char const*)
  T FileSystem_GetExecutableDir(char*, int)
  T FileSystem_GetFactory()
@@ -354,13 +515,27 @@
  T FileSystem_SetBasePaths(IFileSystem*)
  T FileSystem_SetupStandardDirectories(char const*, char const*)
  T FileSystem_Term()
+ T float16::ConvertFloatTo16bits(float)
  T FloatBitMap_t::CompressTo8Bits(float)
- T FloatBitMap_t::FloatBitMap_t(int, int)
  T FloatBitMap_t::~FloatBitMap_t()
+ T FloatBitMap_t::FloatBitMap_t(int, int)
  T GetCStringCharConversion()
+ t GetKeyValueFromBuffer(CUtlBuffer&, char*, char*)
  T GetNoEscCharConversion()
  T GetOutputDir(char const*, char*)
  T GetPossiblyQuotedWord(char const*, char*)
+ t global constructors keyed to a
+ t ImageLoader::A8ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::ABGR8888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::ARGB8888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGR565ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGR888_BLUESCREENToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGR888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGRA4444ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGRA5551ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGRA8888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGRX5551ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::BGRX8888ToRGBA8888(unsigned char const*, unsigned char*, int)
  T ImageLoader::CKernelWrapper<0, false>::ApplyKernel(ImageLoader::KernelInfo_t const&, ImageLoader::ResampleInfo_t const&, int, int, int, float*, float*)
  T ImageLoader::CKernelWrapper<0, false>::ComputeAveragedColor(ImageLoader::KernelInfo_t const&, ImageLoader::ResampleInfo_t const&, int, int, int, float*, float*)
  T ImageLoader::CKernelWrapper<0, true>::ApplyKernel(ImageLoader::KernelInfo_t const&, ImageLoader::ResampleInfo_t const&, int, int, int, float*, float*)
@@ -377,13 +552,13 @@
  T ImageLoader::CKernelWrapper<2, true>::AdjustAlphaChannel(ImageLoader::KernelInfo_t const&, ImageLoader::ResampleInfo_t const&, int, int, int, float*)
  T ImageLoader::CKernelWrapper<2, true>::ApplyKernel(ImageLoader::KernelInfo_t const&, ImageLoader::ResampleInfo_t const&, int, int, int, float*, float*)
  T ImageLoader::CKernelWrapper<2, true>::ComputeAveragedColor(ImageLoader::KernelInfo_t const&, ImageLoader::ResampleInfo_t const&, int, int, int, float*, float*)
- T ImageLoader::ConvertImageFormat(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
  T ImageLoader::ConvertImageFormat_RGB323232F_To_BGRA8888(float*, unsigned char*, int, int)
  T ImageLoader::ConvertImageFormat_RGB323232F_To_RGBA8888(float*, unsigned char*, int, int)
  T ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGB323232F(float16*, float*, int, int)
  T ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA16161616(float16*, unsigned short*, int, int)
  T ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA323232F(float16*, float*, int, int, unsigned long)
  T ImageLoader::ConvertImageFormat_RGBA16161616_To_RGBA16161616F(unsigned short*, float*, int, int)
+ T ImageLoader::ConvertImageFormat(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUV88(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVLX8888(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVWQ8888(unsigned char const*, int, int, unsigned char*)
@@ -391,18 +566,49 @@
  T ImageLoader::FlipImageVertically(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)
  T ImageLoader::GenerateMipmapLevels(unsigned char*, unsigned char*, int, int, int, ImageFormat, float, float, int)
+ t ImageLoader::GenerateNiceFilter(float, float, float, int, float*, float*)
+ t ImageLoader::GetColorBlockColorsBGRA8888(ImageLoader::DXTColBlock*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, unsigned short&)
  T ImageLoader::GetMemRequired(int, int, int, ImageFormat, bool)
  T ImageLoader::GetNumMipMapLevels(int, int, int)
+ t ImageLoader::I8ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::IA88ToRGBA8888(unsigned char const*, unsigned char*, int)
  T ImageLoader::ImageFormatInfo(ImageFormat)
  T ImageLoader::NormalizeNormalMapRGBA8888(unsigned char*, int)
  T ImageLoader::ResampleRGB323232F(ImageLoader::ResampleInfo_t const&)
  T ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)
+ t ImageLoader::RGB888_BLUESCREENToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGB888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA16161616ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToA8(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToABGR8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToARGB8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGR565(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGR888_BLUESCREEN(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGR888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGRA4444(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGRA5551(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGRA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGRX5551(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToBGRX8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToI8(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToIA88(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToRGB888_BLUESCREEN(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToRGB888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToUV88(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToUVLX8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::RGBA8888ToUVWQ8888(unsigned char const*, unsigned char*, int)
  T ImageLoader::RotateImage180(unsigned char const*, unsigned char*, int, ImageFormat)
  T ImageLoader::RotateImageLeft(unsigned char const*, unsigned char*, int, ImageFormat)
+ t ImageLoader::UV88ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::UVLX8888ToRGBA8888(unsigned char const*, unsigned char*, int)
+ t ImageLoader::UVWQ8888ToRGBA8888(unsigned char const*, unsigned char*, int)
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
+ T _InvRSquared(float const*)
  T IsCube(char const*)
  T IsPSDFile(CUtlBuffer&)
  T KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
+ T KeyValues::deleteThis()
  T KeyValues::FindKey(char const*, bool)
  T KeyValues::GetFirstValue()
  T KeyValues::GetName() const
@@ -411,40 +617,71 @@
  T KeyValues::GetStringForSymbolClassic(int)
  T KeyValues::GetSymbolForStringClassic(char const*, bool)
  T KeyValues::KeyValues(char const*)
- T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
+ T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
  T KeyValues::MakeCopy() const
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
  T KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
  T KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
  T KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
  T KeyValues::RecursiveMergeKeyValues(KeyValues*)
  T KeyValues::RemoveEverything()
  T KeyValues::SetString(char const*, char const*)
- T KeyValues::deleteThis()
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
+ t LoadConfigFile(char const*, VTexConfigInfo_t&, bool*)
+ t LoadFile(char const*, CUtlBuffer&, bool, unsigned int*)
  T LoadGameInfoFile(char const*, KeyValues*&, KeyValues*&, KeyValues*&)
+ t LoadSourceImages(IVTFTexture*, char const*, bool*, VTexConfigInfo_t&)
  T LocateGameInfoFile(CFSSteamSetupInfo const&, char*, int)
  T MakeSrcFileName(char*, unsigned int, char const*, int, int, int, bool, int, int, bool)
  T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
+ T non-virtual thunk to CEmptyConVar::GetName() const
+ T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
+ T non-virtual thunk to CEmptyConVar::SetValue(char const*)
+ T non-virtual thunk to CEmptyConVar::SetValue(float)
+ T non-virtual thunk to CEmptyConVar::SetValue(int)
+ T non-virtual thunk to ConVar::GetName() const
+ T non-virtual thunk to ConVar::IsFlagSet(int) const
+ T non-virtual thunk to ConVar::SetValue(char const*)
+ T non-virtual thunk to ConVar::SetValue(float)
+ T non-virtual thunk to ConVar::SetValue(int)
+ T non-virtual thunk to CVTex::main(int, char**)
+ __tolower
+ T operator delete(void*)
+ T operator delete[](void*)
+ T operator new(unsigned long)
+ T operator new[](unsigned long)
+ T PostProcessSkyBox(IVTFTexture*, int)
+ T Process_File(char*, int)
+ T ProcessFiles(char const*, char const*, char const*, bool, VTexConfigInfo_t&)
+ t PSDConvertToRGBA8888(int, PSDMode_t, PSDPalette_t&, Bitmap_t&)
  T PSDGetImageResources(CUtlBuffer&)
  T PSDGetInfo(CUtlBuffer&, int*, int*, ImageFormat*, float*)
  T PSDImageResources::FindElement(PSDImageResources::Resource) const
+ t PSDReadCompressedChannels(CUtlBuffer&, int, PSDMode_t, PSDPalette_t&, Bitmap_t&)
  T PSDReadFileRGBA8888(CUtlBuffer&, Bitmap_t&)
+ t PSDReadUncompressedChannels(CUtlBuffer&, int, PSDMode_t, PSDPalette_t&, Bitmap_t&)
  T PSDResFileInfo::FindElement(PSDResFileInfo::ResFileInfo) const
- T PostProcessSkyBox(IVTFTexture*, int)
- T ProcessFiles(char const*, char const*, char const*, bool, VTexConfigInfo_t&)
- T Process_File(char*, int)
+ T Q_log2(int)
  T Q_StripPrecedingAndTrailingWhitespace(char*)
  T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
  T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
  T Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
- T Q_log2(int)
  T ReadKeyValuesFile(char const*)
+ T _rsqrtf(float)
  T SetSuggestGameInfoDirFn(bool (*)(CFSSteamSetupInfo const*, char*, int, bool*))
  T SetupFileSystemError(bool, FSReturnCode_t, char const*, ...)
  T SinCos(float, float*, float*)
+ t SortStricmp(char* const*, char* const*)
+ T _sqrtf(float)
+ T _SSE_InvRSquared(float const*)
+ T _SSE_RSqrtAccurate(float)
+ T _SSE_RSqrtFast(float)
+ T _SSE_Sqrt(float)
+ T _SSE_VectorNormalizeFast(Vector&)
+ T stb_compress_dxt_block(unsigned char*, unsigned char const*, int, int)
+ t stb__MatchColorsBlock(unsigned char*, unsigned char*, int)
  T StringAfterPrefix(char const*, char const*)
  T Sys_GetFactory(CSysModule*)
  T Sys_GetFactoryThis()
@@ -452,6 +689,8 @@
  T Sys_LoadLibrary(char const*, Sys_Flags)
  T Sys_LoadModule(char const*, Sys_Flags)
  T Sys_UnloadModule(CSysModule*)
+ T TextureToLinear(int)
+ t TGALoader::DecompressRow(CUtlBuffer&, TGALoader::TGAHeader_t const&, unsigned char*)
  T TGALoader::GetInfo(CUtlBuffer&, int*, int*, ImageFormat*, float*)
  T TGALoader::Load(unsigned char*, CUtlBuffer&, int, int, ImageFormat, float, bool)
  T TGALoader::ReadRow24BitCompressedWithoutColormap(CUtlBuffer&, TGALoader::TGAHeader_t const&, unsigned char*)
@@ -462,285 +701,21 @@
  T TGALoader::ReadRow8BitCompressedWithoutColormap(CUtlBuffer&, TGALoader::TGAHeader_t const&, unsigned char*)
  T TGALoader::ReadRow8BitUncompressedWithColormap(CUtlBuffer&, TGALoader::TGAHeader_t const&, unsigned char*)
  T TGALoader::ReadRow8BitUncompressedWithoutColormap(CUtlBuffer&, TGALoader::TGAHeader_t const&, unsigned char*)
- T TextureToLinear(int)
- T VTexConfigInfo_t::ParseOptionKey(char const*, char const*)
+ t TGALoader::ReadSourceImage(CUtlBuffer&, TGALoader::TGAHeader_t&, CUtlMemory<unsigned char, int>&)
+ t TryLocateGameInfoFile(char*, int, bool)
  T V_AppendSlash(char*, int)
+ T V_atof(char const*)
+ T _VectorNormalizeFast(Vector&)
+ T _VectorNormalize(Vector&)
  T V_ExtractFilePath(char const*, char*, int)
  T V_FixSlashes(char*, char)
  T V_GetFileExtension(char const*)
  T V_IsAbsolutePath(char const*)
  T V_MakeAbsolutePath(char*, int, char const*, char const*)
- T V_RemoveDotSlashes(char*, char, bool)
- T V_SetExtension(char*, char const*, int)
- T V_SplitString(char const*, char const*, CUtlVector<char*, CUtlMemory<char*, int> >&)
- T V_SplitString2(char const*, char const**, int, CUtlVector<char*, CUtlMemory<char*, int> >&)
- T V_StrRight(char const*, int, char*, int)
- T V_StrSubst(char const*, char const*, char const*, char*, int, bool)
- T V_StripExtension(char const*, char*, int)
- T V_StripFilename(char*)
- T V_StripLastDir(char*, int)
- T V_StripTrailingSlash(char*)
- T V_atof(char const*)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_stristr(char const*, char const*)
- T V_stristr(char*, char const*)
- T V_strlower(char*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T V_vsnprintf(char*, int, char const*, char*)
- T _InvRSquared(float const*)
- T _SSE_InvRSquared(float const*)
- T _SSE_RSqrtAccurate(float)
- T _SSE_RSqrtFast(float)
- T _SSE_Sqrt(float)
- T _SSE_VectorNormalizeFast(Vector&)
- T _VectorNormalize(Vector&)
- T _VectorNormalizeFast(Vector&)
- T __clang_call_terminate
- T _rsqrtf(float)
- T _sqrtf(float)
- T dyld_stub_binding_helper
- T float16::ConvertFloatTo16bits(float)
- T non-virtual thunk to CEmptyConVar::GetName() const
- T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
- T non-virtual thunk to CEmptyConVar::SetValue(char const*)
- T non-virtual thunk to CEmptyConVar::SetValue(float)
- T non-virtual thunk to CEmptyConVar::SetValue(int)
- T non-virtual thunk to CVTex::main(int, char**)
- T non-virtual thunk to ConVar::GetName() const
- T non-virtual thunk to ConVar::IsFlagSet(int) const
- T non-virtual thunk to ConVar::SetValue(char const*)
- T non-virtual thunk to ConVar::SetValue(float)
- T non-virtual thunk to ConVar::SetValue(int)
- T operator delete(void*)
- T operator delete[](void*)
- T operator new(unsigned long)
- T operator new[](unsigned long)
- T stb_compress_dxt_block(unsigned char*, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<BGRA8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<BGRX8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGB888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGBA8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
- Warning
- _DefaultRuneLocale
- _Unwind_Resume
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_acquire
- __cxa_guard_release
- __error
- __gxx_personality_v0
- __maskrune
- __stack_chk_fail
- __stack_chk_guard
- __stderrp
- __tolower
- access
- atof
- atoi
- b (anonymous namespace)::GetSuggestGameInfoDirFn()::s_pfnSuggestGameInfoDir
- b ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::gamma
- b ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::gammaToLinear
- b ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::kernelCache
- b ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::pInvKernelCache
- b LoadSourceImages(IVTFTexture*, char const*, bool*, VTexConfigInfo_t&)::pSrcName
- b TGALoader::g_ColorMap
- b TGALoader::g_IsRunLengthPacket
- b TGALoader::g_PixelsLeftInPacket
- b __g_CreateCVTexILaunchableDLL_reg
- b __g_CreateCVTexIVTex_reg
- b f05
- b f3
- b g_CreateDir
- b g_FileSystemError
- b g_ForcedOutputDir
- b g_Mathlib_GammaToLinear
- b g_Mathlib_LinearToGamma
- b g_NoPause
- b g_NumVMTParams
- b g_Quiet
- b g_ShaderName
- b g_UseGameDir
- b g_VMTParams
- b g_bNoPsd
- b g_bNoTga
- b g_bUseStandardError
- b g_bUsedAsLaunchableDLL
- b g_bWarningsAsErrors
- b g_eMode
- b g_suggestGameDirHelper
- b lineartoscreen
- b lineartotexture
- b s_EmptyConVar
- b s_bConnected
- b s_bMMXEnabled
- b s_bRegistered
- b s_bRunningWithDebugModules
- b s_bSSE2Enabled
- b s_bSSEEnabled
- b s_bUseVProjectBinDir
- b s_nCVarFlag
- b s_pTokenBuf
- b s_static_p4_factory
- b stb__Expand5
- b stb__Expand6
- b stb__OMatch5
- b stb__OMatch6
- b stb__QuantGTab
- b stb__QuantRBTab
- b stb_compress_dxt_block(unsigned char*, unsigned char const*, int, int)::init
- b texturetolinear
- b vec2_invalid
- b vec2_origin
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
- b void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
- b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
- b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
- b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
- ceil
- ceilf
- cosf
- d ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::lastDstGamma
- d ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::lastSrcGamma
- d ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::lastSrcGamma
- d ImageLoader::g_KernelFunc
- d ImageLoader::g_KernelFuncNice
- d dyld__mach_header
- d g_CubemapFacingNames
- d g_FileSystemErrorMode
- d g_ImageFormatInfo
- d s_DefaultAccessor
- d s_LastFileLoadingFrom
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- dlclose
- dlerror
- dlopen
- dlsym
- exit
- fclose
- fopen
- fprintf
- fread
- fseek
- ftell
- fwrite
- fwrite$UNIX2003
- g_pMemAlloc
- getcwd
- getenv
- memcpy
- memmove
- memset
- memset_pattern16
- mkdir
- pow
- printf
- putchar
- puts
- qsort
- r .memset_pattern
- r pulCRCTable
- r s_pChannelIndex
- r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::prods
- r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::w1Tab
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
- roundf
- setenv$UNIX2003
- sin
- sprintf
- stat
- std::terminate()
- strcasecmp
- strcat
- strchr
- strcmp
- strcpy
- strlen
- strncat
- strncmp
- strncpy
- strpbrk
- strspn
- strstr
- strtod$UNIX2003
- strtol
- strtoul
- t AttachShtFile(char const*, IVTFTexture*, unsigned int*)
- t CalcColor(SphereCalc_t*, int, Vector const&, unsigned char*)
- t CalcHemisphereColor(SphereCalc_t*, float, float)
- t CalcSphereColor(SphereCalc_t*, float, float)
- t FileSystem_AddLoadedSearchPath(CFSSearchPathsInit&, char const*, char const*, bool)
- t GetKeyValueFromBuffer(CUtlBuffer&, char*, char*)
- t ImageLoader::A8ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::ABGR8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::ARGB8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGR565ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGR888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGR888_BLUESCREENToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGRA4444ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGRA5551ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGRA8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGRX5551ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::BGRX8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::GenerateNiceFilter(float, float, float, int, float*, float*)
- t ImageLoader::GetColorBlockColorsBGRA8888(ImageLoader::DXTColBlock*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, unsigned short&)
- t ImageLoader::I8ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::IA88ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGB888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGB888_BLUESCREENToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA16161616ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToA8(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToABGR8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToARGB8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGR565(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGR888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGR888_BLUESCREEN(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGRA4444(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGRA5551(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGRA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGRX5551(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToBGRX8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToI8(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToIA88(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToRGB888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToRGB888_BLUESCREEN(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToUV88(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToUVLX8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::RGBA8888ToUVWQ8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::UV88ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::UVLX8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t ImageLoader::UVWQ8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t LoadConfigFile(char const*, VTexConfigInfo_t&, bool*)
- t LoadFile(char const*, CUtlBuffer&, bool, unsigned int*)
- t LoadSourceImages(IVTFTexture*, char const*, bool*, VTexConfigInfo_t&)
- t PSDConvertToRGBA8888(int, PSDMode_t, PSDPalette_t&, Bitmap_t&)
- t PSDReadCompressedChannels(CUtlBuffer&, int, PSDMode_t, PSDPalette_t&, Bitmap_t&)
- t PSDReadUncompressedChannels(CUtlBuffer&, int, PSDMode_t, PSDPalette_t&, Bitmap_t&)
- t SortStricmp(char* const*, char* const*)
- t TGALoader::DecompressRow(CUtlBuffer&, TGALoader::TGAHeader_t const&, unsigned char*)
- t TGALoader::ReadSourceImage(CUtlBuffer&, TGALoader::TGAHeader_t&, CUtlMemory<unsigned char, int>&)
- t TryLocateGameInfoFile(char*, int, bool)
- t VTexError(char const*, ...)
- t VTexOutputFunc(SpewType_t, char const*)
- t VTexWarning(char const*, ...)
- t __CreateCVTexILaunchableDLL_interface()
- t __CreateCVTexIVTex_interface()
- t global constructors keyed to a
- t stb__MatchColorsBlock(unsigned char*, unsigned char*, int)
  t void ImageLoader::ConvertFromATIxN<BGRA8888_t>(unsigned char const*, BGRA8888_t*, int, int, bool)
  t void ImageLoader::ConvertFromDXT1<BGR565_t>(unsigned char const*, BGR565_t*, int, int)
  t void ImageLoader::ConvertFromDXT1<BGR888_t>(unsigned char const*, BGR888_t*, int, int)
@@ -752,14 +727,39 @@
  t void ImageLoader::ConvertFromDXT5<BGRA4444_t>(unsigned char const*, BGRA4444_t*, int, int)
  t void ImageLoader::ConvertFromDXT5<BGRA5551_t>(unsigned char const*, BGRA5551_t*, int, int)
  t void ImageLoader::ConvertFromDXT5<BGRA8888_t>(unsigned char const*, BGRA8888_t*, int, int)
- t void ImageLoader::ConvertFromDXT5<RGBA8888_t>(unsigned char const*, RGBA8888_t*, int, int)
  t void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR565_t>(unsigned char const*, BGR565_t*, int, int)
  t void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR888_t>(unsigned char const*, BGR888_t*, int, int)
  t void ImageLoader::ConvertFromDXT5IgnoreAlpha<RGB888_t>(unsigned char const*, RGB888_t*, int, int)
+ t void ImageLoader::ConvertFromDXT5<RGBA8888_t>(unsigned char const*, RGBA8888_t*, int, int)
  t void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)
+ T V_RemoveDotSlashes(char*, char, bool)
+ T V_SetExtension(char*, char const*, int)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_SplitString2(char const*, char const**, int, CUtlVector<char*, CUtlMemory<char*, int> >&)
+ T V_SplitString(char const*, char const*, CUtlVector<char*, CUtlMemory<char*, int> >&)
+ T V_stricmp(char const*, char const*)
+ T V_StripExtension(char const*, char*, int)
+ T V_StripFilename(char*)
+ T V_StripLastDir(char*, int)
+ T V_StripTrailingSlash(char*)
+ T V_stristr(char*, char const*)
+ T V_stristr(char const*, char const*)
+ T V_strlower(char*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_StrRight(char const*, int, char*, int)
+ T V_StrSubst(char const*, char const*, char const*, char*, int, bool)
+ T VTexConfigInfo_t::ParseOptionKey(char const*, char const*)
+ t VTexError(char const*, ...)
+ t VTexOutputFunc(SpewType_t, char const*)
+ t VTexWarning(char const*, ...)
+ T V_vsnprintf(char*, int, char const*, char*)
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
+ Warning
  wcslen

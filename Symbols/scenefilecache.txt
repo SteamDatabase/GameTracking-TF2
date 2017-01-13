@@ -1,80 +1,91 @@
+ atof
+ atoi
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- B InterfaceReg::s_pInterfaceRegs
  B cvar
  B filesystem
+ b __g_CreateCSceneFileCacheISceneFileCache_reg
  B g_pCVar
+ b g_pStaticLZMABuf
+ b g_SceneFileCache
+ b g_unStaticLZMABufRef
+ b g_unStaticLZMABufSize
+ B InterfaceReg::s_pInterfaceRegs
  B lzma_persistent_buffer
+ b s_EmptyConVar
  B s_NoEscConversion
  B s_StringCharConversion
+ b vec2_invalid
+ b vec2_origin
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ d dyld__mach_header
+ d g_Alloc
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
  D typeinfo for CBaseAppSystem<ISceneFileCache>
  D typeinfo for CEmptyConVar
- D typeinfo for CSceneFileCache
- D typeinfo for CUtlCStringConversion
- D typeinfo for CUtlCharConversion
- D typeinfo for CUtlNoEscConversion
  D typeinfo for ConCommandBase
  D typeinfo for ConVar
+ D typeinfo for CSceneFileCache
+ D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlNoEscConversion
  D typeinfo for IAppSystem
  D typeinfo for IConVar
  D typeinfo for ISceneFileCache
  D vtable for CEmptyConVar
- D vtable for CSceneFileCache
- D vtable for CUtlCStringConversion
- D vtable for CUtlCharConversion
- D vtable for CUtlNoEscConversion
  D vtable for ConVar
+ D vtable for CSceneFileCache
+ D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlNoEscConversion
  Error
+ g_pMemAlloc
+ __gxx_personality_v0
+ memcpy
+ memset
+ memset_pattern16
+ pow
+ r .memset_pattern
+ r pulCRCTable
  R typeinfo name for CBaseAppSystem<ISceneFileCache>
  R typeinfo name for CEmptyConVar
- R typeinfo name for CSceneFileCache
- R typeinfo name for CUtlCStringConversion
- R typeinfo name for CUtlCharConversion
- R typeinfo name for CUtlNoEscConversion
  R typeinfo name for ConCommandBase
  R typeinfo name for ConVar
+ R typeinfo name for CSceneFileCache
+ R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlNoEscConversion
  R typeinfo name for IAppSystem
  R typeinfo name for IConVar
  R typeinfo name for ISceneFileCache
+ __stack_chk_fail
+ __stack_chk_guard
+ std::terminate()
+ strcmp
+ strlen
+ strncat
+ strncpy
  T CBaseAppSystem<ISceneFileCache>::QueryInterface(char const*)
+ T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CEmptyConVar::~CEmptyConVar()
+ T __clang_call_terminate
  T CLZMA::GetActualSize(unsigned char*)
  T CLZMA::IsCompressed(unsigned char*)
  T CLZMA::Uncompress(unsigned char*, unsigned char*)
- T CRC32_Final(unsigned int*)
- T CRC32_Init(unsigned int*)
- T CRC32_ProcessBuffer(unsigned int*, void const*, int)
- T CSceneFileCache::Connect(void* (*)(char const*, int*))
- T CSceneFileCache::Disconnect()
- T CSceneFileCache::FindSceneInImage(char const*)
- T CSceneFileCache::GetSceneBufferSize(char const*)
- T CSceneFileCache::GetSceneCachedData(char const*, SceneCachedData_t*)
- T CSceneFileCache::GetSceneCachedSound(int, int)
- T CSceneFileCache::GetSceneData(char const*, unsigned char*, unsigned long)
- T CSceneFileCache::GetSceneDataFromImage(char const*, int, unsigned char*, unsigned long*)
- T CSceneFileCache::GetSceneString(short)
- T CSceneFileCache::Init()
- T CSceneFileCache::Reload()
- T CSceneFileCache::Shutdown()
- T CSceneFileCache::~CSceneFileCache()
- T CUtlBuffer::AddNullTermination()
- T CUtlBuffer::CUtlBuffer(int, int, int)
- T CUtlBuffer::GetOverflow(int)
- T CUtlBuffer::PutOverflow(int)
- T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
- T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlNoEscConversion::FindConversion(char const*, int*)
  T ConCommandBase::CreateBase(char const*, char const*, int)
  T ConCommandBase::GetDLLIdentifier() const
  T ConVar::AddFlags(int)
  T ConVar::ChangeStringValue(char const*, float)
  T ConVar::ClampValue(float&)
+ T ConVar::~ConVar()
  T ConVar::ConVar(char const*, char const*, int, char const*)
  T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
  T ConVar::GetHelpText() const
@@ -89,22 +100,44 @@
  T ConVar::SetValue(char const*)
  T ConVar::SetValue(float)
  T ConVar::SetValue(int)
- T ConVar::~ConVar()
+ T CRC32_Final(unsigned int*)
+ T CRC32_Init(unsigned int*)
+ T CRC32_ProcessBuffer(unsigned int*, void const*, int)
+ t __CreateCSceneFileCacheISceneFileCache_interface()
  T CreateInterface
+ T CSceneFileCache::Connect(void* (*)(char const*, int*))
+ T CSceneFileCache::~CSceneFileCache()
+ T CSceneFileCache::Disconnect()
+ T CSceneFileCache::FindSceneInImage(char const*)
+ T CSceneFileCache::GetSceneBufferSize(char const*)
+ T CSceneFileCache::GetSceneCachedData(char const*, SceneCachedData_t*)
+ T CSceneFileCache::GetSceneCachedSound(int, int)
+ T CSceneFileCache::GetSceneData(char const*, unsigned char*, unsigned long)
+ T CSceneFileCache::GetSceneDataFromImage(char const*, int, unsigned char*, unsigned long*)
+ T CSceneFileCache::GetSceneString(short)
+ T CSceneFileCache::Init()
+ T CSceneFileCache::Reload()
+ T CSceneFileCache::Shutdown()
+ T CUtlBuffer::AddNullTermination()
+ T CUtlBuffer::CUtlBuffer(int, int, int)
+ T CUtlBuffer::GetOverflow(int)
+ T CUtlBuffer::PutOverflow(int)
+ T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+ T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlNoEscConversion::FindConversion(char const*, int*)
+ T dyld_stub_binding_helper
+ t global constructors keyed to a
+ ThreadInMainThread
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T LzmaDec_Allocate
  T LzmaDec_AllocateProbs
+ t LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
  T LzmaDec_DecodeToDic
  T LzmaDec_Free
  T LzmaDecode
- T V_FixSlashes(char*, char)
- T V_SetExtension(char*, char const*, int)
- T V_atof(char const*)
- T V_snprintf(char*, int, char const*, ...)
- T V_strlower(char*)
- T V_strncpy(char*, char const*, int)
- T __clang_call_terminate
- T dyld_stub_binding_helper
+ t LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
+ t LzmaDec_WriteRem(CLzmaDec*, unsigned long)
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -115,56 +148,23 @@
  T non-virtual thunk to ConVar::SetValue(char const*)
  T non-virtual thunk to ConVar::SetValue(float)
  T non-virtual thunk to ConVar::SetValue(int)
+ __tolower
  T operator delete(void*)
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- ThreadInMainThread
- Warning
- _Unwind_Resume
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __gxx_personality_v0
- __stack_chk_fail
- __stack_chk_guard
- __tolower
- atof
- atoi
- b __g_CreateCSceneFileCacheISceneFileCache_reg
- b g_SceneFileCache
- b g_pStaticLZMABuf
- b g_unStaticLZMABufRef
- b g_unStaticLZMABufSize
- b s_EmptyConVar
- b vec2_invalid
- b vec2_origin
- d dyld__mach_header
- d g_Alloc
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- g_pMemAlloc
- memcpy
- memset
- memset_pattern16
- pow
- r .memset_pattern
- r pulCRCTable
- std::terminate()
- strcmp
- strlen
- strncat
- strncpy
- t LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
- t LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
- t LzmaDec_WriteRem(CLzmaDec*, unsigned long)
  t SzAlloc(void*, unsigned long)
  t SzFree(void*, void*)
- t __CreateCSceneFileCacheISceneFileCache_interface()
- t global constructors keyed to a
+ T V_atof(char const*)
+ T V_FixSlashes(char*, char)
+ T V_SetExtension(char*, char const*, int)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_strlower(char*)
+ T V_strncpy(char*, char const*, int)
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
+ Warning

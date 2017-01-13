@@ -1,80 +1,133 @@
- B CUtlSymbol::s_pSymbolTable
+ access
+ atof
+ atoi
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- B InterfaceReg::s_pInterfaceRegs
+ B CUtlSymbol::s_pSymbolTable
  B cvar
  B g_bugreporter
+ b __g_CBugReporter_singleton
+ b g_CleanupSymbolTable
+ b __g_CreateCBugReporterIBugReporter_reg
  B g_pCVar
+ B InterfaceReg::s_pInterfaceRegs
+ b s_EmptyConVar
  B s_NoEscConversion
+ b s_pTokenBuf
  B s_StringCharConversion
+ b vec2_invalid
+ b vec2_origin
  COM_TimestampedLog
  CThreadSyncObject::~CThreadSyncObject()
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_acquire
+ __cxa_guard_release
  D CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D KeyValues::s_pfGetStringForSymbol
- D KeyValues::s_pfGetSymbolForString
+ d dyld__mach_header
+ _DefaultRuneLocale
+ DevMsg(char const*, ...)
  D g_KeyValuesErrorStack
  D guard variable for CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
+ D KeyValues::s_pfGetStringForSymbol
+ D KeyValues::s_pfGetSymbolForString
+ d s_LastFileLoadingFrom
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
  D typeinfo for CBugReporter
  D typeinfo for CEmptyConVar
- D typeinfo for CUtlCStringConversion
- D typeinfo for CUtlCharConversion
- D typeinfo for CUtlNoEscConversion
  D typeinfo for ConCommandBase
  D typeinfo for ConVar
+ D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlNoEscConversion
  D typeinfo for IBaseInterface
  D typeinfo for IBugReporter
  D typeinfo for IConVar
  D vtable for CBugReporter
  D vtable for CEmptyConVar
- D vtable for CUtlCStringConversion
- D vtable for CUtlCharConversion
- D vtable for CUtlNoEscConversion
  D vtable for ConVar
- DevMsg(char const*, ...)
+ D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlNoEscConversion
+ __error
  Error
+ fclose
+ fopen
+ fputs
+ fread
+ getenv
+ g_pMemAlloc
+ g_pVCR
+ __gxx_personality_v0
  KeyValuesSystem
+ __maskrune
+ memcpy
+ memmove
+ memset
+ mkdir
+ pow
+ pthread_mutex_destroy
+ RandomInt
+ r s_BackSlashMap
  R typeinfo name for CBugReporter
  R typeinfo name for CEmptyConVar
- R typeinfo name for CUtlCStringConversion
- R typeinfo name for CUtlCharConversion
- R typeinfo name for CUtlNoEscConversion
  R typeinfo name for ConCommandBase
  R typeinfo name for ConVar
+ R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlNoEscConversion
  R typeinfo name for IBaseInterface
  R typeinfo name for IBugReporter
  R typeinfo name for IConVar
- RandomInt
+ __stack_chk_fail
+ __stack_chk_guard
+ stat
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strlen
+ strncat
+ strncpy
+ strtod$UNIX2003
+ strtol
+ strtoul
+ system$UNIX2003
  T CBugReporter::AddIncludedFile(char const*)
  T CBugReporter::CancelNewBugReport()
+ T CBugReporter::~CBugReporter()
  T CBugReporter::CommitBugReport(int&)
- T CBugReporter::GetArea(int)
  T CBugReporter::GetAreaCount()
- T CBugReporter::GetAreaMap(int)
+ T CBugReporter::GetArea(int)
  T CBugReporter::GetAreaMapCount()
  T CBugReporter::GetAreaMapForArea(char const*)
- T CBugReporter::GetDisplayName(int)
+ T CBugReporter::GetAreaMap(int)
  T CBugReporter::GetDisplayNameCount()
  T CBugReporter::GetDisplayNameForUserName(char const*)
- T CBugReporter::GetLevel(int, int)
+ T CBugReporter::GetDisplayName(int)
  T CBugReporter::GetLevelCount(int)
- T CBugReporter::GetMapNumber(int)
+ T CBugReporter::GetLevel(int, int)
  T CBugReporter::GetMapNumberCount()
- T CBugReporter::GetName(int)
+ T CBugReporter::GetMapNumber(int)
  T CBugReporter::GetNameCount()
- T CBugReporter::GetPriority(int)
+ T CBugReporter::GetName(int)
  T CBugReporter::GetPriorityCount()
- T CBugReporter::GetReportType(int)
+ T CBugReporter::GetPriority(int)
  T CBugReporter::GetReportTypeCount()
+ T CBugReporter::GetReportType(int)
  T CBugReporter::GetRepositoryURL()
- T CBugReporter::GetSeverity(int)
  T CBugReporter::GetSeverityCount()
+ T CBugReporter::GetSeverity(int)
  T CBugReporter::GetSubmissionURL()
  T CBugReporter::GetUserName()
+ T CBugReporter::GetUserName_Display()
  T CBugReporter::GetUserNameForDisplayName(char const*)
  T CBugReporter::GetUserNameForIndex(int)
- T CBugReporter::GetUserName_Display()
  T CBugReporter::Init(void* (*)(char const*, int*))
  T CBugReporter::IsPublicUI()
  T CBugReporter::PopulateLists()
@@ -84,16 +137,16 @@
  T CBugReporter::SetBuildNumber(char const*)
  T CBugReporter::SetCPU(int)
  T CBugReporter::SetCSERAddress(netadr_s const&)
- T CBugReporter::SetDXVersion(unsigned int, unsigned int, unsigned int, unsigned int)
  T CBugReporter::SetDescription(char const*)
  T CBugReporter::SetDriverInfo(char const*)
+ T CBugReporter::SetDXVersion(unsigned int, unsigned int, unsigned int, unsigned int)
  T CBugReporter::SetExeName(char const*)
  T CBugReporter::SetGameDirectory(char const*)
  T CBugReporter::SetLevel(char const*)
  T CBugReporter::SetMapNumber(char const*)
  T CBugReporter::SetMiscInfo(char const*)
- T CBugReporter::SetOSVersion(char const*)
  T CBugReporter::SetOrientation(char const*)
+ T CBugReporter::SetOSVersion(char const*)
  T CBugReporter::SetOwner(char const*)
  T CBugReporter::SetPosition(char const*)
  T CBugReporter::SetPriority(char const*)
@@ -110,84 +163,21 @@
  T CBugReporter::SetZipAttachmentName(char const*)
  T CBugReporter::Shutdown()
  T CBugReporter::StartNewBugReport()
- T CBugReporter::~CBugReporter()
  T CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
+ T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CEmptyConVar::~CEmptyConVar()
  T CKeyValuesErrorStack::ReportError(char const*)
- T CUtlBuffer::AddNullTermination()
- T CUtlBuffer::AssumeMemory(void*, int, int, int)
- T CUtlBuffer::CUtlBuffer(int, int, int)
- T CUtlBuffer::CUtlBuffer(void const*, int, int)
- T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
- T CUtlBuffer::EatCPPComment()
- T CUtlBuffer::EatWhiteSpace()
- T CUtlBuffer::GetDelimitedCharInternal(CUtlCharConversion*)
- T CUtlBuffer::GetDelimitedString(CUtlCharConversion*, char*, int)
- T CUtlBuffer::GetOverflow(int)
- T CUtlBuffer::GetStringInternal(char*, unsigned long)
- T CUtlBuffer::PeekGet(int, int)
- T CUtlBuffer::PeekStringLength()
- T CUtlBuffer::PeekStringMatch(int, char const*, int)
- T CUtlBuffer::PeekWhiteSpace(int)
- T CUtlBuffer::Printf(char const*, ...)
- T CUtlBuffer::Put(void const*, int)
- T CUtlBuffer::PutOverflow(int)
- T CUtlBuffer::PutString(char const*)
- T CUtlBuffer::Scanf(char const*, ...)
- T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
- T CUtlBuffer::VaScanf(char const*, char*)
- T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
- T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
- T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
- T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&) const
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&, unsigned short&, bool&)
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&)
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RemoveAll()
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
- T CUtlSymbolTable::AddString(char const*)
- T CUtlSymbolTable::CLess::operator()(CUtlSymbolTable::CStringPoolIndex const&, CUtlSymbolTable::CStringPoolIndex const&) const
- T CUtlSymbolTable::CUtlSymbolTable(int, int, bool)
- T CUtlSymbolTable::Find(char const*) const
- T CUtlSymbolTable::RemoveAll()
- T CUtlSymbolTable::String(CUtlSymbol) const
- T CUtlSymbolTable::~CUtlSymbolTable()
- T CUtlSymbol_LessThan(CUtlSymbol const&, CUtlSymbol const&)
- T CUtlVector<CBug::incfile, CUtlMemory<CBug::incfile, int> >::~CUtlVector()
- T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::AddToTail(CUtlSymbol const&)
- T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::~CUtlVector()
- T CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
+ T __clang_call_terminate
  T ConCommandBase::CreateBase(char const*, char const*, int)
  T ConCommandBase::GetDLLIdentifier() const
  T ConVar::AddFlags(int)
  T ConVar::ChangeStringValue(char const*, float)
  T ConVar::ClampValue(float&)
+ T ConVar::~ConVar()
  T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
  T ConVar::GetHelpText() const
  T ConVar::GetName() const
@@ -201,11 +191,78 @@
  T ConVar::SetValue(char const*)
  T ConVar::SetValue(float)
  T ConVar::SetValue(int)
- T ConVar::~ConVar()
+ t __CreateCBugReporterIBugReporter_interface()
  T CreateInterface
+ T CUtlBuffer::AddNullTermination()
+ T CUtlBuffer::AssumeMemory(void*, int, int, int)
+ T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
+ T CUtlBuffer::CUtlBuffer(int, int, int)
+ T CUtlBuffer::CUtlBuffer(void const*, int, int)
+ T CUtlBuffer::EatCPPComment()
+ T CUtlBuffer::EatWhiteSpace()
+ T CUtlBuffer::GetDelimitedCharInternal(CUtlCharConversion*)
+ T CUtlBuffer::GetDelimitedString(CUtlCharConversion*, char*, int)
+ T CUtlBuffer::GetOverflow(int)
+ T CUtlBuffer::GetStringInternal(char*, unsigned long)
+ T CUtlBuffer::PeekGet(int, int)
+ T CUtlBuffer::PeekStringLength()
+ T CUtlBuffer::PeekStringMatch(int, char const*, int)
+ T CUtlBuffer::PeekWhiteSpace(int)
+ T CUtlBuffer::Printf(char const*, ...)
+ T CUtlBuffer::PutOverflow(int)
+ T CUtlBuffer::PutString(char const*)
+ T CUtlBuffer::Put(void const*, int)
+ T CUtlBuffer::Scanf(char const*, ...)
+ T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
+ T CUtlBuffer::VaScanf(char const*, char*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+ T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
+ T CUtlNoEscConversion::FindConversion(char const*, int*)
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&) const
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&, unsigned short&, bool&)
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&)
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RemoveAll()
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlSymbol_LessThan(CUtlSymbol const&, CUtlSymbol const&)
+ T CUtlSymbolTable::AddString(char const*)
+ T CUtlSymbolTable::CLess::operator()(CUtlSymbolTable::CStringPoolIndex const&, CUtlSymbolTable::CStringPoolIndex const&) const
+ T CUtlSymbolTable::~CUtlSymbolTable()
+ T CUtlSymbolTable::CUtlSymbolTable(int, int, bool)
+ T CUtlSymbolTable::Find(char const*) const
+ T CUtlSymbolTable::RemoveAll()
+ T CUtlSymbolTable::String(CUtlSymbol) const
+ T CUtlVector<CBug::incfile, CUtlMemory<CBug::incfile, int> >::~CUtlVector()
+ T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::AddToTail(CUtlSymbol const&)
+ T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::~CUtlVector()
+ T CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
+ T dyld_stub_binding_helper
  T EvaluateConditional(char const*)
  T GetCStringCharConversion()
  T GetNoEscCharConversion()
+ t global constructors keyed to a
+ ThreadSleep
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
  T KeyValues::FindKey(char const*, bool)
@@ -214,30 +271,18 @@
  T KeyValues::GetStringForSymbolClassic(int)
  T KeyValues::GetSymbolForStringClassic(char const*, bool)
  T KeyValues::KeyValues(char const*)
- T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
+ T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
  T KeyValues::MakeCopy() const
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
  T KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
  T KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
  T KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
  T KeyValues::RecursiveMergeKeyValues(KeyValues*)
  T KeyValues::RemoveEverything()
  T KeyValues::SetString(char const*, char const*)
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
- T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
- T V_AddBackSlashesToSpecialChars(char const*)
- T V_atof(char const*)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_stristr(char const*, char const*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T V_vsnprintf(char*, int, char const*, char*)
- T __clang_call_terminate
- T dyld_stub_binding_helper
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -248,71 +293,26 @@
  T non-virtual thunk to ConVar::SetValue(char const*)
  T non-virtual thunk to ConVar::SetValue(float)
  T non-virtual thunk to ConVar::SetValue(int)
+ __tolower
  T operator delete(void*)
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- ThreadSleep
- Warning
- _DefaultRuneLocale
- _Unwind_Resume
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_acquire
- __cxa_guard_release
- __error
- __gxx_personality_v0
- __maskrune
- __stack_chk_fail
- __stack_chk_guard
- __tolower
- access
- atof
- atoi
- b __g_CBugReporter_singleton
- b __g_CreateCBugReporterIBugReporter_reg
- b g_CleanupSymbolTable
- b s_EmptyConVar
- b s_pTokenBuf
- b vec2_invalid
- b vec2_origin
- d dyld__mach_header
- d s_LastFileLoadingFrom
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- fclose
- fopen
- fputs
- fread
- g_pMemAlloc
- g_pVCR
- getenv
- memcpy
- memmove
- memset
- mkdir
- pow
- pthread_mutex_destroy
- r s_BackSlashMap
- stat
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strlen
- strncat
- strncpy
- strtod$UNIX2003
- strtol
- strtoul
- system$UNIX2003
- t __CreateCBugReporterIBugReporter_interface()
- t global constructors keyed to a
+ T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
+ T V_AddBackSlashesToSpecialChars(char const*)
+ T V_atof(char const*)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_stristr(char const*, char const*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_vsnprintf(char*, int, char const*, char*)
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
+ Warning
  wcslen

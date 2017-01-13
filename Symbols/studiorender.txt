@@ -1,21 +1,44 @@
+ asin
+ atof
+ atoi
+ B colorcorrection
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- B InterfaceReg::s_pInterfaceRegs
- B SinCosTable
- B colorcorrection
+ b CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)::bumpvarCache
+ b CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)::phongVarCache
+ b CStudioRender::R_StudioFlexVerts(mstudiomesh_t*, int)::flexConversionTimesWarned
+ b CStudioRender::R_StudioFlexVerts(mstudiomesh_t*, int)::warnCount
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::alphaRefCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::lightmapVarCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalAlphaRefCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureFrameVarCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureVarCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::textureFrameVarCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::textureVarCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::translucentCache
  B cvar
- B g_StudioRender
- B g_VBAllocTracker
+ b eyeOriginCache
+ b eyeUpCache
+ b f05
+ b f3
+ b forwardVarCache
+ b __g_CreateCStudioRenderContextIStudioRender_reg
+ b glintCache
+ b glintUCache
+ b glintVCache
+ b g_Mathlib_GammaToLinear
+ b g_Mathlib_LinearToGamma
+ b g_nTotalDecalVerts
  B g_pCVar
  B g_pDataCache
  B g_pDmeMakefileUtils
  B g_pFullFileSystem
  B g_pInputSystem
- B g_pMDLCache
- B g_pMatSystemSurface
  B g_pMaterialSystem
  B g_pMaterialSystemDebugTextureInfo
  B g_pMaterialSystemHardwareConfig
+ B g_pMatSystemSurface
+ B g_pMDLCache
  B g_pNetworkSystem
  B g_pPhysicsCollision
  B g_pProcessUtils
@@ -30,34 +53,71 @@
  B g_pVGuiSchemeManager
  B g_pVGuiSurface
  B g_pVGuiSystem
- B g_pVTex
  B g_pVideo
+ B g_pVTex
+ B g_StudioRender
+ B g_VBAllocTracker
+ b illumVarCache
+ B InterfaceReg::s_pInterfaceRegs
+ b irisUCache
+ b irisVCache
+ b lightpos
  B lineartolightmap
+ b lineartoscreen
+ b lineartotexture
  B lineartovertex
  B materials
  B mdlcache
  B mdllib
  B p4
- B s_NoEscConversion
- B s_StringCharConversion
+ b r_flashlightscissor
+ b r_glint_alwaysdraw
+ b r_glint_procedural
+ b r_hwmorph
+ b r_randomflex
+ b r_studio_stats
+ b s_bConnected
  B s_bMathlibInitialized
+ b s_bMMXEnabled
+ b s_bRegistered
+ b s_bSSE2Enabled
+ b s_bSSEEnabled
+ b s_EmptyConVar
+ b s_GlintTextureRegen
+ B SinCosTable
+ b s_nCVarFlag
+ B s_NoEscConversion
+ b s_nSolidModelHullCache
+ b s_nTranslucentModelHullCache
+ b s_pProcGlint
+ b s_pVertexCount
+ b s_pZeroFlexWeights
+ B s_StringCharConversion
+ b s_StudioRenderContext
+ b studio_queue_mode
  B studiorender
+ b texturetolinear
+ b UsesMouthShader(IMaterial*)::clientShaderCache
+ b vec2_invalid
+ b vec2_origin
+ b vec4_invalid
+ b vec4_origin
+ ConDMsg
+ ConMsg(char const*, ...)
+ cosf
  CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CVProfNode::EnterScope()
  CVProfNode::ExitScope()
  CVProfNode::GetSubNode(char const*, int, char const*, int)
- ConDMsg
- ConMsg(char const*, ...)
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
  D CPixelWriter::SetPixelMemory(ImageFormat, void*, int)::format_error_printed
+ d dyld__mach_header
  D GetFatVertexData(mstudiomesh_t*, studiohdr_t*)::warnCount
- D KeyValues::s_pfGetSymbolForString
- D R_LightEffectsWorldFunctionTable::functions
- D R_LightEffectsWorldFunctionTable::m
- D R_LightEffectsWorldFunctionTableConstDirectional::functions
- D R_LightEffectsWorldFunctionTableConstDirectional::m
- D R_WorldLightDistanceFalloffFunctionTable::functions
- D R_WorldLightDistanceFalloffFunctionTable::m
  D g_pStudioRenderImp
+ d g_SoftwareProcessMeshFunc
+ D KeyValues::s_pfGetSymbolForString
  D pfFastCos
  D pfFastSinCos
  D pfInvRSquared
@@ -66,6 +126,18 @@
  D pfSqrt
  D pfVectorNormalize
  D pfVectorNormalizeFast
+ D R_LightEffectsWorldFunctionTableConstDirectional::functions
+ D R_LightEffectsWorldFunctionTableConstDirectional::m
+ D R_LightEffectsWorldFunctionTable::functions
+ D R_LightEffectsWorldFunctionTable::m
+ D R_WorldLightDistanceFalloffFunctionTable::functions
+ D R_WorldLightDistanceFalloffFunctionTable::m
+ d s_DefaultAccessor
+ d s_nDLLIdentifier
+ d s_pAmbientLightDir
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ d s_pWhite
  D typeinfo for CBaseAppSystem<IStudioRender>
  D typeinfo for CDefaultAccessor
  D typeinfo for CEmptyConVar
@@ -78,18 +150,18 @@
  D typeinfo for CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
  D typeinfo for CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
  D typeinfo for CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
- D typeinfo for CRefCountServiceBase<true, CRefMT>
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
  D typeinfo for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
+ D typeinfo for CRefCountServiceBase<true, CRefMT>
  D typeinfo for CStudioRenderContext
  D typeinfo for CTier0AppSystem<IStudioRender>
  D typeinfo for CTier1AppSystem<IStudioRender, 0>
  D typeinfo for CTier2AppSystem<IStudioRender, 0>
  D typeinfo for CTier3AppSystem<IStudioRender, 0>
- D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlNoEscConversion
- D typeinfo for ConCommandBase
- D typeinfo for ConVar
  D typeinfo for IAppSystem
  D typeinfo for IConCommandBaseAccessor
  D typeinfo for IConVar
@@ -106,16 +178,32 @@
  D vtable for CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
  D vtable for CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
  D vtable for CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
- D vtable for CStudioRenderContext
- D vtable for CUtlCStringConversion
- D vtable for CUtlCharConversion
- D vtable for CUtlNoEscConversion
  D vtable for ConVar
+ D vtable for CStudioRenderContext
+ D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlNoEscConversion
  Error
+ exp
+ floorf
  GetCPUInformation
+ g_pMemAlloc
+ g_VProfCurrentProfile
+ __gxx_personality_v0
  KeyValuesSystem
+ memcpy
+ memmove
+ memset
  Msg
+ pow
+ qsort
+ RandomFloat
+ RandomInt
+ r boxpnt
  R g_SIMD_ComponentMask
+ r hullcolor
+ r sg_IndexSwap
+ r s_pLightMask
  R typeinfo name for CBaseAppSystem<IStudioRender>
  R typeinfo name for CDefaultAccessor
  R typeinfo name for CEmptyConVar
@@ -128,26 +216,36 @@
  R typeinfo name for CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
  R typeinfo name for CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
  R typeinfo name for CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
- R typeinfo name for CRefCountServiceBase<true, CRefMT>
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
  R typeinfo name for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
+ R typeinfo name for CRefCountServiceBase<true, CRefMT>
  R typeinfo name for CStudioRenderContext
  R typeinfo name for CTier0AppSystem<IStudioRender>
  R typeinfo name for CTier1AppSystem<IStudioRender, 0>
  R typeinfo name for CTier2AppSystem<IStudioRender, 0>
  R typeinfo name for CTier3AppSystem<IStudioRender, 0>
- R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlNoEscConversion
- R typeinfo name for ConCommandBase
- R typeinfo name for ConVar
  R typeinfo name for IAppSystem
  R typeinfo name for IConCommandBaseAccessor
  R typeinfo name for IConVar
  R typeinfo name for IRefCounted
  R typeinfo name for IStudioRender
  R typeinfo name for ITextureRegenerator
- RandomFloat
- RandomInt
+ sin
+ __stack_chk_fail
+ __stack_chk_guard
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strlen
+ strncat
+ strncpy
+ T bool CStudioRenderContext::R_AddVertexToMesh<(VertexCompressionType_t)0>(char const*, bool, CMeshBuilder&, OptimizedModel::Vertex_t*, mstudiomesh_t*, mstudio_meshvertexdata_t const*, bool)
+ T bool CStudioRenderContext::R_AddVertexToMesh<(VertexCompressionType_t)1>(char const*, bool, CMeshBuilder&, OptimizedModel::Vertex_t*, mstudiomesh_t*, mstudio_meshvertexdata_t const*, bool)
  T BuildGammaTable(float, float, float, int)
  T CCachedRenderData::CCachedRenderData()
  T CCachedRenderData::CreateFlexVertex(int)
@@ -161,28 +259,61 @@
  T CCachedRenderData::SetupComputation(mstudiomesh_t*, bool)
  T CCachedRenderData::StartModel()
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+ T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CEmptyConVar::~CEmptyConVar()
  T CGlintTextureRegenerator::RegenerateTextureBits(ITexture*, IVTFTexture*, Rect_t*)
  T CGlintTextureRegenerator::Release()
- T CMemberFunctor0<CStudioRender*, void (CStudioRender::*)(), CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T __clang_call_terminate
+ t ClipTriangleAgainstPlane(DecalClipState_t&, int, int, float)
  T CMemberFunctor0<CStudioRender*, void (CStudioRender::*)(), CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor0()
- T CMemberFunctor11<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int), StudioDecalHandle_t__*, StudioRenderContext_t, matrix3x4_t*, studiohdr_t*, Ray_t, Vector, IMaterial*, float, int, bool, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T CMemberFunctor0<CStudioRender*, void (CStudioRender::*)(), CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
  T CMemberFunctor11<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int), StudioDecalHandle_t__*, StudioRenderContext_t, matrix3x4_t*, studiohdr_t*, Ray_t, Vector, IMaterial*, float, int, bool, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor11()
- T CMemberFunctor1<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*), StudioDecalHandle_t__*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T CMemberFunctor11<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int), StudioDecalHandle_t__*, StudioRenderContext_t, matrix3x4_t*, studiohdr_t*, Ray_t, Vector, IMaterial*, float, int, bool, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
  T CMemberFunctor1<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*), StudioDecalHandle_t__*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor1()
- T CMemberFunctor3<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T CMemberFunctor1<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*), StudioDecalHandle_t__*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
  T CMemberFunctor3<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor3()
- T CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T CMemberFunctor3<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
  T CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor4()
- T CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
  T CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor5()
- T CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
  T CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor5()
+ T CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
+ T ComputePoseToWorld(matrix3x4_t*, studiohdr_t*, int, Vector const&, matrix3x4_t const*)
+ t ComputeSkinMatrix(mstudioboneweight_t&, matrix3x4_t*, matrix3x4_t&)
+ T ComputeTrianglePlane(Vector const&, Vector const&, Vector const&, Vector&, float&)
+ T ConcatTransforms(matrix3x4_t const&, matrix3x4_t const&, matrix3x4_t&)
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier3Libraries(void* (**)(char const*, int*), int)
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::~ConVar()
+ T ConVar::ConVar(char const*, char const*, int)
+ T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar_Unregister()
+ T CopyLocalLightingState(int, LightDesc_t*, int, LightDesc_t const*)
  T CProcessMeshWrapper<0, 0, 0, 0, 0>::R_StudioSoftwareProcessMesh(mstudio_meshvertexdata_t const*, matrix3x4_t*, CCachedRenderData&, CMeshBuilder&, int, unsigned short*, unsigned int, IMaterial*)
  T CProcessMeshWrapper<0, 0, 0, 0, 1>::R_StudioSoftwareProcessMesh(mstudio_meshvertexdata_t const*, matrix3x4_t*, CCachedRenderData&, CMeshBuilder&, int, unsigned short*, unsigned int, IMaterial*)
  T CProcessMeshWrapper<0, 0, 0, 1, 0>::R_PerformLighting(Vector const&, float, Vector const&, Vector const&, unsigned int, unsigned int*)
@@ -287,9 +418,12 @@
  T CProcessMeshWrapper<1, 1, 1, 2, 1>::R_PerformLighting(Vector const&, float, Vector const&, Vector const&, unsigned int, unsigned int*)
  T CProcessMeshWrapper<1, 1, 1, 2, 1>::R_StudioSoftwareProcessMesh(mstudio_meshvertexdata_t const*, matrix3x4_t*, CCachedRenderData&, CMeshBuilder&, int, unsigned short*, unsigned int, IMaterial*)
  T CProcessMeshWrapper<1, 1, 1, 2, 1>::R_TransformVert(Vector const*, Vector const*, Vector4D const*, matrix3x4_t*, VectorAligned&, Vector&, Vector4DAligned&)
- T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
+ t __CreateCStudioRenderContextIStudioRender_interface()
+ T CreateInterface
+ T CreateInterfaceInternal(char const*, int*)
  T CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
  T CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
+ T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
  T CStudioRender::AddClippedDecalToTriangle(CStudioRender::DecalBuildInfo_t&, DecalClipState_t&)
  T CStudioRender::AddDecal(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int)
  T CStudioRender::AddDecalToMesh(CStudioRender::DecalBuildInfo_t&)
@@ -298,22 +432,88 @@
  T CStudioRender::AddShadow(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*)
  T CStudioRender::AddTriangleToDecal(CStudioRender::DecalBuildInfo_t&, int, int, int, int, int, int)
  T CStudioRender::BuildGlintRenderData(CStudioRender::GlintRenderData_t*, int, eyeballstate_t const*, Vector const&, Vector const&, Vector const&)
- T CStudioRender::CStudioRender()
  T CStudioRender::ClearAllShadows()
  T CStudioRender::ClipDecal(CStudioRender::DecalBuildInfo_t&, int, int, int, int*)
  T CStudioRender::ComputeFlexWeights(int, mstudioflex_t*, MorphWeight_t*)
  T CStudioRender::ComputeGlintTextureProjection(eyeballstate_t const*, Vector const&, Vector const&, matrix3x4_t&)
  T CStudioRender::ComputePoseToDecal(Ray_t const&, Vector const&)
  T CStudioRender::ComputeVertexAllocation(int, int, studiohwdata_t*, MeshVertexInfo_t*)
+ T CStudioRenderContext::AddDecal(StudioDecalHandle_t__*, studiohdr_t*, matrix3x4_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int)
+ T CStudioRenderContext::AddShadow(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*)
+ T CStudioRenderContext::BeginFrame()
+ T CStudioRenderContext::BuildDecalBoneMap(studiohdr_t*, int*, int*, int*, mstudiomesh_t*, OptimizedModel::StripGroupHeader_t*)
+ T CStudioRenderContext::CalculateVertexFormat(studiohdr_t const*, studioloddata_t const*, mstudiomesh_t const*, OptimizedModel::StripGroupHeader_t*, bool)
+ T CStudioRenderContext::ClearAllShadows()
+ T CStudioRenderContext::ComputeHWMorphDecalBoneRemap(studiohdr_t*, OptimizedModel::FileHeader_t*, studiohwdata_t*, int)
+ T CStudioRenderContext::ComputeLightingConstDirectional(Vector const*, int, LightDesc_t*, Vector const&, Vector const&, Vector&, float)
+ T CStudioRenderContext::ComputeLighting(Vector const*, int, LightDesc_t*, Vector const&, Vector const&, Vector&)
+ T CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)
+ T CStudioRenderContext::ComputeModelLod(studiohwdata_t*, float, float*)
+ T CStudioRenderContext::ComputeRenderLOD(IMatRenderContext*, DrawModelInfo_t const&, Vector const&, float*)
+ T CStudioRenderContext::Connect(void* (*)(char const*, int*))
+ T CStudioRenderContext::CountFlexedVertices(mstudiomesh_t*, OptimizedModel::StripGroupHeader_t*)
+ T CStudioRenderContext::CreateDecalList(studiohwdata_t*)
+ T CStudioRenderContext::~CStudioRenderContext()
+ T CStudioRenderContext::DestroyDecalList(StudioDecalHandle_t__*)
+ T CStudioRenderContext::DetermineHWMorphing(mstudiomodel_t*, OptimizedModel::ModelLODHeader_t*)
+ T CStudioRenderContext::Disconnect()
+ T CStudioRenderContext::DrawModelArray(DrawModelInfo_t const&, int, model_array_instance_t*, int, int)
+ T CStudioRenderContext::DrawModel(DrawModelResults_t*, DrawModelInfo_t const&, matrix3x4_t*, float*, float*, Vector const&, int)
+ T CStudioRenderContext::DrawModelStaticProp(DrawModelInfo_t const&, matrix3x4_t const&, int)
+ T CStudioRenderContext::DrawStaticPropDecals(DrawModelInfo_t const&, matrix3x4_t const&)
+ T CStudioRenderContext::DrawStaticPropShadows(DrawModelInfo_t const&, matrix3x4_t const&, int)
+ T CStudioRenderContext::EndFrame()
+ T CStudioRenderContext::ForcedMaterialOverride(IMaterial*, OverrideType_t)
+ T CStudioRenderContext::GenerateRandomFlexWeights(int, float*, float*)
+ T CStudioRenderContext::GetAmbientLightDirections()
+ T CStudioRenderContext::GetCurrentConfig(StudioRenderConfig_t&)
+ T CStudioRenderContext::GetLODSwitchValue(studiohwdata_t const&, int) const
+ T CStudioRenderContext::GetMaterialListFromBodyAndSkin(unsigned short, int, int, int, IMaterial**)
+ T CStudioRenderContext::GetMaterialList(studiohdr_t*, int, IMaterial**)
+ T CStudioRenderContext::GetMaterialOverride(IMaterial**, OverrideType_t*)
+ T CStudioRenderContext::GetNumAmbientLightSamples()
+ T CStudioRenderContext::GetNumLODs(studiohwdata_t const&) const
+ T CStudioRenderContext::GetPerfStats(DrawModelResults_t*, DrawModelInfo_t const&, CUtlBuffer*) const
+ T CStudioRenderContext::GetTriangles(DrawModelInfo_t const&, matrix3x4_t*, GetTriangles_Output_t&)
+ T CStudioRenderContext::Init()
+ T CStudioRenderContext::InvokeBindProxies(DrawModelInfo_t const&)
+ T CStudioRenderContext::LoadMaterials(studiohdr_t*, OptimizedModel::FileHeader_t*, studioloddata_t&, int)
+ T CStudioRenderContext::LoadModel(studiohdr_t*, void*, studiohwdata_t*)
+ T CStudioRenderContext::LockBoneMatrices(int)
+ T CStudioRenderContext::LockFlexWeights(int, float**, float**)
+ T CStudioRenderContext::Mat_Stub(IMaterialSystem*)
+ T CStudioRenderContext::QueryInterface(char const*)
+ T CStudioRenderContext::RefreshStudioHdr(studiohdr_t*, studiohwdata_t*)
+ T CStudioRenderContext::R_StudioBuildMeshGroup(char const*, bool, studiomeshgroup_t*, OptimizedModel::StripGroupHeader_t*, mstudiomesh_t*, studiohdr_t*, unsigned long long)
+ T CStudioRenderContext::R_StudioBuildMeshStrips(studiomeshgroup_t*, OptimizedModel::StripGroupHeader_t*)
+ T CStudioRenderContext::R_StudioBuildMorph(studiohdr_t*, studiomeshgroup_t*, mstudiomesh_t*, OptimizedModel::StripGroupHeader_t*)
+ T CStudioRenderContext::R_StudioCreateSingleMesh(studiohdr_t*, studioloddata_t*, mstudiomesh_t*, OptimizedModel::MeshHeader_t*, int, studiomeshdata_t*, int*)
+ T CStudioRenderContext::R_StudioCreateStaticMeshes(studiohdr_t*, OptimizedModel::FileHeader_t*, studiohwdata_t*, int, int*)
+ T CStudioRenderContext::R_StudioDestroyStaticMeshes(int, studiomeshdata_t**)
+ T CStudioRenderContext::SetAlphaModulation(float)
+ T CStudioRenderContext::SetAmbientLightColors(Vector4D const*)
+ T CStudioRenderContext::SetAmbientLightColors(Vector const*)
+ T CStudioRenderContext::SetColorModulation(float const*)
+ T CStudioRenderContext::SetEyeViewTarget(studiohdr_t const*, int, Vector const&)
+ T CStudioRenderContext::SetLocalLights(int, LightDesc_t const*)
+ T CStudioRenderContext::SetLODSwitchValue(studiohwdata_t&, int, float)
+ T CStudioRenderContext::SetViewState(Vector const&, Vector const&, Vector const&, Vector const&)
+ T CStudioRenderContext::Shutdown()
+ T CStudioRenderContext::UnloadModel(studiohwdata_t*)
+ T CStudioRenderContext::UnlockBoneMatrices()
+ T CStudioRenderContext::UnlockFlexWeights()
+ T CStudioRenderContext::UpdateConfig(StudioRenderConfig_t const&)
  T CStudioRender::ConvertMeshVertexToDecalVertex(CStudioRender::DecalBuildInfo_t&, int, DecalVertex_t&, int)
  T CStudioRender::CreateDecalList(studiohwdata_t*)
+ T CStudioRender::~CStudioRender()
+ T CStudioRender::CStudioRender()
  T CStudioRender::DestroyDecalList(StudioDecalHandle_t__*)
  T CStudioRender::DisableScissor()
  T CStudioRender::DrawDecal(DrawModelInfo_t const&, int, int)
  T CStudioRender::DrawDecalMaterial(IMatRenderContext*, CStudioRender::DecalMaterial_t&, studiohdr_t*, studioloddata_t*)
  T CStudioRender::DrawFlashlightDecals(DrawModelInfo_t const&, int)
- T CStudioRender::DrawModel(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int)
  T CStudioRender::DrawModelArray(DrawModelInfo_t const&, StudioRenderContext_t const&, int, model_array_instance_t*, int, int)
+ T CStudioRender::DrawModel(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int)
  T CStudioRender::DrawModelStaticProp(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int)
  T CStudioRender::DrawMultiBoneDecals(CMeshBuilder&, CStudioRender::DecalMaterial_t&, studiohdr_t*)
  T CStudioRender::DrawMultiBoneFlexedDecals(IMatRenderContext*, CMeshBuilder&, CStudioRender::DecalMaterial_t&, studiohdr_t*, studioloddata_t*)
@@ -328,9 +528,12 @@
  T CStudioRender::Init()
  T CStudioRender::InitDebugMaterials()
  T CStudioRender::ModelStats(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int)
- T CStudioRender::PreDrawDecal(IMatRenderContext*, DrawModelInfo_t const&)
  T CStudioRender::PrecacheGlint()
+ T CStudioRender::PreDrawDecal(IMatRenderContext*, DrawModelInfo_t const&)
  T CStudioRender::ProjectDecalOntoMesh(CStudioRender::DecalBuildInfo_t&, CStudioRender::DecalBuildVertexInfo_t*, mstudiomesh_t*)
+ T CStudioRender::RampFlexWeight(mstudioflex_t&, float)
+ T CStudioRender::RenderGlintTexture(eyeballstate_t const*, Vector const&, Vector const&, Vector const&)
+ T CStudioRender::RetireDecal(CStudioRender::DecalModelList_t&, unsigned short, int, int)
  T CStudioRender::R_GatherStats(studiomeshgroup_t*, CMeshBuilder&, IMesh*, IMaterial*)
  T CStudioRender::R_InitLightEffectsWorld3()
  T CStudioRender::R_LightGlintPosition(int, Vector const&, Vector&, Vector&)
@@ -358,90 +561,21 @@
  T CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)
  T CStudioRender::R_StudioSoftwareProcessMesh(mstudiomesh_t*, CMeshBuilder&, int, unsigned short*, StudioModelLighting_t, bool, float, bool, bool, IMaterial*)
  T CStudioRender::R_StudioSoftwareProcessMesh_Normals(mstudiomesh_t*, CMeshBuilder&, int, unsigned short*, StudioModelLighting_t, bool, float, bool, bool)
- T CStudioRender::RampFlexWeight(mstudioflex_t&, float)
- T CStudioRender::RenderGlintTexture(eyeballstate_t const*, Vector const&, Vector const&, Vector const&)
- T CStudioRender::RetireDecal(CStudioRender::DecalModelList_t&, unsigned short, int, int)
  T CStudioRender::SetEyeMaterialVars(IMaterial*, mstudioeyeball_t*, Vector const&, matrix3x4_t const&, matrix3x4_t const&)
  T CStudioRender::SetLightingRenderState()
  T CStudioRender::Shutdown()
  T CStudioRender::TransformToDecalSpace(CStudioRender::DecalBuildInfo_t&, Vector const&, mstudioboneweight_t*, Vector2D&)
  T CStudioRender::UncacheGlint()
- T CStudioRender::~CStudioRender()
- T CStudioRenderContext::AddDecal(StudioDecalHandle_t__*, studiohdr_t*, matrix3x4_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int)
- T CStudioRenderContext::AddShadow(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*)
- T CStudioRenderContext::BeginFrame()
- T CStudioRenderContext::BuildDecalBoneMap(studiohdr_t*, int*, int*, int*, mstudiomesh_t*, OptimizedModel::StripGroupHeader_t*)
- T CStudioRenderContext::CalculateVertexFormat(studiohdr_t const*, studioloddata_t const*, mstudiomesh_t const*, OptimizedModel::StripGroupHeader_t*, bool)
- T CStudioRenderContext::ClearAllShadows()
- T CStudioRenderContext::ComputeHWMorphDecalBoneRemap(studiohdr_t*, OptimizedModel::FileHeader_t*, studiohwdata_t*, int)
- T CStudioRenderContext::ComputeLighting(Vector const*, int, LightDesc_t*, Vector const&, Vector const&, Vector&)
- T CStudioRenderContext::ComputeLightingConstDirectional(Vector const*, int, LightDesc_t*, Vector const&, Vector const&, Vector&, float)
- T CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)
- T CStudioRenderContext::ComputeModelLod(studiohwdata_t*, float, float*)
- T CStudioRenderContext::ComputeRenderLOD(IMatRenderContext*, DrawModelInfo_t const&, Vector const&, float*)
- T CStudioRenderContext::Connect(void* (*)(char const*, int*))
- T CStudioRenderContext::CountFlexedVertices(mstudiomesh_t*, OptimizedModel::StripGroupHeader_t*)
- T CStudioRenderContext::CreateDecalList(studiohwdata_t*)
- T CStudioRenderContext::DestroyDecalList(StudioDecalHandle_t__*)
- T CStudioRenderContext::DetermineHWMorphing(mstudiomodel_t*, OptimizedModel::ModelLODHeader_t*)
- T CStudioRenderContext::Disconnect()
- T CStudioRenderContext::DrawModel(DrawModelResults_t*, DrawModelInfo_t const&, matrix3x4_t*, float*, float*, Vector const&, int)
- T CStudioRenderContext::DrawModelArray(DrawModelInfo_t const&, int, model_array_instance_t*, int, int)
- T CStudioRenderContext::DrawModelStaticProp(DrawModelInfo_t const&, matrix3x4_t const&, int)
- T CStudioRenderContext::DrawStaticPropDecals(DrawModelInfo_t const&, matrix3x4_t const&)
- T CStudioRenderContext::DrawStaticPropShadows(DrawModelInfo_t const&, matrix3x4_t const&, int)
- T CStudioRenderContext::EndFrame()
- T CStudioRenderContext::ForcedMaterialOverride(IMaterial*, OverrideType_t)
- T CStudioRenderContext::GenerateRandomFlexWeights(int, float*, float*)
- T CStudioRenderContext::GetAmbientLightDirections()
- T CStudioRenderContext::GetCurrentConfig(StudioRenderConfig_t&)
- T CStudioRenderContext::GetLODSwitchValue(studiohwdata_t const&, int) const
- T CStudioRenderContext::GetMaterialList(studiohdr_t*, int, IMaterial**)
- T CStudioRenderContext::GetMaterialListFromBodyAndSkin(unsigned short, int, int, int, IMaterial**)
- T CStudioRenderContext::GetMaterialOverride(IMaterial**, OverrideType_t*)
- T CStudioRenderContext::GetNumAmbientLightSamples()
- T CStudioRenderContext::GetNumLODs(studiohwdata_t const&) const
- T CStudioRenderContext::GetPerfStats(DrawModelResults_t*, DrawModelInfo_t const&, CUtlBuffer*) const
- T CStudioRenderContext::GetTriangles(DrawModelInfo_t const&, matrix3x4_t*, GetTriangles_Output_t&)
- T CStudioRenderContext::Init()
- T CStudioRenderContext::InvokeBindProxies(DrawModelInfo_t const&)
- T CStudioRenderContext::LoadMaterials(studiohdr_t*, OptimizedModel::FileHeader_t*, studioloddata_t&, int)
- T CStudioRenderContext::LoadModel(studiohdr_t*, void*, studiohwdata_t*)
- T CStudioRenderContext::LockBoneMatrices(int)
- T CStudioRenderContext::LockFlexWeights(int, float**, float**)
- T CStudioRenderContext::Mat_Stub(IMaterialSystem*)
- T CStudioRenderContext::QueryInterface(char const*)
- T CStudioRenderContext::R_StudioBuildMeshGroup(char const*, bool, studiomeshgroup_t*, OptimizedModel::StripGroupHeader_t*, mstudiomesh_t*, studiohdr_t*, unsigned long long)
- T CStudioRenderContext::R_StudioBuildMeshStrips(studiomeshgroup_t*, OptimizedModel::StripGroupHeader_t*)
- T CStudioRenderContext::R_StudioBuildMorph(studiohdr_t*, studiomeshgroup_t*, mstudiomesh_t*, OptimizedModel::StripGroupHeader_t*)
- T CStudioRenderContext::R_StudioCreateSingleMesh(studiohdr_t*, studioloddata_t*, mstudiomesh_t*, OptimizedModel::MeshHeader_t*, int, studiomeshdata_t*, int*)
- T CStudioRenderContext::R_StudioCreateStaticMeshes(studiohdr_t*, OptimizedModel::FileHeader_t*, studiohwdata_t*, int, int*)
- T CStudioRenderContext::R_StudioDestroyStaticMeshes(int, studiomeshdata_t**)
- T CStudioRenderContext::RefreshStudioHdr(studiohdr_t*, studiohwdata_t*)
- T CStudioRenderContext::SetAlphaModulation(float)
- T CStudioRenderContext::SetAmbientLightColors(Vector const*)
- T CStudioRenderContext::SetAmbientLightColors(Vector4D const*)
- T CStudioRenderContext::SetColorModulation(float const*)
- T CStudioRenderContext::SetEyeViewTarget(studiohdr_t const*, int, Vector const&)
- T CStudioRenderContext::SetLODSwitchValue(studiohwdata_t&, int, float)
- T CStudioRenderContext::SetLocalLights(int, LightDesc_t const*)
- T CStudioRenderContext::SetViewState(Vector const&, Vector const&, Vector const&, Vector const&)
- T CStudioRenderContext::Shutdown()
- T CStudioRenderContext::UnloadModel(studiohwdata_t*)
- T CStudioRenderContext::UnlockBoneMatrices()
- T CStudioRenderContext::UnlockFlexWeights()
- T CStudioRenderContext::UpdateConfig(StudioRenderConfig_t const&)
- T CStudioRenderContext::~CStudioRenderContext()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::Printf(char const*, ...)
- T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::PutString(char const*)
+ T CUtlBuffer::Put(void const*, int)
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlLinkedList<CStudioRender::DecalHistory_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalHistory_t, unsigned short>, unsigned short> >::AllocInternal(bool)
- T CUtlLinkedList<CStudioRender::DecalHistory_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalHistory_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
  T CUtlLinkedList<CStudioRender::DecalHistory_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalHistory_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
+ T CUtlLinkedList<CStudioRender::DecalHistory_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalHistory_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
  T CUtlLinkedList<CStudioRender::DecalLRU_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CStudioRender::DecalLRU_t, int> > >::AllocInternal(bool)
  T CUtlLinkedList<CStudioRender::DecalLRU_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CStudioRender::DecalLRU_t, int> > >::RemoveAll()
  T CUtlLinkedList<CStudioRender::DecalLRU_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CStudioRender::DecalLRU_t, int> > >::Unlink(int)
@@ -453,121 +587,46 @@
  T CUtlLinkedList<CStudioRender::DecalModelList_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CStudioRender::DecalModelList_t, int> > >::RemoveAll()
  T CUtlLinkedList<CStudioRender::DecalModelList_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CStudioRender::DecalModelList_t, int> > >::Unlink(int)
  T CUtlLinkedList<CStudioRender::Decal_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short> >::AllocInternal(bool)
+ T CUtlLinkedList<CStudioRender::Decal_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<CStudioRender::Decal_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
  T CUtlLinkedList<CStudioRender::Decal_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short> >::Purge()
- T CUtlLinkedList<CStudioRender::Decal_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<DecalVertex_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short> >::AllocInternal(bool)
+ T CUtlLinkedList<DecalVertex_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<DecalVertex_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short> >::InsertBefore(unsigned short, DecalVertex_t const&)
  T CUtlLinkedList<DecalVertex_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
  T CUtlLinkedList<DecalVertex_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short> >::Purge()
- T CUtlLinkedList<DecalVertex_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalHistory_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalMaterial_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >::~CUtlVector()
- T CUtlVector<CStudioRender::ShadowState_t, CUtlMemory<CStudioRender::ShadowState_t, int> >::~CUtlVector()
- T CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >::~CUtlVector()
- T CUtlVector<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, CUtlMemory<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, CUtlMemory<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, int> >::~CUtlVector()
- T CUtlVector<GetTriangles_Vertex_t, CUtlMemory<GetTriangles_Vertex_t, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<GetTriangles_Vertex_t, CUtlMemory<GetTriangles_Vertex_t, int> >::~CUtlVector()
- T CUtlVector<Vector, CUtlMemory<Vector, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<Vector, CUtlMemory<Vector, int> >::~CUtlVector()
- T CUtlVector<Vector2D, CUtlMemory<Vector2D, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<Vector2D, CUtlMemory<Vector2D, int> >::~CUtlVector()
- T CUtlVector<bool, CUtlMemory<bool, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<bool, CUtlMemory<bool, int> >::~CUtlVector()
- T CUtlVector<float, CUtlMemory<float, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<bool, CUtlMemory<bool, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >::~CUtlVector()
+ T CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<CStudioRender::ShadowState_t, CUtlMemory<CStudioRender::ShadowState_t, int> >::~CUtlVector()
+ T CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >::~CUtlVector()
+ T CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, CUtlMemory<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, int> >::~CUtlVector()
+ T CUtlVector<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, CUtlMemory<CUtlVector<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, CUtlMemory<CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >, int> >, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<float, CUtlMemory<float, int> >::~CUtlVector()
- T CUtlVector<int, CUtlMemory<int, int> >::GrowVector(int)
+ T CUtlVector<float, CUtlMemory<float, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<GetTriangles_Vertex_t, CUtlMemory<GetTriangles_Vertex_t, int> >::~CUtlVector()
+ T CUtlVector<GetTriangles_Vertex_t, CUtlMemory<GetTriangles_Vertex_t, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
- T CUtlVector<short, CUtlMemory<short, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<int, CUtlMemory<int, int> >::GrowVector(int)
  T CUtlVector<short, CUtlMemory<short, int> >::~CUtlVector()
+ T CUtlVector<short, CUtlMemory<short, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::AddToTail(unsigned short const&)
  T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
- T ComputePoseToWorld(matrix3x4_t*, studiohdr_t*, int, Vector const&, matrix3x4_t const*)
- T ComputeTrianglePlane(Vector const&, Vector const&, Vector const&, Vector&, float&)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::ConVar(char const*, char const*, int)
- T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar::~ConVar()
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar_Unregister()
- T ConcatTransforms(matrix3x4_t const&, matrix3x4_t const&, matrix3x4_t&)
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T ConnectTier3Libraries(void* (**)(char const*, int*), int)
- T CopyLocalLightingState(int, LightDesc_t*, int, LightDesc_t const*)
- T CreateInterface
- T CreateInterfaceInternal(char const*, int*)
+ T CUtlVector<Vector2D, CUtlMemory<Vector2D, int> >::~CUtlVector()
+ T CUtlVector<Vector2D, CUtlMemory<Vector2D, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<Vector, CUtlMemory<Vector, int> >::~CUtlVector()
+ T CUtlVector<Vector, CUtlMemory<Vector, int> >::InsertMultipleBefore(int, int)
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
  T DisconnectTier3Libraries()
- T GenerateLineLoopIndexBuffer(unsigned short*, int, int)
- T GenerateLineStripIndexBuffer(unsigned short*, int, int)
- T GeneratePolygonIndexBuffer(unsigned short*, int, int)
- T GenerateQuadIndexBuffer(unsigned short*, int, int)
- T GenerateSequentialIndexBuffer(unsigned short*, int, int)
- T InterfaceReg::InterfaceReg(void* (*)(), char const*)
- T KeyValues::FindKey(char const*, bool)
- T KeyValues::GetSymbolForStringClassic(char const*, bool)
- T KeyValues::KeyValues(char const*)
- T KeyValues::SetInt(char const*, int)
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
- T LinearToTexture(float)
- T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
- T MathLib_SSEEnabled()
- T MatrixCopy(matrix3x4_t const&, matrix3x4_t&)
- T MatrixMultiply(VMatrix const&, VMatrix const&, VMatrix&)
- T R_LightAmbient_4D(Vector const&, Vector4D*, Vector&)
- T R_LightStrengthWorld(Vector const&, int, LightDesc_t*, lightpos_t*)
- T R_StudioSetupModel(int, int, mstudiomodel_t**, studiohdr_t const*)
- T SetIdentityMatrix(matrix3x4_t&)
- T SinCos(float, float*, float*)
- T StudioChangeCallback(IConVar*, char const*, float)
- T Sys_GetFactoryThis()
- T TextureToLinear(int)
- T V_ComposeFileName(char const*, char const*, char*, int)
- T V_FixSlashes(char*, char)
- T V_atof(char const*)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncpy(char*, char const*, int)
- T V_vsnprintf(char*, int, char const*, char*)
- T VectorIRotate(float const*, matrix3x4_t const&, float*)
- T VectorRotate(float const*, matrix3x4_t const&, float*)
- T VectorTransform(float const*, matrix3x4_t const&, float*)
- T _InvRSquared(float const*)
- T _SSE_InvRSquared(float const*)
- T _SSE_RSqrtAccurate(float)
- T _SSE_RSqrtFast(float)
- T _SSE_Sqrt(float)
- T _SSE_VectorNormalizeFast(Vector&)
- T _VectorNormalize(Vector&)
- T _VectorNormalizeFast(Vector&)
+ T dyld_stub_binding_helper
  T __Function_R_LightEffectsWorldFunctionTable<0>::Run(LightDesc_t const*, lightpos_t const*, Vector const&, Vector&)
  T __Function_R_LightEffectsWorldFunctionTable<100>::Run(LightDesc_t const*, lightpos_t const*, Vector const&, Vector&)
  T __Function_R_LightEffectsWorldFunctionTable<101>::Run(LightDesc_t const*, lightpos_t const*, Vector const&, Vector&)
@@ -1091,12 +1150,31 @@
  T __Function_R_WorldLightDistanceFalloffFunctionTable<6>::Run(LightDesc_t const*, Vector const&)
  T __Function_R_WorldLightDistanceFalloffFunctionTable<7>::Run(LightDesc_t const*, Vector const&)
  T __Function_R_WorldLightDistanceFalloffFunctionTable<8>::Run(LightDesc_t const*, Vector const&)
- T __clang_call_terminate
- T _rsqrtf(float)
- T _sqrtf(float)
- T bool CStudioRenderContext::R_AddVertexToMesh<(VertexCompressionType_t)0>(char const*, bool, CMeshBuilder&, OptimizedModel::Vertex_t*, mstudiomesh_t*, mstudio_meshvertexdata_t const*, bool)
- T bool CStudioRenderContext::R_AddVertexToMesh<(VertexCompressionType_t)1>(char const*, bool, CMeshBuilder&, OptimizedModel::Vertex_t*, mstudiomesh_t*, mstudio_meshvertexdata_t const*, bool)
- T dyld_stub_binding_helper
+ T GenerateLineLoopIndexBuffer(unsigned short*, int, int)
+ T GenerateLineStripIndexBuffer(unsigned short*, int, int)
+ T GeneratePolygonIndexBuffer(unsigned short*, int, int)
+ T GenerateQuadIndexBuffer(unsigned short*, int, int)
+ T GenerateSequentialIndexBuffer(unsigned short*, int, int)
+ t global constructors keyed to a
+ ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedDecrement
+ ThreadInterlockedExchange
+ ThreadInterlockedIncrement
+ T InterfaceReg::InterfaceReg(void* (*)(), char const*)
+ t IntersectPlane(DecalClipState_t&, int, int, int, float)
+ T _InvRSquared(float const*)
+ T KeyValues::FindKey(char const*, bool)
+ T KeyValues::GetSymbolForStringClassic(char const*, bool)
+ T KeyValues::KeyValues(char const*)
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
+ T KeyValues::SetInt(char const*, int)
+ T LinearToTexture(float)
+ T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
+ T MathLib_SSEEnabled()
+ T MatrixCopy(matrix3x4_t const&, matrix3x4_t&)
+ T MatrixMultiply(VMatrix const&, VMatrix const&, VMatrix&)
  T mstudiomodel_t::CacheVertexData(void*)
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
@@ -1119,124 +1197,46 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
+ t ReleaseMaterialSystemObjects()
+ t RestoreMaterialSystemObjects(int)
+ T R_LightAmbient_4D(Vector const&, Vector4D*, Vector&)
+ T R_LightStrengthWorld(Vector const&, int, LightDesc_t*, lightpos_t*)
+ T _rsqrtf(float)
+ T R_StudioSetupModel(int, int, mstudiomodel_t**, studiohdr_t const*)
+ T SetIdentityMatrix(matrix3x4_t&)
+ T SinCos(float, float*, float*)
+ t SortVertCount(void const*, void const*)
+ T _sqrtf(float)
+ T _SSE_InvRSquared(float const*)
+ T _SSE_RSqrtAccurate(float)
+ T _SSE_RSqrtFast(float)
+ T _SSE_Sqrt(float)
+ T _SSE_VectorNormalizeFast(Vector&)
+ T StudioChangeCallback(IConVar*, char const*, float)
+ T Sys_GetFactoryThis()
+ T TextureToLinear(int)
  T thinModelVertices_t::GetBoneWeights(int, mstudioboneweight_t*) const
+ T V_atof(char const*)
+ T V_ComposeFileName(char const*, char const*, char*, int)
+ T VectorIRotate(float const*, matrix3x4_t const&, float*)
+ T _VectorNormalizeFast(Vector&)
+ T _VectorNormalize(Vector&)
+ T VectorRotate(float const*, matrix3x4_t const&, float*)
+ T VectorTransform(float const*, matrix3x4_t const&, float*)
+ T V_FixSlashes(char*, char)
  T void CCachedRenderData::ComputeFlexedVertex_StreamOffset<mstudiovertanim_t>(studiohdr_t*, mstudioflex_t*, mstudiovertanim_t*, int, float, float, float, float)
  T void CCachedRenderData::ComputeFlexedVertex_StreamOffset<mstudiovertanim_wrinkle_t>(studiohdr_t*, mstudioflex_t*, mstudiovertanim_wrinkle_t*, int, float, float, float, float)
  T void CStudioRender::R_StudioRestoreMesh<(VertexCompressionType_t)0>(mstudiomesh_t*, studiomeshgroup_t*)
  T void CStudioRender::R_StudioRestoreMesh<(VertexCompressionType_t)1>(mstudiomesh_t*, studiomeshgroup_t*)
- ThreadGetCurrentId
- ThreadInterlockedAssignIf
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedIncrement
- Warning
- _Unwind_Resume
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __gxx_personality_v0
- __stack_chk_fail
- __stack_chk_guard
- asin
- atof
- atoi
- b CStudioRender::R_StudioFlexVerts(mstudiomesh_t*, int)::flexConversionTimesWarned
- b CStudioRender::R_StudioFlexVerts(mstudiomesh_t*, int)::warnCount
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::alphaRefCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::lightmapVarCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalAlphaRefCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureFrameVarCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureVarCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::textureFrameVarCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::textureVarCache
- b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::translucentCache
- b CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)::bumpvarCache
- b CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)::phongVarCache
- b UsesMouthShader(IMaterial*)::clientShaderCache
- b __g_CreateCStudioRenderContextIStudioRender_reg
- b eyeOriginCache
- b eyeUpCache
- b f05
- b f3
- b forwardVarCache
- b g_Mathlib_GammaToLinear
- b g_Mathlib_LinearToGamma
- b g_nTotalDecalVerts
- b glintCache
- b glintUCache
- b glintVCache
- b illumVarCache
- b irisUCache
- b irisVCache
- b lightpos
- b lineartoscreen
- b lineartotexture
- b r_flashlightscissor
- b r_glint_alwaysdraw
- b r_glint_procedural
- b r_hwmorph
- b r_randomflex
- b r_studio_stats
- b s_EmptyConVar
- b s_GlintTextureRegen
- b s_StudioRenderContext
- b s_bConnected
- b s_bMMXEnabled
- b s_bRegistered
- b s_bSSE2Enabled
- b s_bSSEEnabled
- b s_nCVarFlag
- b s_nSolidModelHullCache
- b s_nTranslucentModelHullCache
- b s_pProcGlint
- b s_pVertexCount
- b s_pZeroFlexWeights
- b studio_queue_mode
- b texturetolinear
- b vec2_invalid
- b vec2_origin
- b vec4_invalid
- b vec4_origin
- cosf
- d dyld__mach_header
- d g_SoftwareProcessMeshFunc
- d s_DefaultAccessor
- d s_nDLLIdentifier
- d s_pAmbientLightDir
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- d s_pWhite
- exp
- floorf
- g_VProfCurrentProfile
- g_pMemAlloc
- memcpy
- memmove
- memset
- pow
- qsort
- r boxpnt
- r hullcolor
- r s_pLightMask
- r sg_IndexSwap
- sin
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strlen
- strncat
- strncpy
- t ClipTriangleAgainstPlane(DecalClipState_t&, int, int, float)
- t ComputeSkinMatrix(mstudioboneweight_t&, matrix3x4_t*, matrix3x4_t&)
- t IntersectPlane(DecalClipState_t&, int, int, int, float)
- t ReleaseMaterialSystemObjects()
- t RestoreMaterialSystemObjects(int)
- t SortVertCount(void const*, void const*)
- t __CreateCStudioRenderContextIStudioRender_interface()
- t global constructors keyed to a
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncpy(char*, char const*, int)
+ T V_vsnprintf(char*, int, char const*, char*)
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
+ Warning

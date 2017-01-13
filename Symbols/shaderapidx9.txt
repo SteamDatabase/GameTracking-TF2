@@ -1,24 +1,73 @@
+ atof
+ atoi
+ b ccs_create_convars_from_hwconfig_command
+ b CIndexBufferDx8::Allocate()::_counter
+ b CIndexBufferDx8::Free()::_counter
+ b CIndexBufferDx8::HandlePerFrameTextureStats(int)::_counter
+ b CMeshDX8::IsValidVertexFormat(unsigned long long)::numWarnings
+ b CMeshDX8::RenderPass()::_counter
+ b CMeshDX8::SetVertexStreamState(int)::bWarned
  B CMeshDX8::s_FirstVertex
- B CMeshDX8::s_NumVertices
  B CMeshDX8::s_nPrims
+ B CMeshDX8::s_NumVertices
  B CMeshDX8::s_pPrims
- B CTempMeshDX8::s_FirstIndex
- B CTempMeshDX8::s_NumIndices
- B CUtlSymbol::s_pSymbolTable
+ B colorcorrection
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- B InterfaceReg::s_pInterfaceRegs
- B SinCosTable
- B colorcorrection
+ b ConVarRef::Init(char const*, bool)::bFirst
+ b CShaderAPIDx8::ComputeFillRate()::pBuf
+ b CShaderAPIDx8::ExportTextureList()::_counter
+ b CShaderAPIDx8::SetMode(void*, int, ShaderDeviceInfo_t const&)::bSetModeOnce
+ b CShaderAPIDx8::SetTextureState(Sampler_t, int, bool)::materialSystemConfig
+ b CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)::bComplained
+ B CTempMeshDX8::s_FirstIndex
+ B CTempMeshDX8::s_NumIndices
+ b CTempMeshDX8::TestSelection()::transformedVert
+ b CUtlSymbol::Initialize()::symbolsInitialized
+ B CUtlSymbol::s_pSymbolTable
  B cvar
- B gGL
- B g_VBAllocTracker
+ b f05
+ b f3
  B g_bShaderAccessDisallowed
+ b g_bSupportsD15S1
+ b g_bSupportsD16
+ b g_bSupportsD24S8
+ b g_bSupportsD24X4S4
+ b g_bSupportsD24X8
  B g_bUseShaderMutex
+ b g_bUsingVertexID
+ b g_CleanupSymbolTable
+ b g_ClipVerts
+ b __g_CreateCHardwareConfigIMaterialSystemHardwareConfig_reg
+ b __g_CreateCShaderAPIDx8IDebugTextureInfo_reg
+ b __g_CreateCShaderAPIDx8IShaderAPI_reg
+ b __g_CreateCShaderAPIDx8IShaderDevice_reg
+ b __g_CreateCShaderDeviceMgrDx8IShaderDeviceMgr_reg
+ b __g_CreateCShaderShadowDX8IShaderShadow_reg
+ b __g_CreateCVBAllocTrackerIVBAllocTracker_reg
+ b g_D3DColorFormat
+ b g_DeviceFormat
+ b g_DeviceType
+ b g_DisplayAdapter
+ B gGL
+ b g_LastVertexFormat
+ b g_Mathlib_GammaToLinear
+ b g_Mathlib_LinearToGamma
+ b g_MeshMgr
+ b g_nLastColorMeshVertOffsetInBytes
+ b g_nLastVertOffsetInBytes
+ b g_nLastVertStride
+ b g_nScratchIndexBuffer
+ b g_NumClipVerts
  B g_pCVar
  B g_pD3DDevice
  B g_pFullFileSystem
  B g_pInputSystem
+ b g_pLastColorMesh
+ b g_pLastIndex
+ b g_pLastIndexBuffer
+ b g_pLastVertex
+ b g_pLastVertexBuffer
  B g_pMaterialSystem
  B g_pMaterialSystemDebugTextureInfo
  B g_pMaterialSystemHardwareConfig
@@ -30,65 +79,167 @@
  B g_pShaderDeviceMgr
  B g_pShaderShadow
  B g_pShaderUtil
+ b g_pStaticLZMABuf
  B g_pTransitionTable
  B g_pUtlSortVectorQSortContext
+ b g_ShaderAPIDX8
+ b g_ShaderDeviceMgrDx8
+ b g_ShaderShadow
+ b guard variable for CIndexBufferDx8::Allocate()::_counter
+ b guard variable for CIndexBufferDx8::Free()::_counter
+ b guard variable for CIndexBufferDx8::HandlePerFrameTextureStats(int)::_counter
+ b guard variable for CMeshDX8::RenderPass()::_counter
+ b guard variable for CShaderAPIDx8::ExportTextureList()::_counter
+ b guard variable for CShaderAPIDx8::SetTextureState(Sampler_t, int, bool)::materialSystemConfig
+ b guard variable for CTempMeshDX8::TestSelection()::transformedVert
+ b g_unStaticLZMABufRef
+ b g_unStaticLZMABufSize
+ B g_VBAllocTracker
+ B InterfaceReg::s_pInterfaceRegs
+ b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
  B lineartolightmap
+ b lineartoscreen
+ b lineartotexture
  B lineartovertex
  B lzma_persistent_buffer
+ b mat_alphacoverage
  B mat_autoload_glshaders
  B mat_autosave_glshaders
  B mat_debugalttab
  B mat_depthbias_shadowmap
+ b mat_disablehwmorph
+ b mat_disable_ps_patch
+ B materials
  B mat_fastclip
+ b mat_forcedynamic
+ b mat_force_ps_patch
  B mat_frame_sync_enable
  B mat_frame_sync_force_texture
  B mat_hdr_level
+ b mat_remoteshadercompile
+ b mat_shadercount_command
  B mat_slopescaledepthbias_shadowmap
+ b mat_spewvertexandpixelshaders_command
  B mat_texture_limit
- B materials
  B mdllib
+ b mem_dumpvballocs
  B p4
- B s_NoEscConversion
- B s_StringCharConversion
+ b r_pixelfog
+ b r_pix_recordframes
+ b r_pix_start
+ b r_shader_srgb
+ b s_bConnected
  B s_bMathlibInitialized
+ b s_bMMXEnabled
+ b s_bRegistered
+ b s_bSSE2Enabled
+ b s_bSSEEnabled
+ b s_EmptyConVar
+ b s_HardwareConfig
+ B SinCosTable
+ b s_LockedRect
+ b s_LockedSrcRect
+ b s_nCVarFlag
+ B s_NoEscConversion
+ b s_NumPixelShadersCreated
+ b s_NumVertexShadersCreated
  B s_pIllegalMaterialPS
+ b s_pTokenBuf
+ b s_ShaderManager
+ B s_StringCharConversion
+ b s_TempFactory
+ b s_TextureCount
+ b s_VertexDeclDict
+ b texturetolinear
+ b vec2_invalid
+ b vec2_origin
+ b vec4_invalid
+ b vec4_origin
+ CallAssertFailedNotifyFunc
+ CommandLine_Tier0
  COM_TimestampedLog
+ cos
+ cosf
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
  CThreadRWLock::LockForWrite()
  CThreadRWLock::UnlockWrite()
  CThreadRWLock::WaitForRead()
  CThreadSyncObject::~CThreadSyncObject()
+ CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
  CVProfNode::EnterScope()
  CVProfNode::ExitScope()
  CVProfNode::GetSubNode(char const*, int, char const*, int)
- CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
- CallAssertFailedNotifyFunc
- CommandLine_Tier0
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_abort
+ __cxa_guard_acquire
+ __cxa_guard_release
+ __cxa_pure_virtual
+ D3DPERF_SetOptions
+ D3DXCompileShader
+ D3DXCreateMatrixStack
+ D3DXMatrixIdentity
+ D3DXMatrixInverse
+ D3DXMatrixMultiply
+ D3DXMATRIX::operator!=(D3DXMATRIX const&) const
+ D3DXMATRIX::operator*(D3DXMATRIX const&) const
+ D3DXMATRIX::operator float*()
+ D3DXMATRIX::operator()(int, int)
+ D3DXMatrixOrthoOffCenterRH
+ D3DXMatrixPerspectiveOffCenterRH
+ D3DXMatrixPerspectiveRH
+ D3DXMatrixTranslation
+ D3DXMatrixTranspose
+ D3DXPlaneNormalize
+ D3DXPLANE::operator!=(D3DXPLANE const&)
+ D3DXPLANE::operator float*()
+ D3DXPLANE::operator[](int)
+ D3DXPlaneTransform
+ D3DXVec3TransformCoord
+ D3DXVec4Normalize
+ D3DXVec4Transform
+ D3DXVECTOR2::operator float*()
+ D3DXVECTOR3::D3DXVECTOR3(float, float, float)
+ D3DXVECTOR3::operator float*()
+ D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
+ d CHardwareConfig::HasFastVertexTextures() const::bEnableFastVertexTextures
+ D CIndexBuffer::~CIndexBuffer()::_counter
  D CIndexBuffer::CIndexBuffer(IDirect3DDevice9*, int, bool, bool)::_counter
  D CIndexBuffer::HandlePerFrameTextureStats(int)::_counter
- D CIndexBuffer::~CIndexBuffer()::_counter
+ D ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
  D CPixelWriter::SetPixelMemory(ImageFormat, void*, int)::format_error_printed
  D CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Links(int) const::s_Sentinel
- D ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
- D KeyValues::s_pfGetStringForSymbol
- D KeyValues::s_pfGetSymbolForString
+ d dyld__mach_header
+ _DefaultRuneLocale
+ DevMsg
+ DevMsg(char const*, ...)
+ DevWarning(char const*, ...)
+ d g_Alloc
+ d g_ImageFormatInfo
  D g_KeyValuesErrorStack
- D g_VBAllocTrackerShaderAPI
+ d g_LastVertexIdx
  D g_pHardwareConfig
  D g_pShaderAPIDX8
  D g_pShaderDeviceDx8
  D g_pShaderDeviceMgrDx8
  D g_pShaderManager
  D g_pShaderShadowDx8
+ D guard variable for CIndexBuffer::~CIndexBuffer()::_counter
  D guard variable for CIndexBuffer::CIndexBuffer(IDirect3DDevice9*, int, bool, bool)::_counter
  D guard variable for CIndexBuffer::HandlePerFrameTextureStats(int)::_counter
- D guard variable for CIndexBuffer::~CIndexBuffer()::_counter
+ D guard variable for ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
  D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Links(int) const::s_Sentinel
- D guard variable for ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
+ D g_VBAllocTrackerShaderAPI
+ d InitShaderAPICVars()::g_ConVarAccessor
+ Direct3DCreate9
+ D KeyValues::s_pfGetStringForSymbol
+ D KeyValues::s_pfGetSymbolForString
  D k_pszShaderCacheRootKey
+ DoNewAssertDialog
  D pfFastCos
  D pfFastSinCos
  D pfInvRSquared
@@ -97,6 +248,11 @@
  D pfSqrt
  D pfVectorNormalize
  D pfVectorNormalizeFast
+ d s_DefaultAccessor
+ d s_LastFileLoadingFrom
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
  D s_pRenderFunctionTable
  D s_pTextureFunctionTable
  D typeinfo for CBaseMeshDX8
@@ -112,8 +268,11 @@
  D typeinfo for CMeshBase
  D typeinfo for CMeshDX8
  D typeinfo for CMeshMgr
- D typeinfo for CRefCountServiceBase<true, CRefMT>
+ D typeinfo for ConCommand
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
  D typeinfo for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
+ D typeinfo for CRefCountServiceBase<true, CRefMT>
  D typeinfo for CShaderAPIBase
  D typeinfo for CShaderAPIConVarAccessor
  D typeinfo for CShaderAPIDx8
@@ -126,15 +285,12 @@
  D typeinfo for CShaderShadowDX8
  D typeinfo for CTempMeshDX8
  D typeinfo for CTransitionTable
- D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlNoEscConversion
  D typeinfo for CVBAllocTracker
  D typeinfo for CVertexBufferBase
  D typeinfo for CVertexBufferDx8
- D typeinfo for ConCommand
- D typeinfo for ConCommandBase
- D typeinfo for ConVar
  D typeinfo for IAppSystem
  D typeinfo for IConCommandBaseAccessor
  D typeinfo for IConVar
@@ -167,6 +323,8 @@
  D vtable for CMeshBase
  D vtable for CMeshDX8
  D vtable for CMeshMgr
+ D vtable for ConCommand
+ D vtable for ConVar
  D vtable for CShaderAPIBase
  D vtable for CShaderAPIConVarAccessor
  D vtable for CShaderAPIDx8
@@ -179,49 +337,20 @@
  D vtable for CShaderShadowDX8
  D vtable for CTempMeshDX8
  D vtable for CTransitionTable
- D vtable for CUtlCStringConversion
  D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
  D vtable for CUtlNoEscConversion
  D vtable for CVBAllocTracker
  D vtable for CVertexBufferBase
  D vtable for CVertexBufferDx8
- D vtable for ConCommand
- D vtable for ConVar
- D3DPERF_SetOptions
- D3DXCompileShader
- D3DXCreateMatrixStack
- D3DXMATRIX::operator float*()
- D3DXMATRIX::operator!=(D3DXMATRIX const&) const
- D3DXMATRIX::operator()(int, int)
- D3DXMATRIX::operator*(D3DXMATRIX const&) const
- D3DXMatrixIdentity
- D3DXMatrixInverse
- D3DXMatrixMultiply
- D3DXMatrixOrthoOffCenterRH
- D3DXMatrixPerspectiveOffCenterRH
- D3DXMatrixPerspectiveRH
- D3DXMatrixTranslation
- D3DXMatrixTranspose
- D3DXPLANE::operator float*()
- D3DXPLANE::operator!=(D3DXPLANE const&)
- D3DXPLANE::operator[](int)
- D3DXPlaneNormalize
- D3DXPlaneTransform
- D3DXVECTOR2::operator float*()
- D3DXVECTOR3::D3DXVECTOR3(float, float, float)
- D3DXVECTOR3::operator float*()
- D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
- D3DXVec3TransformCoord
- D3DXVec4Normalize
- D3DXVec4Transform
  DWarning
- DevMsg
- DevMsg(char const*, ...)
- DevWarning(char const*, ...)
- Direct3DCreate9
- DoNewAssertDialog
+ __error
  Error
+ _ExitOnFatalAssert
  GetCPUInformation
+ g_pMemAlloc
+ g_VProfCurrentProfile
+ __gxx_personality_v0
  ID3DXBuffer::GetBufferPointer()
  ID3DXBuffer::GetBufferSize()
  ID3DXMatrixStack::GetTop()
@@ -272,8 +401,8 @@
  IDirect3DDevice9::EvictManagedResources()
  IDirect3DDevice9::GetDepthStencilSurface(IDirect3DSurface9**)
  IDirect3DDevice9::GetDeviceCaps(_D3DCAPS9*)
- IDirect3DDevice9::GetRenderTarget(unsigned int, IDirect3DSurface9**)
  IDirect3DDevice9::GetRenderTargetData(IDirect3DSurface9*, IDirect3DSurface9*)
+ IDirect3DDevice9::GetRenderTarget(unsigned int, IDirect3DSurface9**)
  IDirect3DDevice9::LightEnable(unsigned int, int)
  IDirect3DDevice9::LinkShaderPair(IDirect3DVertexShader9*, IDirect3DPixelShader9*)
  IDirect3DDevice9::Present(_RECT const*, _RECT const*, void*, RGNDATA const*)
@@ -313,11 +442,30 @@
  IDirect3DVolumeTexture9::LockBox(unsigned int, _D3DLOCKED_BOX*, _D3DBOX const*, unsigned int)
  IDirect3DVolumeTexture9::UnlockBox(unsigned int)
  KeyValuesSystem
+ __maskrune
+ memcmp
+ memcpy
+ memmove
+ memset
+ memset_pattern16
  Msg
  Plat_DebugString
  Plat_FloatTime
  Plat_GetPagedPoolInfo
  Plat_IsInDebugSession
+ pow
+ pthread_mutexattr_init
+ pthread_mutexattr_settype
+ pthread_mutex_destroy
+ pthread_mutex_init
+ pthread_mutex_lock
+ pthread_mutex_unlock
+ qsort
+ raise
+ r CShaderManager::CreateStaticShaders()::psIllegalMaterial
+ r g_DX8LightCombinations
+ r .memset_pattern
+ r pulCRCTable
  R typeinfo name for CBaseMeshDX8
  R typeinfo name for CBufferedMeshDX8
  R typeinfo name for CDefaultAccessor
@@ -331,8 +479,11 @@
  R typeinfo name for CMeshBase
  R typeinfo name for CMeshDX8
  R typeinfo name for CMeshMgr
- R typeinfo name for CRefCountServiceBase<true, CRefMT>
+ R typeinfo name for ConCommand
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
  R typeinfo name for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
+ R typeinfo name for CRefCountServiceBase<true, CRefMT>
  R typeinfo name for CShaderAPIBase
  R typeinfo name for CShaderAPIConVarAccessor
  R typeinfo name for CShaderAPIDx8
@@ -345,15 +496,12 @@
  R typeinfo name for CShaderShadowDX8
  R typeinfo name for CTempMeshDX8
  R typeinfo name for CTransitionTable
- R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlNoEscConversion
  R typeinfo name for CVBAllocTracker
  R typeinfo name for CVertexBufferBase
  R typeinfo name for CVertexBufferDx8
- R typeinfo name for ConCommand
- R typeinfo name for ConCommandBase
- R typeinfo name for ConVar
  R typeinfo name for IAppSystem
  R typeinfo name for IConCommandBaseAccessor
  R typeinfo name for IConVar
@@ -376,6 +524,27 @@
  R typeinfo name for IVBAllocTracker
  R typeinfo name for IVertexBuffer
  ShouldUseNewAssertDialog
+ sin
+ _SpewInfo
+ _SpewMessage
+ sprintf
+ sscanf
+ __stack_chk_fail
+ __stack_chk_guard
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strlen
+ strncat
+ strncpy
+ strtod$UNIX2003
+ strtol
+ strtoul
+ swprintf
+ t AddKey(KeyValues*, KeyValues*)
+ t AdjustUpdateRange(float const*, void const*, int, int*)
+ tan
  T ApplyActivateFixedFunction(ShadowState_t const&, int)
  T ApplyAlphaBlend(ShadowState_t const&, int)
  T ApplyAlphaTest(ShadowState_t const&, int)
@@ -392,15 +561,16 @@
  T ApplyFillMode(ShadowState_t const&, int)
  T ApplyFogMode(ShadowState_t const&, int)
  T ApplyLighting(ShadowState_t const&, int)
- T ApplySRGBReadEnable(ShadowState_t const&, int)
- T ApplySRGBWriteEnable(ShadowState_t const&, int)
  T ApplySeparateAlphaBlend(ShadowState_t const&, int)
  T ApplyShadowFilterEnable(ShadowState_t const&, int)
  T ApplySpecularEnable(ShadowState_t const&, int)
+ T ApplySRGBReadEnable(ShadowState_t const&, int)
+ T ApplySRGBWriteEnable(ShadowState_t const&, int)
  T ApplyTexCoordIndex(ShadowState_t const&, int)
  T ApplyTextureEnable(ShadowState_t const&, int)
  T ApplyVertexBlendEnable(ShadowState_t const&, int)
  T ApplyZWriteEnable(ShadowState_t const&, int)
+ t BlitTextureBits(TextureLoadInfo_t&, int, int, int)
  T BuildGammaTable(float, float, float, int)
  T CBaseMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
  T CBaseMeshDX8::BeginCastBuffer(unsigned long long)
@@ -424,8 +594,8 @@
  T CBaseMeshDX8::Lock(int, bool, VertexDesc_t&)
  T CBaseMeshDX8::MarkAsDrawn()
  T CBaseMeshDX8::ModifyBegin(bool, int, int, IndexDesc_t&)
- T CBaseMeshDX8::ModifyBegin(int, int, int, int, MeshDesc_t&)
  T CBaseMeshDX8::ModifyBeginEx(bool, int, int, int, int, MeshDesc_t&)
+ T CBaseMeshDX8::ModifyBegin(int, int, int, int, MeshDesc_t&)
  T CBaseMeshDX8::ModifyEnd(IndexDesc_t&)
  T CBaseMeshDX8::ModifyEnd(MeshDesc_t&)
  T CBaseMeshDX8::NeedsVertexFormatReset(unsigned long long) const
@@ -436,15 +606,16 @@
  T CBaseMeshDX8::SetMorphFormat(unsigned int)
  T CBaseMeshDX8::SetVertexFormat(unsigned long long)
  T CBaseMeshDX8::Spew(int, IndexDesc_t const&)
- T CBaseMeshDX8::Spew(int, VertexDesc_t const&)
  T CBaseMeshDX8::Spew(int, int, MeshDesc_t const&)
+ T CBaseMeshDX8::Spew(int, VertexDesc_t const&)
  T CBaseMeshDX8::Unlock(int, IndexDesc_t&)
  T CBaseMeshDX8::Unlock(int, VertexDesc_t&)
  T CBaseMeshDX8::ValidateData(int, IndexDesc_t const&)
- T CBaseMeshDX8::ValidateData(int, VertexDesc_t const&)
  T CBaseMeshDX8::ValidateData(int, int, MeshDesc_t const&)
+ T CBaseMeshDX8::ValidateData(int, VertexDesc_t const&)
  T CBaseMeshDX8::VertexCount() const
  T CBufferedMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
+ T CBufferedMeshDX8::~CBufferedMeshDX8()
  T CBufferedMeshDX8::Draw(int, int)
  T CBufferedMeshDX8::EndCastBuffer()
  T CBufferedMeshDX8::Flush()
@@ -465,9 +636,11 @@
  T CBufferedMeshDX8::Spew(int, int, MeshDesc_t const&)
  T CBufferedMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
  T CBufferedMeshDX8::ValidateData(int, int, MeshDesc_t const&)
- T CBufferedMeshDX8::~CBufferedMeshDX8()
+ t CC_DumpVBMemAllocs()
  T CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
+ t ccs_create_convars_from_hwconfig(CCommand const&)
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+ T CDynamicMeshDX8::~CDynamicMeshDX8()
  T CDynamicMeshDX8::Draw(int, int)
  T CDynamicMeshDX8::HasEnoughRoom(int, int) const
  T CDynamicMeshDX8::IndexCount() const
@@ -478,15 +651,14 @@
  T CDynamicMeshDX8::PreLock()
  T CDynamicMeshDX8::SetVertexFormat(unsigned long long)
  T CDynamicMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
- T CDynamicMeshDX8::~CDynamicMeshDX8()
+ T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CEmptyConVar::~CEmptyConVar()
- T CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
  T CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
+ T CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
  T CHardwareConfig::ActuallySupportsPixelShaders_2_b() const
  T CHardwareConfig::CanDoSRGBReadFromRTs() const
  T CHardwareConfig::CanStretchRectFromTextures() const
@@ -496,10 +668,10 @@
  T CHardwareConfig::GetActualTextureStageCount() const
  T CHardwareConfig::GetDXSupportLevel() const
  T CHardwareConfig::GetFrameBufferColorDepth() const
+ T CHardwareConfig::GetHardwareHDRType() const
  T CHardwareConfig::GetHDREnabled() const
  T CHardwareConfig::GetHDRType() const
  T CHardwareConfig::GetHWSpecificShaderDLLName() const
- T CHardwareConfig::GetHardwareHDRType() const
  T CHardwareConfig::GetMaxDXSupportLevel() const
  T CHardwareConfig::GetMaxVertexTextureDimension() const
  T CHardwareConfig::GetSamplerCount() const
@@ -516,6 +688,7 @@
  T CHardwareConfig::MaxBlendMatrices() const
  T CHardwareConfig::MaxBlendMatrixIndices() const
  T CHardwareConfig::MaxHWMorphBatchCount() const
+ T CHardwareConfig::MaximumAnisotropicLevel() const
  T CHardwareConfig::MaxNumLights() const
  T CHardwareConfig::MaxTextureAspectRatio() const
  T CHardwareConfig::MaxTextureDepth() const
@@ -524,7 +697,6 @@
  T CHardwareConfig::MaxUserClipPlanes() const
  T CHardwareConfig::MaxVertexShaderBlendMatrices() const
  T CHardwareConfig::MaxViewports() const
- T CHardwareConfig::MaximumAnisotropicLevel() const
  T CHardwareConfig::NeedsAAClamp() const
  T CHardwareConfig::NeedsATICentroidHack() const
  T CHardwareConfig::NeedsShaderSRGBConversion() const
@@ -539,8 +711,8 @@
  T CHardwareConfig::PreferReducedFillrate() const
  T CHardwareConfig::ReadPixelsFromFrontBuffer() const
  T CHardwareConfig::SetHDREnabled(bool)
- T CHardwareConfig::SetupHardwareCaps(ShaderDeviceInfo_t const&, HardwareCaps_t const&)
  T CHardwareConfig::SetupHardwareCaps(int, HardwareCaps_t const&)
+ T CHardwareConfig::SetupHardwareCaps(ShaderDeviceInfo_t const&, HardwareCaps_t const&)
  T CHardwareConfig::SpecifiesFogColorInLinearSpace() const
  T CHardwareConfig::StencilBufferBits() const
  T CHardwareConfig::SupportsBorderColor() const
@@ -550,9 +722,9 @@
  T CHardwareConfig::SupportsCubeMaps() const
  T CHardwareConfig::SupportsFetch4() const
  T CHardwareConfig::SupportsGLMixedSizeTargets() const
+ T CHardwareConfig::SupportsHardwareLighting() const
  T CHardwareConfig::SupportsHDR() const
  T CHardwareConfig::SupportsHDRMode(HDRType_t) const
- T CHardwareConfig::SupportsHardwareLighting() const
  T CHardwareConfig::SupportsMipmappedCubemaps() const
  T CHardwareConfig::SupportsMipmapping() const
  T CHardwareConfig::SupportsNonPow2Textures() const
@@ -560,9 +732,9 @@
  T CHardwareConfig::SupportsPixelShaders_1_4() const
  T CHardwareConfig::SupportsPixelShaders_2_0() const
  T CHardwareConfig::SupportsPixelShaders_2_b() const
- T CHardwareConfig::SupportsSRGB() const
  T CHardwareConfig::SupportsShaderModel_3_0() const
  T CHardwareConfig::SupportsSpheremapping() const
+ T CHardwareConfig::SupportsSRGB() const
  T CHardwareConfig::SupportsStaticControlFlow() const
  T CHardwareConfig::SupportsStaticPlusDynamicLighting() const
  T CHardwareConfig::SupportsStreamOffset() const
@@ -571,15 +743,14 @@
  T CHardwareConfig::TextureMemorySize() const
  T CHardwareConfig::UseFastClipping() const
  T CHardwareConfig::UsesSRGBCorrectBlending() const
- T CIndexBuffer::Create(IDirect3DDevice9*)
- T CIndexBuffer::HandlePerFrameTextureStats(int)
- T CIndexBuffer::Lock(bool, int, int&, int)
+ T CIndexBufferBase::~CIndexBufferBase()
  T CIndexBufferBase::CIndexBufferBase(char const*)
  T CIndexBufferBase::Spew(int, IndexDesc_t const&)
  T CIndexBufferBase::ValidateData(int, IndexDesc_t const&)
- T CIndexBufferBase::~CIndexBufferBase()
+ T CIndexBuffer::Create(IDirect3DDevice9*)
  T CIndexBufferDx8::Allocate()
  T CIndexBufferDx8::BeginCastBuffer(MaterialIndexFormat_t)
+ T CIndexBufferDx8::~CIndexBufferDx8()
  T CIndexBufferDx8::EndCastBuffer()
  T CIndexBufferDx8::Free()
  T CIndexBufferDx8::GetRoomRemaining() const
@@ -591,12 +762,16 @@
  T CIndexBufferDx8::ModifyBegin(bool, int, int, IndexDesc_t&)
  T CIndexBufferDx8::ModifyEnd(IndexDesc_t&)
  T CIndexBufferDx8::Unlock(int, IndexDesc_t&)
- T CIndexBufferDx8::~CIndexBufferDx8()
+ T CIndexBuffer::HandlePerFrameTextureStats(int)
+ T CIndexBuffer::Lock(bool, int, int&, int)
  T CKeyValuesErrorStack::ReportError(char const*)
+ T __clang_call_terminate
+ t ClipTriangleAgainstPlane(D3DXVECTOR3**, int, D3DXVECTOR3**, int, float, bool)
  T CLZMA::Uncompress(unsigned char*, unsigned char*)
+ T CMeshBase::~CMeshBase()
  T CMeshBase::CMeshBase()
  T CMeshBase::GetMesh()
- T CMeshBase::~CMeshBase()
+ T CMeshDX8::~CMeshDX8()
  T CMeshDX8::DisableFlexMesh()
  T CMeshDX8::Draw(CPrimList*, int)
  T CMeshDX8::Draw(int, int)
@@ -612,8 +787,8 @@
  T CMeshDX8::Lock(bool, int, int, IndexDesc_t&)
  T CMeshDX8::Lock(int, bool, VertexDesc_t&)
  T CMeshDX8::LockMesh(int, int, MeshDesc_t&)
- T CMeshDX8::ModifyBegin(int, int, int, int, MeshDesc_t&)
  T CMeshDX8::ModifyBeginEx(bool, int, int, int, int, MeshDesc_t&)
+ T CMeshDX8::ModifyBegin(int, int, int, int, MeshDesc_t&)
  T CMeshDX8::ModifyEnd(MeshDesc_t&)
  T CMeshDX8::RenderPass()
  T CMeshDX8::SetColorMesh(IMesh*, int)
@@ -627,10 +802,10 @@
  T CMeshDX8::Unlock(int, VertexDesc_t&)
  T CMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
  T CMeshDX8::VertexCount() const
- T CMeshDX8::~CMeshDX8()
  T CMeshMgr::BindIndexBuffer(IIndexBuffer*, int)
  T CMeshMgr::BindVertexBuffer(int, IVertexBuffer*, int, int, int, unsigned long long, int)
  T CMeshMgr::BufferCount() const
+ T CMeshMgr::~CMeshMgr()
  T CMeshMgr::CMeshMgr()
  T CMeshMgr::ComputeVertexDescription(unsigned char*, unsigned long long, MeshDesc_t&) const
  T CMeshMgr::ComputeVertexFormat(unsigned int, int, int*, int, int) const
@@ -669,16 +844,71 @@
  T CMeshMgr::SetVertexStreamState(int, int)
  T CMeshMgr::Shutdown()
  T CMeshMgr::UseFatVertices(bool)
- T CMeshMgr::~CMeshMgr()
+ t CommitFlexWeights(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
+ t CommitSetScissorRect(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
+ t CommitSetViewports(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
+ t CommitVertexTextures(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
+ T ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)
+ T ComputeVertexSpec(unsigned long long, _D3DVERTEXELEMENT9*, bool, bool, bool)
+ T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
+ T ConCommandBase::AddFlags(int)
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConCommandBase::GetHelpText() const
+ T ConCommandBase::GetName() const
+ T ConCommandBase::Init()
+ T ConCommandBase::IsFlagSet(int) const
+ T ConCommandBase::IsRegistered() const
+ T ConCommand::CanAutoComplete()
+ T ConCommand::~ConCommand()
+ T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
+ T ConCommand::ConCommand(char const*, void (*)(), char const*, int, int (*)(char const*, char (*) [64]))
+ T ConCommand::Dispatch(CCommand const&)
+ T ConCommand::IsCommand() const
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::~ConVar()
+ T ConVar::ConVar(char const*, char const*, int)
+ T ConVar::ConVar(char const*, char const*, int, char const*)
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVarRef::ConVarRef(char const*)
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar_Unregister()
  T CRC32_Final(unsigned int*)
  T CRC32_Init(unsigned int*)
  T CRC32_ProcessBuffer(unsigned int*, void const*, int)
- T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
+ t __CreateCHardwareConfigIMaterialSystemHardwareConfig_interface()
+ t __CreateCShaderAPIDx8IDebugTextureInfo_interface()
+ t __CreateCShaderAPIDx8IShaderAPI_interface()
+ t __CreateCShaderAPIDx8IShaderDevice_interface()
+ t __CreateCShaderDeviceMgrDx8IShaderDeviceMgr_interface()
+ t __CreateCShaderShadowDX8IShaderShadow_interface()
+ t __CreateCVBAllocTrackerIVBAllocTracker_interface()
+ t CreateD3DPixelShader(unsigned int*, unsigned int, int, char const*, char*)
+ T CreateD3DTexture(int, int, int, ImageFormat, int, int, char*)
+ T CreateInterface
+ T CreateInterfaceInternal(char const*, int*)
  T CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
  T CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
+ T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
+ T CShaderAPIBase::~CShaderAPIBase()
  T CShaderAPIBase::CShaderAPIBase()
  T CShaderAPIBase::GetCurrentColorCorrection(ShaderColorCorrectionInfo_t*)
- T CShaderAPIBase::~CShaderAPIBase()
  T CShaderAPIConVarAccessor::RegisterConCommandBase(ConCommandBase*)
  T CShaderAPIDx8::AcquireThreadOwnership()
  T CShaderAPIDx8::AddBufferToTextureList(char const*, _D3DSURFACE_DESC&)
@@ -692,10 +922,10 @@
  T CShaderAPIDx8::ApplyZBias(ShadowState_t const&)
  T CShaderAPIDx8::BeginFrame()
  T CShaderAPIDx8::BeginOcclusionQueryDrawing(ShaderAPIOcclusionQuery_t__*)
- T CShaderAPIDx8::BeginPIXEvent(unsigned long, char const*)
  T CShaderAPIDx8::BeginPass(short)
- T CShaderAPIDx8::Bind(IMaterial*)
+ T CShaderAPIDx8::BeginPIXEvent(unsigned long, char const*)
  T CShaderAPIDx8::BindGeometryShader(GeometryShaderHandle_t__*)
+ T CShaderAPIDx8::Bind(IMaterial*)
  T CShaderAPIDx8::BindIndexBuffer(IIndexBuffer*, int)
  T CShaderAPIDx8::BindPixelShader(PixelShaderHandle_t__*)
  T CShaderAPIDx8::BindStandardTexture(Sampler_t, StandardTextureId_t)
@@ -704,7 +934,6 @@
  T CShaderAPIDx8::BindVertexBuffer(int, IVertexBuffer*, int, int, int, unsigned long long, int)
  T CShaderAPIDx8::BindVertexShader(VertexShaderHandle_t__*)
  T CShaderAPIDx8::BindVertexTexture(VertexTextureSampler_t, int)
- T CShaderAPIDx8::CShaderAPIDx8()
  T CShaderAPIDx8::CacheWorldSpaceCameraPosition()
  T CShaderAPIDx8::CallCommitFuncs(CommitFuncType_t, bool, bool)
  T CShaderAPIDx8::CanDownloadTextures() const
@@ -745,19 +974,20 @@
  T CShaderAPIDx8::ComputeVertexFormat(int, short*) const
  T CShaderAPIDx8::ComputeVertexUsage(int, short*) const
  T CShaderAPIDx8::CopyRenderTargetToScratchTexture(int, int, Rect_t*, Rect_t*)
- T CShaderAPIDx8::CopyRenderTargetToTexture(int)
  T CShaderAPIDx8::CopyRenderTargetToTextureEx(int, int, Rect_t*, Rect_t*)
+ T CShaderAPIDx8::CopyRenderTargetToTexture(int)
  T CShaderAPIDx8::CopyTextureToRenderTargetEx(int, int, Rect_t*, Rect_t*)
  T CShaderAPIDx8::CopyTextureToTexture(int, int)
  T CShaderAPIDx8::CreateDepthTexture(ImageFormat, int, int, char const*, bool)
  T CShaderAPIDx8::CreateMatrixStacks()
  T CShaderAPIDx8::CreateOcclusionQueryObject()
- T CShaderAPIDx8::CreateTexture(int, int, int, ImageFormat, int, int, int, char const*, char const*)
  T CShaderAPIDx8::CreateTextureHandles(int*, int)
+ T CShaderAPIDx8::CreateTexture(int, int, int, ImageFormat, int, int, int, char const*, char const*)
  T CShaderAPIDx8::CreateTextures(int*, int, int, int, int, ImageFormat, int, int, int, char const*, char const*)
+ T CShaderAPIDx8::~CShaderAPIDx8()
+ T CShaderAPIDx8::CShaderAPIDx8()
  T CShaderAPIDx8::CullMode(MaterialCullMode_t)
  T CShaderAPIDx8::CurrentTime() const
- T CShaderAPIDx8::DXSupportLevelChanged()
  T CShaderAPIDx8::DeleteAllTextures()
  T CShaderAPIDx8::DeleteD3DTexture(int)
  T CShaderAPIDx8::DeleteTexture(int)
@@ -771,17 +1001,18 @@
  T CShaderAPIDx8::Draw(MaterialPrimitiveType_t, int, int)
  T CShaderAPIDx8::DrawMesh(CMeshBase*)
  T CShaderAPIDx8::DrawWithVertexAndIndexBuffers()
+ T CShaderAPIDx8::DXSupportLevelChanged()
  T CShaderAPIDx8::EnableAlphaToCoverage()
  T CShaderAPIDx8::EnableBuffer2FramesAhead(bool)
  T CShaderAPIDx8::EnableClipPlane(int, bool)
  T CShaderAPIDx8::EnableDebugTextureList(bool)
+ T CShaderAPIDx8::EnabledSRGBWrite(bool)
  T CShaderAPIDx8::EnableFastClip(bool)
  T CShaderAPIDx8::EnableGetAllTextures(bool)
  T CShaderAPIDx8::EnableHWMorphing(bool)
  T CShaderAPIDx8::EnableLinearColorSpaceFrameBuffer(bool)
  T CShaderAPIDx8::EnableShaderShaderMutex(bool)
  T CShaderAPIDx8::EnableUserClipTransformOverride(bool)
- T CShaderAPIDx8::EnabledSRGBWrite(bool)
  T CShaderAPIDx8::EndFrame()
  T CShaderAPIDx8::EndOcclusionQueryDrawing(ShaderAPIOcclusionQuery_t__*)
  T CShaderAPIDx8::EndPIXEvent()
@@ -803,8 +1034,8 @@
  T CShaderAPIDx8::GetActualTextureStageCount() const
  T CShaderAPIDx8::GetAmbientLightCubeLuminance()
  T CShaderAPIDx8::GetBackBufferDimensions(int&, int&) const
- T CShaderAPIDx8::GetBackBufferImage(Rect_t*, Rect_t*, ImageFormat&)
  T CShaderAPIDx8::GetBackBufferImageHDR(Rect_t*, Rect_t*, ImageFormat&)
+ T CShaderAPIDx8::GetBackBufferImage(Rect_t*, Rect_t*, ImageFormat&)
  T CShaderAPIDx8::GetBoundMaterial()
  T CShaderAPIDx8::GetBoundMorphFormat()
  T CShaderAPIDx8::GetBufferedState(BufferedState_t&)
@@ -815,20 +1046,20 @@
  T CShaderAPIDx8::GetCurrentLightCombo() const
  T CShaderAPIDx8::GetCurrentNumBones() const
  T CShaderAPIDx8::GetD3DTexture(int)
+ T CShaderAPIDx8::GetDebugTextureList()
  T CShaderAPIDx8::GetDX9LightState(LightState_t*) const
  T CShaderAPIDx8::GetDXLevelDefaults(unsigned int&, unsigned int&)
- T CShaderAPIDx8::GetDebugTextureList()
- T CShaderAPIDx8::GetDynamicMesh(IMaterial*, int, bool, IMesh*, IMesh*)
  T CShaderAPIDx8::GetDynamicMeshEx(IMaterial*, unsigned long long, int, bool, IMesh*, IMesh*)
- T CShaderAPIDx8::GetFlashlightState(VMatrix&) const
+ T CShaderAPIDx8::GetDynamicMesh(IMaterial*, int, bool, IMesh*, IMesh*)
  T CShaderAPIDx8::GetFlashlightStateEx(VMatrix&, ITexture**) const
+ T CShaderAPIDx8::GetFlashlightState(VMatrix&) const
  T CShaderAPIDx8::GetFlexMesh()
  T CShaderAPIDx8::GetFloatRenderingParameter(int) const
  T CShaderAPIDx8::GetFogDistances(float*, float*, float*)
  T CShaderAPIDx8::GetIntRenderingParameter(int) const
  T CShaderAPIDx8::GetLight(int) const
- T CShaderAPIDx8::GetLightMapScaleFactor() const
  T CShaderAPIDx8::GetLightmapDimensions(int*, int*)
+ T CShaderAPIDx8::GetLightMapScaleFactor() const
  T CShaderAPIDx8::GetMatrix(MaterialMatrixMode_t, float*)
  T CShaderAPIDx8::GetMaxIndicesToRender()
  T CShaderAPIDx8::GetMaxLights() const
@@ -903,8 +1134,8 @@
  T CShaderAPIDx8::PushMatrix()
  T CShaderAPIDx8::PushSelectionName(int)
  T CShaderAPIDx8::QueueResetRenderState()
- T CShaderAPIDx8::ReadPixels(Rect_t*, Rect_t*, unsigned char*, ImageFormat, int)
  T CShaderAPIDx8::ReadPixels(int, int, int, int, unsigned char*, ImageFormat)
+ T CShaderAPIDx8::ReadPixels(Rect_t*, Rect_t*, unsigned char*, ImageFormat, int)
  T CShaderAPIDx8::RegisterSelectionHit(float, float)
  T CShaderAPIDx8::ReleaseShaderObjects()
  T CShaderAPIDx8::ReleaseThreadOwnership()
@@ -919,8 +1150,8 @@
  T CShaderAPIDx8::SceneFogMode(MaterialFogMode_t)
  T CShaderAPIDx8::SelectionBuffer(unsigned int*, int)
  T CShaderAPIDx8::SelectionMode(bool)
- T CShaderAPIDx8::SetAmbientLight(float, float, float)
  T CShaderAPIDx8::SetAmbientLightCube(Vector4D*)
+ T CShaderAPIDx8::SetAmbientLight(float, float, float)
  T CShaderAPIDx8::SetAnisotropicLevel(int)
  T CShaderAPIDx8::SetBooleanPixelShaderConstant(int, int const*, int, bool)
  T CShaderAPIDx8::SetBooleanVertexShaderConstant(int, int const*, int, bool)
@@ -932,31 +1163,31 @@
  T CShaderAPIDx8::SetDepthFeatheringPixelShaderConstant(int, float)
  T CShaderAPIDx8::SetDisallowAccess(bool)
  T CShaderAPIDx8::SetFastClipPlane(float const*)
- T CShaderAPIDx8::SetFlashlightState(FlashlightState_t const&, VMatrix const&)
  T CShaderAPIDx8::SetFlashlightStateEx(FlashlightState_t const&, VMatrix const&, ITexture*)
+ T CShaderAPIDx8::SetFlashlightState(FlashlightState_t const&, VMatrix const&)
  T CShaderAPIDx8::SetFlexWeights(int, int, MorphWeight_t const*)
  T CShaderAPIDx8::SetFloatRenderingParameter(int, float)
  T CShaderAPIDx8::SetFogZ(float)
  T CShaderAPIDx8::SetFullScreenTextureHandle(int)
  T CShaderAPIDx8::SetHeightClipMode(MaterialHeightClipMode_t)
  T CShaderAPIDx8::SetHeightClipZ(float)
- T CShaderAPIDx8::SetIntRenderingParameter(int, int)
  T CShaderAPIDx8::SetIntegerPixelShaderConstant(int, int const*, int, bool)
  T CShaderAPIDx8::SetIntegerVertexShaderConstant(int, int const*, int, bool)
- T CShaderAPIDx8::SetLight(int, LightDesc_t const&)
+ T CShaderAPIDx8::SetIntRenderingParameter(int, int)
  T CShaderAPIDx8::SetLightingOrigin(Vector)
+ T CShaderAPIDx8::SetLight(int, LightDesc_t const&)
  T CShaderAPIDx8::SetLinearToGammaConversionTextures(int, int)
  T CShaderAPIDx8::SetMode(void*, int, ShaderDeviceInfo_t const&)
  T CShaderAPIDx8::SetNumBoneWeights(int)
- T CShaderAPIDx8::SetPIXMarker(unsigned long, char const*)
- T CShaderAPIDx8::SetPSNearAndFarZ(int)
  T CShaderAPIDx8::SetPixelShaderConstant(int, float const*, int, bool)
  T CShaderAPIDx8::SetPixelShaderFogParams(int)
  T CShaderAPIDx8::SetPixelShaderIndex(int)
  T CShaderAPIDx8::SetPixelShaderStateAmbientLightCube(int, bool)
+ T CShaderAPIDx8::SetPIXMarker(unsigned long, char const*)
+ T CShaderAPIDx8::SetPSNearAndFarZ(int)
  T CShaderAPIDx8::SetRasterState(ShaderRasterState_t const&)
- T CShaderAPIDx8::SetRenderTarget(int, int)
  T CShaderAPIDx8::SetRenderTargetEx(int, int, int)
+ T CShaderAPIDx8::SetRenderTarget(int, int)
  T CShaderAPIDx8::SetScissorRect(int, int, int, int, bool)
  T CShaderAPIDx8::SetShadowDepthBiasFactors(float, float)
  T CShaderAPIDx8::SetSkinningMatrices()
@@ -973,6 +1204,8 @@
  T CShaderAPIDx8::SetTextureState(Sampler_t, int, bool)
  T CShaderAPIDx8::SetTextureTransformDimension(TextureStage_t, int, bool)
  T CShaderAPIDx8::SetToneMappingScaleLinear(Vector const&)
+ T CShaderAPIDx8::SetupSelectionModeVisualizationState()
+ T CShaderAPIDx8::SetupTextureGroup(int, char const*)
  T CShaderAPIDx8::SetVectorRenderingParameter(int, Vector const&)
  T CShaderAPIDx8::SetVertexBlendState(int)
  T CShaderAPIDx8::SetVertexDecl(unsigned long long, bool, bool, bool)
@@ -982,8 +1215,6 @@
  T CShaderAPIDx8::SetVertexShaderStateAmbientLightCube()
  T CShaderAPIDx8::SetVertexShaderViewProj()
  T CShaderAPIDx8::SetViewports(int, ShaderViewport_t const*)
- T CShaderAPIDx8::SetupSelectionModeVisualizationState()
- T CShaderAPIDx8::SetupTextureGroup(int, char const*)
  T CShaderAPIDx8::ShadeMode(ShaderShadeMode_t)
  T CShaderAPIDx8::ShaderLock()
  T CShaderAPIDx8::ShaderUnlock()
@@ -1013,11 +1244,11 @@
  T CShaderAPIDx8::UserClipTransform(VMatrix const&)
  T CShaderAPIDx8::UsesVertexAndPixelShaders(short) const
  T CShaderAPIDx8::UsingSoftwareVertexProcessing() const
- T CShaderAPIDx8::~CShaderAPIDx8()
  T CShaderBuffer<ID3DXBuffer>::GetBits() const
  T CShaderBuffer<ID3DXBuffer>::GetSize() const
  T CShaderBuffer<ID3DXBuffer>::Release()
  T CShaderDeviceBase::AddView(void*)
+ T CShaderDeviceBase::~CShaderDeviceBase()
  T CShaderDeviceBase::CShaderDeviceBase()
  T CShaderDeviceBase::EvictManagedResourcesInternal()
  T CShaderDeviceBase::GetBackBufferFormat() const
@@ -1033,10 +1264,8 @@
  T CShaderDeviceBase::SetView(void*)
  T CShaderDeviceBase::StencilBufferBits() const
  T CShaderDeviceBase::ThreadOwnsDevice()
- T CShaderDeviceBase::~CShaderDeviceBase()
  T CShaderDeviceDx8::AllocFrameSyncObjects()
  T CShaderDeviceDx8::AllocNonInteractiveRefreshObjects()
- T CShaderDeviceDx8::CShaderDeviceDx8()
  T CShaderDeviceDx8::CheckDeviceLost(bool)
  T CShaderDeviceDx8::CompileShader(char const*, unsigned long, char const*)
  T CShaderDeviceDx8::ComputeMultisampleType(int)
@@ -1047,6 +1276,8 @@
  T CShaderDeviceDx8::CreateStaticMesh(unsigned long long, char const*, IMaterial*)
  T CShaderDeviceDx8::CreateVertexBuffer(ShaderBufferType_t, unsigned long long, int, char const*)
  T CShaderDeviceDx8::CreateVertexShader(IShaderBuffer*)
+ T CShaderDeviceDx8::~CShaderDeviceDx8()
+ T CShaderDeviceDx8::CShaderDeviceDx8()
  T CShaderDeviceDx8::DestroyGeometryShader(GeometryShaderHandle_t__*)
  T CShaderDeviceDx8::DestroyIndexBuffer(IIndexBuffer*)
  T CShaderDeviceDx8::DestroyPixelShader(PixelShaderHandle_t__*)
@@ -1080,17 +1311,17 @@
  T CShaderDeviceDx8::SetPresentParameters(void*, int, ShaderDeviceInfo_t const&)
  T CShaderDeviceDx8::ShutdownDevice()
  T CShaderDeviceDx8::SpewDriverInfo() const
- T CShaderDeviceDx8::~CShaderDeviceDx8()
  T CShaderDeviceMgrBase::AddModeChangeCallback(void (*)())
- T CShaderDeviceMgrBase::CShaderDeviceMgrBase()
  T CShaderDeviceMgrBase::Connect(void* (*)(char const*, int*))
+ T CShaderDeviceMgrBase::~CShaderDeviceMgrBase()
+ T CShaderDeviceMgrBase::CShaderDeviceMgrBase()
  T CShaderDeviceMgrBase::Disconnect()
- T CShaderDeviceMgrBase::FindCPUSpecificConfig(KeyValues*, int, bool)
  T CShaderDeviceMgrBase::FindCardSpecificConfig(KeyValues*, int, int)
+ T CShaderDeviceMgrBase::FindCPUSpecificConfig(KeyValues*, int, bool)
  T CShaderDeviceMgrBase::GetClosestActualDXLevel(int) const
  T CShaderDeviceMgrBase::GetHardwareCaps(int) const
- T CShaderDeviceMgrBase::GetRecommendedConfigurationInfo(int, int, KeyValues*)
  T CShaderDeviceMgrBase::GetRecommendedConfigurationInfo(int, int, int, int, KeyValues*)
+ T CShaderDeviceMgrBase::GetRecommendedConfigurationInfo(int, int, KeyValues*)
  T CShaderDeviceMgrBase::InvokeModeChangeCallbacks()
  T CShaderDeviceMgrBase::LoadConfig(KeyValues*, KeyValues*)
  T CShaderDeviceMgrBase::LoadHardwareCaps(KeyValues*, HardwareCaps_t&)
@@ -1100,9 +1331,9 @@
  T CShaderDeviceMgrBase::ReadHardwareCaps(HardwareCaps_t&, int)
  T CShaderDeviceMgrBase::RemoveModeChangeCallback(void (*)())
  T CShaderDeviceMgrBase::ShaderInterfaceFactory(char const*, int*)
- T CShaderDeviceMgrBase::~CShaderDeviceMgrBase()
  T CShaderDeviceMgrDx8::ComputeCapsFromD3D(HardwareCaps_t*, int)
  T CShaderDeviceMgrDx8::Connect(void* (*)(char const*, int*))
+ T CShaderDeviceMgrDx8::~CShaderDeviceMgrDx8()
  T CShaderDeviceMgrDx8::Disconnect()
  T CShaderDeviceMgrDx8::GetAdapterCount() const
  T CShaderDeviceMgrDx8::GetAdapterInfo(int, MaterialAdapterInfo_t&) const
@@ -1116,23 +1347,23 @@
  T CShaderDeviceMgrDx8::SetMode(void*, int, ShaderDeviceInfo_t const&)
  T CShaderDeviceMgrDx8::Shutdown()
  T CShaderDeviceMgrDx8::ValidateMode(int, ShaderDeviceInfo_t const&) const
- T CShaderDeviceMgrDx8::~CShaderDeviceMgrDx8()
  T CShaderManager::BindPixelShader(PixelShaderHandle_t__*)
  T CShaderManager::BindVertexShader(VertexShaderHandle_t__*)
- T CShaderManager::CShaderManager()
  T CShaderManager::ClearVertexAndPixelShaderRefCounts()
  T CShaderManager::CompileShader(char const*, unsigned long, char const*)
  T CShaderManager::CreateDynamicCombos_Ver4(void*, unsigned char*)
  T CShaderManager::CreateDynamicCombos_Ver5(void*, unsigned char*, char*)
- T CShaderManager::CreatePixelShader(IShaderBuffer*)
  T CShaderManager::CreatePixelShader(char const*, int, char*)
- T CShaderManager::CreateVertexShader(IShaderBuffer*)
+ T CShaderManager::CreatePixelShader(IShaderBuffer*)
  T CShaderManager::CreateVertexShader(char const*, int, char*)
+ T CShaderManager::CreateVertexShader(IShaderBuffer*)
+ T CShaderManager::~CShaderManager()
+ T CShaderManager::CShaderManager()
  T CShaderManager::DestroyAllShaders()
- T CShaderManager::DestroyPixelShader(PixelShaderHandle_t__*)
  T CShaderManager::DestroyPixelShader(int)
- T CShaderManager::DestroyVertexShader(VertexShaderHandle_t__*)
+ T CShaderManager::DestroyPixelShader(PixelShaderHandle_t__*)
  T CShaderManager::DestroyVertexShader(int)
+ T CShaderManager::DestroyVertexShader(VertexShaderHandle_t__*)
  T CShaderManager::DoStartupShaderPreloading()
  T CShaderManager::GetCurrentPixelShader()
  T CShaderManager::GetCurrentVertexShader()
@@ -1146,17 +1377,17 @@
  T CShaderManager::SetVertexShader(int)
  T CShaderManager::Shutdown()
  T CShaderManager::SpewVertexAndPixelShaders()
- T CShaderManager::~CShaderManager()
  T CShaderShadowDX8::AlphaFunc(ShaderAlphaFunc_t, float)
- T CShaderShadowDX8::BlendFunc(ShaderBlendFactor_t, ShaderBlendFactor_t)
  T CShaderShadowDX8::BlendFuncSeparateAlpha(ShaderBlendFactor_t, ShaderBlendFactor_t)
- T CShaderShadowDX8::BlendOp(ShaderBlendOp_t)
+ T CShaderShadowDX8::BlendFunc(ShaderBlendFactor_t, ShaderBlendFactor_t)
  T CShaderShadowDX8::BlendOpSeparateAlpha(ShaderBlendOp_t)
+ T CShaderShadowDX8::BlendOp(ShaderBlendOp_t)
  T CShaderShadowDX8::ComputeAggregateShadowState()
  T CShaderShadowDX8::ConfigureAlphaPipe(unsigned int)
  T CShaderShadowDX8::ConfigureCustomFVFVertexShader(unsigned int)
  T CShaderShadowDX8::ConfigureFVFVertexShader(unsigned int)
  T CShaderShadowDX8::ConfigureTextureCoordinates(unsigned int)
+ T CShaderShadowDX8::~CShaderShadowDX8()
  T CShaderShadowDX8::CustomTextureOperation(TextureStage_t, ShaderTexChannel_t, ShaderTexOp_t, ShaderTexArg_t, ShaderTexArg_t)
  T CShaderShadowDX8::CustomTextureStages(int)
  T CShaderShadowDX8::DepthFunc(ShaderDepthFunc_t)
@@ -1177,13 +1408,13 @@
  T CShaderShadowDX8::EnableDepthWrites(bool)
  T CShaderShadowDX8::EnableLighting(bool)
  T CShaderShadowDX8::EnablePolyOffset(PolygonOffsetMode_t)
+ T CShaderShadowDX8::EnableSpecular(bool)
  T CShaderShadowDX8::EnableSRGBRead(Sampler_t, bool)
  T CShaderShadowDX8::EnableSRGBWrite(bool)
- T CShaderShadowDX8::EnableSpecular(bool)
  T CShaderShadowDX8::EnableStencil(bool)
  T CShaderShadowDX8::EnableTexGen(TextureStage_t, bool)
- T CShaderShadowDX8::EnableTexture(Sampler_t, bool)
  T CShaderShadowDX8::EnableTextureAlpha(TextureStage_t, bool)
+ T CShaderShadowDX8::EnableTexture(Sampler_t, bool)
  T CShaderShadowDX8::EnableVertexAlpha(bool)
  T CShaderShadowDX8::EnableVertexBlend(bool)
  T CShaderShadowDX8::FlagsToVertexFormat(int) const
@@ -1208,18 +1439,18 @@
  T CShaderShadowDX8::StencilWriteMask(int)
  T CShaderShadowDX8::TexGen(TextureStage_t, ShaderTexGenParam_t)
  T CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)
- T CShaderShadowDX8::~CShaderShadowDX8()
  T CTempMeshDX8::BeginPass()
  T CTempMeshDX8::ClipTriangle(D3DXVECTOR3**, float, D3DXMATRIX&)
  T CTempMeshDX8::CopyToMeshBuilder(int, int, int, int, int, CMeshBuilder&)
+ T CTempMeshDX8::~CTempMeshDX8()
  T CTempMeshDX8::Draw(int, int)
  T CTempMeshDX8::GetPrimitiveType() const
  T CTempMeshDX8::HandleLateCreation()
  T CTempMeshDX8::IndexCount() const
  T CTempMeshDX8::IsDynamic() const
  T CTempMeshDX8::LockMesh(int, int, MeshDesc_t&)
- T CTempMeshDX8::ModifyBegin(int, int, int, int, MeshDesc_t&)
  T CTempMeshDX8::ModifyBeginEx(bool, int, int, int, int, MeshDesc_t&)
+ T CTempMeshDX8::ModifyBegin(int, int, int, int, MeshDesc_t&)
  T CTempMeshDX8::ModifyEnd(MeshDesc_t&)
  T CTempMeshDX8::RenderPass()
  T CTempMeshDX8::SetPrimitiveType(MaterialPrimitiveType_t)
@@ -1227,21 +1458,21 @@
  T CTempMeshDX8::TestSelection()
  T CTempMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
  T CTempMeshDX8::VertexCount() const
- T CTempMeshDX8::~CTempMeshDX8()
  T CTransitionTable::ApplyAlphaBlend(ShadowState_t const&)
  T CTransitionTable::ApplyAlphaTest(ShadowState_t const&)
  T CTransitionTable::ApplyAlphaTextureStage(ShadowState_t const&, int)
  T CTransitionTable::ApplyColorTextureStage(ShadowState_t const&, int)
  T CTransitionTable::ApplyDepthTest(ShadowState_t const&)
- T CTransitionTable::ApplySRGBWriteEnable(ShadowState_t const&)
  T CTransitionTable::ApplyShaderState(ShadowState_t const&, ShadowShaderState_t const&)
+ T CTransitionTable::ApplySRGBWriteEnable(ShadowState_t const&)
  T CTransitionTable::ApplyTransition(CTransitionTable::TransitionList_t&, int)
  T CTransitionTable::ApplyTransitionList(int, int, int)
- T CTransitionTable::CTransitionTable()
  T CTransitionTable::CreateNormalTransitions(ShadowState_t const&, ShadowState_t const&, bool)
  T CTransitionTable::CreateShadowState(ShadowState_t const&)
  T CTransitionTable::CreateStateSnapshot(short, ShadowShaderState_t const&)
  T CTransitionTable::CreateTransitionTableEntry(int, int)
+ T CTransitionTable::~CTransitionTable()
+ T CTransitionTable::CTransitionTable()
  T CTransitionTable::EnableLinearColorSpaceFrameBuffer(bool)
  T CTransitionTable::FindIdenticalTransitionList(unsigned int, unsigned short, unsigned int) const
  T CTransitionTable::FindShadowState(ShadowState_t const&) const
@@ -1258,12 +1489,11 @@
  T CTransitionTable::TakeSnapshot()
  T CTransitionTable::UseDefaultState()
  T CTransitionTable::UseSnapshot(short)
- T CTransitionTable::~CTransitionTable()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::AssumeMemory(void*, int, int, int)
+ T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::CUtlBuffer(int, int, int)
  T CUtlBuffer::CUtlBuffer(void const*, int, int)
- T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::EatCPPComment()
  T CUtlBuffer::EatWhiteSpace()
  T CUtlBuffer::EnsureCapacity(int)
@@ -1275,14 +1505,14 @@
  T CUtlBuffer::PeekStringLength()
  T CUtlBuffer::PeekStringMatch(int, char const*, int)
  T CUtlBuffer::PeekWhiteSpace(int)
- T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::PutOverflow(int)
+ T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::Scanf(char const*, ...)
  T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::VaScanf(char const*, char*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlLinkedList<CShaderManager::ShaderLookup_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CShaderManager::ShaderLookup_t, int> > >::AllocInternal(bool)
  T CUtlLinkedList<CShaderManager::ShaderLookup_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CShaderManager::ShaderLookup_t, int> > >::RemoveAll()
  T CUtlLinkedList<CShaderManager::ShaderLookup_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CShaderManager::ShaderLookup_t, int> > >::Unlink(int)
@@ -1298,9 +1528,10 @@
  T CUtlLinkedList<Texture_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<Texture_t, int> > >::AllocInternal(bool)
  T CUtlLinkedList<Texture_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<Texture_t, int> > >::RemoveAll()
  T CUtlLinkedList<Texture_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<Texture_t, int> > >::Unlink(int)
- T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemoryAligned<unsigned char, 32>::~CUtlMemoryAligned()
+ T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
@@ -1311,12 +1542,12 @@
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Find(VertexDeclLookup_t const&) const
+ T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::~CUtlRBTree()
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::FindInsertionPosition(VertexDeclLookup_t const&, int&, bool&)
+ T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Find(VertexDeclLookup_t const&) const
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::FirstInorder() const
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Insert(VertexDeclLookup_t const&)
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::InsertRebalance(int)
+ T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Insert(VertexDeclLookup_t const&)
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::IsLeftChild(int) const
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::IsRightChild(int) const
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::NewNode()
@@ -1324,7 +1555,6 @@
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::RemoveAll()
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::RotateLeft(int)
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::RotateRight(int)
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::~CUtlRBTree()
  T CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::Insert(CTransitionTable::ShadowStateDictEntry_t const&)
  T CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::Insert(CTransitionTable::SnapshotDictEntry_t const&)
  T CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::Insert(CTransitionTable::TransitionList_t const&)
@@ -1332,57 +1562,58 @@
  T CUtlStack<int, CUtlMemory<int, int> >::~CUtlStack()
  T CUtlString::Get() const
  T CUtlString::GetForModify()
+ T CUtlString::operator=(char const*)
  T CUtlString::Purge()
  T CUtlString::Set(char const*)
- T CUtlString::operator=(char const*)
  T CUtlSymbol::CUtlSymbol(char const*)
  T CUtlSymbol::Initialize()
  T CUtlSymbol::String() const
  T CUtlSymbolTable::AddString(char const*)
  T CUtlSymbolTable::CLess::operator()(CUtlSymbolTable::CStringPoolIndex const&, CUtlSymbolTable::CStringPoolIndex const&) const
- T CUtlSymbolTable::CUtlSymbolTable(int, int, bool)
- T CUtlSymbolTable::String(CUtlSymbol) const
  T CUtlSymbolTable::~CUtlSymbolTable()
+ T CUtlSymbolTable::CUtlSymbolTable(int, int, bool)
  T CUtlSymbolTableMT::String(CUtlSymbol) const
+ T CUtlSymbolTable::String(CUtlSymbol) const
  T CUtlVector<CMeshMgr::VertexBufferLookup_t, CUtlMemory<CMeshMgr::VertexBufferLookup_t, int> >::~CUtlVector()
  T CUtlVector<CShaderDeviceMgrBase::AdapterInfo_t, CUtlMemory<CShaderDeviceMgrBase::AdapterInfo_t, int> >::~CUtlVector()
  T CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> >::~CUtlVector()
  T CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> >::~CUtlVector()
  T CUtlVector<CTransitionTable::SnapshotShaderState_t, CUtlMemory<CTransitionTable::SnapshotShaderState_t, int> >::~CUtlVector()
- T CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >::GrowVector(int)
  T CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >::~CUtlVector()
+ T CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >::GrowVector(int)
  T CUtlVector<CTransitionTable::TransitionOp_t, CUtlMemory<CTransitionTable::TransitionOp_t, int> >::AddToTail()
  T CUtlVector<CTransitionTable::TransitionOp_t, CUtlMemory<CTransitionTable::TransitionOp_t, int> >::~CUtlVector()
  T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
  T CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
  T CUtlVector<CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >, CUtlMemory<CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >, int> >::~CUtlVector()
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
  T CUtlVector<ShadowState_t, CUtlMemory<ShadowState_t, int> >::~CUtlVector()
- T CUtlVector<StaticComboAliasRecord_t, CUtlMemory<StaticComboAliasRecord_t, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<StaticComboAliasRecord_t, CUtlMemory<StaticComboAliasRecord_t, int> >::~CUtlVector()
- T CUtlVector<StaticComboRecord_t, CUtlMemory<StaticComboRecord_t, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<StaticComboAliasRecord_t, CUtlMemory<StaticComboAliasRecord_t, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<StaticComboRecord_t, CUtlMemory<StaticComboRecord_t, int> >::~CUtlVector()
- T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
+ T CUtlVector<StaticComboRecord_t, CUtlMemory<StaticComboRecord_t, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<unsigned char, CUtlMemoryAligned<unsigned char, 32> >::InsertMultipleBefore(int, int)
- T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
+ T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
+ T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<void (*)(), CUtlMemory<void (*)(), int> >::~CUtlVector()
  T CUtlVector<void (*)(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool), CUtlMemory<void (*)(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool), int> >::~CUtlVector()
  T CVBAllocTracker::CountVB(void*, bool, int, int, unsigned long long)
  T CVBAllocTracker::TrackMeshAllocations(char const*)
  T CVBAllocTracker::UnCountVB(void*)
- T CVertexBuffer::Create(IDirect3DDevice9*)
- T CVertexBufferBase::CVertexBufferBase(char const*)
  T CVertexBufferBase::ComputeVertexDescription(unsigned char*, unsigned long long, VertexDesc_t&)
+ T CVertexBufferBase::~CVertexBufferBase()
+ T CVertexBufferBase::CVertexBufferBase(char const*)
  T CVertexBufferBase::PrintVertexFormat(unsigned long long)
  T CVertexBufferBase::Spew(int, VertexDesc_t const&)
  T CVertexBufferBase::ValidateData(int, VertexDesc_t const&)
  T CVertexBufferBase::VertexFormatSize(unsigned long long)
- T CVertexBufferBase::~CVertexBufferBase()
+ T CVertexBuffer::Create(IDirect3DDevice9*)
  T CVertexBufferDx8::Allocate()
  T CVertexBufferDx8::BeginCastBuffer(unsigned long long)
+ T CVertexBufferDx8::~CVertexBufferDx8()
  T CVertexBufferDx8::CVertexBufferDx8(ShaderBufferType_t, unsigned long long, int, char const*)
  T CVertexBufferDx8::EndCastBuffer()
  T CVertexBufferDx8::GetRoomRemaining() const
@@ -1391,56 +1622,12 @@
  T CVertexBufferDx8::Lock(int, bool, VertexDesc_t&)
  T CVertexBufferDx8::Unlock(int, VertexDesc_t&)
  T CVertexBufferDx8::VertexCount() const
- T CVertexBufferDx8::~CVertexBufferDx8()
- T ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)
- T ComputeVertexSpec(unsigned long long, _D3DVERTEXELEMENT9*, bool, bool, bool)
- T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
- T ConCommand::CanAutoComplete()
- T ConCommand::ConCommand(char const*, void (*)(), char const*, int, int (*)(char const*, char (*) [64]))
- T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
- T ConCommand::Dispatch(CCommand const&)
- T ConCommand::IsCommand() const
- T ConCommand::~ConCommand()
- T ConCommandBase::AddFlags(int)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConCommandBase::GetHelpText() const
- T ConCommandBase::GetName() const
- T ConCommandBase::Init()
- T ConCommandBase::IsFlagSet(int) const
- T ConCommandBase::IsRegistered() const
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::ConVar(char const*, char const*, int)
- T ConVar::ConVar(char const*, char const*, int, char const*)
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar::~ConVar()
- T ConVarRef::ConVarRef(char const*)
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar_Unregister()
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T CreateD3DTexture(int, int, int, ImageFormat, int, int, char*)
- T CreateInterface
- T CreateInterfaceInternal(char const*, int*)
  T D3DSupportsCompressedTextures()
  T DefaultCompletionFunc(char const*, char (*) [64])
  T DestroyD3DTexture(IDirect3DBaseTexture9*)
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
+ T dyld_stub_binding_helper
  T EvaluateConditional(char const*)
  T FindNearestSupportedBackBufferFormat(unsigned int, _D3DDEVTYPE, ImageFormat, ImageFormat, bool)
  T FindNearestSupportedDepthFormat(int, ImageFormat, ImageFormat, _D3DFORMAT)
@@ -1454,21 +1641,33 @@
  T GenerateQuadIndexBuffer(unsigned short*, int, int)
  T GenerateSequentialIndexBuffer(unsigned short*, int, int)
  T GetCStringCharConversion()
+ t GetImageFormat(IDirect3DBaseTexture9*)
  T GetNearestD3DColorFormat(ImageFormat, bool, bool, bool)
  T GetNoEscCharConversion()
+ t global constructors keyed to a
  T GlobalMemoryStatus(_MEMORYSTATUS*)
+ ThreadGetCurrentId
+ ThreadInMainThread
+ ThreadInterlockedDecrement
+ ThreadInterlockedIncrement
+ ThreadSleep
  T IDirect3DDevice9::SetRenderStateInline(_D3DRENDERSTATETYPE, unsigned int)
- T IMaterialSystemHardwareConfig::SupportsNormalMapCompression() const
- T IShaderAPI::SupportsNormalMapCompression() const
  T ImageLoader::D3DFormatToImageFormat(_D3DFORMAT)
  T ImageLoader::GetMemRequired(int, int, int, ImageFormat, bool)
  T ImageLoader::ImageFormatInfo(ImageFormat)
  T ImageLoader::ImageFormatToD3DFormat(ImageFormat)
+ T IMaterialSystemHardwareConfig::SupportsNormalMapCompression() const
  T InitializeColorInformation(unsigned int, _D3DDEVTYPE, ImageFormat)
+ T int CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::ShadowStateDictEntry_t>(CTransitionTable::ShadowStateDictEntry_t const&, bool*) const
+ T int CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::SnapshotDictEntry_t>(CTransitionTable::SnapshotDictEntry_t const&, bool*) const
+ T int CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::FindLessOrEqual<CTransitionTable::TransitionList_t>(CTransitionTable::TransitionList_t const&, bool*) const
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
+ T _InvRSquared(float const*)
+ T IShaderAPI::SupportsNormalMapCompression() const
  T IsIconic(void*)
  T KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
  T KeyValues::CreateNewKey()
+ T KeyValues::deleteThis()
  T KeyValues::FindKey(char const*, bool)
  T KeyValues::GetColor(char const*)
  T KeyValues::GetDataType(char const*)
@@ -1485,10 +1684,12 @@
  T KeyValues::GetSymbolForStringClassic(char const*, bool)
  T KeyValues::GetWString(char const*, wchar_t const*)
  T KeyValues::KeyValues(char const*)
- T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
+ T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
  T KeyValues::MakeCopy() const
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
  T KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
  T KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
  T KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
@@ -1505,64 +1706,26 @@
  T KeyValues::SetString(char const*, char const*)
  T KeyValues::SetWString(char const*, wchar_t const*)
  T KeyValues::WriteConvertedString(IBaseFileSystem*, void*, CUtlBuffer*, char const*)
- T KeyValues::deleteThis()
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
  T LinearToGammaFullRange(float)
  T LoadCubeTextureFromVTF(TextureLoadInfo_t&, IVTFTexture*, int)
  T LoadSubTexture(TextureLoadInfo_t&, int, int, int)
- T LoadTexture(TextureLoadInfo_t&)
  T LoadTextureFromVTF(TextureLoadInfo_t&, IVTFTexture*, int)
+ T LoadTexture(TextureLoadInfo_t&)
  T LoadVolumeTextureFromVTF(TextureLoadInfo_t&, IVTFTexture*, int)
  T LockTexture(int, int, IDirect3DBaseTexture9*, int, _D3DCUBEMAP_FACES, int, int, int, int, bool, CPixelWriter&)
  T LzmaDec_Allocate
  T LzmaDec_AllocateProbs
+ t LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
  T LzmaDec_DecodeToDic
  T LzmaDec_Free
  T LzmaDecode
+ t LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
+ t LzmaDec_WriteRem(CLzmaDec*, unsigned long)
  T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
  T MatrixTranspose(VMatrix const&, VMatrix&)
+ t mat_shadercount(CCommand const&)
+ t mat_spewvertexandpixelshaders(CCommand const&)
  T MeshMgr()
- T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
- T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
- T Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
- T ReleaseAllVertexDecl()
- T ReleaseD3DTexture(IDirect3DBaseTexture9*)
- T SetIdentityMatrix(matrix3x4_t&)
- T ShaderDeviceFactory(char const*, int*)
- T ShaderShadow()
- T SinCos(float, float*, float*)
- T Sleep(unsigned int)
- T SrgbGammaToLinear(float)
- T SrgbLinearToGamma(float)
- T Sys_GetFactoryThis()
- T UnlockTexture(int, int, IDirect3DBaseTexture9*, int, _D3DCUBEMAP_FACES)
- T VMatrix::operator=(VMatrix const&)
- T V_UnqualifiedFileName(char const*)
- T V_atof(char const*)
- T V_atoi(char const*)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_stristr(char const*, char const*)
- T V_stristr(char*, char const*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T _InvRSquared(float const*)
- T _SSE_InvRSquared(float const*)
- T _SSE_RSqrtAccurate(float)
- T _SSE_RSqrtFast(float)
- T _SSE_Sqrt(float)
- T _SSE_VectorNormalizeFast(Vector&)
- T _VectorNormalize(Vector&)
- T _VectorNormalizeFast(Vector&)
- T __clang_call_terminate
- T _rsqrtf(float)
- T _sqrtf(float)
- T dyld_stub_binding_helper
- T int CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::ShadowStateDictEntry_t>(CTransitionTable::ShadowStateDictEntry_t const&, bool*) const
- T int CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::SnapshotDictEntry_t>(CTransitionTable::SnapshotDictEntry_t const&, bool*) const
- T int CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::FindLessOrEqual<CTransitionTable::TransitionList_t>(CTransitionTable::TransitionList_t const&, bool*) const
  T non-virtual thunk to CBaseMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
  T non-virtual thunk to CBaseMeshDX8::EndCastBuffer()
  T non-virtual thunk to CBaseMeshDX8::GetRoomRemaining() const
@@ -1574,15 +1737,15 @@
  T non-virtual thunk to CBaseMeshDX8::Unlock(int, IndexDesc_t&)
  T non-virtual thunk to CBaseMeshDX8::ValidateData(int, IndexDesc_t const&)
  T non-virtual thunk to CBufferedMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
+ T non-virtual thunk to CBufferedMeshDX8::~CBufferedMeshDX8()
  T non-virtual thunk to CBufferedMeshDX8::EndCastBuffer()
  T non-virtual thunk to CBufferedMeshDX8::GetRoomRemaining() const
  T non-virtual thunk to CBufferedMeshDX8::IndexCount() const
  T non-virtual thunk to CBufferedMeshDX8::IndexFormat() const
  T non-virtual thunk to CBufferedMeshDX8::IsDynamic() const
- T non-virtual thunk to CBufferedMeshDX8::~CBufferedMeshDX8()
+ T non-virtual thunk to CDynamicMeshDX8::~CDynamicMeshDX8()
  T non-virtual thunk to CDynamicMeshDX8::IndexCount() const
  T non-virtual thunk to CDynamicMeshDX8::IsDynamic() const
- T non-virtual thunk to CDynamicMeshDX8::~CDynamicMeshDX8()
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -1590,10 +1753,15 @@
  T non-virtual thunk to CEmptyConVar::SetValue(int)
  T non-virtual thunk to CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
  T non-virtual thunk to CMeshBase::~CMeshBase()
+ T non-virtual thunk to CMeshDX8::~CMeshDX8()
  T non-virtual thunk to CMeshDX8::IndexCount() const
  T non-virtual thunk to CMeshDX8::IsDynamic() const
  T non-virtual thunk to CMeshDX8::Unlock(int, IndexDesc_t&)
- T non-virtual thunk to CMeshDX8::~CMeshDX8()
+ T non-virtual thunk to ConVar::GetName() const
+ T non-virtual thunk to ConVar::IsFlagSet(int) const
+ T non-virtual thunk to ConVar::SetValue(char const*)
+ T non-virtual thunk to ConVar::SetValue(float)
+ T non-virtual thunk to ConVar::SetValue(int)
  T non-virtual thunk to CShaderAPIDx8::AcquireThreadOwnership()
  T non-virtual thunk to CShaderAPIDx8::AdvancePIXFrame()
  T non-virtual thunk to CShaderAPIDx8::ApplyAlphaToCoverage(bool)
@@ -1603,10 +1771,10 @@
  T non-virtual thunk to CShaderAPIDx8::ApplyZBias(ShadowState_t const&)
  T non-virtual thunk to CShaderAPIDx8::BeginFrame()
  T non-virtual thunk to CShaderAPIDx8::BeginOcclusionQueryDrawing(ShaderAPIOcclusionQuery_t__*)
- T non-virtual thunk to CShaderAPIDx8::BeginPIXEvent(unsigned long, char const*)
  T non-virtual thunk to CShaderAPIDx8::BeginPass(short)
- T non-virtual thunk to CShaderAPIDx8::Bind(IMaterial*)
+ T non-virtual thunk to CShaderAPIDx8::BeginPIXEvent(unsigned long, char const*)
  T non-virtual thunk to CShaderAPIDx8::BindGeometryShader(GeometryShaderHandle_t__*)
+ T non-virtual thunk to CShaderAPIDx8::Bind(IMaterial*)
  T non-virtual thunk to CShaderAPIDx8::BindIndexBuffer(IIndexBuffer*, int)
  T non-virtual thunk to CShaderAPIDx8::BindPixelShader(PixelShaderHandle_t__*)
  T non-virtual thunk to CShaderAPIDx8::BindStandardTexture(Sampler_t, StandardTextureId_t)
@@ -1642,17 +1810,17 @@
  T non-virtual thunk to CShaderAPIDx8::ComputeVertexFormat(int, short*) const
  T non-virtual thunk to CShaderAPIDx8::ComputeVertexUsage(int, short*) const
  T non-virtual thunk to CShaderAPIDx8::CopyRenderTargetToScratchTexture(int, int, Rect_t*, Rect_t*)
- T non-virtual thunk to CShaderAPIDx8::CopyRenderTargetToTexture(int)
  T non-virtual thunk to CShaderAPIDx8::CopyRenderTargetToTextureEx(int, int, Rect_t*, Rect_t*)
+ T non-virtual thunk to CShaderAPIDx8::CopyRenderTargetToTexture(int)
  T non-virtual thunk to CShaderAPIDx8::CopyTextureToRenderTargetEx(int, int, Rect_t*, Rect_t*)
  T non-virtual thunk to CShaderAPIDx8::CopyTextureToTexture(int, int)
  T non-virtual thunk to CShaderAPIDx8::CreateDepthTexture(ImageFormat, int, int, char const*, bool)
  T non-virtual thunk to CShaderAPIDx8::CreateOcclusionQueryObject()
  T non-virtual thunk to CShaderAPIDx8::CreateTexture(int, int, int, ImageFormat, int, int, int, char const*, char const*)
  T non-virtual thunk to CShaderAPIDx8::CreateTextures(int*, int, int, int, int, ImageFormat, int, int, int, char const*, char const*)
+ T non-virtual thunk to CShaderAPIDx8::~CShaderAPIDx8()
  T non-virtual thunk to CShaderAPIDx8::CullMode(MaterialCullMode_t)
  T non-virtual thunk to CShaderAPIDx8::CurrentTime() const
- T non-virtual thunk to CShaderAPIDx8::DXSupportLevelChanged()
  T non-virtual thunk to CShaderAPIDx8::DeleteTexture(int)
  T non-virtual thunk to CShaderAPIDx8::DestroyOcclusionQueryObject(ShaderAPIOcclusionQuery_t__*)
  T non-virtual thunk to CShaderAPIDx8::DestroyVertexBuffers(bool)
@@ -1663,17 +1831,18 @@
  T non-virtual thunk to CShaderAPIDx8::Draw(MaterialPrimitiveType_t, int, int)
  T non-virtual thunk to CShaderAPIDx8::DrawMesh(CMeshBase*)
  T non-virtual thunk to CShaderAPIDx8::DrawWithVertexAndIndexBuffers()
+ T non-virtual thunk to CShaderAPIDx8::DXSupportLevelChanged()
  T non-virtual thunk to CShaderAPIDx8::EnableAlphaToCoverage()
  T non-virtual thunk to CShaderAPIDx8::EnableBuffer2FramesAhead(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableClipPlane(int, bool)
  T non-virtual thunk to CShaderAPIDx8::EnableDebugTextureList(bool)
+ T non-virtual thunk to CShaderAPIDx8::EnabledSRGBWrite(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableFastClip(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableGetAllTextures(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableHWMorphing(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableLinearColorSpaceFrameBuffer(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableShaderShaderMutex(bool)
  T non-virtual thunk to CShaderAPIDx8::EnableUserClipTransformOverride(bool)
- T non-virtual thunk to CShaderAPIDx8::EnabledSRGBWrite(bool)
  T non-virtual thunk to CShaderAPIDx8::EndFrame()
  T non-virtual thunk to CShaderAPIDx8::EndOcclusionQueryDrawing(ShaderAPIOcclusionQuery_t__*)
  T non-virtual thunk to CShaderAPIDx8::EndPIXEvent()
@@ -1702,20 +1871,20 @@
  T non-virtual thunk to CShaderAPIDx8::GetCurrentLightCombo() const
  T non-virtual thunk to CShaderAPIDx8::GetCurrentNumBones() const
  T non-virtual thunk to CShaderAPIDx8::GetD3DTexture(int)
+ T non-virtual thunk to CShaderAPIDx8::GetDebugTextureList()
  T non-virtual thunk to CShaderAPIDx8::GetDX9LightState(LightState_t*) const
  T non-virtual thunk to CShaderAPIDx8::GetDXLevelDefaults(unsigned int&, unsigned int&)
- T non-virtual thunk to CShaderAPIDx8::GetDebugTextureList()
- T non-virtual thunk to CShaderAPIDx8::GetDynamicMesh(IMaterial*, int, bool, IMesh*, IMesh*)
  T non-virtual thunk to CShaderAPIDx8::GetDynamicMeshEx(IMaterial*, unsigned long long, int, bool, IMesh*, IMesh*)
- T non-virtual thunk to CShaderAPIDx8::GetFlashlightState(VMatrix&) const
+ T non-virtual thunk to CShaderAPIDx8::GetDynamicMesh(IMaterial*, int, bool, IMesh*, IMesh*)
  T non-virtual thunk to CShaderAPIDx8::GetFlashlightStateEx(VMatrix&, ITexture**) const
+ T non-virtual thunk to CShaderAPIDx8::GetFlashlightState(VMatrix&) const
  T non-virtual thunk to CShaderAPIDx8::GetFlexMesh()
  T non-virtual thunk to CShaderAPIDx8::GetFloatRenderingParameter(int) const
  T non-virtual thunk to CShaderAPIDx8::GetFogDistances(float*, float*, float*)
  T non-virtual thunk to CShaderAPIDx8::GetIntRenderingParameter(int) const
  T non-virtual thunk to CShaderAPIDx8::GetLight(int) const
- T non-virtual thunk to CShaderAPIDx8::GetLightMapScaleFactor() const
  T non-virtual thunk to CShaderAPIDx8::GetLightmapDimensions(int*, int*)
+ T non-virtual thunk to CShaderAPIDx8::GetLightMapScaleFactor() const
  T non-virtual thunk to CShaderAPIDx8::GetMatrix(MaterialMatrixMode_t, float*)
  T non-virtual thunk to CShaderAPIDx8::GetMaxIndicesToRender()
  T non-virtual thunk to CShaderAPIDx8::GetMaxLights() const
@@ -1787,8 +1956,8 @@
  T non-virtual thunk to CShaderAPIDx8::PushMatrix()
  T non-virtual thunk to CShaderAPIDx8::PushSelectionName(int)
  T non-virtual thunk to CShaderAPIDx8::QueueResetRenderState()
- T non-virtual thunk to CShaderAPIDx8::ReadPixels(Rect_t*, Rect_t*, unsigned char*, ImageFormat, int)
  T non-virtual thunk to CShaderAPIDx8::ReadPixels(int, int, int, int, unsigned char*, ImageFormat)
+ T non-virtual thunk to CShaderAPIDx8::ReadPixels(Rect_t*, Rect_t*, unsigned char*, ImageFormat, int)
  T non-virtual thunk to CShaderAPIDx8::RegisterSelectionHit(float, float)
  T non-virtual thunk to CShaderAPIDx8::ReleaseShaderObjects()
  T non-virtual thunk to CShaderAPIDx8::ReleaseThreadOwnership()
@@ -1802,8 +1971,8 @@
  T non-virtual thunk to CShaderAPIDx8::SceneFogMode(MaterialFogMode_t)
  T non-virtual thunk to CShaderAPIDx8::SelectionBuffer(unsigned int*, int)
  T non-virtual thunk to CShaderAPIDx8::SelectionMode(bool)
- T non-virtual thunk to CShaderAPIDx8::SetAmbientLight(float, float, float)
  T non-virtual thunk to CShaderAPIDx8::SetAmbientLightCube(Vector4D*)
+ T non-virtual thunk to CShaderAPIDx8::SetAmbientLight(float, float, float)
  T non-virtual thunk to CShaderAPIDx8::SetAnisotropicLevel(int)
  T non-virtual thunk to CShaderAPIDx8::SetBooleanPixelShaderConstant(int, int const*, int, bool)
  T non-virtual thunk to CShaderAPIDx8::SetBooleanVertexShaderConstant(int, int const*, int, bool)
@@ -1814,31 +1983,31 @@
  T non-virtual thunk to CShaderAPIDx8::SetDepthFeatheringPixelShaderConstant(int, float)
  T non-virtual thunk to CShaderAPIDx8::SetDisallowAccess(bool)
  T non-virtual thunk to CShaderAPIDx8::SetFastClipPlane(float const*)
- T non-virtual thunk to CShaderAPIDx8::SetFlashlightState(FlashlightState_t const&, VMatrix const&)
  T non-virtual thunk to CShaderAPIDx8::SetFlashlightStateEx(FlashlightState_t const&, VMatrix const&, ITexture*)
+ T non-virtual thunk to CShaderAPIDx8::SetFlashlightState(FlashlightState_t const&, VMatrix const&)
  T non-virtual thunk to CShaderAPIDx8::SetFlexWeights(int, int, MorphWeight_t const*)
  T non-virtual thunk to CShaderAPIDx8::SetFloatRenderingParameter(int, float)
  T non-virtual thunk to CShaderAPIDx8::SetFogZ(float)
  T non-virtual thunk to CShaderAPIDx8::SetFullScreenTextureHandle(int)
  T non-virtual thunk to CShaderAPIDx8::SetHeightClipMode(MaterialHeightClipMode_t)
  T non-virtual thunk to CShaderAPIDx8::SetHeightClipZ(float)
- T non-virtual thunk to CShaderAPIDx8::SetIntRenderingParameter(int, int)
  T non-virtual thunk to CShaderAPIDx8::SetIntegerPixelShaderConstant(int, int const*, int, bool)
  T non-virtual thunk to CShaderAPIDx8::SetIntegerVertexShaderConstant(int, int const*, int, bool)
- T non-virtual thunk to CShaderAPIDx8::SetLight(int, LightDesc_t const&)
+ T non-virtual thunk to CShaderAPIDx8::SetIntRenderingParameter(int, int)
  T non-virtual thunk to CShaderAPIDx8::SetLightingOrigin(Vector)
+ T non-virtual thunk to CShaderAPIDx8::SetLight(int, LightDesc_t const&)
  T non-virtual thunk to CShaderAPIDx8::SetLinearToGammaConversionTextures(int, int)
  T non-virtual thunk to CShaderAPIDx8::SetMode(void*, int, ShaderDeviceInfo_t const&)
  T non-virtual thunk to CShaderAPIDx8::SetNumBoneWeights(int)
- T non-virtual thunk to CShaderAPIDx8::SetPIXMarker(unsigned long, char const*)
- T non-virtual thunk to CShaderAPIDx8::SetPSNearAndFarZ(int)
  T non-virtual thunk to CShaderAPIDx8::SetPixelShaderConstant(int, float const*, int, bool)
  T non-virtual thunk to CShaderAPIDx8::SetPixelShaderFogParams(int)
  T non-virtual thunk to CShaderAPIDx8::SetPixelShaderIndex(int)
  T non-virtual thunk to CShaderAPIDx8::SetPixelShaderStateAmbientLightCube(int, bool)
+ T non-virtual thunk to CShaderAPIDx8::SetPIXMarker(unsigned long, char const*)
+ T non-virtual thunk to CShaderAPIDx8::SetPSNearAndFarZ(int)
  T non-virtual thunk to CShaderAPIDx8::SetRasterState(ShaderRasterState_t const&)
- T non-virtual thunk to CShaderAPIDx8::SetRenderTarget(int, int)
  T non-virtual thunk to CShaderAPIDx8::SetRenderTargetEx(int, int, int)
+ T non-virtual thunk to CShaderAPIDx8::SetRenderTarget(int, int)
  T non-virtual thunk to CShaderAPIDx8::SetScissorRect(int, int, int, int, bool)
  T non-virtual thunk to CShaderAPIDx8::SetShadowDepthBiasFactors(float, float)
  T non-virtual thunk to CShaderAPIDx8::SetSkinningMatrices()
@@ -1854,13 +2023,13 @@
  T non-virtual thunk to CShaderAPIDx8::SetStencilZFailOperation(StencilOperation_t)
  T non-virtual thunk to CShaderAPIDx8::SetTextureTransformDimension(TextureStage_t, int, bool)
  T non-virtual thunk to CShaderAPIDx8::SetToneMappingScaleLinear(Vector const&)
+ T non-virtual thunk to CShaderAPIDx8::SetupSelectionModeVisualizationState()
  T non-virtual thunk to CShaderAPIDx8::SetVectorRenderingParameter(int, Vector const&)
  T non-virtual thunk to CShaderAPIDx8::SetVertexBlendState(int)
  T non-virtual thunk to CShaderAPIDx8::SetVertexShaderConstant(int, float const*, int, bool)
  T non-virtual thunk to CShaderAPIDx8::SetVertexShaderIndex(int)
  T non-virtual thunk to CShaderAPIDx8::SetVertexShaderStateAmbientLightCube()
  T non-virtual thunk to CShaderAPIDx8::SetViewports(int, ShaderViewport_t const*)
- T non-virtual thunk to CShaderAPIDx8::SetupSelectionModeVisualizationState()
  T non-virtual thunk to CShaderAPIDx8::ShadeMode(ShaderShadeMode_t)
  T non-virtual thunk to CShaderAPIDx8::ShaderLock()
  T non-virtual thunk to CShaderAPIDx8::ShaderUnlock()
@@ -1887,239 +2056,70 @@
  T non-virtual thunk to CShaderAPIDx8::UserClipTransform(VMatrix const&)
  T non-virtual thunk to CShaderAPIDx8::UsesVertexAndPixelShaders(short) const
  T non-virtual thunk to CShaderAPIDx8::UsingSoftwareVertexProcessing() const
- T non-virtual thunk to CShaderAPIDx8::~CShaderAPIDx8()
+ T non-virtual thunk to CTempMeshDX8::~CTempMeshDX8()
  T non-virtual thunk to CTempMeshDX8::IndexCount() const
  T non-virtual thunk to CTempMeshDX8::IsDynamic() const
- T non-virtual thunk to CTempMeshDX8::~CTempMeshDX8()
- T non-virtual thunk to ConVar::GetName() const
- T non-virtual thunk to ConVar::IsFlagSet(int) const
- T non-virtual thunk to ConVar::SetValue(char const*)
- T non-virtual thunk to ConVar::SetValue(float)
- T non-virtual thunk to ConVar::SetValue(int)
+ ToGLConnectLibraries
+ ToGLDisconnectLibraries
+ toglGetClientRect
+ __tolower
  T operator delete(void*)
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- T void SafeAssign<CIndexBuffer>(CIndexBuffer**, CIndexBuffer*)
- T void SafeRelease<CIndexBuffer>(CIndexBuffer**)
- ThreadGetCurrentId
- ThreadInMainThread
- ThreadInterlockedDecrement
- ThreadInterlockedIncrement
- ThreadSleep
- ToGLConnectLibraries
- ToGLDisconnectLibraries
- Warning
- _DefaultRuneLocale
- _ExitOnFatalAssert
- _SpewInfo
- _SpewMessage
- _Unwind_Resume
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_abort
- __cxa_guard_acquire
- __cxa_guard_release
- __cxa_pure_virtual
- __error
- __gxx_personality_v0
- __maskrune
- __stack_chk_fail
- __stack_chk_guard
- __tolower
- atof
- atoi
- b CIndexBufferDx8::Allocate()::_counter
- b CIndexBufferDx8::Free()::_counter
- b CIndexBufferDx8::HandlePerFrameTextureStats(int)::_counter
- b CMeshDX8::IsValidVertexFormat(unsigned long long)::numWarnings
- b CMeshDX8::RenderPass()::_counter
- b CMeshDX8::SetVertexStreamState(int)::bWarned
- b CShaderAPIDx8::ComputeFillRate()::pBuf
- b CShaderAPIDx8::ExportTextureList()::_counter
- b CShaderAPIDx8::SetMode(void*, int, ShaderDeviceInfo_t const&)::bSetModeOnce
- b CShaderAPIDx8::SetTextureState(Sampler_t, int, bool)::materialSystemConfig
- b CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)::bComplained
- b CTempMeshDX8::TestSelection()::transformedVert
- b CUtlSymbol::Initialize()::symbolsInitialized
- b ConVarRef::Init(char const*, bool)::bFirst
- b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
- b __g_CreateCHardwareConfigIMaterialSystemHardwareConfig_reg
- b __g_CreateCShaderAPIDx8IDebugTextureInfo_reg
- b __g_CreateCShaderAPIDx8IShaderAPI_reg
- b __g_CreateCShaderAPIDx8IShaderDevice_reg
- b __g_CreateCShaderDeviceMgrDx8IShaderDeviceMgr_reg
- b __g_CreateCShaderShadowDX8IShaderShadow_reg
- b __g_CreateCVBAllocTrackerIVBAllocTracker_reg
- b ccs_create_convars_from_hwconfig_command
- b f05
- b f3
- b g_CleanupSymbolTable
- b g_ClipVerts
- b g_D3DColorFormat
- b g_DeviceFormat
- b g_DeviceType
- b g_DisplayAdapter
- b g_LastVertexFormat
- b g_Mathlib_GammaToLinear
- b g_Mathlib_LinearToGamma
- b g_MeshMgr
- b g_NumClipVerts
- b g_ShaderAPIDX8
- b g_ShaderDeviceMgrDx8
- b g_ShaderShadow
- b g_bSupportsD15S1
- b g_bSupportsD16
- b g_bSupportsD24S8
- b g_bSupportsD24X4S4
- b g_bSupportsD24X8
- b g_bUsingVertexID
- b g_nLastColorMeshVertOffsetInBytes
- b g_nLastVertOffsetInBytes
- b g_nLastVertStride
- b g_nScratchIndexBuffer
- b g_pLastColorMesh
- b g_pLastIndex
- b g_pLastIndexBuffer
- b g_pLastVertex
- b g_pLastVertexBuffer
- b g_pStaticLZMABuf
- b g_unStaticLZMABufRef
- b g_unStaticLZMABufSize
- b guard variable for CIndexBufferDx8::Allocate()::_counter
- b guard variable for CIndexBufferDx8::Free()::_counter
- b guard variable for CIndexBufferDx8::HandlePerFrameTextureStats(int)::_counter
- b guard variable for CMeshDX8::RenderPass()::_counter
- b guard variable for CShaderAPIDx8::ExportTextureList()::_counter
- b guard variable for CShaderAPIDx8::SetTextureState(Sampler_t, int, bool)::materialSystemConfig
- b guard variable for CTempMeshDX8::TestSelection()::transformedVert
- b lineartoscreen
- b lineartotexture
- b mat_alphacoverage
- b mat_disable_ps_patch
- b mat_disablehwmorph
- b mat_force_ps_patch
- b mat_forcedynamic
- b mat_remoteshadercompile
- b mat_shadercount_command
- b mat_spewvertexandpixelshaders_command
- b mem_dumpvballocs
- b r_pix_recordframes
- b r_pix_start
- b r_pixelfog
- b r_shader_srgb
- b s_EmptyConVar
- b s_HardwareConfig
- b s_LockedRect
- b s_LockedSrcRect
- b s_NumPixelShadersCreated
- b s_NumVertexShadersCreated
- b s_ShaderManager
- b s_TempFactory
- b s_TextureCount
- b s_VertexDeclDict
- b s_bConnected
- b s_bMMXEnabled
- b s_bRegistered
- b s_bSSE2Enabled
- b s_bSSEEnabled
- b s_nCVarFlag
- b s_pTokenBuf
- b texturetolinear
- b vec2_invalid
- b vec2_origin
- b vec4_invalid
- b vec4_origin
- cos
- cosf
- d CHardwareConfig::HasFastVertexTextures() const::bEnableFastVertexTextures
- d InitShaderAPICVars()::g_ConVarAccessor
- d dyld__mach_header
- d g_Alloc
- d g_ImageFormatInfo
- d g_LastVertexIdx
- d s_DefaultAccessor
- d s_LastFileLoadingFrom
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- g_VProfCurrentProfile
- g_pMemAlloc
- memcmp
- memcpy
- memmove
- memset
- memset_pattern16
- pow
- pthread_mutex_destroy
- pthread_mutex_init
- pthread_mutex_lock
- pthread_mutex_unlock
- pthread_mutexattr_init
- pthread_mutexattr_settype
- qsort
- r .memset_pattern
- r CShaderManager::CreateStaticShaders()::psIllegalMaterial
- r g_DX8LightCombinations
- r pulCRCTable
- raise
- sin
- sprintf
- sscanf
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strlen
- strncat
- strncpy
- strtod$UNIX2003
- strtol
- strtoul
- swprintf
- t AddKey(KeyValues*, KeyValues*)
- t AdjustUpdateRange(float const*, void const*, int, int*)
- t BlitTextureBits(TextureLoadInfo_t&, int, int, int)
- t CC_DumpVBMemAllocs()
- t ClipTriangleAgainstPlane(D3DXVECTOR3**, int, D3DXVECTOR3**, int, float, bool)
- t CommitFlexWeights(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
- t CommitSetScissorRect(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
- t CommitSetViewports(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
- t CommitVertexTextures(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
- t CreateD3DPixelShader(unsigned int*, unsigned int, int, char const*, char*)
- t GetImageFormat(IDirect3DBaseTexture9*)
- t LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
- t LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
- t LzmaDec_WriteRem(CLzmaDec*, unsigned long)
  t OverrideValues_R(KeyValues*, KeyValues*)
+ T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
+ T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
+ T Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
+ T ReleaseAllVertexDecl()
+ T ReleaseD3DTexture(IDirect3DBaseTexture9*)
+ T _rsqrtf(float)
+ T SetIdentityMatrix(matrix3x4_t&)
+ T ShaderDeviceFactory(char const*, int*)
+ T ShaderShadow()
+ T SinCos(float, float*, float*)
+ T Sleep(unsigned int)
+ T _sqrtf(float)
+ T SrgbGammaToLinear(float)
+ T SrgbLinearToGamma(float)
+ T _SSE_InvRSquared(float const*)
+ T _SSE_RSqrtAccurate(float)
+ T _SSE_RSqrtFast(float)
+ T _SSE_Sqrt(float)
+ T _SSE_VectorNormalizeFast(Vector&)
+ T Sys_GetFactoryThis()
  t SzAlloc(void*, unsigned long)
  t SzFree(void*, void*)
  t TestTextureFormat(_D3DFORMAT, bool, bool, bool)
+ T UnlockTexture(int, int, IDirect3DBaseTexture9*, int, _D3DCUBEMAP_FACES)
+ T V_atof(char const*)
+ T V_atoi(char const*)
+ T _VectorNormalizeFast(Vector&)
+ T _VectorNormalize(Vector&)
  t VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
- t __CreateCHardwareConfigIMaterialSystemHardwareConfig_interface()
- t __CreateCShaderAPIDx8IDebugTextureInfo_interface()
- t __CreateCShaderAPIDx8IShaderAPI_interface()
- t __CreateCShaderAPIDx8IShaderDevice_interface()
- t __CreateCShaderDeviceMgrDx8IShaderDeviceMgr_interface()
- t __CreateCShaderShadowDX8IShaderShadow_interface()
- t __CreateCVBAllocTrackerIVBAllocTracker_interface()
- t ccs_create_convars_from_hwconfig(CCommand const&)
- t global constructors keyed to a
- t mat_shadercount(CCommand const&)
- t mat_spewvertexandpixelshaders(CCommand const&)
- t void ccs_create_convar_from_hwconfig<HDRType_t>(HDRType_t const&, char const*)
- t void ccs_create_convar_from_hwconfig<ImageFormat>(ImageFormat const&, char const*)
+ T VMatrix::operator=(VMatrix const&)
  t void ccs_create_convar_from_hwconfig<bool>(bool const&, char const*)
  t void ccs_create_convar_from_hwconfig<float>(float const&, char const*)
+ t void ccs_create_convar_from_hwconfig<HDRType_t>(HDRType_t const&, char const*)
+ t void ccs_create_convar_from_hwconfig<ImageFormat>(ImageFormat const&, char const*)
  t void ccs_create_convar_from_hwconfig<int>(int const&, char const*)
  t void ccs_create_convar_from_hwconfig<unsigned long>(unsigned long const&, char const*)
- tan
- toglGetClientRect
+ T void SafeAssign<CIndexBuffer>(CIndexBuffer**, CIndexBuffer*)
+ T void SafeRelease<CIndexBuffer>(CIndexBuffer**)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_stristr(char*, char const*)
+ T V_stristr(char const*, char const*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_UnqualifiedFileName(char const*)
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
+ Warning
  wcslen
  wcstol

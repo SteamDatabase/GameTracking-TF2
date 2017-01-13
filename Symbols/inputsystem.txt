@@ -1,9 +1,13 @@
+ atof
+ atoi
+ b CInputSystem::SetXDeviceRumble(float, float, int)::joystickVar
+ B colorcorrection
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- B InterfaceReg::s_pInterfaceRegs
- B colorcorrection
+ b ConVarRef::Init(char const*, bool)::bFirst
  B cvar
- B g_VBAllocTracker
+ b __g_CreateCInputSystemIInputSystem_reg
+ b g_InputSystem
  B g_pCVar
  B g_pFullFileSystem
  B g_pInputSystem
@@ -13,33 +17,72 @@
  B g_pNetworkSystem
  B g_pProcessUtils
  B g_pQueuedLoader
+ b guard variable for CInputSystem::SetXDeviceRumble(float, float, int)::joystickVar
+ b guard variable for SetJoyXControllerFound(bool)::joystickVar
+ b guard variable for SetJoyXControllerFound(bool)::xcontrollerVar
+ B g_VBAllocTracker
+ B InterfaceReg::s_pInterfaceRegs
  B joy_active
- B joy_axis_deadzone
  B joy_axisbutton_threshold
+ B joy_axis_deadzone
  B joy_gamecontroller_config
  B joy_xcontroller_found
+ b key_updatelayout_command
  B materials
  B mdllib
  B p4
- B s_NoEscConversion
- B s_StringCharConversion
+ b s_bConnected
+ b s_bRegistered
+ b scantokey
  B sc_debug_sets
  B sc_joystick_map
+ b s_EmptyConVar
+ b SetJoyXControllerFound(bool)::joystickVar
+ b SetJoyXControllerFound(bool)::xcontrollerVar
+ b s_nCVarFlag
+ B s_NoEscConversion
+ b s_pButtonCodeToVirtual
+ b s_pScanToButtonCode
+ b s_pSKeytoButtonCode
+ b s_pVirtualKeyToButtonCode
+ B s_StringCharConversion
+ b vec2_invalid
+ b vec2_origin
  CommandLine_Tier0
  ConMsg(char const*, ...)
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_abort
+ __cxa_guard_acquire
+ __cxa_guard_release
+ d dyld__mach_header
+ DevMsg(char const*, ...)
+ d g_DigitalMenuActions
+ d g_GameActionSets
+ d g_MapSteamControllerOriginToDescription
+ d g_MapSteamControllerOriginToIconFont
+ dlclose
+ d s_DefaultAccessor
+ d s_nDLLIdentifier
+ d s_pAnalogCodeName
+ d s_pButtonCodeName
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ d s_pXControllerButtonCodeNames
  D typeinfo for CBaseAppSystem<IInputSystem>
  D typeinfo for CDefaultAccessor
  D typeinfo for CEmptyConVar
  D typeinfo for CInputSystem
- D typeinfo for CTier0AppSystem<IInputSystem>
- D typeinfo for CTier1AppSystem<IInputSystem, 0>
- D typeinfo for CTier2AppSystem<IInputSystem, 0>
- D typeinfo for CUtlCStringConversion
- D typeinfo for CUtlCharConversion
- D typeinfo for CUtlNoEscConversion
  D typeinfo for ConCommand
  D typeinfo for ConCommandBase
  D typeinfo for ConVar
+ D typeinfo for CTier0AppSystem<IInputSystem>
+ D typeinfo for CTier1AppSystem<IInputSystem, 0>
+ D typeinfo for CTier2AppSystem<IInputSystem, 0>
+ D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlNoEscConversion
  D typeinfo for IAppSystem
  D typeinfo for IConCommandBaseAccessor
  D typeinfo for IConVar
@@ -47,27 +90,33 @@
  D vtable for CDefaultAccessor
  D vtable for CEmptyConVar
  D vtable for CInputSystem
- D vtable for CUtlCStringConversion
- D vtable for CUtlCharConversion
- D vtable for CUtlNoEscConversion
  D vtable for ConCommand
  D vtable for ConVar
- DevMsg(char const*, ...)
+ D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlNoEscConversion
+ g_pMemAlloc
+ __gxx_personality_v0
+ memcpy
+ memmove
+ memset
  Msg
  Plat_MSTime
+ pow
+ r s_pScanToButtonCode_QWERTY
  R typeinfo name for CBaseAppSystem<IInputSystem>
  R typeinfo name for CDefaultAccessor
  R typeinfo name for CEmptyConVar
  R typeinfo name for CInputSystem
- R typeinfo name for CTier0AppSystem<IInputSystem>
- R typeinfo name for CTier1AppSystem<IInputSystem, 0>
- R typeinfo name for CTier2AppSystem<IInputSystem, 0>
- R typeinfo name for CUtlCStringConversion
- R typeinfo name for CUtlCharConversion
- R typeinfo name for CUtlNoEscConversion
  R typeinfo name for ConCommand
  R typeinfo name for ConCommandBase
  R typeinfo name for ConVar
+ R typeinfo name for CTier0AppSystem<IInputSystem>
+ R typeinfo name for CTier1AppSystem<IInputSystem, 0>
+ R typeinfo name for CTier2AppSystem<IInputSystem, 0>
+ R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlNoEscConversion
  R typeinfo name for IAppSystem
  R typeinfo name for IConCommandBaseAccessor
  R typeinfo name for IConVar
@@ -95,10 +144,17 @@
  SDL_QuitSubSystem
  SDL_SetHint
  SDL_WasInit
+ __stack_chk_fail
+ __stack_chk_guard
+ std::terminate()
  SteamAPI_GetHSteamPipe
  SteamAPI_GetHSteamUser
  SteamAPI_InitSafe
  SteamClient
+ strcasecmp
+ strcmp
+ strlen
+ strncasecmp
  T AnalogCode_AnalogCodeToString(AnalogCode_t)
  T AnalogCode_StringToAnalogCode(char const*)
  T ButtonCode_ButtonCodeToString(ButtonCode_t, bool)
@@ -110,17 +166,18 @@
  T ButtonCode_VirtualKeyToButtonCode(int)
  T CBaseAppSystem<IInputSystem>::QueryInterface(char const*)
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+ T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CEmptyConVar::~CEmptyConVar()
  T CInputSystem::ActivateSteamControllerActionSetForSlot(unsigned long long, GameActionSet_t)
  T CInputSystem::AnalogCodeToString(AnalogCode_t) const
  T CInputSystem::AttachToWindow(void*)
  T CInputSystem::ButtonCodeToString(ButtonCode_t) const
  T CInputSystem::ButtonCodeToVirtualKey(ButtonCode_t) const
+ T CInputSystem::~CInputSystem()
  T CInputSystem::CInputSystem()
  T CInputSystem::Connect(void* (*)(char const*, int*))
  T CInputSystem::DetachFromWindow()
@@ -128,8 +185,8 @@
  T CInputSystem::EnableJoystickDiagonalPOV(int, bool)
  T CInputSystem::EnableJoystickInput(int, bool)
  T CInputSystem::EnableMessagePump(bool)
- T CInputSystem::GetActionSetHandle(GameActionSet_t)
  T CInputSystem::GetActionSetHandle(char const*)
+ T CInputSystem::GetActionSetHandle(GameActionSet_t)
  T CInputSystem::GetAnalogDelta(AnalogCode_t) const
  T CInputSystem::GetAnalogValue(AnalogCode_t) const
  T CInputSystem::GetButtonPressedTick(ButtonCode_t) const
@@ -186,25 +243,8 @@
  T CInputSystem::UpdateMouseButtonState(int, ButtonCode_t)
  T CInputSystem::UpdateMousePositionState(CInputSystem::InputState_t&, short, short)
  T CInputSystem::VirtualKeyToButtonCode(int) const
- T CInputSystem::~CInputSystem()
- T CSteamAPIContext::Init()
- T CTier2AppSystem<IInputSystem, 0>::Disconnect()
- T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
- T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlString::Get() const
- T CUtlString::Purge()
- T CUtlString::Set(char const*)
- T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
- T CUtlVector<InputEvent_t, CUtlMemory<InputEvent_t, int> >::GrowVector(int)
- T CUtlVector<InputEvent_t, CUtlMemory<InputEvent_t, int> >::~CUtlVector()
+ T __clang_call_terminate
  T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
- T ConCommand::CanAutoComplete()
- T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
- T ConCommand::Dispatch(CCommand const&)
- T ConCommand::IsCommand() const
- T ConCommand::~ConCommand()
  T ConCommandBase::AddFlags(int)
  T ConCommandBase::CreateBase(char const*, char const*, int)
  T ConCommandBase::GetDLLIdentifier() const
@@ -213,9 +253,17 @@
  T ConCommandBase::Init()
  T ConCommandBase::IsFlagSet(int) const
  T ConCommandBase::IsRegistered() const
+ T ConCommand::CanAutoComplete()
+ T ConCommand::~ConCommand()
+ T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
+ T ConCommand::Dispatch(CCommand const&)
+ T ConCommand::IsCommand() const
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
  T ConVar::AddFlags(int)
  T ConVar::ChangeStringValue(char const*, float)
  T ConVar::ClampValue(float&)
+ T ConVar::~ConVar()
  T ConVar::ConVar(char const*, char const*, int, char const*)
  T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
  T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
@@ -228,29 +276,37 @@
  T ConVar::IsCommand() const
  T ConVar::IsFlagSet(int) const
  T ConVar::IsRegistered() const
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar::~ConVar()
  T ConVarRef::ConVarRef(char const*)
  T ConVarRef::IsValid() const
  T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
  T ConVar_Unregister()
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ t __CreateCInputSystemIInputSystem_interface()
  T CreateInterface
+ T CSteamAPIContext::Init()
+ T CTier2AppSystem<IInputSystem, 0>::Disconnect()
+ T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+ T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlNoEscConversion::FindConversion(char const*, int*)
+ T CUtlString::Get() const
+ T CUtlString::Purge()
+ T CUtlString::Set(char const*)
+ T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
+ T CUtlVector<InputEvent_t, CUtlMemory<InputEvent_t, int> >::~CUtlVector()
+ T CUtlVector<InputEvent_t, CUtlMemory<InputEvent_t, int> >::GrowVector(int)
  T DefaultCompletionFunc(char const*, char (*) [64])
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
- T InterfaceReg::InterfaceReg(void* (*)(), char const*)
- T SearchForDevice()
- T Sys_UnloadModule(CSysModule*)
- T V_atof(char const*)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_strnicmp(char const*, char const*, int)
- T __clang_call_terminate
  T dyld_stub_binding_helper
+ t global constructors keyed to a
+ T InterfaceReg::InterfaceReg(void* (*)(), char const*)
+ t joy_active_changed_f(IConVar*, char const*, float)
+ t joy_gamecontroller_config_changed_f(IConVar*, char const*, float)
+ t JoystickSDLWatcher(void*, SDL_Event*)
+ t key_updatelayout(CCommand const&)
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -265,73 +321,17 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- Warning
- _Unwind_Resume
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_abort
- __cxa_guard_acquire
- __cxa_guard_release
- __gxx_personality_v0
- __stack_chk_fail
- __stack_chk_guard
- atof
- atoi
- b CInputSystem::SetXDeviceRumble(float, float, int)::joystickVar
- b ConVarRef::Init(char const*, bool)::bFirst
- b SetJoyXControllerFound(bool)::joystickVar
- b SetJoyXControllerFound(bool)::xcontrollerVar
- b __g_CreateCInputSystemIInputSystem_reg
- b g_InputSystem
- b guard variable for CInputSystem::SetXDeviceRumble(float, float, int)::joystickVar
- b guard variable for SetJoyXControllerFound(bool)::joystickVar
- b guard variable for SetJoyXControllerFound(bool)::xcontrollerVar
- b key_updatelayout_command
- b s_EmptyConVar
- b s_bConnected
- b s_bRegistered
- b s_nCVarFlag
- b s_pButtonCodeToVirtual
- b s_pSKeytoButtonCode
- b s_pScanToButtonCode
- b s_pVirtualKeyToButtonCode
- b scantokey
- b vec2_invalid
- b vec2_origin
- d dyld__mach_header
- d g_DigitalMenuActions
- d g_GameActionSets
- d g_MapSteamControllerOriginToDescription
- d g_MapSteamControllerOriginToIconFont
- d s_DefaultAccessor
- d s_nDLLIdentifier
- d s_pAnalogCodeName
- d s_pButtonCodeName
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- d s_pXControllerButtonCodeNames
- dlclose
- g_pMemAlloc
- memcpy
- memmove
- memset
- pow
- r s_pScanToButtonCode_QWERTY
- std::terminate()
- strcasecmp
- strcmp
- strlen
- strncasecmp
- t JoystickSDLWatcher(void*, SDL_Event*)
+ T SearchForDevice()
  t SetJoyXControllerFound(bool)
- t __CreateCInputSystemIInputSystem_interface()
- t global constructors keyed to a
- t joy_active_changed_f(IConVar*, char const*, float)
- t joy_gamecontroller_config_changed_f(IConVar*, char const*, float)
- t key_updatelayout(CCommand const&)
+ T Sys_UnloadModule(CSysModule*)
+ T V_atof(char const*)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_strnicmp(char const*, char const*, int)
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
+ Warning

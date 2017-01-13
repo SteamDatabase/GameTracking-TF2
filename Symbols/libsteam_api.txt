@@ -1,31 +1,139 @@
 
+ atoi
+ b CCallbackMgr::RunCallbacks(int, bool)::bRunningCallbacks
+ b GCallbackMgr()::s_CallbackMgr
+ b g_eServerMode
+ b g_hSteamPipe
+ b g_hSteamUser
+ b g_pSteamApps
+ b g_pSteamClient
  B g_pSteamClientGameServer
+ b g_pSteamGameServer
+ b g_pSteamGameServerNetworking
+ b g_pSteamGameServerStats
+ b g_pSteamHTTP
+ b g_pSteamInventory
+ b g_pSteamUGC
+ b g_pSteamUtils
+ b g_pSteamUtilsRunFrame
+ b g_pSysModuleSteam
+ b g_SteamAPIContext
  B g_szSteamClientPath
+ b guard variable for GCallbackMgr()::s_CallbackMgr
+ bootstrap_look_up
+ bootstrap_port
+ b s_bCallbackManagerInitialized
+ b s_BreakpadInfo
  B s_pfnSteamMiniDumpFn
  B s_pfnSteamSetAppID
  B s_pfnSteamSetSteamID
  B s_pfnSteamWriteMiniDumpSetComment
+ __bzero
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_end_catch
+ __cxa_guard_abort
+ __cxa_guard_acquire
+ __cxa_guard_release
+ __cxa_pure_virtual
+ d g_bCatchExceptionsInCallbacks
  D k_pszSteamClientModuleName
+ dlclose
+ dlerror
+ dlopen
+ dlsym
+ d s_SteamClientDLL
+ d s_SteamDLL
+ D typeinfo for CCallbackBase
  D typeinfo for CCallback<CCallbackMgr, SteamAPICallCompleted_t, false>
  D typeinfo for CCallback<CCallbackMgr, SteamAPICallCompleted_t, true>
- D typeinfo for CCallbackBase
  D typeinfo for CCallbackImpl<8>
  D vtable for CCallback<CCallbackMgr, SteamAPICallCompleted_t, false>
  D vtable for CCallback<CCallbackMgr, SteamAPICallCompleted_t, true>
  D vtable for CCallbackImpl<8>
+ dyld_stub_binder
+ fclose
+ fgets
+ fopen
+ fopen$UNIX2003
+ fprintf
+ fputs
+ fputs$UNIX2003
+ free
+ fwrite
+ getenv
+ getpid
+ __gxx_personality_v0
+ kill
+ kill$UNIX2003
+ launch_data_alloc
+ launch_data_dict_insert
+ launch_data_free
+ launch_data_new_string
+ launch_msg
+ mach_msg
+ mach_port_allocate
+ mach_port_deallocate
+ mach_task_self_
+ malloc
+ memcpy
+ operator delete(void*)
+ operator delete[](void*)
+ operator new(unsigned long)
+ operator new[](unsigned long)
+ pthread_mutexattr_destroy
+ pthread_mutexattr_destroy$UNIX2003
+ pthread_mutexattr_init
+ pthread_mutex_destroy
+ pthread_mutex_init
+ pthread_mutex_lock
+ pthread_mutex_unlock
+ rindex
+ R typeinfo name for CCallbackBase
  R typeinfo name for CCallback<CCallbackMgr, SteamAPICallCompleted_t, false>
  R typeinfo name for CCallback<CCallbackMgr, SteamAPICallCompleted_t, true>
- R typeinfo name for CCallbackBase
  R typeinfo name for CCallbackImpl<8>
+ setenv
+ setenv$UNIX2003
+ sscanf
+ __stack_chk_fail
+ __stack_chk_guard
+ __stderrp
+ std::_List_node_base::hook(std::_List_node_base*)
+ std::_List_node_base::unhook()
+ std::_Rb_tree_increment(std::_Rb_tree_node_base*)
+ std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+ std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+ std::terminate()
+ strchr
+ strlen
+ strncasecmp
+ strncat
+ strncmp
+ strncpy
+ sysctl
+ system
+ system$UNIX2003
+ T CallbackMgr_CheckCallbackRegisteredInProcess(int)
+ T CallbackMgr_GetHSteamUserCurrent()
+ T CallbackMgr_PostAPIResultInProcess(unsigned long long, void*, unsigned int, int)
+ T CallbackMgr_RegisterCallback(CCallbackBase*, int)
+ T CallbackMgr_RegisterCallResult(CCallbackBase*, unsigned long long)
+ T CallbackMgr_RegisterInterfaceFuncs(void*)
+ T CallbackMgr_RunCallbacks(int, bool)
+ T CallbackMgr_UnregisterCallback(CCallbackBase*)
+ T CallbackMgr_UnregisterCallResult(CCallbackBase*, unsigned long long)
  T CCallback<CCallbackMgr, SteamAPICallCompleted_t, false>::CCallback(CCallbackMgr*, void (CCallbackMgr::*)(SteamAPICallCompleted_t*))
  T CCallback<CCallbackMgr, SteamAPICallCompleted_t, false>::Register(CCallbackMgr*, void (CCallbackMgr::*)(SteamAPICallCompleted_t*))
  T CCallback<CCallbackMgr, SteamAPICallCompleted_t, false>::Run(void*)
  T CCallback<CCallbackMgr, SteamAPICallCompleted_t, true>::CCallback(CCallbackMgr*, void (CCallbackMgr::*)(SteamAPICallCompleted_t*))
  T CCallback<CCallbackMgr, SteamAPICallCompleted_t, true>::Register(CCallbackMgr*, void (CCallbackMgr::*)(SteamAPICallCompleted_t*))
  T CCallback<CCallbackMgr, SteamAPICallCompleted_t, true>::Run(void*)
+ T CCallbackImpl<8>::~CCallbackImpl()
  T CCallbackImpl<8>::GetCallbackSizeBytes()
  T CCallbackImpl<8>::Run(void*, bool, unsigned long long)
- T CCallbackImpl<8>::~CCallbackImpl()
+ T CCallbackMgr::~CCallbackMgr()
  T CCallbackMgr::CCallbackMgr()
  T CCallbackMgr::CheckCallbackRegisteredInProcess(int)
  T CCallbackMgr::DispatchCallback(CallbackMsg_t&, bool)
@@ -35,37 +143,49 @@
  T CCallbackMgr::PostAPIResultInProcess(unsigned long long, void*, unsigned int, int)
  T CCallbackMgr::RegisterInterfaceFuncs(void*)
  T CCallbackMgr::RunCallbacks(int, bool)
- T CCallbackMgr::Unregister(CCallbackBase*)
  T CCallbackMgr::UnregisterCallResult(CCallbackBase*, unsigned long long)
- T CCallbackMgr::~CCallbackMgr()
+ T CCallbackMgr::Unregister(CCallbackBase*)
  T CIPCToolMachClient::DoKillCommand(char const*)
  T CIPCToolMachClient::GetSteamPath(char*, unsigned long, int*)
  T CIPCToolMachClient::Init()
+ T __clang_call_terminate
  T CModuleLoadWrapper::Load(bool)
+ T ConfigureSteamClientPath(char*, int)
+ T CSimpleMachClient::~CSimpleMachClient()
  T CSimpleMachClient::DoVersionCommand()
  T CSimpleMachClient::Init(char const*, unsigned int, bool)
- T CSimpleMachClient::Send(mach_msg_header_t*, unsigned int, int*)
  T CSimpleMachClient::SendAndReceive(mach_msg_header_t*, mach_msg_header_t*, unsigned int, int*)
- T CSimpleMachClient::~CSimpleMachClient()
+ T CSimpleMachClient::Send(mach_msg_header_t*, unsigned int, int*)
  T CSteamAPIContext::Init()
- T CallbackMgr_CheckCallbackRegisteredInProcess(int)
- T CallbackMgr_GetHSteamUserCurrent()
- T CallbackMgr_PostAPIResultInProcess(unsigned long long, void*, unsigned int, int)
- T CallbackMgr_RegisterCallResult(CCallbackBase*, unsigned long long)
- T CallbackMgr_RegisterCallback(CCallbackBase*, int)
- T CallbackMgr_RegisterInterfaceFuncs(void*)
- T CallbackMgr_RunCallbacks(int, bool)
- T CallbackMgr_UnregisterCallResult(CCallbackBase*, unsigned long long)
- T CallbackMgr_UnregisterCallback(CCallbackBase*)
- T ConfigureSteamClientPath(char*, int)
  T GCallbackMgr()
  T GetCommandLineArgs(char*, int)
  T GetHSteamPipe
  T GetHSteamUser
+ T int V_sprintf_safe<1024ul>(char (&) [1024ul], char const*, ...)
+ T int V_sprintf_safe<1028ul>(char (&) [1028ul], char const*, ...)
+ T int V_sprintf_safe<12ul>(char (&) [12ul], char const*, ...)
+ T int V_sprintf_safe<15ul>(char (&) [15ul], char const*, ...)
+ T int V_sprintf_safe<24ul>(char (&) [24ul], char const*, ...)
+ T int V_sprintf_safe<256ul>(char (&) [256ul], char const*, ...)
+ T int V_sprintf_safe<3072ul>(char (&) [3072ul], char const*, ...)
+ T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::find(int const&)
+ T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, CCallbackBase*> >*)
+ T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::_M_insert_equal(std::pair<int const, CCallbackBase*> const&)
+ T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, CCallbackBase*> const&)
+ T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::find(unsigned long long const&)
+ T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long long const, CCallbackBase*> >*)
+ T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::_M_insert_equal(std::pair<unsigned long long const, CCallbackBase*> const&)
+ T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<unsigned long long const, CCallbackBase*> const&)
  T SteamAPI_CheckCallbackRegisteredInProcess(int)
  T SteamAPI_GetHSteamPipe
  T SteamAPI_GetHSteamUser
  T SteamAPI_GetSteamInstallPath
+ T SteamAPI_Init
+ T SteamAPI_Init_Internal3(void**, bool, bool, char const*)
+ T SteamAPI_InitInternal(bool)
+ T SteamAPI_Init_Internal(void**, bool)
+ T SteamAPI_InitSafe
+ T SteamAPI_IsSteamRunning
  T SteamAPI_ISteamAppList_GetAppBuildId
  T SteamAPI_ISteamAppList_GetAppInstallDir
  T SteamAPI_ISteamAppList_GetAppName
@@ -128,9 +248,9 @@
  T SteamAPI_ISteamClient_Remove_SteamAPI_CPostAPIResultInProcess
  T SteamAPI_ISteamClient_RunFrame
  T SteamAPI_ISteamClient_SetLocalIPBinding
- T SteamAPI_ISteamClient_SetWarningMessageHook
  T SteamAPI_ISteamClient_Set_SteamAPI_CCheckCallbackRegisteredInProcess
  T SteamAPI_ISteamClient_Set_SteamAPI_CPostAPIResultInProcess
+ T SteamAPI_ISteamClient_SetWarningMessageHook
  T SteamAPI_ISteamController_ActivateActionSet
  T SteamAPI_ISteamController_GetActionSetHandle
  T SteamAPI_ISteamController_GetAnalogActionData
@@ -185,12 +305,12 @@
  T SteamAPI_ISteamFriends_GetFriendRichPresence
  T SteamAPI_ISteamFriends_GetFriendRichPresenceKeyByIndex
  T SteamAPI_ISteamFriends_GetFriendRichPresenceKeyCount
- T SteamAPI_ISteamFriends_GetFriendSteamLevel
  T SteamAPI_ISteamFriends_GetFriendsGroupCount
  T SteamAPI_ISteamFriends_GetFriendsGroupIDByIndex
  T SteamAPI_ISteamFriends_GetFriendsGroupMembersCount
  T SteamAPI_ISteamFriends_GetFriendsGroupMembersList
  T SteamAPI_ISteamFriends_GetFriendsGroupName
+ T SteamAPI_ISteamFriends_GetFriendSteamLevel
  T SteamAPI_ISteamFriends_GetLargeFriendAvatar
  T SteamAPI_ISteamFriends_GetMediumFriendAvatar
  T SteamAPI_ISteamFriends_GetPersonaName
@@ -217,21 +337,11 @@
  T SteamAPI_ISteamFriends_SetPersonaName
  T SteamAPI_ISteamFriends_SetPlayedWith
  T SteamAPI_ISteamFriends_SetRichPresence
- T SteamAPI_ISteamGameServerStats_ClearUserAchievement
- T SteamAPI_ISteamGameServerStats_GetUserAchievement
- T SteamAPI_ISteamGameServerStats_GetUserStat
- T SteamAPI_ISteamGameServerStats_GetUserStat0
- T SteamAPI_ISteamGameServerStats_RequestUserStats
- T SteamAPI_ISteamGameServerStats_SetUserAchievement
- T SteamAPI_ISteamGameServerStats_SetUserStat
- T SteamAPI_ISteamGameServerStats_SetUserStat0
- T SteamAPI_ISteamGameServerStats_StoreUserStats
- T SteamAPI_ISteamGameServerStats_UpdateUserAvgRateStat
  T SteamAPI_ISteamGameServer_AssociateWithClan
+ T SteamAPI_ISteamGameServer_BeginAuthSession
  T SteamAPI_ISteamGameServer_BLoggedOn
  T SteamAPI_ISteamGameServer_BSecure
  T SteamAPI_ISteamGameServer_BUpdateUserData
- T SteamAPI_ISteamGameServer_BeginAuthSession
  T SteamAPI_ISteamGameServer_CancelAuthTicket
  T SteamAPI_ISteamGameServer_ClearAllKeyValues
  T SteamAPI_ISteamGameServer_ComputeNewPlayerCompatibility
@@ -269,6 +379,16 @@
  T SteamAPI_ISteamGameServer_SetServerName
  T SteamAPI_ISteamGameServer_SetSpectatorPort
  T SteamAPI_ISteamGameServer_SetSpectatorServerName
+ T SteamAPI_ISteamGameServerStats_ClearUserAchievement
+ T SteamAPI_ISteamGameServerStats_GetUserAchievement
+ T SteamAPI_ISteamGameServerStats_GetUserStat
+ T SteamAPI_ISteamGameServerStats_GetUserStat0
+ T SteamAPI_ISteamGameServerStats_RequestUserStats
+ T SteamAPI_ISteamGameServerStats_SetUserAchievement
+ T SteamAPI_ISteamGameServerStats_SetUserStat
+ T SteamAPI_ISteamGameServerStats_SetUserStat0
+ T SteamAPI_ISteamGameServerStats_StoreUserStats
+ T SteamAPI_ISteamGameServerStats_UpdateUserAvgRateStat
  T SteamAPI_ISteamGameServer_UserHasLicenseForApp
  T SteamAPI_ISteamGameServer_WasRestartRequested
  T SteamAPI_ISteamHTMLSurface_AddHeader
@@ -354,34 +474,6 @@
  T SteamAPI_ISteamInventory_TradeItems
  T SteamAPI_ISteamInventory_TransferItemQuantity
  T SteamAPI_ISteamInventory_TriggerItemDrop
- T SteamAPI_ISteamMatchmakingPingResponse_ServerFailedToRespond
- T SteamAPI_ISteamMatchmakingPingResponse_ServerResponded
- T SteamAPI_ISteamMatchmakingPlayersResponse_AddPlayerToList
- T SteamAPI_ISteamMatchmakingPlayersResponse_PlayersFailedToRespond
- T SteamAPI_ISteamMatchmakingPlayersResponse_PlayersRefreshComplete
- T SteamAPI_ISteamMatchmakingRulesResponse_RulesFailedToRespond
- T SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete
- T SteamAPI_ISteamMatchmakingRulesResponse_RulesResponded
- T SteamAPI_ISteamMatchmakingServerListResponse_RefreshComplete
- T SteamAPI_ISteamMatchmakingServerListResponse_ServerFailedToRespond
- T SteamAPI_ISteamMatchmakingServerListResponse_ServerResponded
- T SteamAPI_ISteamMatchmakingServers_CancelQuery
- T SteamAPI_ISteamMatchmakingServers_CancelServerQuery
- T SteamAPI_ISteamMatchmakingServers_GetServerCount
- T SteamAPI_ISteamMatchmakingServers_GetServerDetails
- T SteamAPI_ISteamMatchmakingServers_IsRefreshing
- T SteamAPI_ISteamMatchmakingServers_PingServer
- T SteamAPI_ISteamMatchmakingServers_PlayerDetails
- T SteamAPI_ISteamMatchmakingServers_RefreshQuery
- T SteamAPI_ISteamMatchmakingServers_RefreshServer
- T SteamAPI_ISteamMatchmakingServers_ReleaseRequest
- T SteamAPI_ISteamMatchmakingServers_RequestFavoritesServerList
- T SteamAPI_ISteamMatchmakingServers_RequestFriendsServerList
- T SteamAPI_ISteamMatchmakingServers_RequestHistoryServerList
- T SteamAPI_ISteamMatchmakingServers_RequestInternetServerList
- T SteamAPI_ISteamMatchmakingServers_RequestLANServerList
- T SteamAPI_ISteamMatchmakingServers_RequestSpectatorServerList
- T SteamAPI_ISteamMatchmakingServers_ServerRules
  T SteamAPI_ISteamMatchmaking_AddFavoriteGame
  T SteamAPI_ISteamMatchmaking_AddRequestLobbyListCompatibleMembersFilter
  T SteamAPI_ISteamMatchmaking_AddRequestLobbyListDistanceFilter
@@ -408,10 +500,38 @@
  T SteamAPI_ISteamMatchmaking_InviteUserToLobby
  T SteamAPI_ISteamMatchmaking_JoinLobby
  T SteamAPI_ISteamMatchmaking_LeaveLobby
+ T SteamAPI_ISteamMatchmakingPingResponse_ServerFailedToRespond
+ T SteamAPI_ISteamMatchmakingPingResponse_ServerResponded
+ T SteamAPI_ISteamMatchmakingPlayersResponse_AddPlayerToList
+ T SteamAPI_ISteamMatchmakingPlayersResponse_PlayersFailedToRespond
+ T SteamAPI_ISteamMatchmakingPlayersResponse_PlayersRefreshComplete
  T SteamAPI_ISteamMatchmaking_RemoveFavoriteGame
  T SteamAPI_ISteamMatchmaking_RequestLobbyData
  T SteamAPI_ISteamMatchmaking_RequestLobbyList
+ T SteamAPI_ISteamMatchmakingRulesResponse_RulesFailedToRespond
+ T SteamAPI_ISteamMatchmakingRulesResponse_RulesRefreshComplete
+ T SteamAPI_ISteamMatchmakingRulesResponse_RulesResponded
  T SteamAPI_ISteamMatchmaking_SendLobbyChatMsg
+ T SteamAPI_ISteamMatchmakingServerListResponse_RefreshComplete
+ T SteamAPI_ISteamMatchmakingServerListResponse_ServerFailedToRespond
+ T SteamAPI_ISteamMatchmakingServerListResponse_ServerResponded
+ T SteamAPI_ISteamMatchmakingServers_CancelQuery
+ T SteamAPI_ISteamMatchmakingServers_CancelServerQuery
+ T SteamAPI_ISteamMatchmakingServers_GetServerCount
+ T SteamAPI_ISteamMatchmakingServers_GetServerDetails
+ T SteamAPI_ISteamMatchmakingServers_IsRefreshing
+ T SteamAPI_ISteamMatchmakingServers_PingServer
+ T SteamAPI_ISteamMatchmakingServers_PlayerDetails
+ T SteamAPI_ISteamMatchmakingServers_RefreshQuery
+ T SteamAPI_ISteamMatchmakingServers_RefreshServer
+ T SteamAPI_ISteamMatchmakingServers_ReleaseRequest
+ T SteamAPI_ISteamMatchmakingServers_RequestFavoritesServerList
+ T SteamAPI_ISteamMatchmakingServers_RequestFriendsServerList
+ T SteamAPI_ISteamMatchmakingServers_RequestHistoryServerList
+ T SteamAPI_ISteamMatchmakingServers_RequestInternetServerList
+ T SteamAPI_ISteamMatchmakingServers_RequestLANServerList
+ T SteamAPI_ISteamMatchmakingServers_RequestSpectatorServerList
+ T SteamAPI_ISteamMatchmakingServers_ServerRules
  T SteamAPI_ISteamMatchmaking_SetLinkedLobby
  T SteamAPI_ISteamMatchmaking_SetLobbyData
  T SteamAPI_ISteamMatchmaking_SetLobbyGameServer
@@ -420,6 +540,14 @@
  T SteamAPI_ISteamMatchmaking_SetLobbyMemberLimit
  T SteamAPI_ISteamMatchmaking_SetLobbyOwner
  T SteamAPI_ISteamMatchmaking_SetLobbyType
+ T SteamAPI_ISteamMusic_BIsEnabled
+ T SteamAPI_ISteamMusic_BIsPlaying
+ T SteamAPI_ISteamMusic_GetPlaybackStatus
+ T SteamAPI_ISteamMusic_GetVolume
+ T SteamAPI_ISteamMusic_Pause
+ T SteamAPI_ISteamMusic_Play
+ T SteamAPI_ISteamMusic_PlayNext
+ T SteamAPI_ISteamMusic_PlayPrevious
  T SteamAPI_ISteamMusicRemote_BActivationSuccess
  T SteamAPI_ISteamMusicRemote_BIsCurrentMusicRemote
  T SteamAPI_ISteamMusicRemote_CurrentEntryDidChange
@@ -427,9 +555,9 @@
  T SteamAPI_ISteamMusicRemote_CurrentEntryWillChange
  T SteamAPI_ISteamMusicRemote_DeregisterSteamMusicRemote
  T SteamAPI_ISteamMusicRemote_EnableLooped
+ T SteamAPI_ISteamMusicRemote_EnablePlaylists
  T SteamAPI_ISteamMusicRemote_EnablePlayNext
  T SteamAPI_ISteamMusicRemote_EnablePlayPrevious
- T SteamAPI_ISteamMusicRemote_EnablePlaylists
  T SteamAPI_ISteamMusicRemote_EnableQueue
  T SteamAPI_ISteamMusicRemote_EnableShuffled
  T SteamAPI_ISteamMusicRemote_PlaylistDidChange
@@ -442,8 +570,8 @@
  T SteamAPI_ISteamMusicRemote_SetCurrentPlaylistEntry
  T SteamAPI_ISteamMusicRemote_SetCurrentQueueEntry
  T SteamAPI_ISteamMusicRemote_SetDisplayName
- T SteamAPI_ISteamMusicRemote_SetPNGIcon_64x64
  T SteamAPI_ISteamMusicRemote_SetPlaylistEntry
+ T SteamAPI_ISteamMusicRemote_SetPNGIcon_64x64
  T SteamAPI_ISteamMusicRemote_SetQueueEntry
  T SteamAPI_ISteamMusicRemote_UpdateCurrentEntryCoverArt
  T SteamAPI_ISteamMusicRemote_UpdateCurrentEntryElapsedSeconds
@@ -452,14 +580,6 @@
  T SteamAPI_ISteamMusicRemote_UpdatePlaybackStatus
  T SteamAPI_ISteamMusicRemote_UpdateShuffled
  T SteamAPI_ISteamMusicRemote_UpdateVolume
- T SteamAPI_ISteamMusic_BIsEnabled
- T SteamAPI_ISteamMusic_BIsPlaying
- T SteamAPI_ISteamMusic_GetPlaybackStatus
- T SteamAPI_ISteamMusic_GetVolume
- T SteamAPI_ISteamMusic_Pause
- T SteamAPI_ISteamMusic_Play
- T SteamAPI_ISteamMusic_PlayNext
- T SteamAPI_ISteamMusic_PlayPrevious
  T SteamAPI_ISteamMusic_SetVolume
  T SteamAPI_ISteamNetworking_AcceptP2PSessionWithUser
  T SteamAPI_ISteamNetworking_AllowP2PPacketRelay
@@ -608,6 +728,27 @@
  T SteamAPI_ISteamUnifiedMessages_ReleaseMethod
  T SteamAPI_ISteamUnifiedMessages_SendMethod
  T SteamAPI_ISteamUnifiedMessages_SendNotification
+ T SteamAPI_ISteamUser_AdvertiseGame
+ T SteamAPI_ISteamUser_BeginAuthSession
+ T SteamAPI_ISteamUser_BIsBehindNAT
+ T SteamAPI_ISteamUser_BLoggedOn
+ T SteamAPI_ISteamUser_CancelAuthTicket
+ T SteamAPI_ISteamUser_DecompressVoice
+ T SteamAPI_ISteamUser_EndAuthSession
+ T SteamAPI_ISteamUser_GetAuthSessionTicket
+ T SteamAPI_ISteamUser_GetAvailableVoice
+ T SteamAPI_ISteamUser_GetEncryptedAppTicket
+ T SteamAPI_ISteamUser_GetGameBadgeLevel
+ T SteamAPI_ISteamUser_GetHSteamUser
+ T SteamAPI_ISteamUser_GetPlayerSteamLevel
+ T SteamAPI_ISteamUser_GetSteamID
+ T SteamAPI_ISteamUser_GetUserDataFolder
+ T SteamAPI_ISteamUser_GetVoice
+ T SteamAPI_ISteamUser_GetVoiceOptimalSampleRate
+ T SteamAPI_ISteamUser_InitiateGameConnection
+ T SteamAPI_ISteamUser_RequestEncryptedAppTicket
+ T SteamAPI_ISteamUser_RequestStoreAuthURL
+ T SteamAPI_ISteamUser_StartVoiceRecording
  T SteamAPI_ISteamUserStats_AttachLeaderboardUGC
  T SteamAPI_ISteamUserStats_ClearAchievement
  T SteamAPI_ISteamUserStats_DownloadLeaderboardEntries
@@ -651,27 +792,6 @@
  T SteamAPI_ISteamUserStats_StoreStats
  T SteamAPI_ISteamUserStats_UpdateAvgRateStat
  T SteamAPI_ISteamUserStats_UploadLeaderboardScore
- T SteamAPI_ISteamUser_AdvertiseGame
- T SteamAPI_ISteamUser_BIsBehindNAT
- T SteamAPI_ISteamUser_BLoggedOn
- T SteamAPI_ISteamUser_BeginAuthSession
- T SteamAPI_ISteamUser_CancelAuthTicket
- T SteamAPI_ISteamUser_DecompressVoice
- T SteamAPI_ISteamUser_EndAuthSession
- T SteamAPI_ISteamUser_GetAuthSessionTicket
- T SteamAPI_ISteamUser_GetAvailableVoice
- T SteamAPI_ISteamUser_GetEncryptedAppTicket
- T SteamAPI_ISteamUser_GetGameBadgeLevel
- T SteamAPI_ISteamUser_GetHSteamUser
- T SteamAPI_ISteamUser_GetPlayerSteamLevel
- T SteamAPI_ISteamUser_GetSteamID
- T SteamAPI_ISteamUser_GetUserDataFolder
- T SteamAPI_ISteamUser_GetVoice
- T SteamAPI_ISteamUser_GetVoiceOptimalSampleRate
- T SteamAPI_ISteamUser_InitiateGameConnection
- T SteamAPI_ISteamUser_RequestEncryptedAppTicket
- T SteamAPI_ISteamUser_RequestStoreAuthURL
- T SteamAPI_ISteamUser_StartVoiceRecording
  T SteamAPI_ISteamUser_StopVoiceRecording
  T SteamAPI_ISteamUser_TerminateGameConnection
  T SteamAPI_ISteamUser_TrackAppUsageEvent
@@ -681,15 +801,15 @@
  T SteamAPI_ISteamUtils_GetAPICallFailureReason
  T SteamAPI_ISteamUtils_GetAPICallResult
  T SteamAPI_ISteamUtils_GetAppID
- T SteamAPI_ISteamUtils_GetCSERIPPort
  T SteamAPI_ISteamUtils_GetConnectedUniverse
+ T SteamAPI_ISteamUtils_GetCSERIPPort
  T SteamAPI_ISteamUtils_GetCurrentBatteryPower
  T SteamAPI_ISteamUtils_GetEnteredGamepadTextInput
  T SteamAPI_ISteamUtils_GetEnteredGamepadTextLength
- T SteamAPI_ISteamUtils_GetIPCCallCount
- T SteamAPI_ISteamUtils_GetIPCountry
  T SteamAPI_ISteamUtils_GetImageRGBA
  T SteamAPI_ISteamUtils_GetImageSize
+ T SteamAPI_ISteamUtils_GetIPCCallCount
+ T SteamAPI_ISteamUtils_GetIPCountry
  T SteamAPI_ISteamUtils_GetSecondsSinceAppActive
  T SteamAPI_ISteamUtils_GetSecondsSinceComputerActive
  T SteamAPI_ISteamUtils_GetServerRealTime
@@ -704,15 +824,9 @@
  T SteamAPI_ISteamUtils_ShowGamepadTextInput
  T SteamAPI_ISteamVideo_GetVideoURL
  T SteamAPI_ISteamVideo_IsBroadcasting
- T SteamAPI_Init
- T SteamAPI_InitInternal(bool)
- T SteamAPI_InitSafe
- T SteamAPI_Init_Internal(void**, bool)
- T SteamAPI_Init_Internal3(void**, bool, bool, char const*)
- T SteamAPI_IsSteamRunning
  T SteamAPI_PostAPIResultInProcess(unsigned long long, void*, unsigned int, int)
- T SteamAPI_RegisterCallResult
  T SteamAPI_RegisterCallback
+ T SteamAPI_RegisterCallResult
  T SteamAPI_RestartAppIfNecessary
  T SteamAPI_RunCallbacks
  T SteamAPI_SetBreakpadAppID
@@ -720,8 +834,8 @@
  T SteamAPI_SetTryCatchCallbacks
  T SteamAPI_Shutdown
  T SteamAPI_Shutdown_Internal(void*)
- T SteamAPI_UnregisterCallResult
  T SteamAPI_UnregisterCallback
+ T SteamAPI_UnregisterCallResult
  T SteamAPI_UseBreakpadCrashHandler
  T SteamAPI_WriteMiniDump
  T SteamAppList
@@ -731,163 +845,49 @@
  T SteamFriends
  T SteamGameServer
  T SteamGameServerApps
- T SteamGameServerHTTP
- T SteamGameServerInventory
- T SteamGameServerNetworking
- T SteamGameServerStats
- T SteamGameServerUGC
- T SteamGameServerUtils
  T SteamGameServer_BSecure
  T SteamGameServer_GetHSteamPipe
  T SteamGameServer_GetHSteamUser
  T SteamGameServer_GetIPCCallCount
  T SteamGameServer_GetSteamID
+ T SteamGameServerHTTP
  T SteamGameServer_Init
- T SteamGameServer_InitSafe
  T SteamGameServer_Init_Internal(unsigned int, unsigned short, unsigned short, unsigned short, EServerMode, char const*, bool)
+ T SteamGameServer_InitSafe
+ T SteamGameServerInventory
+ T SteamGameServerNetworking
  T SteamGameServer_RunCallbacks
  T SteamGameServer_Shutdown
+ T SteamGameServerStats
+ T SteamGameServerUGC
+ T SteamGameServerUtils
+ T Steam_GetHSteamUserCurrent
  T SteamHTMLSurface
  T SteamHTTP
  T SteamInventory
+ T Steam_LoadMinidumpInterface()
  T SteamMatchmaking
  T SteamMatchmakingServers
  T SteamMusic
  T SteamMusicRemote
  T SteamNetworking
+ T Steam_RegisterInterfaceFuncs
  T SteamRemoteStorage
+ T Steam_RunCallbacks
  T SteamScreenshots
+ T Steam_SetMinidumpSteamID(unsigned long long)
+ T Steam_ShutdownMinidumpInterface()
  T SteamUGC
  T SteamUnifiedMessages
  T SteamUser
  T SteamUserStats
  T SteamUtils
  T SteamVideo
- T Steam_GetHSteamUserCurrent
- T Steam_LoadMinidumpInterface()
- T Steam_RegisterInterfaceFuncs
- T Steam_RunCallbacks
- T Steam_SetMinidumpSteamID(unsigned long long)
- T Steam_ShutdownMinidumpInterface()
  T Sys_LoadModule(char const*, bool, bool)
  T V_StripFilename(char*)
- T V_URLEncodeString(char*, int, char const*, int, bool)
  T V_strncat(char*, char const*, unsigned long)
- T __clang_call_terminate
- T int V_sprintf_safe<1024ul>(char (&) [1024ul], char const*, ...)
- T int V_sprintf_safe<1028ul>(char (&) [1028ul], char const*, ...)
- T int V_sprintf_safe<12ul>(char (&) [12ul], char const*, ...)
- T int V_sprintf_safe<15ul>(char (&) [15ul], char const*, ...)
- T int V_sprintf_safe<24ul>(char (&) [24ul], char const*, ...)
- T int V_sprintf_safe<256ul>(char (&) [256ul], char const*, ...)
- T int V_sprintf_safe<3072ul>(char (&) [3072ul], char const*, ...)
- T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::_M_erase(std::_Rb_tree_node<std::pair<int const, CCallbackBase*> >*)
- T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<int const, CCallbackBase*> const&)
- T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::_M_insert_equal(std::pair<int const, CCallbackBase*> const&)
- T std::_Rb_tree<int, std::pair<int const, CCallbackBase*>, std::_Select1st<std::pair<int const, CCallbackBase*> >, std::less<int>, std::allocator<std::pair<int const, CCallbackBase*> > >::find(int const&)
- T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned long long const, CCallbackBase*> >*)
- T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<unsigned long long const, CCallbackBase*> const&)
- T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::_M_insert_equal(std::pair<unsigned long long const, CCallbackBase*> const&)
- T std::_Rb_tree<unsigned long long, std::pair<unsigned long long const, CCallbackBase*>, std::_Select1st<std::pair<unsigned long long const, CCallbackBase*> >, std::less<unsigned long long>, std::allocator<std::pair<unsigned long long const, CCallbackBase*> > >::find(unsigned long long const&)
+ T V_URLEncodeString(char*, int, char const*, int, bool)
  _Unwind_Resume
- __bzero
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_end_catch
- __cxa_guard_abort
- __cxa_guard_acquire
- __cxa_guard_release
- __cxa_pure_virtual
- __gxx_personality_v0
- __stack_chk_fail
- __stack_chk_guard
- __stderrp
- atoi
- b CCallbackMgr::RunCallbacks(int, bool)::bRunningCallbacks
- b GCallbackMgr()::s_CallbackMgr
- b g_SteamAPIContext
- b g_eServerMode
- b g_hSteamPipe
- b g_hSteamUser
- b g_pSteamApps
- b g_pSteamClient
- b g_pSteamGameServer
- b g_pSteamGameServerNetworking
- b g_pSteamGameServerStats
- b g_pSteamHTTP
- b g_pSteamInventory
- b g_pSteamUGC
- b g_pSteamUtils
- b g_pSteamUtilsRunFrame
- b g_pSysModuleSteam
- b guard variable for GCallbackMgr()::s_CallbackMgr
- b s_BreakpadInfo
- b s_bCallbackManagerInitialized
- bootstrap_look_up
- bootstrap_port
- d g_bCatchExceptionsInCallbacks
- d s_SteamClientDLL
- d s_SteamDLL
- dlclose
- dlerror
- dlopen
- dlsym
- dyld_stub_binder
- fclose
- fgets
- fopen
- fopen$UNIX2003
- fprintf
- fputs
- fputs$UNIX2003
- free
- fwrite
- getenv
- getpid
- kill
- kill$UNIX2003
- launch_data_alloc
- launch_data_dict_insert
- launch_data_free
- launch_data_new_string
- launch_msg
- mach_msg
- mach_port_allocate
- mach_port_deallocate
- mach_task_self_
- malloc
- memcpy
- operator delete(void*)
- operator delete[](void*)
- operator new(unsigned long)
- operator new[](unsigned long)
- pthread_mutex_destroy
- pthread_mutex_init
- pthread_mutex_lock
- pthread_mutex_unlock
- pthread_mutexattr_destroy
- pthread_mutexattr_destroy$UNIX2003
- pthread_mutexattr_init
- rindex
- setenv
- setenv$UNIX2003
- sscanf
- std::_List_node_base::hook(std::_List_node_base*)
- std::_List_node_base::unhook()
- std::_Rb_tree_increment(std::_Rb_tree_node_base*)
- std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
- std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
- std::terminate()
- strchr
- strlen
- strncasecmp
- strncat
- strncmp
- strncpy
- sysctl
- system
- system$UNIX2003
  usleep
  usleep$UNIX2003
  vsnprintf

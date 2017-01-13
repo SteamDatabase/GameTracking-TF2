@@ -1,11 +1,22 @@
+ acosf
+ b __g_CreateIVoiceCodec_reg
  B InterfaceReg::s_pInterfaceRegs
+ b quant_weight
  B s_NoEscConversion
  B s_StringCharConversion
+ b vec2_invalid
+ b vec2_origin
+ calloc
+ cos
+ cosf
+ __cxa_begin_catch
+ __cxa_call_unexpected
  D cdbk_nb
  D cdbk_nb_high1
  D cdbk_nb_high2
  D cdbk_nb_low1
  D cdbk_nb_low2
+ d dyld__mach_header
  D exc_10_16_table
  D exc_10_32_table
  D exc_20_32_table
@@ -16,16 +27,43 @@
  D exc_gain_quant_scal3
  D gain_cdbk_lbr
  D gain_cdbk_nb
+ d h0
+ d h1
  D hexc_10_32_table
  D hexc_table
  D high_lsp_cdbk
  D high_lsp_cdbk2
+ d ltp_params_lbr
+ d ltp_params_med
+ d ltp_params_nb
+ d ltp_params_vlbr
+ d nb_mode
+ d nb_submode1
+ d nb_submode2
+ d nb_submode3
+ d nb_submode4
+ d nb_submode5
+ d nb_submode6
+ d nb_submode7
+ d nb_submode8
+ d sb_uwb_mode
+ d sb_wb_mode
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
  D speex_mode_list
  D speex_nb_mode
  D speex_uwb_mode
  D speex_wb_mode
- D typeinfo for CUtlCStringConversion
+ d split_cb_high
+ d split_cb_high_lbr
+ d split_cb_nb
+ d split_cb_nb_lbr
+ d split_cb_nb_med
+ d split_cb_nb_ulbr
+ d split_cb_nb_vlbr
+ d split_cb_sb
  D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlCStringConversion
  D typeinfo for CUtlNoEscConversion
  D typeinfo for IFrameEncoder
  D typeinfo for IVoiceCodec
@@ -34,57 +72,78 @@
  D vbr_hb_thresh
  D vbr_nb_thresh
  D vbr_uhb_thresh
- D vtable for CUtlCStringConversion
  D vtable for CUtlCharConversion
+ D vtable for CUtlCStringConversion
  D vtable for CUtlNoEscConversion
  D vtable for VoiceCodec_Frame
  D vtable for VoiceEncoder_Speex
- R typeinfo name for CUtlCStringConversion
+ d wb_submode1
+ d wb_submode2
+ d wb_submode3
+ d wb_submode4
+ exit
+ exp
+ expf
+ floor
+ floorf
+ fprintf
+ fputc
+ free
+ g_pMemAlloc
+ __gxx_personality_v0
+ log
+ logf
+ memcpy
+ memmove
+ memset
+ pow
+ printf
+ putchar
+ rand
+ realloc
+ r ENCODED_FRAME_SIZE
  R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlCStringConversion
  R typeinfo name for CUtlNoEscConversion
  R typeinfo name for IFrameEncoder
  R typeinfo name for IVoiceCodec
  R typeinfo name for VoiceCodec_Frame
  R typeinfo name for VoiceEncoder_Speex
- T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
- T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CreateInterface
- T CreateSpeexVoiceCodec()
- T CreateVoiceCodec_Frame(IFrameEncoder*)
- T InterfaceReg::InterfaceReg(void* (*)(), char const*)
- T VoiceCodec_Frame::Compress(char const*, int, char*, int, bool)
- T VoiceCodec_Frame::Decompress(char const*, int, char*, int)
- T VoiceCodec_Frame::Init(int)
- T VoiceCodec_Frame::Release()
- T VoiceCodec_Frame::ResetState()
- T VoiceCodec_Frame::~VoiceCodec_Frame()
- T VoiceEncoder_Speex::DecodeFrame(char const*, char*)
- T VoiceEncoder_Speex::EncodeFrame(char const*, char*)
- T VoiceEncoder_Speex::Init(int, int&, int&)
- T VoiceEncoder_Speex::Release()
- T VoiceEncoder_Speex::ResetState()
- T VoiceEncoder_Speex::~VoiceEncoder_Speex()
- T __clang_call_terminate
- T _speex_putc
- T _spx_autocorr
+ __stack_chk_fail
+ __stack_chk_guard
+ __stderrp
+ std::terminate()
+ strcmp
+ strlen
  T be_int
  T be_short
  T bw_lpc
+ t cheb_poly_eva
+ T __clang_call_terminate
  T comb_filter
  T comp_filter_mem_init
+ T CreateInterface
+ T CreateSpeexVoiceCodec()
+ T CreateVoiceCodec_Frame(IFrameEncoder*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+ T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlNoEscConversion::FindConversion(char const*, int*)
  T dyld_stub_binding_helper
  T filter_mem2
  T fir_mem2
  T fir_mem_up
  T forced_pitch_quant
  T forced_pitch_unquant
+ t global constructors keyed to a
  T iir_mem2
+ t inner_prod
+ T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T le_int
  T le_short
  T lpc_to_lsp
  T lsp_enforce_margin
+ t lsp_quant
  T lsp_quant_high
  T lsp_quant_lbr
  T lsp_quant_nb
@@ -92,6 +151,7 @@
  T lsp_unquant_high
  T lsp_unquant_lbr
  T lsp_unquant_nb
+ t lsp_weight_quant
  T nb_decode
  T nb_decoder_ctl
  T nb_decoder_destroy
@@ -100,6 +160,7 @@
  T nb_encoder_ctl
  T nb_encoder_destroy
  T nb_encoder_init
+ t nb_mode_query
  T noise_codebook_quant
  T noise_codebook_unquant
  T open_loop_nbest_pitch
@@ -114,6 +175,7 @@
  T qmf_decomp
  T residue_percep_zero
  T sb_decode
+ t sb_decode_lost
  T sb_decoder_ctl
  T sb_decoder_destroy
  T sb_decoder_init
@@ -154,6 +216,7 @@
  T speex_inband_handler
  T speex_mode_query
  T speex_move
+ T _speex_putc
  T speex_rand
  T speex_rand_vec
  T speex_realloc
@@ -168,92 +231,29 @@
  T speex_warning_int
  T split_cb_search_shape_sign
  T split_cb_shape_sign_unquant
+ T _spx_autocorr
  T syn_percep_zero
  T vbr_analysis
  T vbr_destroy
  T vbr_init
+ T VoiceCodec_Frame::Compress(char const*, int, char*, int, bool)
+ T VoiceCodec_Frame::Decompress(char const*, int, char*, int)
+ T VoiceCodec_Frame::Init(int)
+ T VoiceCodec_Frame::Release()
+ T VoiceCodec_Frame::ResetState()
+ T VoiceCodec_Frame::~VoiceCodec_Frame()
+ T VoiceEncoder_Speex::DecodeFrame(char const*, char*)
+ T VoiceEncoder_Speex::EncodeFrame(char const*, char*)
+ T VoiceEncoder_Speex::Init(int, int&, int&)
+ T VoiceEncoder_Speex::Release()
+ T VoiceEncoder_Speex::ResetState()
+ T VoiceEncoder_Speex::~VoiceEncoder_Speex()
  T vq_index
  T vq_nbest
  T vq_nbest_sign
- T wld
- _Unwind_Resume
- __cxa_begin_catch
- __cxa_call_unexpected
- __gxx_personality_v0
- __stack_chk_fail
- __stack_chk_guard
- __stderrp
- acosf
- b __g_CreateIVoiceCodec_reg
- b quant_weight
- b vec2_invalid
- b vec2_origin
- calloc
- cos
- cosf
- d dyld__mach_header
- d h0
- d h1
- d ltp_params_lbr
- d ltp_params_med
- d ltp_params_nb
- d ltp_params_vlbr
- d nb_mode
- d nb_submode1
- d nb_submode2
- d nb_submode3
- d nb_submode4
- d nb_submode5
- d nb_submode6
- d nb_submode7
- d nb_submode8
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- d sb_uwb_mode
- d sb_wb_mode
- d split_cb_high
- d split_cb_high_lbr
- d split_cb_nb
- d split_cb_nb_lbr
- d split_cb_nb_med
- d split_cb_nb_ulbr
- d split_cb_nb_vlbr
- d split_cb_sb
- d wb_submode1
- d wb_submode2
- d wb_submode3
- d wb_submode4
- exit
- exp
- expf
- floor
- floorf
- fprintf
- fputc
- free
- g_pMemAlloc
- log
- logf
- memcpy
- memmove
- memset
- pow
- printf
- putchar
- r ENCODED_FRAME_SIZE
- rand
- realloc
- std::terminate()
- strcmp
- strlen
- t cheb_poly_eva
- t global constructors keyed to a
- t inner_prod
- t lsp_quant
- t lsp_weight_quant
- t nb_mode_query
- t sb_decode_lost
  t wb_mode_query
+ T wld
  typeinfo for std::bad_alloc
+ _Unwind_Resume
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
