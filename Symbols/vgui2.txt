@@ -1,38 +1,27 @@
- atof
- atoi
- b CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
- b CLocalizedStringTable::FindAsUTF8(char const*)::rgchT
- b CLocalizedStringTable::SaveToFile(char const*)::unicodeString
  B CLocalizedStringTable::s_pTable
- B colorcorrection
+ B CSchemeManager::s_pszSearchString
+ B CUtlSymbol::s_pSymbolTable
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- b ConVarRef::Init(char const*, bool)::bFirst
- b CScheme::GetMungedFontName(char const*, char const*, bool)::mungeBuffer
- B CSchemeManager::s_pszSearchString
- b CUtlSymbol::Initialize()::symbolsInitialized
- B CUtlSymbol::s_pSymbolTable
+ B InterfaceReg::s_pInterfaceRegs
+ B colorcorrection
  B cvar
- b CVGui::DPrintf2(char const*, ...)::ctr
- b g_CleanupSymbolTable
- b __g_CreateCInputSystemIInputInternal_reg
- b __g_CreateCInputSystemIInput_reg
- b __g_CreateCLocalizedStringTableILocalize_reg
- b __g_CreateCSchemeManagerISchemeManager_reg
- b __g_CreateCSystemISystem_reg
- b __g_CreateCVGuiIVGui_reg
- b __g_CreateVPanelWrapperIPanel_reg
  B g_Input
+ B g_Scheme
+ B g_StringTable
+ B g_System
+ B g_VBAllocTracker
+ B g_VGui
  B g_pCVar
  B g_pDataCache
  B g_pDmeMakefileUtils
  B g_pFullFileSystem
  B g_pInputSystem
+ B g_pMDLCache
+ B g_pMatSystemSurface
  B g_pMaterialSystem
  B g_pMaterialSystemDebugTextureInfo
  B g_pMaterialSystemHardwareConfig
- B g_pMatSystemSurface
- B g_pMDLCache
  B g_pNetworkSystem
  B g_pPhysicsCollision
  B g_pProcessUtils
@@ -47,40 +36,21 @@
  B g_pVGuiSchemeManager
  B g_pVGuiSurface
  B g_pVGuiSystem
- B g_pVideo
  B g_pVTex
- B g_Scheme
- B g_StringTable
- B g_System
- b guard variable for CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
- B g_VBAllocTracker
- B g_VGui
- b __g_VPanelWrapper_singleton
- B InterfaceReg::s_pInterfaceRegs
- b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
+ B g_pVideo
  B materials
  B mdlcache
  B mdllib
  B p4
- b s_bConnected
- b s_bRegistered
- b s_EmptyConVar
- b s_nCVarFlag
  B s_NoEscConversion
- b s_pTokenBuf
  B s_StringCharConversion
  B studiorender
- b vec2_invalid
- b vec2_origin
  B vgui::g_pIPanel
  B vgui::g_pSurface
- b vgui_spew_fonts_command
- __CFConstantStringClassReference
  CFDataCreate
  CFDataGetBytePtr
  CFDataGetLength
  CFRelease
- CommandLine_Tier0
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
@@ -91,22 +61,16 @@
  CVProfNode::EnterScope()
  CVProfNode::ExitScope()
  CVProfNode::GetSubNode(char const*, int, char const*, int)
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_abort
- __cxa_guard_acquire
- __cxa_guard_release
+ CommandLine_Tier0
  D CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Links(int) const::s_Sentinel
  D CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Links(unsigned long) const::s_Sentinel
  D CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Links(int) const::s_Sentinel
  D CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
  D CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
  D CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- d dyld__mach_header
- _DefaultRuneLocale
- DevMsg
- DevMsg(char const*, ...)
+ D KeyValues::s_pfGetStringForSymbol
+ D KeyValues::s_pfGetSymbolForString
+ D PinDeltas
  D g_KeyValuesErrorStack
  D g_SchemeTranslation
  D guard variable for CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Links(int) const::s_Sentinel
@@ -115,22 +79,11 @@
  D guard variable for CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D KeyValues::s_pfGetStringForSymbol
- D KeyValues::s_pfGetSymbolForString
- D PinDeltas
- d s_DefaultAccessor
- d s_LastFileLoadingFrom
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
  D typeinfo for CBaseAppSystem<vgui::IVGui>
  D typeinfo for CDefaultAccessor
  D typeinfo for CEmptyConVar
  D typeinfo for CInputSystem
  D typeinfo for CLocalizedStringTable
- D typeinfo for ConCommand
- D typeinfo for ConCommandBase
- D typeinfo for ConVar
  D typeinfo for CScheme
  D typeinfo for CSchemeManager
  D typeinfo for CSystem
@@ -138,10 +91,13 @@
  D typeinfo for CTier1AppSystem<vgui::IVGui, 0>
  D typeinfo for CTier2AppSystem<vgui::IVGui, 0>
  D typeinfo for CTier3AppSystem<vgui::IVGui, 0>
- D typeinfo for CUtlCharConversion
  D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlCharConversion
  D typeinfo for CUtlNoEscConversion
  D typeinfo for CVGui
+ D typeinfo for ConCommand
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
  D typeinfo for IAppSystem
  D typeinfo for IBaseInterface
  D typeinfo for IConCommandBaseAccessor
@@ -149,6 +105,7 @@
  D typeinfo for ILocalize
  D typeinfo for ImageBorder
  D typeinfo for ScalableImageBorder
+ D typeinfo for VPanelWrapper
  D typeinfo for vgui::Bitmap
  D typeinfo for vgui::Border
  D typeinfo for vgui::IBorder
@@ -162,49 +119,33 @@
  D typeinfo for vgui::ISystem
  D typeinfo for vgui::IVGui
  D typeinfo for vgui::VPanel
- D typeinfo for VPanelWrapper
- D vgui::g_pInput
  D vgui::g_pIVgui
+ D vgui::g_pInput
  D vgui::g_pScheme
  D vgui::g_pSystem
  D vtable for CDefaultAccessor
  D vtable for CEmptyConVar
  D vtable for CInputSystem
  D vtable for CLocalizedStringTable
- D vtable for ConCommand
- D vtable for ConVar
  D vtable for CScheme
  D vtable for CSchemeManager
  D vtable for CSystem
- D vtable for CUtlCharConversion
  D vtable for CUtlCStringConversion
+ D vtable for CUtlCharConversion
  D vtable for CUtlNoEscConversion
  D vtable for CVGui
+ D vtable for ConCommand
+ D vtable for ConVar
  D vtable for ImageBorder
  D vtable for ScalableImageBorder
+ D vtable for VPanelWrapper
  D vtable for vgui::Bitmap
  D vtable for vgui::Border
  D vtable for vgui::VPanel
- D vtable for VPanelWrapper
- __error
+ DevMsg
+ DevMsg(char const*, ...)
  Error
- execlp
- fork
- g_pMemAlloc
- g_pVCR
- g_VProfCurrentProfile
- __gxx_personality_v0
- iconv
- iconv_close
- iconv_open
- kCFAllocatorDefault
  KeyValuesSystem
- localtime
- __maskrune
- memcpy
- memmove
- memset
- memset_pattern16
  Msg
  PasteboardClear
  PasteboardCopyItemFlavorData
@@ -216,23 +157,11 @@
  Plat_FloatTime
  Plat_GetCommandLine
  Plat_MSTime
- pow
- pthread_mutexattr_init
- pthread_mutexattr_settype
- pthread_mutex_destroy
- pthread_mutex_init
- pthread_mutex_lock
- pthread_mutex_unlock
- qsort
- r .memset_pattern
  R typeinfo name for CBaseAppSystem<vgui::IVGui>
  R typeinfo name for CDefaultAccessor
  R typeinfo name for CEmptyConVar
  R typeinfo name for CInputSystem
  R typeinfo name for CLocalizedStringTable
- R typeinfo name for ConCommand
- R typeinfo name for ConCommandBase
- R typeinfo name for ConVar
  R typeinfo name for CScheme
  R typeinfo name for CSchemeManager
  R typeinfo name for CSystem
@@ -240,10 +169,13 @@
  R typeinfo name for CTier1AppSystem<vgui::IVGui, 0>
  R typeinfo name for CTier2AppSystem<vgui::IVGui, 0>
  R typeinfo name for CTier3AppSystem<vgui::IVGui, 0>
- R typeinfo name for CUtlCharConversion
  R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlCharConversion
  R typeinfo name for CUtlNoEscConversion
  R typeinfo name for CVGui
+ R typeinfo name for ConCommand
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
  R typeinfo name for IAppSystem
  R typeinfo name for IBaseInterface
  R typeinfo name for IConCommandBaseAccessor
@@ -251,6 +183,7 @@
  R typeinfo name for ILocalize
  R typeinfo name for ImageBorder
  R typeinfo name for ScalableImageBorder
+ R typeinfo name for VPanelWrapper
  R typeinfo name for vgui::Bitmap
  R typeinfo name for vgui::Border
  R typeinfo name for vgui::IBorder
@@ -264,42 +197,19 @@
  R typeinfo name for vgui::ISystem
  R typeinfo name for vgui::IVGui
  R typeinfo name for vgui::VPanel
- R typeinfo name for VPanelWrapper
- sscanf
- __stack_chk_fail
- __stack_chk_guard
- statfs64
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strcpy
- strlen
- strncasecmp
- strncat
- strncpy
- strrchr
- strstr
- strtod$UNIX2003
- strtok
- strtol
- strtoul
- swprintf
- T CaselessStringLessThan(char const* const&, char const* const&)
  T CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
- T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
+ T CEmptyConVar::~CEmptyConVar()
  T CInputSystem::ActivateInputContext(int)
  T CInputSystem::AssociatePanelWithInputContext(int, unsigned int)
+ T CInputSystem::CInputSystem()
  T CInputSystem::CalculateNewKeyFocus()
  T CInputSystem::CandidateListStartsAtOne()
- T CInputSystem::~CInputSystem()
- T CInputSystem::CInputSystem()
  T CInputSystem::CreateInputContext()
  T CInputSystem::DestroyInputContext(int)
  T CInputSystem::GetAppModalSurface()
@@ -369,10 +279,10 @@
  T CInputSystem::SetCursorPos(int, int)
  T CInputSystem::SetIMEWindow(void*)
  T CInputSystem::SetKeyCodeState(ButtonCode_t, bool)
- T CInputSystem::SetModalSubTreeReceiveMessages(bool)
  T CInputSystem::SetModalSubTree(unsigned int, unsigned int, bool)
- T CInputSystem::SetMouseCaptureEx(unsigned int, ButtonCode_t)
+ T CInputSystem::SetModalSubTreeReceiveMessages(bool)
  T CInputSystem::SetMouseCapture(unsigned int)
+ T CInputSystem::SetMouseCaptureEx(unsigned int, ButtonCode_t)
  T CInputSystem::SetMouseCodeState(ButtonCode_t, vgui::MouseCodeState_t)
  T CInputSystem::SetMouseFocus(unsigned int)
  T CInputSystem::ShouldModalSubTreeReceiveMessages() const
@@ -386,17 +296,16 @@
  T CInputSystem::WasMouseDoublePressed(ButtonCode_t)
  T CInputSystem::WasMousePressed(ButtonCode_t)
  T CInputSystem::WasMouseReleased(ButtonCode_t)
+ T CInputSystem::~CInputSystem()
  T CKeyValuesErrorStack::ReportError(char const*)
- T __clang_call_terminate
  T CLocalizedStringTable::AddAllLanguageFiles(char const*)
  T CLocalizedStringTable::AddFile(char const*, char const*, bool)
  T CLocalizedStringTable::AddString(char const*, wchar_t*, char const*)
- T CLocalizedStringTable::~CLocalizedStringTable()
  T CLocalizedStringTable::ConstructString(wchar_t*, int, char const*, KeyValues*)
  T CLocalizedStringTable::ConstructString(wchar_t*, int, unsigned long, KeyValues*)
  T CLocalizedStringTable::FastValueLessFunc(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&)
- T CLocalizedStringTable::FindAsUTF8(char const*)
  T CLocalizedStringTable::Find(char const*)
+ T CLocalizedStringTable::FindAsUTF8(char const*)
  T CLocalizedStringTable::FindIndex(char const*)
  T CLocalizedStringTable::GetFileNameByIndex(unsigned long)
  T CLocalizedStringTable::GetFirstStringIndex()
@@ -410,62 +319,14 @@
  T CLocalizedStringTable::SaveToFile(char const*)
  T CLocalizedStringTable::SetValueByIndex(unsigned long, wchar_t*)
  T CLocalizedStringTable::SymLess(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&)
- T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
- T ConCommandBase::AddFlags(int)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConCommandBase::GetHelpText() const
- T ConCommandBase::GetName() const
- T ConCommandBase::Init()
- T ConCommandBase::IsFlagSet(int) const
- T ConCommandBase::IsRegistered() const
- T ConCommand::CanAutoComplete()
- T ConCommand::~ConCommand()
- T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
- T ConCommand::Dispatch(CCommand const&)
- T ConCommand::IsCommand() const
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T ConnectTier3Libraries(void* (**)(char const*, int*), int)
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::~ConVar()
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVarRef::ConVarRef(char const*)
- T ConVarRef::ConVarRef(char const*, bool)
- T ConVarRef::IsValid() const
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar_Unregister()
- t __CreateCInputSystemIInput_interface()
- t __CreateCInputSystemIInputInternal_interface()
- t __CreateCLocalizedStringTableILocalize_interface()
- t __CreateCSchemeManagerISchemeManager_interface()
- t __CreateCSystemISystem_interface()
- t __CreateCVGuiIVGui_interface()
- T CreateInterface
- T CreateInterfaceInternal(char const*, int*)
- t __CreateVPanelWrapperIPanel_interface()
- T CScheme::~CScheme()
- T CScheme::GetBorderAtIndex(int)
+ T CLocalizedStringTable::~CLocalizedStringTable()
  T CScheme::GetBorder(char const*)
+ T CScheme::GetBorderAtIndex(int)
  T CScheme::GetBorderCount() const
  T CScheme::GetColor(char const*, Color)
  T CScheme::GetColorData() const
- T CScheme::GetFontAtIndex(int)
  T CScheme::GetFont(char const*, bool)
+ T CScheme::GetFontAtIndex(int)
  T CScheme::GetFontCount() const
  T CScheme::GetFontName(unsigned long const&)
  T CScheme::GetMinimumFontHeightForCurrentLanguage()
@@ -474,38 +335,38 @@
  T CScheme::LoadFonts()
  T CScheme::LoadFromFile(unsigned int, char const*, char const*, KeyValues*)
  T CScheme::LookupSchemeSetting(char const*)
+ T CScheme::ReloadFontGlyphs()
+ T CScheme::SetFontRange(char const*, int, int)
+ T CScheme::SpewFonts()
+ T CScheme::~CScheme()
  T CSchemeManager::BitmapHandleSearchFunc(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&)
- T CSchemeManager::~CSchemeManager()
  T CSchemeManager::CSchemeManager()
  T CSchemeManager::DeleteImage(char const*)
  T CSchemeManager::GetDefaultScheme()
+ T CSchemeManager::GetIScheme(unsigned long)
  T CSchemeManager::GetImage(char const*, bool)
  T CSchemeManager::GetImageID(char const*, bool)
- T CSchemeManager::GetIScheme(unsigned long)
- T CSchemeManager::GetProportionalNormalizedValueEx(unsigned long, int)
  T CSchemeManager::GetProportionalNormalizedValue(int)
- T CSchemeManager::GetProportionalScaledValueEx(unsigned long, int)
+ T CSchemeManager::GetProportionalNormalizedValueEx(unsigned long, int)
  T CSchemeManager::GetProportionalScaledValue(int)
+ T CSchemeManager::GetProportionalScaledValueEx(unsigned long, int)
  T CSchemeManager::GetScheme(char const*)
  T CSchemeManager::LoadSchemeFromFile(char const*, char const*)
  T CSchemeManager::LoadSchemeFromFileEx(unsigned int, char const*, char const*)
  T CSchemeManager::ReloadFonts()
  T CSchemeManager::ReloadSchemes()
  T CSchemeManager::Shutdown(bool)
- T CScheme::ReloadFontGlyphs()
- T CScheme::SetFontRange(char const*, int, int)
- T CScheme::SpewFonts()
+ T CSchemeManager::~CSchemeManager()
+ T CSystem::CSystem()
  T CSystem::CommandLineParamExists(char const*)
  T CSystem::CreateShortcut(char const*, char const*, char const*, char const*, char const*)
- T CSystem::~CSystem()
- T CSystem::CSystem()
  T CSystem::DeleteRegistryKey(char const*)
  T CSystem::GetAllUserDesktopFolderPath()
  T CSystem::GetAllUserStartMenuFolderPath()
  T CSystem::GetAvailableDrives(char*, int)
- T CSystem::GetClipboardTextCount()
  T CSystem::GetClipboardText(int, char*, int)
  T CSystem::GetClipboardText(int, wchar_t*, int)
+ T CSystem::GetClipboardTextCount()
  T CSystem::GetCommandLineParamValue(char const*, char*, int)
  T CSystem::GetCurrentTime()
  T CSystem::GetCurrentTimeAndDate(int*, int*, int*, int*, int*, int*, int*)
@@ -535,10 +396,11 @@
  T CSystem::ShellExecute(char const*, char const*)
  T CSystem::ShellExecuteEx(char const*, char const*, char const*)
  T CSystem::Shutdown()
+ T CSystem::~CSystem()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::AssumeMemory(void*, int, int, int)
- T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::CUtlBuffer(void const*, int, int)
+ T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::EatCPPComment()
  T CUtlBuffer::EatWhiteSpace()
  T CUtlBuffer::GetDelimitedCharInternal(CUtlCharConversion*)
@@ -549,24 +411,24 @@
  T CUtlBuffer::PeekStringLength()
  T CUtlBuffer::PeekStringMatch(int, char const*, int)
  T CUtlBuffer::PeekWhiteSpace(int)
- T CUtlBuffer::PutOverflow(int)
  T CUtlBuffer::Put(void const*, int)
+ T CUtlBuffer::PutOverflow(int)
  T CUtlBuffer::Scanf(char const*, ...)
  T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::VaScanf(char const*, char*)
- T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlDict<CScheme::fontalias_t, int>::~CUtlDict()
  T CUtlHandleTable<vgui::VPanel, 20>::AddHandle()
  T CUtlLinkedList<CInputSystem::InputContext_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CInputSystem::InputContext_t, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CInputSystem::InputContext_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CInputSystem::InputContext_t, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<CVGui::Context_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CVGui::Context_t, unsigned short>, unsigned short> >::AllocInternal(bool)
- T CUtlLinkedList<CVGui::Context_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CVGui::Context_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<CVGui::Context_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CVGui::Context_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
+ T CUtlLinkedList<CVGui::Context_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CVGui::Context_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<MessageItem_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<MessageItem_t, unsigned short>, unsigned short> >::AllocInternal(bool)
- T CUtlLinkedList<MessageItem_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<MessageItem_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<MessageItem_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<MessageItem_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
+ T CUtlLinkedList<MessageItem_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<MessageItem_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlMemory<UtlLinkedListElem_t<CVGui::Context_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<MessageItem_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
@@ -574,7 +436,6 @@
  T CUtlPriorityQueue<MessageItem_t>::Insert(MessageItem_t const&)
  T CUtlPriorityQueue<MessageItem_t>::RemoveAtHead()
  T CUtlQueue<int, CUtlMemory<int, int> >::Insert(int const&)
- T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::~CUtlRBTree()
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Find(CLocalizedStringTable::fastvalue_t const&) const
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::FindInsertionPosition(CLocalizedStringTable::fastvalue_t const&, int&, bool&)
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Insert(CLocalizedStringTable::fastvalue_t const&)
@@ -585,7 +446,7 @@
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::RemoveAll()
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::RotateLeft(int)
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::RotateRight(int)
- T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::~CUtlRBTree()
+ T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::~CUtlRBTree()
  T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Find(CLocalizedStringTable::localizedstring_t const&) const
  T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::FindInsertionPosition(CLocalizedStringTable::localizedstring_t const&, unsigned long&, bool&)
  T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::FirstInorder() const
@@ -598,7 +459,7 @@
  T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::RemoveAll()
  T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::RotateLeft(unsigned long)
  T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::RotateRight(unsigned long)
- T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::~CUtlRBTree()
+ T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::~CUtlRBTree()
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Find(CSchemeManager::CachedBitmapHandle_t const&) const
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::FindInsertionPosition(CSchemeManager::CachedBitmapHandle_t const&, int&, bool&)
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Insert(CSchemeManager::CachedBitmapHandle_t const&)
@@ -611,7 +472,7 @@
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::RotateLeft(int)
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::RotateRight(int)
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Unlink(int)
- T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::~CUtlRBTree()
+ T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::~CUtlRBTree()
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Find(CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t const&) const
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::FindInsertionPosition(CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t const&, int&, bool&)
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::FirstInorder() const
@@ -624,7 +485,7 @@
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::RemoveAll()
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::RotateLeft(int)
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::RotateRight(int)
- T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::~CUtlRBTree()
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Find(CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t const&) const
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::FindInsertionPosition(CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t const&, int&, bool&)
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::FirstInorder() const
@@ -637,7 +498,7 @@
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::RemoveAll()
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::RotateLeft(int)
  T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::RotateRight(int)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::~CUtlRBTree()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
@@ -648,6 +509,7 @@
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlSortVector<KeyValues*, CUtlSortVectorKeyValuesByName, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> > >::CompareHelper(KeyValues* const*, KeyValues* const*)
  T CUtlString::Get() const
  T CUtlString::Purge()
@@ -657,12 +519,10 @@
  T CUtlSymbol::String() const
  T CUtlSymbolTable::AddString(char const*)
  T CUtlSymbolTable::CLess::operator()(CUtlSymbolTable::CStringPoolIndex const&, CUtlSymbolTable::CStringPoolIndex const&) const
- T CUtlSymbolTable::~CUtlSymbolTable()
  T CUtlSymbolTable::CUtlSymbolTable(int, int, bool)
- T CUtlSymbolTableMT::String(CUtlSymbol) const
  T CUtlSymbolTable::String(CUtlSymbol) const
- T CUtlVector<char, CUtlMemory<char, int> >::~CUtlVector()
- T CUtlVector<char, CUtlMemory<char, int> >::InsertMultipleBefore(int, int)
+ T CUtlSymbolTable::~CUtlSymbolTable()
+ T CUtlSymbolTableMT::String(CUtlSymbol) const
  T CUtlVector<CLocalizedStringTable::LocalizationFileInfo_t, CUtlMemory<CLocalizedStringTable::LocalizationFileInfo_t, int> >::~CUtlVector()
  T CUtlVector<CScheme*, CUtlMemory<CScheme*, int> >::AddToTail(CScheme* const&)
  T CUtlVector<CScheme*, CUtlMemory<CScheme*, int> >::~CUtlVector()
@@ -670,34 +530,35 @@
  T CUtlVector<CScheme::SchemeBorder_t, CUtlMemory<CScheme::SchemeBorder_t, int> >::~CUtlVector()
  T CUtlVector<CUtlHandleTable<vgui::VPanel, 20>::EntryType_t, CUtlMemory<CUtlHandleTable<vgui::VPanel, 20>::EntryType_t, int> >::~CUtlVector()
  T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
- T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::~CUtlVector()
  T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::InsertBefore(int, CUtlSymbol const&)
+ T CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::~CUtlVector()
  T CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
- T CUtlVector<CVGui::Tick_t*, CUtlMemory<CVGui::Tick_t*, int> >::~CUtlVector()
  T CUtlVector<CVGui::Tick_t*, CUtlMemory<CVGui::Tick_t*, int> >::InsertBefore(int, CVGui::Tick_t* const&)
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
+ T CUtlVector<CVGui::Tick_t*, CUtlMemory<CVGui::Tick_t*, int> >::~CUtlVector()
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
  T CUtlVector<MessageItem_t, CUtlMemory<MessageItem_t, int> >::~CUtlVector()
- T CUtlVector<vgui::VPanel*, CUtlMemory<vgui::VPanel*, int> >::~CUtlVector()
+ T CUtlVector<char, CUtlMemory<char, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<char, CUtlMemory<char, int> >::~CUtlVector()
  T CUtlVector<vgui::VPanel*, CUtlMemory<vgui::VPanel*, int> >::GrowVector(int)
- T CUtlVector<wchar_t, CUtlMemory<wchar_t, int> >::~CUtlVector()
+ T CUtlVector<vgui::VPanel*, CUtlMemory<vgui::VPanel*, int> >::~CUtlVector()
  T CUtlVector<wchar_t, CUtlMemory<wchar_t, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<wchar_t, CUtlMemory<wchar_t, int> >::~CUtlVector()
  T CVGui::ActivateContext(int)
- T CVGui::AddTickSignalToHead(unsigned int, int)
  T CVGui::AddTickSignal(unsigned int, int)
+ T CVGui::AddTickSignalToHead(unsigned int, int)
  T CVGui::AllocPanel()
  T CVGui::AssociatePanelWithContext(int, unsigned int)
+ T CVGui::CVGui()
  T CVGui::ClearMessageQueues()
  T CVGui::Connect(void* (*)(char const*, int*))
  T CVGui::CreateContext()
  T CVGui::CreateNewTick(unsigned int, int)
- T CVGui::~CVGui()
- T CVGui::CVGui()
+ T CVGui::DPrintf(char const*, ...)
+ T CVGui::DPrintf2(char const*, ...)
  T CVGui::DestroyContext(int)
  T CVGui::Disconnect()
  T CVGui::DispatchMessages()
- T CVGui::DPrintf2(char const*, ...)
- T CVGui::DPrintf(char const*, ...)
  T CVGui::FreePanel(unsigned int)
  T CVGui::GetShouldVGuiControlSleep()
  T CVGui::GetVRMode()
@@ -718,39 +579,77 @@
  T CVGui::SpewAllActivePanelNames()
  T CVGui::Start()
  T CVGui::Stop()
+ T CVGui::~CVGui()
+ T CaselessStringLessThan(char const* const&, char const* const&)
+ T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
+ T ConCommand::CanAutoComplete()
+ T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
+ T ConCommand::Dispatch(CCommand const&)
+ T ConCommand::IsCommand() const
+ T ConCommand::~ConCommand()
+ T ConCommandBase::AddFlags(int)
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConCommandBase::GetHelpText() const
+ T ConCommandBase::GetName() const
+ T ConCommandBase::Init()
+ T ConCommandBase::IsFlagSet(int) const
+ T ConCommandBase::IsRegistered() const
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar::~ConVar()
+ T ConVarRef::ConVarRef(char const*)
+ T ConVarRef::ConVarRef(char const*, bool)
+ T ConVarRef::IsValid() const
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar_Unregister()
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier3Libraries(void* (**)(char const*, int*), int)
+ T CreateInterface
+ T CreateInterfaceInternal(char const*, int*)
  T DefaultCompletionFunc(char const*, char (*) [64])
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
  T DisconnectTier3Libraries()
- T dyld_stub_binding_helper
  T EvaluateConditional(char const*)
  T GetCStringCharConversion()
  T GetNoEscCharConversion()
- t global constructors keyed to a
- ThreadGetCurrentId
  T ILocalize::ConstructStringKeyValuesInternal(wchar_t*, int, wchar_t const*, KeyValues*)
  T ILocalize::ConvertANSIToUnicode(char const*, wchar_t*, int)
  T ImageBorder::ApplySchemeSettings(vgui::IScheme*, KeyValues*)
  T ImageBorder::GetBackgroundType()
  T ImageBorder::GetInset(int&, int&, int&, int&)
  T ImageBorder::GetName()
- T ImageBorder::~ImageBorder()
  T ImageBorder::ImageBorder()
- T ImageBorder::PaintFirst()
  T ImageBorder::Paint(int, int, int, int)
  T ImageBorder::Paint(int, int, int, int, int, int, int)
  T ImageBorder::Paint(unsigned int)
+ T ImageBorder::PaintFirst()
  T ImageBorder::SetImage(char const*)
  T ImageBorder::SetInset(int, int, int, int)
  T ImageBorder::SetName(char const*)
- time
+ T ImageBorder::~ImageBorder()
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T IsDispatchingMessageQueue()
  T KeyCode_VGUIToVirtualKey(ButtonCode_t)
  T KeyCode_VirtualKeyToVGUI(int)
  T KeyValues::Clear()
  T KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
- T KeyValues::deleteThis()
  T KeyValues::FindKey(char const*, bool)
  T KeyValues::GetDataType(char const*)
  T KeyValues::GetFloat(char const*, float)
@@ -764,12 +663,10 @@
  T KeyValues::KeyValues(char const*, char const*, int)
  T KeyValues::KeyValues(char const*, char const*, int, char const*, int)
  T KeyValues::KeyValues(char const*, char const*, wchar_t const*)
- T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
+ T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
  T KeyValues::MakeCopy() const
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
  T KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
  T KeyValues::ProcessResolutionKeys(char const*)
  T KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
@@ -785,21 +682,9 @@
  T KeyValues::SetWString(char const*, wchar_t const*)
  T KeyValues::UsesEscapeSequences(bool)
  T KeyValues::WriteConvertedString(IBaseFileSystem*, void*, CUtlBuffer*, char const*)
- T non-virtual thunk to CEmptyConVar::GetName() const
- T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
- T non-virtual thunk to CEmptyConVar::SetValue(char const*)
- T non-virtual thunk to CEmptyConVar::SetValue(float)
- T non-virtual thunk to CEmptyConVar::SetValue(int)
- T non-virtual thunk to ConVar::GetName() const
- T non-virtual thunk to ConVar::IsFlagSet(int) const
- T non-virtual thunk to ConVar::SetValue(char const*)
- T non-virtual thunk to ConVar::SetValue(float)
- T non-virtual thunk to ConVar::SetValue(int)
- __tolower
- T operator delete(void*)
- T operator delete[](void*)
- T operator new(unsigned long)
- T operator new[](unsigned long)
+ T KeyValues::deleteThis()
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
  T PriorityQueueComp(MessageItem_t const&, MessageItem_t const&)
  T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
  T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
@@ -810,20 +695,109 @@
  T ScalableImageBorder::GetBackgroundType()
  T ScalableImageBorder::GetInset(int&, int&, int&, int&)
  T ScalableImageBorder::GetName()
- T ScalableImageBorder::PaintFirst()
  T ScalableImageBorder::Paint(int, int, int, int)
  T ScalableImageBorder::Paint(int, int, int, int, int, int, int)
  T ScalableImageBorder::Paint(unsigned int)
- T ScalableImageBorder::~ScalableImageBorder()
+ T ScalableImageBorder::PaintFirst()
  T ScalableImageBorder::ScalableImageBorder()
  T ScalableImageBorder::SetImage(char const*)
  T ScalableImageBorder::SetInset(int, int, int, int)
  T ScalableImageBorder::SetName(char const*)
+ T ScalableImageBorder::~ScalableImageBorder()
  T Sys_GetFactoryThis()
+ T VPanelWrapper::Client(unsigned int)
+ T VPanelWrapper::DeletePanel(unsigned int)
+ T VPanelWrapper::GetAbsPos(unsigned int, int&, int&)
+ T VPanelWrapper::GetChild(unsigned int, int)
+ T VPanelWrapper::GetChildCount(unsigned int)
+ T VPanelWrapper::GetChildren(unsigned int)
+ T VPanelWrapper::GetClassName(unsigned int)
+ T VPanelWrapper::GetClipRect(unsigned int, int&, int&, int&, int&)
+ T VPanelWrapper::GetCurrentKeyFocus(unsigned int)
+ T VPanelWrapper::GetInset(unsigned int, int&, int&, int&, int&)
+ T VPanelWrapper::GetMinimumSize(unsigned int, int&, int&)
+ T VPanelWrapper::GetModuleName(unsigned int)
+ T VPanelWrapper::GetName(unsigned int)
+ T VPanelWrapper::GetPanel(unsigned int, char const*)
+ T VPanelWrapper::GetParent(unsigned int)
+ T VPanelWrapper::GetPos(unsigned int, int&, int&)
+ T VPanelWrapper::GetScheme(unsigned int)
+ T VPanelWrapper::GetSize(unsigned int, int&, int&)
+ T VPanelWrapper::GetTabPosition(unsigned int)
+ T VPanelWrapper::GetZPos(unsigned int)
+ T VPanelWrapper::HasParent(unsigned int, unsigned int)
+ T VPanelWrapper::Init(unsigned int, vgui::IClientPanel*)
+ T VPanelWrapper::InternalFocusChanged(unsigned int, bool)
+ T VPanelWrapper::IsAutoDeleteSet(unsigned int)
+ T VPanelWrapper::IsEnabled(unsigned int)
+ T VPanelWrapper::IsFullyVisible(unsigned int)
+ T VPanelWrapper::IsKeyBoardInputEnabled(unsigned int)
+ T VPanelWrapper::IsMouseInputEnabled(unsigned int)
+ T VPanelWrapper::IsPopup(unsigned int)
+ T VPanelWrapper::IsProportional(unsigned int)
+ T VPanelWrapper::IsTopmostPopup(unsigned int)
+ T VPanelWrapper::IsVisible(unsigned int)
+ T VPanelWrapper::IsWithinTraverse(unsigned int, int, int, bool)
+ T VPanelWrapper::MoveToBack(unsigned int)
+ T VPanelWrapper::MoveToFront(unsigned int)
+ T VPanelWrapper::OnChildAdded(unsigned int, unsigned int)
+ T VPanelWrapper::OnSizeChanged(unsigned int, int, int)
+ T VPanelWrapper::PaintTraverse(unsigned int, bool, bool)
+ T VPanelWrapper::PerformApplySchemeSettings(unsigned int)
+ T VPanelWrapper::Plat(unsigned int)
+ T VPanelWrapper::Repaint(unsigned int)
+ T VPanelWrapper::RequestFocus(unsigned int, int)
+ T VPanelWrapper::RequestFocusNext(unsigned int, unsigned int)
+ T VPanelWrapper::RequestFocusPrev(unsigned int, unsigned int)
+ T VPanelWrapper::RequestInfo(unsigned int, KeyValues*)
+ T VPanelWrapper::SendMessage(unsigned int, KeyValues*, unsigned int)
+ T VPanelWrapper::SetEnabled(unsigned int, bool)
+ T VPanelWrapper::SetInset(unsigned int, int, int, int, int)
+ T VPanelWrapper::SetKeyBoardInputEnabled(unsigned int, bool)
+ T VPanelWrapper::SetMinimumSize(unsigned int, int, int)
+ T VPanelWrapper::SetMouseInputEnabled(unsigned int, bool)
+ T VPanelWrapper::SetParent(unsigned int, unsigned int)
+ T VPanelWrapper::SetPlat(unsigned int, vgui::SurfacePlat*)
+ T VPanelWrapper::SetPopup(unsigned int, bool)
+ T VPanelWrapper::SetPos(unsigned int, int, int)
+ T VPanelWrapper::SetSiblingPin(unsigned int, unsigned int, unsigned char, unsigned char)
+ T VPanelWrapper::SetSize(unsigned int, int, int)
+ T VPanelWrapper::SetTopmostPopup(unsigned int, bool)
+ T VPanelWrapper::SetVisible(unsigned int, bool)
+ T VPanelWrapper::SetZPos(unsigned int, int)
+ T VPanelWrapper::Solve(unsigned int)
+ T VPanelWrapper::Think(unsigned int)
+ T VPanelWrapper::~VPanelWrapper()
  T V_AppendSlash(char*, int)
- T V_atof(char const*)
  T V_FixSlashes(char*, char)
- T vgui::Bitmap::~Bitmap()
+ T V_IsAbsolutePath(char const*)
+ T V_atof(char const*)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_stristr(char const*, char const*)
+ T V_stristr(char*, char const*)
+ T V_strlower(char*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_vsnprintf(char*, int, char const*, char*)
+ T _V_UCS2ToUTF8(unsigned short const*, char*, int)
+ T __clang_call_terminate
+ T dyld_stub_binding_helper
+ T non-virtual thunk to CEmptyConVar::GetName() const
+ T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
+ T non-virtual thunk to CEmptyConVar::SetValue(char const*)
+ T non-virtual thunk to CEmptyConVar::SetValue(float)
+ T non-virtual thunk to CEmptyConVar::SetValue(int)
+ T non-virtual thunk to ConVar::GetName() const
+ T non-virtual thunk to ConVar::IsFlagSet(int) const
+ T non-virtual thunk to ConVar::SetValue(char const*)
+ T non-virtual thunk to ConVar::SetValue(float)
+ T non-virtual thunk to ConVar::SetValue(int)
+ T operator delete(void*)
+ T operator delete[](void*)
+ T operator new(unsigned long)
+ T operator new[](unsigned long)
  T vgui::Bitmap::Bitmap(char const*, bool)
  T vgui::Bitmap::Evict()
  T vgui::Bitmap::GetContentSize(int&, int&)
@@ -837,30 +811,30 @@
  T vgui::Bitmap::SetPos(int, int)
  T vgui::Bitmap::SetRotation(int)
  T vgui::Bitmap::SetSize(int, int)
+ T vgui::Bitmap::~Bitmap()
  T vgui::Border::ApplySchemeSettings(vgui::IScheme*, KeyValues*)
- T vgui::Border::~Border()
  T vgui::Border::Border()
  T vgui::Border::GetBackgroundType()
  T vgui::Border::GetInset(int&, int&, int&, int&)
  T vgui::Border::GetName()
- T vgui::Border::PaintFirst()
  T vgui::Border::Paint(int, int, int, int)
  T vgui::Border::Paint(int, int, int, int, int, int, int)
  T vgui::Border::Paint(unsigned int)
+ T vgui::Border::PaintFirst()
  T vgui::Border::ParseSideSettings(int, KeyValues*, vgui::IScheme*)
  T vgui::Border::SetInset(int, int, int, int)
  T vgui::Border::SetName(char const*)
+ T vgui::Border::~Border()
  T vgui::CKeyRepeatHandler::CKeyRepeatHandler()
  T vgui::CKeyRepeatHandler::KeyDown(ButtonCode_t)
  T vgui::CKeyRepeatHandler::KeyRepeated()
  T vgui::CKeyRepeatHandler::KeyUp(ButtonCode_t)
  T vgui::Dar<vgui::VPanel*>::MoveElementToEnd(vgui::VPanel*)
- t vgui_spew_fonts(CCommand const&)
  T vgui::VGui_InternalLoadInterfaces(void* (**)(char const*, int*), int)
  T vgui::VPanel::Client()
  T vgui::VPanel::GetAbsPos(int&, int&)
- T vgui::VPanel::GetChildCount()
  T vgui::VPanel::GetChild(int)
+ T vgui::VPanel::GetChildCount()
  T vgui::VPanel::GetChildren()
  T vgui::VPanel::GetClassName()
  T vgui::VPanel::GetClipRect(int&, int&, int&, int&)
@@ -904,90 +878,116 @@
  T vgui::VPanel::SetZPos(int)
  T vgui::VPanel::Solve()
  T vgui::VPanel::TraverseLevel(int)
- T vgui::VPanel::~VPanel()
  T vgui::VPanel::VPanel()
- T V_IsAbsolutePath(char const*)
+ T vgui::VPanel::~VPanel()
  T void ConstructStringKeyValuesInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, KeyValues*)
- T VPanelWrapper::Client(unsigned int)
- T VPanelWrapper::DeletePanel(unsigned int)
- T VPanelWrapper::GetAbsPos(unsigned int, int&, int&)
- T VPanelWrapper::GetChildCount(unsigned int)
- T VPanelWrapper::GetChildren(unsigned int)
- T VPanelWrapper::GetChild(unsigned int, int)
- T VPanelWrapper::GetClassName(unsigned int)
- T VPanelWrapper::GetClipRect(unsigned int, int&, int&, int&, int&)
- T VPanelWrapper::GetCurrentKeyFocus(unsigned int)
- T VPanelWrapper::GetInset(unsigned int, int&, int&, int&, int&)
- T VPanelWrapper::GetMinimumSize(unsigned int, int&, int&)
- T VPanelWrapper::GetModuleName(unsigned int)
- T VPanelWrapper::GetName(unsigned int)
- T VPanelWrapper::GetPanel(unsigned int, char const*)
- T VPanelWrapper::GetParent(unsigned int)
- T VPanelWrapper::GetPos(unsigned int, int&, int&)
- T VPanelWrapper::GetScheme(unsigned int)
- T VPanelWrapper::GetSize(unsigned int, int&, int&)
- T VPanelWrapper::GetTabPosition(unsigned int)
- T VPanelWrapper::GetZPos(unsigned int)
- T VPanelWrapper::HasParent(unsigned int, unsigned int)
- T VPanelWrapper::Init(unsigned int, vgui::IClientPanel*)
- T VPanelWrapper::InternalFocusChanged(unsigned int, bool)
- T VPanelWrapper::IsAutoDeleteSet(unsigned int)
- T VPanelWrapper::IsEnabled(unsigned int)
- T VPanelWrapper::IsFullyVisible(unsigned int)
- T VPanelWrapper::IsKeyBoardInputEnabled(unsigned int)
- T VPanelWrapper::IsMouseInputEnabled(unsigned int)
- T VPanelWrapper::IsPopup(unsigned int)
- T VPanelWrapper::IsProportional(unsigned int)
- T VPanelWrapper::IsTopmostPopup(unsigned int)
- T VPanelWrapper::IsVisible(unsigned int)
- T VPanelWrapper::IsWithinTraverse(unsigned int, int, int, bool)
- T VPanelWrapper::MoveToBack(unsigned int)
- T VPanelWrapper::MoveToFront(unsigned int)
- T VPanelWrapper::OnChildAdded(unsigned int, unsigned int)
- T VPanelWrapper::OnSizeChanged(unsigned int, int, int)
- T VPanelWrapper::PaintTraverse(unsigned int, bool, bool)
- T VPanelWrapper::PerformApplySchemeSettings(unsigned int)
- T VPanelWrapper::Plat(unsigned int)
- T VPanelWrapper::Repaint(unsigned int)
- T VPanelWrapper::RequestFocusNext(unsigned int, unsigned int)
- T VPanelWrapper::RequestFocusPrev(unsigned int, unsigned int)
- T VPanelWrapper::RequestFocus(unsigned int, int)
- T VPanelWrapper::RequestInfo(unsigned int, KeyValues*)
- T VPanelWrapper::SendMessage(unsigned int, KeyValues*, unsigned int)
- T VPanelWrapper::SetEnabled(unsigned int, bool)
- T VPanelWrapper::SetInset(unsigned int, int, int, int, int)
- T VPanelWrapper::SetKeyBoardInputEnabled(unsigned int, bool)
- T VPanelWrapper::SetMinimumSize(unsigned int, int, int)
- T VPanelWrapper::SetMouseInputEnabled(unsigned int, bool)
- T VPanelWrapper::SetParent(unsigned int, unsigned int)
- T VPanelWrapper::SetPlat(unsigned int, vgui::SurfacePlat*)
- T VPanelWrapper::SetPopup(unsigned int, bool)
- T VPanelWrapper::SetPos(unsigned int, int, int)
- T VPanelWrapper::SetSiblingPin(unsigned int, unsigned int, unsigned char, unsigned char)
- T VPanelWrapper::SetSize(unsigned int, int, int)
- T VPanelWrapper::SetTopmostPopup(unsigned int, bool)
- T VPanelWrapper::SetVisible(unsigned int, bool)
- T VPanelWrapper::SetZPos(unsigned int, int)
- T VPanelWrapper::Solve(unsigned int)
- T VPanelWrapper::Think(unsigned int)
- T VPanelWrapper::~VPanelWrapper()
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_stristr(char*, char const*)
- T V_stristr(char const*, char const*)
- T V_strlower(char*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T _V_UCS2ToUTF8(unsigned short const*, char*, int)
- T V_vsnprintf(char*, int, char const*, char*)
- typeinfo for std::bad_alloc
+ ThreadGetCurrentId
+ Warning
+ _DefaultRuneLocale
  _Unwind_Resume
+ __CFConstantStringClassReference
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_abort
+ __cxa_guard_acquire
+ __cxa_guard_release
+ __error
+ __gxx_personality_v0
+ __maskrune
+ __stack_chk_fail
+ __stack_chk_guard
+ __tolower
+ atof
+ atoi
+ b CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
+ b CLocalizedStringTable::FindAsUTF8(char const*)::rgchT
+ b CLocalizedStringTable::SaveToFile(char const*)::unicodeString
+ b CScheme::GetMungedFontName(char const*, char const*, bool)::mungeBuffer
+ b CUtlSymbol::Initialize()::symbolsInitialized
+ b CVGui::DPrintf2(char const*, ...)::ctr
+ b ConVarRef::Init(char const*, bool)::bFirst
+ b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
+ b __g_CreateCInputSystemIInputInternal_reg
+ b __g_CreateCInputSystemIInput_reg
+ b __g_CreateCLocalizedStringTableILocalize_reg
+ b __g_CreateCSchemeManagerISchemeManager_reg
+ b __g_CreateCSystemISystem_reg
+ b __g_CreateCVGuiIVGui_reg
+ b __g_CreateVPanelWrapperIPanel_reg
+ b __g_VPanelWrapper_singleton
+ b g_CleanupSymbolTable
+ b guard variable for CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
+ b s_EmptyConVar
+ b s_bConnected
+ b s_bRegistered
+ b s_nCVarFlag
+ b s_pTokenBuf
+ b vec2_invalid
+ b vec2_origin
+ b vgui_spew_fonts_command
+ d dyld__mach_header
+ d s_DefaultAccessor
+ d s_LastFileLoadingFrom
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ execlp
+ fork
+ g_VProfCurrentProfile
+ g_pMemAlloc
+ g_pVCR
+ iconv
+ iconv_close
+ iconv_open
+ kCFAllocatorDefault
+ localtime
+ memcpy
+ memmove
+ memset
+ memset_pattern16
+ pow
+ pthread_mutex_destroy
+ pthread_mutex_init
+ pthread_mutex_lock
+ pthread_mutex_unlock
+ pthread_mutexattr_init
+ pthread_mutexattr_settype
+ qsort
+ r .memset_pattern
+ sscanf
+ statfs64
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strcpy
+ strlen
+ strncasecmp
+ strncat
+ strncpy
+ strrchr
+ strstr
+ strtod$UNIX2003
+ strtok
+ strtol
+ strtoul
+ swprintf
+ t __CreateCInputSystemIInputInternal_interface()
+ t __CreateCInputSystemIInput_interface()
+ t __CreateCLocalizedStringTableILocalize_interface()
+ t __CreateCSchemeManagerISchemeManager_interface()
+ t __CreateCSystemISystem_interface()
+ t __CreateCVGuiIVGui_interface()
+ t __CreateVPanelWrapperIPanel_interface()
+ t global constructors keyed to a
+ t vgui_spew_fonts(CCommand const&)
+ time
+ typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
- Warning
  wcschr
  wcscmp
  wcscpy

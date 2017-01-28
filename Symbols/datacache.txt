@@ -1,37 +1,41 @@
- atof
- atoi
- b CDataManagerBase::GetForFreeByIndex(unsigned short)::__executeCount
- b CMDLCache::ProcessPendingAsyncs(MDLCacheDataType_t)::bReentering
- B colorcorrection
- B ConCommandBase::s_pAccessor
- B ConCommandBase::s_pConCommandBases
  B CUtlMemoryPool::g_ReportFunc
  B CUtlSymbol::s_pSymbolTable
- B cvar
+ B ConCommandBase::s_pAccessor
+ B ConCommandBase::s_pConCommandBases
  B DataCacheItem_t::s_Allocator
+ B InterfaceReg::s_pInterfaceRegs
+ B OptimizedModel::BodyPartHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::BoneStateChangeHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::FileHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::MaterialReplacementHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::MaterialReplacementListHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::MeshHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::ModelHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::ModelLODHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::StripGroupHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::StripHeader_t_DataDescInit::g_DataMapHolder
+ B OptimizedModel::Vertex_t_DataDescInit::g_DataMapHolder
+ B StudioByteSwap::legacysurfaceheader_t_DataDescInit::g_DataMapHolder
+ B StudioByteSwap::swapcompactsurfaceheader_t_DataDescInit::g_DataMapHolder
+ B colorcorrection
+ B cvar
  B datacachesize
  B developer
  B g_ActivityModifiersTable
  B g_AsyncInfoMap
  B g_AsyncInfoMapMutex
- b g_CleanupSymbolTable
- b __g_CreateCDataCacheIDataCache_reg
- b __g_CreateCMDLCacheIMDLCache_reg
- b __g_CreateCMDLCacheIStudioDataCache_reg
  B g_DataCache
- b g_iDontForceFlush
- b g_MDLCache
- b g_ModelLookup
+ B g_VBAllocTracker
  B g_pCVar
  B g_pDataCache
  B g_pDmeMakefileUtils
  B g_pFullFileSystem
  B g_pInputSystem
+ B g_pMDLCache
+ B g_pMatSystemSurface
  B g_pMaterialSystem
  B g_pMaterialSystemDebugTextureInfo
  B g_pMaterialSystemHardwareConfig
- B g_pMatSystemSurface
- B g_pMDLCache
  B g_pNetworkSystem
  B g_pPhysicsCollision
  B g_pProcessUtils
@@ -45,52 +49,39 @@
  B g_pVGuiSchemeManager
  B g_pVGuiSurface
  B g_pVGuiSystem
- B g_pVideo
  B g_pVTex
- b guard variable for CMDLCache::ProcessDataIntoCache(unsigned short, MDLCacheDataType_t, int, void*, int, bool)::bCompressedVVDs
- B g_VBAllocTracker
- B InterfaceReg::s_pInterfaceRegs
+ B g_pVideo
  B materials
  B mdlcache
  B mdllib
- b mem_force_flush
- b mod_forcedata
- b mod_load_anims_async
- b mod_load_fakestall
- b mod_load_mesh_async
- b mod_load_showstall
- b mod_load_vcollide_async
- b mod_lock_mdls_on_load
- b mod_test_mesh_not_available
- b mod_test_not_available
- b mod_test_verts_not_available
- b mod_trace_load
+ B mstudio_meshvertexdata_t_DataDescInit::g_DataMapHolder
+ B mstudio_modelvertexdata_t_DataDescInit::g_DataMapHolder
  B mstudioactivitymodifier_t_DataDescInit::g_DataMapHolder
  B mstudioaimatbone_t_DataDescInit::g_DataMapHolder
+ B mstudioanim_t_DataDescInit::g_DataMapHolder
+ B mstudioanim_valueptr_t_DataDescInit::g_DataMapHolder
  B mstudioanimblock_t_DataDescInit::g_DataMapHolder
  B mstudioanimdesc_t_DataDescInit::g_DataMapHolder
  B mstudioanimsections_t_DataDescInit::g_DataMapHolder
- B mstudioanim_t_DataDescInit::g_DataMapHolder
- B mstudioanim_valueptr_t_DataDescInit::g_DataMapHolder
  B mstudioattachment_t_DataDescInit::g_DataMapHolder
  B mstudioautolayer_t_DataDescInit::g_DataMapHolder
  B mstudioaxisinterpbone_t_DataDescInit::g_DataMapHolder
  B mstudiobbox_t_DataDescInit::g_DataMapHolder
  B mstudiobodyparts_t_DataDescInit::g_DataMapHolder
- B mstudiobonecontroller_t_DataDescInit::g_DataMapHolder
- B mstudioboneflexdrivercontrol_t_DataDescInit::g_DataMapHolder
- B mstudioboneflexdriver_t_DataDescInit::g_DataMapHolder
  B mstudiobone_t_DataDescInit::g_DataMapHolder
+ B mstudiobonecontroller_t_DataDescInit::g_DataMapHolder
+ B mstudioboneflexdriver_t_DataDescInit::g_DataMapHolder
+ B mstudioboneflexdrivercontrol_t_DataDescInit::g_DataMapHolder
  B mstudioboneweight_t_DataDescInit::g_DataMapHolder
  B mstudiocompressedikerror_t_DataDescInit::g_DataMapHolder
  B mstudioevent_t_DataDescInit::g_DataMapHolder
  B mstudioeyeball_t_DataDescInit::g_DataMapHolder
+ B mstudioflex_t_DataDescInit::g_DataMapHolder
  B mstudioflexcontroller_t_DataDescInit::g_DataMapHolder
  B mstudioflexcontrollerui_t_DataDescInit::g_DataMapHolder
  B mstudioflexdesc_t_DataDescInit::g_DataMapHolder
  B mstudioflexop_t_DataDescInit::g_DataMapHolder
  B mstudioflexrule_t_DataDescInit::g_DataMapHolder
- B mstudioflex_t_DataDescInit::g_DataMapHolder
  B mstudiohitboxset_t_DataDescInit::g_DataMapHolder
  B mstudioikchain_t_DataDescInit::g_DataMapHolder
  B mstudioikerror_t_DataDescInit::g_DataMapHolder
@@ -101,10 +92,8 @@
  B mstudiolinearbone_t_DataDescInit::g_DataMapHolder
  B mstudiolocalhierarchy_t_DataDescInit::g_DataMapHolder
  B mstudiomesh_t_DataDescInit::g_DataMapHolder
- B mstudio_meshvertexdata_t_DataDescInit::g_DataMapHolder
- B mstudiomodelgroup_t_DataDescInit::g_DataMapHolder
  B mstudiomodel_t_DataDescInit::g_DataMapHolder
- B mstudio_modelvertexdata_t_DataDescInit::g_DataMapHolder
+ B mstudiomodelgroup_t_DataDescInit::g_DataMapHolder
  B mstudiomouth_t_DataDescInit::g_DataMapHolder
  B mstudiomovement_t_DataDescInit::g_DataMapHolder
  B mstudioposeparamdesc_t_DataDescInit::g_DataMapHolder
@@ -115,79 +104,63 @@
  B mstudiotexture_t_DataDescInit::g_DataMapHolder
  B mstudiovertanim_t_DataDescInit::g_DataMapHolder
  B mstudiovertex_t_DataDescInit::g_DataMapHolder
- b NO_ASYNC
- B OptimizedModel::BodyPartHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::BoneStateChangeHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::FileHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::MaterialReplacementHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::MaterialReplacementListHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::MeshHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::ModelHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::ModelLODHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::StripGroupHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::StripHeader_t_DataDescInit::g_DataMapHolder
- B OptimizedModel::Vertex_t_DataDescInit::g_DataMapHolder
  B p4
  B phyheader_t_DataDescInit::g_DataMapHolder
- b r_rootlod
- b s_bConnected
- b s_bRegistered
- b s_EmptyConVar
- b s_nCVarFlag
  B s_NoEscConversion
  B s_StringCharConversion
- b StudioByteSwap::g_Swap
- B StudioByteSwap::legacysurfaceheader_t_DataDescInit::g_DataMapHolder
- B StudioByteSwap::swapcompactsurfaceheader_t_DataDescInit::g_DataMapHolder
  B studiodata_t::s_Allocator
  B studiohdr2_t_DataDescInit::g_DataMapHolder
  B studiohdr_t_DataDescInit::g_DataMapHolder
  B studiorender
- b vec2_invalid
- b vec2_origin
- b vec4_invalid
- b vec4_origin
  B vertexFileFixup_t_DataDescInit::g_DataMapHolder
  B vertexFileHeader_t_DataDescInit::g_DataMapHolder
- b V_pretifymem(float, int, bool)::current
- b V_pretifymem(float, int, bool)::output
- CommandLine_Tier0
  CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
- CThreadLocalBase::~CThreadLocalBase()
  CThreadLocalBase::CThreadLocalBase()
  CThreadLocalBase::Get() const
  CThreadLocalBase::Set(void*)
+ CThreadLocalBase::~CThreadLocalBase()
  CThreadSyncObject::~CThreadSyncObject()
  CVProfNode::EnterScope()
  CVProfNode::ExitScope()
  CVProfNode::GetSubNode(char const*, int, char const*, int)
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_abort
- __cxa_guard_acquire
- __cxa_guard_release
- __cxa_pure_virtual
+ CommandLine_Tier0
  D CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
  D CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::Links(short) const::s_Sentinel
  D CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::Links(int) const::s_Sentinel
+ D OptimizedModel::BodyPartHeader_t::m_DataMap
+ D OptimizedModel::BoneStateChangeHeader_t::m_DataMap
+ D OptimizedModel::FileHeader_t::m_DataMap
+ D OptimizedModel::MaterialReplacementHeader_t::m_DataMap
+ D OptimizedModel::MaterialReplacementListHeader_t::m_DataMap
+ D OptimizedModel::MeshHeader_t::m_DataMap
+ D OptimizedModel::ModelHeader_t::m_DataMap
+ D OptimizedModel::ModelLODHeader_t::m_DataMap
+ D OptimizedModel::StripGroupHeader_t::m_DataMap
+ D OptimizedModel::StripHeader_t::m_DataMap
+ D OptimizedModel::Vertex_t::m_DataMap
+ D StudioByteSwap::legacysurfaceheader_t::m_DataMap
+ D StudioByteSwap::swapcompactsurfaceheader_t::m_DataMap
+ D datamap_t* DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudio_modelvertexdata_t>(mstudio_modelvertexdata_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudio_modelvertexdata_t>(mstudio_modelvertexdata_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioactivitymodifier_t>(mstudioactivitymodifier_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioactivitymodifier_t>(mstudioactivitymodifier_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioaimatbone_t>(mstudioaimatbone_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioaimatbone_t>(mstudioaimatbone_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudioanim_t>(mstudioanim_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudioanim_t>(mstudioanim_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudioanim_valueptr_t>(mstudioanim_valueptr_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudioanim_valueptr_t>(mstudioanim_valueptr_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioanimblock_t>(mstudioanimblock_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioanimblock_t>(mstudioanimblock_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioanimdesc_t>(mstudioanimdesc_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioanimdesc_t>(mstudioanimdesc_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioanimsections_t>(mstudioanimsections_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioanimsections_t>(mstudioanimsections_t*)::nameHolder
- D datamap_t* DataMapInit<mstudioanim_t>(mstudioanim_t*)::dataDesc
- D datamap_t* DataMapInit<mstudioanim_t>(mstudioanim_t*)::nameHolder
- D datamap_t* DataMapInit<mstudioanim_valueptr_t>(mstudioanim_valueptr_t*)::dataDesc
- D datamap_t* DataMapInit<mstudioanim_valueptr_t>(mstudioanim_valueptr_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioattachment_t>(mstudioattachment_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioattachment_t>(mstudioattachment_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioautolayer_t>(mstudioautolayer_t*)::dataDesc
@@ -198,14 +171,14 @@
  D datamap_t* DataMapInit<mstudiobbox_t>(mstudiobbox_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiobodyparts_t>(mstudiobodyparts_t*)::dataDesc
  D datamap_t* DataMapInit<mstudiobodyparts_t>(mstudiobodyparts_t*)::nameHolder
- D datamap_t* DataMapInit<mstudiobonecontroller_t>(mstudiobonecontroller_t*)::dataDesc
- D datamap_t* DataMapInit<mstudiobonecontroller_t>(mstudiobonecontroller_t*)::nameHolder
- D datamap_t* DataMapInit<mstudioboneflexdrivercontrol_t>(mstudioboneflexdrivercontrol_t*)::dataDesc
- D datamap_t* DataMapInit<mstudioboneflexdrivercontrol_t>(mstudioboneflexdrivercontrol_t*)::nameHolder
- D datamap_t* DataMapInit<mstudioboneflexdriver_t>(mstudioboneflexdriver_t*)::dataDesc
- D datamap_t* DataMapInit<mstudioboneflexdriver_t>(mstudioboneflexdriver_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiobone_t>(mstudiobone_t*)::dataDesc
  D datamap_t* DataMapInit<mstudiobone_t>(mstudiobone_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudiobonecontroller_t>(mstudiobonecontroller_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudiobonecontroller_t>(mstudiobonecontroller_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudioboneflexdriver_t>(mstudioboneflexdriver_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudioboneflexdriver_t>(mstudioboneflexdriver_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudioboneflexdrivercontrol_t>(mstudioboneflexdrivercontrol_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudioboneflexdrivercontrol_t>(mstudioboneflexdrivercontrol_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioboneweight_t>(mstudioboneweight_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioboneweight_t>(mstudioboneweight_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiocompressedikerror_t>(mstudiocompressedikerror_t*)::dataDesc
@@ -214,6 +187,8 @@
  D datamap_t* DataMapInit<mstudioevent_t>(mstudioevent_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioeyeball_t>(mstudioeyeball_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioeyeball_t>(mstudioeyeball_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudioflex_t>(mstudioflex_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudioflex_t>(mstudioflex_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioflexcontroller_t>(mstudioflexcontroller_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioflexcontroller_t>(mstudioflexcontroller_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioflexcontrollerui_t>(mstudioflexcontrollerui_t*)::dataDesc
@@ -224,8 +199,6 @@
  D datamap_t* DataMapInit<mstudioflexop_t>(mstudioflexop_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioflexrule_t>(mstudioflexrule_t*)::dataDesc
  D datamap_t* DataMapInit<mstudioflexrule_t>(mstudioflexrule_t*)::nameHolder
- D datamap_t* DataMapInit<mstudioflex_t>(mstudioflex_t*)::dataDesc
- D datamap_t* DataMapInit<mstudioflex_t>(mstudioflex_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiohitboxset_t>(mstudiohitboxset_t*)::dataDesc
  D datamap_t* DataMapInit<mstudiohitboxset_t>(mstudiohitboxset_t*)::nameHolder
  D datamap_t* DataMapInit<mstudioikchain_t>(mstudioikchain_t*)::dataDesc
@@ -246,14 +219,10 @@
  D datamap_t* DataMapInit<mstudiolocalhierarchy_t>(mstudiolocalhierarchy_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiomesh_t>(mstudiomesh_t*)::dataDesc
  D datamap_t* DataMapInit<mstudiomesh_t>(mstudiomesh_t*)::nameHolder
- D datamap_t* DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::dataDesc
- D datamap_t* DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::nameHolder
- D datamap_t* DataMapInit<mstudiomodelgroup_t>(mstudiomodelgroup_t*)::dataDesc
- D datamap_t* DataMapInit<mstudiomodelgroup_t>(mstudiomodelgroup_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiomodel_t>(mstudiomodel_t*)::dataDesc
  D datamap_t* DataMapInit<mstudiomodel_t>(mstudiomodel_t*)::nameHolder
- D datamap_t* DataMapInit<mstudio_modelvertexdata_t>(mstudio_modelvertexdata_t*)::dataDesc
- D datamap_t* DataMapInit<mstudio_modelvertexdata_t>(mstudio_modelvertexdata_t*)::nameHolder
+ D datamap_t* DataMapInit<mstudiomodelgroup_t>(mstudiomodelgroup_t*)::dataDesc
+ D datamap_t* DataMapInit<mstudiomodelgroup_t>(mstudiomodelgroup_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiomouth_t>(mstudiomouth_t*)::dataDesc
  D datamap_t* DataMapInit<mstudiomouth_t>(mstudiomouth_t*)::nameHolder
  D datamap_t* DataMapInit<mstudiomovement_t>(mstudiomovement_t*)::dataDesc
@@ -310,43 +279,39 @@
  D datamap_t* StudioByteSwap::DataMapInit<StudioByteSwap::legacysurfaceheader_t>(StudioByteSwap::legacysurfaceheader_t*)::nameHolder
  D datamap_t* StudioByteSwap::DataMapInit<StudioByteSwap::swapcompactsurfaceheader_t>(StudioByteSwap::swapcompactsurfaceheader_t*)::dataDesc
  D datamap_t* StudioByteSwap::DataMapInit<StudioByteSwap::swapcompactsurfaceheader_t>(StudioByteSwap::swapcompactsurfaceheader_t*)::nameHolder
- d dyld__mach_header
- DevMsg
- DevMsg(char const*, ...)
- DevWarning(char const*, ...)
- d g_ModelLookupIndex
- d g_ppszTypes
  D guard variable for CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::Links(short) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::Links(int) const::s_Sentinel
+ D guard variable for datamap_t* DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudio_modelvertexdata_t>(mstudio_modelvertexdata_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioactivitymodifier_t>(mstudioactivitymodifier_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioaimatbone_t>(mstudioaimatbone_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudioanim_t>(mstudioanim_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudioanim_valueptr_t>(mstudioanim_valueptr_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioanimblock_t>(mstudioanimblock_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioanimdesc_t>(mstudioanimdesc_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioanimsections_t>(mstudioanimsections_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudioanim_t>(mstudioanim_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudioanim_valueptr_t>(mstudioanim_valueptr_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioattachment_t>(mstudioattachment_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioautolayer_t>(mstudioautolayer_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioaxisinterpbone_t>(mstudioaxisinterpbone_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiobbox_t>(mstudiobbox_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiobodyparts_t>(mstudiobodyparts_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudiobonecontroller_t>(mstudiobonecontroller_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudioboneflexdrivercontrol_t>(mstudioboneflexdrivercontrol_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudioboneflexdriver_t>(mstudioboneflexdriver_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiobone_t>(mstudiobone_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudiobonecontroller_t>(mstudiobonecontroller_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudioboneflexdriver_t>(mstudioboneflexdriver_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudioboneflexdrivercontrol_t>(mstudioboneflexdrivercontrol_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioboneweight_t>(mstudioboneweight_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiocompressedikerror_t>(mstudiocompressedikerror_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioevent_t>(mstudioevent_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioeyeball_t>(mstudioeyeball_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudioflex_t>(mstudioflex_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioflexcontroller_t>(mstudioflexcontroller_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioflexcontrollerui_t>(mstudioflexcontrollerui_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioflexdesc_t>(mstudioflexdesc_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioflexop_t>(mstudioflexop_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioflexrule_t>(mstudioflexrule_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudioflex_t>(mstudioflex_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiohitboxset_t>(mstudiohitboxset_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioikchain_t>(mstudioikchain_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioikerror_t>(mstudioikerror_t*)::nameHolder
@@ -357,10 +322,8 @@
  D guard variable for datamap_t* DataMapInit<mstudiolinearbone_t>(mstudiolinearbone_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiolocalhierarchy_t>(mstudiolocalhierarchy_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiomesh_t>(mstudiomesh_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudiomodelgroup_t>(mstudiomodelgroup_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiomodel_t>(mstudiomodel_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<mstudio_modelvertexdata_t>(mstudio_modelvertexdata_t*)::nameHolder
+ D guard variable for datamap_t* DataMapInit<mstudiomodelgroup_t>(mstudiomodelgroup_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiomouth_t>(mstudiomouth_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudiomovement_t>(mstudiomovement_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<mstudioposeparamdesc_t>(mstudioposeparamdesc_t*)::nameHolder
@@ -389,32 +352,34 @@
  D guard variable for datamap_t* OptimizedModel::DataMapInit<OptimizedModel::Vertex_t>(OptimizedModel::Vertex_t*)::nameHolder
  D guard variable for datamap_t* StudioByteSwap::DataMapInit<StudioByteSwap::legacysurfaceheader_t>(StudioByteSwap::legacysurfaceheader_t*)::nameHolder
  D guard variable for datamap_t* StudioByteSwap::DataMapInit<StudioByteSwap::swapcompactsurfaceheader_t>(StudioByteSwap::swapcompactsurfaceheader_t*)::nameHolder
+ D mstudio_meshvertexdata_t::m_DataMap
+ D mstudio_modelvertexdata_t::m_DataMap
  D mstudioactivitymodifier_t::m_DataMap
  D mstudioaimatbone_t::m_DataMap
+ D mstudioanim_t::m_DataMap
+ D mstudioanim_valueptr_t::m_DataMap
  D mstudioanimblock_t::m_DataMap
  D mstudioanimdesc_t::m_DataMap
  D mstudioanimsections_t::m_DataMap
- D mstudioanim_t::m_DataMap
- D mstudioanim_valueptr_t::m_DataMap
  D mstudioattachment_t::m_DataMap
  D mstudioautolayer_t::m_DataMap
  D mstudioaxisinterpbone_t::m_DataMap
  D mstudiobbox_t::m_DataMap
  D mstudiobodyparts_t::m_DataMap
- D mstudiobonecontroller_t::m_DataMap
- D mstudioboneflexdrivercontrol_t::m_DataMap
- D mstudioboneflexdriver_t::m_DataMap
  D mstudiobone_t::m_DataMap
+ D mstudiobonecontroller_t::m_DataMap
+ D mstudioboneflexdriver_t::m_DataMap
+ D mstudioboneflexdrivercontrol_t::m_DataMap
  D mstudioboneweight_t::m_DataMap
  D mstudiocompressedikerror_t::m_DataMap
  D mstudioevent_t::m_DataMap
  D mstudioeyeball_t::m_DataMap
+ D mstudioflex_t::m_DataMap
  D mstudioflexcontroller_t::m_DataMap
  D mstudioflexcontrollerui_t::m_DataMap
  D mstudioflexdesc_t::m_DataMap
  D mstudioflexop_t::m_DataMap
  D mstudioflexrule_t::m_DataMap
- D mstudioflex_t::m_DataMap
  D mstudiohitboxset_t::m_DataMap
  D mstudioikchain_t::m_DataMap
  D mstudioikerror_t::m_DataMap
@@ -425,10 +390,8 @@
  D mstudiolinearbone_t::m_DataMap
  D mstudiolocalhierarchy_t::m_DataMap
  D mstudiomesh_t::m_DataMap
- D mstudio_meshvertexdata_t::m_DataMap
- D mstudiomodelgroup_t::m_DataMap
  D mstudiomodel_t::m_DataMap
- D mstudio_modelvertexdata_t::m_DataMap
+ D mstudiomodelgroup_t::m_DataMap
  D mstudiomouth_t::m_DataMap
  D mstudiomovement_t::m_DataMap
  D mstudioposeparamdesc_t::m_DataMap
@@ -439,24 +402,7 @@
  D mstudiotexture_t::m_DataMap
  D mstudiovertanim_t::m_DataMap
  D mstudiovertex_t::m_DataMap
- D OptimizedModel::BodyPartHeader_t::m_DataMap
- D OptimizedModel::BoneStateChangeHeader_t::m_DataMap
- D OptimizedModel::FileHeader_t::m_DataMap
- D OptimizedModel::MaterialReplacementHeader_t::m_DataMap
- D OptimizedModel::MaterialReplacementListHeader_t::m_DataMap
- D OptimizedModel::MeshHeader_t::m_DataMap
- D OptimizedModel::ModelHeader_t::m_DataMap
- D OptimizedModel::ModelLODHeader_t::m_DataMap
- D OptimizedModel::StripGroupHeader_t::m_DataMap
- D OptimizedModel::StripHeader_t::m_DataMap
- D OptimizedModel::Vertex_t::m_DataMap
  D phyheader_s::m_DataMap
- d s_DefaultAccessor
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- D StudioByteSwap::legacysurfaceheader_t::m_DataMap
- D StudioByteSwap::swapcompactsurfaceheader_t::m_DataMap
  D studiohdr2_t::m_DataMap
  D studiohdr_t::m_DataMap
  D typeinfo for CBaseAppSystem<IDataCache>
@@ -464,8 +410,8 @@
  D typeinfo for CDataCache
  D typeinfo for CDataCacheSection
  D typeinfo for CDataCacheSectionFastFind
- D typeinfo for CDataManagerBase
  D typeinfo for CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>
+ D typeinfo for CDataManagerBase
  D typeinfo for CDefaultAccessor
  D typeinfo for CDefaultDataCacheClient
  D typeinfo for CEmptyConVar
@@ -474,10 +420,8 @@
  D typeinfo for CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
  D typeinfo for CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
  D typeinfo for CMDLCache
- D typeinfo for ConCommandBase
- D typeinfo for ConVar
- D typeinfo for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
  D typeinfo for CRefCountServiceBase<true, CRefMT>
+ D typeinfo for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
  D typeinfo for CTier0AppSystem<IDataCache>
  D typeinfo for CTier0AppSystem<IMDLCache>
  D typeinfo for CTier1AppSystem<IDataCache, 0>
@@ -486,9 +430,11 @@
  D typeinfo for CTier2AppSystem<IMDLCache, 0>
  D typeinfo for CTier3AppSystem<IDataCache, 0>
  D typeinfo for CTier3AppSystem<IMDLCache, 0>
- D typeinfo for CUtlCharConversion
  D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlCharConversion
  D typeinfo for CUtlNoEscConversion
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
  D typeinfo for IAppSystem
  D typeinfo for IConCommandBaseAccessor
  D typeinfo for IConVar
@@ -503,41 +449,32 @@
  D vtable for CDataCache
  D vtable for CDataCacheSection
  D vtable for CDataCacheSectionFastFind
- D vtable for CDataManagerBase
  D vtable for CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>
+ D vtable for CDataManagerBase
  D vtable for CDefaultAccessor
  D vtable for CEmptyConVar
  D vtable for CFmtStrN<256, false>
  D vtable for CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
  D vtable for CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
  D vtable for CMDLCache
- D vtable for ConVar
- D vtable for CUtlCharConversion
  D vtable for CUtlCStringConversion
+ D vtable for CUtlCharConversion
  D vtable for CUtlNoEscConversion
+ D vtable for ConVar
+ DevMsg
+ DevMsg(char const*, ...)
+ DevWarning(char const*, ...)
  Error
- fflush
- g_pMemAlloc
- g_VProfCurrentProfile
- __gxx_personality_v0
- memcpy
- memmove
- memset
  Msg
  Plat_IsInDebugSession
  Plat_MSTime
- pow
- printf
- pthread_mutex_destroy
- raise
- r g_nRandomValues
  R typeinfo name for CBaseAppSystem<IDataCache>
  R typeinfo name for CBaseAppSystem<IMDLCache>
  R typeinfo name for CDataCache
  R typeinfo name for CDataCacheSection
  R typeinfo name for CDataCacheSectionFastFind
- R typeinfo name for CDataManagerBase
  R typeinfo name for CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>
+ R typeinfo name for CDataManagerBase
  R typeinfo name for CDefaultAccessor
  R typeinfo name for CDefaultDataCacheClient
  R typeinfo name for CEmptyConVar
@@ -546,10 +483,8 @@
  R typeinfo name for CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
  R typeinfo name for CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
  R typeinfo name for CMDLCache
- R typeinfo name for ConCommandBase
- R typeinfo name for ConVar
- R typeinfo name for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
  R typeinfo name for CRefCountServiceBase<true, CRefMT>
+ R typeinfo name for CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
  R typeinfo name for CTier0AppSystem<IDataCache>
  R typeinfo name for CTier0AppSystem<IMDLCache>
  R typeinfo name for CTier1AppSystem<IDataCache, 0>
@@ -558,9 +493,11 @@
  R typeinfo name for CTier2AppSystem<IMDLCache, 0>
  R typeinfo name for CTier3AppSystem<IDataCache, 0>
  R typeinfo name for CTier3AppSystem<IMDLCache, 0>
- R typeinfo name for CUtlCharConversion
  R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlCharConversion
  R typeinfo name for CUtlNoEscConversion
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
  R typeinfo name for IAppSystem
  R typeinfo name for IConCommandBaseAccessor
  R typeinfo name for IConVar
@@ -570,21 +507,8 @@
  R typeinfo name for IMDLCache
  R typeinfo name for IRefCounted
  R typeinfo name for IStudioDataCache
- __stack_chk_fail
- __stack_chk_guard
- __stdoutp
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strcpy
- strlen
- strncat
- strncpy
- T CaselessStringLessThan(char const* const&, char const* const&)
  T CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
  T CDataCache::AddSection(IDataCacheClient*, char const*, DataCacheLimits_t const&, bool)
- T CDataCache::~CDataCache()
  T CDataCache::Connect(void* (*)(char const*, int*))
  T CDataCache::Disconnect()
  T CDataCache::EnsureCapacity(unsigned int)
@@ -597,30 +521,31 @@
  T CDataCache::Purge(unsigned int)
  T CDataCache::QueryInterface(char const*)
  T CDataCache::RemoveSection(char const*, bool)
- T CDataCacheSection::AddEx(unsigned int, void const*, unsigned int, unsigned int, memhandle_t__**)
+ T CDataCache::SetOptions(unsigned int)
+ T CDataCache::SetSectionLimits(char const*, DataCacheLimits_t const&)
+ T CDataCache::SetSize(int)
+ T CDataCache::Shutdown()
+ T CDataCache::SortMemhandlesBySizeLessFunc(memhandle_t__* const&, memhandle_t__* const&)
+ T CDataCache::~CDataCache()
  T CDataCacheSection::Add(unsigned int, void const*, unsigned int, memhandle_t__**)
+ T CDataCacheSection::AddEx(unsigned int, void const*, unsigned int, unsigned int, memhandle_t__**)
  T CDataCacheSection::Age(memhandle_t__*)
  T CDataCacheSection::BeginFrameLocking()
  T CDataCacheSection::BreakLock(memhandle_t__*)
- T CDataCacheSection::~CDataCacheSection()
  T CDataCacheSection::CDataCacheSection(CDataCache*, IDataCacheClient*, char const*)
- T CDataCacheSection::DiscardItemData(DataCacheItem_t*, DataCacheNotificationType_t)
  T CDataCacheSection::DiscardItem(memhandle_t__*, DataCacheNotificationType_t)
+ T CDataCacheSection::DiscardItemData(DataCacheItem_t*, DataCacheNotificationType_t)
  T CDataCacheSection::DoFind(unsigned int)
  T CDataCacheSection::EndFrameLocking()
  T CDataCacheSection::EnsureCapacity(unsigned int, unsigned int)
- T CDataCacheSectionFastFind::CDataCacheSectionFastFind(CDataCache*, IDataCacheClient*, char const*)
- T CDataCacheSectionFastFind::DoFind(unsigned int)
- T CDataCacheSectionFastFind::OnAdd(unsigned int, memhandle_t__*)
- T CDataCacheSectionFastFind::OnRemove(unsigned int)
  T CDataCacheSection::Find(unsigned int)
  T CDataCacheSection::Flush(bool, bool)
  T CDataCacheSection::FrameLock(memhandle_t__*)
+ T CDataCacheSection::Get(memhandle_t__*, bool)
  T CDataCacheSection::GetFirstLockedItem()
  T CDataCacheSection::GetFirstUnlockedItem()
  T CDataCacheSection::GetFrameUnlockCounterPtr()
  T CDataCacheSection::GetLockCount(memhandle_t__*)
- T CDataCacheSection::Get(memhandle_t__*, bool)
  T CDataCacheSection::GetName()
  T CDataCacheSection::GetNextItem(memhandle_t__*)
  T CDataCacheSection::GetNoTouch(memhandle_t__*, bool)
@@ -633,8 +558,8 @@
  T CDataCacheSection::OnAdd(unsigned int, memhandle_t__*)
  T CDataCacheSection::OnRemove(unsigned int)
  T CDataCacheSection::OutputReport(DataCacheReportType_t)
- T CDataCacheSection::PurgeItems(unsigned int)
  T CDataCacheSection::Purge(unsigned int)
+ T CDataCacheSection::PurgeItems(unsigned int)
  T CDataCacheSection::Remove(memhandle_t__*, void const**, unsigned int*, bool)
  T CDataCacheSection::SetLimits(DataCacheLimits_t const&)
  T CDataCacheSection::SetOptions(unsigned int)
@@ -642,14 +567,18 @@
  T CDataCacheSection::Unlock(memhandle_t__*)
  T CDataCacheSection::UnlockMutex()
  T CDataCacheSection::UpdateSize(memhandle_t__*, unsigned int)
- T CDataCache::SetOptions(unsigned int)
- T CDataCache::SetSectionLimits(char const*, DataCacheLimits_t const&)
- T CDataCache::SetSize(int)
- T CDataCache::Shutdown()
- T CDataCache::SortMemhandlesBySizeLessFunc(memhandle_t__* const&, memhandle_t__* const&)
- T CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
+ T CDataCacheSection::~CDataCacheSection()
+ T CDataCacheSectionFastFind::CDataCacheSectionFastFind(CDataCache*, IDataCacheClient*, char const*)
+ T CDataCacheSectionFastFind::DoFind(unsigned int)
+ T CDataCacheSectionFastFind::OnAdd(unsigned int, memhandle_t__*)
+ T CDataCacheSectionFastFind::OnRemove(unsigned int)
+ T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::DestroyResourceStorage(void*)
+ T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::GetRealSize(void*)
+ T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Lock()
+ T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::TryLock()
+ T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Unlock()
+ T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::~CDataManager()
  T CDataManagerBase::BreakLock(memhandle_t__*)
- T CDataManagerBase::~CDataManagerBase()
  T CDataManagerBase::CDataManagerBase(unsigned int)
  T CDataManagerBase::CreateHandle(bool)
  T CDataManagerBase::DestroyResource(memhandle_t__*)
@@ -658,8 +587,8 @@
  T CDataManagerBase::FlushAllUnlocked()
  T CDataManagerBase::FlushToTargetSize()
  T CDataManagerBase::GetForFreeByIndex(unsigned short)
- T CDataManagerBase::GetLockHandleList(CUtlVector<memhandle_t__*, CUtlMemory<memhandle_t__*, int> >&)
  T CDataManagerBase::GetLRUHandleList(CUtlVector<memhandle_t__*, CUtlMemory<memhandle_t__*, int> >&)
+ T CDataManagerBase::GetLockHandleList(CUtlVector<memhandle_t__*, CUtlMemory<memhandle_t__*, int> >&)
  T CDataManagerBase::GetResource_NoLock(memhandle_t__*)
  T CDataManagerBase::GetResource_NoLockNoLRUTouch(memhandle_t__*)
  T CDataManagerBase::Lock()
@@ -677,27 +606,22 @@
  T CDataManagerBase::Unlock()
  T CDataManagerBase::UnlockResource(memhandle_t__*)
  T CDataManagerBase::UsedSize()
- T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::~CDataManager()
- T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::DestroyResourceStorage(void*)
- T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::GetRealSize(void*)
- T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Lock()
- T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::TryLock()
- T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Unlock()
- T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+ T CDataManagerBase::~CDataManagerBase()
+ T CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
  T CDefOps<int>::LessFunc(int const&, int const&)
- T CEmptyConVar::~CEmptyConVar()
+ T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
+ T CEmptyConVar::~CEmptyConVar()
  T CFmtStrN<256, false>::CFmtStrN(char const*, ...)
  T CFmtStrN<256, false>::InitQuietTruncation()
- T CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
  T CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
- T CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
+ T CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
  T CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
- T __clang_call_terminate
+ T CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
  T CMDLCache::AddRef(unsigned short)
  T CMDLCache::BeginLock()
  T CMDLCache::BeginMapLoad()
@@ -706,7 +630,6 @@
  T CMDLCache::CacheVertexData(studiohdr_t*)
  T CMDLCache::CleanupDynamicLoad(CleanupModelParts_t*)
  T CMDLCache::ClearAsync(unsigned short, MDLCacheDataType_t, int, bool)
- T CMDLCache::~CMDLCache()
  T CMDLCache::Connect(void* (*)(char const*, int*))
  T CMDLCache::ConvertFlexData(studiohdr_t*)
  T CMDLCache::Disconnect()
@@ -729,12 +652,12 @@
  T CMDLCache::GetRef(unsigned short)
  T CMDLCache::GetStudioHdr(unsigned short)
  T CMDLCache::GetUserData(unsigned short)
+ T CMDLCache::GetVCollide(unsigned short)
  T CMDLCache::GetVCollideEx(unsigned short, bool)
  T CMDLCache::GetVCollideSize(unsigned short, int*)
- T CMDLCache::GetVCollide(unsigned short)
  T CMDLCache::GetVertexData(unsigned short)
- T CMDLCache::GetVirtualModelFast(studiohdr_t const*, unsigned short)
  T CMDLCache::GetVirtualModel(unsigned short)
+ T CMDLCache::GetVirtualModelFast(studiohdr_t const*, unsigned short)
  T CMDLCache::HandleCacheNotification(DataCacheNotification_t const&)
  T CMDLCache::Init()
  T CMDLCache::InitPreloadData(bool)
@@ -755,8 +678,8 @@
  T CMDLCache::QueryInterface(char const*)
  T CMDLCache::QueuedLoaderCallback_MDL(void*, void*, void const*, int, LoaderError_t)
  T CMDLCache::ReadMDLFile(unsigned short, char const*, CUtlBuffer&)
- T CMDLCache::ReleaseMaterialSystemObjects()
  T CMDLCache::Release(unsigned short)
+ T CMDLCache::ReleaseMaterialSystemObjects()
  T CMDLCache::ResetErrorModelStatus(unsigned short)
  T CMDLCache::RestoreMaterialSystemObjects(int)
  T CMDLCache::SetAsyncLoad(MDLCacheDataType_t, bool)
@@ -771,60 +694,28 @@
  T CMDLCache::UnserializeMDL(unsigned short, void*, int, bool)
  T CMDLCache::UnserializeVCollide(unsigned short, bool)
  T CMDLCache::VerifyHeaders(studiohdr_t*)
+ T CMDLCache::~CMDLCache()
  T CMemoryPoolMT::Alloc(unsigned long)
- T CMemoryPoolMT::~CMemoryPoolMT()
  T CMemoryPoolMT::Free(void*)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T ConnectTier3Libraries(void* (**)(char const*, int*), int)
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::~ConVar()
- T ConVar::ConVar(char const*, char const*, int)
- T ConVar::ConVar(char const*, char const*, int, char const*)
- T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVarRef::ConVarRef(IConVar*)
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar_Unregister()
- t __CreateCDataCacheIDataCache_interface()
- t __CreateCMDLCacheIMDLCache_interface()
- t __CreateCMDLCacheIStudioDataCache_interface()
- T CreateInterface
- T CreateInterfaceInternal(char const*, int*)
+ T CMemoryPoolMT::~CMemoryPoolMT()
+ T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
  T CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
  T CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
- T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::CUtlBuffer(int, int, int)
  T CUtlBuffer::CUtlBuffer(void const*, int, int)
- T CUtlBuffer::GetOverflow(int)
  T CUtlBuffer::Get(void*, int)
+ T CUtlBuffer::GetOverflow(int)
  T CUtlBuffer::PutOverflow(int)
  T CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::SetExternalBuffer(void*, int, int, int)
- T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlDict<short, short>::~CUtlDict()
  T CUtlDict<studiodata_t*, unsigned short>::~CUtlDict()
- T CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::~CUtlHashFast()
  T CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::CUtlHashFast()
+ T CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::~CUtlHashFast()
  T CUtlLinkedList<AsyncInfo_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<AsyncInfo_t, int> > >::AllocInternal(bool)
  T CUtlLinkedList<AsyncInfo_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<AsyncInfo_t, int> > >::RemoveAll()
  T CUtlLinkedList<AsyncInfo_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<AsyncInfo_t, int> > >::Unlink(int)
@@ -832,24 +723,23 @@
  T CUtlLinkedList<CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::HashFastData_t_<memhandle_t__*>, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::HashFastData_t_<memhandle_t__*>, int> > >::RemoveAll()
  T CUtlLinkedList<CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::HashFastData_t_<memhandle_t__*>, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CUtlHashFast<memhandle_t__*, CUtlHashFastNoHash>::HashFastData_t_<memhandle_t__*>, int> > >::Unlink(int)
  T CUtlLinkedList<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short>, unsigned short> >::AllocInternal(bool)
- T CUtlLinkedList<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
+ T CUtlLinkedList<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlMap<int, int, unsigned short>::~CUtlMap()
- T CUtlMemoryPool::AddNewBlob()
- T CUtlMemoryPool::Alloc(unsigned long)
- T CUtlMemoryPool::~CUtlMemoryPool()
- T CUtlMemoryPool::CUtlMemoryPool(int, int, int, char const*, int)
- T CUtlMemoryPool::Free(void*)
  T CUtlMemory<UtlLinkedListElem_t<CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::List_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemoryPool::AddNewBlob()
+ T CUtlMemoryPool::Alloc(unsigned long)
+ T CUtlMemoryPool::CUtlMemoryPool(int, int, int, char const*, int)
+ T CUtlMemoryPool::Free(void*)
+ T CUtlMemoryPool::~CUtlMemoryPool()
  T CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::Alloc()
- T CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::~CUtlMultiList()
  T CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::LinkAfter(unsigned short, unsigned short, unsigned short)
  T CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::LinkBefore(unsigned short, unsigned short, unsigned short)
+ T CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::~CUtlMultiList()
  T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::Find(CUtlMap<char const*, short, short>::Node_t const&) const
  T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::FindInsertionPosition(CUtlMap<char const*, short, short>::Node_t const&, short&, bool&)
  T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::FirstInorder() const
@@ -862,7 +752,7 @@
  T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::RemoveAll()
  T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::RotateLeft(short)
  T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::RotateRight(short)
- T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t const&) const
  T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t const&, unsigned short&, bool&)
  T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::FirstInorder() const
@@ -877,7 +767,7 @@
  T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
  T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
  T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Unlink(unsigned short)
- T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, studiodata_t*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, studiodata_t*, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<int, int, unsigned short>::Node_t const&) const
  T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<int, int, unsigned short>::Node_t const&, unsigned short&, bool&)
  T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<int, int, unsigned short>::Node_t const&)
@@ -890,9 +780,9 @@
  T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
  T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
  T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Unlink(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<int, int, unsigned short>::Node_t, unsigned short, CUtlMap<int, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
- T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::FindInsertionPosition(memhandle_t__* const&, int&, bool&)
  T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::FirstInorder() const
  T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::Insert(memhandle_t__* const&)
@@ -904,45 +794,83 @@
  T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::RemoveAll()
  T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::RotateLeft(int)
  T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::RotateRight(int)
- T CUtlSymbolTable::~CUtlSymbolTable()
+ T CUtlRBTree<memhandle_t__*, int, bool (*)(memhandle_t__* const&, memhandle_t__* const&), CUtlMemory<UtlRBTreeNode_t<memhandle_t__*, int>, int> >::~CUtlRBTree()
  T CUtlSymbolTable::CUtlSymbolTable(int, int, bool)
+ T CUtlSymbolTable::~CUtlSymbolTable()
  T CUtlVector<CDataCacheSection*, CUtlMemory<CDataCacheSection*, int> >::~CUtlVector()
- T CUtlVector<char*, CUtlMemory<char*, int> >::~CUtlVector()
  T CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
  T CUtlVector<IMaterial*, CUtlMemory<IMaterial*, int> >::~CUtlVector()
- T CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
+ T CUtlVector<char*, CUtlMemory<char*, int> >::~CUtlVector()
  T CUtlVector<int, CUtlMemory<int, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
  T CUtlVector<memhandle_t__*, CUtlMemory<memhandle_t__*, int> >::AddToTail(memhandle_t__* const&)
  T CUtlVector<memhandle_t__*, CUtlMemory<memhandle_t__*, int> >::~CUtlVector()
- T CUtlVector<modellookup_t, CUtlMemory<modellookup_t, int> >::~CUtlVector()
  T CUtlVector<modellookup_t, CUtlMemory<modellookup_t, int> >::InsertBefore(int)
- T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
+ T CUtlVector<modellookup_t, CUtlMemory<modellookup_t, int> >::~CUtlVector()
  T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::InsertMultipleBefore(int, int)
- T CUtlVector<virtualgeneric_t, CUtlMemory<virtualgeneric_t, int> >::~CUtlVector()
+ T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
  T CUtlVector<virtualgeneric_t, CUtlMemory<virtualgeneric_t, int> >::GrowVector(int)
+ T CUtlVector<virtualgeneric_t, CUtlMemory<virtualgeneric_t, int> >::~CUtlVector()
  T CUtlVector<virtualgroup_t, CUtlMemory<virtualgroup_t, int> >::~CUtlVector()
- T CUtlVector<virtualsequence_t, CUtlMemory<virtualsequence_t, int> >::~CUtlVector()
  T CUtlVector<virtualsequence_t, CUtlMemory<virtualsequence_t, int> >::GrowVector(int)
+ T CUtlVector<virtualsequence_t, CUtlMemory<virtualsequence_t, int> >::~CUtlVector()
  T CUtlVector<void*, CUtlMemory<void*, int> >::AddToTail(void* const&)
  T CUtlVector<void*, CUtlMemory<void*, int> >::~CUtlVector()
+ T CaselessStringLessThan(char const* const&, char const* const&)
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::ConVar(char const*, char const*, int)
+ T ConVar::ConVar(char const*, char const*, int, char const*)
+ T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar::~ConVar()
+ T ConVarRef::ConVarRef(IConVar*)
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar_Unregister()
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier3Libraries(void* (**)(char const*, int*), int)
+ T CreateInterface
+ T CreateInterfaceInternal(char const*, int*)
  T DataCacheSize_f(IConVar*, char const*, float)
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
  T DisconnectTier3Libraries()
- T dyld_stub_binding_helper
- t global constructors keyed to a
  T Hash4(void const*)
- ThreadGetCurrentId
- ThreadInMainThread
- ThreadInterlockedAssignIf
- ThreadInterlockedAssignIf64
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedExchangeAdd
- ThreadInterlockedIncrement
- ThreadSleep
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T ModelParts_t::ModelParts_t()
+ T SetAsyncInfoIndex(unsigned short, MDLCacheDataType_t, int, int)
+ T Sys_GetFactoryThis()
+ T V_ComposeFileName(char const*, char const*, char*, int)
+ T V_FixSlashes(char*, char)
+ T V_RemoveDotSlashes(char*, char, bool)
+ T V_SetExtension(char*, char const*, int)
+ T V_StripExtension(char const*, char*, int)
+ T V_atof(char const*)
+ T V_pretifymem(float, int, bool)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_vsnprintfRet(char*, int, char const*, char*, bool*)
+ T __clang_call_terminate
+ T dyld_stub_binding_helper
  T mstudiovertanim_t::ConvertToFixed(float)
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
@@ -969,18 +897,11 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- t ReleaseMaterialSystemObjects()
- t RestoreMaterialSystemObjects(int)
- T SetAsyncInfoIndex(unsigned short, MDLCacheDataType_t, int, int)
  T studiohdr_t::CopyAutoplaySequences(unsigned short*, int) const
  T studiohdr_t::CountAutoplaySequences() const
  T studiohdr_t::FindModel(void**, char const*) const
  T studiohdr_t::GetVirtualModel() const
  T studiohdr_t::pSeqdesc(int) const
- T Sys_GetFactoryThis()
- T V_atof(char const*)
- T V_ComposeFileName(char const*, char const*, char*, int)
- T V_FixSlashes(char*, char)
  T virtualgroup_t::GetStudioHdr() const
  T virtualmodel_t::AppendAnimations(int, studiohdr_t const*)
  T virtualmodel_t::AppendAttachments(int, studiohdr_t const*)
@@ -991,20 +912,99 @@
  T virtualmodel_t::AppendPoseParameters(int, studiohdr_t const*)
  T virtualmodel_t::AppendSequences(int, studiohdr_t const*)
  T virtualmodel_t::UpdateAutoplaySequences(studiohdr_t const*)
- T V_pretifymem(float, int, bool)
- T V_RemoveDotSlashes(char*, char, bool)
- T V_SetExtension(char*, char const*, int)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_StripExtension(char const*, char*, int)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T V_vsnprintfRet(char*, int, char const*, char*, bool*)
- typeinfo for std::bad_alloc
+ ThreadGetCurrentId
+ ThreadInMainThread
+ ThreadInterlockedAssignIf
+ ThreadInterlockedAssignIf64
+ ThreadInterlockedDecrement
+ ThreadInterlockedExchange
+ ThreadInterlockedExchangeAdd
+ ThreadInterlockedIncrement
+ ThreadSleep
+ Warning
  _Unwind_Resume
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_abort
+ __cxa_guard_acquire
+ __cxa_guard_release
+ __cxa_pure_virtual
+ __gxx_personality_v0
+ __stack_chk_fail
+ __stack_chk_guard
+ __stdoutp
+ atof
+ atoi
+ b CDataManagerBase::GetForFreeByIndex(unsigned short)::__executeCount
+ b CMDLCache::ProcessPendingAsyncs(MDLCacheDataType_t)::bReentering
+ b NO_ASYNC
+ b StudioByteSwap::g_Swap
+ b V_pretifymem(float, int, bool)::current
+ b V_pretifymem(float, int, bool)::output
+ b __g_CreateCDataCacheIDataCache_reg
+ b __g_CreateCMDLCacheIMDLCache_reg
+ b __g_CreateCMDLCacheIStudioDataCache_reg
+ b g_CleanupSymbolTable
+ b g_MDLCache
+ b g_ModelLookup
+ b g_iDontForceFlush
+ b guard variable for CMDLCache::ProcessDataIntoCache(unsigned short, MDLCacheDataType_t, int, void*, int, bool)::bCompressedVVDs
+ b mem_force_flush
+ b mod_forcedata
+ b mod_load_anims_async
+ b mod_load_fakestall
+ b mod_load_mesh_async
+ b mod_load_showstall
+ b mod_load_vcollide_async
+ b mod_lock_mdls_on_load
+ b mod_test_mesh_not_available
+ b mod_test_not_available
+ b mod_test_verts_not_available
+ b mod_trace_load
+ b r_rootlod
+ b s_EmptyConVar
+ b s_bConnected
+ b s_bRegistered
+ b s_nCVarFlag
+ b vec2_invalid
+ b vec2_origin
+ b vec4_invalid
+ b vec4_origin
+ d dyld__mach_header
+ d g_ModelLookupIndex
+ d g_ppszTypes
+ d s_DefaultAccessor
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ fflush
+ g_VProfCurrentProfile
+ g_pMemAlloc
+ memcpy
+ memmove
+ memset
+ pow
+ printf
+ pthread_mutex_destroy
+ r g_nRandomValues
+ raise
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strcpy
+ strlen
+ strncat
+ strncpy
+ t ReleaseMaterialSystemObjects()
+ t RestoreMaterialSystemObjects(int)
+ t __CreateCDataCacheIDataCache_interface()
+ t __CreateCMDLCacheIMDLCache_interface()
+ t __CreateCMDLCacheIStudioDataCache_interface()
+ t global constructors keyed to a
+ typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
- Warning

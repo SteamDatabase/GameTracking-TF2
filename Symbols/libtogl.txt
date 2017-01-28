@@ -1,69 +1,21 @@
- atof
- atoi
  B CGLMBuffer::m_StaticBuffers
  B CGLMQuery::s_nTotalOcclusionQueryCreatesOrDeletes
- b CGLMTex::HandleSRGBMismatch(bool, int&)::s_nosrgbflips
- b CheckOpenGLExtension_internal(char const*, int, int)::glGetString
- B colorcorrection
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
- bcopy
+ B IntelGLMallocWorkaround::s_pWorkaround
+ B SinCosTable
+ B colorcorrection
  B cvar
  B dxa_nullrefresh_capslock
- b f05
- b f3
- B g_bNullD3DDevice
- B g_bUsePseudoBufs
- B g_D3DRS_INFO_unpacked
- b g_D3DToOpenGLTranslatorGLSL
- b GetOpenGLVersion(int*, int*, int*)::glGetString
  B gGL
  B gGL_GetProcAddressCallback
+ B g_D3DRS_INFO_unpacked
+ B g_VBAllocTracker
+ B g_bNullD3DDevice
+ B g_bUsePseudoBufs
  B g_glmgr
- B gl_batch_tex_creates
- B gl_batch_tex_destroys
- B gl_batch_vis
- B gl_blitmode
- B gl_bufmode
- B gl_can_mix_shader_gammas
- B gl_cannot_mix_shader_gammas
- B gl_cannot_resolve_flipped
- B gl_can_query_fast
- B gl_can_resolve_flipped
- B gl_debug_output
- b gl_dump_stats
- B gl_enabletexsubimage
- b gl_flushpaircache
- B gl_magnify_resolve_mode
- b glm_cacheprograms
- b GLMContext::PreloadTex(CGLMTex*, bool)::posns
- b GLMContext::Present(CGLMTex*)::counter
- B gl_minify_resolve_mode
- B gl_minimize_all_tex
- B gl_minimize_rt_tex
- B gl_minimize_tex_log
- B glm_literefresh_capslock
- B glm_nullrefresh_capslock
- b gl_mtglflush_at_tof
- B gl_nullqueries
- b gl_paircachestats
- b gl_persistent_buffer_max_offset_command
- B gl_radar7954721_workaround_all
- B gl_radar7954721_workaround_maskval
- B gl_radar7954721_workaround_mixed
- B gl_rt_forcergba
- b gl_shader_compile_time_dump_command
- B gl_shaderpair_cachelog
- B gl_shaderpair_cacherows_lg2
- B gl_shaderpair_cacheways_lg2
- b gl_texlayoutstats
- B gl_texmsaalog
- b g_Mathlib_GammaToLinear
- b g_Mathlib_LinearToGamma
- b gMaxPersistentOffset
  B g_nTotalDrawsOrClears
  B g_pCVar
- b g_pD3D_Device
  B g_pFullFileSystem
  B g_pInputSystem
  B g_pLauncherMgr
@@ -74,98 +26,69 @@
  B g_pProcessUtils
  B g_pQueuedLoader
  B g_pUtlSortVectorQSortContext
- b gShaderCompileCount
- b gShaderCompileQueryTime
- b gShaderCompileTime
- b gShaderLinkCount
- b gShaderLinkQueryTime
- b gShaderLinkTime
- b g_texGlobalBytes
- b guard variable for CGLMTex::HandleSRGBMismatch(bool, int&)::s_nosrgbflips
- b guard variable for CheckOpenGLExtension_internal(char const*, int, int)::glGetString
- b guard variable for GetOpenGLVersion(int*, int*, int*)::glGetString
- B g_VBAllocTracker
- B IntelGLMallocWorkaround::s_pWorkaround
- b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
+ B gl_batch_tex_creates
+ B gl_batch_tex_destroys
+ B gl_batch_vis
+ B gl_blitmode
+ B gl_bufmode
+ B gl_can_mix_shader_gammas
+ B gl_can_query_fast
+ B gl_can_resolve_flipped
+ B gl_cannot_mix_shader_gammas
+ B gl_cannot_resolve_flipped
+ B gl_debug_output
+ B gl_enabletexsubimage
+ B gl_magnify_resolve_mode
+ B gl_minify_resolve_mode
+ B gl_minimize_all_tex
+ B gl_minimize_rt_tex
+ B gl_minimize_tex_log
+ B gl_nullqueries
+ B gl_radar7954721_workaround_all
+ B gl_radar7954721_workaround_maskval
+ B gl_radar7954721_workaround_mixed
+ B gl_rt_forcergba
+ B gl_shaderpair_cachelog
+ B gl_shaderpair_cacherows_lg2
+ B gl_shaderpair_cacheways_lg2
+ B gl_texmsaalog
+ B glm_literefresh_capslock
+ B glm_nullrefresh_capslock
  B lineartolightmap
- b lineartoscreen
- b lineartotexture
  B lineartovertex
  B materials
- b mat_vsync
  B mdllib
  B p4
- b s_bConnected
- B s_bMathlibInitialized
- b s_bMMXEnabled
- b s_bRegistered
- b s_bSSE2Enabled
- b s_bSSEEnabled
- b s_EmptyConVar
- B sg_pPIXName
- B SinCosTable
- b s_nCVarFlag
  B s_NoEscConversion
- b s_pTokenBuf
  B s_StringCharConversion
- b texturetolinear
- b vec2_invalid
- b vec2_origin
- b vec4_invalid
- b vec4_origin
+ B s_bMathlibInitialized
+ B sg_pPIXName
  CGLEnable
- CommandLine_Tier0
  COM_TimestampedLog
+ CommandLine_Tier0
  ConMsg(char const*, ...)
- cosf
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_abort
- __cxa_guard_acquire
- __cxa_guard_release
  D CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- d D3DToGL::TranslateShader(unsigned int*, CUtlBuffer*, bool*, unsigned int, int, unsigned int, char*)::s_szCompareStrings
- d dyld__mach_header
- _DefaultRuneLocale
- DevMsg
- DevMsg(char const*, ...)
+ D GLMContext::SetMaxUsedVertexShaderConstantsHint(unsigned int)::bUseMaxVertexShadeConstantHints
+ D KeyValues::s_pfGetStringForSymbol
+ D KeyValues::s_pfGetSymbolForString
+ D g_D3DRS_INFO_packed
+ D g_KeyValuesErrorStack
  D g_bDebugOutputBreakpoints
  D g_bDisableStaticBuffer
- d g_cgl_rendids
- d g_d3d_devtypes
- d g_d3d_formats
- d g_d3d_opcodes
- D g_D3DRS_INFO_packed
- d g_d3d_rstates
- d g_d3d_rtypes
- d g_d3d_usages
- d g_d3d_vtxdeclusages
- d g_formatDescTable
  D g_formatDescTableCount
- d g_gl_enums
- d g_gl_errors
  D g_glmDebugFontMap
  D g_glmShaderLimitDescs
- d g_gl_renderers
- D g_KeyValuesErrorStack
- D glAttachFromClass
- d GLMContext::PreloadTex(CGLMTex*, bool)::indices
- D GLMContext::SetMaxUsedVertexShaderConstantsHint(unsigned int)::bUseMaxVertexShadeConstantHints
  D g_nullFragmentProgramText
  D g_preload2DTexFragmentProgramText
  D g_preload3DTexFragmentProgramText
  D g_preloadCubeTexFragmentProgramText
  D g_preloadTexVertexProgramText
  D g_shaderSectionMarkers
- d g_szVecOnes
- d g_szVecZeros
+ D glAttachFromClass
  D guard variable for CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for GLMContext::SetMaxUsedVertexShaderConstantsHint(unsigned int)::bUseMaxVertexShadeConstantHints
- D KeyValues::s_pfGetStringForSymbol
- D KeyValues::s_pfGetSymbolForString
  D kIslandTemplate
  D pfFastCos
  D pfFastSinCos
@@ -175,20 +98,14 @@
  D pfSqrt
  D pfVectorNormalize
  D pfVectorNormalizeFast
- d possibleInstructions
- d s_DefaultAccessor
- d s_LastFileLoadingFrom
- d s_nDLLIdentifier
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
  D typeinfo for CDefaultAccessor
  D typeinfo for CEmptyConVar
+ D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlCharConversion
+ D typeinfo for CUtlNoEscConversion
  D typeinfo for ConCommand
  D typeinfo for ConCommandBase
  D typeinfo for ConVar
- D typeinfo for CUtlCharConversion
- D typeinfo for CUtlCStringConversion
- D typeinfo for CUtlNoEscConversion
  D typeinfo for IConCommandBaseAccessor
  D typeinfo for IConVar
  D typeinfo for IDirect3D9
@@ -208,11 +125,11 @@
  D typeinfo for IUnknown
  D vtable for CDefaultAccessor
  D vtable for CEmptyConVar
+ D vtable for CUtlCStringConversion
+ D vtable for CUtlCharConversion
+ D vtable for CUtlNoEscConversion
  D vtable for ConCommand
  D vtable for ConVar
- D vtable for CUtlCharConversion
- D vtable for CUtlCStringConversion
- D vtable for CUtlNoEscConversion
  D vtable for IDirect3D9
  D vtable for IDirect3DBaseTexture9
  D vtable for IDirect3DCubeTexture9
@@ -226,58 +143,29 @@
  D vtable for IDirect3DVertexDeclaration9
  D vtable for IDirect3DVertexShader9
  D vtable for IDirect3DVolumeTexture9
- __error
+ DevMsg
+ DevMsg(char const*, ...)
  Error
- floor
- fprintf
- fwrite
- g_ClockSpeed
- g_ClockSpeedSecondsMultiplier
  GetCPUInformation
  GetCurrentKeyModifiers
- g_pMemAlloc
- __gxx_personality_v0
  KeyValuesSystem
- mach_task_self_
- malloc
- __maskrune
- memcmp
- memcpy
- memmove
- memset
- memset_pattern16
- modf
- mprotect$UNIX2003
  Msg
- msync$UNIX2003
- objc_msgSend
  OSAtomicCompareAndSwap64
  Plat_IsInDebugSession
- pow
- printf
- putchar
- puts
- qsort
- raise
- rand
- r fixupInstructions(unsigned int, void*, int, unsigned char*)::LeaqHeader
- r g_garbageTextureBits
  R GLMTexSamplingParams::DeltaSetToTarget(unsigned int, GLMTexSamplingParams const&)::dxtogl_addressMode
  R GLMTexSamplingParams::DeltaSetToTarget(unsigned int, GLMTexSamplingParams const&)::dxtogl_magFilter
  R GLMTexSamplingParams::DeltaSetToTarget(unsigned int, GLMTexSamplingParams const&)::dxtogl_minFilter
  R GLMTexSamplingParams::SetToTarget(unsigned int)::dxtogl_addressMode
  R GLMTexSamplingParams::SetToTarget(unsigned int)::dxtogl_magFilter
  R GLMTexSamplingParams::SetToTarget(unsigned int)::dxtogl_minFilter
- r gPersistentBufferSize
- r .memset_pattern
  R typeinfo name for CDefaultAccessor
  R typeinfo name for CEmptyConVar
+ R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlCharConversion
+ R typeinfo name for CUtlNoEscConversion
  R typeinfo name for ConCommand
  R typeinfo name for ConCommandBase
  R typeinfo name for ConVar
- R typeinfo name for CUtlCharConversion
- R typeinfo name for CUtlCStringConversion
- R typeinfo name for CUtlNoEscConversion
  R typeinfo name for IConCommandBaseAccessor
  R typeinfo name for IConVar
  R typeinfo name for IDirect3D9
@@ -295,53 +183,31 @@
  R typeinfo name for IDirect3DVertexShader9
  R typeinfo name for IDirect3DVolumeTexture9
  R typeinfo name for IUnknown
- sin
- sprintf
- sscanf
- __stack_chk_fail
- __stack_chk_guard
- __stderrp
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strcpy
- strlen
- strncat
- strncmp
- strncpy
- strrchr
- strstr
- strtod$UNIX2003
- strtol
- strtoul
  T BuildGammaTable(float, float, float, int)
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
- T CEmptyConVar::~CEmptyConVar()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- t CentroidMaskFromName(bool, char const*)
- T CGLMBuffer::~CGLMBuffer()
+ T CEmptyConVar::~CEmptyConVar()
  T CGLMBuffer::CGLMBuffer(GLMContext*, EGLMBufferType, unsigned int, unsigned int)
  T CGLMBuffer::GetHandle() const
  T CGLMBuffer::Lock(GLMBuffLockParams*, char**)
  T CGLMBuffer::Unlock(int, void const*)
- T CGLMFBO::~CGLMFBO()
+ T CGLMBuffer::~CGLMBuffer()
  T CGLMFBO::CGLMFBO(GLMContext*)
  T CGLMFBO::IsReady()
  T CGLMFBO::TexAttach(GLMFBOTexAttachParams*, EGLMFBOAttachment, unsigned int)
  T CGLMFBO::TexDetach(EGLMFBOAttachment, unsigned int)
- T CGLMProgram::~CGLMProgram()
+ T CGLMFBO::~CGLMFBO()
  T CGLMProgram::CGLMProgram(GLMContext*, EGLMProgramType)
  T CGLMProgram::CheckValidity(EGLMProgramLang)
- T CGLMProgram::CompileActiveSources()
  T CGLMProgram::Compile(EGLMProgramLang)
+ T CGLMProgram::CompileActiveSources()
  T CGLMProgram::SetProgramText(char*)
  T CGLMProgram::SetShaderName(char const*)
- T CGLMQuery::~CGLMQuery()
+ T CGLMProgram::~CGLMProgram()
  T CGLMQuery::CGLMQuery(GLMContext*, GLMQueryParams*)
  T CGLMQuery::Complete(unsigned int*)
  T CGLMQuery::IsDone()
@@ -349,90 +215,51 @@
  T CGLMQuery::IsStopped()
  T CGLMQuery::Start()
  T CGLMQuery::Stop()
- T CGLMShaderPairCache::~CGLMShaderPairCache()
+ T CGLMQuery::~CGLMQuery()
+ T CGLMShaderPair::SetProgramPair(CGLMProgram*, CGLMProgram*)
+ T CGLMShaderPair::ValidateProgramPair()
  T CGLMShaderPairCache::CGLMShaderPairCache(GLMContext*)
  T CGLMShaderPairCache::DumpStats()
  T CGLMShaderPairCache::Purge()
  T CGLMShaderPairCache::PurgePairsWithShader(CGLMProgram*)
  T CGLMShaderPairCache::QueryShaderPair(int, GLMShaderPairInfo*)
  T CGLMShaderPairCache::SelectShaderPairInternal(CGLMProgram*, CGLMProgram*, unsigned int, int)
- T CGLMShaderPair::SetProgramPair(CGLMProgram*, CGLMProgram*)
- T CGLMShaderPair::ValidateProgramPair()
+ T CGLMShaderPairCache::~CGLMShaderPairCache()
+ T CGLMTex::CGLMTex(GLMContext*, GLMTexLayout*, unsigned int, char const*)
  T CGLMTex::CalcSliceIndex(int, int)
  T CGLMTex::CalcTexelDataOffsetAndStrides(int, int, int, int, int*, int*, int*)
- T CGLMTex::~CGLMTex()
- T CGLMTex::CGLMTex(GLMContext*, GLMTexLayout*, unsigned int, char const*)
  T CGLMTex::ForceRBODirty()
  T CGLMTex::ForceRBONonDirty()
  T CGLMTex::HandleSRGBMismatch(bool, int&)
  T CGLMTex::IsRBODirty() const
- T CGLMTexLayoutTable::CGLMTexLayoutTable()
- T CGLMTexLayoutTable::DumpStats()
- T CGLMTexLayoutTable::NewLayoutRef(GLMTexLayoutKey*)
  T CGLMTex::Lock(GLMTexLockParams*, char**, int*, int*)
  T CGLMTex::ReadTexels(GLMTexLockDesc*, bool)
  T CGLMTex::ResetSRGB(bool, bool)
- T CGLMTextSectioner::~CGLMTextSectioner()
+ T CGLMTex::Unlock(GLMTexLockParams*)
+ T CGLMTex::WriteTexels(GLMTexLockDesc*, bool, bool)
+ T CGLMTex::~CGLMTex()
+ T CGLMTexLayoutTable::CGLMTexLayoutTable()
+ T CGLMTexLayoutTable::DumpStats()
+ T CGLMTexLayoutTable::NewLayoutRef(GLMTexLayoutKey*)
  T CGLMTextSectioner::CGLMTextSectioner(char*, int, char const**)
  T CGLMTextSectioner::Count()
  T CGLMTextSectioner::GetSection(int, unsigned int*, unsigned int*, int*)
- T CGLMTex::Unlock(GLMTexLockParams*)
- T CGLMTex::WriteTexels(GLMTexLockDesc*, bool, bool)
- t CheckOpenGLExtension(char const*, int, int)
+ T CGLMTextSectioner::~CGLMTextSectioner()
  T CKeyValuesErrorStack::ReportError(char const*)
- T __clang_call_terminate
- T ClearOpenGLEntryPoints
- T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
- T ConCommandBase::AddFlags(int)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConCommandBase::GetHelpText() const
- T ConCommandBase::GetName() const
- T ConCommandBase::Init()
- T ConCommandBase::IsFlagSet(int) const
- T ConCommandBase::IsRegistered() const
- T ConCommand::CanAutoComplete()
- T ConCommand::~ConCommand()
- T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
- T ConCommand::Dispatch(CCommand const&)
- T ConCommand::IsCommand() const
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::~ConVar()
- T ConVar::ConVar(char const*, char const*, int)
- T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float)
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar_Unregister()
  T COpenGLEntryPoints::COpenGLEntryPoints()
- T CPersistentBuffer::~CPersistentBuffer()
  T CPersistentBuffer::CPersistentBuffer()
  T CPersistentBuffer::Init(EGLMBufferType, unsigned int)
- T CTSQueue<CGLMTex*, false>::~CTSQueue()
+ T CPersistentBuffer::~CPersistentBuffer()
  T CTSQueue<CGLMTex*, false>::CTSQueue()
  T CTSQueue<CGLMTex*, false>::Pop()
  T CTSQueue<CGLMTex*, false>::Purge()
  T CTSQueue<CGLMTex*, false>::Push(CTSQueue<CGLMTex*, false>::Node_t*)
+ T CTSQueue<CGLMTex*, false>::~CTSQueue()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::AssumeMemory(void*, int, int, int)
- T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::CUtlBuffer(int, int, int)
  T CUtlBuffer::CUtlBuffer(void const*, int, int)
+ T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::EatCPPComment()
  T CUtlBuffer::EatWhiteSpace()
  T CUtlBuffer::EnsureCapacity(int)
@@ -444,15 +271,15 @@
  T CUtlBuffer::PeekStringLength()
  T CUtlBuffer::PeekStringMatch(int, char const*, int)
  T CUtlBuffer::PeekWhiteSpace(int)
+ T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::PutOverflow(int)
  T CUtlBuffer::PutString(char const*)
- T CUtlBuffer::Put(void const*, int)
  T CUtlBuffer::Scanf(char const*, ...)
  T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::VaScanf(char const*, char*)
- T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
@@ -479,22 +306,60 @@
  T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Unlink(unsigned short)
  T CUtlSortVector<KeyValues*, CUtlSortVectorKeyValuesByName, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> > >::CompareHelper(KeyValues* const*, KeyValues* const*)
  T CUtlString::Get() const
- T CUtlString::operator=(CUtlString const&)
  T CUtlString::Purge()
  T CUtlString::Set(char const*)
- T CUtlVector<CGLMFBO*, CUtlMemory<CGLMFBO*, int> >::~CUtlVector()
+ T CUtlString::operator=(CUtlString const&)
  T CUtlVector<CGLMFBO*, CUtlMemory<CGLMFBO*, int> >::GrowVector(int)
+ T CUtlVector<CGLMFBO*, CUtlMemory<CGLMFBO*, int> >::~CUtlVector()
  T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
- T CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::~CUtlVector()
  T CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::GrowVector(int)
+ T CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::~CUtlVector()
  T CUtlVector<GLMContext::TextureEntry_t, CUtlMemory<GLMContext::TextureEntry_t, int> >::AddToTail(GLMContext::TextureEntry_t const&)
  T CUtlVector<GLMContext::TextureEntry_t, CUtlMemory<GLMContext::TextureEntry_t, int> >::~CUtlVector()
  T CUtlVector<GLMTexLockDesc, CUtlMemory<GLMTexLockDesc, int> >::~CUtlVector()
  T CUtlVector<GLMTextSection, CUtlMemory<GLMTextSection, int> >::~CUtlVector()
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
- T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
  T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
+ T ClearOpenGLEntryPoints
+ T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
+ T ConCommand::CanAutoComplete()
+ T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
+ T ConCommand::Dispatch(CCommand const&)
+ T ConCommand::IsCommand() const
+ T ConCommand::~ConCommand()
+ T ConCommandBase::AddFlags(int)
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConCommandBase::GetHelpText() const
+ T ConCommandBase::GetName() const
+ T ConCommandBase::Init()
+ T ConCommandBase::IsFlagSet(int) const
+ T ConCommandBase::IsRegistered() const
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::ConVar(char const*, char const*, int)
+ T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float)
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar::~ConVar()
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar_Unregister()
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
  T D3DPERF_SetOptions
  T D3DToGL::AddTokenHexCode()
  T D3DToGL::AddTokenHexCodeToBuffer(char*, int, int)
@@ -504,16 +369,16 @@
  T D3DToGL::Handle_BREAKC(unsigned int)
  T D3DToGL::Handle_CMP()
  T D3DToGL::Handle_DCL()
- T D3DToGL::Handle_DeclarativeNonDclOp(unsigned int)
  T D3DToGL::Handle_DEF()
  T D3DToGL::Handle_DEFIB(unsigned int)
  T D3DToGL::Handle_DP2ADD()
+ T D3DToGL::Handle_DeclarativeNonDclOp(unsigned int)
  T D3DToGL::Handle_LRP(unsigned int)
  T D3DToGL::Handle_MAD(unsigned int)
  T D3DToGL::Handle_NRM()
  T D3DToGL::Handle_SINCOS()
- T D3DToGL::Handle_TexCoord()
  T D3DToGL::Handle_TEX(unsigned int, bool)
+ T D3DToGL::Handle_TexCoord()
  T D3DToGL::Handle_UnaryOp(unsigned int)
  T D3DToGL::OpenIntrinsic(unsigned int, char*, int, unsigned int, unsigned int)
  T D3DToGL::PrintOpcode(unsigned int, char*, int)
@@ -527,53 +392,41 @@
  T D3DXCompileShader
  T D3DXCreateMatrixStack
  T D3DXGetPixelShaderProfile
+ T D3DXMATRIX::operator float*()
+ T D3DXMATRIX::operator!=(D3DXMATRIX const&) const
+ T D3DXMATRIX::operator()(int, int)
+ T D3DXMATRIX::operator()(int, int) const
+ T D3DXMATRIX::operator*(D3DXMATRIX const&) const
  T D3DXMatrixIdentity
  T D3DXMatrixInverse
  T D3DXMatrixMultiply
- T D3DXMATRIX::operator!=(D3DXMATRIX const&) const
- T D3DXMATRIX::operator*(D3DXMATRIX const&) const
- T D3DXMATRIX::operator float*()
- T D3DXMATRIX::operator()(int, int)
- T D3DXMATRIX::operator()(int, int) const
  T D3DXMatrixOrthoOffCenterRH
  T D3DXMatrixPerspectiveOffCenterRH
  T D3DXMatrixPerspectiveRH
  T D3DXMatrixTranslation
  T D3DXMatrixTranspose
- T D3DXPlaneNormalize
- T D3DXPLANE::operator==(D3DXPLANE const&)
- T D3DXPLANE::operator!=(D3DXPLANE const&)
- T D3DXPLANE::operator float*()
  T D3DXPLANE::operator float const*() const
+ T D3DXPLANE::operator float*()
+ T D3DXPLANE::operator!=(D3DXPLANE const&)
+ T D3DXPLANE::operator==(D3DXPLANE const&)
  T D3DXPLANE::operator[](int)
+ T D3DXPlaneNormalize
  T D3DXPlaneTransform
+ T D3DXVECTOR2::operator float const*() const
+ T D3DXVECTOR2::operator float*()
+ T D3DXVECTOR3::D3DXVECTOR3(float, float, float)
+ T D3DXVECTOR3::operator float const*() const
+ T D3DXVECTOR3::operator float*()
+ T D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
  T D3DXVec3TransformCoord
  T D3DXVec4Normalize
  T D3DXVec4Transform
- T D3DXVECTOR2::operator float*()
- T D3DXVECTOR2::operator float const*() const
- T D3DXVECTOR3::D3DXVECTOR3(float, float, float)
- T D3DXVECTOR3::operator float*()
- T D3DXVECTOR3::operator float const*() const
- T D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
  T DefaultCompletionFunc(char const*, char (*) [64])
  T Direct3DCreate9
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
- T dyld_stub_binding_helper
  T EnsureNumSwizzleComponents(char const*, int)
  T EvaluateConditional(char const*)
- t FillD3DCaps9(GLMRendererInfoFields const&, _D3DCAPS9*)
- T GetCGLContextFromNSGL(void*)
- T GetCStringCharConversion()
- T GetFormatDesc(_D3DFORMAT)
- T GetNoEscCharConversion()
- T GetNumSwizzleComponents(char const*)
- T GetOpenGLEntryPoints
- t GetOpenGLVersion(int*, int*, int*)
- T GetParamNameWithoutSwizzle(char const*, char*, int)
- T GL_Debug_Output_Callback(unsigned int, unsigned int, unsigned int, unsigned int, int, char const*, void*)
- t gl_dump_stats_func(CCommand const&)
  T GLMBeginPIXEvent
  T GLMContext::BeginFrame()
  T GLMContext::BindBufferToCtx(EGLMBufferType, CGLMBuffer*, bool)
@@ -595,12 +448,11 @@
  T GLMContext::DumpCaps()
  T GLMContext::EndFrame()
  T GLMContext::FillTexCache(bool, int)
- T GLMContext::FlushDrawStatesNoShaders()
  T GLMContext::FlushDrawStates(unsigned int, unsigned int, unsigned int)
+ T GLMContext::FlushDrawStatesNoShaders()
  T GLMContext::ForceFlushStates()
- T GLMContext::GenDebugFontTex()
- T GLMContext::~GLMContext()
  T GLMContext::GLMContext(IDirect3DDevice9*, GLMDisplayParams*)
+ T GLMContext::GenDebugFontTex()
  T GLMContext::LinkShaderPair(CGLMProgram*, CGLMProgram*)
  T GLMContext::MakeCurrent(bool)
  T GLMContext::NewBuffer(EGLMBufferType, unsigned int, unsigned int)
@@ -619,26 +471,26 @@
  T GLMContext::ResolveTex(CGLMTex*, bool)
  T GLMContext::SetDisplayParams(GLMDisplayParams*)
  T GLMContext::ValidateShaderPair(CGLMProgram*, CGLMProgram*)
+ T GLMContext::~GLMContext()
  T GLMDebugPrintf(char const*, ...)
  T GLMDecode
  T GLMEndPIXEvent
- T GLMgr::aGLMgr()
- T GLMgr::DelContext(GLMContext*)
- T GLMgr::NewContext(IDirect3DDevice9*, GLMDisplayParams*)
- T GLMgr::NewGLMgr()
  T GLMKnob
  T GLMKnobToggle
  T GLMTexSamplingParams::DeltaSetToTarget(unsigned int, GLMTexSamplingParams const&)
  T GLMTexSamplingParams::SetToTarget(unsigned int)
- t global constructors keyed to a
- t gl_persistent_buffer_max_offset(CCommand const&)
- t gl_shader_compile_time_dump(CCommand const&)
- ThreadGetCurrentId
- ThreadInterlockedAssignIf64
- ThreadInterlockedCompareExchangePointer
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedIncrement
+ T GLMgr::DelContext(GLMContext*)
+ T GLMgr::NewContext(IDirect3DDevice9*, GLMDisplayParams*)
+ T GLMgr::NewGLMgr()
+ T GLMgr::aGLMgr()
+ T GL_Debug_Output_Callback(unsigned int, unsigned int, unsigned int, unsigned int, int, char const*, void*)
+ T GetCGLContextFromNSGL(void*)
+ T GetCStringCharConversion()
+ T GetFormatDesc(_D3DFORMAT)
+ T GetNoEscCharConversion()
+ T GetNumSwizzleComponents(char const*)
+ T GetOpenGLEntryPoints
+ T GetParamNameWithoutSwizzle(char const*, char*, int)
  T ID3DXBuffer::GetBufferPointer()
  T ID3DXBuffer::GetBufferSize()
  T ID3DXMatrixStack::AddRef(int, char*)
@@ -677,9 +529,9 @@
  T IDirect3DDevice9::AcquireThreadOwnership()
  T IDirect3DDevice9::BeginScene()
  T IDirect3DDevice9::Clear(unsigned int, _D3DRECT const*, unsigned int, unsigned int, float, unsigned int)
+ T IDirect3DDevice9::Create(IDirect3DDevice9Params*)
  T IDirect3DDevice9::CreateCubeTexture(unsigned int, unsigned int, unsigned int, _D3DFORMAT, _D3DPOOL, IDirect3DCubeTexture9**, void**, char*)
  T IDirect3DDevice9::CreateDepthStencilSurface(unsigned int, unsigned int, _D3DFORMAT, _D3DMULTISAMPLE_TYPE, unsigned int, int, IDirect3DSurface9**, void**)
- T IDirect3DDevice9::Create(IDirect3DDevice9Params*)
  T IDirect3DDevice9::CreateIndexBuffer(unsigned int, unsigned int, _D3DFORMAT, _D3DPOOL, IDirect3DIndexBuffer9**, void**)
  T IDirect3DDevice9::CreateOffscreenPlainSurface(unsigned int, unsigned int, _D3DFORMAT, _D3DPOOL, IDirect3DSurface9**, void**)
  T IDirect3DDevice9::CreatePixelShader(unsigned int const*, IDirect3DPixelShader9**, char const*, char*, unsigned int const*)
@@ -702,13 +554,12 @@
  T IDirect3DDevice9::FullFlushStates()
  T IDirect3DDevice9::GetDepthStencilSurface(IDirect3DSurface9**)
  T IDirect3DDevice9::GetDeviceCaps(_D3DCAPS9*)
- T IDirect3DDevice9::GetFrontBufferData(unsigned int, IDirect3DSurface9*)
  T IDirect3DDevice9::GetFVF(unsigned int*)
- T IDirect3DDevice9::GetRenderTargetData(IDirect3DSurface9*, IDirect3DSurface9*)
+ T IDirect3DDevice9::GetFrontBufferData(unsigned int, IDirect3DSurface9*)
  T IDirect3DDevice9::GetRenderTarget(unsigned int, IDirect3DSurface9**)
+ T IDirect3DDevice9::GetRenderTargetData(IDirect3DSurface9*, IDirect3DSurface9*)
  T IDirect3DDevice9::GetTexture(unsigned int, IDirect3DBaseTexture9**)
  T IDirect3DDevice9::GetViewport(_D3DVIEWPORT9*)
- T IDirect3DDevice9::~IDirect3DDevice9()
  T IDirect3DDevice9::IDirect3DDevice9()
  T IDirect3DDevice9::InitStates()
  T IDirect3DDevice9::LightEnable(unsigned int, int)
@@ -716,6 +567,7 @@
  T IDirect3DDevice9::Present(_RECT const*, _RECT const*, void*, RGNDATA const*)
  T IDirect3DDevice9::PrintObjectStats(IDirect3DDevice9::ObjectStats_t const&)
  T IDirect3DDevice9::QueryShaderPair(int, GLMShaderPairInfo*)
+ T IDirect3DDevice9::ReleaseThreadOwnership()
  T IDirect3DDevice9::ReleasedCGLMTex(CGLMTex*)
  T IDirect3DDevice9::ReleasedIndexBuffer(IDirect3DIndexBuffer9*)
  T IDirect3DDevice9::ReleasedPixelShader(IDirect3DPixelShader9*)
@@ -725,7 +577,6 @@
  T IDirect3DDevice9::ReleasedVertexBuffer(IDirect3DVertexBuffer9*)
  T IDirect3DDevice9::ReleasedVertexDeclaration(IDirect3DVertexDeclaration9*)
  T IDirect3DDevice9::ReleasedVertexShader(IDirect3DVertexShader9*)
- T IDirect3DDevice9::ReleaseThreadOwnership()
  T IDirect3DDevice9::Reset(_D3DPRESENT_PARAMETERS_*)
  T IDirect3DDevice9::ResetFBOMap()
  T IDirect3DDevice9::RestoreGLState()
@@ -764,51 +615,48 @@
  T IDirect3DDevice9::UpdateBoundFBO()
  T IDirect3DDevice9::ValidateDevice(unsigned int*)
  T IDirect3DDevice9::ValidateShaderPair(IDirect3DVertexShader9*, IDirect3DPixelShader9*)
+ T IDirect3DDevice9::~IDirect3DDevice9()
  T IDirect3DIndexBuffer9::GetDesc(_D3DINDEXBUFFER_DESC*)
- T IDirect3DIndexBuffer9::~IDirect3DIndexBuffer9()
  T IDirect3DIndexBuffer9::Lock(unsigned int, unsigned int, void**, unsigned int)
  T IDirect3DIndexBuffer9::Unlock()
  T IDirect3DIndexBuffer9::UnlockActualSize(unsigned int, void const*)
+ T IDirect3DIndexBuffer9::~IDirect3DIndexBuffer9()
  T IDirect3DPixelShader9::~IDirect3DPixelShader9()
  T IDirect3DQuery9::GetData(void*, unsigned int, unsigned int)
- T IDirect3DQuery9::~IDirect3DQuery9()
  T IDirect3DQuery9::Issue(unsigned int)
+ T IDirect3DQuery9::~IDirect3DQuery9()
  T IDirect3DResource9::SetPriority(unsigned int)
  T IDirect3DSurface9::GetDesc(_D3DSURFACE_DESC*)
- T IDirect3DSurface9::~IDirect3DSurface9()
  T IDirect3DSurface9::LockRect(_D3DLOCKED_RECT*, _RECT const*, unsigned int)
  T IDirect3DSurface9::UnlockRect()
+ T IDirect3DSurface9::~IDirect3DSurface9()
  T IDirect3DTexture9::GetSurfaceLevel(unsigned int, IDirect3DSurface9**)
- T IDirect3DTexture9::~IDirect3DTexture9()
  T IDirect3DTexture9::LockRect(unsigned int, _D3DLOCKED_RECT*, _RECT const*, unsigned int)
  T IDirect3DTexture9::UnlockRect(unsigned int)
- T IDirect3DVertexBuffer9::~IDirect3DVertexBuffer9()
+ T IDirect3DTexture9::~IDirect3DTexture9()
  T IDirect3DVertexBuffer9::Lock(unsigned int, unsigned int, void**, unsigned int)
  T IDirect3DVertexBuffer9::Unlock()
  T IDirect3DVertexBuffer9::UnlockActualSize(unsigned int, void const*)
+ T IDirect3DVertexBuffer9::~IDirect3DVertexBuffer9()
  T IDirect3DVertexDeclaration9::~IDirect3DVertexDeclaration9()
  T IDirect3DVertexShader9::~IDirect3DVertexShader9()
  T IDirect3DVolumeTexture9::GetLevelDesc(unsigned int, _D3DVOLUME_DESC*)
- T IDirect3DVolumeTexture9::~IDirect3DVolumeTexture9()
  T IDirect3DVolumeTexture9::LockBox(unsigned int, _D3DLOCKED_BOX*, _D3DBOX const*, unsigned int)
  T IDirect3DVolumeTexture9::UnlockBox(unsigned int)
+ T IDirect3DVolumeTexture9::~IDirect3DVolumeTexture9()
  T IntelGLMallocWorkaround::Enable()
  T IntelGLMallocWorkaround::Get()
  T IntelGLMallocWorkaround::ZeroingAlloc(unsigned long)
- T _InvRSquared(float const*)
  T KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
  T KeyValues::CreateNewKey()
- T KeyValues::deleteThis()
  T KeyValues::FindKey(char const*, bool)
  T KeyValues::GetStringForSymbolClassic(int)
  T KeyValues::GetSymbolForStringClassic(char const*, bool)
  T KeyValues::KeyValues(char const*)
- T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
+ T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
  T KeyValues::MakeCopy() const
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
  T KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
  T KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
  T KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
@@ -820,10 +668,48 @@
  T KeyValues::SetInt(char const*, int)
  T KeyValues::SetString(char const*, char const*)
  T KeyValues::WriteConvertedString(IBaseFileSystem*, void*, CUtlBuffer*, char const*)
+ T KeyValues::deleteThis()
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
  T LessFunc_GLMTexLayoutKey(GLMTexLayoutKey const&, GLMTexLayoutKey const&)
- T mach_override_ptr
  T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
  T MatrixInverseGeneral(VMatrix const&, VMatrix&)
+ T PrintToBuf(CUtlBuffer&, char const*, ...)
+ T PrintToBuf(char*, int, char const*, ...)
+ T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
+ T RenderTargetState_t::LessFunc(RenderTargetState_t const&, RenderTargetState_t const&)
+ T ReplaceParamName(char const*, char const*, char*, int)
+ T SinCos(float, float*, float*)
+ T ToGLConnectLibraries
+ T ToGLDisconnectLibraries
+ T VMatrix::InverseGeneral(VMatrix&) const
+ T VMatrix::Transpose() const
+ T VMatrix::operator*(VPlane const&) const
+ T VMatrix::operator=(VMatrix const&)
+ T V_atof(char const*)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_stristr(char const*, char const*)
+ T V_stristr(char*, char const*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_vsnprintf(char*, int, char const*, char*)
+ T Vector4DMultiplyTranspose(VMatrix const&, Vector4D const&, Vector4D&)
+ T WriteParamWithSingleMaskEntry(char const*, int, char*, int)
+ T _InvRSquared(float const*)
+ T _SSE_InvRSquared(float const*)
+ T _SSE_RSqrtAccurate(float)
+ T _SSE_RSqrtFast(float)
+ T _SSE_Sqrt(float)
+ T _SSE_VectorNormalizeFast(Vector&)
+ T _VectorNormalize(Vector&)
+ T _VectorNormalizeFast(Vector&)
+ T __clang_call_terminate
+ T _rsqrtf(float)
+ T _sqrtf(float)
+ T dyld_stub_binding_helper
+ T mach_override_ptr
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -834,49 +720,164 @@
  T non-virtual thunk to ConVar::SetValue(char const*)
  T non-virtual thunk to ConVar::SetValue(float)
  T non-virtual thunk to ConVar::SetValue(int)
- __tolower
  T operator delete(void*)
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- t PrintDoubleInt(char*, unsigned int, double, unsigned int)
- T PrintToBuf(char*, int, char const*, ...)
- T PrintToBuf(CUtlBuffer&, char const*, ...)
- T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
- T RenderTargetState_t::LessFunc(RenderTargetState_t const&, RenderTargetState_t const&)
- T ReplaceParamName(char const*, char const*, char*, int)
- T _rsqrtf(float)
- T SinCos(float, float*, float*)
- T _sqrtf(float)
- T _SSE_InvRSquared(float const*)
- T _SSE_RSqrtAccurate(float)
- T _SSE_RSqrtFast(float)
- T _SSE_Sqrt(float)
- T _SSE_VectorNormalizeFast(Vector&)
- T ToGLConnectLibraries
- T ToGLDisconnectLibraries
  T toglGetClientRect
- T V_atof(char const*)
- T Vector4DMultiplyTranspose(VMatrix const&, Vector4D const&, Vector4D&)
- T _VectorNormalizeFast(Vector&)
- T _VectorNormalize(Vector&)
- T VMatrix::InverseGeneral(VMatrix&) const
- T VMatrix::operator=(VMatrix const&)
- T VMatrix::operator*(VPlane const&) const
- T VMatrix::Transpose() const
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_stristr(char*, char const*)
- T V_stristr(char const*, char const*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T V_vsnprintf(char*, int, char const*, char*)
- T WriteParamWithSingleMaskEntry(char const*, int, char*, int)
- typeinfo for std::bad_alloc
+ ThreadGetCurrentId
+ ThreadInterlockedAssignIf64
+ ThreadInterlockedCompareExchangePointer
+ ThreadInterlockedDecrement
+ ThreadInterlockedExchange
+ ThreadInterlockedIncrement
+ Warning
+ _DefaultRuneLocale
+ _Unwind_Resume
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_abort
+ __cxa_guard_acquire
+ __cxa_guard_release
+ __error
+ __gxx_personality_v0
+ __maskrune
+ __stack_chk_fail
+ __stack_chk_guard
+ __stderrp
+ __tolower
  __udivdi3
  __umoddi3
- _Unwind_Resume
+ atof
+ atoi
+ b CGLMTex::HandleSRGBMismatch(bool, int&)::s_nosrgbflips
+ b CheckOpenGLExtension_internal(char const*, int, int)::glGetString
+ b GLMContext::PreloadTex(CGLMTex*, bool)::posns
+ b GLMContext::Present(CGLMTex*)::counter
+ b GetOpenGLVersion(int*, int*, int*)::glGetString
+ b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
+ b f05
+ b f3
+ b gMaxPersistentOffset
+ b gShaderCompileCount
+ b gShaderCompileQueryTime
+ b gShaderCompileTime
+ b gShaderLinkCount
+ b gShaderLinkQueryTime
+ b gShaderLinkTime
+ b g_D3DToOpenGLTranslatorGLSL
+ b g_Mathlib_GammaToLinear
+ b g_Mathlib_LinearToGamma
+ b g_pD3D_Device
+ b g_texGlobalBytes
+ b gl_dump_stats
+ b gl_flushpaircache
+ b gl_mtglflush_at_tof
+ b gl_paircachestats
+ b gl_persistent_buffer_max_offset_command
+ b gl_shader_compile_time_dump_command
+ b gl_texlayoutstats
+ b glm_cacheprograms
+ b guard variable for CGLMTex::HandleSRGBMismatch(bool, int&)::s_nosrgbflips
+ b guard variable for CheckOpenGLExtension_internal(char const*, int, int)::glGetString
+ b guard variable for GetOpenGLVersion(int*, int*, int*)::glGetString
+ b lineartoscreen
+ b lineartotexture
+ b mat_vsync
+ b s_EmptyConVar
+ b s_bConnected
+ b s_bMMXEnabled
+ b s_bRegistered
+ b s_bSSE2Enabled
+ b s_bSSEEnabled
+ b s_nCVarFlag
+ b s_pTokenBuf
+ b texturetolinear
+ b vec2_invalid
+ b vec2_origin
+ b vec4_invalid
+ b vec4_origin
+ bcopy
+ cosf
+ d D3DToGL::TranslateShader(unsigned int*, CUtlBuffer*, bool*, unsigned int, int, unsigned int, char*)::s_szCompareStrings
+ d GLMContext::PreloadTex(CGLMTex*, bool)::indices
+ d dyld__mach_header
+ d g_cgl_rendids
+ d g_d3d_devtypes
+ d g_d3d_formats
+ d g_d3d_opcodes
+ d g_d3d_rstates
+ d g_d3d_rtypes
+ d g_d3d_usages
+ d g_d3d_vtxdeclusages
+ d g_formatDescTable
+ d g_gl_enums
+ d g_gl_errors
+ d g_gl_renderers
+ d g_szVecOnes
+ d g_szVecZeros
+ d possibleInstructions
+ d s_DefaultAccessor
+ d s_LastFileLoadingFrom
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ floor
+ fprintf
+ fwrite
+ g_ClockSpeed
+ g_ClockSpeedSecondsMultiplier
+ g_pMemAlloc
+ mach_task_self_
+ malloc
+ memcmp
+ memcpy
+ memmove
+ memset
+ memset_pattern16
+ modf
+ mprotect$UNIX2003
+ msync$UNIX2003
+ objc_msgSend
+ pow
+ printf
+ putchar
+ puts
+ qsort
+ r .memset_pattern
+ r fixupInstructions(unsigned int, void*, int, unsigned char*)::LeaqHeader
+ r gPersistentBufferSize
+ r g_garbageTextureBits
+ raise
+ rand
+ sin
+ sprintf
+ sscanf
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strcpy
+ strlen
+ strncat
+ strncmp
+ strncpy
+ strrchr
+ strstr
+ strtod$UNIX2003
+ strtol
+ strtoul
+ t CentroidMaskFromName(bool, char const*)
+ t CheckOpenGLExtension(char const*, int, int)
+ t FillD3DCaps9(GLMRendererInfoFields const&, _D3DCAPS9*)
+ t GetOpenGLVersion(int*, int*, int*)
+ t PrintDoubleInt(char*, unsigned int, double, unsigned int)
+ t gl_dump_stats_func(CCommand const&)
+ t gl_persistent_buffer_max_offset(CCommand const&)
+ t gl_shader_compile_time_dump(CCommand const&)
+ t global constructors keyed to a
+ typeinfo for std::bad_alloc
  vm_allocate
  vm_deallocate
  vm_protect
@@ -886,5 +887,4 @@
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
- Warning
  wcslen

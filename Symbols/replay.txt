@@ -1,39 +1,26 @@
- abort
- acos
- atan2f
- atof
- atoi
- b CClientReplayContext::ReportErrorsToUser(wchar_t*)::s_szError
- B colorcorrection
- B ConCommandBase::s_pAccessor
- B ConCommandBase::s_pConCommandBases
- b ConVarRef::Init(char const*, bool)::bFirst
- b CPerformanceController::PlaybackThink()::aAngles
- b CPerformanceController::PlaybackThink()::aFov
- b CPerformanceController::PlaybackThink()::aOrigin
- b CReplayMovieManager::GetRawExportDir() const::s_fmtExportDir
- b CReplayPerformanceManager::GeneratePerformanceFilename(CReplay*)::s_szBaseFilename
- b CReplayTime::GetLocalizedDate(vgui::ILocalize*, int, int, int, int*, int*, int*, bool)::s_wBuf
- b CReplayTime::GetLocalizedDay(vgui::ILocalize*, int)::s_wDay
- b CReplayTime::GetLocalizedTime(vgui::ILocalize*, int, int, int)::s_wTime
- b CReplayTime::GetLocalizedYear(vgui::ILocalize*, int)::s_wYear
- b CServerReplayContext::GetLocalFileServerPath() const::s_szBuf
- b CServerReplayContext::ReportErrorsToUser(wchar_t*)::s_clrRed
  B CSessionBlockDownloader::sm_nNumCurrentDownloads
  B CSimpleCounter::m_nCounter
+ B ConCommandBase::s_pAccessor
+ B ConCommandBase::s_pConCommandBases
+ B InterfaceReg::s_pInterfaceRegs
+ B VTFFileBaseHeader_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderV7_1_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderV7_2_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderV7_3_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeaderX360_t_DataDescInit::g_DataMapHolder
+ B VTFFileHeader_t_DataDescInit::g_DataMapHolder
+ B colorcorrection
  B cvar
  B entitylist
- b f05
- b f3
  B g_BitWriteMasks
- b __g_CreateCReplaySystemIReplaySystem_reg
  B g_ExtraMasks
  B g_LittleBits
+ B g_VBAllocTracker
  B g_nGenericErrorCounter
+ B g_pCVar
  B g_pClient
  B g_pClientReplayContext
  B g_pClientReplayContextInternal
- B g_pCVar
  B g_pDebugOverlay
  B g_pDownloadSystem
  B g_pEngine
@@ -53,30 +40,16 @@
  B g_pServerReplayContext
  B g_pUtlSortVectorQSortContext
  B g_pVGuiLocalize
- b gs_szGameDir
- b guard variable for CPerformanceController::PlaybackThink()::aAngles
- b guard variable for CPerformanceController::PlaybackThink()::aOrigin
- b guard variable for CReplayMovieManager::GetRawExportDir() const::s_fmtExportDir
- b guard variable for CServerReplayContext::ReportErrorsToUser(wchar_t*)::s_clrRed
- B g_VBAllocTracker
- B InterfaceReg::s_pInterfaceRegs
- b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
  B materials
  B mdllib
  B p4
- b replay_add_fake_replays_command
  B replay_block_dump_interval
  B replay_buffersize
- b replay_clearqueuedtakes_command
- b replay_confirmquit_command
  B replay_data_lifespan
  B replay_deathcammaxverticaloffset
  B replay_debug
- b replay_deleteclientreplays_command
- b replay_docleanup_command
  B replay_dodiskcleanup
  B replay_dofileserver_cleanup_on_start
- b replay_dopublishtest_command
  B replay_enable
  B replay_enableeventbasedscreenshots
  B replay_fileserver_autocleanup
@@ -98,29 +71,20 @@
  B replay_fileserver_protocol
  B replay_flushinterval
  B replay_forcereconstruct
- b Replay_GetDownloadURLPath()::s_szDownloadURLPath
- b Replay_GetDownloadURL()::s_szFileURL
  B replay_local_fileserver_path
- B replay_maxconcurrentdownloads
  B replay_max_publish_threads
+ B replay_maxconcurrentdownloads
  B replay_maxscreenshotsperreplay
  B replay_mintimebetweenscreenshots
  B replay_name
  B replay_playerdeathscreenshotdelay
  B replay_postdeathrecordtime
  B replay_postwinreminderduration
- b replay_printclientreplays_command
- b replay_printqueuedtakes_command
- b replay_printsessioninfo_command
  B replay_publish_simulate_delay_ftp
  B replay_publish_simulate_delay_local_http
  B replay_publish_simulate_rename_fail
- b replay_record_command
- B replay_recording
  B replay_record_voice
- b replay_removeclientreplay_command
- b replay_renderpause_command
- b replay_renderunpause_command
+ B replay_recording
  B replay_screenshotkilldelay
  B replay_screenshotresolution
  B replay_screenshotsentrykilldelay
@@ -129,70 +93,38 @@
  B replay_sentrycamoffset_leftright
  B replay_sentrycamoffset_updown
  B replay_sessioninfo_updatefrequency
- b replay_stoprecord_command
- b Replay_va(char const*, ...)::curstring
- b Replay_va(char const*, ...)::string
  B replay_voice_during_playback
- b save_replay_command
- b s_bConnected
- b s_bRegistered
- b s_EmptyConVar
- b s_nCVarFlag
  B s_NoEscConversion
- b s_pTokenBuf
- b s_Replay
  B s_StringCharConversion
- b s_text
- b s_ThinkManager
- b vec2_invalid
- b vec2_origin
- b vec4_invalid
- b vec4_origin
- B VTFFileBaseHeader_t_DataDescInit::g_DataMapHolder
- B VTFFileHeader_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderV7_1_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderV7_2_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderV7_3_t_DataDescInit::g_DataMapHolder
- B VTFFileHeaderX360_t_DataDescInit::g_DataMapHolder
- CallAssertFailedNotifyFunc
- ceilf
- CommandLine_Tier0
  COM_TimestampedLog
- ConColorMsg
- ConMsg(char const*, ...)
- crc32
- CreateThreadPool
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
  CThreadSyncObject::~CThreadSyncObject()
- curl_easy_cleanup
- curl_easy_init
- curl_easy_perform
- curl_easy_setopt
- curl_easy_strerror
- curl_global_cleanup
- curl_global_init
- curl_slist_append
- curl_slist_free_all
  CVProfNode::EnterScope()
  CVProfNode::ExitScope()
  CVProfNode::GetSubNode(char const*, int, char const*, int)
- __cxa_atexit
- __cxa_begin_catch
- __cxa_call_unexpected
- __cxa_guard_acquire
- __cxa_guard_release
- __cxa_pure_virtual
+ CallAssertFailedNotifyFunc
+ CommandLine_Tier0
+ ConColorMsg
+ ConMsg(char const*, ...)
+ CreateThreadPool
  D BZ2_crc32Table
  D BZ2_rNums
  D CBaseFilePublisher::sm_aPhaseIOTypes
  D CFmtStrN<256, false>::AppendFormat(char const*, ...)::scAsserted
  D CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
  D CFmtStrN<256, false>::sprintf(char const*, ...)::scAsserted
+ D GetBitForBitnum(int)::bitsForBitnum
+ D KeyValues::s_pfGetStringForSymbol
+ D KeyValues::s_pfGetSymbolForString
+ D VTFFileBaseHeader_t::m_DataMap
+ D VTFFileHeaderV7_1_t::m_DataMap
+ D VTFFileHeaderV7_2_t::m_DataMap
+ D VTFFileHeaderV7_3_t::m_DataMap
+ D VTFFileHeaderX360_t::m_DataMap
+ D VTFFileHeader_t::m_DataMap
  D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
  D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
  D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
  D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
@@ -201,15 +133,8 @@
  D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
  D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
  D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- d dyld__mach_header
- _DefaultRuneLocale
- deflate
- deflateEnd
- deflateInit2_
- deflateReset
- DevMsg
- DevMsg(char const*, ...)
- D GetBitForBitnum(int)::bitsForBitnum
+ D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D g_KeyValuesErrorStack
  D g_pAcceptableFileserverProtocols
  D g_pAcceptableOffloadProtocols
@@ -220,23 +145,11 @@
  D g_pSimpleSpewer
  D g_pThinkManager
  D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
  D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- difftime
- D KeyValues::s_pfGetStringForSymbol
- D KeyValues::s_pfGetSymbolForString
- DoNewAssertDialog
- d s_BlockSpewer
- d s_DefaultAccessor
- d s_LastFileLoadingFrom
- d s_nDLLIdentifier
- d s_NullSpewer
- d s_pConversionArrays_NoEscConversion
- d s_pConversionArrays_StringCharConversion
- d s_SimpleSpewer
+ D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D typeinfo for CBaseAppSystem<IReplaySystem>
  D typeinfo for CBaseFilePublisher
  D typeinfo for CBaseJob
@@ -279,12 +192,9 @@
  D typeinfo for CMd5Job
  D typeinfo for CNetMessage
  D typeinfo for CNullSpewer
- D typeinfo for ConCommand
- D typeinfo for ConCommandBase
- D typeinfo for ConVar
  D typeinfo for CPerformanceController
- D typeinfo for CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >
  D typeinfo for CRefCountServiceBase<true, CRefMT>
+ D typeinfo for CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >
  D typeinfo for CRenderQueue
  D typeinfo for CReplayManager
  D typeinfo for CReplayMovie
@@ -311,9 +221,12 @@
  D typeinfo for CTier1AppSystem<IReplaySystem, 0>
  D typeinfo for CTier2AppSystem<IReplaySystem, 0>
  D typeinfo for CTraceFilterWorldAndPropsOnly
- D typeinfo for CUtlCharConversion
  D typeinfo for CUtlCStringConversion
+ D typeinfo for CUtlCharConversion
  D typeinfo for CUtlNoEscConversion
+ D typeinfo for ConCommand
+ D typeinfo for ConCommandBase
+ D typeinfo for ConVar
  D typeinfo for IAppSystem
  D typeinfo for IBaseInterface
  D typeinfo for IClientReplayContext
@@ -347,8 +260,8 @@
  D typeinfo for IReplaySystem
  D typeinfo for IServerReplayContext
  D typeinfo for ISpewer
- D typeinfo for IThinker
  D typeinfo for IThinkManager
+ D typeinfo for IThinker
  D typeinfo for ITraceFilter
  D typeinfo for SVC_GameEvent
  D vtable for CBaseFilePublisher
@@ -391,8 +304,6 @@
  D vtable for CLocalPublishJob
  D vtable for CMd5Job
  D vtable for CNullSpewer
- D vtable for ConCommand
- D vtable for ConVar
  D vtable for CPerformanceController
  D vtable for CRenderQueue
  D vtable for CReplayManager
@@ -417,153 +328,23 @@
  D vtable for CSimpleSpewer
  D vtable for CThinkManager
  D vtable for CTraceFilterWorldAndPropsOnly
- D vtable for CUtlCharConversion
  D vtable for CUtlCStringConversion
+ D vtable for CUtlCharConversion
  D vtable for CUtlNoEscConversion
+ D vtable for ConCommand
+ D vtable for ConVar
  D vtable for IFtp
  D vtable for SVC_GameEvent
- D VTFFileBaseHeader_t::m_DataMap
- D VTFFileHeader_t::m_DataMap
- D VTFFileHeaderV7_1_t::m_DataMap
- D VTFFileHeaderV7_2_t::m_DataMap
- D VTFFileHeaderV7_3_t::m_DataMap
- D VTFFileHeaderX360_t::m_DataMap
- __dynamic_cast
- __error
+ DevMsg
+ DevMsg(char const*, ...)
+ DoNewAssertDialog
  Error
- exit
- _ExitOnFatalAssert
- fclose
- fflush
- floor
- floorf
- fopen
- fprintf
- fputc
- fread
- free
- frexp
- fwrite
- fwrite$UNIX2003
- gmtime
- g_pMemAlloc
- g_pThreadPool
- g_pVCR
- g_VProfCurrentProfile
- __gxx_personality_v0
  HushAsserts
- inflate
- inflateEnd
- inflateInit_
- inflateReset
  KeyValuesSystem
- localtime
  Log
- longjmp
- malloc
- __maskrune
- memcmp
- memcpy
- __memcpy_chk
- memmove
- memset
- mktime$UNIX2003
- modf
  Msg
  Plat_FloatTime
  Plat_IsInDebugSession
- pow
- pthread_mutexattr_init
- pthread_mutexattr_settype
- pthread_mutex_destroy
- pthread_mutex_init
- pthread_mutex_lock
- pthread_mutex_unlock
- qsort
- raise
- rand
- r CScreenshotManager::GetUnpaddedScreenshotSize(int&, int&)::s_flInvAspectRatios
- r fourbppswaptable
- r incs
- r onebppswaptable
- r png_bKGD.6214
- r png_bKGD.6449
- r png_bKGD.6659
- r png_cHRM.6215
- r png_cHRM.6450
- r png_cHRM.6603
- r png_digit
- r png_gAMA.6216
- r png_gAMA.6451
- r png_gAMA.6467
- r png_hIST.6217
- r png_hIST.6452
- r png_hIST.6694
- r png_iCCP.6218
- r png_iCCP.6453
- r png_iCCP.6484
- r png_IDAT.6211
- r png_IDAT.6290
- r png_IDAT.6410
- r png_IDAT.6446
- r png_IDAT.7349
- r png_IDAT.7828
- r png_IEND.6212
- r png_IEND.6447
- r png_IEND.6460
- r png_IHDR.6210
- r png_IHDR.6299
- r png_IHDR.6445
- r png_iTXt.6219
- r png_iTXt.6454
- r png_iTXt.6811
- r png_oFFs.6220
- r png_oFFs.6455
- r png_oFFs.6847
- r png_pass_dsp_mask.6291
- r png_pass_inc.7541
- r png_pass_inc.7823
- r png_pass_inc.7899
- r png_pass_mask.6292
- r png_pass_start.7822
- r png_pass_start.7898
- r png_pass_yinc.7825
- r png_pass_ystart.7824
- r png_pCAL.6221
- r png_pCAL.6456
- r png_pCAL.6861
- r png_pHYs.6222
- r png_pHYs.6457
- r png_pHYs.6935
- r png_PLTE.6213
- r png_PLTE.6380
- r png_PLTE.6448
- r png_sBIT.6223
- r png_sBIT.6458
- r png_sBIT.6572
- r png_sCAL.6224
- r png_sCAL.6459
- r png_sCAL.6907
- r png_sPLT.6225
- r png_sPLT.6460
- r png_sPLT.6522
- r png_sRGB.6226
- r png_sRGB.6461
- r png_sRGB.6474
- r png_tEXt.6227
- r png_tEXt.6462
- r png_tEXt.6761
- r png_tIME.6228
- r png_tIME.6463
- r png_tIME.6943
- r png_tRNS.6229
- r png_tRNS.6464
- r png_tRNS.6628
- r png_zTXt.6230
- r png_zTXt.6465
- r png_zTXt.6783
- r short_months.6308
- r twobppswaptable
  R typeinfo name for CBaseAppSystem<IReplaySystem>
  R typeinfo name for CBaseFilePublisher
  R typeinfo name for CBaseJob
@@ -606,12 +387,9 @@
  R typeinfo name for CMd5Job
  R typeinfo name for CNetMessage
  R typeinfo name for CNullSpewer
- R typeinfo name for ConCommand
- R typeinfo name for ConCommandBase
- R typeinfo name for ConVar
  R typeinfo name for CPerformanceController
- R typeinfo name for CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >
  R typeinfo name for CRefCountServiceBase<true, CRefMT>
+ R typeinfo name for CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >
  R typeinfo name for CRenderQueue
  R typeinfo name for CReplayManager
  R typeinfo name for CReplayMovie
@@ -638,9 +416,12 @@
  R typeinfo name for CTier1AppSystem<IReplaySystem, 0>
  R typeinfo name for CTier2AppSystem<IReplaySystem, 0>
  R typeinfo name for CTraceFilterWorldAndPropsOnly
- R typeinfo name for CUtlCharConversion
  R typeinfo name for CUtlCStringConversion
+ R typeinfo name for CUtlCharConversion
  R typeinfo name for CUtlNoEscConversion
+ R typeinfo name for ConCommand
+ R typeinfo name for ConCommandBase
+ R typeinfo name for ConVar
  R typeinfo name for IAppSystem
  R typeinfo name for IBaseInterface
  R typeinfo name for IClientReplayContext
@@ -674,54 +455,18 @@
  R typeinfo name for IReplaySystem
  R typeinfo name for IServerReplayContext
  R typeinfo name for ISpewer
- R typeinfo name for IThinker
  R typeinfo name for IThinkManager
+ R typeinfo name for IThinker
  R typeinfo name for ITraceFilter
  R typeinfo name for SVC_GameEvent
- setjmp
  ShouldUseNewAssertDialog
- sin
- snprintf
- _SpewInfo
- _SpewMessage
- sscanf
- __stack_chk_fail
- __stack_chk_guard
- __stderrp
- std::terminate()
- strcasecmp
- strchr
- strcmp
- strcpy
- strerror$UNIX2003
- strlen
- strncat
- strncpy
- strstr
- strtod$UNIX2003
- strtok
- strtol
- strtoul
- swprintf
- t add_pair_to_block(EState*)
  T AngleQuaternion(QAngle const&, Quaternion&)
- T bf_read::bf_read()
- T bf_read::ReadBits(void*, int)
- T bf_read::ReadFloat()
- T bf_read::ReadString(char*, int, bool, int*)
- T bf_read::SetOverflowFlag()
- T bf_write::bf_write()
- T bf_write::StartWriting(void*, int, int, int)
- T bf_write::WriteBits(void const*, int)
- T bf_write::WriteFloat(float)
- T bf_write::WriteString(char const*)
- t bsPutUInt32(EState*, unsigned int)
  T BZ2_blockSort(EState*)
- T BZ2_bz__AssertH__fail(int)
  T BZ2_bzBuffToBuffCompress
  T BZ2_bzBuffToBuffDecompress
  T BZ2_bzCompressInit
  T BZ2_bzDecompress
+ T BZ2_bz__AssertH__fail(int)
  T BZ2_compressBlock(EState*, unsigned char)
  T BZ2_decompress(DState*)
  T BZ2_hbAssignCodes(int*, unsigned char*, int, int, int)
@@ -730,7 +475,6 @@
  T CBaseAppSystem<IReplaySystem>::QueryInterface(char const*)
  T CBaseFilePublisher::AbortAndCleanup()
  T CBaseFilePublisher::CacheOutputsOfCurrentJobForInputsOfNextJob()
- T CBaseFilePublisher::~CBaseFilePublisher()
  T CBaseFilePublisher::Compressed() const
  T CBaseFilePublisher::FinishSynchronouslyAndCleanup()
  T CBaseFilePublisher::GetCompressedSize() const
@@ -742,28 +486,45 @@
  T CBaseFilePublisher::IsDone() const
  T CBaseFilePublisher::Publish(PublishFileParams_t const&)
  T CBaseFilePublisher::Think()
- T CBaseJob::~CBaseJob()
+ T CBaseFilePublisher::~CBaseFilePublisher()
  T CBaseJob::CBaseJob(JobPriority_t, ISpewer*)
  T CBaseJob::SetError(int, char const*)
- T CBasePublishJob::~CBasePublishJob()
+ T CBaseJob::~CBaseJob()
  T CBasePublishJob::CBasePublishJob(JobPriority_t, ISpewer*)
  T CBasePublishJob::GetOutputData(unsigned char**, unsigned int*) const
  T CBasePublishJob::GetOutputFilename() const
  T CBasePublishJob::SimulateDelay(int, char const*)
+ T CBasePublishJob::~CBasePublishJob()
  T CBaseRecordingSession::AddBlock(CBaseRecordingSessionBlock*)
  T CBaseRecordingSession::AddBlock(CBaseRecordingSessionBlock*, bool)
- T CBaseRecordingSessionBlock::~CBaseRecordingSessionBlock()
+ T CBaseRecordingSession::CBaseRecordingSession(IReplayContext*)
+ T CBaseRecordingSession::GetPath() const
+ T CBaseRecordingSession::GetSessionInfoURL() const
+ T CBaseRecordingSession::GetSubKeyTitle() const
+ T CBaseRecordingSession::LoadBlocksForSession()
+ T CBaseRecordingSession::OnDelete()
+ T CBaseRecordingSession::OnUnload()
+ T CBaseRecordingSession::PopulateWithRecordingData(int)
+ T CBaseRecordingSession::Read(KeyValues*)
+ T CBaseRecordingSession::ShouldDitchSession() const
+ T CBaseRecordingSession::Write(KeyValues*)
+ T CBaseRecordingSession::~CBaseRecordingSession()
  T CBaseRecordingSessionBlock::CBaseRecordingSessionBlock(IReplayContext*)
  T CBaseRecordingSessionBlock::GetPath() const
  T CBaseRecordingSessionBlock::GetRemoteStatusStringSafe(CBaseRecordingSessionBlock::RemoteStatus_t)
  T CBaseRecordingSessionBlock::GetSubKeyTitle() const
  T CBaseRecordingSessionBlock::HasValidHash() const
- T CBaseRecordingSessionBlockManager::~CBaseRecordingSessionBlockManager()
+ T CBaseRecordingSessionBlock::OnDelete()
+ T CBaseRecordingSessionBlock::Read(KeyValues*)
+ T CBaseRecordingSessionBlock::ReadHash(KeyValues*, char const*)
+ T CBaseRecordingSessionBlock::Write(KeyValues*)
+ T CBaseRecordingSessionBlock::WriteSessionInfoDataToBuffer(CUtlBuffer&) const
+ T CBaseRecordingSessionBlock::~CBaseRecordingSessionBlock()
  T CBaseRecordingSessionBlockManager::CBaseRecordingSessionBlockManager(IReplayContext*)
  T CBaseRecordingSessionBlockManager::DeleteBlock(CBaseRecordingSessionBlock*)
  T CBaseRecordingSessionBlockManager::FindBlockForSession(unsigned int, int)
- T CBaseRecordingSessionBlockManager::GetBlockPath() const
  T CBaseRecordingSessionBlockManager::GetBlock(unsigned int)
+ T CBaseRecordingSessionBlockManager::GetBlockPath() const
  T CBaseRecordingSessionBlockManager::GetDebugName() const
  T CBaseRecordingSessionBlockManager::GetIndexFilename() const
  T CBaseRecordingSessionBlockManager::GetNextThinkTime() const
@@ -774,25 +535,14 @@
  T CBaseRecordingSessionBlockManager::LoadBlockFromFileName(char const*, IRecordingSession*)
  T CBaseRecordingSessionBlockManager::ShouldSerializeToIndividualFiles() const
  T CBaseRecordingSessionBlockManager::UnloadBlock(CBaseRecordingSessionBlock*)
- T CBaseRecordingSessionBlock::OnDelete()
- T CBaseRecordingSessionBlock::ReadHash(KeyValues*, char const*)
- T CBaseRecordingSessionBlock::Read(KeyValues*)
- T CBaseRecordingSessionBlock::Write(KeyValues*)
- T CBaseRecordingSessionBlock::WriteSessionInfoDataToBuffer(CUtlBuffer&) const
- T CBaseRecordingSession::~CBaseRecordingSession()
- T CBaseRecordingSession::CBaseRecordingSession(IReplayContext*)
- T CBaseRecordingSession::GetPath() const
- T CBaseRecordingSession::GetSessionInfoURL() const
- T CBaseRecordingSession::GetSubKeyTitle() const
- T CBaseRecordingSession::LoadBlocksForSession()
- T CBaseRecordingSessionManager::CanDeleteSession(unsigned int) const
- T CBaseRecordingSessionManager::~CBaseRecordingSessionManager()
+ T CBaseRecordingSessionBlockManager::~CBaseRecordingSessionBlockManager()
  T CBaseRecordingSessionManager::CBaseRecordingSessionManager(IReplayContext*)
+ T CBaseRecordingSessionManager::CanDeleteSession(unsigned int) const
  T CBaseRecordingSessionManager::DeleteSession(unsigned int, bool)
  T CBaseRecordingSessionManager::DoSessionCleanup()
- T CBaseRecordingSessionManager::FindSessionByName(char const*)
  T CBaseRecordingSessionManager::FindSession(unsigned int)
  T CBaseRecordingSessionManager::FindSession(unsigned int) const
+ T CBaseRecordingSessionManager::FindSessionByName(char const*)
  T CBaseRecordingSessionManager::FlagSessionForFlush(CBaseRecordingSession*, bool)
  T CBaseRecordingSessionManager::GetCurrentSessionBlockIndex() const
  T CBaseRecordingSessionManager::GetCurrentSessionName() const
@@ -808,13 +558,7 @@
  T CBaseRecordingSessionManager::OnSessionStart(int, char const*)
  T CBaseRecordingSessionManager::ShouldUnloadSessions() const
  T CBaseRecordingSessionManager::Think()
- T CBaseRecordingSession::OnDelete()
- T CBaseRecordingSession::OnUnload()
- T CBaseRecordingSession::PopulateWithRecordingData(int)
- T CBaseRecordingSession::Read(KeyValues*)
- T CBaseRecordingSession::ShouldDitchSession() const
- T CBaseRecordingSession::Write(KeyValues*)
- T CBaseReplaySerializeable::~CBaseReplaySerializeable()
+ T CBaseRecordingSessionManager::~CBaseRecordingSessionManager()
  T CBaseReplaySerializeable::CBaseReplaySerializeable()
  T CBaseReplaySerializeable::GetDebugName() const
  T CBaseReplaySerializeable::GetFilename() const
@@ -828,7 +572,7 @@
  T CBaseReplaySerializeable::SetHandle(unsigned int)
  T CBaseReplaySerializeable::SetLocked(bool)
  T CBaseReplaySerializeable::Write(KeyValues*)
- T CBaseSpewer::~CBaseSpewer()
+ T CBaseReplaySerializeable::~CBaseReplaySerializeable()
  T CBaseSpewer::CBaseSpewer(ISpewer*)
  T CBaseSpewer::PrintBlockEnd() const
  T CBaseSpewer::PrintBlockStart() const
@@ -839,12 +583,12 @@
  T CBaseSpewer::PrintMsg(char const*) const
  T CBaseSpewer::PrintTestHeader(char const*) const
  T CBaseSpewer::PrintValue(char const*, char const*) const
- T CBaseThinker::~CBaseThinker()
+ T CBaseSpewer::~CBaseSpewer()
  T CBaseThinker::CBaseThinker()
  T CBaseThinker::PostThink()
  T CBaseThinker::ShouldThink() const
  T CBaseThinker::Think()
- T CBlockSpewer::~CBlockSpewer()
+ T CBaseThinker::~CBaseThinker()
  T CBlockSpewer::PrintBlockEnd() const
  T CBlockSpewer::PrintBlockStart() const
  T CBlockSpewer::PrintEmptyLine() const
@@ -854,31 +598,45 @@
  T CBlockSpewer::PrintMsg(char const*) const
  T CBlockSpewer::PrintTestHeader(char const*) const
  T CBlockSpewer::PrintValue(char const*, char const*) const
+ T CBlockSpewer::~CBlockSpewer()
  T CClientRecordingSession::AdjustLastBlockToDownload(int)
+ T CClientRecordingSession::CClientRecordingSession(IReplayContext*)
+ T CClientRecordingSession::CacheReplay(CReplay*)
+ T CClientRecordingSession::DeleteBlocks()
+ T CClientRecordingSession::EnsureDownloadingEnabled()
+ T CClientRecordingSession::GetNextThinkTime() const
+ T CClientRecordingSession::OnDelete()
+ T CClientRecordingSession::OnDownloadTimeout()
+ T CClientRecordingSession::OnReplayDeleted(CReplay*)
+ T CClientRecordingSession::PopulateWithRecordingData(int)
+ T CClientRecordingSession::Read(KeyValues*)
+ T CClientRecordingSession::RefreshLastUpdateTime()
+ T CClientRecordingSession::ShouldDitchSession() const
+ T CClientRecordingSession::ShouldSyncBlocksWithServer() const
+ T CClientRecordingSession::SyncSessionBlocks()
+ T CClientRecordingSession::Think()
+ T CClientRecordingSession::UpdateAllBlocksDownloaded()
+ T CClientRecordingSession::UpdateLastBlockToDownload()
+ T CClientRecordingSession::UpdateReplayStatuses(CClientRecordingSessionBlock*)
+ T CClientRecordingSession::Write(KeyValues*)
+ T CClientRecordingSession::~CClientRecordingSession()
  T CClientRecordingSessionBlock::AttemptToResetForDownload()
- T CClientRecordingSessionBlock::~CClientRecordingSessionBlock()
  T CClientRecordingSessionBlock::CClientRecordingSessionBlock(IReplayContext*)
  T CClientRecordingSessionBlock::DownloadedSuccessfully() const
- T CClientRecordingSessionBlockManager::~CClientRecordingSessionBlockManager()
- T CClientRecordingSessionBlockManager::CClientRecordingSessionBlockManager(IReplayContext*)
- T CClientRecordingSessionBlockManager::Create()
- T CClientRecordingSessionBlockManager::GetNextThinkTime() const
- T CClientRecordingSessionBlockManager::GetReplayContext() const
- T CClientRecordingSessionBlockManager::ShouldLoadBlocks() const
- T CClientRecordingSessionBlockManager::Think()
  T CClientRecordingSessionBlock::NeedsUpdate() const
  T CClientRecordingSessionBlock::OnDelete()
  T CClientRecordingSessionBlock::Read(KeyValues*)
  T CClientRecordingSessionBlock::ShouldDownloadNow() const
  T CClientRecordingSessionBlock::ValidateData(void const*, int, unsigned char*) const
  T CClientRecordingSessionBlock::Write(KeyValues*)
- T CClientRecordingSession::CacheReplay(CReplay*)
- T CClientRecordingSession::~CClientRecordingSession()
- T CClientRecordingSession::CClientRecordingSession(IReplayContext*)
- T CClientRecordingSession::DeleteBlocks()
- T CClientRecordingSession::EnsureDownloadingEnabled()
- T CClientRecordingSession::GetNextThinkTime() const
- T CClientRecordingSessionManager::~CClientRecordingSessionManager()
+ T CClientRecordingSessionBlock::~CClientRecordingSessionBlock()
+ T CClientRecordingSessionBlockManager::CClientRecordingSessionBlockManager(IReplayContext*)
+ T CClientRecordingSessionBlockManager::Create()
+ T CClientRecordingSessionBlockManager::GetNextThinkTime() const
+ T CClientRecordingSessionBlockManager::GetReplayContext() const
+ T CClientRecordingSessionBlockManager::ShouldLoadBlocks() const
+ T CClientRecordingSessionBlockManager::Think()
+ T CClientRecordingSessionBlockManager::~CClientRecordingSessionBlockManager()
  T CClientRecordingSessionManager::CClientRecordingSessionManager(IReplayContext*)
  T CClientRecordingSessionManager::CleanupUnneededBlocks()
  T CClientRecordingSessionManager::Create()
@@ -894,21 +652,7 @@
  T CClientRecordingSessionManager::OnSessionEnd()
  T CClientRecordingSessionManager::OnSessionStart(int, char const*)
  T CClientRecordingSessionManager::Think()
- T CClientRecordingSession::OnDelete()
- T CClientRecordingSession::OnDownloadTimeout()
- T CClientRecordingSession::OnReplayDeleted(CReplay*)
- T CClientRecordingSession::PopulateWithRecordingData(int)
- T CClientRecordingSession::Read(KeyValues*)
- T CClientRecordingSession::RefreshLastUpdateTime()
- T CClientRecordingSession::ShouldDitchSession() const
- T CClientRecordingSession::ShouldSyncBlocksWithServer() const
- T CClientRecordingSession::SyncSessionBlocks()
- T CClientRecordingSession::Think()
- T CClientRecordingSession::UpdateAllBlocksDownloaded()
- T CClientRecordingSession::UpdateLastBlockToDownload()
- T CClientRecordingSession::UpdateReplayStatuses(CClientRecordingSessionBlock*)
- T CClientRecordingSession::Write(KeyValues*)
- T CClientReplayContext::~CClientReplayContext()
+ T CClientRecordingSessionManager::~CClientRecordingSessionManager()
  T CClientReplayContext::CClientReplayContext()
  T CClientReplayContext::CleanupUnneededBlocks()
  T CClientReplayContext::DebugThink()
@@ -920,14 +664,14 @@
  T CClientReplayContext::GetPerformanceController()
  T CClientReplayContext::GetPerformanceManager()
  T CClientReplayContext::GetPlaybackTimes(float&, float&, CReplay const*, CReplayPerformance const*)
+ T CClientReplayContext::GetRecordingSession(unsigned int)
  T CClientReplayContext::GetRecordingSessionBlockManager()
  T CClientReplayContext::GetRecordingSessionManager()
- T CClientReplayContext::GetRecordingSession(unsigned int)
  T CClientReplayContext::GetRelativeBaseDir() const
  T CClientReplayContext::GetRenderQueue()
+ T CClientReplayContext::GetReplay(unsigned int)
  T CClientReplayContext::GetReplayManager()
  T CClientReplayContext::GetReplaySubDir() const
- T CClientReplayContext::GetReplay(unsigned int)
  T CClientReplayContext::GetScreenshotManager()
  T CClientReplayContext::GetServerSessionId(unsigned int)
  T CClientReplayContext::Init(void* (*)(char const*, int*))
@@ -942,33 +686,33 @@
  T CClientReplayContext::SetMovieRenderer(IReplayMovieRenderer*)
  T CClientReplayContext::Shutdown()
  T CClientReplayContext::Think()
- T CCompressionJob::~CCompressionJob()
+ T CClientReplayContext::~CClientReplayContext()
  T CCompressionJob::CCompressionJob(unsigned char const*, unsigned int, CompressorType_t, bool*, unsigned int*)
  T CCompressionJob::DoExecute()
  T CCompressionJob::GetOutputData(unsigned char**, unsigned int*) const
- T CCompressor_Bz2::~CCompressor_Bz2()
+ T CCompressionJob::~CCompressionJob()
  T CCompressor_Bz2::Compress(char*, unsigned int*, char const*, unsigned int)
  T CCompressor_Bz2::Decompress(char*, unsigned int*, char const*, unsigned int)
  T CCompressor_Bz2::GetEstimatedCompressionSize(unsigned int)
- T CCompressor_Lzss::~CCompressor_Lzss()
+ T CCompressor_Bz2::~CCompressor_Bz2()
  T CCompressor_Lzss::Compress(char*, unsigned int*, char const*, unsigned int)
  T CCompressor_Lzss::Decompress(char*, unsigned int*, char const*, unsigned int)
  T CCompressor_Lzss::GetEstimatedCompressionSize(unsigned int)
+ T CCompressor_Lzss::~CCompressor_Lzss()
  T CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
- T CDeleteLocalFileJob::~CDeleteLocalFileJob()
  T CDeleteLocalFileJob::CDeleteLocalFileJob(char const*)
  T CDeleteLocalFileJob::DoExecute()
- T CEmptyConVar::~CEmptyConVar()
+ T CDeleteLocalFileJob::~CDeleteLocalFileJob()
  T CEmptyConVar::GetName() const
  T CEmptyConVar::IsFlagSet(int) const
  T CEmptyConVar::SetValue(char const*)
  T CEmptyConVar::SetValue(float)
  T CEmptyConVar::SetValue(int)
- T CErrorSystem::AddErrorFromTokenName(char const*)
+ T CEmptyConVar::~CEmptyConVar()
  T CErrorSystem::AddError(wchar_t const*)
+ T CErrorSystem::AddErrorFromTokenName(char const*)
  T CErrorSystem::AddFormattedErrorFromTokenName(char const*, KeyValues*)
- T CErrorSystem::~CErrorSystem()
  T CErrorSystem::CErrorSystem(IErrorReporter*)
  T CErrorSystem::Clear()
  T CErrorSystem::GetNextThinkTime() const
@@ -976,21 +720,30 @@
  T CErrorSystem::OGS_ReportSessioInfoDownloadError(CHttpDownloader const*, char const*)
  T CErrorSystem::OGS_ReportSessionBlockDownloadError(CHttpDownloader const*, CClientRecordingSessionBlock const*, int, int, bool const*, bool const*, unsigned char*)
  T CErrorSystem::Think()
+ T CErrorSystem::~CErrorSystem()
  T CFileserverCleaner::BlockForCompletion()
- T CFileserverCleaner::~CFileserverCleaner()
  T CFileserverCleaner::CFileserverCleaner()
  T CFileserverCleaner::DoCleanAsynchronous(bool, ISpewer*)
  T CFileserverCleaner::GetNextThinkTime() const
  T CFileserverCleaner::MarkFileForDelete(char const*)
  T CFileserverCleaner::Think()
+ T CFileserverCleaner::~CFileserverCleaner()
  T CFmtStrN<256, false>::AppendFormat(char const*, ...)
  T CFmtStrN<256, false>::CFmtStrN(char const*, ...)
  T CFmtStrN<256, false>::InitQuietTruncation()
  T CFmtStrN<256, false>::sprintf(char const*, ...)
- T CFtp::~CFtp()
  T CFtp::CFtp(char const*, char const*, char const*, char const*, int, IFtp*, ISpewer*)
+ T CFtp::FTP_GetFilename() const
+ T CFtp::FTP_IsCurlResultOK(int) const
+ T CFtp::FTP_OnPostExecuteCurlOperations()
+ T CFtp::FTP_OnPreExecuteCurlOperations()
+ T CFtp::FTP_SetError(int, char const*)
+ T CFtp::FTP_SetupAdditionalCurlOperations(void*)
+ T CFtp::Go()
+ T CFtp::ReadCallback(void*, unsigned long, unsigned long, void*)
+ T CFtp::UseProxy(char const*, int)
+ T CFtp::~CFtp()
  T CFtpFileDeleterJob::AddFileForDelete(char const*)
- T CFtpFileDeleterJob::~CFtpFileDeleterJob()
  T CFtpFileDeleterJob::CFtpFileDeleterJob(char const*, char const*, char const*, char const*, int, char const*, int)
  T CFtpFileDeleterJob::DoCleanup()
  T CFtpFileDeleterJob::DoExecute()
@@ -1001,17 +754,9 @@
  T CFtpFileDeleterJob::FTP_SetError(int, char const*)
  T CFtpFileDeleterJob::FTP_SetupAdditionalCurlOperations(void*)
  T CFtpFileDeleterJob::GetNumFilesDeleted() const
- T CFtpFileserverPublisher::~CFtpFileserverPublisher()
+ T CFtpFileDeleterJob::~CFtpFileDeleterJob()
  T CFtpFileserverPublisher::GetPublishJob() const
- T CFtp::FTP_GetFilename() const
- T CFtp::FTP_IsCurlResultOK(int) const
- T CFtp::FTP_OnPostExecuteCurlOperations()
- T CFtp::FTP_OnPreExecuteCurlOperations()
- T CFtp::FTP_SetError(int, char const*)
- T CFtp::FTP_SetupAdditionalCurlOperations(void*)
- T CFtp::Go()
- T CFtp::ReadCallback(void*, unsigned long, unsigned long, void*)
- T CFtpUploadJob::~CFtpUploadJob()
+ T CFtpFileserverPublisher::~CFtpFileserverPublisher()
  T CFtpUploadJob::CFtpUploadJob(char const*, char const*, char const*, char const*, char const*, int, char const*, int)
  T CFtpUploadJob::DoCleanup()
  T CFtpUploadJob::DoExecute()
@@ -1021,32 +766,8 @@
  T CFtpUploadJob::FTP_OnPreExecuteCurlOperations()
  T CFtpUploadJob::FTP_SetError(int, char const*)
  T CFtpUploadJob::FTP_SetupAdditionalCurlOperations(void*)
- T CFtp::UseProxy(char const*, int)
+ T CFtpUploadJob::~CFtpUploadJob()
  T CGenericPersistentManager<CBaseRecordingSession>::Add(CBaseRecordingSession*)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Add(CBaseRecordingSessionBlock*)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::~CGenericPersistentManager()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Clear()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::FlagForFlush(CBaseRecordingSessionBlock*, bool)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::FlagForUnload(CBaseRecordingSessionBlock*)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::GetHandleBase() const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::GetIndexPath() const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::GetNextThinkTime() const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Init(bool)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Load()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::OnObjLoaded(CBaseRecordingSessionBlock*)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::PreLoad()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::ReadObjFromFile(char const*, CBaseRecordingSessionBlock*&, bool)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::RemoveFromIndex(int)
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Save()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldDeleteObjects() const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldLoadObj(CBaseRecordingSessionBlock const*) const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldSerializeIndexWithFullPath() const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldSerializeToIndividualFiles() const
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Shutdown()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::Think()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::UnloadThink()
- T CGenericPersistentManager<CBaseRecordingSessionBlock>::WriteObjToFile(CBaseRecordingSessionBlock*, char const*)
- T CGenericPersistentManager<CBaseRecordingSession>::~CGenericPersistentManager()
  T CGenericPersistentManager<CBaseRecordingSession>::Clear()
  T CGenericPersistentManager<CBaseRecordingSession>::FlagForFlush(CBaseRecordingSession*, bool)
  T CGenericPersistentManager<CBaseRecordingSession>::FlagForUnload(CBaseRecordingSession*)
@@ -1068,8 +789,31 @@
  T CGenericPersistentManager<CBaseRecordingSession>::Think()
  T CGenericPersistentManager<CBaseRecordingSession>::UnloadThink()
  T CGenericPersistentManager<CBaseRecordingSession>::WriteObjToFile(CBaseRecordingSession*, char const*)
+ T CGenericPersistentManager<CBaseRecordingSession>::~CGenericPersistentManager()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Add(CBaseRecordingSessionBlock*)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Clear()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::FlagForFlush(CBaseRecordingSessionBlock*, bool)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::FlagForUnload(CBaseRecordingSessionBlock*)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::GetHandleBase() const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::GetIndexPath() const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::GetNextThinkTime() const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Init(bool)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Load()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::OnObjLoaded(CBaseRecordingSessionBlock*)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::PreLoad()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::ReadObjFromFile(char const*, CBaseRecordingSessionBlock*&, bool)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::RemoveFromIndex(int)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Save()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldDeleteObjects() const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldLoadObj(CBaseRecordingSessionBlock const*) const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldSerializeIndexWithFullPath() const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::ShouldSerializeToIndividualFiles() const
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Shutdown()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::Think()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::UnloadThink()
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::WriteObjToFile(CBaseRecordingSessionBlock*, char const*)
+ T CGenericPersistentManager<CBaseRecordingSessionBlock>::~CGenericPersistentManager()
  T CGenericPersistentManager<CReplay>::Add(CReplay*)
- T CGenericPersistentManager<CReplay>::~CGenericPersistentManager()
  T CGenericPersistentManager<CReplay>::Clear()
  T CGenericPersistentManager<CReplay>::FlagForFlush(CReplay*, bool)
  T CGenericPersistentManager<CReplay>::GetHandleBase() const
@@ -1077,8 +821,21 @@
  T CGenericPersistentManager<CReplay>::GetNextThinkTime() const
  T CGenericPersistentManager<CReplay>::Init(bool)
  T CGenericPersistentManager<CReplay>::Load()
+ T CGenericPersistentManager<CReplay>::OnObjLoaded(CReplay*)
+ T CGenericPersistentManager<CReplay>::PreLoad()
+ T CGenericPersistentManager<CReplay>::ReadObjFromFile(char const*, CReplay*&, bool)
+ T CGenericPersistentManager<CReplay>::RemoveFromIndex(int)
+ T CGenericPersistentManager<CReplay>::Save()
+ T CGenericPersistentManager<CReplay>::ShouldDeleteObjects() const
+ T CGenericPersistentManager<CReplay>::ShouldLoadObj(CReplay const*) const
+ T CGenericPersistentManager<CReplay>::ShouldSerializeIndexWithFullPath() const
+ T CGenericPersistentManager<CReplay>::ShouldSerializeToIndividualFiles() const
+ T CGenericPersistentManager<CReplay>::Shutdown()
+ T CGenericPersistentManager<CReplay>::Think()
+ T CGenericPersistentManager<CReplay>::UnloadThink()
+ T CGenericPersistentManager<CReplay>::WriteObjToFile(CReplay*, char const*)
+ T CGenericPersistentManager<CReplay>::~CGenericPersistentManager()
  T CGenericPersistentManager<CReplayMovie>::Add(CReplayMovie*)
- T CGenericPersistentManager<CReplayMovie>::~CGenericPersistentManager()
  T CGenericPersistentManager<CReplayMovie>::Clear()
  T CGenericPersistentManager<CReplayMovie>::FlagForFlush(CReplayMovie*, bool)
  T CGenericPersistentManager<CReplayMovie>::GetHandleBase() const
@@ -1099,59 +856,45 @@
  T CGenericPersistentManager<CReplayMovie>::Think()
  T CGenericPersistentManager<CReplayMovie>::UnloadThink()
  T CGenericPersistentManager<CReplayMovie>::WriteObjToFile(CReplayMovie*, char const*)
- T CGenericPersistentManager<CReplay>::OnObjLoaded(CReplay*)
- T CGenericPersistentManager<CReplay>::PreLoad()
- T CGenericPersistentManager<CReplay>::ReadObjFromFile(char const*, CReplay*&, bool)
- T CGenericPersistentManager<CReplay>::RemoveFromIndex(int)
- T CGenericPersistentManager<CReplay>::Save()
- T CGenericPersistentManager<CReplay>::ShouldDeleteObjects() const
- T CGenericPersistentManager<CReplay>::ShouldLoadObj(CReplay const*) const
- T CGenericPersistentManager<CReplay>::ShouldSerializeIndexWithFullPath() const
- T CGenericPersistentManager<CReplay>::ShouldSerializeToIndividualFiles() const
- T CGenericPersistentManager<CReplay>::Shutdown()
- T CGenericPersistentManager<CReplay>::Think()
- T CGenericPersistentManager<CReplay>::UnloadThink()
- T CGenericPersistentManager<CReplay>::WriteObjToFile(CReplay*, char const*)
+ T CGenericPersistentManager<CReplayMovie>::~CGenericPersistentManager()
  T CHttpDownloader::AbortDownloadAndCleanup()
  T CHttpDownloader::BeginDownload(char const*, char const*, void*, unsigned int*)
- T CHttpDownloader::~CHttpDownloader()
  T CHttpDownloader::CHttpDownloader(IDownloadHandler*)
  T CHttpDownloader::GetHttpErrorToken(HTTPError_t)
  T CHttpDownloader::GetOgsRow(int) const
  T CHttpDownloader::Think()
- T CJob::~CJob()
+ T CHttpDownloader::~CHttpDownloader()
  T CJob::CJob(JobPriority_t)
  T CJob::Describe()
  T CJob::DoAbort(bool)
  T CJob::DoCleanup()
  T CJob::SetDescription(char const*)
+ T CJob::~CJob()
  T CKeyValuesErrorStack::ReportError(char const*)
- T __clang_call_terminate
- T CLC_SaveReplay::~CLC_SaveReplay()
  T CLC_SaveReplay::GetName() const
  T CLC_SaveReplay::GetType() const
  T CLC_SaveReplay::Process()
  T CLC_SaveReplay::ReadFromBuffer(bf_read&)
  T CLC_SaveReplay::ToString() const
  T CLC_SaveReplay::WriteToBuffer(bf_write&)
+ T CLC_SaveReplay::~CLC_SaveReplay()
  T CL_GetRecordingSessionInProgress()
  T CL_GetRecordingSessionManager()
  T CLocalFileDeleterJob::AddFileForDelete(char const*)
- T CLocalFileDeleterJob::~CLocalFileDeleterJob()
  T CLocalFileDeleterJob::DoExecute()
  T CLocalFileDeleterJob::GetNumFilesDeleted() const
- T CLocalFileserverPublisher::~CLocalFileserverPublisher()
+ T CLocalFileDeleterJob::~CLocalFileDeleterJob()
  T CLocalFileserverPublisher::GetPublishJob() const
- T CLocalPublishJob::~CLocalPublishJob()
+ T CLocalFileserverPublisher::~CLocalFileserverPublisher()
  T CLocalPublishJob::DoExecute()
- T CMd5Job::~CMd5Job()
+ T CLocalPublishJob::~CLocalPublishJob()
  T CMd5Job::DoExecute()
+ T CMd5Job::~CMd5Job()
  T CNetMessage::GetGroup() const
  T CNetMessage::GetNetChannel() const
  T CNetMessage::IsReliable() const
  T CNetMessage::SetNetChannel(INetChannel*)
  T CNetMessage::SetReliable(bool)
- T CNullSpewer::~CNullSpewer()
  T CNullSpewer::PrintBlockEnd() const
  T CNullSpewer::PrintBlockStart() const
  T CNullSpewer::PrintEmptyLine() const
@@ -1161,63 +904,17 @@
  T CNullSpewer::PrintMsg(char const*) const
  T CNullSpewer::PrintTestHeader(char const*) const
  T CNullSpewer::PrintValue(char const*, char const*) const
- T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
- T ConCommandBase::AddFlags(int)
- T ConCommandBase::CreateBase(char const*, char const*, int)
- T ConCommandBase::GetDLLIdentifier() const
- T ConCommandBase::GetHelpText() const
- T ConCommandBase::GetName() const
- T ConCommandBase::Init()
- T ConCommandBase::IsFlagSet(int) const
- T ConCommandBase::IsRegistered() const
- T ConCommand::CanAutoComplete()
- T ConCommand::~ConCommand()
- T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
- T ConCommand::Dispatch(CCommand const&)
- T ConCommand::IsCommand() const
- T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T ConnectTier2Libraries(void* (**)(char const*, int*), int)
- T ConVar::AddFlags(int)
- T ConVar::ChangeStringValue(char const*, float)
- T ConVar::ClampValue(float&)
- T ConVar::~ConVar()
- T ConVar::ConVar(char const*, char const*, int, char const*)
- T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float)
- T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
- T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::GetHelpText() const
- T ConVar::GetName() const
- T ConVar::Init()
- T ConVar::InternalSetFloatValue(float, bool)
- T ConVar::InternalSetIntValue(int)
- T ConVar::InternalSetValue(char const*)
- T ConVar::IsCommand() const
- T ConVar::IsFlagSet(int) const
- T ConVar::IsRegistered() const
- T ConVarRef::ConVarRef(char const*)
- T ConVarRef::ConVarRef(IConVar*)
- T ConVarRef::IsValid() const
- T ConVar_Register(int, IConCommandBaseAccessor*)
- T ConVar::SetValue(char const*)
- T ConVar::SetValue(float)
- T ConVar::SetValue(int)
- T ConVar_Unregister()
- T covariant return thunk to CClientReplayContext::GetRecordingSessionBlockManager()
- T covariant return thunk to CClientReplayContext::GetRecordingSession(unsigned int)
- T covariant return thunk to CServerReplayContext::GetRecordingSessionBlockManager()
- T covariant return thunk to CServerReplayContext::GetRecordingSession(unsigned int)
+ T CNullSpewer::~CNullSpewer()
+ T CPerformanceController::AddEvent(KeyValues*)
+ T CPerformanceController::AddEvent_Camera_ChangePlayer(float, int)
  T CPerformanceController::AddEvent_Camera_Change_FirstPerson(float, int)
  T CPerformanceController::AddEvent_Camera_Change_Free(float)
- T CPerformanceController::AddEvent_Camera_ChangePlayer(float, int)
  T CPerformanceController::AddEvent_Camera_Change_ThirdPerson(float, int)
  T CPerformanceController::AddEvent_Camera_SetView(SetViewParams_t const&)
- T CPerformanceController::AddEvent(KeyValues*)
  T CPerformanceController::AddEvent_TimeScale(float, float)
+ T CPerformanceController::CPerformanceController()
  T CPerformanceController::Cleanup()
  T CPerformanceController::ClearRewinding()
- T CPerformanceController::~CPerformanceController()
- T CPerformanceController::CPerformanceController()
  T CPerformanceController::DebugRender()
  T CPerformanceController::GetLastSaveStatus() const
  T CPerformanceController::GetNextThinkTime() const
@@ -1248,6 +945,7 @@
  T CPerformanceController::StartRecording(CReplay*, bool)
  T CPerformanceController::Stop()
  T CPerformanceController::Think()
+ T CPerformanceController::~CPerformanceController()
  T CPublishTester::Go()
  T CPublishTester::Test_FilePublish(char const*, bool)
  T CPublishTester::Test_Hostname(char const*, char const*)
@@ -1256,20 +954,17 @@
  T CPublishTester::Test_Protocol(char const*, char const*, char const**)
  T CPublishTester::Test_PublishedFileDelete(char const*, char const*, bool)
  T CPublishTester::Test_RemoteWebServerCVars()
- T CreateCompressor(CompressorType_t)
- t __CreateCReplaySystemIReplaySystem_interface()
- T CreateInterface
+ T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
  T CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::AddRef()
  T CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::Release()
- T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
  T CRenderQueue::Add(unsigned int, int)
- T CRenderQueue::Clear()
- T CRenderQueue::~CRenderQueue()
  T CRenderQueue::CRenderQueue()
+ T CRenderQueue::Clear()
  T CRenderQueue::GetCount() const
  T CRenderQueue::GetEntryData(int, unsigned int*, int*) const
  T CRenderQueue::IsInQueue(unsigned int, int) const
  T CRenderQueue::Remove(unsigned int, int)
+ T CRenderQueue::~CRenderQueue()
  T CReplay::AddNewPerformance(bool, bool)
  T CReplay::AddScreenshot(int, int, char const*)
  T CReplay::AutoNameTitleIfEmpty()
@@ -1278,12 +973,11 @@
  T CReplay::HasReconstructedReplay() const
  T CReplay::IsSignificantBlock(int) const
  T CReplayManager::AttemptToSetupNewReplay()
+ T CReplayManager::CReplayManager()
  T CReplayManager::CommitPendingReplayAndBeginDownload()
  T CReplayManager::CompletePendingReplay()
  T CReplayManager::Create()
  T CReplayManager::CreatePendingReplay()
- T CReplayManager::~CReplayManager()
- T CReplayManager::CReplayManager()
  T CReplayManager::DebugThink()
  T CReplayManager::DeleteReplay(unsigned int, bool)
  T CReplayManager::FlagReplayForFlush(CReplay*, bool)
@@ -1294,13 +988,13 @@
  T CReplayManager::GetNumReplaysDependentOnSession(unsigned int)
  T CReplayManager::GetPlayingReplay()
  T CReplayManager::GetRelativeIndexPath() const
+ T CReplayManager::GetReplay(unsigned int)
  T CReplayManager::GetReplayContext() const
  T CReplayManager::GetReplayCount() const
  T CReplayManager::GetReplayForCurrentLife()
- T CReplayManager::GetReplaysAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
  T CReplayManager::GetReplays(CUtlLinkedList<CReplay*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CReplay*, int>, int> >&)
+ T CReplayManager::GetReplaysAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
  T CReplayManager::GetReplaysDir() const
- T CReplayManager::GetReplay(unsigned int)
  T CReplayManager::GetUnrenderedReplayCount()
  T CReplayManager::GetVersion() const
  T CReplayManager::Init(void* (*)(char const*, int*))
@@ -1313,9 +1007,9 @@
  T CReplayManager::ShouldLoadObj(CReplay const*) const
  T CReplayManager::Shutdown()
  T CReplayManager::Think()
- T CReplayMovie::CaptureRecordTime()
- T CReplayMovie::~CReplayMovie()
+ T CReplayManager::~CReplayManager()
  T CReplayMovie::CReplayMovie()
+ T CReplayMovie::CaptureRecordTime()
  T CReplayMovie::GetFrameDimensions(int&, int&)
  T CReplayMovie::GetItemDate() const
  T CReplayMovie::GetItemHandle() const
@@ -1335,23 +1029,37 @@
  T CReplayMovie::IsItemAMovie() const
  T CReplayMovie::IsItemRendered() const
  T CReplayMovie::IsUploaded() const
+ T CReplayMovie::OnDelete()
+ T CReplayMovie::Read(KeyValues*)
+ T CReplayMovie::ReadRenderSettings(KeyValues*)
+ T CReplayMovie::SetIsRendered(bool)
+ T CReplayMovie::SetItemTitle(wchar_t const*)
+ T CReplayMovie::SetLength(float)
+ T CReplayMovie::SetMovieFilename(char const*)
+ T CReplayMovie::SetMovieTitle(wchar_t const*)
+ T CReplayMovie::SetRenderTime(float)
+ T CReplayMovie::SetUploadURL(char const*)
+ T CReplayMovie::SetUploaded(bool)
+ T CReplayMovie::SetUserData(void*)
+ T CReplayMovie::Write(KeyValues*)
+ T CReplayMovie::WriteRenderSettings(KeyValues*)
+ T CReplayMovie::~CReplayMovie()
+ T CReplayMovieManager::CReplayMovieManager()
  T CReplayMovieManager::CancelRender()
  T CReplayMovieManager::ClearRenderCancelledFlag()
  T CReplayMovieManager::CompleteRender(bool, bool)
  T CReplayMovieManager::Create()
  T CReplayMovieManager::CreateAndAddMovie(unsigned int)
- T CReplayMovieManager::~CReplayMovieManager()
- T CReplayMovieManager::CReplayMovieManager()
  T CReplayMovieManager::DeleteMovie(unsigned int)
  T CReplayMovieManager::FlagMovieForFlush(IReplayMovie*, bool)
  T CReplayMovieManager::GetCachedMovieTitleAndClear(wchar_t*, int)
  T CReplayMovieManager::GetDebugName() const
  T CReplayMovieManager::GetHandleBase() const
  T CReplayMovieManager::GetIndexFilename() const
+ T CReplayMovieManager::GetMovie(unsigned int)
  T CReplayMovieManager::GetMovieCount()
  T CReplayMovieManager::GetMovieList(CUtlLinkedList<IReplayMovie*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<IReplayMovie*, unsigned short>, unsigned short> >&)
  T CReplayMovieManager::GetMoviesAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
- T CReplayMovieManager::GetMovie(unsigned int)
  T CReplayMovieManager::GetNextThinkTime() const
  T CReplayMovieManager::GetNumMoviesDependentOnReplay(CReplay const*)
  T CReplayMovieManager::GetPendingMovie()
@@ -1362,44 +1070,31 @@
  T CReplayMovieManager::GetVersion() const
  T CReplayMovieManager::Init()
  T CReplayMovieManager::IsRendering() const
- T CReplayMovieManager::RenderingCancelled() const
  T CReplayMovieManager::RenderMovie(RenderMovieParams_t const&)
  T CReplayMovieManager::RenderNextMovie()
+ T CReplayMovieManager::RenderingCancelled() const
  T CReplayMovieManager::SetPendingMovie(IReplayMovie*)
- T CReplayMovie::OnDelete()
- T CReplayMovie::Read(KeyValues*)
- T CReplayMovie::ReadRenderSettings(KeyValues*)
- T CReplayMovie::SetIsRendered(bool)
- T CReplayMovie::SetItemTitle(wchar_t const*)
- T CReplayMovie::SetLength(float)
- T CReplayMovie::SetMovieFilename(char const*)
- T CReplayMovie::SetMovieTitle(wchar_t const*)
- T CReplayMovie::SetRenderTime(float)
- T CReplayMovie::SetUploaded(bool)
- T CReplayMovie::SetUploadURL(char const*)
- T CReplayMovie::SetUserData(void*)
- T CReplayMovie::Write(KeyValues*)
- T CReplayMovie::WriteRenderSettings(KeyValues*)
+ T CReplayMovieManager::~CReplayMovieManager()
  T CReplayPerformance::AutoNameIfHasNoTitle(char const*)
- T CReplayPerformance::CopyTicks(CReplayPerformance const*)
  T CReplayPerformance::CReplayPerformance(CReplay*)
+ T CReplayPerformance::CopyTicks(CReplayPerformance const*)
  T CReplayPerformance::GetFullPerformanceFilename()
  T CReplayPerformance::MakeCopy() const
- T CReplayPerformanceManager::CreatePerformance(CReplay*)
- T CReplayPerformanceManager::~CReplayPerformanceManager()
+ T CReplayPerformance::SetFilename(char const*)
+ T CReplayPerformance::SetTitle(wchar_t const*)
  T CReplayPerformanceManager::CReplayPerformanceManager()
+ T CReplayPerformanceManager::CreatePerformance(CReplay*)
  T CReplayPerformanceManager::DeletePerformance(CReplayPerformance*)
  T CReplayPerformanceManager::GeneratePerformanceFilename(CReplay*)
  T CReplayPerformanceManager::GetFullPath() const
  T CReplayPerformanceManager::GetRelativePath() const
  T CReplayPerformanceManager::Init()
- T CReplayPerformance::SetFilename(char const*)
- T CReplayPerformance::SetTitle(wchar_t const*)
- T CReplayScreenshot::~CReplayScreenshot()
+ T CReplayPerformanceManager::~CReplayPerformanceManager()
  T CReplayScreenshot::GetPath() const
  T CReplayScreenshot::GetSubKeyTitle() const
  T CReplayScreenshot::Read(KeyValues*)
  T CReplayScreenshot::Write(KeyValues*)
+ T CReplayScreenshot::~CReplayScreenshot()
  T CReplaySystem::CL_GetContext()
  T CReplaySystem::CL_Init(void* (*)(char const*, int*))
  T CReplaySystem::CL_Render()
@@ -1409,15 +1104,15 @@
  T CReplaySystem::Init()
  T CReplaySystem::IsRecording()
  T CReplaySystem::IsReplayEnabled()
- T CReplaySystem::Shutdown()
  T CReplaySystem::SV_EndRecordingSession(bool)
  T CReplaySystem::SV_GetContext()
  T CReplaySystem::SV_Init(void* (*)(char const*, int*))
  T CReplaySystem::SV_NotifyReplayRequested()
- T CReplaySystem::SV_SendReplayEvent(char const*, int)
  T CReplaySystem::SV_SendReplayEvent(IGameEvent*, int)
+ T CReplaySystem::SV_SendReplayEvent(char const*, int)
  T CReplaySystem::SV_ShouldBeginRecording(bool)
  T CReplaySystem::SV_Shutdown()
+ T CReplaySystem::Shutdown()
  T CReplaySystem::Think()
  T CReplayTime::CReplayTime()
  T CReplayTime::GetDate(int&, int&, int&) const
@@ -1427,12 +1122,11 @@
  T CReplayTime::InitDateAndTimeToNow()
  T CReplayTime::Read(KeyValues*)
  T CReplayTime::Write(KeyValues*)
- T CSaveJob::~CSaveJob()
  T CSaveJob::CSaveJob(KeyValues*, char const*)
  T CSaveJob::DoExecute()
- T CScreenshotManager::CaptureScreenshot(CaptureScreenshotParams_t&)
- T CScreenshotManager::~CScreenshotManager()
+ T CSaveJob::~CSaveJob()
  T CScreenshotManager::CScreenshotManager()
+ T CScreenshotManager::CaptureScreenshot(CaptureScreenshotParams_t&)
  T CScreenshotManager::DeleteScreenshotsForReplay(CReplay*)
  T CScreenshotManager::DoCaptureScreenshot()
  T CScreenshotManager::GetNextThinkTime() const
@@ -1441,23 +1135,30 @@
  T CScreenshotManager::SetScreenshotReplay(unsigned int)
  T CScreenshotManager::ShouldCaptureScreenshot()
  T CScreenshotManager::Think()
- T CServerRecordingSessionBlock::~CServerRecordingSessionBlock()
+ T CScreenshotManager::~CScreenshotManager()
+ T CServerRecordingSession::CServerRecordingSession(IReplayContext*)
+ T CServerRecordingSession::OnDelete()
+ T CServerRecordingSession::PopulateWithRecordingData(int)
+ T CServerRecordingSession::Read(KeyValues*)
+ T CServerRecordingSession::SessionExpired() const
+ T CServerRecordingSession::SetLocked(bool)
+ T CServerRecordingSession::ShouldDitchSession() const
+ T CServerRecordingSession::Write(KeyValues*)
+ T CServerRecordingSession::~CServerRecordingSession()
  T CServerRecordingSessionBlock::CServerRecordingSessionBlock(IReplayContext*)
- T CServerRecordingSessionBlockManager::Create()
- T CServerRecordingSessionBlockManager::~CServerRecordingSessionBlockManager()
- T CServerRecordingSessionBlockManager::CServerRecordingSessionBlockManager(IReplayContext*)
- T CServerRecordingSessionBlockManager::GetReplayContext() const
- T CServerRecordingSessionBlockManager::PreLoad()
- T CServerRecordingSessionBlockManager::ShouldLoadBlocks() const
  T CServerRecordingSessionBlock::OnDelete()
  T CServerRecordingSessionBlock::Read(KeyValues*)
  T CServerRecordingSessionBlock::Write(KeyValues*)
- T CServerRecordingSession::~CServerRecordingSession()
- T CServerRecordingSession::CServerRecordingSession(IReplayContext*)
+ T CServerRecordingSessionBlock::~CServerRecordingSessionBlock()
+ T CServerRecordingSessionBlockManager::CServerRecordingSessionBlockManager(IReplayContext*)
+ T CServerRecordingSessionBlockManager::Create()
+ T CServerRecordingSessionBlockManager::GetReplayContext() const
+ T CServerRecordingSessionBlockManager::PreLoad()
+ T CServerRecordingSessionBlockManager::ShouldLoadBlocks() const
+ T CServerRecordingSessionBlockManager::~CServerRecordingSessionBlockManager()
+ T CServerRecordingSessionManager::CServerRecordingSessionManager(IReplayContext*)
  T CServerRecordingSessionManager::CanDeleteSession(unsigned int) const
  T CServerRecordingSessionManager::Create()
- T CServerRecordingSessionManager::~CServerRecordingSessionManager()
- T CServerRecordingSessionManager::CServerRecordingSessionManager(IReplayContext*)
  T CServerRecordingSessionManager::GetNewSessionName() const
  T CServerRecordingSessionManager::GetReplayContext() const
  T CServerRecordingSessionManager::GetVersion() const
@@ -1467,26 +1168,19 @@
  T CServerRecordingSessionManager::ShouldSerializeIndexWithFullPath()
  T CServerRecordingSessionManager::ShouldUnloadSessions() const
  T CServerRecordingSessionManager::Think()
- T CServerRecordingSession::OnDelete()
- T CServerRecordingSession::PopulateWithRecordingData(int)
- T CServerRecordingSession::Read(KeyValues*)
- T CServerRecordingSession::SessionExpired() const
- T CServerRecordingSession::SetLocked(bool)
- T CServerRecordingSession::ShouldDitchSession() const
- T CServerRecordingSession::Write(KeyValues*)
+ T CServerRecordingSessionManager::~CServerRecordingSessionManager()
+ T CServerReplayContext::CServerReplayContext()
  T CServerReplayContext::CleanTmpDir()
  T CServerReplayContext::CreateReplaySessionInfoEvent()
  T CServerReplayContext::CreateSessionOnClient(int)
- T CServerReplayContext::~CServerReplayContext()
- T CServerReplayContext::CServerReplayContext()
  T CServerReplayContext::DoSanityCheckNow()
  T CServerReplayContext::FlagForConVarSanityCheck()
  T CServerReplayContext::GetBaseDir() const
  T CServerReplayContext::GetErrorSystem()
  T CServerReplayContext::GetLocalFileServerPath() const
+ T CServerReplayContext::GetRecordingSession(unsigned int)
  T CServerReplayContext::GetRecordingSessionBlockManager()
  T CServerReplayContext::GetRecordingSessionManager()
- T CServerReplayContext::GetRecordingSession(unsigned int)
  T CServerReplayContext::GetRelativeBaseDir() const
  T CServerReplayContext::GetReplaySubDir() const
  T CServerReplayContext::GetSessionRecorder()
@@ -1498,8 +1192,8 @@
  T CServerReplayContext::Think()
  T CServerReplayContext::UpdateFileserverIPFromHostname(char const*)
  T CServerReplayContext::UpdateFileserverProxyIPFromHostname(char const*)
+ T CServerReplayContext::~CServerReplayContext()
  T CSessionBlockDownloader::AbortDownloadsAndCleanup(CClientRecordingSession*)
- T CSessionBlockDownloader::~CSessionBlockDownloader()
  T CSessionBlockDownloader::CSessionBlockDownloader()
  T CSessionBlockDownloader::GetNextThinkTime() const
  T CSessionBlockDownloader::OnConnecting(CHttpDownloader*)
@@ -1507,9 +1201,9 @@
  T CSessionBlockDownloader::OnFetch(CHttpDownloader*)
  T CSessionBlockDownloader::Shutdown()
  T CSessionBlockDownloader::Think()
+ T CSessionBlockDownloader::~CSessionBlockDownloader()
  T CSessionBlockPublisher::AbortPublish()
  T CSessionBlockPublisher::AdjustHeader(IFilePublisher const*, void*)
- T CSessionBlockPublisher::~CSessionBlockPublisher()
  T CSessionBlockPublisher::CSessionBlockPublisher(CServerRecordingSession*, CSessionInfoPublisher*)
  T CSessionBlockPublisher::IsDone() const
  T CSessionBlockPublisher::OnPublishAborted(IFilePublisher const*)
@@ -1520,18 +1214,18 @@
  T CSessionBlockPublisher::PublishThink()
  T CSessionBlockPublisher::Think()
  T CSessionBlockPublisher::WriteAndPublishSessionBlock()
- T CSessionInfoDownloader::CleanupDownloader()
- T CSessionInfoDownloader::~CSessionInfoDownloader()
+ T CSessionBlockPublisher::~CSessionBlockPublisher()
  T CSessionInfoDownloader::CSessionInfoDownloader()
+ T CSessionInfoDownloader::CleanupDownloader()
  T CSessionInfoDownloader::DownloadSessionInfoAndUpdateBlocks(CBaseRecordingSession*)
  T CSessionInfoDownloader::GetNextThinkTime() const
  T CSessionInfoDownloader::OnConnecting(CHttpDownloader*)
  T CSessionInfoDownloader::OnDownloadComplete(CHttpDownloader*, unsigned char const*)
  T CSessionInfoDownloader::OnFetch(CHttpDownloader*)
  T CSessionInfoDownloader::Think()
+ T CSessionInfoDownloader::~CSessionInfoDownloader()
  T CSessionInfoPublisher::AbortPublish()
  T CSessionInfoPublisher::AdjustHeader(IFilePublisher const*, void*)
- T CSessionInfoPublisher::~CSessionInfoPublisher()
  T CSessionInfoPublisher::CSessionInfoPublisher(CServerRecordingSession*)
  T CSessionInfoPublisher::IsDone() const
  T CSessionInfoPublisher::OnPublishAborted(IFilePublisher const*)
@@ -1540,8 +1234,8 @@
  T CSessionInfoPublisher::Publish()
  T CSessionInfoPublisher::PublishAllSynchronous()
  T CSessionInfoPublisher::Think()
+ T CSessionInfoPublisher::~CSessionInfoPublisher()
  T CSessionPublishManager::AbortPublish()
- T CSessionPublishManager::~CSessionPublishManager()
  T CSessionPublishManager::CSessionPublishManager(CServerRecordingSession*)
  T CSessionPublishManager::IsDone() const
  T CSessionPublishManager::OnStartRecording()
@@ -1549,10 +1243,10 @@
  T CSessionPublishManager::PublishAllSynchronous()
  T CSessionPublishManager::Think()
  T CSessionPublishManager::UnlockSession()
+ T CSessionPublishManager::~CSessionPublishManager()
  T CSessionRecorder::AbortCurrentSessionRecording()
- T CSessionRecorder::CreateAndAddNewPublishManager(CServerRecordingSession*)
- T CSessionRecorder::~CSessionRecorder()
  T CSessionRecorder::CSessionRecorder()
+ T CSessionRecorder::CreateAndAddNewPublishManager(CServerRecordingSession*)
  T CSessionRecorder::GetNextThinkTime() const
  T CSessionRecorder::Init()
  T CSessionRecorder::PublishAllSynchronous()
@@ -1561,54 +1255,55 @@
  T CSessionRecorder::StopRecording(bool)
  T CSessionRecorder::Think()
  T CSessionRecorder::UpdateSessionLocks()
- T CSharedReplayContext::~CSharedReplayContext()
+ T CSessionRecorder::~CSessionRecorder()
  T CSharedReplayContext::CSharedReplayContext(IReplayContext*)
  T CSharedReplayContext::GetBaseDir() const
  T CSharedReplayContext::GetRelativeBaseDir() const
  T CSharedReplayContext::GetReplaySubDir() const
- T CSharedReplayContext::InitThreadPool()
  T CSharedReplayContext::Init(void* (*)(char const*, int*))
+ T CSharedReplayContext::InitThreadPool()
  T CSharedReplayContext::IsInitialized() const
  T CSharedReplayContext::Shutdown()
  T CSharedReplayContext::Think()
- T CSimpleSpewer::~CSimpleSpewer()
+ T CSharedReplayContext::~CSharedReplayContext()
  T CSimpleSpewer::PrintMsg(char const*) const
+ T CSimpleSpewer::~CSimpleSpewer()
  T CThinkManager::AddThinker(IThinker*)
- T CThinkManager::~CThinkManager()
  T CThinkManager::RemoveThinker(IThinker*)
  T CThinkManager::Think()
+ T CThinkManager::~CThinkManager()
  T CTraceFilterWorldAndPropsOnly::GetTraceType() const
  T CTraceFilterWorldAndPropsOnly::ShouldHitEntity(IHandleEntity*, int)
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::AssumeMemory(void*, int, int, int)
- T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::CUtlBuffer(int, int, int)
  T CUtlBuffer::CUtlBuffer(void const*, int, int)
+ T CUtlBuffer::CheckArbitraryPeekGet(int, int&)
  T CUtlBuffer::EatCPPComment()
  T CUtlBuffer::EatWhiteSpace()
+ T CUtlBuffer::Get(void*, int)
  T CUtlBuffer::GetDelimitedCharInternal(CUtlCharConversion*)
  T CUtlBuffer::GetDelimitedString(CUtlCharConversion*, char*, int)
  T CUtlBuffer::GetOverflow(int)
  T CUtlBuffer::GetStringInternal(char*, unsigned long)
- T CUtlBuffer::Get(void*, int)
  T CUtlBuffer::PeekGet(int, int)
  T CUtlBuffer::PeekStringLength()
  T CUtlBuffer::PeekStringMatch(int, char const*, int)
  T CUtlBuffer::PeekWhiteSpace(int)
- T CUtlBuffer::PutOverflow(int)
  T CUtlBuffer::Put(void const*, int)
+ T CUtlBuffer::PutOverflow(int)
  T CUtlBuffer::Scanf(char const*, ...)
  T CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
  T CUtlBuffer::VaScanf(char const*, char*)
- T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
- T CUtlLinkedList<CBaseRecordingSessionBlock*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSessionBlock*, int>, int> >::AllocInternal(bool)
- T CUtlLinkedList<CBaseRecordingSessionBlock*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSessionBlock*, int>, int> >::~CUtlLinkedList()
+ T CUtlCharConversion::FindConversion(char const*, int*)
  T CUtlLinkedList<CBaseRecordingSession*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSession*, int>, int> >::AddToTail(CBaseRecordingSession* const&)
  T CUtlLinkedList<CBaseRecordingSession*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSession*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CBaseRecordingSession*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSession*, int>, int> >::~CUtlLinkedList()
+ T CUtlLinkedList<CBaseRecordingSessionBlock*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSessionBlock*, int>, int> >::AllocInternal(bool)
+ T CUtlLinkedList<CBaseRecordingSessionBlock*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSessionBlock*, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<CHttpDownloader*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CHttpDownloader*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CHttpDownloader*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CHttpDownloader*, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<CReplay*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CReplay*, int>, int> >::AddToTail(CReplay* const&)
@@ -1627,8 +1322,8 @@
  T CUtlLinkedList<IThinker*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IThinker*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<IThinker*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IThinker*, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<KeyValues*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<KeyValues*, unsigned short>, unsigned short> >::AllocInternal(bool)
- T CUtlLinkedList<KeyValues*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<KeyValues*, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<KeyValues*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<KeyValues*, unsigned short>, unsigned short> >::LinkAfter(unsigned short, unsigned short)
+ T CUtlLinkedList<KeyValues*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<KeyValues*, unsigned short>, unsigned short> >::~CUtlLinkedList()
  T CUtlLinkedList<unsigned int, int, false, int, CUtlMemory<UtlLinkedListElem_t<unsigned int, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<unsigned int, int, false, int, CUtlMemory<UtlLinkedListElem_t<unsigned int, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<wchar_t*, int, false, int, CUtlMemory<UtlLinkedListElem_t<wchar_t*, int>, int> >::AllocInternal(bool)
@@ -1637,9 +1332,9 @@
  T CUtlMemory<UtlLinkedListElem_t<KeyValues*, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
  T CUtlQueue<unsigned char, CUtlMemory<unsigned char, int> >::Insert(unsigned char const&)
+ T CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::Insert(CBaseRecordingSession* const&)
  T CUtlSortVector<CBaseRecordingSessionBlock*, CBaseRecordingSession::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::Insert(CBaseRecordingSessionBlock* const&)
  T CUtlSortVector<CBaseRecordingSessionBlock*, CGenericPersistentManager<CBaseRecordingSessionBlock>::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::Insert(CBaseRecordingSessionBlock* const&)
- T CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::Insert(CBaseRecordingSession* const&)
  T CUtlSortVector<CClientRecordingSessionBlock const*, CReplay_LessFunc, CUtlVector<CClientRecordingSessionBlock const*, CUtlMemory<CClientRecordingSessionBlock const*, int> > >::Insert(CClientRecordingSessionBlock const* const&)
  T CUtlSortVector<CReplay*, CGenericPersistentManager<CReplay>::CLessFunctor, CUtlVector<CReplay*, CUtlMemory<CReplay*, int> > >::Insert(CReplay* const&)
  T CUtlSortVector<CReplayMovie*, CGenericPersistentManager<CReplayMovie>::CLessFunctor, CUtlVector<CReplayMovie*, CUtlMemory<CReplayMovie*, int> > >::Insert(CReplayMovie* const&)
@@ -1647,59 +1342,82 @@
  T CUtlString::Format(char const*, ...)
  T CUtlString::FormatV(char const*, char*)
  T CUtlString::Get() const
- T CUtlStringList::CopyAndAddToTail(char const*)
- T CUtlString::operator=(char const*)
- T CUtlString::operator=(CUtlString const&)
  T CUtlString::Purge()
  T CUtlString::Set(char const*)
- T CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> >::~CUtlVector()
+ T CUtlString::operator=(CUtlString const&)
+ T CUtlString::operator=(char const*)
+ T CUtlStringList::CopyAndAddToTail(char const*)
  T CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> >::~CUtlVector()
+ T CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> >::~CUtlVector()
  T CUtlVector<CClientRecordingSessionBlock const*, CUtlMemory<CClientRecordingSessionBlock const*, int> >::~CUtlVector()
- T CUtlVector<char*, CUtlMemory<char*, int> >::~CUtlVector()
  T CUtlVector<CRenderQueue::RenderInfo_t*, CUtlMemory<CRenderQueue::RenderInfo_t*, int> >::~CUtlVector()
  T CUtlVector<CReplay*, CUtlMemory<CReplay*, int> >::~CUtlVector()
  T CUtlVector<CReplayMovie*, CUtlMemory<CReplayMovie*, int> >::~CUtlVector()
  T CUtlVector<CReplayPerformance*, CUtlMemory<CReplayPerformance*, int> >::AddToTail(CReplayPerformance* const&)
  T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
- T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
+ T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
+ T CUtlVector<char*, CUtlMemory<char*, int> >::~CUtlVector()
  T CUtlVector<unsigned int, CUtlMemory<unsigned int, int> >::~CUtlVector()
- t default_bzalloc(void*, int, int)
- t default_bzfree(void*, void*)
+ T ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
+ T ConCommand::CanAutoComplete()
+ T ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
+ T ConCommand::Dispatch(CCommand const&)
+ T ConCommand::IsCommand() const
+ T ConCommand::~ConCommand()
+ T ConCommandBase::AddFlags(int)
+ T ConCommandBase::CreateBase(char const*, char const*, int)
+ T ConCommandBase::GetDLLIdentifier() const
+ T ConCommandBase::GetHelpText() const
+ T ConCommandBase::GetName() const
+ T ConCommandBase::Init()
+ T ConCommandBase::IsFlagSet(int) const
+ T ConCommandBase::IsRegistered() const
+ T ConVar::AddFlags(int)
+ T ConVar::ChangeStringValue(char const*, float)
+ T ConVar::ClampValue(float&)
+ T ConVar::ConVar(char const*, char const*, int, char const*)
+ T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float)
+ T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
+ T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ T ConVar::GetHelpText() const
+ T ConVar::GetName() const
+ T ConVar::Init()
+ T ConVar::InternalSetFloatValue(float, bool)
+ T ConVar::InternalSetIntValue(int)
+ T ConVar::InternalSetValue(char const*)
+ T ConVar::IsCommand() const
+ T ConVar::IsFlagSet(int) const
+ T ConVar::IsRegistered() const
+ T ConVar::SetValue(char const*)
+ T ConVar::SetValue(float)
+ T ConVar::SetValue(int)
+ T ConVar::~ConVar()
+ T ConVarRef::ConVarRef(IConVar*)
+ T ConVarRef::ConVarRef(char const*)
+ T ConVarRef::IsValid() const
+ T ConVar_Register(int, IConCommandBaseAccessor*)
+ T ConVar_Unregister()
+ T ConnectTier1Libraries(void* (**)(char const*, int*), int)
+ T ConnectTier2Libraries(void* (**)(char const*, int*), int)
+ T CreateCompressor(CompressorType_t)
+ T CreateInterface
  T DefaultCompletionFunc(char const*, char (*) [64])
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
- T dyld_stub_binding_helper
  T EvaluateConditional(char const*)
- t fallbackSort(unsigned int*, unsigned int*, unsigned int*, int, int)
  T FastPow2(float)
- T GetCompressorNameSafe(CompressorType_t)
  T GetCStringCharConversion()
+ T GetCompressorNameSafe(CompressorType_t)
  T GetNoEscCharConversion()
- t global constructors keyed to a
- t handle_compress(bz_stream*)
- ThreadGetCurrentId
- ThreadInterlockedDecrement
- ThreadInterlockedIncrement
- ThreadSleep
  T ILocalize::ConstructStringVArgsInternal(wchar_t*, int, wchar_t const*, int, char*)
  T ILocalize::ConvertANSIToUnicode(char const*, wchar_t*, int)
  T ILocalize::ConvertUnicodeToANSI(wchar_t const*, char*, int)
- time
  T ImgUtl_WriteGenericVMT(char const*, char const*)
- T int CUtlSortVector<CBaseRecordingSessionBlock*, CBaseRecordingSession::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::FindLessOrEqual<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&, bool*) const
- T int CUtlSortVector<CBaseRecordingSessionBlock*, CGenericPersistentManager<CBaseRecordingSessionBlock>::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::Find<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&) const
- T int CUtlSortVector<CBaseRecordingSessionBlock*, CGenericPersistentManager<CBaseRecordingSessionBlock>::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::FindLessOrEqual<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&, bool*) const
- T int CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::Find<CBaseRecordingSession*>(CBaseRecordingSession* const&) const
- T int CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::FindLessOrEqual<CBaseRecordingSession*>(CBaseRecordingSession* const&, bool*) const
- T int CUtlSortVector<CClientRecordingSessionBlock const*, CReplay_LessFunc, CUtlVector<CClientRecordingSessionBlock const*, CUtlMemory<CClientRecordingSessionBlock const*, int> > >::FindLessOrEqual<CClientRecordingSessionBlock const*>(CClientRecordingSessionBlock const* const&, bool*) const
- T int CUtlSortVector<CReplay*, CGenericPersistentManager<CReplay>::CLessFunctor, CUtlVector<CReplay*, CUtlMemory<CReplay*, int> > >::Find<CReplay*>(CReplay* const&) const
- T int CUtlSortVector<CReplay*, CGenericPersistentManager<CReplay>::CLessFunctor, CUtlVector<CReplay*, CUtlMemory<CReplay*, int> > >::FindLessOrEqual<CReplay*>(CReplay* const&, bool*) const
- T int CUtlSortVector<CReplayMovie*, CGenericPersistentManager<CReplayMovie>::CLessFunctor, CUtlVector<CReplayMovie*, CUtlMemory<CReplayMovie*, int> > >::FindLessOrEqual<CReplayMovie*>(CReplayMovie* const&, bool*) const
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T KeyValues::AddSubKey(KeyValues*)
  T KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
- T KeyValues::deleteThis()
  T KeyValues::FindKey(char const*, bool)
  T KeyValues::GetBool(char const*, bool, bool*)
  T KeyValues::GetFirstTrueSubKey()
@@ -1717,12 +1435,10 @@
  T KeyValues::KeyValues(char const*)
  T KeyValues::KeyValues(char const*, char const*, char const*)
  T KeyValues::KeyValues(char const*, char const*, int)
- T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
+ T KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
  T KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
  T KeyValues::MakeCopy() const
- T KeyValues::operator delete(void*)
- T KeyValues::operator new(unsigned long)
  T KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
  T KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
  T KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
@@ -1739,29 +1455,122 @@
  T KeyValues::SetUint64(char const*, unsigned long long)
  T KeyValues::SetWString(char const*, wchar_t const*)
  T KeyValues::WriteConvertedString(IBaseFileSystem*, void*, CUtlBuffer*, char const*)
- t mainGtU(unsigned int, unsigned int, unsigned char*, unsigned short*, unsigned int, int*)
+ T KeyValues::deleteThis()
+ T KeyValues::operator delete(void*)
+ T KeyValues::operator new(unsigned long)
  T MatrixAngles(matrix3x4_t const&, float*)
+ T OnFileserverHostnameChanged(IConVar*, char const*, float)
+ T OnFileserverProxyHostnameChanged(IConVar*, char const*, float)
+ T OnReplayEnableChanged(IConVar*, char const*, float)
+ T OnReplayRecordingChanged(IConVar*, char const*, float)
+ T OnReplayScreenshotResolutionChanged(IConVar*, char const*, float)
+ T PrintSessionInfo(char const*)
+ T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
+ T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
+ T Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
+ T QuaternionAlign(Quaternion const&, Quaternion const&, Quaternion&)
+ T QuaternionAngles(Quaternion const&, QAngle&)
+ T QuaternionMatrix(Quaternion const&, matrix3x4_t&)
+ T QuaternionSlerp(Quaternion const&, Quaternion const&, float, Quaternion&)
+ T QuaternionSlerpNoAlign(Quaternion const&, Quaternion const&, float, Quaternion&)
+ T ReadSessionInfoHeader(void const*, int, SessionInfoHeader_t&)
+ T ReplayLib_Init(char const*, IClientReplayContext*)
+ T Replay_CrackURL(char const*, char*, char*)
+ T Replay_GetAutoName(wchar_t*, int, char const*)
+ T Replay_GetDownloadURL()
+ T Replay_GetFirstAvailableFilename(char*, int, char const*, char const*, char const*, int)
+ T Replay_HudMsg(char const*, char const*, bool)
+ T Replay_MsgBox(char const*)
+ T Replay_Reconstruct(CReplay*, bool)
+ T Replay_SetGameDir(char const*)
+ T Replay_va(char const*, ...)
+ T RunJobToCompletion(IThreadPool*, CJob*)
+ T SVC_GameEvent::GetGroup() const
+ T SVC_GameEvent::GetName() const
+ T SVC_GameEvent::GetType() const
+ T SVC_GameEvent::Process()
+ T SVC_GameEvent::ReadFromBuffer(bf_read&)
+ T SVC_GameEvent::ToString() const
+ T SVC_GameEvent::WriteToBuffer(bf_write&)
+ T SVC_GameEvent::~SVC_GameEvent()
+ T SV_CastJobToIFileserverCleanerJob(CBaseJob*)
+ T SV_CreateDeleteFileJob()
+ T SV_CreateFtpFileDeleterJob(char const*)
+ T SV_CreateFtpUploadJob(char const*)
+ T SV_CreateLocalPublishJob(char const*)
+ T SV_DoFileserverCleanup(bool, ISpewer*)
+ T SV_DoTestPublish()
+ T SV_GetRecordingSessionInProgress()
+ T SV_GetTmpDir()
+ T SV_PublishFile(PublishFileParams_t const&)
+ T SV_RunJobToCompletion(CJob*)
+ T V_AppendSlash(char*, int)
+ T V_FileBase(char const*, char*, int)
+ T V_FixDoubleSlashes(char*)
+ T V_FixSlashes(char*, char)
+ T V_RemoveDotSlashes(char*, char, bool)
+ T V_StripExtension(char const*, char*, int)
+ T V_StripTrailingSlash(char*)
+ T V_UnqualifiedFileName(char const*)
+ T V_atof(char const*)
+ T V_atoi64(char const*)
+ T V_binarytohex(unsigned char const*, int, char*, int)
+ T V_snprintf(char*, int, char const*, ...)
+ T V_stricmp(char const*, char const*)
+ T V_stristr(char const*, char const*)
+ T V_strncat(char*, char const*, unsigned long, int)
+ T V_strncmp(char const*, char const*, int)
+ T V_strncpy(char*, char const*, int)
+ T V_vsnprintf(char*, int, char const*, char*)
+ T V_vsnprintfRet(char*, int, char const*, char*, bool*)
+ T V_wcsncpy(wchar_t*, wchar_t const*, int)
+ T V_wcstostr(wchar_t const*, int, char*, int)
+ T __clang_call_terminate
+ T bf_read::ReadBits(void*, int)
+ T bf_read::ReadFloat()
+ T bf_read::ReadString(char*, int, bool, int*)
+ T bf_read::SetOverflowFlag()
+ T bf_read::bf_read()
+ T bf_write::StartWriting(void*, int, int, int)
+ T bf_write::WriteBits(void const*, int)
+ T bf_write::WriteFloat(float)
+ T bf_write::WriteString(char const*)
+ T bf_write::bf_write()
+ T covariant return thunk to CClientReplayContext::GetRecordingSession(unsigned int)
+ T covariant return thunk to CClientReplayContext::GetRecordingSessionBlockManager()
+ T covariant return thunk to CServerReplayContext::GetRecordingSession(unsigned int)
+ T covariant return thunk to CServerReplayContext::GetRecordingSessionBlockManager()
+ T dyld_stub_binding_helper
+ T int CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::Find<CBaseRecordingSession*>(CBaseRecordingSession* const&) const
+ T int CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::FindLessOrEqual<CBaseRecordingSession*>(CBaseRecordingSession* const&, bool*) const
+ T int CUtlSortVector<CBaseRecordingSessionBlock*, CBaseRecordingSession::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::FindLessOrEqual<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&, bool*) const
+ T int CUtlSortVector<CBaseRecordingSessionBlock*, CGenericPersistentManager<CBaseRecordingSessionBlock>::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::Find<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&) const
+ T int CUtlSortVector<CBaseRecordingSessionBlock*, CGenericPersistentManager<CBaseRecordingSessionBlock>::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::FindLessOrEqual<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&, bool*) const
+ T int CUtlSortVector<CClientRecordingSessionBlock const*, CReplay_LessFunc, CUtlVector<CClientRecordingSessionBlock const*, CUtlMemory<CClientRecordingSessionBlock const*, int> > >::FindLessOrEqual<CClientRecordingSessionBlock const*>(CClientRecordingSessionBlock const* const&, bool*) const
+ T int CUtlSortVector<CReplay*, CGenericPersistentManager<CReplay>::CLessFunctor, CUtlVector<CReplay*, CUtlMemory<CReplay*, int> > >::Find<CReplay*>(CReplay* const&) const
+ T int CUtlSortVector<CReplay*, CGenericPersistentManager<CReplay>::CLessFunctor, CUtlVector<CReplay*, CUtlMemory<CReplay*, int> > >::FindLessOrEqual<CReplay*>(CReplay* const&, bool*) const
+ T int CUtlSortVector<CReplayMovie*, CGenericPersistentManager<CReplayMovie>::CLessFunctor, CUtlVector<CReplayMovie*, CUtlMemory<CReplayMovie*, int> > >::FindLessOrEqual<CReplayMovie*>(CReplayMovie* const&, bool*) const
  T non-virtual thunk to CBaseJob::~CBaseJob()
  T non-virtual thunk to CBasePublishJob::~CBasePublishJob()
  T non-virtual thunk to CBaseRecordingSession::AddBlock(CBaseRecordingSessionBlock*)
- T non-virtual thunk to CBaseRecordingSessionBlockManager::~CBaseRecordingSessionBlockManager()
+ T non-virtual thunk to CBaseRecordingSession::~CBaseRecordingSession()
  T non-virtual thunk to CBaseRecordingSessionBlockManager::DeleteBlock(CBaseRecordingSessionBlock*)
- T non-virtual thunk to CBaseRecordingSessionBlockManager::GetBlockPath() const
  T non-virtual thunk to CBaseRecordingSessionBlockManager::GetBlock(unsigned int)
+ T non-virtual thunk to CBaseRecordingSessionBlockManager::GetBlockPath() const
  T non-virtual thunk to CBaseRecordingSessionBlockManager::LoadBlockFromFileName(char const*, IRecordingSession*)
  T non-virtual thunk to CBaseRecordingSessionBlockManager::UnloadBlock(CBaseRecordingSessionBlock*)
- T non-virtual thunk to CBaseRecordingSession::~CBaseRecordingSession()
- T non-virtual thunk to CBaseRecordingSessionManager::~CBaseRecordingSessionManager()
+ T non-virtual thunk to CBaseRecordingSessionBlockManager::~CBaseRecordingSessionBlockManager()
  T non-virtual thunk to CBaseRecordingSessionManager::FindSession(unsigned int)
  T non-virtual thunk to CBaseRecordingSessionManager::FindSession(unsigned int) const
  T non-virtual thunk to CBaseRecordingSessionManager::FlagSessionForFlush(CBaseRecordingSession*, bool)
  T non-virtual thunk to CBaseRecordingSessionManager::GetServerStartTickForSession(unsigned int)
- T non-virtual thunk to CClientRecordingSessionBlockManager::~CClientRecordingSessionBlockManager()
- T non-virtual thunk to CClientRecordingSession::~CClientRecordingSession()
+ T non-virtual thunk to CBaseRecordingSessionManager::~CBaseRecordingSessionManager()
  T non-virtual thunk to CClientRecordingSession::GetNextThinkTime() const
- T non-virtual thunk to CClientRecordingSessionManager::~CClientRecordingSessionManager()
- T non-virtual thunk to CClientRecordingSessionManager::FireGameEvent(IGameEvent*)
  T non-virtual thunk to CClientRecordingSession::Think()
+ T non-virtual thunk to CClientRecordingSession::~CClientRecordingSession()
+ T non-virtual thunk to CClientRecordingSessionBlockManager::~CClientRecordingSessionBlockManager()
+ T non-virtual thunk to CClientRecordingSessionManager::FireGameEvent(IGameEvent*)
+ T non-virtual thunk to CClientRecordingSessionManager::~CClientRecordingSessionManager()
  T non-virtual thunk to CClientReplayContext::ReportErrorsToUser(wchar_t*)
  T non-virtual thunk to CCompressionJob::~CCompressionJob()
  T non-virtual thunk to CDeleteLocalFileJob::~CDeleteLocalFileJob()
@@ -1775,7 +1584,6 @@
  T non-virtual thunk to CErrorSystem::~CErrorSystem()
  T non-virtual thunk to CFtp::~CFtp()
  T non-virtual thunk to CFtpFileDeleterJob::AddFileForDelete(char const*)
- T non-virtual thunk to CFtpFileDeleterJob::~CFtpFileDeleterJob()
  T non-virtual thunk to CFtpFileDeleterJob::FTP_GetFilename() const
  T non-virtual thunk to CFtpFileDeleterJob::FTP_IsCurlResultOK(int) const
  T non-virtual thunk to CFtpFileDeleterJob::FTP_OnPostExecuteCurlOperations()
@@ -1783,32 +1591,27 @@
  T non-virtual thunk to CFtpFileDeleterJob::FTP_SetError(int, char const*)
  T non-virtual thunk to CFtpFileDeleterJob::FTP_SetupAdditionalCurlOperations(void*)
  T non-virtual thunk to CFtpFileDeleterJob::GetNumFilesDeleted() const
- T non-virtual thunk to CFtpUploadJob::~CFtpUploadJob()
+ T non-virtual thunk to CFtpFileDeleterJob::~CFtpFileDeleterJob()
  T non-virtual thunk to CFtpUploadJob::FTP_GetFilename() const
  T non-virtual thunk to CFtpUploadJob::FTP_IsCurlResultOK(int) const
  T non-virtual thunk to CFtpUploadJob::FTP_OnPostExecuteCurlOperations()
  T non-virtual thunk to CFtpUploadJob::FTP_OnPreExecuteCurlOperations()
  T non-virtual thunk to CFtpUploadJob::FTP_SetError(int, char const*)
  T non-virtual thunk to CFtpUploadJob::FTP_SetupAdditionalCurlOperations(void*)
+ T non-virtual thunk to CFtpUploadJob::~CFtpUploadJob()
  T non-virtual thunk to CJob::~CJob()
  T non-virtual thunk to CLocalFileDeleterJob::AddFileForDelete(char const*)
- T non-virtual thunk to CLocalFileDeleterJob::~CLocalFileDeleterJob()
  T non-virtual thunk to CLocalFileDeleterJob::GetNumFilesDeleted() const
+ T non-virtual thunk to CLocalFileDeleterJob::~CLocalFileDeleterJob()
  T non-virtual thunk to CLocalPublishJob::~CLocalPublishJob()
  T non-virtual thunk to CMd5Job::~CMd5Job()
- T non-virtual thunk to ConVar::GetName() const
- T non-virtual thunk to ConVar::IsFlagSet(int) const
- T non-virtual thunk to ConVar::SetValue(char const*)
- T non-virtual thunk to ConVar::SetValue(float)
- T non-virtual thunk to ConVar::SetValue(int)
+ T non-virtual thunk to CPerformanceController::AddEvent_Camera_ChangePlayer(float, int)
  T non-virtual thunk to CPerformanceController::AddEvent_Camera_Change_FirstPerson(float, int)
  T non-virtual thunk to CPerformanceController::AddEvent_Camera_Change_Free(float)
- T non-virtual thunk to CPerformanceController::AddEvent_Camera_ChangePlayer(float, int)
  T non-virtual thunk to CPerformanceController::AddEvent_Camera_Change_ThirdPerson(float, int)
  T non-virtual thunk to CPerformanceController::AddEvent_Camera_SetView(SetViewParams_t const&)
  T non-virtual thunk to CPerformanceController::AddEvent_TimeScale(float, float)
  T non-virtual thunk to CPerformanceController::ClearRewinding()
- T non-virtual thunk to CPerformanceController::~CPerformanceController()
  T non-virtual thunk to CPerformanceController::GetLastSaveStatus() const
  T non-virtual thunk to CPerformanceController::GetPerformance()
  T non-virtual thunk to CPerformanceController::GetPlaybackTimeScale() const
@@ -1829,20 +1632,20 @@
  T non-virtual thunk to CPerformanceController::SetEditor(IReplayPerformanceEditor*)
  T non-virtual thunk to CPerformanceController::StartRecording(CReplay*, bool)
  T non-virtual thunk to CPerformanceController::Stop()
- T non-virtual thunk to CReplayManager::~CReplayManager()
+ T non-virtual thunk to CPerformanceController::~CPerformanceController()
  T non-virtual thunk to CReplayManager::DeleteReplay(unsigned int, bool)
  T non-virtual thunk to CReplayManager::FlagReplayForFlush(CReplay*, bool)
  T non-virtual thunk to CReplayManager::GetDownloadProgress(CReplay const*)
  T non-virtual thunk to CReplayManager::GetPlayingReplay()
+ T non-virtual thunk to CReplayManager::GetReplay(unsigned int)
  T non-virtual thunk to CReplayManager::GetReplayCount() const
  T non-virtual thunk to CReplayManager::GetReplayForCurrentLife()
- T non-virtual thunk to CReplayManager::GetReplaysAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
  T non-virtual thunk to CReplayManager::GetReplays(CUtlLinkedList<CReplay*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CReplay*, int>, int> >&)
+ T non-virtual thunk to CReplayManager::GetReplaysAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
  T non-virtual thunk to CReplayManager::GetReplaysDir() const
- T non-virtual thunk to CReplayManager::GetReplay(unsigned int)
  T non-virtual thunk to CReplayManager::GetUnrenderedReplayCount()
+ T non-virtual thunk to CReplayManager::~CReplayManager()
  T non-virtual thunk to CReplayMovie::CaptureRecordTime()
- T non-virtual thunk to CReplayMovie::~CReplayMovie()
  T non-virtual thunk to CReplayMovie::GetFrameDimensions(int&, int&)
  T non-virtual thunk to CReplayMovie::GetItemDate() const
  T non-virtual thunk to CReplayMovie::GetItemHandle() const
@@ -1860,43 +1663,44 @@
  T non-virtual thunk to CReplayMovie::IsItemAMovie() const
  T non-virtual thunk to CReplayMovie::IsItemRendered() const
  T non-virtual thunk to CReplayMovie::IsUploaded() const
- T non-virtual thunk to CReplayMovieManager::CancelRender()
- T non-virtual thunk to CReplayMovieManager::ClearRenderCancelledFlag()
- T non-virtual thunk to CReplayMovieManager::CompleteRender(bool, bool)
- T non-virtual thunk to CReplayMovieManager::CreateAndAddMovie(unsigned int)
- T non-virtual thunk to CReplayMovieManager::~CReplayMovieManager()
- T non-virtual thunk to CReplayMovieManager::DeleteMovie(unsigned int)
- T non-virtual thunk to CReplayMovieManager::FlagMovieForFlush(IReplayMovie*, bool)
- T non-virtual thunk to CReplayMovieManager::GetCachedMovieTitleAndClear(wchar_t*, int)
- T non-virtual thunk to CReplayMovieManager::GetMovieCount()
- T non-virtual thunk to CReplayMovieManager::GetMovieList(CUtlLinkedList<IReplayMovie*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<IReplayMovie*, unsigned short>, unsigned short> >&)
- T non-virtual thunk to CReplayMovieManager::GetMoviesAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
- T non-virtual thunk to CReplayMovieManager::GetMovie(unsigned int)
- T non-virtual thunk to CReplayMovieManager::GetNumMoviesDependentOnReplay(CReplay const*)
- T non-virtual thunk to CReplayMovieManager::GetPendingMovie()
- T non-virtual thunk to CReplayMovieManager::GetRawExportDir() const
- T non-virtual thunk to CReplayMovieManager::GetRenderDir() const
- T non-virtual thunk to CReplayMovieManager::IsRendering() const
- T non-virtual thunk to CReplayMovieManager::RenderingCancelled() const
- T non-virtual thunk to CReplayMovieManager::RenderMovie(RenderMovieParams_t const&)
- T non-virtual thunk to CReplayMovieManager::RenderNextMovie()
- T non-virtual thunk to CReplayMovieManager::SetPendingMovie(IReplayMovie*)
  T non-virtual thunk to CReplayMovie::SetIsRendered(bool)
  T non-virtual thunk to CReplayMovie::SetItemTitle(wchar_t const*)
  T non-virtual thunk to CReplayMovie::SetLength(float)
  T non-virtual thunk to CReplayMovie::SetMovieFilename(char const*)
  T non-virtual thunk to CReplayMovie::SetMovieTitle(wchar_t const*)
  T non-virtual thunk to CReplayMovie::SetRenderTime(float)
- T non-virtual thunk to CReplayMovie::SetUploaded(bool)
  T non-virtual thunk to CReplayMovie::SetUploadURL(char const*)
+ T non-virtual thunk to CReplayMovie::SetUploaded(bool)
  T non-virtual thunk to CReplayMovie::SetUserData(void*)
+ T non-virtual thunk to CReplayMovie::~CReplayMovie()
+ T non-virtual thunk to CReplayMovieManager::CancelRender()
+ T non-virtual thunk to CReplayMovieManager::ClearRenderCancelledFlag()
+ T non-virtual thunk to CReplayMovieManager::CompleteRender(bool, bool)
+ T non-virtual thunk to CReplayMovieManager::CreateAndAddMovie(unsigned int)
+ T non-virtual thunk to CReplayMovieManager::DeleteMovie(unsigned int)
+ T non-virtual thunk to CReplayMovieManager::FlagMovieForFlush(IReplayMovie*, bool)
+ T non-virtual thunk to CReplayMovieManager::GetCachedMovieTitleAndClear(wchar_t*, int)
+ T non-virtual thunk to CReplayMovieManager::GetMovie(unsigned int)
+ T non-virtual thunk to CReplayMovieManager::GetMovieCount()
+ T non-virtual thunk to CReplayMovieManager::GetMovieList(CUtlLinkedList<IReplayMovie*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<IReplayMovie*, unsigned short>, unsigned short> >&)
+ T non-virtual thunk to CReplayMovieManager::GetMoviesAsQueryableItems(CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >&)
+ T non-virtual thunk to CReplayMovieManager::GetNumMoviesDependentOnReplay(CReplay const*)
+ T non-virtual thunk to CReplayMovieManager::GetPendingMovie()
+ T non-virtual thunk to CReplayMovieManager::GetRawExportDir() const
+ T non-virtual thunk to CReplayMovieManager::GetRenderDir() const
+ T non-virtual thunk to CReplayMovieManager::IsRendering() const
+ T non-virtual thunk to CReplayMovieManager::RenderMovie(RenderMovieParams_t const&)
+ T non-virtual thunk to CReplayMovieManager::RenderNextMovie()
+ T non-virtual thunk to CReplayMovieManager::RenderingCancelled() const
+ T non-virtual thunk to CReplayMovieManager::SetPendingMovie(IReplayMovie*)
+ T non-virtual thunk to CReplayMovieManager::~CReplayMovieManager()
  T non-virtual thunk to CSaveJob::~CSaveJob()
  T non-virtual thunk to CScreenshotManager::CaptureScreenshot(CaptureScreenshotParams_t&)
- T non-virtual thunk to CScreenshotManager::~CScreenshotManager()
  T non-virtual thunk to CScreenshotManager::DeleteScreenshotsForReplay(CReplay*)
  T non-virtual thunk to CScreenshotManager::GetUnpaddedScreenshotSize(int&, int&)
- T non-virtual thunk to CServerRecordingSessionBlockManager::~CServerRecordingSessionBlockManager()
+ T non-virtual thunk to CScreenshotManager::~CScreenshotManager()
  T non-virtual thunk to CServerRecordingSession::~CServerRecordingSession()
+ T non-virtual thunk to CServerRecordingSessionBlockManager::~CServerRecordingSessionBlockManager()
  T non-virtual thunk to CServerRecordingSessionManager::~CServerRecordingSessionManager()
  T non-virtual thunk to CServerReplayContext::ReportErrorsToUser(wchar_t*)
  T non-virtual thunk to CSessionBlockDownloader::OnConnecting(CHttpDownloader*)
@@ -1905,16 +1709,15 @@
  T non-virtual thunk to CSessionInfoDownloader::OnConnecting(CHttpDownloader*)
  T non-virtual thunk to CSessionInfoDownloader::OnDownloadComplete(CHttpDownloader*, unsigned char const*)
  T non-virtual thunk to CSessionInfoDownloader::OnFetch(CHttpDownloader*)
- T non-virtual thunk to CSessionRecorder::~CSessionRecorder()
  T non-virtual thunk to CSessionRecorder::SetCurrentRecordingStartTick(int)
  T non-virtual thunk to CSessionRecorder::StartRecording()
  T non-virtual thunk to CSessionRecorder::StopRecording(bool)
- __tolower
- T OnFileserverHostnameChanged(IConVar*, char const*, float)
- T OnFileserverProxyHostnameChanged(IConVar*, char const*, float)
- T OnReplayEnableChanged(IConVar*, char const*, float)
- T OnReplayRecordingChanged(IConVar*, char const*, float)
- T OnReplayScreenshotResolutionChanged(IConVar*, char const*, float)
+ T non-virtual thunk to CSessionRecorder::~CSessionRecorder()
+ T non-virtual thunk to ConVar::GetName() const
+ T non-virtual thunk to ConVar::IsFlagSet(int) const
+ T non-virtual thunk to ConVar::SetValue(char const*)
+ T non-virtual thunk to ConVar::SetValue(float)
+ T non-virtual thunk to ConVar::SetValue(int)
  T operator delete(void*)
  T operator delete[](void*)
  T operator new(unsigned long)
@@ -1924,17 +1727,15 @@
  T png_ascii_from_fixed
  T png_ascii_from_fp
  T png_benign_error
- t png_build_16bit_table
- t png_build_8bit_table
  T png_build_gamma_table
  T png_build_grayscale_palette
  T png_calculate_crc
  T png_calloc
+ T png_check_IHDR
  T png_check_cHRM_fixed
  T png_check_chunk_name
  T png_check_fp_number
  T png_check_fp_string
- T png_check_IHDR
  T png_check_keyword
  T png_chunk_benign_error
  T png_chunk_error
@@ -1995,9 +1796,7 @@
  T png_error
  T png_fixed
  T png_fixed_error
- t png_fixed_inches_from_microns
  T png_flush
- t png_format_buffer
  T png_free
  T png_free_data
  T png_free_default
@@ -2005,12 +1804,13 @@
  T png_gamma_8bit_correct
  T png_gamma_correct
  T png_gamma_significant
- t png_gamma_threshold
- T png_get_bit_depth
+ T png_get_IHDR
+ T png_get_PLTE
  T png_get_bKGD
- T png_get_channels
+ T png_get_bit_depth
  T png_get_cHRM
  T png_get_cHRM_fixed
+ T png_get_channels
  T png_get_chunk_cache_max
  T png_get_chunk_malloc_max
  T png_get_color_type
@@ -2021,14 +1821,12 @@
  T png_get_current_row_number
  T png_get_error_ptr
  T png_get_filter_type
- t png_get_fixed_point
  T png_get_gAMA
  T png_get_gAMA_fixed
+ T png_get_hIST
  T png_get_header_ver
  T png_get_header_version
- T png_get_hIST
  T png_get_iCCP
- T png_get_IHDR
  T png_get_image_height
  T png_get_image_width
  T png_get_int_32
@@ -2047,7 +1845,6 @@
  T png_get_pixel_aspect_ratio_fixed
  T png_get_pixels_per_inch
  T png_get_pixels_per_meter
- T png_get_PLTE
  T png_get_rgb_to_gray_status
  T png_get_rowbytes
  T png_get_rows
@@ -2055,12 +1852,12 @@
  T png_get_sCAL
  T png_get_sCAL_fixed
  T png_get_sCAL_s
- T png_get_signature
  T png_get_sPLT
  T png_get_sRGB
- T png_get_text
+ T png_get_signature
  T png_get_tIME
  T png_get_tRNS
+ T png_get_text
  T png_get_uint_16
  T png_get_uint_31
  T png_get_uint_32
@@ -2082,19 +1879,19 @@
  T png_get_y_offset_pixels
  T png_get_y_pixels_per_inch
  T png_get_y_pixels_per_meter
+ T png_handle_IEND
+ T png_handle_IHDR
+ T png_handle_PLTE
  T png_handle_as_unknown
  T png_handle_bKGD
  T png_handle_cHRM
  T png_handle_gAMA
  T png_handle_hIST
  T png_handle_iCCP
- T png_handle_IEND
- T png_handle_IHDR
  T png_handle_iTXt
  T png_handle_oFFs
  T png_handle_pCAL
  T png_handle_pHYs
- T png_handle_PLTE
  T png_handle_sBIT
  T png_handle_sCAL
  T png_handle_sPLT
@@ -2104,10 +1901,8 @@
  T png_handle_tRNS
  T png_handle_unknown
  T png_handle_zTXt
- t png_inflate
  T png_info_destroy
  T png_info_init_3
- t png_init_filter_heuristics
  T png_init_io
  T png_init_read_transformations
  T png_longjmp
@@ -2117,7 +1912,6 @@
  T png_muldiv
  T png_muldiv_warn
  T png_permit_mng_features
- t png_pow10
  T png_read_chunk_header
  T png_read_data
  T png_read_destroy
@@ -2136,17 +1930,18 @@
  T png_reciprocal
  T png_reciprocal2
  T png_reset_crc
- t png_reset_filter_heuristics
  T png_reset_zstream
  T png_save_int_32
  T png_save_uint_16
  T png_save_uint_32
+ T png_set_IHDR
+ T png_set_PLTE
  T png_set_add_alpha
+ T png_set_bKGD
  T png_set_background
  T png_set_background_fixed
  T png_set_benign_errors
  T png_set_bgr
- T png_set_bKGD
  T png_set_cHRM
  T png_set_cHRM_fixed
  T png_set_chunk_cache_max
@@ -2174,7 +1969,6 @@
  T png_set_gray_to_rgb
  T png_set_hIST
  T png_set_iCCP
- T png_set_IHDR
  T png_set_interlace_handling
  T png_set_invalid
  T png_set_invert_alpha
@@ -2183,12 +1977,11 @@
  T png_set_longjmp_fn
  T png_set_mem_fn
  T png_set_oFFs
+ T png_set_pCAL
+ T png_set_pHYs
  T png_set_packing
  T png_set_packswap
  T png_set_palette_to_rgb
- T png_set_pCAL
- T png_set_pHYs
- T png_set_PLTE
  T png_set_quantize
  T png_set_read_fn
  T png_set_read_status_fn
@@ -2201,20 +1994,20 @@
  T png_set_sCAL
  T png_set_sCAL_fixed
  T png_set_sCAL_s
- T png_set_shift
- T png_set_sig_bytes
  T png_set_sPLT
  T png_set_sRGB
  T png_set_sRGB_gAMA_and_cHRM
+ T png_set_shift
+ T png_set_sig_bytes
  T png_set_strip_16
  T png_set_strip_alpha
  T png_set_swap
  T png_set_swap_alpha
- T png_set_text
- T png_set_text_2
  T png_set_tIME
  T png_set_tRNS
  T png_set_tRNS_to_alpha
+ T png_set_text
+ T png_set_text_2
  T png_set_unknown_chunk_location
  T png_set_unknown_chunks
  T png_set_user_limits
@@ -2224,15 +2017,17 @@
  T png_set_write_user_transform_fn
  T png_sig_cmp
  T png_start_read_image
- t png_text_compress
  T png_warning
+ T png_write_IDAT
+ T png_write_IEND
+ T png_write_IHDR
+ T png_write_PLTE
  T png_write_bKGD
  T png_write_cHRM_fixed
  T png_write_chunk
  T png_write_chunk_data
  T png_write_chunk_end
  T png_write_chunk_start
- t png_write_compressed_data_out
  T png_write_data
  T png_write_destroy
  T png_write_end
@@ -2243,25 +2038,21 @@
  T png_write_gAMA_fixed
  T png_write_hIST
  T png_write_iCCP
- T png_write_IDAT
- T png_write_IEND
- T png_write_IHDR
+ T png_write_iTXt
  T png_write_image
  T png_write_info
  T png_write_info_before_PLTE
- T png_write_iTXt
  T png_write_oFFs
  T png_write_pCAL
  T png_write_pHYs
- T png_write_PLTE
  T png_write_png
  T png_write_row
  T png_write_rows
  T png_write_sBIT
  T png_write_sCAL_s
- T png_write_sig
  T png_write_sPLT
  T png_write_sRGB
+ T png_write_sig
  T png_write_start_row
  T png_write_tEXt
  T png_write_tIME
@@ -2269,92 +2060,301 @@
  T png_write_zTXt
  T png_zalloc
  T png_zfree
+ T void ConstructStringVArgsInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, int, char*)
+ T void ILocalize::ConstructString<wchar_t>(wchar_t*, int, wchar_t const*, int, ...)
+ ThreadGetCurrentId
+ ThreadInterlockedDecrement
+ ThreadInterlockedIncrement
+ ThreadSleep
+ Warning
+ _DefaultRuneLocale
+ _ExitOnFatalAssert
+ _SpewInfo
+ _SpewMessage
+ _Unwind_Resume
+ __cxa_atexit
+ __cxa_begin_catch
+ __cxa_call_unexpected
+ __cxa_guard_acquire
+ __cxa_guard_release
+ __cxa_pure_virtual
+ __dynamic_cast
+ __error
+ __gxx_personality_v0
+ __maskrune
+ __memcpy_chk
+ __stack_chk_fail
+ __stack_chk_guard
+ __stderrp
+ __tolower
+ abort
+ acos
+ atan2f
+ atof
+ atoi
+ b CClientReplayContext::ReportErrorsToUser(wchar_t*)::s_szError
+ b CPerformanceController::PlaybackThink()::aAngles
+ b CPerformanceController::PlaybackThink()::aFov
+ b CPerformanceController::PlaybackThink()::aOrigin
+ b CReplayMovieManager::GetRawExportDir() const::s_fmtExportDir
+ b CReplayPerformanceManager::GeneratePerformanceFilename(CReplay*)::s_szBaseFilename
+ b CReplayTime::GetLocalizedDate(vgui::ILocalize*, int, int, int, int*, int*, int*, bool)::s_wBuf
+ b CReplayTime::GetLocalizedDay(vgui::ILocalize*, int)::s_wDay
+ b CReplayTime::GetLocalizedTime(vgui::ILocalize*, int, int, int)::s_wTime
+ b CReplayTime::GetLocalizedYear(vgui::ILocalize*, int)::s_wYear
+ b CServerReplayContext::GetLocalFileServerPath() const::s_szBuf
+ b CServerReplayContext::ReportErrorsToUser(wchar_t*)::s_clrRed
+ b ConVarRef::Init(char const*, bool)::bFirst
+ b KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
+ b Replay_GetDownloadURL()::s_szFileURL
+ b Replay_GetDownloadURLPath()::s_szDownloadURLPath
+ b Replay_va(char const*, ...)::curstring
+ b Replay_va(char const*, ...)::string
+ b __g_CreateCReplaySystemIReplaySystem_reg
+ b f05
+ b f3
+ b gs_szGameDir
+ b guard variable for CPerformanceController::PlaybackThink()::aAngles
+ b guard variable for CPerformanceController::PlaybackThink()::aOrigin
+ b guard variable for CReplayMovieManager::GetRawExportDir() const::s_fmtExportDir
+ b guard variable for CServerReplayContext::ReportErrorsToUser(wchar_t*)::s_clrRed
+ b replay_add_fake_replays_command
+ b replay_clearqueuedtakes_command
+ b replay_confirmquit_command
+ b replay_deleteclientreplays_command
+ b replay_docleanup_command
+ b replay_dopublishtest_command
+ b replay_printclientreplays_command
+ b replay_printqueuedtakes_command
+ b replay_printsessioninfo_command
+ b replay_record_command
+ b replay_removeclientreplay_command
+ b replay_renderpause_command
+ b replay_renderunpause_command
+ b replay_stoprecord_command
+ b s_EmptyConVar
+ b s_Replay
+ b s_ThinkManager
+ b s_bConnected
+ b s_bRegistered
+ b s_nCVarFlag
+ b s_pTokenBuf
+ b s_text
+ b save_replay_command
+ b vec2_invalid
+ b vec2_origin
+ b vec4_invalid
+ b vec4_origin
+ ceilf
+ crc32
+ curl_easy_cleanup
+ curl_easy_init
+ curl_easy_perform
+ curl_easy_setopt
+ curl_easy_strerror
+ curl_global_cleanup
+ curl_global_init
+ curl_slist_append
+ curl_slist_free_all
+ d dyld__mach_header
+ d s_BlockSpewer
+ d s_DefaultAccessor
+ d s_LastFileLoadingFrom
+ d s_NullSpewer
+ d s_SimpleSpewer
+ d s_nDLLIdentifier
+ d s_pConversionArrays_NoEscConversion
+ d s_pConversionArrays_StringCharConversion
+ deflate
+ deflateEnd
+ deflateInit2_
+ deflateReset
+ difftime
+ exit
+ fclose
+ fflush
+ floor
+ floorf
+ fopen
+ fprintf
+ fputc
+ fread
+ free
+ frexp
+ fwrite
+ fwrite$UNIX2003
+ g_VProfCurrentProfile
+ g_pMemAlloc
+ g_pThreadPool
+ g_pVCR
+ gmtime
+ inflate
+ inflateEnd
+ inflateInit_
+ inflateReset
+ localtime
+ longjmp
+ malloc
+ memcmp
+ memcpy
+ memmove
+ memset
+ mktime$UNIX2003
+ modf
+ pow
+ pthread_mutex_destroy
+ pthread_mutex_init
+ pthread_mutex_lock
+ pthread_mutex_unlock
+ pthread_mutexattr_init
+ pthread_mutexattr_settype
+ qsort
+ r CScreenshotManager::GetUnpaddedScreenshotSize(int&, int&)::s_flInvAspectRatios
+ r fourbppswaptable
+ r incs
+ r onebppswaptable
+ r png_IDAT.6211
+ r png_IDAT.6290
+ r png_IDAT.6410
+ r png_IDAT.6446
+ r png_IDAT.7349
+ r png_IDAT.7828
+ r png_IEND.6212
+ r png_IEND.6447
+ r png_IEND.6460
+ r png_IHDR.6210
+ r png_IHDR.6299
+ r png_IHDR.6445
+ r png_PLTE.6213
+ r png_PLTE.6380
+ r png_PLTE.6448
+ r png_bKGD.6214
+ r png_bKGD.6449
+ r png_bKGD.6659
+ r png_cHRM.6215
+ r png_cHRM.6450
+ r png_cHRM.6603
+ r png_digit
+ r png_gAMA.6216
+ r png_gAMA.6451
+ r png_gAMA.6467
+ r png_hIST.6217
+ r png_hIST.6452
+ r png_hIST.6694
+ r png_iCCP.6218
+ r png_iCCP.6453
+ r png_iCCP.6484
+ r png_iTXt.6219
+ r png_iTXt.6454
+ r png_iTXt.6811
+ r png_oFFs.6220
+ r png_oFFs.6455
+ r png_oFFs.6847
+ r png_pCAL.6221
+ r png_pCAL.6456
+ r png_pCAL.6861
+ r png_pHYs.6222
+ r png_pHYs.6457
+ r png_pHYs.6935
+ r png_pass_dsp_mask.6291
+ r png_pass_inc.7541
+ r png_pass_inc.7823
+ r png_pass_inc.7899
+ r png_pass_mask.6292
+ r png_pass_start.7822
+ r png_pass_start.7898
+ r png_pass_yinc.7825
+ r png_pass_ystart.7824
+ r png_sBIT.6223
+ r png_sBIT.6458
+ r png_sBIT.6572
+ r png_sCAL.6224
+ r png_sCAL.6459
+ r png_sCAL.6907
+ r png_sPLT.6225
+ r png_sPLT.6460
+ r png_sPLT.6522
+ r png_sRGB.6226
+ r png_sRGB.6461
+ r png_sRGB.6474
+ r png_tEXt.6227
+ r png_tEXt.6462
+ r png_tEXt.6761
+ r png_tIME.6228
+ r png_tIME.6463
+ r png_tIME.6943
+ r png_tRNS.6229
+ r png_tRNS.6464
+ r png_tRNS.6628
+ r png_zTXt.6230
+ r png_zTXt.6465
+ r png_zTXt.6783
+ r short_months.6308
+ r twobppswaptable
+ raise
+ rand
+ setjmp
+ sin
+ snprintf
+ sscanf
+ std::terminate()
+ strcasecmp
+ strchr
+ strcmp
+ strcpy
+ strerror$UNIX2003
+ strlen
+ strncat
+ strncpy
+ strstr
+ strtod$UNIX2003
+ strtok
+ strtol
+ strtoul
+ swprintf
+ t __CreateCReplaySystemIReplaySystem_interface()
+ t add_pair_to_block(EState*)
+ t bsPutUInt32(EState*, unsigned int)
+ t default_bzalloc(void*, int, int)
+ t default_bzfree(void*, void*)
+ t fallbackSort(unsigned int*, unsigned int*, unsigned int*, int, int)
+ t global constructors keyed to a
+ t handle_compress(bz_stream*)
+ t mainGtU(unsigned int, unsigned int, unsigned char*, unsigned short*, unsigned int, int*)
+ t png_build_16bit_table
+ t png_build_8bit_table
+ t png_fixed_inches_from_microns
+ t png_format_buffer
+ t png_gamma_threshold
+ t png_get_fixed_point
+ t png_inflate
+ t png_init_filter_heuristics
+ t png_pow10
+ t png_reset_filter_heuristics
+ t png_text_compress
+ t png_write_compressed_data_out
  t ppi_from_ppm
- T PrintSessionInfo(char const*)
- T QuaternionAlign(Quaternion const&, Quaternion const&, Quaternion&)
- T QuaternionAngles(Quaternion const&, QAngle&)
- T QuaternionMatrix(Quaternion const&, matrix3x4_t&)
- T QuaternionSlerpNoAlign(Quaternion const&, Quaternion const&, float, Quaternion&)
- T QuaternionSlerp(Quaternion const&, Quaternion const&, float, Quaternion&)
- T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
- T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
- T Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
- T ReadSessionInfoHeader(void const*, int, SessionInfoHeader_t&)
  t replay_add_fake_replays(CCommand const&)
  t replay_clearqueuedtakes(CCommand const&)
  t replay_confirmquit(CCommand const&)
- T Replay_CrackURL(char const*, char*, char*)
  t replay_deleteclientreplays(CCommand const&)
  t replay_docleanup(CCommand const&)
  t replay_dopublishtest(CCommand const&)
- T Replay_GetAutoName(wchar_t*, int, char const*)
- T Replay_GetDownloadURL()
- T Replay_GetFirstAvailableFilename(char*, int, char const*, char const*, char const*, int)
- T Replay_HudMsg(char const*, char const*, bool)
- T ReplayLib_Init(char const*, IClientReplayContext*)
- T Replay_MsgBox(char const*)
  t replay_printclientreplays(CCommand const&)
  t replay_printqueuedtakes(CCommand const&)
  t replay_printsessioninfo(CCommand const&)
- T Replay_Reconstruct(CReplay*, bool)
  t replay_record(CCommand const&)
  t replay_removeclientreplay(CCommand const&)
  t replay_renderpause(CCommand const&)
  t replay_renderunpause(CCommand const&)
- T Replay_SetGameDir(char const*)
  t replay_stoprecord(CCommand const&)
- T Replay_va(char const*, ...)
- T RunJobToCompletion(IThreadPool*, CJob*)
  t save_replay(CCommand const&)
- T SV_CastJobToIFileserverCleanerJob(CBaseJob*)
- T SVC_GameEvent::GetGroup() const
- T SVC_GameEvent::GetName() const
- T SVC_GameEvent::GetType() const
- T SVC_GameEvent::Process()
- T SVC_GameEvent::ReadFromBuffer(bf_read&)
- T SVC_GameEvent::~SVC_GameEvent()
- T SVC_GameEvent::ToString() const
- T SVC_GameEvent::WriteToBuffer(bf_write&)
- T SV_CreateDeleteFileJob()
- T SV_CreateFtpFileDeleterJob(char const*)
- T SV_CreateFtpUploadJob(char const*)
- T SV_CreateLocalPublishJob(char const*)
- T SV_DoFileserverCleanup(bool, ISpewer*)
- T SV_DoTestPublish()
- T SV_GetRecordingSessionInProgress()
- T SV_GetTmpDir()
- T SV_PublishFile(PublishFileParams_t const&)
- T SV_RunJobToCompletion(CJob*)
- T V_AppendSlash(char*, int)
- T V_atof(char const*)
- T V_atoi64(char const*)
- T V_binarytohex(unsigned char const*, int, char*, int)
- T V_FileBase(char const*, char*, int)
- T V_FixDoubleSlashes(char*)
- T V_FixSlashes(char*, char)
- T void ConstructStringVArgsInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, int, char*)
- T void ILocalize::ConstructString<wchar_t>(wchar_t*, int, wchar_t const*, int, ...)
- T V_RemoveDotSlashes(char*, char, bool)
- T V_snprintf(char*, int, char const*, ...)
- T V_stricmp(char const*, char const*)
- T V_StripExtension(char const*, char*, int)
- T V_StripTrailingSlash(char*)
- T V_stristr(char const*, char const*)
- T V_strncat(char*, char const*, unsigned long, int)
- T V_strncmp(char const*, char const*, int)
- T V_strncpy(char*, char const*, int)
- T V_UnqualifiedFileName(char const*)
- T V_vsnprintf(char*, int, char const*, char*)
- T V_vsnprintfRet(char*, int, char const*, char*, bool*)
- T V_wcsncpy(wchar_t*, wchar_t const*, int)
- T V_wcstostr(wchar_t const*, int, char*, int)
+ time
  typeinfo for std::bad_alloc
- _Unwind_Resume
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
- Warning
  wcscat
  wcscmp
  wcslen
