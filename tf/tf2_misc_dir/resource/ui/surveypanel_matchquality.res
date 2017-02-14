@@ -16,7 +16,7 @@
 				"xpos"			"cs-0.5"
 				"ypos"			"15"
 				"zpos"			"1000"
-				"wide"			"p0.5"
+				"wide"			"p0.85"
 				"tall"			"30"
 				"autoResize"	"0"
 				"pinCorner"		"0"

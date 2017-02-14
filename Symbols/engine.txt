@@ -407,6 +407,7 @@
  B g_bThreadedEngine
  B g_bTotalDumps
  B g_bUsingLegacyAppSystems
+ B g_bUsingSteamVoice
  B g_bVCRSingleStep
  B g_bVoiceAtLeastPartiallyInitted
  B g_bdas_create_new_node
@@ -918,7 +919,6 @@
  B sv_unlockedchapters
  B sv_use_steam_voice
  B sv_visiblemaxplayers
- B sv_voicecodec
  B testscript_debug
  B texture_budget_background_alpha
  B texture_budget_panel_bottom_of_history_fraction
@@ -2060,7 +2060,6 @@
  D g_bForceRefresh
  D g_bShowVCRPlaybackDisplay
  D g_bUpdateMinidumpComment
- D g_bUsingSteamVoice
  D g_backFaceVerts
  D g_downFaceVerts
  D g_flMinLightingValue
@@ -2070,6 +2069,7 @@
  D g_leftFaceVerts
  D g_nServerThread
  D g_nVoiceFadeSamples
+ D g_nVoiceRequestedSampleRate
  D g_p4factory
  D g_pClientDemoPlayer
  D g_pClientDemoRecorder
@@ -11866,7 +11866,7 @@
  T CreateVProfGraphPanel(vgui::Panel*)
  T CreateVTFTexture()
  T CreateVoiceRecord_AudioQueue(int)
- T CreateVoiceRecord_DSound(int)
+ T CreateVoiceRecord_OpenAL(int)
  T CreateWave(CSfxTable*, bool)
  T CreateWaveDataMemory(CAudioSource&)
  T CreateWaveDataStream(CAudioSource&, IWaveStreamSource*, char const*, int, int, CSfxTable*, int)
@@ -13248,6 +13248,7 @@
  T SV_TriggerMoved(edict_t*, bool)
  T SV_WriteClassInfos(ServerClass*, bf_write&)
  T SV_WriteSendTables(ServerClass*, bf_write&)
+ T SV_WriteVoiceCodec(bf_write&)
  T SW_Mix16StereoDirectional_Interp(float, portable_samplepair_t*, int*, short*, int, unsigned int, int)
  T SW_Mix16StereoDistVar(float, portable_samplepair_t*, int*, short*, int, unsigned int, int)
  T SW_Mix16StereoDistVar_Interp(float, portable_samplepair_t*, int*, short*, int, unsigned int, int)
@@ -13660,7 +13661,7 @@
  T VoiceRecord_AudioQueue::ClearInterfaces()
  T VoiceRecord_AudioQueue::GetRecordedData(short*, int)
  T VoiceRecord_AudioQueue::Idle()
- T VoiceRecord_AudioQueue::Init()
+ T VoiceRecord_AudioQueue::Init(int)
  T VoiceRecord_AudioQueue::InitalizeInterfaces()
  T VoiceRecord_AudioQueue::RecordStart()
  T VoiceRecord_AudioQueue::RecordStop()
@@ -13691,6 +13692,8 @@
  T Voice_AddIncomingData(int, char const*, int, int)
  T Voice_AssignChannel(int, bool)
  T Voice_AvgBytesPerSec()
+ T Voice_ConfiguredCodec()
+ T Voice_ConfiguredSampleRate()
  T Voice_Deinit()
  T Voice_Enabled()
  T Voice_EndChannel(int)
@@ -13699,7 +13702,8 @@
  T Voice_GetCompressedData(char*, int, bool)
  T Voice_GetOutputData(int, char*, int, int, int)
  T Voice_Idle(float)
- T Voice_Init(char const*)
+ T Voice_Init(char const*, int)
+ T Voice_InitWithDefault(char const*)
  T Voice_IsRecording()
  T Voice_LocalPlayerTalkingAck()
  T Voice_OnAudioSourceShutdown(int)
@@ -16861,7 +16865,7 @@
  b V_pretifymem(float, int, bool)::current
  b V_pretifymem(float, int, bool)::output
  b VisCache_Build(VisCacheEntry&, worldbrushdata_t const&)::_counter
- b Voice_Idle(float)::sv_use_steam_voice
+ b Voice_ForceInit()::sv_voicecodec
  b _Host_RunFrame(float)::host_remainder
  b _Host_RunFrame(float)::host_remainder_last_frame
  b _Host_RunFrame(float)::last_frame_time
@@ -17356,7 +17360,7 @@
  b guard variable for R_LightVec(Vector const&, Vector const&, bool, Vector&, float*, float*, float*, float*)::_counter
  b guard variable for Shader_DrawChainsStatic(CMSurfaceSortList const&, int, bool)::_counter
  b guard variable for VisCache_Build(VisCacheEntry&, worldbrushdata_t const&)::_counter
- b guard variable for Voice_Idle(float)::sv_use_steam_voice
+ b guard variable for Voice_ForceInit()::sv_voicecodec
  b guard variable for _Host_RunFrame_Server(bool)::_counter
  b guard variable for g_benchframe_CompletionFunc(char const*, char (*) [64])::benchframeComplete
  b guard variable for g_editdemo_CompletionFunc(char const*, char (*) [64])::editdemoComplete
@@ -17890,6 +17894,7 @@
  b sv_stats
  b sv_timeout
  b sv_useexplicitdelete
+ b sv_voicecodec
  b sv_voiceenable
  b sys_minidumpexpandedspew
  b sys_minidumpspewlines

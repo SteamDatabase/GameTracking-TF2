@@ -4736,7 +4736,6 @@
  D VTT for CryptoPP::RSAFunction
  D VTT for CryptoPP::X509PublicKey
  D ViewSmoothingData_t::m_DataMap
- D WeaponStatesForAltFireModes
  D audioparams_t::m_DataMap
  D bool CNavMesh::ForAllAreasInRadius<NavAreaCollector>(NavAreaCollector&, Vector const&, float)::searchMarker
  D bool CNavMesh::ForAllAreasOverlappingExtent<CCollectAndLabelSpawnRoomAreas>(CCollectAndLabelSpawnRoomAreas&, Extent const&)::__executeCount
@@ -28436,6 +28435,7 @@
  T CHalloweenBaseBoss::GetBossType() const
  T CHalloweenBaseBoss::GetCritInjuryMultiplier() const
  T CHalloweenBaseBoss::GetLevel() const
+ T CHalloweenBaseBoss::OnTakeDamage(CTakeDamageInfo const&)
  T CHalloweenBaseBoss::OnTakeDamage_Alive(CTakeDamageInfo const&)
  T CHalloweenBaseBoss::RememberAttacker(CTFPlayer*, bool, float)
  T CHalloweenBaseBoss::Spawn()
@@ -32858,6 +32858,7 @@
  T CMultiPlayerAnimState::InitGestureSlots()
  T CMultiPlayerAnimState::IsGestureSlotActive(int)
  T CMultiPlayerAnimState::IsGestureSlotPlaying(int, Activity)
+ T CMultiPlayerAnimState::OnNewModel()
  T CMultiPlayerAnimState::PlayFlinchGesture(Activity)
  T CMultiPlayerAnimState::Release()
  T CMultiPlayerAnimState::ResetGestureSlot(int)
@@ -38494,6 +38495,7 @@
  T CTFItemSchema::BInitQuestThemes(KeyValues*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >*)
  T CTFItemSchema::BInitSchema(KeyValues*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >*)
  T CTFItemSchema::BInitWarDefs(KeyValues*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >*)
+ T CTFItemSchema::BPostInitMaps(CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >*)
  T CTFItemSchema::CTFItemSchema()
  T CTFItemSchema::CreateCraftingRecipeDefinition()
  T CTFItemSchema::CreateEconItemDefinition()
@@ -38705,7 +38707,6 @@
  T CTFMinigameLogic::YouForgotToImplementOrDeclareServerClass()
  T CTFMinigameLogic::~CTFMinigameLogic()
  T CTFMinigun::ActivatePushBackAttackMode()
- T CTFMinigun::ApplyOnHitAttributes(CTFPlayer*, CTFPlayer*, CTakeDamageInfo const&)
  T CTFMinigun::AttackEnemyProjectiles()
  T CTFMinigun::CTFMinigun()
  T CTFMinigun::CanHolster() const
@@ -38733,7 +38734,6 @@
  T CTFMinigun::SetWeaponState(MinigunState_t)
  T CTFMinigun::SharedAttack()
  T CTFMinigun::ShouldDoMuzzleFlash()
- T CTFMinigun::Spawn()
  T CTFMinigun::UpdateTransmitState()
  T CTFMinigun::WeaponIdle()
  T CTFMinigun::WeaponReset()
@@ -39208,6 +39208,7 @@
  T CTFPlayer::MedicGetHealTarget()
  T CTFPlayer::MerasmusPlayerBombExplode(bool)
  T CTFPlayer::ModeWantsSpectatorGUI(int)
+ T CTFPlayer::ModifyDamageInfo(CTakeDamageInfo*, CBaseEntity const*)
  T CTFPlayer::ModifyEmitSoundParams(EmitSound_t&)
  T CTFPlayer::ModifyOrAppendCriteria(AI_CriteriaSet&)
  T CTFPlayer::NetworkVar_m_AttributeManager::NetworkStateChanged()
@@ -44543,8 +44544,11 @@
  T CUtlVector<LevelInfo_t, CUtlMemory<LevelInfo_t, int> >::~CUtlVector()
  T CUtlVector<MapDef_t const*, CUtlMemory<MapDef_t const*, int> >::AddToTail(MapDef_t const* const&)
  T CUtlVector<MapDef_t const*, CUtlMemory<MapDef_t const*, int> >::~CUtlVector()
+ T CUtlVector<MapDef_t*, CUtlMemory<MapDef_t*, int> >::AddToTail(MapDef_t* const&)
  T CUtlVector<MapDef_t*, CUtlMemory<MapDef_t*, int> >::PurgeAndDeleteElements()
  T CUtlVector<MapDef_t*, CUtlMemory<MapDef_t*, int> >::~CUtlVector()
+ T CUtlVector<MapDef_t::WeightedNextMapCandidates_t, CUtlMemory<MapDef_t::WeightedNextMapCandidates_t, int> >::~CUtlVector()
+ T CUtlVector<MapDef_t::WeightedNextMapTargets_t, CUtlMemory<MapDef_t::WeightedNextMapTargets_t, int> >::~CUtlVector()
  T CUtlVector<MapNameAndPlaytime_t, CUtlMemory<MapNameAndPlaytime_t, int> >::~CUtlVector()
  T CUtlVector<MvMMap_t, CUtlMemory<MvMMap_t, int> >::Purge()
  T CUtlVector<MvMMap_t, CUtlMemory<MvMMap_t, int> >::~CUtlVector()
@@ -47679,6 +47683,7 @@
  T MannVsMachineStats_RoundEvent_CreditsDropped(unsigned int, int)
  T MannVsMachineStats_SetPopulationFile(char const*)
  T MapCycleFileChangedCallback(IConVar*, char const*, float)
+ T MapDef_t::AddMapAsTargetWithWeight(MapDef_t::WeightedNextMapCandidates_t const&)
  T MapEntity_GetNumKeysInEntity(char const*)
  T MapEntity_ParseAllEntities(char const*, IMapEntityFilter*, bool)
  T MapEntity_ParseEntity(CBaseEntity*&, char const*, IMapEntityFilter*)
@@ -55050,7 +55055,7 @@
  t __cxx_global_array_dtor119
  t __cxx_global_array_dtor121
  t __cxx_global_array_dtor125
- t __cxx_global_array_dtor1259
+ t __cxx_global_array_dtor1258
  t __cxx_global_array_dtor13
  t __cxx_global_array_dtor14
  t __cxx_global_array_dtor140
@@ -55141,7 +55146,7 @@
  t __cxx_global_var_init11
  t __cxx_global_var_init1165
  t __cxx_global_var_init12
- t __cxx_global_var_init1280
+ t __cxx_global_var_init1279
  t __cxx_global_var_init133
  t __cxx_global_var_init16
  t __cxx_global_var_init169
@@ -55152,7 +55157,7 @@
  t __cxx_global_var_init343
  t __cxx_global_var_init37
  t __cxx_global_var_init4
- t __cxx_global_var_init446
+ t __cxx_global_var_init447
  t __cxx_global_var_init48
  t __cxx_global_var_init6
  t __static_initialization_and_destruction_0(int, int)

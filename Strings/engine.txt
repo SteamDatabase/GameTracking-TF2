@@ -235,6 +235,7 @@
  00@  0P0@  
  00@p0    0  
  00p00
+ 0@   
  0@000000000 
  0@0p
  0P`@pp0
@@ -726,7 +727,7 @@ $vertexcolor
 %short: backup %int, new %int, bytes %int
 %short: bytes %int
 %short: client %int, bytes %int
-%short: codec "%short", qualitty %int
+%short: codec "%short", sample rate %int
 %short: cvar: %short, cookie: %double
 %short: delta %int, max %int, changed %int,%short bytes %int
 %short: entity %int, class %int, bytes %int
@@ -1647,6 +1648,7 @@ $vertexcolor
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/audio/private/vox_private.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/audio/public/snd_audio_source.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/audio/public/sound.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/audio/public/voice.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseautocompletefilelist.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseautocompletefilelist.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseclient.cpp
@@ -2259,10 +2261,10 @@ $vertexcolor
 0000   
 000000
 000000  
-0000000
 0000000 p 
 000000000
 0000000000
+00000@@
 00000`
 0000P
 0000P`0@0@  
@@ -2305,11 +2307,11 @@ $vertexcolor
 1 CPU, Frequency: %.f %short,  Features: %short
 1.0.1.0
 1.0.2, 30-Dec-2001
+10:16:42
 1234567890123
 127.0.0.1
 131072
 1440.0
-14:51:39
 16.6666666667
 1750.0f
 1: draw light cache entries
@@ -11607,7 +11609,7 @@ CreateUniqueId(UniqueId_t*)
 CreateVProfGraphPanel(vgui::Panel*)
 CreateVTFTexture()
 CreateVoiceRecord_AudioQueue(int)
-CreateVoiceRecord_DSound(int)
+CreateVoiceRecord_OpenAL(int)
 CreateWave(CSfxTable*, bool)
 CreateWaveDataMemory(CAudioSource&)
 CreateWaveDataStream(CAudioSource&, IWaveStreamSource*, char const*, int, int, CSfxTable*, int)
@@ -11682,7 +11684,6 @@ Customization file '%short' has invalid path.
 Customization file '%short' is too big ( >%int bytes).
 CvarToggleCheckButton
 CyanRedSlider
-D		@D	
 D$ ff&@
 D$8gf
 D0	p)
@@ -11834,7 +11835,6 @@ DebugDrawPhysCollide(CPhysCollide const*, IMaterial*, matrix3x4_t&, color32_s co
 DebugMenu
 DebugOptions
 DebugTextureInfo001
-Dec 15 2016
 Decal static props test
 Decal textures
 DecalDepthCompare(decallist_t const*, decallist_t const*)
@@ -11979,6 +11979,7 @@ DemoUIPanel
 DemoUIPanel2
 DemoUI_f()
 DenyFile: %short (ID %int)
+Deprecated - placeholder convar for handling old network streams that had an incomplete SVC_VoiceInit packet.  Use "sv_voicecodec steam"
 Depth must be 1 for cubemaps!
 DepthWrite
 Describe the current sound device.
@@ -12307,7 +12308,6 @@ Enable/disable 3DNow code
 Enable/disable SSE2 code
 Enable/disable clock correction on the client.
 Enable/disable rcon logging.
-Enable/disable using Steam Voice instead of the old voice codec (if enabled, voice_inputfromfile will no longer function).
 EnableColorCorrection
 EnableEntities
 EnableHDR(bool)
@@ -12506,6 +12506,7 @@ Fast Fwd
 FastSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
 Fatal Error:  Unable to create game window!
 Fatal Error: Unable to get window info from SDL.
+Feb 13 2017
 Ffff.
 Fieldname is not unique: %short
 File %double: %short Size:%double
@@ -13709,6 +13710,7 @@ LeafVisBuild(Vector const&)
 LeafVisBuild(Vector const&)::last_leaf
 LeafVisDraw()
 LeafvisChanged(IConVar*, char const*, float)
+Legacy SVC_VoiceInit - got signed char set for sv_use_steam_voice convar, assuming Steam voice
 Legacy game DLL may not support terrain vphysics collisions with this BSP!
 Legacy variable with no effect!  This was deleted and then added as signed char temporary kludge to prevent players from being banned by servers running old versions of SMAC
 Level Performance Tools
@@ -15689,6 +15691,7 @@ SV_WriteClassInfos(ServerClass*, bf_write&)
 SV_WriteEnterPVS: missing instance baseline for '%short'.
 SV_WriteEnterPVS: missing pFromData for '%short'.
 SV_WriteSendTables(ServerClass*, bf_write&)
+SV_WriteVoiceCodec(bf_write&)
 SW_Mix16StereoDirectional_Interp(float, portable_samplepair_t*, int*, short*, int, unsigned int, int)
 SW_Mix16StereoDistVar(float, portable_samplepair_t*, int*, short*, int, unsigned int, int)
 SW_Mix16StereoDistVar_Interp(float, portable_samplepair_t*, int*, short*, int, unsigned int, int)
@@ -16326,7 +16329,7 @@ Spawn Server: %short
 Spawn Server: %short: [%short]
 SpawnCount %double MapLoad Count %double
 SpecialTx
-Specifies which voice codec DLL to use in signed char game. Set to the name of the DLL without the extension.
+Specifies which voice codec to use. Valid options are:
 SpeedScale
 Spew CPU timer jitter for the last 128 frames in microseconds (dedicated only)
 Spew TabContainer dimensions.
@@ -16795,7 +16798,7 @@ Unable to get callback interface for "%short"
 Unable to init audio
 Unable to init studio render system version %short
 Unable to init wavedatacache system
-Unable to initialize DirectSoundCapture. You won'unsigned short be able to speak to other players.
+Unable to initialize sound capture. You won'unsigned short be able to speak to other players.
 Unable to launch game
 Unable to load %short maplist file: %short
 Unable to load deletions.bat file %short
@@ -17429,7 +17432,7 @@ VoiceRecord_AudioQueue
 VoiceRecord_AudioQueue::ClearInterfaces()
 VoiceRecord_AudioQueue::GetRecordedData(short*, int)
 VoiceRecord_AudioQueue::Idle()
-VoiceRecord_AudioQueue::Init()
+VoiceRecord_AudioQueue::Init(int)
 VoiceRecord_AudioQueue::InitalizeInterfaces()
 VoiceRecord_AudioQueue::RecordStart()
 VoiceRecord_AudioQueue::RecordStop()
@@ -17462,17 +17465,22 @@ VoiceTweak_StartVoiceTweakMode()
 Voice_AddIncomingData(int, char const*, int, int)
 Voice_AssignChannel(int, bool)
 Voice_AvgBytesPerSec()
+Voice_ConfiguredCodec()
+Voice_ConfiguredSampleRate()
 Voice_Deinit()
 Voice_Enabled()
 Voice_EndChannel(int)
 Voice_ForceInit()
+Voice_ForceInit()::sv_voicecodec
 Voice_GetChannel(int)
 Voice_GetCompressedData(char*, int, bool)
 Voice_GetOutputData(int, char*, int, int, int)
 Voice_Idle(float)
-Voice_Idle(float)::sv_use_steam_voice
 Voice_Init Failed: invalid voice codec %s.
-Voice_Init(char const*)
+Voice_Init(char const*, int)
+Voice_Init: Requested Steam voice, but cannot access API.  Voice will not function
+Voice_Init: Using Steam voice optimal sample rate %double
+Voice_InitWithDefault(char const*)
 Voice_IsRecording()
 Voice_LocalPlayerTalkingAck()
 Voice_OnAudioSourceShutdown(int)
@@ -18709,6 +18717,7 @@ _g_nPropsDecoded
 _g_nServerThread
 _g_nUncompressedDataBytes
 _g_nVoiceFadeSamples
+_g_nVoiceRequestedSampleRate
 _g_nYou_Must_Add_Public_Vgui_Controls_Vgui_ControlsCpp_To_Your_Project
 _g_p4factory
 _g_pAchievementMgr
@@ -19363,7 +19372,6 @@ _sv_tags
 _sv_unlockedchapters
 _sv_use_steam_voice
 _sv_visiblemaxplayers
-_sv_voicecodec
 _swprintf
 _sysctl
 _system$UNIX2003
@@ -21508,7 +21516,7 @@ guard variable for Shader_DrawChainsStatic(CMSurfaceSortList const&, int, bool):
 guard variable for TxViewPanel::GetKBMap()::s_pMap
 guard variable for TxViewPanel::GetMessageMap()::s_pMap
 guard variable for VisCache_Build(VisCacheEntry&, worldbrushdata_t const&)::_counter
-guard variable for Voice_Idle(float)::sv_use_steam_voice
+guard variable for Voice_ForceInit()::sv_voicecodec
 guard variable for _Host_RunFrame_Server(bool)::_counter
 guard variable for datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
 guard variable for datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
@@ -24158,6 +24166,8 @@ std_huff_tables(jpeg_compress_struct*)::val_ac_luminance
 std_huff_tables(jpeg_compress_struct*)::val_dc_chrominance
 std_huff_tables(jpeg_compress_struct*)::val_dc_luminance
 std_luminance_quant_tbl
+steam
+steam - Use Steam voice API
 steam.inf
 steam://store_demo/220
 steam://store_demo/400
@@ -24360,7 +24370,6 @@ svc_UpdateStringTable
 svc_UserMessage
 svc_VoiceData
 svc_VoiceInit
-svc_voiceinit NULL
 svonly
 sys_minidumpexpandedspew
 sys_minidumpspewlines
@@ -25990,8 +25999,10 @@ valve
 valve.
 variable
 vaudio_celt
+vaudio_celt - Newer CELT codec
 vaudio_miles
 vaudio_speex
+vaudio_speex - Legacy Speex codec (lowest quality)
 vb9H |]
 vb9w |]
 vcr_verbose
