@@ -237,7 +237,6 @@
  T V_strncpy(char*, char const*, int)
  T V_vsnprintf(char*, int, char const*, char*)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -256,6 +255,7 @@
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -277,26 +277,25 @@
  b s_pTokenBuf
  b vec2_invalid
  b vec2_origin
- d dyld__mach_header
  d s_LastFileLoadingFrom
  d s_nDLLIdentifier
  d s_pConversionArrays_NoEscConversion
  d s_pConversionArrays_StringCharConversion
+ dyld_stub_binder
  fclose
- fopen
- fputs
+ fopen$UNIX2003
+ fputs$UNIX2003
  fread
  g_pMemAlloc
  g_pVCR
  getenv
  memcpy
  memmove
- memset
  mkdir
  pow
  pthread_mutex_destroy
  r s_BackSlashMap
- stat
+ stat$INODE64
  std::terminate()
  strcasecmp
  strchr
@@ -308,8 +307,11 @@
  strtol
  strtoul
  system$UNIX2003
+ t _GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.46798.7Ygeki.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
  t __CreateCBugReporterIBugReporter_interface()
- t global constructors keyed to a
  typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info

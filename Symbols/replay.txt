@@ -55,17 +55,6 @@
  B replay_fileserver_autocleanup
  B replay_fileserver_host
  B replay_fileserver_offload_aborttime
- B replay_fileserver_offload_enable
- B replay_fileserver_offload_hostname
- B replay_fileserver_offload_login
- B replay_fileserver_offload_maxuploads
- B replay_fileserver_offload_password
- B replay_fileserver_offload_port
- B replay_fileserver_offload_protocol
- B replay_fileserver_offload_proxy_host
- B replay_fileserver_offload_proxy_port
- B replay_fileserver_offload_remotepath
- B replay_fileserver_offload_useproxy
  B replay_fileserver_path
  B replay_fileserver_port
  B replay_fileserver_protocol
@@ -80,7 +69,6 @@
  B replay_playerdeathscreenshotdelay
  B replay_postdeathrecordtime
  B replay_postwinreminderduration
- B replay_publish_simulate_delay_ftp
  B replay_publish_simulate_delay_local_http
  B replay_publish_simulate_rename_fail
  B replay_record_voice
@@ -124,33 +112,13 @@
  D VTFFileHeaderV7_3_t::m_DataMap
  D VTFFileHeaderX360_t::m_DataMap
  D VTFFileHeader_t::m_DataMap
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D g_KeyValuesErrorStack
  D g_pAcceptableFileserverProtocols
- D g_pAcceptableOffloadProtocols
  D g_pBlockSpewer
  D g_pCompressorTypes
  D g_pDefaultSpewer
  D g_pReplay
- D g_pSimpleSpewer
  D g_pThinkManager
- D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D typeinfo for CBaseAppSystem<IReplaySystem>
  D typeinfo for CBaseFilePublisher
  D typeinfo for CBaseJob
@@ -177,10 +145,6 @@
  D typeinfo for CErrorSystem
  D typeinfo for CFileserverCleaner
  D typeinfo for CFmtStrN<256, false>
- D typeinfo for CFtp
- D typeinfo for CFtpFileDeleterJob
- D typeinfo for CFtpFileserverPublisher
- D typeinfo for CFtpUploadJob
  D typeinfo for CGenericPersistentManager<CBaseRecordingSession>
  D typeinfo for CGenericPersistentManager<CBaseRecordingSessionBlock>
  D typeinfo for CGenericPersistentManager<CReplay>
@@ -216,7 +180,6 @@
  D typeinfo for CSessionInfoPublisher
  D typeinfo for CSessionRecorder
  D typeinfo for CSharedReplayContext
- D typeinfo for CSimpleSpewer
  D typeinfo for CThinkManager
  D typeinfo for CTier0AppSystem<IReplaySystem>
  D typeinfo for CTier1AppSystem<IReplaySystem, 0>
@@ -238,7 +201,6 @@
  D typeinfo for IErrorReporter
  D typeinfo for IFilePublisher
  D typeinfo for IFileserverCleanerJob
- D typeinfo for IFtp
  D typeinfo for IGameEventListener2
  D typeinfo for INetMessage
  D typeinfo for IPublishCallbackHandler
@@ -267,7 +229,6 @@
  D typeinfo for SVC_GameEvent
  D vtable for CBaseFilePublisher
  D vtable for CBaseJob
- D vtable for CBasePublishJob
  D vtable for CBaseRecordingSession
  D vtable for CBaseRecordingSessionBlock
  D vtable for CBaseRecordingSessionBlockManager
@@ -290,10 +251,6 @@
  D vtable for CErrorSystem
  D vtable for CFileserverCleaner
  D vtable for CFmtStrN<256, false>
- D vtable for CFtp
- D vtable for CFtpFileDeleterJob
- D vtable for CFtpFileserverPublisher
- D vtable for CFtpUploadJob
  D vtable for CGenericPersistentManager<CBaseRecordingSession>
  D vtable for CGenericPersistentManager<CBaseRecordingSessionBlock>
  D vtable for CGenericPersistentManager<CReplay>
@@ -326,7 +283,6 @@
  D vtable for CSessionInfoPublisher
  D vtable for CSessionRecorder
  D vtable for CSharedReplayContext
- D vtable for CSimpleSpewer
  D vtable for CThinkManager
  D vtable for CTraceFilterWorldAndPropsOnly
  D vtable for CUtlCStringConversion
@@ -334,7 +290,6 @@
  D vtable for CUtlNoEscConversion
  D vtable for ConCommand
  D vtable for ConVar
- D vtable for IFtp
  D vtable for SVC_GameEvent
  DevMsg
  DevMsg(char const*, ...)
@@ -372,10 +327,6 @@
  R typeinfo name for CErrorSystem
  R typeinfo name for CFileserverCleaner
  R typeinfo name for CFmtStrN<256, false>
- R typeinfo name for CFtp
- R typeinfo name for CFtpFileDeleterJob
- R typeinfo name for CFtpFileserverPublisher
- R typeinfo name for CFtpUploadJob
  R typeinfo name for CGenericPersistentManager<CBaseRecordingSession>
  R typeinfo name for CGenericPersistentManager<CBaseRecordingSessionBlock>
  R typeinfo name for CGenericPersistentManager<CReplay>
@@ -411,7 +362,6 @@
  R typeinfo name for CSessionInfoPublisher
  R typeinfo name for CSessionRecorder
  R typeinfo name for CSharedReplayContext
- R typeinfo name for CSimpleSpewer
  R typeinfo name for CThinkManager
  R typeinfo name for CTier0AppSystem<IReplaySystem>
  R typeinfo name for CTier1AppSystem<IReplaySystem, 0>
@@ -433,7 +383,6 @@
  R typeinfo name for IErrorReporter
  R typeinfo name for IFilePublisher
  R typeinfo name for IFileserverCleanerJob
- R typeinfo name for IFtp
  R typeinfo name for IGameEventListener2
  R typeinfo name for INetMessage
  R typeinfo name for IPublishCallbackHandler
@@ -491,11 +440,8 @@
  T CBaseJob::CBaseJob(JobPriority_t, ISpewer*)
  T CBaseJob::SetError(int, char const*)
  T CBaseJob::~CBaseJob()
- T CBasePublishJob::CBasePublishJob(JobPriority_t, ISpewer*)
  T CBasePublishJob::GetOutputData(unsigned char**, unsigned int*) const
  T CBasePublishJob::GetOutputFilename() const
- T CBasePublishJob::SimulateDelay(int, char const*)
- T CBasePublishJob::~CBasePublishJob()
  T CBaseRecordingSession::AddBlock(CBaseRecordingSessionBlock*)
  T CBaseRecordingSession::AddBlock(CBaseRecordingSessionBlock*, bool)
  T CBaseRecordingSession::CBaseRecordingSession(IReplayContext*)
@@ -590,6 +536,7 @@
  T CBaseThinker::ShouldThink() const
  T CBaseThinker::Think()
  T CBaseThinker::~CBaseThinker()
+ T CBitWriteMasksInit::CBitWriteMasksInit()
  T CBlockSpewer::PrintBlockEnd() const
  T CBlockSpewer::PrintBlockStart() const
  T CBlockSpewer::PrintEmptyLine() const
@@ -733,41 +680,6 @@
  T CFmtStrN<256, false>::CFmtStrN(char const*, ...)
  T CFmtStrN<256, false>::InitQuietTruncation()
  T CFmtStrN<256, false>::sprintf(char const*, ...)
- T CFtp::CFtp(char const*, char const*, char const*, char const*, int, IFtp*, ISpewer*)
- T CFtp::FTP_GetFilename() const
- T CFtp::FTP_IsCurlResultOK(int) const
- T CFtp::FTP_OnPostExecuteCurlOperations()
- T CFtp::FTP_OnPreExecuteCurlOperations()
- T CFtp::FTP_SetError(int, char const*)
- T CFtp::FTP_SetupAdditionalCurlOperations(void*)
- T CFtp::Go()
- T CFtp::ReadCallback(void*, unsigned long, unsigned long, void*)
- T CFtp::UseProxy(char const*, int)
- T CFtp::~CFtp()
- T CFtpFileDeleterJob::AddFileForDelete(char const*)
- T CFtpFileDeleterJob::CFtpFileDeleterJob(char const*, char const*, char const*, char const*, int, char const*, int)
- T CFtpFileDeleterJob::DoCleanup()
- T CFtpFileDeleterJob::DoExecute()
- T CFtpFileDeleterJob::FTP_GetFilename() const
- T CFtpFileDeleterJob::FTP_IsCurlResultOK(int) const
- T CFtpFileDeleterJob::FTP_OnPostExecuteCurlOperations()
- T CFtpFileDeleterJob::FTP_OnPreExecuteCurlOperations()
- T CFtpFileDeleterJob::FTP_SetError(int, char const*)
- T CFtpFileDeleterJob::FTP_SetupAdditionalCurlOperations(void*)
- T CFtpFileDeleterJob::GetNumFilesDeleted() const
- T CFtpFileDeleterJob::~CFtpFileDeleterJob()
- T CFtpFileserverPublisher::GetPublishJob() const
- T CFtpFileserverPublisher::~CFtpFileserverPublisher()
- T CFtpUploadJob::CFtpUploadJob(char const*, char const*, char const*, char const*, char const*, int, char const*, int)
- T CFtpUploadJob::DoCleanup()
- T CFtpUploadJob::DoExecute()
- T CFtpUploadJob::FTP_GetFilename() const
- T CFtpUploadJob::FTP_IsCurlResultOK(int) const
- T CFtpUploadJob::FTP_OnPostExecuteCurlOperations()
- T CFtpUploadJob::FTP_OnPreExecuteCurlOperations()
- T CFtpUploadJob::FTP_SetError(int, char const*)
- T CFtpUploadJob::FTP_SetupAdditionalCurlOperations(void*)
- T CFtpUploadJob::~CFtpUploadJob()
  T CGenericPersistentManager<CBaseRecordingSession>::Add(CBaseRecordingSession*)
  T CGenericPersistentManager<CBaseRecordingSession>::Clear()
  T CGenericPersistentManager<CBaseRecordingSession>::FlagForFlush(CBaseRecordingSession*, bool)
@@ -953,8 +865,6 @@
  T CPublishTester::Test_IO(char const*)
  T CPublishTester::Test_Path(char const*, char const*, bool, bool)
  T CPublishTester::Test_Protocol(char const*, char const*, char const**)
- T CPublishTester::Test_PublishedFileDelete(char const*, char const*, bool)
- T CPublishTester::Test_RemoteWebServerCVars()
  T CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
  T CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::AddRef()
  T CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::Release()
@@ -1138,6 +1048,7 @@
  T CScreenshotManager::Think()
  T CScreenshotManager::~CScreenshotManager()
  T CServerRecordingSession::CServerRecordingSession(IReplayContext*)
+ T CServerRecordingSession::GetSecondsToExpiration() const
  T CServerRecordingSession::OnDelete()
  T CServerRecordingSession::PopulateWithRecordingData(int)
  T CServerRecordingSession::Read(KeyValues*)
@@ -1191,8 +1102,6 @@
  T CServerReplayContext::ReportErrorsToUser(wchar_t*)
  T CServerReplayContext::Shutdown()
  T CServerReplayContext::Think()
- T CServerReplayContext::UpdateFileserverIPFromHostname(char const*)
- T CServerReplayContext::UpdateFileserverProxyIPFromHostname(char const*)
  T CServerReplayContext::~CServerReplayContext()
  T CSessionBlockDownloader::AbortDownloadsAndCleanup(CClientRecordingSession*)
  T CSessionBlockDownloader::CSessionBlockDownloader()
@@ -1267,8 +1176,6 @@
  T CSharedReplayContext::Shutdown()
  T CSharedReplayContext::Think()
  T CSharedReplayContext::~CSharedReplayContext()
- T CSimpleSpewer::PrintMsg(char const*) const
- T CSimpleSpewer::~CSimpleSpewer()
  T CThinkManager::AddThinker(IThinker*)
  T CThinkManager::RemoveThinker(IThinker*)
  T CThinkManager::Think()
@@ -1300,7 +1207,6 @@
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
  T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlLinkedList<CBaseRecordingSession*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSession*, int>, int> >::AddToTail(CBaseRecordingSession* const&)
  T CUtlLinkedList<CBaseRecordingSession*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSession*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CBaseRecordingSession*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSession*, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<CBaseRecordingSessionBlock*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CBaseRecordingSessionBlock*, int>, int> >::AllocInternal(bool)
@@ -1316,7 +1222,6 @@
  T CUtlLinkedList<CServerRecordingSessionBlock*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRecordingSessionBlock*, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<CSessionPublishManager*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CSessionPublishManager*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CSessionPublishManager*, int, false, int, CUtlMemory<UtlLinkedListElem_t<CSessionPublishManager*, int>, int> >::~CUtlLinkedList()
- T CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >::AddToHead(IQueryableReplayItem* const&)
  T CUtlLinkedList<IQueryableReplayItem*, int, false, int, CUtlMemory<UtlLinkedListElem_t<IQueryableReplayItem*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<IReplayMovie*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<IReplayMovie*, unsigned short>, unsigned short> >::AllocInternal(bool)
  T CUtlLinkedList<IReplayMovie*, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<IReplayMovie*, unsigned short>, unsigned short> >::LinkBefore(unsigned short, unsigned short)
@@ -1380,7 +1285,6 @@
  T ConVar::ConVar(char const*, char const*, int, char const*)
  T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float)
  T ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float, void (*)(IConVar*, char const*, float))
- T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
  T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
  T ConVar::GetHelpText() const
  T ConVar::GetName() const
@@ -1460,8 +1364,6 @@
  T KeyValues::operator delete(void*)
  T KeyValues::operator new(unsigned long)
  T MatrixAngles(matrix3x4_t const&, float*)
- T OnFileserverHostnameChanged(IConVar*, char const*, float)
- T OnFileserverProxyHostnameChanged(IConVar*, char const*, float)
  T OnReplayEnableChanged(IConVar*, char const*, float)
  T OnReplayRecordingChanged(IConVar*, char const*, float)
  T OnReplayScreenshotResolutionChanged(IConVar*, char const*, float)
@@ -1496,8 +1398,6 @@
  T SVC_GameEvent::~SVC_GameEvent()
  T SV_CastJobToIFileserverCleanerJob(CBaseJob*)
  T SV_CreateDeleteFileJob()
- T SV_CreateFtpFileDeleterJob(char const*)
- T SV_CreateFtpUploadJob(char const*)
  T SV_CreateLocalPublishJob(char const*)
  T SV_DoFileserverCleanup(bool, ISpewer*)
  T SV_DoTestPublish()
@@ -1541,7 +1441,6 @@
  T covariant return thunk to CClientReplayContext::GetRecordingSessionBlockManager()
  T covariant return thunk to CServerReplayContext::GetRecordingSession(unsigned int)
  T covariant return thunk to CServerReplayContext::GetRecordingSessionBlockManager()
- T dyld_stub_binding_helper
  T int CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::Find<CBaseRecordingSession*>(CBaseRecordingSession* const&) const
  T int CUtlSortVector<CBaseRecordingSession*, CGenericPersistentManager<CBaseRecordingSession>::CLessFunctor, CUtlVector<CBaseRecordingSession*, CUtlMemory<CBaseRecordingSession*, int> > >::FindLessOrEqual<CBaseRecordingSession*>(CBaseRecordingSession* const&, bool*) const
  T int CUtlSortVector<CBaseRecordingSessionBlock*, CBaseRecordingSession::CLessFunctor, CUtlVector<CBaseRecordingSessionBlock*, CUtlMemory<CBaseRecordingSessionBlock*, int> > >::FindLessOrEqual<CBaseRecordingSessionBlock*>(CBaseRecordingSessionBlock* const&, bool*) const
@@ -1552,7 +1451,6 @@
  T int CUtlSortVector<CReplay*, CGenericPersistentManager<CReplay>::CLessFunctor, CUtlVector<CReplay*, CUtlMemory<CReplay*, int> > >::FindLessOrEqual<CReplay*>(CReplay* const&, bool*) const
  T int CUtlSortVector<CReplayMovie*, CGenericPersistentManager<CReplayMovie>::CLessFunctor, CUtlVector<CReplayMovie*, CUtlMemory<CReplayMovie*, int> > >::FindLessOrEqual<CReplayMovie*>(CReplayMovie* const&, bool*) const
  T non-virtual thunk to CBaseJob::~CBaseJob()
- T non-virtual thunk to CBasePublishJob::~CBasePublishJob()
  T non-virtual thunk to CBaseRecordingSession::AddBlock(CBaseRecordingSessionBlock*)
  T non-virtual thunk to CBaseRecordingSession::~CBaseRecordingSession()
  T non-virtual thunk to CBaseRecordingSessionBlockManager::DeleteBlock(CBaseRecordingSessionBlock*)
@@ -1583,23 +1481,6 @@
  T non-virtual thunk to CErrorSystem::AddErrorFromTokenName(char const*)
  T non-virtual thunk to CErrorSystem::AddFormattedErrorFromTokenName(char const*, KeyValues*)
  T non-virtual thunk to CErrorSystem::~CErrorSystem()
- T non-virtual thunk to CFtp::~CFtp()
- T non-virtual thunk to CFtpFileDeleterJob::AddFileForDelete(char const*)
- T non-virtual thunk to CFtpFileDeleterJob::FTP_GetFilename() const
- T non-virtual thunk to CFtpFileDeleterJob::FTP_IsCurlResultOK(int) const
- T non-virtual thunk to CFtpFileDeleterJob::FTP_OnPostExecuteCurlOperations()
- T non-virtual thunk to CFtpFileDeleterJob::FTP_OnPreExecuteCurlOperations()
- T non-virtual thunk to CFtpFileDeleterJob::FTP_SetError(int, char const*)
- T non-virtual thunk to CFtpFileDeleterJob::FTP_SetupAdditionalCurlOperations(void*)
- T non-virtual thunk to CFtpFileDeleterJob::GetNumFilesDeleted() const
- T non-virtual thunk to CFtpFileDeleterJob::~CFtpFileDeleterJob()
- T non-virtual thunk to CFtpUploadJob::FTP_GetFilename() const
- T non-virtual thunk to CFtpUploadJob::FTP_IsCurlResultOK(int) const
- T non-virtual thunk to CFtpUploadJob::FTP_OnPostExecuteCurlOperations()
- T non-virtual thunk to CFtpUploadJob::FTP_OnPreExecuteCurlOperations()
- T non-virtual thunk to CFtpUploadJob::FTP_SetError(int, char const*)
- T non-virtual thunk to CFtpUploadJob::FTP_SetupAdditionalCurlOperations(void*)
- T non-virtual thunk to CFtpUploadJob::~CFtpUploadJob()
  T non-virtual thunk to CJob::~CJob()
  T non-virtual thunk to CLocalFileDeleterJob::AddFileForDelete(char const*)
  T non-virtual thunk to CLocalFileDeleterJob::GetNumFilesDeleted() const
@@ -2073,6 +1954,7 @@
  _SpewInfo
  _SpewMessage
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -2089,7 +1971,7 @@
  __stderrp
  __tolower
  abort
- acos
+ acosf
  atan2f
  atof
  atoi
@@ -2112,13 +1994,27 @@
  b Replay_va(char const*, ...)::curstring
  b Replay_va(char const*, ...)::string
  b __g_CreateCReplaySystemIReplaySystem_reg
+ b datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b f05
  b f3
+ b g_BitWriteMasksInit
  b gs_szGameDir
  b guard variable for CPerformanceController::PlaybackThink()::aAngles
  b guard variable for CPerformanceController::PlaybackThink()::aOrigin
  b guard variable for CReplayMovieManager::GetRawExportDir() const::s_fmtExportDir
  b guard variable for CServerReplayContext::ReportErrorsToUser(wchar_t*)::s_clrRed
+ b guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b replay_add_fake_replays_command
  b replay_clearqueuedtakes_command
  b replay_confirmquit_command
@@ -2148,21 +2044,17 @@
  b vec4_origin
  ceilf
  crc32
- curl_easy_cleanup
- curl_easy_init
- curl_easy_perform
- curl_easy_setopt
- curl_easy_strerror
  curl_global_cleanup
  curl_global_init
- curl_slist_append
- curl_slist_free_all
- d dyld__mach_header
+ d datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
  d s_BlockSpewer
  d s_DefaultAccessor
  d s_LastFileLoadingFrom
  d s_NullSpewer
- d s_SimpleSpewer
  d s_nDLLIdentifier
  d s_pConversionArrays_NoEscConversion
  d s_pConversionArrays_StringCharConversion
@@ -2171,18 +2063,18 @@
  deflateInit2_
  deflateReset
  difftime
+ dyld_stub_binder
  exit
  fclose
  fflush
  floor
  floorf
- fopen
+ fopen$UNIX2003
  fprintf
  fputc
  fread
  free
  frexp
- fwrite
  fwrite$UNIX2003
  g_VProfCurrentProfile
  g_pMemAlloc
@@ -2296,6 +2188,7 @@
  rand
  setjmp
  sin
+ sinf
  snprintf
  sscanf
  std::terminate()
@@ -2303,7 +2196,6 @@
  strchr
  strcmp
  strcpy
- strerror$UNIX2003
  strlen
  strncat
  strncpy
@@ -2313,13 +2205,28 @@
  strtol
  strtoul
  swprintf
+ t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.2006.CXaY5u.ii
+ t _GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.47413.yVo2Ai.ii
+ t _GLOBAL__sub_I_cl_cvars.stdout.rel_tf_osx_builder.47419.ZIMoph.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.47368.36e08e.ii
+ t _GLOBAL__sub_I_replay_dbg.stdout.rel_tf_osx_builder.47537.Hgrf3l.ii
+ t _GLOBAL__sub_I_replaysyst.stdout.rel_tf_osx_builder.47533.JGl94K.ii
+ t _GLOBAL__sub_I_shared_cva.stdout.rel_tf_osx_builder.47557.5SwLad.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_sv_command.stdout.rel_tf_osx_builder.47579.836cno.ii
+ t _GLOBAL__sub_I_sv_cvars.stdout.rel_tf_osx_builder.47584.s8L2sH.ii
+ t _GLOBAL__sub_I_sv_filepub.stdout.rel_tf_osx_builder.47589.94HLZ9.ii
+ t _GLOBAL__sub_I_thinkmanag.stdout.rel_tf_osx_builder.47688.wS3XTy.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.2874.DARExN.ii
  t __CreateCReplaySystemIReplaySystem_interface()
  t add_pair_to_block(EState*)
  t bsPutUInt32(EState*, unsigned int)
+ t bsW(EState*, int, unsigned int)
  t default_bzalloc(void*, int, int)
  t default_bzfree(void*, void*)
  t fallbackSort(unsigned int*, unsigned int*, unsigned int*, int, int)
- t global constructors keyed to a
  t handle_compress(bz_stream*)
  t mainGtU(unsigned int, unsigned int, unsigned char*, unsigned short*, unsigned int, int*)
  t png_build_16bit_table
@@ -2350,6 +2257,7 @@
  t replay_renderunpause(CCommand const&)
  t replay_stoprecord(CCommand const&)
  t save_replay(CCommand const&)
+ t sendMTFValues(EState*)
  time
  typeinfo for std::bad_alloc
  vsnprintf

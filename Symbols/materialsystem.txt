@@ -166,18 +166,6 @@
  D cCombineMaterialName
  D cNodeParseTable
  D cTextureCachePathDir
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D g_ConVarAccessor
  D g_DummyHardwareConfig
  D g_DummyMaterial
@@ -224,12 +212,6 @@
  D guard variable for CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for IsEmulatingGL()::bIsEmulatingGL
- D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D pfFastCos
  D pfFastSinCos
  D pfInvRSquared
@@ -3280,24 +3262,28 @@
  T CTSQueue<AsyncLoadJob_t*, false>::PopItem(AsyncLoadJob_t**)
  T CTSQueue<AsyncLoadJob_t*, false>::Purge()
  T CTSQueue<AsyncLoadJob_t*, false>::Push(CTSQueue<AsyncLoadJob_t*, false>::Node_t*)
+ T CTSQueue<AsyncLoadJob_t*, false>::PushItem(AsyncLoadJob_t* const&)
  T CTSQueue<AsyncLoadJob_t*, false>::~CTSQueue()
  T CTSQueue<AsyncReadJob_t*, false>::CTSQueue()
  T CTSQueue<AsyncReadJob_t*, false>::Pop()
  T CTSQueue<AsyncReadJob_t*, false>::PopItem(AsyncReadJob_t**)
  T CTSQueue<AsyncReadJob_t*, false>::Purge()
  T CTSQueue<AsyncReadJob_t*, false>::Push(CTSQueue<AsyncReadJob_t*, false>::Node_t*)
+ T CTSQueue<AsyncReadJob_t*, false>::PushItem(AsyncReadJob_t* const&)
  T CTSQueue<AsyncReadJob_t*, false>::~CTSQueue()
  T CTSQueue<ITextureInternal*, false>::CTSQueue()
  T CTSQueue<ITextureInternal*, false>::Pop()
  T CTSQueue<ITextureInternal*, false>::PopItem(ITextureInternal**)
  T CTSQueue<ITextureInternal*, false>::Purge()
  T CTSQueue<ITextureInternal*, false>::Push(CTSQueue<ITextureInternal*, false>::Node_t*)
+ T CTSQueue<ITextureInternal*, false>::PushItem(ITextureInternal* const&)
  T CTSQueue<ITextureInternal*, false>::~CTSQueue()
  T CTSQueue<IVTFTexture*, false>::CTSQueue()
  T CTSQueue<IVTFTexture*, false>::Pop()
  T CTSQueue<IVTFTexture*, false>::PopItem(IVTFTexture**)
  T CTSQueue<IVTFTexture*, false>::Purge()
  T CTSQueue<IVTFTexture*, false>::Push(CTSQueue<IVTFTexture*, false>::Node_t*)
+ T CTSQueue<IVTFTexture*, false>::PushItem(IVTFTexture* const&)
  T CTSQueue<IVTFTexture*, false>::~CTSQueue()
  T CTexture::AllocateShaderAPITextures()
  T CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)
@@ -3418,7 +3404,6 @@
  T CTextureManager::AsyncCreateTextureFromRenderTarget(ITexture*, char const*, ImageFormat, bool, int, IAsyncTextureOperationReceiver*, void*)
  T CTextureManager::AsyncFindOrLoadTexture(char const*, char const*, IAsyncTextureOperationReceiver*, void*, bool, int)
  T CTextureManager::AsyncLoad(AsyncLoadJob_t const&)
- T CTextureManager::AsyncReadTexture(AsyncReadJob_t*)
  T CTextureManager::CTextureManager()
  T CTextureManager::CacheExternalStandardRenderTargets()
  T CTextureManager::CleanupPossiblyUnreferencedTextures()
@@ -4069,6 +4054,7 @@
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUV88(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVLX8888(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVWQ8888(unsigned char const*, int, int, unsigned char*)
+ T ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
  T ImageLoader::FlipImageHorizontally(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::FlipImageVertically(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)
@@ -4188,6 +4174,7 @@
  T TexStageFromKV(CTCStage**, char const*, KeyValues*, unsigned int)
  T TextureLodOverride::Add(char const*, TextureLodOverride::OverrideInfo)
  T TextureToLinear(int)
+ T VMatrix::MatrixMul(VMatrix const&, VMatrix&) const
  T VMatrix::Scale(Vector const&)
  T VMatrix::operator*(VMatrix const&) const
  T VMatrix::operator=(VMatrix const&)
@@ -4231,7 +4218,6 @@
  T bool CombineStageFromKV<0>(CTCStage**, char const*, KeyValues*, unsigned int)
  T bool CombineStageFromKV<1>(CTCStage**, char const*, KeyValues*, unsigned int)
  T bool CombineStageFromKV<2>(CTCStage**, char const*, KeyValues*, unsigned int)
- T dyld_stub_binding_helper
  T float16::ConvertFloatTo16bits(float)
  T int CUtlSortVector<CVertexMorphDict::MorphVertexList_t, CVertexMorphDict::VertexMorphDictLess, CUtlVector<CVertexMorphDict::MorphVertexList_t, CUtlMemory<CVertexMorphDict::MorphVertexList_t, int> > >::Find<CVertexMorphDict::MorphVertexList_t>(CVertexMorphDict::MorphVertexList_t const&) const
  T int CUtlSortVector<CVertexMorphDict::MorphVertexList_t, CVertexMorphDict::VertexMorphDictLess, CUtlVector<CVertexMorphDict::MorphVertexList_t, CUtlMemory<CVertexMorphDict::MorphVertexList_t, int> > >::FindLessOrEqual<CVertexMorphDict::MorphVertexList_t>(CVertexMorphDict::MorphVertexList_t const&, bool*) const
@@ -4748,6 +4734,7 @@
  _SpewInfo
  _SpewMessage
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -4762,7 +4749,7 @@
  __stack_chk_fail
  __stack_chk_guard
  __tolower
- acos
+ acosf
  atan2f
  atof
  atoi
@@ -4811,6 +4798,13 @@
  b __g_CreateIMaterialSystemHardwareConfig_reg
  b __g_CreateIShaderDLLInternal_reg
  b __g_CreateMaterialSystem_Config_tMaterialSystem_Config_t_reg
+ b datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b f05
  b f3
  b g_CleanupSymbolTable
@@ -4832,6 +4826,12 @@
  b guard variable for CMorphMgr::EndMorphAccumulation(IMorphMgrRenderContext*)::_counter
  b guard variable for CReplacementProxy::GetMaterial()::localplayer_visionflags
  b guard variable for CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)::replay_screenshotresolution
+ b guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b linearToScreen
  b linearToTexture
  b lineartoscreen
@@ -4952,9 +4952,8 @@
  b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
  ceil
  ceilf
- cos
  cosf
- d .memset_pattern17
+ d .memset_pattern
  d CreateNormalizationCubemap(ITextureInternal*)::s_NormalizationCubemap
  d CreateSignedNormalizationCubemap(ITextureInternal*)::s_SignedNormalizationCubemap
  d ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)::lastDstGamma
@@ -4966,7 +4965,11 @@
  d cCombineStageParametersParseTable
  d cSelectStageParametersParseTable
  d cTextureStageParametersParseTable
- d dyld__mach_header
+ d datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
  d g_ImageFormatInfo
  d pConvarsAllowedInDXSupport
  d s_DefaultAccessor
@@ -4979,6 +4982,7 @@
  dlerror
  dlopen
  dlsym
+ dyld_stub_binder
  floorf
  g_VProfCurrentProfile
  g_pMemAlloc
@@ -5001,15 +5005,16 @@
  putchar
  qsort
  r .memset_pattern
- r .memset_pattern16
+ r .memset_pattern17
  r CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)::s_flInvAspectRatios
  r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::prods
  r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::w1Tab
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
  raise
  roundf
  sin
+ sinf
  sprintf
  sscanf
  std::terminate()
@@ -5080,6 +5085,27 @@
  t MatProxyCallback(IConVar*, char const*, float)
  t MySpewOutputFunc(SpewType_t, char const*)
  t SLoadTextureBitsFromFile(IVTFTexture**, void*, unsigned int, TextureLODControlSettings_t*, int, unsigned short*, char const*, char const*, TexDimensions_t*, TexDimensions_t*, TexDimensions_t*, unsigned int*)
+ t _GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.4553.jvjglm.ii
+ t _GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.4571.DhvAnB.ii
+ t _GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.4488.XvOS5p.ii
+ t _GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.4554.VXompx.ii
+ t _GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.4583.ZmdpAA.ii
+ t _GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.4587.lyI6A4.ii
+ t _GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.4601.3kUyZT.ii
+ t _GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.4613.2A9kFl.ii
+ t _GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.4619.M8buTb.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.4631.KMIbU9.ii
+ t _GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.4637.r6UDQH.ii
+ t _GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.4655.QO56xZ.ii
+ t _GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.4661.gtc8n9.ii
+ t _GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.4667.0OuYwO.ii
+ t _GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.4679.DZveFq.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.4683.RJCWXa.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.2874.DARExN.ii
  t __CreateCColorCorrectionSystemIColorCorrectionSystem_interface()
  t __CreateCDummyMaterialSystemIMaterialSystemStub_interface()
  t __CreateCMaterialSystemIMaterialSystem_interface()
@@ -5087,7 +5113,6 @@
  t __CreateCShaderSystemIShaderSystem_interface()
  t __CreateMaterialSystem_Config_tMaterialSystem_Config_t_interface()
  t __cxx_global_array_dtor
- t global constructors keyed to a
  t mat_evict_all(CCommand const&)
  t mat_hdr_enabled(CCommand const&)
  t mat_reporthwmorphmemory(CCommand const&)

@@ -1,6 +1,7 @@
-	wDA1
+	w4A1
      
   00  
+"CreateInterface
 ,^_[]
 -nojoy
 -nosteamcontroller
@@ -50,20 +51,84 @@
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/utlstring.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier2/tier2.cpp
 /usr/lib/libSystem.B.dylib
-/usr/lib/libgcc_s.1.dylib
+/usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
-/usr/lib/libstdc++..dylib
 0 0    P
-0@@@@ 
 789:float
 <^_[]
 @(^_]
+@@@@ 
+@ConMsg(char const*, ...)
+@DevMsg(char const*, ...)
+@_CommandLine_Tier0
+@_Plat_MSTime
+@_SDL_AddEventWatch
+@_SDL_DelEventWatch
+@_SDL_GameControllerClose
+@_SDL_GameControllerGetJoystick
+@_SDL_GameControllerOpen
+@_SDL_GetError
+@_SDL_HapticClose
+@_SDL_HapticOpenFromJoystick
+@_SDL_HapticRumbleInit
+@_SDL_HapticRumblePlay
+@_SDL_HapticRumbleStop
+@_SDL_InitSubSystem
+@_SDL_IsGameController
+@_SDL_JoystickClose
+@_SDL_JoystickGetDeviceGUID
+@_SDL_JoystickGetGUIDString
+@_SDL_JoystickInstanceID
+@_SDL_JoystickNameForIndex
+@_SDL_JoystickOpen
+@_SDL_NumJoysticks
+@_SDL_QuitSubSystem
+@_SDL_SetHint
+@_SDL_WasInit
+@_SteamAPI_GetHSteamPipe
+@_SteamAPI_GetHSteamUser
+@_SteamAPI_InitSafe
+@_SteamClient
+@_Warning
+@__Unwind_Resume
+@___bzero
+@___cxa_atexit
+@___cxa_begin_catch
+@___cxa_call_unexpected
+@___cxa_guard_abort
+@___cxa_guard_acquire
+@___cxa_guard_release
+@___gxx_personality_v0
+@___stack_chk_fail
+@___stack_chk_guard
+@__float128 short::*
+@_atof
+@_atoi
+@_dlclose
+@_g_pMemAlloc
+@_memcpy
+@_memmove
+@_pow
+@_strcasecmp
+@_strcmp
+@_strlen
+@_strncasecmp
+@_vsnprintf
+@dyld_stub_binder
 @loader_path/inputsystem.dylib
 @loader_path/libSDL2-2.0.0.dylib
 @loader_path/libsteam_api.dylib
 @loader_path/libtier0.dylib
 @loader_path/libvstdlib.dylib
+@std::terminate()
+@typeinfo for std::bad_alloc
+@vtable for __cxxabiv1::__class_type_info
+@vtable for __cxxabiv1::__si_class_type_info
+@vtable for __cxxabiv1::__vmi_class_type_info
+A>?5f
+AVBSB
 A_BUTTON
+Affffff.
 Analog axis range before signed char button press is registered.
 AnalogCode_AnalogCodeToString(AnalogCode_t)
 AnalogCode_StringToAnalogCode(char const*)
@@ -259,6 +324,10 @@ Failed to open joystick %int: %short
 Found joystick '%short' (%short), but no recognized controller configuration for it.
 Game controller mapping (passed to SDL with SDL_HINT_GAMECONTROLLERCONFIG), can also be configured in Steam Big Picture mode.
 Got hotplug remove event for removed joystick #%int, ignoring.
+H__ZdaPv
+H__ZdlPv
+H__Znam
+H__Znwm
 How to map the analog joystick deadzone and extents 0 = Scaled Cross, 1 = Concentric Mapping to Square.
 IAppSystem
 IConCommandBaseAccessor
@@ -347,6 +416,9 @@ QueuedLoaderVersion004
 R AXIS
 R AXIS NEG
 R AXIS POS
+RA`?B`:B`
+RBRARAp
+RBRBRBRBSK
 RCTRL
 RIGHT
 RIGHTARROW
@@ -451,6 +523,7 @@ SteamNetworking005
 SteamUser018
 SteamUtils007
 Sys_UnloadModule(CSysModule*)
+Tcvar
 U AXIS
 U AXIS NEG
 U AXIS POS
@@ -483,6 +556,7 @@ Y_BUTTON
 Z AXIS
 Z AXIS NEG
 Z AXIS POS
+\^_[]
 _CommandLine_Tier0
 _CreateInterface
 _Plat_MSTime
@@ -516,9 +590,16 @@ _SteamClient
 _Warning
 __CreateCInputSystemIInputSystem_interface()
 __DATA
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+__GLOBAL__sub_I_inputsyste.stdout.rel_tf_osx_builder.7946.HgOk99.ii
+__GLOBAL__sub_I_joystick_s.stdout.rel_tf_osx_builder.7947.LyLVRm.ii
+__GLOBAL__sub_I_key_transl.stdout.rel_tf_osx_builder.7948.nfxS3j.ii
+__GLOBAL__sub_I_steamcontr.stdout.rel_tf_osx_builder.7961.dgTBLk.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
+___bzero
 ___clang_call_terminate
 ___cxa_atexit
 ___cxa_begin_catch
@@ -534,7 +615,6 @@ __common
 __const
 __cstring
 __data
-__dyld
 __eh_frame
 __g_CreateCInputSystemIInputSystem_reg
 __gcc_except_tab__TEXT
@@ -570,7 +650,6 @@ _materials
 _mdllib
 _memcpy
 _memmove
-_memset
 _s_NoEscConversion
 _s_StringCharConversion
 _sc_debug_sets
@@ -583,8 +662,7 @@ _vsnprintf
 cancelselect
 cl_decline_first_notification
 cl_trigger_first_notification
-dyld__mach_header
-dyld_stub_binding_helper
+dyld_stub_binder
 ffff.
 fffff.
 ffffff.
@@ -593,7 +671,6 @@ g_GameActionSets
 g_InputSystem
 g_MapSteamControllerOriginToDescription
 g_MapSteamControllerOriginToIconFont
-global constructors keyed to a
 guard variable for CInputSystem::SetXDeviceRumble(float, float, int)::joystickVar
 guard variable for SetJoyXControllerFound(bool)::joystickVar
 guard variable for SetJoyXControllerFound(bool)::xcontrollerVar
@@ -651,7 +728,6 @@ s_pXControllerButtonCodeNames
 sc_debug_sets
 sc_joystick_map
 scantokey
-short%NBA
 std::terminate()
 toggleready
 typeinfo for CBaseAppSystem<IInputSystem>

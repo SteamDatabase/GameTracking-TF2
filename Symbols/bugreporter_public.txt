@@ -179,7 +179,6 @@
  T V_vsnprintf(char*, int, char const*, char*)
  T Win32UploadBugReportBlocking(TBugReportParameters const&)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T netadr_s::SetFromSockadr(sockaddr const*)
  T netadr_s::SetIP(unsigned int)
  T netadr_s::SetPort(unsigned short)
@@ -191,6 +190,7 @@
  T operator new[](unsigned long)
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -215,14 +215,13 @@
  bind$UNIX2003
  close$UNIX2003
  connect$UNIX2003
- d dyld__mach_header
  d s_pConversionArrays_NoEscConversion
  d s_pConversionArrays_StringCharConversion
+ dyld_stub_binder
  g_pMemAlloc
  g_pVCR
  memcpy
  memmove
- memset
  pthread_mutex_destroy
  pthread_mutex_init
  pthread_mutex_lock
@@ -248,8 +247,10 @@
  strtol
  strtoul
  t BugUploadProgress(unsigned int, TBugReportProgress const&)
+ t _GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.46830.FjrppZ.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
  t __CreateCBugReporterIBugReporter_interface()
- t global constructors keyed to a
  typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info

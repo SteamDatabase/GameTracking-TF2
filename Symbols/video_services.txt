@@ -187,7 +187,6 @@
  T V_strncmp(char const*, char const*, int)
  T V_strncpy(char*, char const*, int)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -204,6 +203,7 @@
  T operator new[](unsigned long)
  Warning
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -228,7 +228,6 @@
  b vec4_invalid
  b vec4_origin
  d CValveVideoServices::GetCodecName(VideoEncodeCodec::EVideoEncodeCodec_t)::s_pCodecLookup
- d dyld__mach_header
  d s_DefaultAccessor
  d s_nDLLIdentifier
  d s_pConversionArrays_NoEscConversion
@@ -237,11 +236,11 @@
  dlerror
  dlopen
  dlsym
+ dyld_stub_binder
  g_pMemAlloc
  getcwd
  memcpy
  memmove
- memset
  pow
  std::terminate()
  strcasecmp
@@ -251,8 +250,10 @@
  strncmp
  strncpy
  strstr
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_videoservi.stdout.rel_tf_osx_builder.48058.9sB8WO.ii
  t __CreateCValveVideoServicesIVideoServices_interface()
- t global constructors keyed to a
  typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info

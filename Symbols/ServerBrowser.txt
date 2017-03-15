@@ -2189,13 +2189,13 @@
  T CUtlLinkedList<vgui::TreeNode*, int, false, int, CUtlMemory<UtlLinkedListElem_t<vgui::TreeNode*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<vgui::TreeNode*, int, false, int, CUtlMemory<UtlLinkedListElem_t<vgui::TreeNode*, int>, int> >::~CUtlLinkedList()
  T CUtlMap<char const*, CQuickListMapServerList, int>::Insert(char const* const&, CQuickListMapServerList const&)
- T CUtlMemory<PanelAnimationMapEntry, int>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<vgui::ListPanel::column_t, unsigned char>, unsigned char>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, serverdisplay_t, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<netadr_s, int, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long long, int, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<void*, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<vgui::MessageMapItem_t, int>::Grow(int)
  T CUtlMemoryPool::AddNewBlob()
  T CUtlMemoryPool::Alloc()
  T CUtlMemoryPool::Alloc(unsigned long)
@@ -2550,6 +2550,7 @@
  T GetMostCommonQueryPorts(CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >&)
  T GetNoEscCharConversion()
  T GetPanelAnimationDictionary()
+ T GetPinCornerFromString(char const*)
  T ILocalize::ConstructStringVArgsInternal(wchar_t*, int, wchar_t const*, int, char*)
  T ILocalize::ConvertANSIToUnicode(char const*, wchar_t*, int)
  T ILocalize::ConvertUnicodeToANSI(wchar_t const*, char*, int)
@@ -2683,7 +2684,6 @@
  T V_vsnwprintf(wchar_t*, int, wchar_t const*, char*)
  T V_wcsncpy(wchar_t*, wchar_t const*, int)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T int V_swprintf_safe<64ul>(wchar_t (&) [64ul], wchar_t const*, ...)
  T netadr_s::CompareAdr(netadr_s const&, bool) const
  T netadr_s::CompareClassCAdr(netadr_s const&) const
@@ -2785,6 +2785,7 @@
  T vgui::AnimationController::GetRelativeOffset(vgui::AnimationController::AnimAlign_t&, bool)
  T vgui::AnimationController::GetValue(vgui::AnimationController::ActiveAnimation_t&, vgui::Panel*, unsigned short)
  T vgui::AnimationController::LoadScriptFile(char const*)
+ T vgui::AnimationController::LookupAlignment(char const*)
  T vgui::AnimationController::ParseScriptFile(char*, int)
  T vgui::AnimationController::ReloadScriptFile()
  T vgui::AnimationController::RemoveQueuedAnimationCommands(unsigned short, vgui::Panel*)
@@ -4163,7 +4164,6 @@
  T vgui::Panel::UpdateSiblingPin()
  T vgui::Panel::~Panel()
  T vgui::PanelListPanel::AddItem(vgui::Panel*, vgui::Panel*)
- T vgui::PanelListPanel::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::PanelListPanel::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::PanelListPanel::ApplySchemeSettings(vgui::IScheme*)
  T vgui::PanelListPanel::ComputeVPixelsNeeded()
@@ -4390,7 +4390,6 @@
  T vgui::ScalableImagePanel::ScalableImagePanel(vgui::Panel*, char const*)
  T vgui::ScalableImagePanel::SetImage(char const*)
  T vgui::ScalableImagePanel::~ScalableImagePanel()
- T vgui::ScrollBar::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::ScrollBar::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::ScrollBar::ApplySchemeSettings(vgui::IScheme*)
  T vgui::ScrollBar::ApplySettings(KeyValues*)
@@ -4832,6 +4831,7 @@
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -4970,9 +4970,9 @@
  d VTT for (anonymous namespace)::ScrollBarButton
  d boolconverter
  d colorconverter
+ d construction vtable for (anonymous namespace)::GripPanel-in-(anonymous namespace)::CaptionGripPanel
  d construction vtable for vgui::Button-in-(anonymous namespace)::ScrollBarButton
  d construction vtable for vgui::Label-in-(anonymous namespace)::ScrollBarButton
- d dyld__mach_header
  d floatconverter
  d fontconverter
  d g_ColInfo
@@ -4999,8 +4999,8 @@
  d typeinfo for (anonymous namespace)::ScrollBarButton
  d vgui::Panel::OnOldMessage(KeyValues*, unsigned int)::s_bDebugMessages
  d vtable for (anonymous namespace)::CaptionGripPanel
- d vtable for (anonymous namespace)::GripPanel
  d vtable for (anonymous namespace)::ScrollBarButton
+ dyld_stub_binder
  floor
  fmod
  g_VProfCurrentProfile
@@ -5031,7 +5031,7 @@
  sinf
  snprintf
  sscanf
- stat
+ stat$INODE64
  std::terminate()
  strcasecmp
  strcat
@@ -5109,10 +5109,57 @@
  t ListFileNameSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
  t ListFileSizeSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
  t ListFileTypeSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
+ t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.4856.pX87Wl.ii
+ t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.4874.Dl93Bc.ii
+ t _GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.47720.vOPolk.ii
+ t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.4881.D0UxGd.ii
+ t _GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.47733.ZQrtGj.ii
+ t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.4891.ScmeCX.ii
+ t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.4899.qj1W6I.ii
+ t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.4900.TXZ71g.ii
+ t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.4911.lghLTA.ii
+ t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.4922.aKynQC.ii
+ t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.4929.62c7xZ.ii
+ t _GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.47737.IQdJXB.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.4953.NmqPOV.ii
+ t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.4965.ay1gfd.ii
+ t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.4971.FGuOW0.ii
+ t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.4977.cnCZwX.ii
+ t _GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.4982.4Nhy9v.ii
+ t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.5007.rIf53h.ii
+ t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.5030.V71Qa9.ii
+ t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.5061.zvDWRN.ii
+ t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.5063.4Dz492.ii
+ t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.5073.R9EnTP.ii
+ t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.5079.xGz9JR.ii
+ t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.5085.79TGJN.ii
+ t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.5091.J78jWk.ii
+ t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.5097.h6tyVs.ii
+ t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.5098.nxMYBF.ii
+ t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.5114.ZO3Ono.ii
+ t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.5121.QGz4Wt.ii
+ t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.5142.mhnIM8.ii
+ t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.5178.hqhKkv.ii
+ t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.5187.gwg3j3.ii
+ t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.5205.Yi5Gpx.ii
+ t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.5215.zWGKan.ii
+ t _GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.47807.yd09J6.ii
+ t _GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.47810.ZuIJNb.ii
+ t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.5235.3SFz2l.ii
+ t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.5253.gTjCZD.ii
+ t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.5262.RY0jMu.ii
+ t _GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.5277.K2tHUV.ii
+ t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.5280.yApHmo.ii
+ t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.5289.O9ydbk.ii
+ t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.5295.Idjw2q.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
+ t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.8180.JAm7aJ.ii
  t __CreateCServerBrowserIServerBrowser_interface()
  t __CreateCServerBrowserIVGuiModule_interface()
- t global constructors keyed to a
- tan
+ tanf
  time
  typeinfo for std::bad_alloc
  vsnprintf

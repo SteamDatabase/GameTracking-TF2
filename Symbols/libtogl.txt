@@ -252,8 +252,10 @@
  T CPersistentBuffer::~CPersistentBuffer()
  T CTSQueue<CGLMTex*, false>::CTSQueue()
  T CTSQueue<CGLMTex*, false>::Pop()
+ T CTSQueue<CGLMTex*, false>::PopItem(CGLMTex**)
  T CTSQueue<CGLMTex*, false>::Purge()
  T CTSQueue<CGLMTex*, false>::Push(CTSQueue<CGLMTex*, false>::Node_t*)
+ T CTSQueue<CGLMTex*, false>::PushItem(CGLMTex* const&)
  T CTSQueue<CGLMTex*, false>::~CTSQueue()
  T CUtlBuffer::AddNullTermination()
  T CUtlBuffer::AssumeMemory(void*, int, int, int)
@@ -447,7 +449,6 @@
  T GLMContext::DrawRangeElements(unsigned int, unsigned int, unsigned int, int, unsigned int, void const*, CGLMBuffer*)
  T GLMContext::DumpCaps()
  T GLMContext::EndFrame()
- T GLMContext::FillTexCache(bool, int)
  T GLMContext::FlushDrawStates(unsigned int, unsigned int, unsigned int)
  T GLMContext::FlushDrawStatesNoShaders()
  T GLMContext::ForceFlushStates()
@@ -678,7 +679,6 @@
  T PrintToBuf(char*, int, char const*, ...)
  T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
  T RenderTargetState_t::LessFunc(RenderTargetState_t const&, RenderTargetState_t const&)
- T ReplaceParamName(char const*, char const*, char*, int)
  T SinCos(float, float*, float*)
  T ToGLConnectLibraries
  T ToGLDisconnectLibraries
@@ -708,7 +708,6 @@
  T __clang_call_terminate
  T _rsqrtf(float)
  T _sqrtf(float)
- T dyld_stub_binding_helper
  T mach_override_ptr
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
@@ -734,6 +733,7 @@
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -802,7 +802,6 @@
  cosf
  d D3DToGL::TranslateShader(unsigned int*, CUtlBuffer*, bool*, unsigned int, int, unsigned int, char*)::s_szCompareStrings
  d GLMContext::PreloadTex(CGLMTex*, bool)::indices
- d dyld__mach_header
  d g_cgl_rendids
  d g_d3d_devtypes
  d g_d3d_formats
@@ -823,9 +822,10 @@
  d s_nDLLIdentifier
  d s_pConversionArrays_NoEscConversion
  d s_pConversionArrays_StringCharConversion
+ dyld_stub_binder
  floor
  fprintf
- fwrite
+ fwrite$UNIX2003
  g_ClockSpeed
  g_ClockSpeedSecondsMultiplier
  g_pMemAlloc
@@ -847,7 +847,6 @@
  qsort
  r .memset_pattern
  r fixupInstructions(unsigned int, void*, int, unsigned char*)::LeaqHeader
- r gPersistentBufferSize
  r g_garbageTextureBits
  raise
  rand
@@ -873,10 +872,18 @@
  t FillD3DCaps9(GLMRendererInfoFields const&, _D3DCAPS9*)
  t GetOpenGLVersion(int*, int*, int*)
  t PrintDoubleInt(char*, unsigned int, double, unsigned int)
+ t _GLOBAL__sub_I_cglmbuffer.stdout.rel_tf_osx_builder.7250.EdMzJH.ii
+ t _GLOBAL__sub_I_cglmprogra.stdout.rel_tf_osx_builder.7252.n0hvBz.ii
+ t _GLOBAL__sub_I_cglmquery.stdout.rel_tf_osx_builder.7265.Rsc7wD.ii
+ t _GLOBAL__sub_I_cglmtex.stdout.rel_tf_osx_builder.7277.zqkzWX.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_dxabstract.stdout.rel_tf_osx_builder.7282.oGr6BA.ii
+ t _GLOBAL__sub_I_glmgr.stdout.rel_tf_osx_builder.7301.egUdYm.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
  t gl_dump_stats_func(CCommand const&)
  t gl_persistent_buffer_max_offset(CCommand const&)
  t gl_shader_compile_time_dump(CCommand const&)
- t global constructors keyed to a
  typeinfo for std::bad_alloc
  vm_allocate
  vm_deallocate

@@ -1981,36 +1981,6 @@
  D construction vtable for vgui::TreeView-in-vgui::DirectoryTreeView
  D crs_rng
  D cv
- D datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::dataDesc
- D datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
- D datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::dataDesc
- D datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
- D datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::dataDesc
- D datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
- D datamap_t* DataMapInit<decallist_t>(decallist_t*)::dataDesc
- D datamap_t* DataMapInit<decallist_t>(decallist_t*)::nameHolder
- D datamap_t* DataMapInit<dheader_t>(dheader_t*)::dataDesc
- D datamap_t* DataMapInit<dheader_t>(dheader_t*)::nameHolder
- D datamap_t* DataMapInit<levellist_t>(levellist_t*)::dataDesc
- D datamap_t* DataMapInit<levellist_t>(levellist_t*)::nameHolder
- D datamap_t* DataMapInit<lump_t>(lump_t*)::dataDesc
- D datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
- D datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::dataDesc
- D datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
- D datamap_t* DataMapInit<player_info_s>(player_info_s*)::dataDesc
- D datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
  D decallist_t::m_DataMap
  D demoaction
  D dfr_rng
@@ -2269,21 +2239,6 @@
  D guard variable for MapPropOffsetsToIndices(CBaseEdict const*, CSendTablePrecalc*, unsigned short const*, unsigned short, unsigned short*)::testDict
  D guard variable for TxViewPanel::GetKBMap()::s_pMap
  D guard variable for TxViewPanel::GetMessageMap()::s_pMap
- D guard variable for datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
- D guard variable for datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
- D guard variable for datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<decallist_t>(decallist_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<dheader_t>(dheader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<levellist_t>(levellist_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
  D guard variable for vgui::AnimatingImagePanel::GetKBMap()::s_pMap
  D guard variable for vgui::AnimatingImagePanel::GetMessageMap()::s_pMap
  D guard variable for vgui::AnimationController::GetKBMap()::s_pMap
@@ -5582,6 +5537,7 @@
  T CBidirectionalSet<unsigned short, unsigned short, unsigned short, unsigned short>::AddElementToBucket(unsigned short, unsigned short)
  T CBidirectionalSet<unsigned short, unsigned short, unsigned short, unsigned short>::RemoveBucket(unsigned short)
  T CBidirectionalSet<unsigned short, unsigned short, unsigned short, unsigned short>::RemoveElement(unsigned short)
+ T CBitWriteMasksInit::CBitWriteMasksInit()
  T CBlockingUDPSocket::CBlockingUDPSocket()
  T CBlockingUDPSocket::ReceiveSocketMessage(sockaddr_in*, unsigned char*, unsigned long)
  T CBlockingUDPSocket::SendSocketMessage(sockaddr_in const&, unsigned char const*, unsigned long)
@@ -5705,7 +5661,6 @@
  T CCS_Tick(float)
  T CCallQueue::~CCallQueue()
  T CCallQueueT<CTSQueue<CFunctor*, false> >::CallQueued()
- T CCallQueueT<CTSQueue<CFunctor*, false> >::QueueFunctorInternal(CFunctor*)
  T CCallback<CSteam3Client, ClientGameServerDeny_t, false>::Run(void*)
  T CCallback<CSteam3Client, GameOverlayActivated_t, false>::Run(void*)
  T CCallback<CSteam3Client, GameServerChangeRequested_t, false>::Run(void*)
@@ -5962,6 +5917,7 @@
  T CColorLevelsUIPanel::GetOperation()
  T CColorLevelsUIPanel::GetPanelClassName()
  T CColorLevelsUIPanel::Init()
+ T CColorLevelsUIPanel::OnColorMaskSelected()
  T CColorLevelsUIPanel::OnCommand(char const*)
  T CColorLevelsUIPanel::OnMessage(KeyValues const*, unsigned int)
  T CColorLevelsUIPanel::OnTextChanged(KeyValues*)
@@ -6075,7 +6031,6 @@
  T CCoreDispInfo::CalcNodeInfo(int, int)
  T CCoreDispInfo::CalcNormalFromEdges(int, int, bool*, Vector&)
  T CCoreDispInfo::CalcRayBoundingBoxes(int, int (*) [3])
- T CCoreDispInfo::CalcTriSurfBoundingBoxes(int, int (*) [3])
  T CCoreDispInfo::CalcTriSurfInfoAtNode(int)
  T CCoreDispInfo::CalcTriSurfPlanes(int, int (*) [3])
  T CCoreDispInfo::CalcVertIndicesAtNodes(int)
@@ -6504,6 +6459,9 @@
  T CDispCollTree::AddPlane(Vector const&)
  T CDispCollTree::Cache()
  T CDispCollTree::Cache_Create(CDispCollTri*, int)
+ T CDispCollTree::Cache_EdgeCrossAxisX(Vector const&, Vector const&, Vector const&, CDispCollTri*, unsigned short&)
+ T CDispCollTree::Cache_EdgeCrossAxisY(Vector const&, Vector const&, Vector const&, CDispCollTri*, unsigned short&)
+ T CDispCollTree::Cache_EdgeCrossAxisZ(Vector const&, Vector const&, Vector const&, CDispCollTri*, unsigned short&)
  T CDispCollTree::Create(CCoreDispInfo*)
  T CDispCollTree::GetVirtualMeshList(virtualmeshlist_t*)
  T CDispCollTree::LockCache()
@@ -7285,6 +7243,7 @@
  T CGame::CreateGameWindow()
  T CGame::DestroyGameWindow()
  T CGame::DispatchAllStoredGameMessages()
+ T CGame::DispatchInputEvent(InputEvent_t const&)
  T CGame::GetDesktopInfo(int&, int&, int&)
  T CGame::GetMainDeviceWindow()
  T CGame::GetMainWindow()
@@ -7543,6 +7502,7 @@
  T CHLTVDemoRecorder::WriteSignonData()
  T CHLTVDemoRecorder::~CHLTVDemoRecorder()
  T CHLTVFrame::AllocBuffers()
+ T CHLTVFrame::CHLTVFrame()
  T CHLTVFrame::CopyHLTVData(CHLTVFrame&)
  T CHLTVFrame::FreeBuffers()
  T CHLTVFrame::IsMemPoolAllocated()
@@ -8580,6 +8540,7 @@
  T COM_TokenWaiting(char const*)
  T CObjectPool<CVarBitVec, 2, true>::CObjectPool()
  T CObjectPool<CVarBitVec, 2, true>::Purge()
+ T CObjectPool<CVarBitVec, 2, true>::PutObject(CVarBitVec*)
  T CObjectPool<CWorldRenderList, 0, true>::PutObject(CWorldRenderList*)
  T CObjectPool<CWorldRenderList, 0, true>::~CObjectPool()
  T COcclusionSystem::ActivateOccluder(int, bool)
@@ -8959,6 +8920,7 @@
  T CRender::DrawSceneEnd()
  T CRender::DrawWorldLists(IWorldRenderList*, unsigned long, float)
  T CRender::EndUpdateLightmaps()
+ T CRender::ExtractFrustumPlanes(VPlane*)
  T CRender::FrameBegin()
  T CRender::FrameEnd()
  T CRender::GetFov()
@@ -9061,6 +9023,7 @@
  T CReplayDemoRecorder::WriteSignonData()
  T CReplayDemoRecorder::~CReplayDemoRecorder()
  T CReplayFrame::AllocBuffers()
+ T CReplayFrame::CReplayFrame()
  T CReplayFrame::CopyReplayData(CReplayFrame&)
  T CReplayFrame::FreeBuffers()
  T CReplayFrame::IsMemPoolAllocated()
@@ -9669,20 +9632,23 @@
  T CStringProperty::SetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
  T CStudioConvexInfo::GetContents(int)
  T CTSList<CVarBitVec*>::PopItem(CVarBitVec**)
- T CTSList<CVarBitVec*>::PushItem(CVarBitVec* const&)
  T CTSList<CVarBitVec*>::~CTSList()
+ T CTSList<CWorldRenderList*>::PopItem(CWorldRenderList**)
  T CTSList<CWorldRenderList*>::~CTSList()
- T CTSList<TraceInfo_t*>::~CTSList()
+ T CTSList<TraceInfo_t*>::PopItem(TraceInfo_t**)
  T CTSQueue<CFunctor*, false>::CTSQueue()
  T CTSQueue<CFunctor*, false>::Pop()
+ T CTSQueue<CFunctor*, false>::PopItem(CFunctor**)
  T CTSQueue<CFunctor*, false>::Purge()
  T CTSQueue<CFunctor*, false>::Push(CTSQueue<CFunctor*, false>::Node_t*)
+ T CTSQueue<CFunctor*, false>::PushItem(CFunctor* const&)
  T CTSQueue<CFunctor*, false>::~CTSQueue()
  T CTSQueue<loopback_t*, false>::CTSQueue()
  T CTSQueue<loopback_t*, false>::Pop()
  T CTSQueue<loopback_t*, false>::PopItem(loopback_t**)
  T CTSQueue<loopback_t*, false>::Purge()
  T CTSQueue<loopback_t*, false>::Push(CTSQueue<loopback_t*, false>::Node_t*)
+ T CTSQueue<loopback_t*, false>::PushItem(loopback_t* const&)
  T CTSQueue<loopback_t*, false>::~CTSQueue()
  T CTSSimpleList<NetScratchBuffer_t>::~CTSSimpleList()
  T CTestScriptMgr::CheckPoint(char const*)
@@ -9977,9 +9943,8 @@
  T CUtlLinkedList<CServerRemoteAccess::DataResponse_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::DataResponse_t, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CServerRemoteAccess::DataResponse_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::DataResponse_t, int>, int> >::Free(int)
  T CUtlLinkedList<CServerRemoteAccess::DataResponse_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::DataResponse_t, int>, int> >::RemoveAll()
+ T CUtlLinkedList<CServerRemoteAccess::ListenerStore_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::ListenerStore_t, int>, int> >::AddToTail()
  T CUtlLinkedList<CServerRemoteAccess::ListenerStore_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::ListenerStore_t, int>, int> >::AllocInternal(bool)
- T CUtlLinkedList<CServerRemoteAccess::ListenerStore_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::ListenerStore_t, int>, int> >::InsertBefore(int)
- T CUtlLinkedList<CServerRemoteAccess::ListenerStore_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::ListenerStore_t, int>, int> >::LinkBefore(int, int)
  T CUtlLinkedList<CServerRemoteAccess::ListenerStore_t, int, false, int, CUtlMemory<UtlLinkedListElem_t<CServerRemoteAccess::ListenerStore_t, int>, int> >::~CUtlLinkedList()
  T CUtlLinkedList<CShadowMgr::FlashlightInfo_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CShadowMgr::FlashlightInfo_t, unsigned short>, unsigned short> >::AllocInternal(bool)
  T CUtlLinkedList<CShadowMgr::FlashlightInfo_t, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CShadowMgr::FlashlightInfo_t, unsigned short>, unsigned short> >::Free(unsigned short)
@@ -10082,7 +10047,6 @@
  T CUtlMap<CUtlString, int, unsigned short>::Insert(CUtlString const&, int const&)
  T CUtlMap<void*, DecalEntry, unsigned short>::~CUtlMap()
  T CUtlMap<void*, SfxDictEntry, unsigned short>::~CUtlMap()
- T CUtlMemory<PanelAnimationMapEntry, int>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<CBidirectionalSet<unsigned short, unsigned short, unsigned short, unsigned short>::BucketListInfo_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<CBidirectionalSet<unsigned short, unsigned short, unsigned short, unsigned short>::ElementListInfo_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<CBrushBatchRender::brushrender_t, unsigned short>, unsigned short>::Grow(int)
@@ -10135,6 +10099,7 @@
  T CUtlMemory<UtlRBTreeNode_t<MatchingProp_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<void*, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<vgui::MessageMapItem_t, int>::Grow(int)
  T CUtlMemoryAligned<UtlLinkedListElem_t<CShadowMgr::Shadow_t, unsigned short>, 16>::~CUtlMemoryAligned()
  T CUtlMemoryPool::AddNewBlob()
  T CUtlMemoryPool::Alloc()
@@ -11842,7 +11807,6 @@
  T ConnectTier3Libraries(void* (**)(char const*, int*), int)
  T ConsoleLogFileCallback(IConVar*, char const*, float)
  T ConstructNearAndFarPolygons(Vector*, Vector*, float)
- T ConvertListenerVectorTo2D(Vector*, Vector*)
  T CopyListPanelToClipboard(vgui::ListPanel*)
  T CopyPrecalcedLightingState(lightcache_t*, LightingState_t&, LightingStateInfo_t&)
  T CreateADPCMMixer(IWaveData*)
@@ -12082,6 +12046,7 @@
  T EnsureDirectory(char const*, char const*)
  T EnumerateLeafInSphere_R(mnode_t*, EnumLeafSphereInfo_t&, int)
  T EvaluateConditional(char const*)
+ T ExtractFrustumPlanes(VPlane*, float)
  T FLT_Free(flt_t*)
  T FLT_GetNext(flt_t*, int)
  T FLT_GetNextN(flt_t*, portable_samplepair_t*, int, int)
@@ -12172,6 +12137,7 @@
  T GetNoEscCharConversion()
  T GetObjectClassName(int)
  T GetPanelAnimationDictionary()
+ T GetPinCornerFromString(char const*)
  T GetPowerInfo(int)
  T GetRam()
  T GetSaveMemory()
@@ -12315,6 +12281,7 @@
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUV88(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVLX8888(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVWQ8888(unsigned char const*, int, int, unsigned char*)
+ T ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
  T ImageLoader::FlipImageHorizontally(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::FlipImageVertically(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)
@@ -12480,6 +12447,7 @@
  T LeafvisChanged(IConVar*, char const*, float)
  T LightcacheGetDynamic(Vector const&, LightingState_t&, LightcacheGetDynamic_Stats&, unsigned int, bool)
  T LightcacheGetStatic(LightCacheHandle_t__*, ITexture**, unsigned int)
+ T LightingState_t::HasAmbientColors()
  T LightmapPageCompareFunc(void const*, void const*)
  T LinearToScreenGamma(float)
  T LinearToTexture(float)
@@ -12830,7 +12798,6 @@
  T Q_UTF8ToUChar32(char const*, wchar_t&, bool&)
  T Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
  T Q_log2(int)
- T QuadWithParallelEdges(Vector const&, Vector const&, float, Vector const&, float, Vector const&, Vector2D&)
  T QuaternionAlign(Quaternion const&, Quaternion const&, Quaternion&)
  T QuaternionAngles(Quaternion const&, QAngle&)
  T QuaternionBlend(Quaternion const&, Quaternion const&, float, Quaternion&)
@@ -12991,9 +12958,7 @@
  T SND_ClearMouth
  T SND_CloseMouth
  T SND_GetClosestPoint(channel_t*, QAngle&, Vector&)
- T SND_GetDopplerPoints(channel_t*, QAngle&, Vector&, Vector&, Vector&)
  T SND_GetDspMix(channel_t*, int)
- T SND_GetFacingDirection(channel_t*, QAngle const&)
  T SND_GetGain(channel_t*, bool, bool, bool, float, bool)
  T SND_GetGainFromMult(float, float, float)
  T SND_GetGainObscured(channel_t*, bool, bool, bool)
@@ -13306,7 +13271,6 @@
  T S_SyncClockAdjust(clocksync_index_t)
  T S_TransferStereo16
  T S_Update(AudioState_t const*)
- T S_UpdateSoundFade()
  T S_Update_Guts(float)
  T SaveAllocMemory(unsigned long, unsigned long, bool)
  T SaveFreeMemory(void*)
@@ -13415,6 +13379,7 @@
  T SinCos(float, float*, float*)
  T Snd_Restart_f()
  T SocketWouldBlock()
+ T SortClusterLessFunc(int const&, int const&)
  T SortInfoToLightmapPage(int)
  T SortMapCompareFunc(void const*, void const*)
  T SortServerTags(char* const*, char* const*)
@@ -13718,6 +13683,7 @@
  T WaveCreateTmpFile(char const*, int, int, int)
  T WaveFixupTmpFile(char const*)
  T Win32UploadGameStatsBlocking(TGameStatsParameters const&)
+ T WingedEdgeLessFunc::Less(int const&, int const&, void*)
  T WorldLightToMaterialLight(dworldlight_t*, LightDesc_t&)
  T WorldStaticMeshCreate()
  T WorldStaticMeshDestroy()
@@ -13837,7 +13803,6 @@
  T deflate_fast(TState&)
  T demosmoothing_t::operator=(demosmoothing_t const&)
  T dsp_room_GetInt()
- T dyld_stub_binding_helper
  T fill_window(TState&)
  T float16::ConvertFloatTo16bits(float)
  T flush_block(TState&, char*, unsigned long, int)
@@ -14423,6 +14388,7 @@
  T snappy::RawCompress(char const*, unsigned long, char*, unsigned long*)
  T snappy::RawUncompress(char const*, unsigned long, char*)
  T snappy::RawUncompress(snappy::Source*, char*)
+ T snappy::SnappyDecompressor::ReadUncompressedLength(unsigned int*)
  T snappy::SnappyDecompressor::RefillTag()
  T snappy::UncheckedByteArraySink::Append(char const*, unsigned long)
  T snappy::UncheckedByteArraySink::GetAppendBuffer(unsigned long, char*)
@@ -14477,6 +14443,7 @@
  T vgui::AnimationController::GetRelativeOffset(vgui::AnimationController::AnimAlign_t&, bool)
  T vgui::AnimationController::GetValue(vgui::AnimationController::ActiveAnimation_t&, vgui::Panel*, unsigned short)
  T vgui::AnimationController::LoadScriptFile(char const*)
+ T vgui::AnimationController::LookupAlignment(char const*)
  T vgui::AnimationController::ParseScriptFile(char*, int)
  T vgui::AnimationController::ReloadScriptFile()
  T vgui::AnimationController::RemoveQueuedAnimationCommands(unsigned short, vgui::Panel*)
@@ -15886,7 +15853,6 @@
  T vgui::Panel::UpdateSiblingPin()
  T vgui::Panel::~Panel()
  T vgui::PanelListPanel::AddItem(vgui::Panel*, vgui::Panel*)
- T vgui::PanelListPanel::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::PanelListPanel::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::PanelListPanel::ApplySchemeSettings(vgui::IScheme*)
  T vgui::PanelListPanel::ComputeVPixelsNeeded()
@@ -15927,7 +15893,6 @@
  T vgui::ProgressBar::~ProgressBar()
  T vgui::PropertyDialog::ActivateBuildMode()
  T vgui::PropertyDialog::AddPage(vgui::Panel*, char const*)
- T vgui::PropertyDialog::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::PropertyDialog::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::PropertyDialog::ApplyChanges()
  T vgui::PropertyDialog::GetActivePage()
@@ -16118,7 +16083,6 @@
  T vgui::ScalableImagePanel::ScalableImagePanel(vgui::Panel*, char const*)
  T vgui::ScalableImagePanel::SetImage(char const*)
  T vgui::ScalableImagePanel::~ScalableImagePanel()
- T vgui::ScrollBar::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::ScrollBar::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::ScrollBar::ApplySchemeSettings(vgui::IScheme*)
  T vgui::ScrollBar::ApplySettings(KeyValues*)
@@ -16578,6 +16542,7 @@
  T vgui_drawtree_off_f()
  T vgui_drawtree_on_f()
  T void CCallQueueT<CTSQueue<CFunctor*, false> >::QueueCall<CBugUIPanel*, CBugUIPanel, bool, char const*, char const*, bool, CUtlEnvelope<char const*>, CUtlEnvelope<char const*>, bool>(CBugUIPanel*, bool (CBugUIPanel::*)(char const*, char const*, bool), CUtlEnvelope<char const*> const&, CUtlEnvelope<char const*> const&, bool const&)
+ T void CCallQueueT<CTSQueue<CFunctor*, false> >::QueueCall<CSaveRestore*, CSaveRestore, void, char const*, char const*, bool, CUtlEnvelope<char const*>, CUtlEnvelope<char const*>, bool>(CSaveRestore*, void (CSaveRestore::*)(char const*, char const*, bool), CUtlEnvelope<char const*> const&, CUtlEnvelope<char const*> const&, bool const&)
  T void CCallQueueT<CTSQueue<CFunctor*, false> >::QueueCall<CSaveRestore*, CSaveRestore, void, char const*, int, bool, CUtlEnvelope<char const*>, int, bool>(CSaveRestore*, void (CSaveRestore::*)(char const*, int, bool), CUtlEnvelope<char const*> const&, int const&, bool const&)
  T void CCallQueueT<CTSQueue<CFunctor*, false> >::QueueCall<ISaveRestoreFileSystem*, ISaveRestoreFileSystem, FSAsyncStatus_t, char const*, void const*, int, bool, bool, FSAsyncControl_t__**, CUtlEnvelope<char const*>, void*, int, bool, bool, FSAsyncControl_t__**>(ISaveRestoreFileSystem*, FSAsyncStatus_t (ISaveRestoreFileSystem::*)(char const*, void const*, int, bool, bool, FSAsyncControl_t__**), CUtlEnvelope<char const*> const&, void* const&, int const&, bool const&, bool const&, FSAsyncControl_t__** const&)
  T void CCallQueueT<CTSQueue<CFunctor*, false> >::QueueCall<ISaveRestoreFileSystem*, ISaveRestoreFileSystem, FSAsyncStatus_t, char const*, void const*, int, bool, bool, FSAsyncControl_t__**, CUtlEnvelope<char const*>, void*, unsigned int, bool, bool, FSAsyncControl_t__**>(ISaveRestoreFileSystem*, FSAsyncStatus_t (ISaveRestoreFileSystem::*)(char const*, void const*, int, bool, bool, FSAsyncControl_t__**), CUtlEnvelope<char const*> const&, void* const&, unsigned int const&, bool const&, bool const&, FSAsyncControl_t__** const&)
@@ -16599,6 +16564,7 @@
  T void SetupArrayProps_R<SendTable, SendProp>(SendTable*)
  T void TesselateDisplacement_R<CEngineTesselateHelper>(CEngineTesselateHelper*, CVertIndex const&, int, int)
  T void snappy::SnappyDecompressor::DecompressAllTags<snappy::SnappyArrayWriter>(snappy::SnappyArrayWriter*)
+ T void std::__1::__sort_heap<bool (*&)(int const&, int const&), int*>(int*, int*, bool (*&)(int const&, int const&))
  T zcalloc(void*, unsigned int, unsigned int)
  T zcfree(void*, void*)
  ThreadDetach
@@ -16623,6 +16589,7 @@
  _SpewMessage
  _Unwind_Resume
  __CFConstantStringClassReference
+ __bzero
  __cxa_allocate_exception
  __cxa_atexit
  __cxa_begin_catch
@@ -16649,6 +16616,7 @@
  _exit
  accept$UNIX2003
  acos
+ acosf
  alDeleteBuffers
  alDeleteSources
  alGenBuffers
@@ -17010,7 +16978,24 @@
  b con_trace
  b connect_command
  b current_skill
+ b cvarNext
  b cvarlist_command
+ b datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
+ b datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
+ b datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+ b datamap_t* DataMapInit<decallist_t>(decallist_t*)::nameHolder
+ b datamap_t* DataMapInit<dheader_t>(dheader_t*)::nameHolder
+ b datamap_t* DataMapInit<levellist_t>(levellist_t*)::nameHolder
+ b datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
+ b datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
+ b datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
  b demo_avellimit
  b demo_debug
  b demo_fastforwardfinalspeed
@@ -17079,6 +17064,7 @@
  b g_AreaStack
  b g_AsyncWaveDataCache
  b g_BitBufErrorHandler
+ b g_BitWriteMasksInit
  b g_BreakSet
  b g_BreakSetIncludingColons
  b g_BugReporter
@@ -17362,6 +17348,21 @@
  b guard variable for VisCache_Build(VisCacheEntry&, worldbrushdata_t const&)::_counter
  b guard variable for Voice_ForceInit()::sv_voicecodec
  b guard variable for _Host_RunFrame_Server(bool)::_counter
+ b guard variable for datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<decallist_t>(decallist_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<dheader_t>(dheader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<levellist_t>(levellist_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
  b guard variable for g_benchframe_CompletionFunc(char const*, char (*) [64])::benchframeComplete
  b guard variable for g_editdemo_CompletionFunc(char const*, char (*) [64])::editdemoComplete
  b guard variable for g_exec_CompletionFunc(char const*, char (*) [64])::execComplete
@@ -17524,7 +17525,6 @@
  b net_udp_rcvbuf
  b netadr_s::ToString(bool) const::s
  b netadr_s::ToString(bool) const::slot
- b next
  b nextdemo_command
  b opt_EnumerateLeavesFastAlgorithm
  b orig_demo_message
@@ -18072,7 +18072,6 @@
  d ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::lastSrcGamma
  d ImageLoader::g_KernelFunc
  d ImageLoader::g_KernelFuncNice
- d IsSourceModLoaded()::s_pFileNames
  d LeafVisBuild(Vector const&)::last_leaf
  d S_PlayVol(CCommand const&)::hash
  d S_Say(CCommand const&)::hash
@@ -18094,9 +18093,23 @@
  d cached_r_worldlights
  d cl_jpegquality
  d colorconverter
+ d construction vtable for (anonymous namespace)::GripPanel-in-(anonymous namespace)::CaptionGripPanel
  d construction vtable for vgui::Button-in-(anonymous namespace)::ScrollBarButton
  d construction vtable for vgui::Label-in-(anonymous namespace)::ScrollBarButton
- d dyld__mach_header
+ d datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::dataDesc
+ d datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::dataDesc
+ d datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
+ d datamap_t* DataMapInit<decallist_t>(decallist_t*)::dataDesc
+ d datamap_t* DataMapInit<dheader_t>(dheader_t*)::dataDesc
+ d datamap_t* DataMapInit<levellist_t>(levellist_t*)::dataDesc
+ d datamap_t* DataMapInit<lump_t>(lump_t*)::dataDesc
+ d datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::dataDesc
+ d datamap_t* DataMapInit<player_info_s>(player_info_s*)::dataDesc
  d efx
  d facingName
  d floatconverter
@@ -18149,7 +18162,6 @@
  d s_CvarQuery
  d s_DefaultAccessor
  d s_EngineRandomStream
- d s_GameEnventTypeMap
  d s_LastFileLoadingFrom
  d s_MDLCacheNotify
  d s_MaterialProxyFactory
@@ -18176,7 +18188,6 @@
  d s_pConversionArrays_StringCharConversion
  d s_pEdges
  d s_pRegistryConVars
- d s_pSupportedReplayGames
  d saveShadows
  d stringconverter
  d textureidconverter
@@ -18187,17 +18198,18 @@
  d voxcomma
  d voxperiod
  d vtable for (anonymous namespace)::CaptionGripPanel
- d vtable for (anonymous namespace)::GripPanel
  d vtable for (anonymous namespace)::ScrollBarButton
  dlclose
  dlerror
  dlopen
  dlsym
  dup
+ dyld_stub_binder
  exit
  exp
+ expf
  fclose
- fdopen
+ fdopen$UNIX2003
  ferror
  fflush
  fgetc
@@ -18208,17 +18220,15 @@
  fminf
  fmod
  fmodf
- fopen
+ fopen$UNIX2003
  fprintf
- fputc
- fputs
+ fputs$UNIX2003
  fread
  free
  fseek
- fstat
+ fstat$INODE64
  ftell
  futimes
- fwrite
  fwrite$UNIX2003
  g_ClockSpeed
  g_ClockSpeedMillisecondsMultiplier
@@ -18270,7 +18280,7 @@
  objc_msgSend
  open$UNIX2003
  pclose
- popen
+ popen$UNIX2003
  pow
  powf
  printf
@@ -18355,8 +18365,8 @@
  r typeinfo name for (anonymous namespace)::CaptionGripPanel
  r typeinfo name for (anonymous namespace)::GripPanel
  r typeinfo name for (anonymous namespace)::ScrollBarButton
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
  raise
  read$UNIX2003
  recv$UNIX2003
@@ -18377,7 +18387,7 @@
  socket
  sprintf
  sscanf
- stat
+ stat$INODE64
  std::terminate()
  strcasecmp
  strcat
@@ -18501,7 +18511,9 @@
  t FastSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
  t FileSystem_AddLoadedSearchPath(CFSSearchPathsInit&, char const*, char const*, bool)
  t Filter_Add_f(CCommand const&)
+ t FindCommonPrefix(char const*)
  t FindIntersectionAtSurface(msurface2_t*, float, Vector&, LightVecState_t&)
+ t FindPlayerByName(CClientInfo*, char const*)
  t FmtCommaNumber(char*, unsigned int)
  t FnCreateCDemoActionCDTrackStart()
  t FnCreateCDemoActionCDTrackStop()
@@ -18588,7 +18600,6 @@
  t LoadSaveGame(char const*)
  t LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
  t LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
- t LzmaDec_WriteRem(CLzmaDec*, unsigned long)
  t MD5Transform(unsigned int*, unsigned int const*)
  t MapList_CountMaps(char const*, bool, int&)
  t MarkSmallNode(mnode_t*)
@@ -18640,6 +18651,7 @@
  t SpewEdicts()::EdictSorter_t::SortEdicts(SpewEdicts()::EdictCount_t* const*, SpewEdicts()::EdictCount_t* const*)
  t StaticPropColorMeshCallback(FileAsyncRequest_t const&, int, FSAsyncStatus_t)
  t StaticPropColorTexelCallback(FileAsyncRequest_t const&, int, FSAsyncStatus_t)
+ t StripWhitespaceWorker(int, wchar_t*, bool*, bool)
  t SvTagsChangeCallback(IConVar*, char const*, float)
  t Sys_TryInitSteamInfo(void*, SteamInfVersionInfo_t&, char const*, char const*, bool)
  t SzAlloc(void*, unsigned long)
@@ -18659,6 +18671,223 @@
  t WorldLightFromDynamicLight(dlight_t const&, dworldlight_t&)
  t WriteMaterialSystemConfigToRegistry(MaterialSystem_Config_t const&)
  t WriteVideoConfigInt(char const*, int)
+ t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.4856.pX87Wl.ii
+ t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.4874.Dl93Bc.ii
+ t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.4881.D0UxGd.ii
+ t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.4891.ScmeCX.ii
+ t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.4899.qj1W6I.ii
+ t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.4900.TXZ71g.ii
+ t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.4911.lghLTA.ii
+ t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.4922.aKynQC.ii
+ t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.4929.62c7xZ.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.4953.NmqPOV.ii
+ t _GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.6272.FERRIa.ii
+ t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.4965.ay1gfd.ii
+ t _GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.6309.HJlPZr.ii
+ t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.4971.FGuOW0.ii
+ t _GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.6394.Wg3E7z.ii
+ t _GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.6397.yGMn1U.ii
+ t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.4977.cnCZwX.ii
+ t _GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.4982.4Nhy9v.ii
+ t _GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.6455.fJrW0e.ii
+ t _GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.6461.NgxJPE.ii
+ t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.5007.rIf53h.ii
+ t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.5030.V71Qa9.ii
+ t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.5061.zvDWRN.ii
+ t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.5063.4Dz492.ii
+ t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.5073.R9EnTP.ii
+ t _GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.5797.tLrSIL.ii
+ t _GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.6643.j8kK7N.ii
+ t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.5079.xGz9JR.ii
+ t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.5085.79TGJN.ii
+ t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.5091.J78jWk.ii
+ t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.5097.h6tyVs.ii
+ t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.5098.nxMYBF.ii
+ t _GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.6697.nEHM2Z.ii
+ t _GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.6759.GhlHJI.ii
+ t _GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.6769.KZjoPy.ii
+ t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.5114.ZO3Ono.ii
+ t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.5121.QGz4Wt.ii
+ t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.5142.mhnIM8.ii
+ t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.5178.hqhKkv.ii
+ t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.5187.gwg3j3.ii
+ t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.5205.Yi5Gpx.ii
+ t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.5215.zWGKan.ii
+ t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.5235.3SFz2l.ii
+ t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.5253.gTjCZD.ii
+ t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.5262.RY0jMu.ii
+ t _GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.5277.K2tHUV.ii
+ t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.5280.yApHmo.ii
+ t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.5289.O9ydbk.ii
+ t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.5295.Idjw2q.ii
+ t _GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.5772.Mrjne6.ii
+ t _GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.5962.6egIWn.ii
+ t _GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.5969.BWzOfO.ii
+ t _GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.5977.txAOkw.ii
+ t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.2006.CXaY5u.ii
+ t _GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.5989.LZKLkp.ii
+ t _GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.5992.QrRAVw.ii
+ t _GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.6001.kqECcU.ii
+ t _GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.6013.UnL5D1.ii
+ t _GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.6025.42DCc7.ii
+ t _GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.6061.LHObHb.ii
+ t _GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.6068.zr5CCV.ii
+ t _GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.6081.Z7FKqB.ii
+ t _GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.6087.7dg3j3.ii
+ t _GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.6097.FxW8my.ii
+ t _GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.6115.qS5A9w.ii
+ t _GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.6121.xovRNL.ii
+ t _GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.6127.baQMGs.ii
+ t _GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.6133.mxB4b7.ii
+ t _GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.6139.V20gQH.ii
+ t _GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.6143.kfXmU2.ii
+ t _GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.6151.gWn9vo.ii
+ t _GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.6157.kWIx6g.ii
+ t _GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.6169.preJZV.ii
+ t _GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.6175.DStK23.ii
+ t _GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.6181.D29kOr.ii
+ t _GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.6037.Mvw1Y4.ii
+ t _GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.6055.ImU1wq.ii
+ t _GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.6191.VBfzkL.ii
+ t _GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.6197.i7TE1d.ii
+ t _GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.6209.PL3Gyf.ii
+ t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.6217.5ItDMl.ii
+ t _GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.6224.1H6cH3.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.6233.XtAAo3.ii
+ t _GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.6247.9jaZCN.ii
+ t _GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.6241.EA6vsg.ii
+ t _GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.6259.2r5JBN.ii
+ t _GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.6253.kbAH2U.ii
+ t _GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.6265.KADe35.ii
+ t _GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.6271.n5PZsb.ii
+ t _GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.6283.eDfl8i.ii
+ t _GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.6291.13peJ9.ii
+ t _GLOBAL__sub_I_disp_power.stdout.rel_tf_osx_builder.5673.PbP7T5.ii
+ t _GLOBAL__sub_I_dispcoll_c.stdout.rel_tf_osx_builder.5658.41sYrb.ii
+ t _GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.2710.NsQ90I.ii
+ t _GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.2711.eSrimT.ii
+ t _GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.2712.53GM28.ii
+ t _GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.2713.ZFlyB9.ii
+ t _GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.6304.bFNFrx.ii
+ t _GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.6325.qsOdvg.ii
+ t _GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.6339.ibkiHx.ii
+ t _GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.6349.xB6qzq.ii
+ t _GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.6355.jayLZs.ii
+ t _GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.6365.B7Tth3.ii
+ t _GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.6373.U0oahW.ii
+ t _GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.6429.mpFtjL.ii
+ t _GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.6421.VgA3u7.ii
+ t _GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.6422.p9cAl9.ii
+ t _GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.6445.CAD6uA.ii
+ t _GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.6479.tAB6N5.ii
+ t _GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.6487.xa9id4.ii
+ t _GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.6491.9yBXPv.ii
+ t _GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.6499.m2JhsX.ii
+ t _GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.6505.4QXzq0.ii
+ t _GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.6511.XE76H2.ii
+ t _GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.6514.TiWQe9.ii
+ t _GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.6533.IwYMzD.ii
+ t _GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.6541.Uqp7l8.ii
+ t _GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.6547.0XVVFx.ii
+ t _GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.6559.LVcO3b.ii
+ t _GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.6569.KzBR1v.ii
+ t _GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.6577.vC69wF.ii
+ t _GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.6583.WeKalx.ii
+ t _GLOBAL__sub_I_host_phone.stdout.rel_tf_osx_builder.6587.nnK8ae.ii
+ t _GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.6595.ha9luu.ii
+ t _GLOBAL__sub_I_initmathli.stdout.rel_tf_osx_builder.6607.yacBW6.ii
+ t _GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.6611.zmnoZP.ii
+ t _GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.6637.d0Ajb1.ii
+ t _GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.6619.UnV8b4.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.2107.ttGBeC.ii
+ t _GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.6647.A3gvKs.ii
+ t _GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.6655.8RBLSn.ii
+ t _GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.6673.N1M1ju.ii
+ t _GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.6685.YW6DzH.ii
+ t _GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.6709.2K4pF4.ii
+ t _GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.6701.dYoHIg.ii
+ t _GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.6737.qe0jBY.ii
+ t _GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.6751.8UOzLd.ii
+ t _GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.6755.1rP4Mr.ii
+ t _GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.5578.MgVgeT.ii
+ t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.6715.lR3Fgb.ii
+ t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.6721.I7Mg24.ii
+ t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.6733.RS0y4y.ii
+ t _GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.6781.TpvJua.ii
+ t _GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.6789.dnN0Ks.ii
+ t _GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.6799.Te2O0g.ii
+ t _GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.6849.bbPnUi.ii
+ t _GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.6859.NYSjnM.ii
+ t _GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.6865.e3G6xX.ii
+ t _GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.6871.Cea2uD.ii
+ t _GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.6808.jWKJAh.ii
+ t _GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.6839.1ZBD44.ii
+ t _GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.6827.7eB7Hc.ii
+ t _GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.6874.vSMcLx.ii
+ t _GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.6883.spG9OO.ii
+ t _GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.6901.Un9uon.ii
+ t _GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.5825.Yqmomz.ii
+ t _GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.5833.2x1voW.ii
+ t _GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.5839.Q0ntsL.ii
+ t _GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.5843.9uzPKx.ii
+ t _GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.5861.uOwU1R.ii
+ t _GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.5887.6BV7Om.ii
+ t _GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.5893.XUHElv.ii
+ t _GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.5894.xWGBTu.ii
+ t _GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.6915.kuOHiX.ii
+ t _GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.6925.IA8tz7.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.6931.u5BQTN.ii
+ t _GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.3186.nZCKjB.ii
+ t _GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.6937.1JoZES.ii
+ t _GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.6943.8yy2Fb.ii
+ t _GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.6949.euJnj4.ii
+ t _GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.6952.WcLKan.ii
+ t _GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.6961.rqc3kD.ii
+ t _GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.6967.vu1jAA.ii
+ t _GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.6971.5SBCRF.ii
+ t _GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.6972.C5i8zO.ii
+ t _GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.6979.2buj4J.ii
+ t _GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.6991.s3rLGM.ii
+ t _GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.6997.3eVKw7.ii
+ t _GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.7003.H7aJgh.ii
+ t _GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.7009.bdHMij.ii
+ t _GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.7013.IrJYX1.ii
+ t _GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.7022.sa2q94.ii
+ t _GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.7033.qn4IoX.ii
+ t _GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.83819.NZivnZ.ii
+ t _GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.7039.1sywcK.ii
+ t _GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.7047.upNvnT.ii
+ t _GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.7067.wXa5pq.ii
+ t _GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.7071.42ArDu.ii
+ t _GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.7079.d8p87f.ii
+ t _GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.7087.8mNbwe.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
+ t _GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.7090.fWBtoV.ii
+ t _GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.7103.KYpHdv.ii
+ t _GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.7111.bz0Muq.ii
+ t _GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.5605.VHYYnR.ii
+ t _GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.5619.1RbdXC.ii
+ t _GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.5625.szmcNX.ii
+ t _GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.7117.IOfbp1.ii
+ t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.5767.ziSP3v.ii
+ t _GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.7126.bUxLro.ii
+ t _GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.7139.nDPiJG.ii
+ t _GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.7147.f0fGYL.ii
+ t _GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.7149.hzHRey.ii
+ t _GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.7159.Y7Tm7A.ii
+ t _GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.5911.VmAmEq.ii
+ t _GLOBAL__sub_I_voice_reco.stdout.rel_tf_osx_builder.5929.TdQOvL.ii
+ t _GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.5941.uTyGN1.ii
+ t _GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.7163.ibriIg.ii
+ t _GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.5953.lSvUxa.ii
+ t _GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.7171.S04m2Z.ii
+ t _GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.7175.iaf9DV.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.2874.DARExN.ii
+ t _GLOBAL__sub_I_xboxsystem.stdout.rel_tf_osx_builder.7189.hJ6pjc.ii
+ t _GLOBAL__sub_I_zone.stdout.rel_tf_osx_builder.7195.2mQMyl.ii
  t __CreateCClientEngineToolsIClientEngineTools_interface()
  t __CreateCCvarQueryICvarQuery_interface()
  t __CreateCDedicatedServerAPIIDedicatedServerAPI_interface()
@@ -18733,6 +18962,7 @@
  t bind_mac(CCommand const&)
  t box(CCommand const&)
  t bsPutUInt32(EState*, unsigned int)
+ t bsW(EState*, int, unsigned int)
  t budget_toggle_group(CCommand const&)
  t bug(CCommand const&)
  t buildcubemaps(CCommand const&)
@@ -18848,7 +19078,6 @@
  t gameui_hide(CCommand const&)
  t gameui_preventescape(CCommand const&)
  t gameui_preventescapetoshow(CCommand const&)
- t global constructors keyed to a
  t grayscale_convert(jpeg_compress_struct*, unsigned char**, unsigned char***, unsigned int, int)
  t h2v1_downsample(jpeg_compress_struct*, jpeg_component_info*, unsigned char**, unsigned char**)
  t h2v2_downsample(jpeg_compress_struct*, jpeg_component_info*, unsigned char**, unsigned char**)
@@ -18972,6 +19201,7 @@
  t screenshot_internal(CCommand const&)
  t select_scan_parameters(jpeg_compress_struct*)
  t self_destruct(jpeg_common_struct*)
+ t sendMTFValues(EState*)
  t sep_downsample(jpeg_compress_struct*, unsigned char***, unsigned int, unsigned char***, unsigned int)
  t setinfo(CCommand const&)
  t setpause(CCommand const&)

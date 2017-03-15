@@ -72,6 +72,8 @@
  D GetBitForBitnum(int)::bitsForBitnum
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
+ D VTT for std::__1::basic_ifstream<char, std::__1::char_traits<char> >
+ D construction vtable for std::__1::basic_istream<char, std::__1::char_traits<char> >-in-std::__1::basic_ifstream<char, std::__1::char_traits<char> >
  D g_pThreadPool
  D guard variable for CUtlRBTree<CKeyValuesSystem::MemoryLeakTracker_t, int, bool (*)(CKeyValuesSystem::MemoryLeakTracker_t const&, CKeyValuesSystem::MemoryLeakTracker_t const&), CUtlMemory<UtlRBTreeNode_t<CKeyValuesSystem::MemoryLeakTracker_t, int>, int> >::Links(int) const::s_Sentinel
  D guard variable for CUtlRBTree<CUtlMap<CUtlString, KeyValues*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlString, KeyValues*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlString, KeyValues*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
@@ -118,6 +120,8 @@
  D typeinfo for ThreadPoolTest::CCountJob
  D typeinfo for ThreadPoolTest::CExecuteTestExecuteJob
  D typeinfo for ThreadPoolTest::CExecuteTestJob
+ D typeinfo for std::__1::basic_filebuf<char, std::__1::char_traits<char> >
+ D typeinfo for std::__1::basic_ifstream<char, std::__1::char_traits<char> >
  D vtable for CConCommandMemberAccessor<CCvar>
  D vtable for CCvar
  D vtable for CCvar::CCVarIteratorInternal
@@ -141,6 +145,8 @@
  D vtable for ThreadPoolTest::CCountJob
  D vtable for ThreadPoolTest::CExecuteTestExecuteJob
  D vtable for ThreadPoolTest::CExecuteTestJob
+ D vtable for std::__1::basic_filebuf<char, std::__1::char_traits<char> >
+ D vtable for std::__1::basic_ifstream<char, std::__1::char_traits<char> >
  DevMsg(char const*, ...)
  Error
  Gestalt
@@ -189,12 +195,15 @@
  R typeinfo name for ThreadPoolTest::CCountJob
  R typeinfo name for ThreadPoolTest::CExecuteTestExecuteJob
  R typeinfo name for ThreadPoolTest::CExecuteTestJob
+ R typeinfo name for std::__1::basic_filebuf<char, std::__1::char_traits<char> >
+ R typeinfo name for std::__1::basic_ifstream<char, std::__1::char_traits<char> >
  RunTSListTests
  RunTSQueueTests
  T CBaseAppSystem<ICvarQuery>::Connect(void* (*)(char const*, int*))
  T CBaseAppSystem<ICvarQuery>::Disconnect()
  T CBaseAppSystem<ICvarQuery>::Init()
  T CBaseAppSystem<ICvarQuery>::Shutdown()
+ T CBitWriteMasksInit::CBitWriteMasksInit()
  T CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
  T CConCommandMemberAccessor<CCvar>::CommandCallback(CCommand const&)
  T CConCommandMemberAccessor<CCvar>::CommandCompletionCallback(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
@@ -308,6 +317,7 @@
  T CTSQueue<CJob*, false>::PopItem(CJob**)
  T CTSQueue<CJob*, false>::Purge()
  T CTSQueue<CJob*, false>::Push(CTSQueue<CJob*, false>::Node_t*)
+ T CTSQueue<CJob*, false>::PushItem(CJob* const&)
  T CTSQueue<CJob*, false>::~CTSQueue()
  T CThreadEvent::~CThreadEvent()
  T CThreadLocalPtr<CCoroutineMgr>::~CThreadLocalPtr()
@@ -524,7 +534,6 @@
  T V_vsnprintf(char*, int, char const*, char*)
  T V_vsnprintfRet(char*, int, char const*, char*, bool*)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T non-virtual thunk to CConCommandMemberAccessor<CCvar>::CommandCallback(CCommand const&)
  T non-virtual thunk to CConCommandMemberAccessor<CCvar>::CommandCompletionCallback(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
  T non-virtual thunk to CEmptyConVar::GetName() const
@@ -549,6 +558,17 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::imbue(std::__1::locale const&)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::overflow(int)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::pbackfail(int)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::seekpos(std::__1::fpos<__mbstate_t>, unsigned int)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::setbuf(char*, int)
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::sync()
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::underflow()
+ T std::__1::basic_filebuf<char, std::__1::char_traits<char> >::~basic_filebuf()
+ T std::__1::basic_ifstream<char, std::__1::char_traits<char> >::~basic_ifstream()
+ T virtual thunk to std::__1::basic_ifstream<char, std::__1::char_traits<char> >::~basic_ifstream()
  ThreadGetCurrentId
  ThreadGetPriority
  ThreadInMainThread
@@ -564,13 +584,17 @@
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
+ __cxa_allocate_exception
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
+ __cxa_end_catch
  __cxa_guard_abort
  __cxa_guard_acquire
  __cxa_guard_release
  __cxa_pure_virtual
+ __cxa_throw
  __dynamic_cast
  __gxx_personality_v0
  __maskrune
@@ -585,6 +609,7 @@
  b CThreadPool::GetDummyJob()::dummyJob
  b ThreadPoolTest::TestForcedExecute()::jobs
  b __g_CreateCCvarICvar_reg
+ b g_BitWriteMasksInit
  b g_CleanupSymbolTable
  b g_KeyValuesSystem
  b guard variable for CCvar::FindVar(char const*) const::_counter
@@ -602,7 +627,6 @@
  b vec2_invalid
  b vec2_origin
  d GetOSType::eOSVersion
- d dyld__mach_header
  d s_DefaultAccessor
  d s_DefaultCvarQuery
  d s_nDLLIdentifier
@@ -611,7 +635,13 @@
  d s_pUniformStream
  d typeinfo for CThreadPool::GetDummyJob()::CDummyJob
  d vtable for CThreadPool::GetDummyJob()::CDummyJob
+ dyld_stub_binder
+ fclose
+ fflush
  fread
+ fseeko
+ ftello
+ fwrite$UNIX2003
  g_ClockSpeedMillisecondsMultiplier
  g_VProfCurrentProfile
  g_pMemAlloc
@@ -619,9 +649,8 @@
  longjmp
  memcpy
  memmove
- memset
  pclose
- popen
+ popen$UNIX2003
  pow
  powf
  pthread_mutex_destroy
@@ -635,6 +664,17 @@
  raise
  rand
  setjmp
+ std::__1::basic_ios<char, std::__1::char_traits<char> >::~basic_ios()
+ std::__1::basic_istream<char, std::__1::char_traits<char> >::~basic_istream()
+ std::__1::basic_streambuf<char, std::__1::char_traits<char> >::showmanyc()
+ std::__1::basic_streambuf<char, std::__1::char_traits<char> >::uflow()
+ std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsgetn(char*, int)
+ std::__1::basic_streambuf<char, std::__1::char_traits<char> >::xsputn(char const*, int)
+ std::__1::basic_streambuf<char, std::__1::char_traits<char> >::~basic_streambuf()
+ std::__1::codecvt<char, char, __mbstate_t>::id
+ std::__1::locale::use_facet(std::__1::locale::id&) const
+ std::bad_cast::bad_cast()
+ std::bad_cast::~bad_cast()
  std::terminate()
  strcasecmp
  strchr
@@ -648,12 +688,26 @@
  t CThreadPool::GetDummyJob()::CDummyJob::DoExecute()
  t CThreadPool::GetDummyJob()::CDummyJob::~CDummyJob()
  t CUtlQueue<KeyValues::CopyKeyValuesFromRecursive(KeyValues const&)::CopyStruct, CUtlMemory<KeyValues::CopyKeyValuesFromRecursive(KeyValues const&)::CopyStruct, int> >::Insert(KeyValues::CopyKeyValuesFromRecursive(KeyValues const&)::CopyStruct const&)
+ t _GLOBAL__sub_I_KeyValuesS.stdout.rel_tf_osx_builder.2418.d91DdP.ii
+ t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.2006.CXaY5u.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_coroutine.stdout.rel_tf_osx_builder.2395.Fkltdi.ii
+ t _GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.2417.LGUkrU.ii
+ t _GLOBAL__sub_I_jobthread.stdout.rel_tf_osx_builder.2419.4PzOf0.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.2107.ttGBeC.ii
+ t _GLOBAL__sub_I_random.stdout.rel_tf_osx_builder.2446.kpv91X.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
+ t _GLOBAL__sub_I_vcover.stdout.rel_tf_osx_builder.2448.Ieju16.ii
  t __CreateCCvarICvar_interface()
  t __cxx_global_array_dtor
- t global constructors keyed to a
  t non-virtual thunk to CThreadPool::GetDummyJob()::CDummyJob::~CDummyJob()
  typeinfo for CThread
+ typeinfo for std::__1::basic_istream<char, std::__1::char_traits<char> >
+ typeinfo for std::__1::basic_streambuf<char, std::__1::char_traits<char> >
  typeinfo for std::bad_alloc
+ typeinfo for std::bad_cast
+ virtual thunk to std::__1::basic_istream<char, std::__1::char_traits<char> >::~basic_istream()
  vsnprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info

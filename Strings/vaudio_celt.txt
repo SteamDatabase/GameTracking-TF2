@@ -1,3 +1,4 @@
+	laplace_
   !""#$$%%
 ,^_[]
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.7.sdk/usr/include/secure/_string.h
@@ -25,7 +26,6 @@
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/lib/public/osx32/libcelt.a(quant_bands.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/lib/public/osx32/libcelt.a(rate.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/lib/public/osx32/libcelt.a(vq.o)
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/memoverride.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/strtools.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/interface.cpp
@@ -35,36 +35,67 @@
 /Volumes/dev/dota/console/src/engine/voice_codecs/celt/source/osx/celt/../../libcelt/os_support.h
 /Volumes/dev/dota/console/src/engine/voice_codecs/celt/source/osx/celt/../../libcelt/rate.h
 /usr/lib/libSystem.B.dylib
-/usr/lib/libgcc_s.1.dylib
+/usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
-/usr/lib/libstdc++..dylib
-0@@@@ 0p`@@
 6s?fBbEcJYG[I[NYVP\B]@float;__float128<unsigned char<u4{,
 ;nGVKUTS[BXIWH\KbHi:k6s4r7p8
 < Nfff?
 <^_[]
 =rF`JXKXWJYB[doublecomplex ;l2x(...%signed char+N2SNTQXKVJWGZI]J]Jm(r$u"u"
 ?>7AL
-?CUtlCharConversion
+?CUtlCStringConversion
 ?rJRTS\__float128&>`H`CeIkHq7v4}v4u7
+@@@@ 0p`@@
 @HPX (08
+@__Unwind_Resume
+@___bzero
+@___cxa_begin_catch
+@___cxa_call_unexpected
+@___gxx_personality_v0
+@___stack_chk_fail
+@___stack_chk_guard
+@_atan2
+@_calloc
+@_cos
+@_exp
+@_floor
+@_floorf
+@_free
+@_g_pMemAlloc
+@_log
+@_memcpy
+@_memmove
+@_sin
+@_strcmp
+@_strlen
+@dyld_stub_binder
 @loader_path/libtier0.dylib
 @loader_path/libvstdlib.dylib
 @loader_path/vaudio_celt.dylib
+@std::terminate()
+@typeinfo for std::bad_alloc
+@vtable for __cxxabiv1::__class_type_info
+@vtable for __cxxabiv1::__si_class_type_info
 A;M,|
 B;S$|
+BXBRBRARAp
 C;](|
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
+CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CreateCeltVoiceCodec()
+CreateInterface
 CreateVoiceCodec_Frame(IFrameEncoder*)
 E$;E(
 G(+G$
 G;},|
+H__ZdaPv
+H__ZdlPv
+H__Znam
+H__Znwm
 IFrameEncoder
 IVoiceCodec
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
@@ -91,6 +122,7 @@ VoiceEncoder_Celt::Release()
 VoiceEncoder_Celt::ResetState()
 VoiceEncoder_Celt::~VoiceEncoder_Celt()
 YEFP.T
+ZBXBp
 ZPKE?81("
 \N\O\NZOt)short(r(
 \^_[]
@@ -98,6 +130,8 @@ _CreateInterface
 _INV_TABLE
 _LOG2_FRAC_TABLE
 __DATA
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+__GLOBAL__sub_I_voiceencod.stdout.rel_tf_osx_builder.5419.RaRniE.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -115,7 +149,6 @@ __common
 __const
 __cstring
 __data
-__dyld
 __eh_frame
 __g_CreateIVoiceCodec_reg
 __gcc_except_tab__TEXT
@@ -175,6 +208,7 @@ _compute_bitrev_table
 _compute_inv_mdcts
 _compute_pulse_cache
 _compute_qn.exp2_table8
+_custom
 _cwrsi3
 _cwrsi4
 _decode_pulses
@@ -217,8 +251,10 @@ _extract_collapse_mask
 _find_best_pitch
 _fits_in32.maxK
 _fits_in32.maxN
+_float
 _floor
 _floorf
+_frac
 _free
 _fromOpusTable
 _g_CeltVersion
@@ -242,9 +278,9 @@ _l1_metric.sqrtM_1
 _lcg_rand
 _log2Amp
 _log2_frac
+_logp
 _memcpy
 _memmove
-_memset
 _ncwrs_urow
 _normalise_bands
 _ordery_table
@@ -274,48 +310,96 @@ _tapset_icdf
 _tf_select_table
 _toOpusTable
 _trim_icdf
+_twiddles
 _unquant_coarse_energy
 _unquant_energy_finalise
 _unquant_fine_energy
+all_bands
+alloc
+allocation
+autocorr
+backward
+band_energies
 bands.c
 bool#M**unsigned long long`Bl+unsigned __int128(u,{ x$w!
 buffer too small
 celt.c
+celt_
+cg_rand
+clear
+coarse_energy
+code_pulses
 corrupted stream
+create
 cwrs.c
-dyld__mach_header
-dyld_stub_binding_helper
+decode
+destroy
+downsample
+dyld_stub_binder
+encode
+energy_finalise
 entcode.c
 entdec.c
 entenc.c
 ffff.
 fffff.
-global constructors keyed to a
+ffffff.
+fine_energy
+float
+forward
+get_required_bits
+get_size
+haar1
 internal error
 invalid argument
 invalid state
+kiss_
 kiss_fft.c
 laplace.c
 long^_[]
+lt_mdct_
 mathops.c
 mdct.c
 memory allocation failed
+mode_
 modes.c
+move_doubling
+mp2Log2
+ncode_pulses
 ndZTNGA:3-' 
+normalise_bands
+normalise_vector
+nti_collapse
+ompute_
 operator delete(void*)
 operator delete[](void*)
 operator new(unsigned long)
 operator new[](unsigned long)
+patch_initial_bits
+pdate
 pitch.c
+pitch_
 plc.c
+preading_decision
+pulse_cache
+quant
+quant_
 quant_bands.c
+rCfffff.
 rate.c
+reate
 request not implemented
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
+search
+shrink
 signed char&M-=Z]<int*k)__int128-unsigned short&q&p&|
+sqrt32
 std::terminate()
+strerror
 success
+tell_frac
+tereo_itheta
 typeinfo for CUtlCStringConversion
 typeinfo for CUtlCharConversion
 typeinfo for CUtlNoEscConversion
@@ -332,6 +416,8 @@ typeinfo name for IVoiceCodec
 typeinfo name for VoiceCodec_Frame
 typeinfo name for VoiceEncoder_Celt
 unknown error
+unquant
+unquant_
 vec2_invalid
 vec2_origin
 vng]VPKFA;5/(
@@ -342,6 +428,7 @@ vtable for VoiceCodec_Frame
 vtable for VoiceEncoder_Celt
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
+with_ec
 xTxu)
 xTxuF
 xrga[UNHB<6/)#

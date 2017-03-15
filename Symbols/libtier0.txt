@@ -157,12 +157,15 @@
  T CStdMemAlloc::SaveDebugInfo(void*)
  T CStdMemAlloc::SetAllocFailHandler(unsigned long (*)(unsigned long))
  T CStdMemAlloc::heapchk()
+ T CTSList<int>::PopItem(int*)
  T CTSList<int>::~CTSList()
  T CTSListBase::~CTSListBase()
  T CTSQueue<int, true>::CTSQueue()
  T CTSQueue<int, true>::Pop()
+ T CTSQueue<int, true>::PopItem(int*)
  T CTSQueue<int, true>::Purge()
  T CTSQueue<int, true>::Push(CTSQueue<int, true>::Node_t*)
+ T CTSQueue<int, true>::PushItem(int const&)
  T CTSQueue<int, true>::~CTSQueue()
  T CThread::BWaitForThreadSuspendCooperative()
  T CThread::CThread()
@@ -456,28 +459,31 @@
  T _ExitOnFatalAssert
  T _SpewInfo
  T _SpewMessage
+ T _ZNSt3__16vectorI10TimeSums_tNS_9allocatorIS1_EEE6assignIPS1_EENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIS1_NS_15iterator_traitsIS8_E9referenceEEE5valueEvE4typeES8_S8_
  T __clang_call_terminate
- T dyld_stub_binding_helper
+ T bool std::__1::__insertion_sort_incomplete<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
  T operator delete(void*)
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- T std::_Rb_tree<CVProfNode*, std::pair<CVProfNode* const, double>, std::_Select1st<std::pair<CVProfNode* const, double> >, std::less<CVProfNode*>, std::allocator<std::pair<CVProfNode* const, double> > >::_M_erase(std::_Rb_tree_node<std::pair<CVProfNode* const, double> >*)
- T std::_Rb_tree<CVProfNode*, std::pair<CVProfNode* const, double>, std::_Select1st<std::pair<CVProfNode* const, double> >, std::less<CVProfNode*>, std::allocator<std::pair<CVProfNode* const, double> > >::_M_insert_unique(std::pair<CVProfNode* const, double> const&)
- T std::_Rb_tree<char const*, std::pair<char const* const, unsigned long>, std::_Select1st<std::pair<char const* const, unsigned long> >, std::less<char const*>, std::allocator<std::pair<char const* const, unsigned long> > >::_M_erase(std::_Rb_tree_node<std::pair<char const* const, unsigned long> >*)
- T std::_Rb_tree<char const*, std::pair<char const* const, unsigned long>, std::_Select1st<std::pair<char const* const, unsigned long> >, std::less<char const*>, std::allocator<std::pair<char const* const, unsigned long> > >::_M_insert_unique(std::pair<char const* const, unsigned long> const&)
- T std::list<ThreadHandle_t__*, std::allocator<ThreadHandle_t__*> >::~list()
- T std::map<CVProfNode*, double, std::less<CVProfNode*>, std::allocator<std::pair<CVProfNode* const, double> > >::~map()
- T std::map<char const*, unsigned long, std::less<char const*>, std::allocator<std::pair<char const* const, unsigned long> > >::~map()
- T std::vector<TimeSums_t, std::allocator<TimeSums_t> >::_M_insert_aux(__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, TimeSums_t const&)
- T std::vector<TimeSums_t, std::allocator<TimeSums_t> >::operator=(std::vector<TimeSums_t, std::allocator<TimeSums_t> > const&)
- T std::vector<TimeSums_t, std::allocator<TimeSums_t> >::~vector()
- T void std::__final_insertion_sort<__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, bool (*)(TimeSums_t const&, TimeSums_t const&)>(__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, __gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, bool (*)(TimeSums_t const&, TimeSums_t const&))
- T void std::__heap_select<__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, bool (*)(TimeSums_t const&, TimeSums_t const&)>(__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, __gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, __gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, bool (*)(TimeSums_t const&, TimeSums_t const&))
- T void std::__introsort_loop<__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, int, bool (*)(TimeSums_t const&, TimeSums_t const&)>(__gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, __gnu_cxx::__normal_iterator<TimeSums_t*, std::vector<TimeSums_t, std::allocator<TimeSums_t> > >, int, bool (*)(TimeSums_t const&, TimeSums_t const&))
+ T std::__1::__tree<std::__1::__value_type<CVProfNode*, double>, std::__1::__map_value_compare<CVProfNode*, std::__1::__value_type<CVProfNode*, double>, std::__1::less<CVProfNode*>, true>, std::__1::allocator<std::__1::__value_type<CVProfNode*, double> > >::__node_insert_unique(std::__1::__tree_node<std::__1::__value_type<CVProfNode*, double>, void*>*)
+ T std::__1::__tree<std::__1::__value_type<CVProfNode*, double>, std::__1::__map_value_compare<CVProfNode*, std::__1::__value_type<CVProfNode*, double>, std::__1::less<CVProfNode*>, true>, std::__1::allocator<std::__1::__value_type<CVProfNode*, double> > >::destroy(std::__1::__tree_node<std::__1::__value_type<CVProfNode*, double>, void*>*)
+ T std::__1::__tree<std::__1::__value_type<char const*, unsigned long>, std::__1::__map_value_compare<char const*, std::__1::__value_type<char const*, unsigned long>, std::__1::less<char const*>, true>, std::__1::allocator<std::__1::__value_type<char const*, unsigned long> > >::__node_insert_unique(std::__1::__tree_node<std::__1::__value_type<char const*, unsigned long>, void*>*)
+ T std::__1::__tree<std::__1::__value_type<char const*, unsigned long>, std::__1::__map_value_compare<char const*, std::__1::__value_type<char const*, unsigned long>, std::__1::less<char const*>, true>, std::__1::allocator<std::__1::__value_type<char const*, unsigned long> > >::destroy(std::__1::__tree_node<std::__1::__value_type<char const*, unsigned long>, void*>*)
+ T std::__1::list<ThreadHandle_t__*, std::__1::allocator<ThreadHandle_t__*> >::~list()
+ T std::__1::map<CVProfNode*, double, std::__1::less<CVProfNode*>, std::__1::allocator<std::__1::pair<CVProfNode* const, double> > >::~map()
+ T std::__1::map<char const*, unsigned long, std::__1::less<char const*>, std::__1::allocator<std::__1::pair<char const* const, unsigned long> > >::~map()
+ T std::__1::vector<TimeSums_t, std::__1::allocator<TimeSums_t> >::~vector()
+ T unsigned int std::__1::__sort4<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
+ T unsigned int std::__1::__sort5<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, TimeSums_t*, TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
+ T void std::__1::__insertion_sort_3<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
+ T void std::__1::__sort<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
+ T void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+ T void std::__1::vector<TimeSums_t, std::__1::allocator<TimeSums_t> >::__push_back_slow_path<TimeSums_t const&>(TimeSums_t const&)
  T vtune
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_allocate_exception
  __cxa_atexit
  __cxa_begin_catch
@@ -563,7 +569,6 @@
  backtrace_symbols
  ctime_r
  d Plat_IsInDebugSession::s_IsInDebugSession
- d dyld__mach_header
  d g_VCRTrace
  d g_bAssertsEnabled
  d s_SpewOutputFunc
@@ -573,11 +578,12 @@
  dlclose
  dlopen
  dlsym
+ dyld_stub_binder
  exit
  fclose
  fflush
  fgetc
- fopen
+ fopen$UNIX2003
  fprintf
  fread
  free
@@ -600,7 +606,6 @@
  memcmp
  memcpy
  memmove
- memset
  printf
  pthread_attr_init
  pthread_attr_setstacksize
@@ -640,12 +645,7 @@
  signal
  snprintf
  srand
- std::_List_node_base::hook(std::_List_node_base*)
- std::_List_node_base::unhook()
- std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
- std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
- std::__throw_bad_alloc()
- std::__throw_length_error(char const*)
+ std::__1::__vector_base_common<true>::__throw_length_error() const
  std::terminate()
  strcat
  strcmp
@@ -687,9 +687,15 @@
  t VCR_Start(char const*, bool, IVCRHelpers*)
  t VCR_SyncToken(char const*)
  t WatchDogHandler(int)
+ t _GLOBAL__sub_I_commandlin.stdout.rel_tf_osx_builder.1791.bjTM9y.ii
+ t _GLOBAL__sub_I_dbg.stdout.rel_tf_osx_builder.1837.y7j1c4.ii
+ t _GLOBAL__sub_I_fasttimer.stdout.rel_tf_osx_builder.1852.e0SDGV.ii
+ t _GLOBAL__sub_I_memstd.stdout.rel_tf_osx_builder.1869.WFAV8r.ii
+ t _GLOBAL__sub_I_threadtool.stdout.rel_tf_osx_builder.1948.MdBoEm.ii
+ t _GLOBAL__sub_I_tslist.stdout.rel_tf_osx_builder.1962.xhJHMI.ii
+ t _GLOBAL__sub_I_vprof.stdout.rel_tf_osx_builder.1974.e7Xp0x.ii
  t _SpewMessage(SpewType_t, char const*, int, Color const*, char const*, char*)
  t global constructors keyed to 000101
- t global constructors keyed to a
  thread_resume
  thread_suspend
  time

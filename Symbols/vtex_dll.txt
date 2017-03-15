@@ -45,18 +45,6 @@
  D VTFFileHeaderV7_3_t::m_DataMap
  D VTFFileHeaderX360_t::m_DataMap
  D VTFFileHeader_t::m_DataMap
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D g_FaceVerts
  D g_KeyValuesErrorStack
  D g_backFaceVerts
@@ -73,12 +61,6 @@
  D g_skybox_rightFaceVerts
  D g_skybox_upFaceVerts
  D g_upFaceVerts
- D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D pfFastCos
  D pfFastSinCos
  D pfInvRSquared
@@ -387,6 +369,7 @@
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUV88(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVLX8888(unsigned char const*, int, int, unsigned char*)
  T ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVWQ8888(unsigned char const*, int, int, unsigned char*)
+ T ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
  T ImageLoader::FlipImageHorizontally(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::FlipImageVertically(void*, void*, int, int, ImageFormat, int)
  T ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)
@@ -426,6 +409,7 @@
  T KeyValues::operator new(unsigned long)
  T LoadGameInfoFile(char const*, KeyValues*&, KeyValues*&, KeyValues*&)
  T LocateGameInfoFile(CFSSteamSetupInfo const&, char*, int)
+ T MakeDirHier(char const*)
  T MakeSrcFileName(char*, unsigned int, char const*, int, int, int, bool, int, int, bool)
  T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
  T PSDGetImageResources(CUtlBuffer&)
@@ -434,6 +418,7 @@
  T PSDReadFileRGBA8888(CUtlBuffer&, Bitmap_t&)
  T PSDResFileInfo::FindElement(PSDResFileInfo::ResFileInfo) const
  T PostProcessSkyBox(IVTFTexture*, int)
+ T PreprocessSkyBox(char*, int*)
  T ProcessFiles(char const*, char const*, char const*, bool, VTexConfigInfo_t&)
  T Process_File(char*, int)
  T Q_StripPrecedingAndTrailingWhitespace(char*)
@@ -501,7 +486,6 @@
  T __clang_call_terminate
  T _rsqrtf(float)
  T _sqrtf(float)
- T dyld_stub_binding_helper
  T float16::ConvertFloatTo16bits(float)
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
@@ -526,6 +510,7 @@
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -552,6 +537,13 @@
  b TGALoader::g_PixelsLeftInPacket
  b __g_CreateCVTexILaunchableDLL_reg
  b __g_CreateCVTexIVTex_reg
+ b datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b f05
  b f3
  b g_CreateDir
@@ -572,6 +564,12 @@
  b g_bWarningsAsErrors
  b g_eMode
  b g_suggestGameDirHelper
+ b guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b lineartoscreen
  b lineartotexture
  b s_EmptyConVar
@@ -615,7 +613,11 @@
  d ImageLoader::ResampleRGBA8888(ImageLoader::ResampleInfo_t const&)::lastSrcGamma
  d ImageLoader::g_KernelFunc
  d ImageLoader::g_KernelFuncNice
- d dyld__mach_header
+ d datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
  d g_CubemapFacingNames
  d g_FileSystemErrorMode
  d g_ImageFormatInfo
@@ -628,14 +630,14 @@
  dlerror
  dlopen
  dlsym
+ dyld_stub_binder
  exit
  fclose
- fopen
+ fopen$UNIX2003
  fprintf
  fread
  fseek
  ftell
- fwrite
  fwrite$UNIX2003
  g_pMemAlloc
  getcwd
@@ -655,13 +657,13 @@
  r s_pChannelIndex
  r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::prods
  r stb__RefineBlock(unsigned char*, unsigned short*, unsigned short*, unsigned int)::w1Tab
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
  roundf
  setenv$UNIX2003
  sin
  sprintf
- stat
+ stat$INODE64
  std::terminate()
  strcasecmp
  strcat
@@ -737,9 +739,14 @@
  t VTexError(char const*, ...)
  t VTexOutputFunc(SpewType_t, char const*)
  t VTexWarning(char const*, ...)
+ t _GLOBAL__sub_I_cmdlib.stdout.rel_tf_osx_builder.7568.YlUhcR.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_vtex.stdout.rel_tf_osx_builder.47921.xgOePo.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.2874.DARExN.ii
  t __CreateCVTexILaunchableDLL_interface()
  t __CreateCVTexIVTex_interface()
- t global constructors keyed to a
  t stb__MatchColorsBlock(unsigned char*, unsigned char*, int)
  t void ImageLoader::ConvertFromATIxN<BGRA8888_t>(unsigned char const*, BGRA8888_t*, int, int, bool)
  t void ImageLoader::ConvertFromDXT1<BGR565_t>(unsigned char const*, BGR565_t*, int, int)

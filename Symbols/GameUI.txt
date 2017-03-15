@@ -3,6 +3,19 @@
  B CUtlSymbol::s_pSymbolTable
  B ConCommandBase::s_pAccessor
  B ConCommandBase::s_pConCommandBases
+ B CryptoPP::AAD_CHANNEL
+ B CryptoPP::BufferedTransformation::NULL_CHANNEL
+ B CryptoPP::g_hasAESNI
+ B CryptoPP::g_hasCLMUL
+ B CryptoPP::g_hasISSE
+ B CryptoPP::g_hasMMX
+ B CryptoPP::g_hasRDRAND
+ B CryptoPP::g_hasRDSEED
+ B CryptoPP::g_hasSSE2
+ B CryptoPP::g_hasSSSE3
+ B CryptoPP::g_isP4
+ B CryptoPP::g_powerUpSelfTestStatus
+ B CryptoPP::g_x86DetectionDone
  B InterfaceReg::s_pInterfaceRegs
  B VTFFileBaseHeader_t_DataDescInit::g_DataMapHolder
  B VTFFileHeaderV7_1_t_DataDescInit::g_DataMapHolder
@@ -130,6 +143,7 @@
  B g_pVGuiSystem
  B g_pVTex
  B g_pVideo
+ B g_tslistPAutoSeededRNG
  B gameuifuncs
  B matchmaking
  B materials
@@ -695,6 +709,9 @@
  D CrosshairImagePanelSimple::GetMessageMap()::s_pMap
  D CrosshairImagePanelSimple::KB_ChainToMap()::chained
  D CrosshairImagePanelSimple::PanelMessageFunc_OnTextChanged::InitVar()::bAdded
+ D CryptoPP::DEFAULT_CHANNEL
+ D CryptoPP::g_cacheLineSize
+ D CryptoPP::g_nullNameValuePairs
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
  D VTFFileBaseHeader_t::m_DataMap
@@ -1271,18 +1288,6 @@
  D construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<ConVarRef>
  D construction vtable for vgui::ToggleButton-in-vgui::ExpandButton
  D construction vtable for vgui::ToggleButton-in-vgui::RadioButton
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
- D datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D g_DirectXLevels
  D g_KeyValuesErrorStack
  D g_PinCornerStrings
@@ -1473,12 +1478,6 @@
  D guard variable for CrosshairImagePanelCS::GetMessageMap()::s_pMap
  D guard variable for CrosshairImagePanelSimple::GetKBMap()::s_pMap
  D guard variable for CrosshairImagePanelSimple::GetMessageMap()::s_pMap
- D guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
- D guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  D guard variable for vgui::AnalogBar::GetKBMap()::s_pMap
  D guard variable for vgui::AnalogBar::GetMessageMap()::s_pMap
  D guard variable for vgui::AnimatingImagePanel::GetKBMap()::s_pMap
@@ -1731,6 +1730,53 @@
  D typeinfo for CrosshairImagePanelBase
  D typeinfo for CrosshairImagePanelCS
  D typeinfo for CrosshairImagePanelSimple
+ D typeinfo for CryptoPP::Algorithm
+ D typeinfo for CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256>
+ D typeinfo for CryptoPP::AlgorithmImpl<CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >, CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> > >
+ D typeinfo for CryptoPP::ArraySink
+ D typeinfo for CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>
+ D typeinfo for CryptoPP::BitBucket
+ D typeinfo for CryptoPP::BlockCipher
+ D typeinfo for CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>
+ D typeinfo for CryptoPP::BlockCipherImpl<CryptoPP::Rijndael_Info, CryptoPP::BlockCipher>
+ D typeinfo for CryptoPP::BlockTransformation
+ D typeinfo for CryptoPP::BlockingRng
+ D typeinfo for CryptoPP::BufferedTransformation
+ D typeinfo for CryptoPP::BufferedTransformation::NoChannelSupport
+ D typeinfo for CryptoPP::Bufferless<CryptoPP::Sink>
+ D typeinfo for CryptoPP::ByteArrayParameter
+ D typeinfo for CryptoPP::Clonable
+ D typeinfo for CryptoPP::ClonableImpl<CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>, CryptoPP::Rijndael::Enc>
+ D typeinfo for CryptoPP::ClonableImpl<CryptoPP::SHA256, CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256> >
+ D typeinfo for CryptoPP::Exception
+ D typeinfo for CryptoPP::FixedBlockSize<16u>
+ D typeinfo for CryptoPP::HashInputTooLong
+ D typeinfo for CryptoPP::HashTransformation
+ D typeinfo for CryptoPP::InvalidArgument
+ D typeinfo for CryptoPP::InvalidDataFormat
+ D typeinfo for CryptoPP::InvalidKeyLength
+ D typeinfo for CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>
+ D typeinfo for CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>
+ D typeinfo for CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>
+ D typeinfo for CryptoPP::NameValuePairs
+ D typeinfo for CryptoPP::NonblockingRng
+ D typeinfo for CryptoPP::NotCopyable
+ D typeinfo for CryptoPP::NotImplemented
+ D typeinfo for CryptoPP::NullNameValuePairs
+ D typeinfo for CryptoPP::OS_RNG_Err
+ D typeinfo for CryptoPP::RandomNumberGenerator
+ D typeinfo for CryptoPP::Rijndael::Base
+ D typeinfo for CryptoPP::Rijndael::Enc
+ D typeinfo for CryptoPP::Rijndael_Info
+ D typeinfo for CryptoPP::SHA256
+ D typeinfo for CryptoPP::SelfTestFailure
+ D typeinfo for CryptoPP::SimpleKeyingInterface
+ D typeinfo for CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >
+ D typeinfo for CryptoPP::Sink
+ D typeinfo for CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>
+ D typeinfo for CryptoPP::VariableKeyLength<16u, 16u, 32u, 8u, 4u, 0u>
+ D typeinfo for CryptoPP::Waitable
+ D typeinfo for CryptoPP::X917RNG
  D typeinfo for Dragger
  D typeinfo for IBaseInterface
  D typeinfo for IConCommandBaseAccessor
@@ -1745,6 +1791,9 @@
  D typeinfo for VControlsListPanel
  D typeinfo for VScrollBarReversedButtons
  D typeinfo for mpcontrol_t
+ D typeinfo for std::__1::__basic_string_common<true>
+ D typeinfo for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >
+ D typeinfo for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*
  D typeinfo for vgui::AnalogBar
  D typeinfo for vgui::AnimatingImagePanel
  D typeinfo for vgui::AnimationController
@@ -2441,6 +2490,30 @@
  D vtable for CrosshairImagePanelBase
  D vtable for CrosshairImagePanelCS
  D vtable for CrosshairImagePanelSimple
+ D vtable for CryptoPP::Algorithm
+ D vtable for CryptoPP::ArraySink
+ D vtable for CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>
+ D vtable for CryptoPP::BitBucket
+ D vtable for CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>
+ D vtable for CryptoPP::BlockingRng
+ D vtable for CryptoPP::BufferedTransformation::NoChannelSupport
+ D vtable for CryptoPP::Exception
+ D vtable for CryptoPP::HashInputTooLong
+ D vtable for CryptoPP::InvalidArgument
+ D vtable for CryptoPP::InvalidDataFormat
+ D vtable for CryptoPP::InvalidKeyLength
+ D vtable for CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>
+ D vtable for CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>
+ D vtable for CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>
+ D vtable for CryptoPP::NonblockingRng
+ D vtable for CryptoPP::NotImplemented
+ D vtable for CryptoPP::NullNameValuePairs
+ D vtable for CryptoPP::OS_RNG_Err
+ D vtable for CryptoPP::Rijndael::Base
+ D vtable for CryptoPP::SHA256
+ D vtable for CryptoPP::SelfTestFailure
+ D vtable for CryptoPP::SimpleKeyingInterface
+ D vtable for CryptoPP::X917RNG
  D vtable for Dragger
  D vtable for MenuItemCheckImage
  D vtable for TabCatchingTextEntry
@@ -2535,6 +2608,10 @@
  Msg
  Plat_FloatTime
  Plat_IsInDebugSession
+ R CryptoPP::Rijndael::Base::Sd
+ R CryptoPP::Rijndael::Base::Se
+ R CryptoPP::Rijndael::Base::rcon
+ R CryptoPP::SHA256_K
  R SYS_NO_ERROR
  R g_pszMedalNames
  R jpeg_aritab
@@ -2671,6 +2748,53 @@
  R typeinfo name for CrosshairImagePanelBase
  R typeinfo name for CrosshairImagePanelCS
  R typeinfo name for CrosshairImagePanelSimple
+ R typeinfo name for CryptoPP::Algorithm
+ R typeinfo name for CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256>
+ R typeinfo name for CryptoPP::AlgorithmImpl<CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >, CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> > >
+ R typeinfo name for CryptoPP::ArraySink
+ R typeinfo name for CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>
+ R typeinfo name for CryptoPP::BitBucket
+ R typeinfo name for CryptoPP::BlockCipher
+ R typeinfo name for CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>
+ R typeinfo name for CryptoPP::BlockCipherImpl<CryptoPP::Rijndael_Info, CryptoPP::BlockCipher>
+ R typeinfo name for CryptoPP::BlockTransformation
+ R typeinfo name for CryptoPP::BlockingRng
+ R typeinfo name for CryptoPP::BufferedTransformation
+ R typeinfo name for CryptoPP::BufferedTransformation::NoChannelSupport
+ R typeinfo name for CryptoPP::Bufferless<CryptoPP::Sink>
+ R typeinfo name for CryptoPP::ByteArrayParameter
+ R typeinfo name for CryptoPP::Clonable
+ R typeinfo name for CryptoPP::ClonableImpl<CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>, CryptoPP::Rijndael::Enc>
+ R typeinfo name for CryptoPP::ClonableImpl<CryptoPP::SHA256, CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256> >
+ R typeinfo name for CryptoPP::Exception
+ R typeinfo name for CryptoPP::FixedBlockSize<16u>
+ R typeinfo name for CryptoPP::HashInputTooLong
+ R typeinfo name for CryptoPP::HashTransformation
+ R typeinfo name for CryptoPP::InvalidArgument
+ R typeinfo name for CryptoPP::InvalidDataFormat
+ R typeinfo name for CryptoPP::InvalidKeyLength
+ R typeinfo name for CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>
+ R typeinfo name for CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>
+ R typeinfo name for CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>
+ R typeinfo name for CryptoPP::NameValuePairs
+ R typeinfo name for CryptoPP::NonblockingRng
+ R typeinfo name for CryptoPP::NotCopyable
+ R typeinfo name for CryptoPP::NotImplemented
+ R typeinfo name for CryptoPP::NullNameValuePairs
+ R typeinfo name for CryptoPP::OS_RNG_Err
+ R typeinfo name for CryptoPP::RandomNumberGenerator
+ R typeinfo name for CryptoPP::Rijndael::Base
+ R typeinfo name for CryptoPP::Rijndael::Enc
+ R typeinfo name for CryptoPP::Rijndael_Info
+ R typeinfo name for CryptoPP::SHA256
+ R typeinfo name for CryptoPP::SelfTestFailure
+ R typeinfo name for CryptoPP::SimpleKeyingInterface
+ R typeinfo name for CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >
+ R typeinfo name for CryptoPP::Sink
+ R typeinfo name for CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>
+ R typeinfo name for CryptoPP::VariableKeyLength<16u, 16u, 32u, 8u, 4u, 0u>
+ R typeinfo name for CryptoPP::Waitable
+ R typeinfo name for CryptoPP::X917RNG
  R typeinfo name for Dragger
  R typeinfo name for IBaseInterface
  R typeinfo name for IConCommandBaseAccessor
@@ -2685,6 +2809,9 @@
  R typeinfo name for VControlsListPanel
  R typeinfo name for VScrollBarReversedButtons
  R typeinfo name for mpcontrol_t
+ R typeinfo name for std::__1::__basic_string_common<true>
+ R typeinfo name for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >
+ R typeinfo name for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*
  R typeinfo name for vgui::AnalogBar
  R typeinfo name for vgui::AnimatingImagePanel
  R typeinfo name for vgui::AnimationController
@@ -2790,7 +2917,6 @@
  T BlankImage::SetSize(int, int)
  T BlankImage::~BlankImage()
  T BonusMapsDatabase()
- T CAchievementDialogItemPanel::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T CAchievementDialogItemPanel::ApplySchemeSettings(vgui::IScheme*)
  T CAchievementDialogItemPanel::CAchievementDialogItemPanel(vgui::PanelListPanel*, char const*, int)
  T CAchievementDialogItemPanel::GetAnimMap()
@@ -2847,7 +2973,6 @@
  T CBaseDialog::PerformLayout()
  T CBaseDialog::SwapMenuItems(int, int)
  T CBaseDialog::~CBaseDialog()
- T CBasePanel::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T CBasePanel::ApplyOptionsDialogSettings()
  T CBasePanel::ApplySchemeSettings(vgui::IScheme*)
  T CBasePanel::ArmFirstMenuItem()
@@ -3103,6 +3228,8 @@
  T CCreateMultiplayerGameBotPage::GetPanelClassName()
  T CCreateMultiplayerGameBotPage::OnApplyChanges()
  T CCreateMultiplayerGameBotPage::OnResetChanges()
+ T CCreateMultiplayerGameBotPage::SetChatterCombo(char const*)
+ T CCreateMultiplayerGameBotPage::SetJoinTeamCombo(char const*)
  T CCreateMultiplayerGameBotPage::~CCreateMultiplayerGameBotPage()
  T CCreateMultiplayerGameDialog::CCreateMultiplayerGameDialog(vgui::Panel*)
  T CCreateMultiplayerGameDialog::GetAnimMap()
@@ -3149,7 +3276,6 @@
  T CCvarNegateCheckButton::Reset()
  T CCvarNegateCheckButton::SetSelected(bool)
  T CCvarNegateCheckButton::~CCvarNegateCheckButton()
- T CCvarSlider::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T CCvarSlider::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T CCvarSlider::ApplyChanges()
  T CCvarSlider::ApplySettings(KeyValues*)
@@ -3166,6 +3292,7 @@
  T CCvarSlider::OnSliderDragEnd()
  T CCvarSlider::OnSliderMoved()
  T CCvarSlider::Paint()
+ T CCvarSlider::PanelAnimationVar_m_bUseConVarMinMax::PanelAnimationVar_m_bUseConVarMinMax()
  T CCvarSlider::Reset()
  T CCvarSlider::SetSliderValue(float)
  T CCvarSlider::SetupSlider(float, float, char const*, bool)
@@ -3401,6 +3528,7 @@
  T CGammaDialog::OnOK()
  T CGammaDialog::OnTextChanged(vgui::Panel*)
  T CGammaDialog::~CGammaDialog()
+ T CGlobalInitConstructor::CGlobalInitConstructor()
  T CHFontProperty::GetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
  T CHFontProperty::InitFromDefault(vgui::Panel*, PanelAnimationMapEntry*)
  T CHFontProperty::SetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
@@ -4046,6 +4174,7 @@
  T CSaveGameBrowserDialog::RemoveActivePanel()
  T CSaveGameBrowserDialog::ScanSavedGames(bool)
  T CSaveGameBrowserDialog::ScrollSelectionPanels(CSaveGameBrowserDialog::EScrollDirection)
+ T CSaveGameBrowserDialog::SetSelectedSaveIndex(int)
  T CSaveGameBrowserDialog::ShiftPanelIndices(int)
  T CSaveGameBrowserDialog::ShowNoSaveGameUI()
  T CSaveGameBrowserDialog::SortSaveGames(SaveGameDescription_t*, unsigned int)
@@ -4096,6 +4225,7 @@
  T CScenarioInfoPanel::~CScenarioInfoPanel()
  T CScriptListItem::CScriptListItem(char const*, char const*)
  T CScriptObject::AddItem(CScriptListItem*)
+ T CScriptObject::GetType(char*)
  T CScriptObject::ReadFromBuffer(char const**, bool)
  T CScriptObject::RemoveAndDeleteAllItems()
  T CScriptObject::SetCurValue(char const*)
@@ -4195,6 +4325,8 @@
  T CTGAImagePanel::SetTGA(char const*)
  T CTGAImagePanel::SetTGANonMod(char const*)
  T CTGAImagePanel::~CTGAImagePanel()
+ T CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::Purge()
+ T CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::~CTSList()
  T CTextureIdProperty::GetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
  T CTextureIdProperty::InitFromDefault(vgui::Panel*, PanelAnimationMapEntry*)
  T CTextureIdProperty::SetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
@@ -4252,12 +4384,12 @@
  T CUtlLinkedList<vgui::TreeNode*, int, false, int, CUtlMemory<UtlLinkedListElem_t<vgui::TreeNode*, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<vgui::TreeNode*, int, false, int, CUtlMemory<UtlLinkedListElem_t<vgui::TreeNode*, int>, int> >::~CUtlLinkedList()
  T CUtlMemory<BonusMapDescription_t, int>::Grow(int)
- T CUtlMemory<PanelAnimationMapEntry, int>::Grow(int)
  T CUtlMemory<UtlLinkedListElem_t<vgui::ListPanel::column_t, unsigned char>, unsigned char>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, CControllerMap::button_t, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlString, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<void*, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<vgui::MessageMapItem_t, int>::Grow(int)
  T CUtlMemoryPool::AddNewBlob()
  T CUtlMemoryPool::Alloc()
  T CUtlMemoryPool::Alloc(unsigned long)
@@ -4679,6 +4811,171 @@
  T CrosshairImagePanelSimple::ResetData()
  T CrosshairImagePanelSimple::UpdateCrosshair()
  T CrosshairImagePanelSimple::~CrosshairImagePanelSimple()
+ T CryptoPP::Algorithm::Algorithm(bool)
+ T CryptoPP::Algorithm::AlgorithmName() const
+ T CryptoPP::Algorithm::~Algorithm()
+ T CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256>::AlgorithmName() const
+ T CryptoPP::AlgorithmImpl<CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >, CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> > >::AlgorithmName() const
+ T CryptoPP::ArraySink::CreatePutSpace(unsigned long&)
+ T CryptoPP::ArraySink::IsolatedInitialize(CryptoPP::NameValuePairs const&)
+ T CryptoPP::ArraySink::Put2(unsigned char const*, unsigned long, int, bool)
+ T CryptoPP::ArraySink::~ArraySink()
+ T CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::CanIncorporateEntropy() const
+ T CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::GenerateIntoBufferedTransformation(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long long)
+ T CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::IncorporateEntropy(unsigned char const*, unsigned long)
+ T CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::Reseed(bool, unsigned char const*, unsigned long)
+ T CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::Reseed(unsigned char const*, unsigned long, unsigned char const*, unsigned char const*)
+ T CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::~AutoSeededX917RNG()
+ T CryptoPP::BitBucket::AlgorithmName() const
+ T CryptoPP::BitBucket::IsolatedInitialize(CryptoPP::NameValuePairs const&)
+ T CryptoPP::BitBucket::Put2(unsigned char const*, unsigned long, int, bool)
+ T CryptoPP::BitBucket::~BitBucket()
+ T CryptoPP::BlockCipher::GetAlgorithm() const
+ T CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::BlockCipherFinal(CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc> const&)
+ T CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::IsForwardTransformation() const
+ T CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::~BlockCipherFinal()
+ T CryptoPP::BlockCipherImpl<CryptoPP::Rijndael_Info, CryptoPP::BlockCipher>::BlockSize() const
+ T CryptoPP::BlockTransformation::AdvancedProcessBlocks(unsigned char const*, unsigned char const*, unsigned char*, unsigned long, unsigned int) const
+ T CryptoPP::BlockTransformation::IsPermutation() const
+ T CryptoPP::BlockTransformation::OptimalDataAlignment() const
+ T CryptoPP::BlockTransformation::OptimalNumberOfParallelBlocks() const
+ T CryptoPP::BlockingRng::BlockingRng()
+ T CryptoPP::BlockingRng::GenerateBlock(unsigned char*, unsigned long)
+ T CryptoPP::BlockingRng::~BlockingRng()
+ T CryptoPP::BufferedTransformation::AnyMessages() const
+ T CryptoPP::BufferedTransformation::AnyRetrievable() const
+ T CryptoPP::BufferedTransformation::Attach(CryptoPP::BufferedTransformation*)
+ T CryptoPP::BufferedTransformation::Attachable()
+ T CryptoPP::BufferedTransformation::AttachedTransformation()
+ T CryptoPP::BufferedTransformation::AttachedTransformation() const
+ T CryptoPP::BufferedTransformation::CanModifyInput() const
+ T CryptoPP::BufferedTransformation::ChannelCreatePutSpace(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long&)
+ T CryptoPP::BufferedTransformation::ChannelFlush(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool, int, bool)
+ T CryptoPP::BufferedTransformation::ChannelMessageSeriesEnd(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int, bool)
+ T CryptoPP::BufferedTransformation::ChannelPut2(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned char const*, unsigned long, int, bool)
+ T CryptoPP::BufferedTransformation::ChannelPutModifiable2(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned char*, unsigned long, int, bool)
+ T CryptoPP::BufferedTransformation::CreatePutSpace(unsigned long&)
+ T CryptoPP::BufferedTransformation::Detach(CryptoPP::BufferedTransformation*)
+ T CryptoPP::BufferedTransformation::Flush(bool, int, bool)
+ T CryptoPP::BufferedTransformation::Get(unsigned char&)
+ T CryptoPP::BufferedTransformation::Get(unsigned char*, unsigned long)
+ T CryptoPP::BufferedTransformation::GetAutoSignalPropagation() const
+ T CryptoPP::BufferedTransformation::GetMaxWaitObjectCount() const
+ T CryptoPP::BufferedTransformation::GetNextMessage()
+ T CryptoPP::BufferedTransformation::GetNextMessageSeries()
+ T CryptoPP::BufferedTransformation::GetWaitObjects(CryptoPP::WaitObjectContainer&, CryptoPP::CallStack const&)
+ T CryptoPP::BufferedTransformation::Initialize(CryptoPP::NameValuePairs const&, int)
+ T CryptoPP::BufferedTransformation::IsolatedMessageSeriesEnd(bool)
+ T CryptoPP::BufferedTransformation::MaxRetrievable() const
+ T CryptoPP::BufferedTransformation::MessageSeriesEnd(int, bool)
+ T CryptoPP::BufferedTransformation::NoChannelSupport::~NoChannelSupport()
+ T CryptoPP::BufferedTransformation::NumberOfMessageSeries() const
+ T CryptoPP::BufferedTransformation::NumberOfMessages() const
+ T CryptoPP::BufferedTransformation::NumberOfMessagesInThisSeries() const
+ T CryptoPP::BufferedTransformation::Peek(unsigned char&) const
+ T CryptoPP::BufferedTransformation::Peek(unsigned char*, unsigned long) const
+ T CryptoPP::BufferedTransformation::PutModifiable2(unsigned char*, unsigned long, int, bool)
+ T CryptoPP::BufferedTransformation::SetAutoSignalPropagation(int)
+ T CryptoPP::BufferedTransformation::SetRetrievalChannel(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+ T CryptoPP::BufferedTransformation::Skip(unsigned long long)
+ T CryptoPP::BufferedTransformation::SkipAll()
+ T CryptoPP::BufferedTransformation::SkipMessages(unsigned int)
+ T CryptoPP::BufferedTransformation::TotalBytesRetrievable() const
+ T CryptoPP::BufferedTransformation::TransferMessagesTo2(CryptoPP::BufferedTransformation&, unsigned int&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
+ T CryptoPP::Bufferless<CryptoPP::Sink>::IsolatedFlush(bool, bool)
+ T CryptoPP::Clonable::Clone() const
+ T CryptoPP::ClonableImpl<CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>, CryptoPP::Rijndael::Enc>::Clone() const
+ T CryptoPP::ClonableImpl<CryptoPP::SHA256, CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256> >::Clone() const
+ T CryptoPP::DetectX86Features()
+ T CryptoPP::Exception::what() const
+ T CryptoPP::Exception::~Exception()
+ T CryptoPP::FIPS_140_2_ComplianceEnabled()
+ T CryptoPP::GetPowerUpSelfTestStatus()
+ T CryptoPP::HashInputTooLong::~HashInputTooLong()
+ T CryptoPP::HashTransformation::BlockSize() const
+ T CryptoPP::HashTransformation::CalculateDigest(unsigned char*, unsigned char const*, unsigned long)
+ T CryptoPP::HashTransformation::CalculateTruncatedDigest(unsigned char*, unsigned long, unsigned char const*, unsigned long)
+ T CryptoPP::HashTransformation::Final(unsigned char*)
+ T CryptoPP::HashTransformation::ThrowIfInvalidTruncatedSize(unsigned long) const
+ T CryptoPP::HashTransformation::TruncatedVerify(unsigned char const*, unsigned long)
+ T CryptoPP::HashTransformation::Verify(unsigned char const*)
+ T CryptoPP::HashTransformation::VerifyDigest(unsigned char const*, unsigned char const*, unsigned long)
+ T CryptoPP::HashTransformation::VerifyTruncatedDigest(unsigned char const*, unsigned long, unsigned char const*, unsigned long)
+ T CryptoPP::InvalidArgument::~InvalidArgument()
+ T CryptoPP::InvalidDataFormat::~InvalidDataFormat()
+ T CryptoPP::InvalidKeyLength::InvalidKeyLength(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long)
+ T CryptoPP::InvalidKeyLength::~InvalidKeyLength()
+ T CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::BlockSize() const
+ T CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::DataBuf()
+ T CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::GetByteOrder() const
+ T CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::~IteratedHash()
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::CreateUpdateSpace(unsigned long&)
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::HashMultipleBlocks(unsigned int const*, unsigned long)
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::OptimalBlockSize() const
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::OptimalDataAlignment() const
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::Restart()
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::TruncatedFinal(unsigned char*, unsigned long)
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::Update(unsigned char const*, unsigned long)
+ T CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::~IteratedHashBase()
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::DigestSize() const
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::HashEndianCorrectedBlock(unsigned int const*)
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::Init()
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::IteratedHashWithStaticTransform()
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::IteratedHashWithStaticTransform(CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true> const&)
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::StateBuf()
+ T CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::~IteratedHashWithStaticTransform()
+ T CryptoPP::NonblockingRng::GenerateBlock(unsigned char*, unsigned long)
+ T CryptoPP::NonblockingRng::NonblockingRng()
+ T CryptoPP::NonblockingRng::~NonblockingRng()
+ T CryptoPP::NotImplemented::~NotImplemented()
+ T CryptoPP::NullNameValuePairs::GetVoidValue(char const*, std::type_info const&, void*) const
+ T CryptoPP::NullNameValuePairs::~NullNameValuePairs()
+ T CryptoPP::OS_GenerateRandomBlock(bool, unsigned char*, unsigned long)
+ T CryptoPP::OS_RNG_Err::OS_RNG_Err(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+ T CryptoPP::OS_RNG_Err::~OS_RNG_Err()
+ T CryptoPP::PowerUpSelfTestInProgressOnThisThread()
+ T CryptoPP::RandomNumberGenerator::CanIncorporateEntropy() const
+ T CryptoPP::RandomNumberGenerator::DiscardBytes(unsigned long)
+ T CryptoPP::RandomNumberGenerator::GenerateBit()
+ T CryptoPP::RandomNumberGenerator::GenerateBlock(unsigned char*, unsigned long)
+ T CryptoPP::RandomNumberGenerator::GenerateByte()
+ T CryptoPP::RandomNumberGenerator::GenerateIntoBufferedTransformation(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long long)
+ T CryptoPP::RandomNumberGenerator::GenerateWord32(unsigned int, unsigned int)
+ T CryptoPP::RandomNumberGenerator::IncorporateEntropy(unsigned char const*, unsigned long)
+ T CryptoPP::Rijndael::Base::FillDecTable()
+ T CryptoPP::Rijndael::Base::UncheckedSetKey(unsigned char const*, unsigned int, CryptoPP::NameValuePairs const&)
+ T CryptoPP::Rijndael::Base::~Base()
+ T CryptoPP::Rijndael::Enc::AdvancedProcessBlocks(unsigned char const*, unsigned char const*, unsigned char*, unsigned long, unsigned int) const
+ T CryptoPP::Rijndael::Enc::ProcessAndXorBlock(unsigned char const*, unsigned char const*, unsigned char*) const
+ T CryptoPP::SHA256::InitState(unsigned int*)
+ T CryptoPP::SHA256::Transform(unsigned int*, unsigned int const*)
+ T CryptoPP::SHA256::~SHA256()
+ T CryptoPP::SelfTestFailure::~SelfTestFailure()
+ T CryptoPP::SimpleKeyingInterface::GetNextIV(CryptoPP::RandomNumberGenerator&, unsigned char*)
+ T CryptoPP::SimpleKeyingInterface::IVSize() const
+ T CryptoPP::SimpleKeyingInterface::IsValidKeyLength(unsigned long) const
+ T CryptoPP::SimpleKeyingInterface::MaxIVLength() const
+ T CryptoPP::SimpleKeyingInterface::MinIVLength() const
+ T CryptoPP::SimpleKeyingInterface::Resynchronize(unsigned char const*, int)
+ T CryptoPP::SimpleKeyingInterface::SetKey(unsigned char const*, unsigned long, CryptoPP::NameValuePairs const&)
+ T CryptoPP::SimpleKeyingInterface::ThrowIfInvalidKeyLength(unsigned long)
+ T CryptoPP::SimpleKeyingInterface::~SimpleKeyingInterface()
+ T CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::DefaultKeyLength() const
+ T CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::GetValidKeyLength(unsigned long) const
+ T CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::IVRequirement() const
+ T CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::IVSize() const
+ T CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::MaxKeyLength() const
+ T CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::MinKeyLength() const
+ T CryptoPP::Sink::CopyRangeTo2(CryptoPP::BufferedTransformation&, unsigned long long&, unsigned long long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool) const
+ T CryptoPP::Sink::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
+ T CryptoPP::UnalignedAllocate(unsigned long)
+ T CryptoPP::UnalignedDeallocate(void*)
+ T CryptoPP::VerifyBufsEqual(unsigned char const*, unsigned char const*, unsigned long)
+ T CryptoPP::X917RNG::GenerateIntoBufferedTransformation(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long long)
+ T CryptoPP::X917RNG::X917RNG(CryptoPP::BlockTransformation*, unsigned char const*, unsigned char const*)
+ T CryptoPP::X917RNG::~X917RNG()
+ T CryptoPP::xorbuf(unsigned char*, unsigned char const*, unsigned char const*, unsigned long)
+ T CryptoPP::xorbuf(unsigned char*, unsigned char const*, unsigned long)
  T CvarToggleCheckButton_Factory()
  T DefaultCompletionFunc(char const*, char (*) [64])
  T DisconnectTier1Libraries()
@@ -4709,6 +5006,7 @@
  T GetLanguageVGUILocalization(ELanguage)
  T GetNoEscCharConversion()
  T GetPanelAnimationDictionary()
+ T GetPinCornerFromString(char const*)
  T ILocalize::ConstructStringVArgsInternal(wchar_t*, int, wchar_t const*, int, char*)
  T ILocalize::ConvertANSIToUnicode(char const*, wchar_t*, int)
  T ILocalize::ConvertUnicodeToANSI(wchar_t const*, char*, int)
@@ -4719,6 +5017,7 @@
  T ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA16161616(float16*, unsigned short*, int, int)
  T ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA323232F(float16*, float*, int, int, unsigned long)
  T ImageLoader::ConvertImageFormat_RGBA16161616_To_RGBA16161616F(unsigned short*, float*, int, int)
+ T ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
  T ImageLoader::GetMemRequired(int, int, int, ImageFormat, bool)
  T ImageLoader::ImageFormatInfo(ImageFormat)
  T ImgUtl_ConvertJPEGToTGA(char const*, char const*, bool)
@@ -4887,7 +5186,6 @@
  T V_wcsncpy(wchar_t*, wchar_t const*, int)
  T WriteBonusMapSavedData(KeyValues*)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T float16::ConvertFloatTo16bits(float)
  T int CUtlSortVector<IAchievement*, CAchievementsLess, CUtlVector<IAchievement*, CUtlMemory<IAchievement*, int> > >::FindLessOrEqual<IAchievement*>(IAchievement* const&, bool*) const
  T int CUtlSortVector<vgui::SortedPanel_t, vgui::CSortedPanelYLess, CUtlVector<vgui::SortedPanel_t, CUtlMemory<vgui::SortedPanel_t, int> > >::FindLessOrEqual<vgui::SortedPanel_t>(vgui::SortedPanel_t const&, bool*) const
@@ -4986,6 +5284,18 @@
  T non-virtual thunk to ConVar::SetValue(char const*)
  T non-virtual thunk to ConVar::SetValue(float)
  T non-virtual thunk to ConVar::SetValue(int)
+ T non-virtual thunk to CryptoPP::AlgorithmImpl<CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >, CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> > >::AlgorithmName() const
+ T non-virtual thunk to CryptoPP::ArraySink::~ArraySink()
+ T non-virtual thunk to CryptoPP::BitBucket::~BitBucket()
+ T non-virtual thunk to CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::IsForwardTransformation() const
+ T non-virtual thunk to CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::~BlockCipherFinal()
+ T non-virtual thunk to CryptoPP::BlockCipherImpl<CryptoPP::Rijndael_Info, CryptoPP::BlockCipher>::BlockSize() const
+ T non-virtual thunk to CryptoPP::BufferedTransformation::GetMaxWaitObjectCount() const
+ T non-virtual thunk to CryptoPP::BufferedTransformation::GetWaitObjects(CryptoPP::WaitObjectContainer&, CryptoPP::CallStack const&)
+ T non-virtual thunk to CryptoPP::ClonableImpl<CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>, CryptoPP::Rijndael::Enc>::Clone() const
+ T non-virtual thunk to CryptoPP::Rijndael::Base::~Base()
+ T non-virtual thunk to CryptoPP::Rijndael::Enc::AdvancedProcessBlocks(unsigned char const*, unsigned char const*, unsigned char*, unsigned long, unsigned int) const
+ T non-virtual thunk to CryptoPP::Rijndael::Enc::ProcessAndXorBlock(unsigned char const*, unsigned char const*, unsigned char*) const
  T non-virtual thunk to vgui::CConsolePanel::ColorPrint(Color const&, char const*)
  T non-virtual thunk to vgui::CConsolePanel::DPrint(char const*)
  T non-virtual thunk to vgui::CConsolePanel::Print(char const*)
@@ -5332,6 +5642,11 @@
  T png_zalloc
  T png_zfree
  T stb_compress_dxt_block(unsigned char*, unsigned char const*, int, int)
+ T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<int>(int, unsigned int)
+ T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<unsigned int>(unsigned int, unsigned int)
+ T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<unsigned long>(unsigned long, unsigned int)
+ T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > std::__1::operator+<char, std::__1::char_traits<char>, std::__1::allocator<char> >(char const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+ T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > std::__1::operator+<char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, char const*)
  T vgui::AnalogBar::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::AnalogBar::AnalogBar(vgui::Panel*, char const*)
  T vgui::AnalogBar::ApplySchemeSettings(vgui::IScheme*)
@@ -5378,6 +5693,7 @@
  T vgui::AnimationController::GetRelativeOffset(vgui::AnimationController::AnimAlign_t&, bool)
  T vgui::AnimationController::GetValue(vgui::AnimationController::ActiveAnimation_t&, vgui::Panel*, unsigned short)
  T vgui::AnimationController::LoadScriptFile(char const*)
+ T vgui::AnimationController::LookupAlignment(char const*)
  T vgui::AnimationController::ParseScriptFile(char*, int)
  T vgui::AnimationController::ReloadScriptFile()
  T vgui::AnimationController::RemoveQueuedAnimationCommands(unsigned short, vgui::Panel*)
@@ -5802,7 +6118,6 @@
  T vgui::CvarToggleCheckButton<ConVarRef>::Paint()
  T vgui::CvarToggleCheckButton<ConVarRef>::SetSelected(bool)
  T vgui::CvarToggleCheckButton<ConVarRef>::~CvarToggleCheckButton()
- T vgui::Dar<CPanelListPanel::dataitem_s*>::PutElement(CPanelListPanel::dataitem_s*)
  T vgui::Dar<unsigned long>::AddElement(unsigned long)
  T vgui::Divider::ApplySchemeSettings(vgui::IScheme*)
  T vgui::Divider::Divider(vgui::Panel*, char const*)
@@ -6838,7 +7153,6 @@
  T vgui::Panel::UpdateSiblingPin()
  T vgui::Panel::~Panel()
  T vgui::PanelListPanel::AddItem(vgui::Panel*, vgui::Panel*)
- T vgui::PanelListPanel::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::PanelListPanel::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::PanelListPanel::ApplySchemeSettings(vgui::IScheme*)
  T vgui::PanelListPanel::ComputeVPixelsNeeded()
@@ -6890,7 +7204,6 @@
  T vgui::ProgressBar::~ProgressBar()
  T vgui::PropertyDialog::ActivateBuildMode()
  T vgui::PropertyDialog::AddPage(vgui::Panel*, char const*)
- T vgui::PropertyDialog::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::PropertyDialog::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::PropertyDialog::ApplyChanges()
  T vgui::PropertyDialog::EnableApplyButton(bool)
@@ -7105,7 +7418,6 @@
  T vgui::ScalableImagePanel::ScalableImagePanel(vgui::Panel*, char const*)
  T vgui::ScalableImagePanel::SetImage(char const*)
  T vgui::ScalableImagePanel::~ScalableImagePanel()
- T vgui::ScrollBar::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::ScrollBar::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::ScrollBar::ApplySchemeSettings(vgui::IScheme*)
  T vgui::ScrollBar::ApplySettings(KeyValues*)
@@ -7178,7 +7490,6 @@
  T vgui::SectionedListPanel::AddSection(int, char const*, bool (*)(vgui::SectionedListPanel*, int, int))
  T vgui::SectionedListPanel::AddSection(int, vgui::SectionedListPanelHeader*, bool (*)(vgui::SectionedListPanel*, int, int))
  T vgui::SectionedListPanel::AddSection(int, wchar_t const*, bool (*)(vgui::SectionedListPanel*, int, int))
- T vgui::SectionedListPanel::AddToAnimationMap(char const*, char const*, char const*, char const*, bool, void* (*)(vgui::Panel*))
  T vgui::SectionedListPanel::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
  T vgui::SectionedListPanel::ApplySchemeSettings(vgui::IScheme*)
  T vgui::SectionedListPanel::ApplySettings(KeyValues*)
@@ -7679,12 +7990,14 @@
  T vgui::VguiPanelGetSortedChildButtonList(vgui::Panel*, void*, char*, int)
  T vgui::VguiPanelNavigateSortedChildButtonList(void*, int)
  T void ConstructStringVArgsInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, int, char*)
+ T void CryptoPP::GetUserKey<unsigned int>(CryptoPP::ByteOrder, unsigned int*, unsigned long, unsigned char const*, unsigned long)
  T void ILocalize::ConstructString<wchar_t>(wchar_t*, int, wchar_t const*, int, ...)
  T void ImageLoader::CompressSTB<BGRA8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<BGRX8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGB888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGBA8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  ThreadGetCurrentId
+ ThreadInterlockedAssignIf64
  ThreadSleep
  Warning
  _DefaultRuneLocale
@@ -7692,13 +8005,17 @@
  _SpewInfo
  _SpewMessage
  _Unwind_Resume
+ __bzero
+ __cxa_allocate_exception
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
+ __cxa_free_exception
  __cxa_guard_abort
  __cxa_guard_acquire
  __cxa_guard_release
  __cxa_pure_virtual
+ __cxa_throw
  __dynamic_cast
  __error
  __gxx_personality_v0
@@ -7725,6 +8042,12 @@
  b CleanFloat(float)::curstring
  b CleanFloat(float)::string
  b ConVarRef::Init(char const*, bool)::bFirst
+ b CryptoPP::Td
+ b CryptoPP::Te
+ b CryptoPP::TheBitBucket()::bitBucket
+ b CryptoPP::s_NullNameValuePairs
+ b CryptoPP::s_TdFilled
+ b CryptoPP::s_TeFilled
  b GetPanelAnimationDictionary()::dictionary
  b GetPanelMessageMapDictionary()::dictionary
  b InitializeCharacterSets()::s_CharacterSetInitialized
@@ -7747,6 +8070,13 @@
  b bench_showstatsdialog_command
  b commentary_testfirstrun
  b condump_command
+ b datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+ b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b f05
  b f3
  b g_AnalogBar_Helper
@@ -7818,10 +8148,17 @@
  b guard variable for BonusMapsDatabase()::StaticBonusMapsDatabase
  b guard variable for COptionsSubKeyboard::GetItemForBinding(char const*)::bindingSymbol
  b guard variable for COptionsSubVideo::OnApplyChanges()::sdl_displayindex
+ b guard variable for CryptoPP::TheBitBucket()::bitBucket
  b guard variable for GetPanelAnimationDictionary()::dictionary
  b guard variable for GetPanelMessageMapDictionary()::dictionary
  b guard variable for ModInfo()::s_ModInfo
  b guard variable for bench_showstatsdialog(CCommand const&)::g_BenchmarkResultsDialog
+ b guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+ b guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b guard variable for getSDLDisplayIndex()::sdl_displayindex
  b guard variable for getSDLDisplayIndexFullscreen()::sdl_displayindex_fullscreen
  b guard variable for vgui::Button::DoClick()::vgui_nav_lock
@@ -7836,6 +8173,7 @@
  b s_EmptyConVar
  b s_OptionsDataContainer
  b s_StartDirContexts
+ b s_StaticCryptoConstructor
  b s_bConnected
  b s_bRegistered
  b s_bRunningWithDebugModules
@@ -7905,6 +8243,8 @@
  b void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
  ceil
  ceilf
+ clock$UNIX2003
+ close$UNIX2003
  copyfile
  cos
  cosf
@@ -7915,9 +8255,14 @@
  d boolconverter
  d chatterArg
  d colorconverter
+ d construction vtable for (anonymous namespace)::GripPanel-in-(anonymous namespace)::CaptionGripPanel
  d construction vtable for vgui::Button-in-(anonymous namespace)::ScrollBarButton
  d construction vtable for vgui::Label-in-(anonymous namespace)::ScrollBarButton
- d dyld__mach_header
+ d datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+ d datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
  d floatconverter
  d fontconverter
  d g_ColInfo
@@ -7952,7 +8297,6 @@
  d typeinfo for (anonymous namespace)::ScrollBarButton
  d vgui::Panel::OnOldMessage(KeyValues*, unsigned int)::s_bDebugMessages
  d vtable for (anonymous namespace)::CaptionGripPanel
- d vtable for (anonymous namespace)::GripPanel
  d vtable for (anonymous namespace)::ScrollBarButton
  deflate
  deflateEnd
@@ -7962,18 +8306,18 @@
  dlerror
  dlopen
  dlsym
+ dyld_stub_binder
  exit
  fclose
  fflush
  floor
  fmod
- fopen
+ fopen$UNIX2003
  fprintf
  fputc
  fread
  free
  frexp
- fwrite
  fwrite$UNIX2003
  g_VProfCurrentProfile
  g_pMemAlloc
@@ -7995,6 +8339,7 @@
  memset
  memset_pattern16
  modf
+ open$UNIX2003
  pow
  pthread_mutex_destroy
  pthread_mutex_init
@@ -8004,6 +8349,7 @@
  pthread_mutexattr_settype
  qsort
  r .memset_pattern
+ r CryptoPP::SHA256::InitState(unsigned int*)::s
  r base_dither_matrix
  r bmask
  r extra_pool_slop
@@ -8103,18 +8449,32 @@
  r typeinfo name for (anonymous namespace)::CaptionGripPanel
  r typeinfo name for (anonymous namespace)::GripPanel
  r typeinfo name for (anonymous namespace)::ScrollBarButton
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
- r void ImageLoader::DecodeColorBlock<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ r void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
  raise
+ read$UNIX2003
  roundf
  setjmp
  setlocale
  sin
  sinf
+ sleep$UNIX2003
  snprintf
  sprintf
  sscanf
- stat
+ stat$INODE64
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long, unsigned long)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*, unsigned long)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::basic_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::insert(unsigned long, char const*)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::reserve(unsigned long)
+ std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+ std::bad_alloc::bad_alloc()
+ std::bad_alloc::~bad_alloc()
+ std::exception::~exception()
+ std::set_new_handler(void (*)())
  std::terminate()
  strcasecmp
  strcat
@@ -8250,6 +8610,72 @@
  t TGALoader::ReadFile(char const*, CUtlMemory<unsigned char, int>&, int)
  t TGALoader::ReadSourceImage(CUtlBuffer&, TGALoader::TGAHeader_t&, CUtlMemory<unsigned char, int>&)
  t ValveJpegErrorHandler(jpeg_common_struct*)
+ t _GLOBAL__sub_I_AnalogBar.stdout.rel_tf_osx_builder.4855.FOe33u.ii
+ t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.4856.pX87Wl.ii
+ t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.4874.Dl93Bc.ii
+ t _GLOBAL__sub_I_BasePanel.stdout.rel_tf_osx_builder.46944.Mwz0Dg.ii
+ t _GLOBAL__sub_I_BenchmarkD.stdout.rel_tf_osx_builder.46956.5mCu7T.ii
+ t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.4881.D0UxGd.ii
+ t _GLOBAL__sub_I_BonusMapsD.stdout.rel_tf_osx_builder.46968.WTmo66.ii
+ t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.4891.ScmeCX.ii
+ t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.4899.qj1W6I.ii
+ t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.4900.TXZ71g.ii
+ t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.4911.lghLTA.ii
+ t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.4922.aKynQC.ii
+ t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.4929.62c7xZ.ii
+ t _GLOBAL__sub_I_Commentary.stdout.rel_tf_osx_builder.46986.dLX4Nj.ii
+ t _GLOBAL__sub_I_Controller.stdout.rel_tf_osx_builder.4940.5hJaOh.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.47050.7epJpb.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.4953.NmqPOV.ii
+ t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.4965.ay1gfd.ii
+ t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.4971.FGuOW0.ii
+ t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.4977.cnCZwX.ii
+ t _GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.4982.4Nhy9v.ii
+ t _GLOBAL__sub_I_GameConsol.stdout.rel_tf_osx_builder.47058.LGXaIJ.ii
+ t _GLOBAL__sub_I_GameUI_Int.stdout.rel_tf_osx_builder.47070.ltSdIL.ii
+ t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.5007.rIf53h.ii
+ t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.5030.V71Qa9.ii
+ t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.5061.zvDWRN.ii
+ t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.5063.4Dz492.ii
+ t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.5073.R9EnTP.ii
+ t _GLOBAL__sub_I_LoadCommen.stdout.rel_tf_osx_builder.47100.ijfaBu.ii
+ t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.5079.xGz9JR.ii
+ t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.5085.79TGJN.ii
+ t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.5091.J78jWk.ii
+ t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.5097.h6tyVs.ii
+ t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.5098.nxMYBF.ii
+ t _GLOBAL__sub_I_OptionsDia.stdout.rel_tf_osx_builder.47214.aQEwEE.ii
+ t _GLOBAL__sub_I_OptionsSub.stdout.rel_tf_osx_builder.47220.8MHqjb.ii
+ t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.5114.ZO3Ono.ii
+ t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.5121.QGz4Wt.ii
+ t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.5142.mhnIM8.ii
+ t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.5178.hqhKkv.ii
+ t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.5187.gwg3j3.ii
+ t _GLOBAL__sub_I_RunGameEng.stdout.rel_tf_osx_builder.47286.3daXR4.ii
+ t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.5205.Yi5Gpx.ii
+ t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.5215.zWGKan.ii
+ t _GLOBAL__sub_I_SectionedL.stdout.rel_tf_osx_builder.5227.WfFOyH.ii
+ t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.5235.3SFz2l.ii
+ t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.5253.gTjCZD.ii
+ t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.5262.RY0jMu.ii
+ t _GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.5277.K2tHUV.ii
+ t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.5280.yApHmo.ii
+ t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.5289.O9ydbk.ii
+ t _GLOBAL__sub_I_URLButton.stdout.rel_tf_osx_builder.47326.ZGZjuc.ii
+ t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.5295.Idjw2q.ii
+ t _GLOBAL__sub_I_VGuiSystem.stdout.rel_tf_osx_builder.47340.MsT4BE.ii
+ t _GLOBAL__sub_I_basedialog.stdout.rel_tf_osx_builder.47128.WIVPOJ.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_cryptlib.cpp
+ t _GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.7420.22U8dg.ii
+ t _GLOBAL__sub_I_cvarslider.stdout.rel_tf_osx_builder.31774.9Qs9N6.ii
+ t _GLOBAL__sub_I_leaderboar.stdout.rel_tf_osx_builder.47142.freWl4.ii
+ t _GLOBAL__sub_I_sessionlob.stdout.rel_tf_osx_builder.47166.8OqtRL.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
+ t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.8180.JAm7aJ.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.2874.DARExN.ii
  t __CreateCGameConsoleIGameConsole_interface()
  t __CreateCGameUIIGameUI_interface()
  t __CreateCRunGameEngineIRunGameEngine_interface()
@@ -8317,7 +8743,6 @@
  t get_sof(jpeg_decompress_struct*, int, int, int)
  t get_soi(jpeg_decompress_struct*)
  t get_sos(jpeg_decompress_struct*)
- t global constructors keyed to a
  t gray_rgb_convert(jpeg_decompress_struct*, unsigned char***, unsigned int, unsigned char**, int)
  t grayscale_convert(jpeg_decompress_struct*, unsigned char***, unsigned int, unsigned char**, int)
  t h2v1_merged_upsample(jpeg_decompress_struct*, unsigned char***, unsigned int, unsigned char**)
@@ -8430,13 +8855,15 @@
  t void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)
  t ycc_rgb_convert(jpeg_decompress_struct*, unsigned char***, unsigned int, unsigned char**, int)
  t ycck_cmyk_convert(jpeg_decompress_struct*, unsigned char***, unsigned int, unsigned char**, int)
- tan
+ tanf
  time
  typeinfo for std::bad_alloc
+ typeinfo for std::exception
  unlink
  vsnprintf
  vswprintf
  vtable for __cxxabiv1::__class_type_info
+ vtable for __cxxabiv1::__pointer_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
  wcschr

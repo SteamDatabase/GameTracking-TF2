@@ -258,6 +258,7 @@
  T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
  T ReadInterval(char const*)
  T Sys_GetFactoryThis()
+ T TextToChannel(char const*)
  T TextToSoundLevel(char const*)
  T V_FileBase(char const*, char*, int)
  T V_atof(char const*)
@@ -271,7 +272,6 @@
  T V_vsnprintf(char*, int, char const*, char*)
  T __clang_call_terminate
  T bool CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::DoRemove<CSoundEntry*>(CSoundEntry*)
- T dyld_stub_binding_helper
  T float16::ConvertFloatTo16bits(float)
  T int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoRemove<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex const&>(CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex const&, unsigned int)
  T int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoRemove<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex>(CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, unsigned int)
@@ -297,6 +297,7 @@
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -332,7 +333,6 @@
  b s_pTokenBuf
  b vec2_invalid
  b vec2_origin
- d dyld__mach_header
  d g_RandomStream
  d g_pChannelNames
  d g_pPitchLookup
@@ -341,10 +341,10 @@
  d s_nDLLIdentifier
  d s_pConversionArrays_NoEscConversion
  d s_pConversionArrays_StringCharConversion
+ dyld_stub_binder
  g_pMemAlloc
  memcpy
  memmove
- memset
  pow
  pthread_mutex_destroy
  r pulCRCTable
@@ -361,8 +361,11 @@
  strtok
  strtol
  strtoul
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_soundemitt.stdout.rel_tf_osx_builder.2833.q2vsXx.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
  t __CreateCSoundEmitterSystemBaseISoundEmitterSystemBase_interface()
- t global constructors keyed to a
  typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info

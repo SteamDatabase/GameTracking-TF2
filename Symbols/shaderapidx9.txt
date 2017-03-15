@@ -670,6 +670,7 @@
  T CMeshMgr::Shutdown()
  T CMeshMgr::UseFatVertices(bool)
  T CMeshMgr::~CMeshMgr()
+ T CPixelWriter::SetPixelMemory(ImageFormat, void*, int)
  T CRC32_Final(unsigned int*)
  T CRC32_Init(unsigned int*)
  T CRC32_ProcessBuffer(unsigned int*, void const*, int)
@@ -1559,7 +1560,6 @@
  T __clang_call_terminate
  T _rsqrtf(float)
  T _sqrtf(float)
- T dyld_stub_binding_helper
  T int CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::ShadowStateDictEntry_t>(CTransitionTable::ShadowStateDictEntry_t const&, bool*) const
  T int CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::SnapshotDictEntry_t>(CTransitionTable::SnapshotDictEntry_t const&, bool*) const
  T int CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::FindLessOrEqual<CTransitionTable::TransitionList_t>(CTransitionTable::TransitionList_t const&, bool*) const
@@ -1915,6 +1915,7 @@
  _SpewInfo
  _SpewMessage
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -2031,11 +2032,9 @@
  b vec2_origin
  b vec4_invalid
  b vec4_origin
- cos
  cosf
  d CHardwareConfig::HasFastVertexTextures() const::bEnableFastVertexTextures
  d InitShaderAPICVars()::g_ConVarAccessor
- d dyld__mach_header
  d g_Alloc
  d g_ImageFormatInfo
  d g_LastVertexIdx
@@ -2044,12 +2043,12 @@
  d s_nDLLIdentifier
  d s_pConversionArrays_NoEscConversion
  d s_pConversionArrays_StringCharConversion
+ dyld_stub_binder
  g_VProfCurrentProfile
  g_pMemAlloc
  memcmp
  memcpy
  memmove
- memset
  memset_pattern16
  pow
  pthread_mutex_destroy
@@ -2091,12 +2090,24 @@
  t GetImageFormat(IDirect3DBaseTexture9*)
  t LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
  t LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
- t LzmaDec_WriteRem(CLzmaDec*, unsigned long)
  t OverrideValues_R(KeyValues*, KeyValues*)
  t SzAlloc(void*, unsigned long)
  t SzFree(void*, void*)
  t TestTextureFormat(_D3DFORMAT, bool, bool, bool)
  t VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.46044.1XFCBi.ii
+ t _GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.46057.R8pM4E.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.2107.ttGBeC.ii
+ t _GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.46069.rXvc7d.ii
+ t _GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.46085.LQyV0h.ii
+ t _GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.46092.iecQ3a.ii
+ t _GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.46103.ZPRhMZ.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.2251.BSyCPc.ii
+ t _GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.46121.bZ2WrI.ii
+ t _GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.46127.ptAKTp.ii
  t __CreateCHardwareConfigIMaterialSystemHardwareConfig_interface()
  t __CreateCShaderAPIDx8IDebugTextureInfo_interface()
  t __CreateCShaderAPIDx8IShaderAPI_interface()
@@ -2105,7 +2116,6 @@
  t __CreateCShaderShadowDX8IShaderShadow_interface()
  t __CreateCVBAllocTrackerIVBAllocTracker_interface()
  t ccs_create_convars_from_hwconfig(CCommand const&)
- t global constructors keyed to a
  t mat_shadercount(CCommand const&)
  t mat_spewvertexandpixelshaders(CCommand const&)
  t void ccs_create_convar_from_hwconfig<HDRType_t>(HDRType_t const&, char const*)

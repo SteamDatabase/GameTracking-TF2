@@ -250,7 +250,6 @@
  T V_stricmp(char const*, char const*)
  T V_strnicmp(char const*, char const*, int)
  T __clang_call_terminate
- T dyld_stub_binding_helper
  T non-virtual thunk to CEmptyConVar::GetName() const
  T non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
  T non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -267,6 +266,7 @@
  T operator new[](unsigned long)
  Warning
  _Unwind_Resume
+ __bzero
  __cxa_atexit
  __cxa_begin_catch
  __cxa_call_unexpected
@@ -299,7 +299,6 @@
  b scantokey
  b vec2_invalid
  b vec2_origin
- d dyld__mach_header
  d g_DigitalMenuActions
  d g_GameActionSets
  d g_MapSteamControllerOriginToDescription
@@ -312,10 +311,10 @@
  d s_pConversionArrays_StringCharConversion
  d s_pXControllerButtonCodeNames
  dlclose
+ dyld_stub_binder
  g_pMemAlloc
  memcpy
  memmove
- memset
  pow
  r s_pScanToButtonCode_QWERTY
  std::terminate()
@@ -325,8 +324,13 @@
  strncasecmp
  t JoystickSDLWatcher(void*, SDL_Event*)
  t SetJoyXControllerFound(bool)
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+ t _GLOBAL__sub_I_inputsyste.stdout.rel_tf_osx_builder.7946.HgOk99.ii
+ t _GLOBAL__sub_I_joystick_s.stdout.rel_tf_osx_builder.7947.LyLVRm.ii
+ t _GLOBAL__sub_I_key_transl.stdout.rel_tf_osx_builder.7948.nfxS3j.ii
+ t _GLOBAL__sub_I_steamcontr.stdout.rel_tf_osx_builder.7961.dgTBLk.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
  t __CreateCInputSystemIInputSystem_interface()
- t global constructors keyed to a
  t joy_active_changed_f(IConVar*, char const*, float)
  t joy_gamecontroller_config_changed_f(IConVar*, char const*, float)
  t key_updatelayout(CCommand const&)

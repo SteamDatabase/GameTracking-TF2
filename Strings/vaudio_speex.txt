@@ -1,3 +1,4 @@
+	b_filter
  4D@E;A-
 !	@q=
 $4@QR
@@ -42,24 +43,28 @@ $8Laioa
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/lib/common/osx32/libspeex.a(speex_callbacks.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/lib/common/osx32/libspeex.a(vbr.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/lib/common/osx32/libspeex.a(vq.o)
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/memoverride.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/strtools.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/interface.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/utlbuffer.cpp
 /Volumes/Users/alfred/valve/steam3_piston_main/src/voice_codecs/speex/source/libspeex/
 /usr/lib/libSystem.B.dylib
-/usr/lib/libgcc_s.1.dylib
+/usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
-/usr/lib/libstdc++..dylib
-0@@@@ 0p`@@
 0@@@@@
 0vaudio_speex
+10_32_table
+16_table
 1M2Aru|vs`Z=
+20_32_table
+256_table
+32_table
 333333
 333?333?
 333?ff&?
+64_table
 6O+	6
+8_128_table
 9!*90
 90**!
 93J32.D@A4?7A+
@@ -73,12 +78,51 @@ $8Laioa
 @;E u
 @;E(u
 @?333?
+@@@@ 0p`@@
+@__Unwind_Resume
+@___bzero
+@___cxa_begin_catch
+@___cxa_call_unexpected
+@___gxx_personality_v0
+@___stack_chk_fail
+@___stack_chk_guard
+@___stderrp
+@_acosf
+@_calloc
+@_cos
+@_cosf
+@_exit
+@_exp
+@_expf
+@_floor
+@_floorf
+@_fprintf
+@_fputc
+@_free
+@_g_pMemAlloc
+@_log
+@_logf
+@_memcpy
+@_memmove
+@_pow
+@_printf
+@_putchar
+@_rand
+@_realloc
+@_strcmp
+@_strlen
+@dyld_stub_binder
 @ffffff
 @loader_path/libtier0.dylib
 @loader_path/libvstdlib.dylib
 @loader_path/vaudio_speex.dylib
+@std::terminate()
+@typeinfo for std::bad_alloc
+@vtable for __cxxabiv1::__class_type_info
+@vtable for __cxxabiv1::__si_class_type_info
 A;U(u
 A;U(unsigned short#
+AXBRBRARAp
 B9U(u
 B;Q |
 BZHUDJ4
@@ -93,6 +137,7 @@ CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 Could not resize input buffer: not packing
 Could not resize input buffer: truncating input
+CreateInterface
 CreateSpeexVoiceCodec()
 CreateVoiceCodec_Frame(IFrameEncoder*)
 Do not own input buffer: not packing
@@ -103,6 +148,10 @@ ENCODED_FRAME_SIZE
 Fatal error: %short
 G!?33
 G!?fff?
+H__ZdaPv
+H__ZdlPv
+H__Znam
+H__Znwm
 IFrameEncoder
 IVoiceCodec
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
@@ -110,13 +159,14 @@ InterfaceReg::s_pInterfaceRegs
 Invalid mode encountered: corrupted stream?
 Invalid wideband mode encountered. Corrupted stream?
 Invalid wideband mode encountered: corrupted stream?
-Mffffff.
 NT~<1
 No fixed codebook
 No pitch prediction, what'short wrong
 O?333333
 Packet if larger than allocated buffer: 
+RFXBp
 RGVPUJ
+SESBXCSBXCSBX0<X0Pp,T0hp
 Unknown nb_ctl request: 
 Unknown nb_mode_query request: 
 Unknown wb_mode_query request: 
@@ -138,9 +188,12 @@ VoiceEncoder_Speex::~VoiceEncoder_Speex()
 WQA2-
 _CreateInterface
 __DATA
+__GLOBAL__sub_I_VoiceEncod.stdout.rel_tf_osx_builder.5380.M7J4Nd.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
+___bzero
 ___clang_call_terminate
 ___cxa_begin_catch
 ___cxa_call_unexpected
@@ -153,7 +206,6 @@ __common
 __const
 __cstring
 __data
-__dyld
 __eh_frame
 __g_CreateIVoiceCodec_reg
 __gcc_except_tab__TEXT
@@ -169,6 +221,7 @@ __unwind_info
 _acosf
 _be_int
 _be_short
+_buffer
 _bw_lpc
 _calloc
 _cdbk_nb
@@ -229,7 +282,6 @@ _ltp_params_nb
 _ltp_params_vlbr
 _memcpy
 _memmove
-_memset
 _nb_decode
 _nb_decoder_ctl
 _nb_decoder_destroy
@@ -275,6 +327,7 @@ _sb_encoder_destroy
 _sb_encoder_init
 _sb_uwb_mode
 _sb_wb_mode
+_sign
 _speex_alloc
 _speex_bits_advance
 _speex_bits_destroy
@@ -337,6 +390,7 @@ _split_cb_shape_sign_unquant
 _strcmp
 _strlen
 _syn_percep_zero
+_unsigned
 _vbr_analysis
 _vbr_destroy
 _vbr_hb_thresh
@@ -351,48 +405,106 @@ _wb_submode1
 _wb_submode2
 _wb_submode3
 _wb_submode4
+_whole_bytes
 `jG333333
+advance
+alloc
+analysis
+arning
+b_mode
 bits.c
+bits_
 cb_search.c
-dyld__mach_header
-dyld_stub_binding_helper
+char_handler
+dbk_nb
+decode
+destroy
+dyld_stub_binder
+ealloc
+earch_shape_sign
+eex_putc
+encode
+enforce_margin
+enh_request_handler
 exc_10_16_table.c
 exc_10_32_table.c
 exc_20_32_table.c
 exc_5_256_table.c
 exc_5_64_table.c
 exc_8_128_table.c
+fault_user_handler
 ff&?ff&?
 ffff.
 fffff.
 filters.c
+gain_cdbk_
+gain_quant_scal
+gain_search_3tap
 gain_table.c
 gain_table_lbr.c
-global constructors keyed to a
+hape_sign_unquant
+hb_thresh
 hexc_10_32_table.c
 hexc_table.c
 high_lsp_tables.c
+high_mode_request_handler
+igh_lsp_cdbk
+iir_mem2
+inband_handler
+index
+itch_
+lit_cb_s
 long double restrict unsigned __int128::* than to wideband layers found: corrupted stream?
+low_mode_request_handler
 lpc.c
 lsp.c
 lsp_tables_nb.c
+lter_mem2
 ltp.c
+maining
 misc.c
+mode_request_handler
 modes.c
 narrowband
 nb_celp.c
+nb_mode
+nb_thresh
+nbest
+nbytes
+ncode
+oise_codebook_
+open_loop_nbest_pitch
 operator delete(void*)
 operator delete[](void*)
 operator new(unsigned long)
 operator new[](unsigned long)
+orced_pitch_
+p,ptp$TARIXHXHXHXHXHXHTASHRNRCSHRCSHRCSDp
 pA333?
+p_filter_mem_init
+pc_to_lsp
 p}?33s?
+qmf_decomp
+quality_request_handler
+quant
+quant_
 quant_lsp.c
+query
+r_mem
+request_handler
+residue_percep_zero
+rint_vec
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 sb_celp.c
+search_3tap
+sert_terminator
+short
+signed
 speex_callbacks.c
 std::terminate()
+table
+to_lpc
 typeinfo for CUtlCStringConversion
 typeinfo for CUtlCharConversion
 typeinfo for CUtlNoEscConversion
@@ -408,9 +520,15 @@ typeinfo name for IFrameEncoder
 typeinfo name for IVoiceCodec
 typeinfo name for VoiceCodec_Frame
 typeinfo name for VoiceEncoder_Speex
-u%fffff.
 u.z,1
+uhb_thresh
 ultra-wideband (sub-band CELP)
+unpack_
+unquant
+unquant_
+unquant_3tap
+unsigned
+uwb_mode
 vbr.c
 vec2_invalid
 vec2_origin
@@ -421,6 +539,11 @@ vtable for VoiceCodec_Frame
 vtable for VoiceEncoder_Speex
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
+w_lpc
 warning: %short
 warning: %short %double
+whole_bytes
 wideband (sub-band CELP)
+write
+x_autocorr
+yn_percep_zero

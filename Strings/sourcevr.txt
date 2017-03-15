@@ -1,6 +1,7 @@
-	wDA1
-  00  @0
+	w4A1
+  00  @0@
  ##### CMaterialReference::Init got error material for %short in tex group %short
+"CreateInterface
 $distortbounds
 $hudtranslucent
 $hudundistort
@@ -35,7 +36,6 @@ $hudundistort
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vmatrix.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/basetypes.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/memoverride.cpp
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/platform.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/convar.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/refcount.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/strtools.h
@@ -56,19 +56,52 @@ $hudundistort
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier2/tier2.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier3/tier3.cpp
 /usr/lib/libSystem.B.dylib
-/usr/lib/libgcc_s.1.dylib
-/usr/lib/libstdc++..dylib
-0@@@@ 
+/usr/lib/libc++.1.dylib
 333333
 <^_[]
-?CUtlCharConversion
 @(^_]
+@@@@ 
+@_GetCPUInformation
+@_VR_Init
+@_VR_Shutdown
+@_Warning
+@__Unwind_Resume
+@___bzero
+@___cxa_atexit
+@___cxa_begin_catch
+@___cxa_call_unexpected
+@___gxx_personality_v0
+@___stack_chk_fail
+@___stack_chk_guard
+@__float128 short::*
+@_atan
+@_atof
+@_atoi
+@_cosf
+@_g_pMemAlloc
+@_memcpy
+@_memmove
+@_pow
+@_printf
+@_sin
+@_strcmp
+@_strlen
+@_tan
+@_vsnprintf
+@dyld_stub_binder
 @loader_path/filesystem_stdio.dylib
 @loader_path/libopenvr_api.dylib
 @loader_path/libsteam_api.dylib
 @loader_path/libtier0.dylib
 @loader_path/libvstdlib.dylib
 @loader_path/sourcevr.dylib
+@std::terminate()
+@typeinfo for std::bad_alloc
+@vtable for __cxxabiv1::__class_type_info
+@vtable for __cxxabiv1::__si_class_type_info
+@vtable for __cxxabiv1::__vmi_class_type_info
+ASBRBRA`
+AVBSB
 BuildGammaTable(float, float, float, int)
 CBaseAppSystem<ISourceVirtualReality>
 CC_VR_Reset_Home_Pos(CCommand const&)
@@ -127,9 +160,9 @@ CTier0AppSystem<ISourceVirtualReality>
 CTier1AppSystem<ISourceVirtualReality, 0>
 CTier2AppSystem<ISourceVirtualReality, 0>
 CTier3AppSystem<ISourceVirtualReality, 0>
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
+CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
@@ -188,6 +221,10 @@ DisconnectTier1Libraries()
 DisconnectTier2Libraries()
 DisconnectTier3Libraries()
 Experimental: Use larger offscreen render target for pre-distorted scene in VR
+H__ZdaPv
+H__ZdlPv
+H__Znam
+H__Znwm
 IAppSystem
 IConCommandBaseAccessor
 IConVar
@@ -207,12 +244,16 @@ NetworkSystemVersion001
 Other
 Pixel Shaders
 QueuedLoaderVersion004
+RBRARAp
+RBRBRBRBRBYCRBp
 Reinitializes HMD tracking
 RenderTargets
+SAXA`
 Sets the current HMD position as the zero point
 SinCos(float, float*, float*)
 SourceVirtualReality001
 Sys_GetFactoryThis()
+Tcvar
 The head tracker requires the filesystem to run!
 Unable to initialize HMD tracker. Error code %double
 VBAllocTracker001
@@ -255,9 +296,14 @@ _VectorNormalizeFast(Vector&)
 _Warning
 __CreateCSourceVirtualRealityISourceVirtualReality_interface()
 __DATA
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
+__GLOBAL__sub_I_sourcevirt.stdout.rel_tf_osx_builder.47865.puvKfY.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.2233.mYEKjZ.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
+___bzero
 ___clang_call_terminate
 ___cxa_atexit
 ___cxa_begin_catch
@@ -270,7 +316,6 @@ __common
 __const
 __cstring
 __data
-__dyld
 __eh_frame
 __g_CreateCSourceVirtualRealityISourceVirtualReality_reg
 __gcc_except_tab__TEXT
@@ -322,7 +367,6 @@ _mdlcache
 _mdllib
 _memcpy
 _memmove
-_memset
 _pfFastCos
 _pfFastSinCos
 _pfInvRSquared
@@ -351,8 +395,7 @@ _vr_refresh_distortion_texture
 _vr_use_offscreen_render_target
 _vsnprintf
 dev/warp
-dyld__mach_header
-dyld_stub_binding_helper
+dyld_stub_binder
 f05
 f3
 ffff.
@@ -360,7 +403,6 @@ fffff.
 ffffff.
 g_Mathlib_GammaToLinear
 g_Mathlib_LinearToGamma
-global constructors keyed to a
 lineartoscreen
 lineartotexture
 long^_[]
@@ -466,3 +508,4 @@ vtable for ConVar
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
+yE>CUtlCStringConversion
