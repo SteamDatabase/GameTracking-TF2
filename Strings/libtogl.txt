@@ -50,6 +50,7 @@ $ffffff.
 %16UnlockActualSizeEjPKv
 %6UnlockEv
 %7GetDescEP20_D3DINDEXBUFFER_DESC
+%@@@@ 
 %GetRenderTargetDataEP17IDirect3DSurface9S1_
 %PixelShaderEP21IDirect3DPixelShader9
 %cc[%int]
@@ -93,9 +94,9 @@ $ffffff.
 %short[%double]
 %short[int(va_r.%char) + %double]
 &FullFlushStatesEv
+&YA19
 &YA1tC
 &YA1u
-&YA1y
 '7CreateOffscreenPlainSurfaceEjj10_D3DFORMAT8_D3DPOOLPP17IDirect3DSurface9PPv
 'ReleasedVertexDeclarationEP27IDirect3DVertexDeclaration9
 (*%short*), 
@@ -105,7 +106,6 @@ $ffffff.
 ** token# %04x inst# %04d  opcode %short (%08x)
 ************* translating shader 
 ************* translation complete
-*@@@@ 
 *LinkShaderPairEP22IDirect3DVertexShader9P21IDirect3DPixelShader9
 +6PrintObjectStatsERKNS_13ObjectStats_tE
 +BeginSceneEv
@@ -516,9 +516,10 @@ ACubeTexture9
 ADDRESS_REGISTERS
 ALU_INSTRUCTIONS
 APPLICATION
+ATI1L
 ATI1t*
 ATI21
-ATI2~
+ATI2>
 ATIRadeon
 ATIRadeon8500
 ATIRadeon9700
@@ -540,6 +541,7 @@ BIndexBuffer9
 BPixelShader9
 BShader9
 BSurface9
+BTI1Z
 BaseTexture9
 Bffffff.
 Buffer overflow writing token hex codes
@@ -735,6 +737,7 @@ ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
 ConVar::ConVar(char const*, char const*, int)
+ConVar::ConVar(char const*, char const*, int, char const*)
 ConVar::ConVar(char const*, char const*, int, char const*, bool, float, bool, float)
 ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
 ConVar::GetHelpText() const
@@ -1069,7 +1072,7 @@ D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
 DCubeTexture9
 DEPRECATION
 DF161
-DF16^
+DF24-
 DF24u(1
 DISABLED
 DOES NOT support
@@ -3429,10 +3432,10 @@ IDirect3DVolumeTexture9::LockBox(unsigned int, _D3DLOCKED_BOX*, _D3DBOX const*, 
 IDirect3DVolumeTexture9::UnlockBox(unsigned int)
 IDirect3DVolumeTexture9::~IDirect3DVolumeTexture9()
 INSTRUCTIONS
-INTZ1
 INTZt
 IUnknown
 IUnknownimaginary 
+If set, use power-of-two allocations for temporary texture memory during uploads. unsigned long long signed char::* help with fragmentation on certain systems caused by heavy churn of large allocations.
 Ifffff.
 IndexBuffer9
 IndexBufferEP21IDirect3DIndexBuffer9
@@ -3523,7 +3526,6 @@ NATIVE_TEMPORARIES
 NATIVE_TEX_INDIRECTIONS
 NATIVE_TEX_INSTRUCTIONS
 NOT AVAILABLE
-NULLO
 NULLt
 NVGeForce2MX
 NVGeForce3
@@ -3552,7 +3554,6 @@ PrintToBuf(CUtlBuffer&, char const*, ...)
 PrintToBuf(char*, int, char const*, ...)
 Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
 QueuedLoaderVersion004
-RAWZ@
 RBRARAp
 RecursiveLoadFromBuffer:  got EOF instead of keyname
 RecursiveLoadFromBuffer:  got NULL key
@@ -3732,7 +3733,7 @@ __DefaultRuneLocale
 __GLOBAL__sub_I_cglmbuffer.stdout.rel_tf_osx_builder.7250.EdMzJH.ii
 __GLOBAL__sub_I_cglmprogra.stdout.rel_tf_osx_builder.7252.n0hvBz.ii
 __GLOBAL__sub_I_cglmquery.stdout.rel_tf_osx_builder.7265.Rsc7wD.ii
-__GLOBAL__sub_I_cglmtex.stdout.rel_tf_osx_builder.7277.zqkzWX.ii
+__GLOBAL__sub_I_cglmtex.stdout.rel_tf_osx_builder.59243.3MhCgI.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.2043.bqs1r5.ii
 __GLOBAL__sub_I_dxabstract.stdout.rel_tf_osx_builder.7282.oGr6BA.ii
 __GLOBAL__sub_I_glmgr.stdout.rel_tf_osx_builder.7301.egUdYm.ii
@@ -3841,6 +3842,7 @@ _gl_minimize_all_tex
 _gl_minimize_rt_tex
 _gl_minimize_tex_log
 _gl_nullqueries
+_gl_pow2_tempmem
 _gl_radar7954721_workaround_all
 _gl_radar7954721_workaround_maskval
 _gl_radar7954721_workaround_mixed
@@ -4187,6 +4189,7 @@ gl_paircachestats
 gl_persistent_buffer_max_offset
 gl_persistent_buffer_max_offset(CCommand const&)
 gl_persistent_buffer_max_offset_command
+gl_pow2_tempmem
 gl_radar7954721_workaround_all
 gl_radar7954721_workaround_maskval
 gl_radar7954721_workaround_mixed
@@ -4449,7 +4452,6 @@ uniform vec4 %short[%double];
 uniform vec4 pc[31];  
 uniform vec4 vcscreen;
 unknown
-unsigned long _Accum
 unsigned short+ff.
 vPfEv
 vSinCosTmp.x = -vSinCosTmp.x + scB.z;
