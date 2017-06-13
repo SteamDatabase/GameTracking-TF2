@@ -9,4 +9,4 @@ ProcessDepot ".dylib"
 ProcessVPK
 FixUCS2
 
-CreateCommit "$(grep "PatchVersion=" tf/steam.inf | grep -o '[0-9\.]*')"
+CreateCommit "$(grep "PatchVersion=" tf/steam.inf | grep -o '[0-9\.]*')" "$1"
