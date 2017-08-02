@@ -1576,6 +1576,7 @@ $vertexcolor
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/dmxloader/dmxloader.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/dmxloader/dmxloadertext.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/dmxloader/dmxserializationdictionary.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/DevShotGenerator.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/DevShotGenerator.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/DownloadListGenerator.cpp
@@ -1640,7 +1641,6 @@ $vertexcolor
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/audio/public/voice.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseautocompletefilelist.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseautocompletefilelist.h
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseclient.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseclient.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseclientstate.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/engine/baseclientstate.h
@@ -12638,8 +12638,6 @@ DoPaste
 DoSentenceModeChanged
 DoShowIMECandidates
 DoUpdateIMECandidates
-Don'unsigned short bother compressing packets below this size.
-Don'unsigned short receive chat messages from other SourceTV spectators
 DownButton
 Download file '%short' %short
 Download finished!
@@ -16173,6 +16171,7 @@ SVC_VoiceInit::~SVC_VoiceInit()
 SV_ActivateServer
 SV_ActivateServer()
 SV_ActivateServer(finished)
+SV_ActivateServer: setting tickrate to %.f
 SV_AddOriginToPVS(Vector const&)
 SV_AllocateEdicts
 SV_BroadcastMessage:  Recipient Filter for message type %int (reliable: %short, init: %short) with bogus client index (%int) in list of %int clients
@@ -16563,6 +16562,7 @@ Server replay init failed
 Server requested game stats upload to %s.
 Server returned version %int, expected %i.
 Server sent bogus string index %int for table %short
+Server sent bogus substring index %int for table %short
 Server shutting down
 Server shutting down because of using %dMB with an sv_memory_limit of %dMB
 Server shutting down because sv_shutdown was requested and signed char server is empty.
@@ -18653,7 +18653,7 @@ __GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.63212.aXHbO6.ii
 __GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.63230.59YIfw.ii
 __GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.63236.voVGPS.ii
 __GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.5772.Mrjne6.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.63792.PjJPmf.ii
+__GLOBAL__sub_I_baseclient.cpp
 __GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.63800.guEFqZ.ii
 __GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.63807.YaaYr0.ii
 __GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.60865.GUhJML.ii
@@ -18743,7 +18743,7 @@ __GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.64761.vDySu8.ii
 __GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.64773.DCaG3r.ii
 __GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.64777.Ib9LHk.ii
 __GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.63423.9dGXKZ.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.64737.IEjYwu.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.44824.POZcgh.ii
 __GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.64741.DU4pve.ii
 __GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.64755.vf2JCW.ii
 __GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.64803.OhQTvC.ii
@@ -18778,7 +18778,7 @@ __GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.65007.bPvMyk.ii
 __GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.65013.YDClyQ.ii
 __GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.65023.NQe3rs.ii
 __GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.65029.flbjlb.ii
-__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.65033.EAGqfA.ii
+__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.15407.dzLIfa.ii
 __GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.65037.LSMGOW.ii
 __GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.65050.YcpX5h.ii
 __GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.65071.7sPdtq.ii
@@ -18939,6 +18939,8 @@ __g_CreateCVoiceServerIVoiceServer_reg
 __g_CreateCXboxSystemIXboxSystem_reg
 __gcc_except_tab__TEXT
 __int128 int::* bandwidth rate allowed on server, 0 == unlimited
+__int128 noexcept'unsigned short bother compressing packets below this size.
+__int128 noexcept'unsigned short receive chat messages from other SourceTV spectators
 __la_symbol_ptr
 __loading
 __mod_init_func
@@ -20420,6 +20422,7 @@ banid_command
 banip
 banlist
 base_vector_t
+baseclient.cpp
 bench_end
 bench_end(CCommand const&)
 bench_end_command
