@@ -90,21 +90,20 @@
 	
 	"ConfirmButtonHintIcon"
 	{
-		"ControlName" "CExLabel"
+		"ControlName" "CSCHintIcon"
 		"fieldName" "ConfirmButtonHintIcon"
 		"xpos"			"67"
 		"ypos"			"190"
 		"zpos"			"22"
-		"wide"			"40"
+		"wide"			"25"
 		"tall"			"25"
 		"autoResize"	"0"
 		"pinCorner"		"0"
 		"visible"		"1"
 		"enabled"		"1"
 		"tabPosition"	"0"
-		"labelText"		"A"
-		"font"			"GameUIButtonsSteamControllerSmallest"
-		"textAlignment"	"west"
+		"actionSet"		"MenuControls"
+		"actionName"	"menu_select"
 	}
 
 	"Icon"

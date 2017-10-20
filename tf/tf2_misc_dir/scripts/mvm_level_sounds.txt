@@ -1921,11 +1921,27 @@
 // ------------------------------------------------------------------------------------ //
 // MEDIGUN
 // ------------------------------------------------------------------------------------ //
-"WeaponMedigun.Healing"
+"WeaponMedigun.HealingHealer"
 {
 	"channel"	"CHAN_WEAPON"
 	"soundlevel"	"SNDLVL_74dB"
 	"volume"	"0.700000"
+	"wave"		")weapons/medigun_heal.wav"
+}
+
+"WeaponMedigun.HealingTarget"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.350000"
+	"wave"		")weapons/medigun_heal.wav"
+}
+
+"WeaponMedigun.HealingWorld"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_64dB"
+	"volume"	"0.525000"
 	"wave"		")weapons/medigun_heal.wav"
 }
 
@@ -1935,6 +1951,30 @@
 	"soundlevel"	"SNDLVL_74dB"
 	"volume"	"0.700000"
 	"wave"		")weapons/medigun_heal_disrupt.wav"
+}
+
+"WeaponMedigun.HealingDetachHealer"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.525000"
+	"wave"		")weapons/medigun_heal_detach.wav"
+}
+
+"WeaponMedigun.HealingDetachTarget"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/medigun_heal_detach.wav"
+}
+
+"WeaponMedigun.HealingDetachWorld"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_64dB"
+	"volume"	"0.525000"
+	"wave"		")weapons/medigun_heal_detach.wav"
 }
 
 "WeaponMedigun.Charged"
@@ -1947,7 +1987,7 @@
 
 "WeaponMedigun.NoTarget"
 {
-	"channel"	"CHAN_WEAPON"
+	"channel"	"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_74Db"
 	"volume"	"0.700000"
 	"wave"		")weapons/medigun_no_target.wav"
@@ -2590,6 +2630,14 @@
 	"soundlevel"	"SNDLVL_84dB"
 	"volume"	"0.700000"
 	"wave"		")weapons/short_stop_shoot_crit.wav"
+}
+
+"Weapon_Short_Stop.Reload"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.700000"
+	"wave"		"weapons/short_stop_reload.wav"
 }
 
 // ------------------------------------------------------------------------------------ //
@@ -3256,7 +3304,7 @@
 	"channel"	"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_NORM"
 	"volume"	"0.350000"
-	"pitch"		"100, 110"
+	"pitch"		"95, 105"
 	"wave"		"weapons/wrench_hit_world.wav"
 
 }
@@ -3857,6 +3905,48 @@
 	"wave"		"weapons/gunslinger_three_hit.wav"
 }
 
+"Weapon_Gunslinger.InspectFingerMove"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.140000"
+	"rndwave"
+	{
+		"wave"		"weapons/gunslinger_inspect_finger_move1.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_move2.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_move3.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_move4.wav"
+	}
+}
+
+
+
+"Weapon_Gunslinger.InspectFingerClick"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.700000"
+	"rndwave"
+	{
+		"wave"		"weapons/gunslinger_inspect_finger_click1.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click2.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click3.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click4.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click5.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click6.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click7.wav"
+		"wave"		"weapons/gunslinger_inspect_finger_click8.wav"
+	}
+}
+
+"Weapon_Gunslinger.InspectFinish"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.210000"
+	"wave"		"weapons/gunslinger_draw.wav"
+}
+
 
 // ------------------------------------------------------------------------------------ //
 // Dispenser
@@ -4176,7 +4266,7 @@
 // random played while the sentry it turning, without a target
 "Building_Sentrygun.Idle"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.525000"
 	"soundlevel"		"SNDLVL_84dB"
 	"wave"			"weapons/sentry_scan.wav"
@@ -4184,7 +4274,7 @@
 
 "Building_Sentrygun.Idle2"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.525000"
 	"soundlevel"		"SNDLVL_84dB"
 	"wave"			"weapons/sentry_scan2.wav"
@@ -4192,7 +4282,7 @@
 
 "Building_Sentrygun.Idle3"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.525000"
 	"soundlevel"		"SNDLVL_84dB"
 	"wave"			"weapons/sentry_scan3.wav"
@@ -4290,7 +4380,7 @@
 
 "Building_Sentrygun.FireRocket"
 {
-	"channel"	"CHAN_STATIC"
+	"channel"	"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"	"SNDLVL_94dB"
 
@@ -4331,7 +4421,7 @@
 
 "Building_Sentrygun.Build1"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading1.wav"
@@ -4347,7 +4437,7 @@
 
 "Building_Sentrygun.Build1A"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading4.wav"
@@ -4355,7 +4445,7 @@
 
 "Building_Sentrygun.Build1B"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading7.wav"
@@ -4364,7 +4454,7 @@
 
 "Building_Sentrygun.Build2"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_move_short2.wav"
@@ -4380,7 +4470,7 @@
 
 "Building_Sentrygun.Build3"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading2.wav"
@@ -4397,7 +4487,7 @@
 
 "Building_Sentrygun.Build4"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading4.wav"
@@ -4405,7 +4495,7 @@
 
 "Building_Sentrygun.Build5"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_move_medium3.wav"
@@ -4413,7 +4503,7 @@
 
 "Building_Sentrygun.Build6"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading5.wav"
@@ -4429,7 +4519,7 @@
 
 "Building_Sentrygun.Build7"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_move_long2.wav"
@@ -4437,7 +4527,7 @@
 
 "Building_Sentrygun.Build7A"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading7.wav"
@@ -4453,7 +4543,7 @@
 
 "Building_Sentrygun.Build8"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading3.wav"
@@ -4461,7 +4551,7 @@
 
 "Building_Sentrygun.Build9"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading6.wav"
@@ -4469,7 +4559,7 @@
 
 "Building_Sentrygun.Build10"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_move_short2.wav"
@@ -4477,7 +4567,7 @@
 
 "Building_Sentrygun.Build11"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_upgrading8.wav"
@@ -4485,7 +4575,7 @@
 
 "Building_Sentrygun.Build12"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"		"SNDLVL_74dB"
 	"wave"			"weapons/sentry_move_long1.wav"
@@ -4540,7 +4630,7 @@
 // ------------------------------------------------------------------------------------ //
 "Building_Teleporter.Ready"
 {
-	"channel"	"CHAN_STATIC"
+	"channel"	"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"	"SNDLVL_74dB"
 	"wave"		")weapons/teleporter_ready.wav"
@@ -4581,7 +4671,7 @@
 
 "Building_Teleporter.Build2"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.175000"
 	"soundlevel"	"SNDLVL_74dB"
 	"wave"		"weapons/sentry_upgrading_steam2.wav"	
@@ -4607,7 +4697,7 @@
 
 "Building_Teleporter.Build2c"
 {
-	"channel"		"CHAN_STATIC"
+	"channel"		"CHAN_ITEM"
 	"volume"	"0.700000"
 	"soundlevel"	"SNDLVL_74dB"
 	"wave"		"weapons/sentry_move_medium3.wav"
@@ -5084,12 +5174,8 @@
 	"soundlevel"	"SNDLVL_NORM"
 	"volume"	"0.175000"
 	"pitch"		"95, 105"
-	"rndwave"
-	{
-		"wave"		")weapons/demo_sword_swing1.wav"
-		"wave"		")weapons/demo_sword_swing2.wav"
-		"wave"		")weapons/demo_sword_swing3.wav"
-	}
+	"wave"		")weapons/demo_sword_swing1.wav"
+
 }
 
 "Weapon_Sword.SwingCrit"
@@ -6531,14 +6617,12 @@
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
-	"soundlevel"	"SNDLVL_75dB"
+	"soundlevel"	"SNDLVL_85dB"
 	
 	"rndwave"
 	{
-		"wave"		")weapons\cleaver_hit_01.wav"
 		"wave"		")weapons\cleaver_hit_02.wav"
 		"wave"		")weapons\cleaver_hit_03.wav"
-		"wave"		")weapons\cleaver_hit_04.wav"
 		"wave"		")weapons\cleaver_hit_05.wav"
 		"wave"		")weapons\cleaver_hit_06.wav"
 		"wave"		")weapons\cleaver_hit_07.wav"
@@ -6549,18 +6633,26 @@
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
-	"soundlevel"	"SNDLVL_75dB"
-	
-	"rndwave"
-	{
-		"wave"		")weapons\cleaver_hit_world_01.wav"
-		"wave"		")weapons\cleaver_hit_world_02.wav"
-		"wave"		")weapons\cleaver_hit_world_03.wav"
-		"wave"		")weapons\cleaver_hit_world_04.wav"
-		"wave"		")weapons\cleaver_hit_world_05.wav"
-	}
+	"soundlevel"	"SNDLVL_85dB"
+	"wave"		")weapons\cleaver_hit_world.wav"
 }
 
+"Cleaver.Single"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/cleaver_throw.wav"
+
+}
+
+"Cleaver.Draw"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.700000"
+	"wave"		"weapons/cleaver_draw.wav"
+}
 //-----------------------------------------//
 // Neon Sign
 //-----------------------------------------//
@@ -7215,7 +7307,7 @@
 	"channel"	"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_74dB"
 	"volume"	"0.140000"
-	"wave"		")weapons\weapon_inspect_movement1.wav"
+	"wave"		"weapons\weapon_inspect_movement1.wav"
 }
 
 "WeaponInspect.Movement2"
@@ -7223,7 +7315,7 @@
 	"channel"	"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_74dB"
 	"volume"	"0.140000"
-	"wave"		")weapons\weapon_inspect_movement2.wav"
+	"wave"		"weapons\weapon_inspect_movement2.wav"
 }
 
 "WeaponInspect.Movement3"
@@ -7231,7 +7323,7 @@
 	"channel"	"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_74dB"
 	"volume"	"0.140000"
-	"wave"		")weapons\weapon_inspect_movement3.wav"
+	"wave"		"weapons\weapon_inspect_movement3.wav"
 }
 
 "WeaponInspect.Movement4"
@@ -7239,8 +7331,58 @@
 	"channel"	"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_74dB"
 	"volume"	"0.140000"
-	"wave"		")weapons\weapon_inspect_movement4.wav"
+	"wave"		"weapons\weapon_inspect_movement4.wav"
 }
+
+// ------------------------------------------------------------------------------------ //
+// MELEE INSPECT
+// ------------------------------------------------------------------------------------ //
+
+"MeleeInspect.Movement"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.140000"
+	"rndwave"
+	{
+		"wave"	"weapons\melee_inspect_movement2.wav"
+		"wave"	"weapons\melee_inspect_movement3.wav"
+		"wave"	"weapons\melee_inspect_movement4.wav"
+	}
+}
+
+"MeleeInspect.Movement1"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.140000"
+	"wave"		"weapons\melee_inspect_movement1.wav"
+}
+
+"MeleeInspect.Movement2"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.140000"
+	"wave"		"weapons\melee_inspect_movement2.wav"
+}
+
+"MeleeInspect.Movement3"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.140000"
+	"wave"		"weapons\melee_inspect_movement3.wav"
+}
+
+"MeleeInspect.Movement4"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.140000"
+	"wave"		"weapons\melee_inspect_movement4.wav"
+}
+
 
 // ------------------------------------------------------------------------------------ //
 //  Weapon Hit (Ding a lings)
@@ -7669,7 +7811,388 @@
 	"volume"	"0.700000"
 	"pitch"			"PITCH_NORM"
 	"wave"			"weapons/push_impact.wav"
-}// Channels
+}
+
+// ------------------------------------------------------------------------------------ //
+// ROCKET PACK
+// ------------------------------------------------------------------------------------ //
+
+"Weapon_RocketPack.BoostersExtend"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_95dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_extend.wav"
+}
+
+"Weapon_RocketPack.BoostersRetract"
+{
+	"channel"		"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_95dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_retract.wav"
+}
+
+
+"Weapon_RocketPack.BoostersCharge"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_105dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_charge.wav"
+}
+
+"Weapon_RocketPack.BoostersLoop"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_95dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_loop.wav"
+}
+
+"Weapon_RocketPack.BoostersLoopEnd"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_95dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			"misc/null.wav"
+}
+
+"Weapon_RocketPack.BoostersFire"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_105dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_fire.wav"
+}
+
+"Weapon_RocketPack.BoostersNotReady"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_95dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_not_ready.wav"
+}
+
+"Weapon_RocketPack.BoostersReady"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_95dB"
+	"volume"	"0.000000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_ready.wav"
+}
+
+"Weapon_RocketPack.BoostersShutdown"
+{
+	"channel"		"CHAN_ITEM"
+	"soundlevel"	"SNDLVL_105dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_boosters_shutdown.wav"
+}
+
+"Weapon_RocketPack.Land"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_105dB"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"wave"			")weapons/rocket_pack_land.wav"
+}
+
+"Weapon_Slap.Draw"
+{
+	"channel"	"CHAN_AUTO"
+	"soundlevel"	"SNDLVL_74dB"
+	"volume"	"0.350000"
+	"wave"		"weapons/slap_draw.wav"
+}
+
+
+"Weapon_Slap.Swing"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_64dB"
+	"volume"	"0.420000"
+	"wave"		")weapons/slap_swing.wav"
+}
+
+"Weapon_Slap.SwingCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_64dB"
+	"volume"	"0.420000"
+	"wave"		")weapons/slap_swing_crit.wav"
+}
+
+
+"Weapon_Slap.BackHandHitWorld"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_NORM"
+	"volume"	"0.700000"
+	"wave"		"weapons\slap_hit_world1.wav"
+}
+
+"Weapon_Slap.OpenHandHitWorld"
+{
+	"channel"	"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_NORM"
+	"volume"	"0.700000"
+	"wave"		"weapons\slap_hit_world2.wav"
+}
+
+"Weapon_Slap.BackHand"
+{
+	"channel"			"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"pitch"				"90,100"
+	"rndwave"
+	{
+		"wave"			")weapons/slap_hit1.wav"
+		"wave"			")weapons/slap_hit2.wav"
+
+	}
+}
+
+"Weapon_Slap.OpenHand"
+{
+	"channel"			"CHAN_STATIC"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"pitch"				"100,110"
+	"rndwave"
+	{
+		"wave"			")weapons/slap_hit3.wav"
+		"wave"			")weapons/slap_hit4.wav"
+
+	}
+}
+
+
+// ------------------------------------------------------------------------------------ //
+// WINGER PISTOL
+// ------------------------------------------------------------------------------------ //
+"Weapon_Winger.Single"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/winger_shoot.wav"
+}
+
+"Weapon_Winger.SingleCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/winger_shoot_crit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// FRONTIER JUSTICE
+// ------------------------------------------------------------------------------------ //
+"Weapon_FrontierJustice.Single"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/frontier_justice_shoot.wav"
+}
+
+"Weapon_FrontierJustice.SingleCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/frontier_justice_shoot_crit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// FAMILY BUSINESS
+// ------------------------------------------------------------------------------------ //
+"Weapon_FamilyBusiness.Single"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/family_business_shoot.wav"
+}
+
+"Weapon_FamilyBusiness.SingleCrit"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_94dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/family_business_shoot_crit.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// GAS CAN
+// ------------------------------------------------------------------------------------ //
+"Weapon_GasCan.Explode"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"	"SNDLVL_85dB"
+	
+	"wave"	")weapons/gas_can_explode.wav"
+}
+
+"Weapon_GasCan.Draw"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"	"SNDLVL_75dB"
+	
+	"wave"	")weapons/draw_gas_can.wav"
+}
+
+"Weapon_GasCan.Throw"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_84dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/gas_can_throw.wav"
+}
+
+"Weapon_GasCan.InspectMovement1"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_84dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/gas_can_inspect_movement1.wav"
+}
+
+"Weapon_GasCan.InspectMovement2"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_84dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/gas_can_inspect_movement2.wav"
+}
+
+"Weapon_GasCan.InspectMovement3"
+{
+	"channel"	"CHAN_WEAPON"
+	"soundlevel"	"SNDLVL_84dB"
+	"volume"	"0.700000"
+	"wave"		")weapons/gas_can_inspect_movement3.wav"
+}
+
+// ------------------------------------------------------------------------------------ //
+// DRAGONS FURY
+// ------------------------------------------------------------------------------------ //
+"Weapon_DragonsFury.Single"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"	"0.700000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_shoot.wav"
+}
+
+"Weapon_DragonsFury.SingleCrit"
+{
+	"channel"		"CHAN_WEAPON"
+	"volume"	"0.700000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_shoot_crit.wav"
+}
+
+"Weapon_DragonsFury.Impact"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.000000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_impact.wav"
+}
+
+"Weapon_DragonsFury.ImpactPain"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.000000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_pain.wav"
+}
+
+"Weapon_DragonsFury.ImpactHit"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.000000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_hit.wav"
+}
+
+"Weapon_DragonsFury.BonusDamage"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_impact_bonus_damage.wav"
+}
+
+"Weapon_DragonsFury.BonusDamagePain"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_impact_bonus_damage_pain.wav"
+}
+
+"Weapon_DragonsFury.BonusDamageHit"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_impact_bonus_damage_hit.wav"
+}
+
+"Weapon_DragonsFury.PressureBuild"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"	"0.350000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_pressure_build.wav"
+}
+
+"Weapon_DragonsFury.PressureBuildStop"
+{
+	"channel"		"CHAN_ITEM"
+	"volume"	"0.350000"
+	"soundlevel"	"SNDLVL_84dB"
+	
+	"wave"	")weapons/dragons_fury_pressure_build_stop.wav"
+}
+
+"Weapon_DragonsFury.Nearmiss"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"		"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+
+	"wave"	")weapons/fx/nearmiss/dragons_fury_nearmiss.wav"
+
+}
+// Channels
 //	CHAN_AUTO		= 0,
 //	CHAN_WEAPON		= 1,
 //	CHAN_VOICE		= 2,
@@ -7854,8 +8377,7 @@
 "Player.FallDamage"
 {
 	"channel"	"CHAN_STATIC"
-	"volume"	"0.525000"
-	"pitch"		"92,96"
+	"volume"	"0.700000"
 	"soundlevel"	"SNDLVL_NORM"
 	"wave"		"player/pl_fallpain.wav"
 }
@@ -9894,7 +10416,7 @@
 {
 	"channel"		"CHAN_STATIC"
 	"soundlevel"	"SNDLVL_85dB"
-	"volume"	"0.175000"
+	"volume"	"0.560000"
 	"wave"			"misc/grenade_jump_lp_01.wav"
 }
 
@@ -10503,18 +11025,7 @@
 	"wave"			")player/taunt_sorcery_staff_break.wav"
 }
 
-"Taunt.TableFlipBubblyPotWater"
-{
-	"channel"		"CHAN_ITEM"
-	"volume"	"0.700000"
-	"pitch"			"PITCH_NORM"
-
-	"soundlevel"	"SNDLVL_NORM"
-
-	"wave"			")player/taunt_table_flip_bubbly_pot_water.wav"
-}
-
-"Taunt.TableFlipNotification"
+"Taunt.Party_Trick"
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
@@ -10522,28 +11033,40 @@
 
 	"soundlevel"	"SNDLVL_NORM"
 
-	"wave"			")player/taunt_table_flip_notification.wav"
+	"wave"			")player/taunt_party_trick.wav"
 }
 
-"Taunt.TableFlipFlippingTable"
+"Taunt.Party_Trick_Pyro_Vision"
 {
-	"channel"		"CHAN_ITEM"
+	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
 	"pitch"			"PITCH_NORM"
 
 	"soundlevel"	"SNDLVL_NORM"
 
-	"wave"			")player/taunt_table_flip_flipping_table.wav"
+	"wave"			")player/taunt_party_trick_pyro_vision.wav"
 }
 
-"Taunt.DidgeridooStart"
+"Player.FallDamageIndicator"
 {
-	"channel"		"CHAN_ITEM"
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_NORM"
+	
+	"wave"			")player/fall_damage_indicator.wav"
+}
+
+"Player.FallDamageDealt"
+{
+	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
 	"pitch"			"PITCH_NORM"
 
 	"soundlevel"	"SNDLVL_NORM"
 
+	"wave"			")player/fall_damage_dealt.wav"
 }
 
 "Taunt.TableFlipBubblyPotWater"
@@ -10667,6 +11190,1536 @@
 	"wave"			")player/taunt_demo_stagger_slosh4.wav"
 }
 
+"Taunt.GasBlast"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"			")player/taunt_gas_blast.wav"
+}
+
+"Taunt.GasBlastPyrovision"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"			")player/taunt_gas_blast_pyrovision.wav"
+}
+
+
+
+"Taunt.SovietStrongArmRoll"
+{
+	"channel"		"CHAN_BODY"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"			")player/taunt_soviet_strongarm_roll.wav"
+}
+
+"Taunt.SovietStrongArmCatch"
+{
+	"channel"		"CHAN_BODY"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"			")player/taunt_soviet_strongarm_roll_catch.wav"
+}
+
+"Taunt.SovietStrongArmRep"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"rndwave"
+	{
+		"wave"	")player/taunt_soviet_strongarm_rep1.wav"
+		"wave"	")player/taunt_soviet_strongarm_rep2.wav"
+		"wave"	")player/taunt_soviet_strongarm_rep3.wav"
+		"wave"	")player/taunt_soviet_strongarm_rep4.wav"
+	}
+}
+
+"Taunt.SovietStrongArmRepLight"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.350000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"rndwave"
+		{
+			"wave"	")player/taunt_soviet_strongarm_rep_light1.wav"
+			"wave"	")player/taunt_soviet_strongarm_rep_light2.wav"
+			"wave"	")player/taunt_soviet_strongarm_rep_light3.wav"
+			"wave"	")player/taunt_soviet_strongarm_rep_light4.wav"
+		}
+}
+
+"Taunt.SovietStrongArmRepStretch"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"	"player/taunt_soviet_strongarm_rep_stretch.wav"
+}
+
+"Taunt.SovietStrongArmRepStretchDone"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.175000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"	")player/taunt_soviet_strongarm_rep_stretch_done.wav"
+}
+
+"Taunt.SovietStrongArmDrop1"
+{
+	"channel"		"CHAN_BODY"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"			")player/taunt_soviet_strongarm_drop1.wav"
+}
+
+"Taunt.SovietStrongArmDrop2"
+{
+	"channel"		"CHAN_BODY"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_74dB"
+
+	"wave"			")player/taunt_soviet_strongarm_drop2.wav"
+}
+
+
+"Taunt.YetiAppearSnow"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_94dB"
+	
+	"wave"		")player/taunt_yeti_appear_snow.wav"
+}
+
+"Taunt.YetiLand"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_110dB"
+	
+	"wave"		")player/taunt_yeti_land.wav"
+}
+
+"Taunt.YetiRoarBeginning"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_110dB"
+	
+	"wave"		")player/taunt_yeti_roar_beginning.wav"
+}
+
+"Taunt.YetiRoarFirst"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_110dB"
+	
+	"wave"		")player/taunt_yeti_roar_first.wav"
+}
+
+"Taunt.YetiRoarSecond"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_110dB"
+	
+	"wave"		")player/taunt_yeti_roar_second.wav"
+}
+
+"Taunt.YetiChestHit"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"rndwave"
+		{
+			"wave"	")player/taunt_yeti_chest_hit1.wav"
+			"wave"	")player/taunt_yeti_chest_hit2.wav"
+			"wave"	")player/taunt_yeti_chest_hit3.wav"
+			"wave"	")player/taunt_yeti_chest_hit4.wav"
+			"wave"	")player/taunt_yeti_chest_hit5.wav"
+			"wave"	")player/taunt_yeti_chest_hit6.wav"
+			"wave"	")player/taunt_yeti_chest_hit7.wav"
+			"wave"	")player/taunt_yeti_chest_hit8.wav"
+			"wave"	")player/taunt_yeti_chest_hit9.wav"
+		}
+}
+
+"Taunt.YetiGroundPound"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_110dB"
+	
+	"wave"		")player/taunt_yeti_ground_pound.wav"
+}
+
+"Taunt.YetiStandeeSniperHands1"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_sniper_hands1.wav"
+}
+
+"Taunt.YetiStandeeSniperHands2"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_sniper_hands2.wav"
+}
+
+"Taunt.YetiStandeeSniperHands3"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_sniper_hands3.wav"
+}
+
+"Taunt.YetiStandeeSniperHands4"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_sniper_hands4.wav"
+}
+
+"Taunt.YetiStandeeSniperHands"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+		"rndwave"
+		{
+						"wave"		")player/taunt_yeti_standee_sniper_hands1.wav"
+						"wave"		")player/taunt_yeti_standee_sniper_hands2.wav"
+						"wave"		")player/taunt_yeti_standee_sniper_hands3.wav"
+						"wave"		")player/taunt_yeti_standee_sniper_hands4.wav"
+		}
+}
+
+"Taunt.YetiStandeeBreak"
+{
+	"channel"		"CHAN_BODY"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_break.wav"
+}
+
+"Taunt.YetiStandeeSpeakerGrowl"
+{
+	"channel"		"CHAN_BODY"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_speaker_growl.wav"
+}
+
+"Taunt.YetiStandeeSpeakerGrowlBroken"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_speaker_growl_broken.wav"
+}
+
+"Taunt.YetiStandeeSwoosh"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_swoosh.wav"
+}
+
+"Taunt.YetiStandeeLand"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_land.wav"
+}
+
+"Taunt.YetiStandeeLand2"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.525000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_land2.wav"
+}
+
+"Taunt.YetiStandeeScoutStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"100,110"
+	"wave"	"player/taunt_foot_stomp.wav"
+}
+
+"Taunt.YetiStandeeScoutEquipmentJingle"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.350000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+		"rndwave"
+		{
+						"wave"		"player/taunt_yeti_standee_equipment_jingle.wav"
+						"wave"		"player/taunt_yeti_standee_equipment_jingle2.wav"
+						"wave"		"player/taunt_yeti_standee_equipment_jingle3.wav"
+						"wave"		"player/taunt_yeti_standee_equipment_jingle4.wav"
+		}
+}
+
+"Taunt.YetiStandeeScoutSwing"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_74dB"
+	"pitch"		"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_scout_swing.wav"
+}
+
+"Taunt.YetiStandeeScoutHit"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_74dB"
+	"wave"	")player/taunt_yeti_standee_scout_hit.wav"
+}
+
+"Taunt.YetiStandeeDemoStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	
+	"rndwave"
+	{
+					"wave"	"player/taunt_yeti_standee_demo_step1.wav"
+					"wave"	"player/taunt_yeti_standee_demo_step2.wav"
+					"wave"	"player/taunt_yeti_standee_demo_step3.wav"
+					"wave"	"player/taunt_yeti_standee_demo_step4.wav"
+	}
+}
+
+"Taunt.YetiStandeeDemoSwing"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_74dB"
+	"pitch"		"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_demo_swing.wav"
+}
+
+
+"Taunt.YetiStandeeDemoEquipmentJingle"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		"player/taunt_yeti_standee_demo_equipment_jingle.wav"
+}
+
+"Taunt.YetiStandeeDemoClothesRustle"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		"player/taunt_yeti_standee_demo_clothes_rustle.wav"
+}
+
+"Taunt.YetiStandeeHeavyClap"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.560000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		"player/taunt_yeti_standee_heavy_clap.wav"
+}
+
+"Taunt.YetiStandeeLandHeavy"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.455000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_land.wav"
+}
+
+"Taunt.YetiStandeeHeavyStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.525000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"90,100"
+	
+	"rndwave"
+	{
+					"wave"	"player/taunt_yeti_standee_heavy_step1.wav"
+					"wave"	"player/taunt_yeti_standee_heavy_step2.wav"
+					"wave"	"player/taunt_yeti_standee_heavy_step3.wav"
+					"wave"	"player/taunt_yeti_standee_heavy_step4.wav"
+	}
+}
+
+"Taunt.YetiStandeeHeavyEquipment"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.210000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_heavy_equipment.wav"
+}
+
+"Taunt.YetiStandeeHeavyEquipmentLight1"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.455000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_heavy_equipment_light1.wav"
+}
+
+"Taunt.YetiStandeeHeavyEquipmentLight2"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.455000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"wave"		")player/taunt_yeti_standee_heavy_equipment_light2.wav"
+}
+
+"Taunt.YetiStandeeSpyStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/taunt_foot_stomp.wav"
+}
+
+"Taunt.YetiStandeeSpySwing1"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_spy_swing1.wav"
+}
+
+"Taunt.YetiStandeeSpySwing2"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_spy_swing2.wav"
+}
+
+"Taunt.YetiStandeeSpySwing"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_spy_swing.wav"
+}
+
+"Taunt.YetiStandeeSpyClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.525000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_spy_clothes_rustle.wav"
+}
+
+"Taunt.YetiStandeeMedicSwing1"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_medic_swing1.wav"
+}
+
+"Taunt.YetiStandeeMedicSwing2"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_medic_swing2.wav"
+}
+
+"Taunt.YetiStandeeMedicStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.490000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/taunt_yeti_standee_medic_step.wav"
+}
+
+"Taunt.YetiStandeeMedicClothesRustleSwing"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.525000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_medic_clothes_rustle_swing.wav"
+}
+
+"Taunt.YetiStandeeMedicGloveStretch"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_medic_glove_stretch.wav"
+}
+
+"Taunt.YetiStandeeMedicGloveSnap"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_medic_glove_snap.wav"
+}
+
+"Taunt.YetiStandeePyroSwing1"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"		"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_pyro_swing1.wav"
+}
+
+"Taunt.YetiStandeePyroStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.490000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/taunt_yeti_standee_pyro_step.wav"
+}
+
+"Taunt.YetiStandeePyroEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_pyro_equipment.wav"
+}
+
+"Taunt.YetiStandeePyroClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_pyro_clothes_rustle.wav"
+}
+
+"Taunt.YetiStandeeEngineerHopStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.490000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_engineer_step.wav"
+}
+
+"Taunt.YetiStandeeEngineerDanceStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"rndwave"
+	{   
+					"wave"	"player/taunt_yeti_standee_engineer_step_dance1.wav"
+					"wave"	"player/taunt_yeti_standee_engineer_step_dance2.wav"
+					"wave"	"player/taunt_yeti_standee_engineer_step_dance3.wav"
+					"wave"	"player/taunt_yeti_standee_engineer_step_dance4.wav"
+	}
+}
+
+"Taunt.YetiStandeeEngineerBootSlap"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+	"soundlevel"	"SNDLVL_74dB"
+	"wave"			")player/taunt_yeti_standee_engineer_boot_slap.wav"
+
+}
+
+
+"Taunt.YetiStandeeEngineerKick"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"		"PITCH_NORM"
+	"wave"	")player/taunt_yeti_standee_engineer_kick.wav"
+}
+
+"Taunt.YetiStandeeEngineerEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_engineer_equipment.wav"
+}
+
+"Taunt.YetiStandeeEngineerClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_engineer_clothes_rustle.wav"
+}
+
+"Taunt.YetiStandeeEngineerMusic"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"		"PITCH_NORM"
+
+	"wave"	")player/taunt_yeti_standee_engineer_music.wav"
+
+}
+
+"Taunt.MediumClap"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"95,105"
+	"soundlevel"	"SNDLVL_74dB"
+	
+	"rndwave"
+		{
+			"wave"	")player/taunt_medium_clap1.wav"
+			"wave"	")player/taunt_medium_clap2.wav"
+			"wave"	")player/taunt_medium_clap3.wav"
+			"wave"	")player/taunt_medium_clap4.wav"
+		}
+}
+
+"Taunt.YetiStandeeSniperStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_sniper_step.wav"
+}
+
+"Taunt.YetiStandeeSniperClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_sniper_clothes_rustle.wav"
+}
+
+"Taunt.YetiStandeeSoldierStep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	"player/taunt_yeti_standee_soldier_step1.wav"
+					"wave"	"player/taunt_yeti_standee_soldier_step2.wav"
+					"wave"	"player/taunt_yeti_standee_soldier_step3.wav"
+					"wave"	"player/taunt_yeti_standee_soldier_step4.wav"
+	}
+}
+
+"Taunt.YetiStandeeSoldierEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_soldier_equipment.wav"
+}
+
+"Taunt.YetiStandeeSoldierEquipmentLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_soldier_equipment.wav"
+}
+
+"Taunt.YetiStandeeSoldierClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_soldier_clothes_rustle.wav"
+}
+
+"Taunt.YetiStandeeSoldierClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_soldier_clothes_rustle_light.wav"
+}
+
+"Taunt.YetiStandeeSoldierStandeeGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_yeti_standee_soldier_standee_grab.wav"
+}
+
+"PDA.SoldierDrop1"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_soldier_drop1.wav"
+}
+
+"PDA.SoldierDrop2"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_soldier_drop2.wav"
+}
+
+"PDA.SoldierEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment.wav"
+}
+
+"PDA.SoldierClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.SoldierClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle.wav"
+}
+
+"PDA.SoldierGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.SoldierShake"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_shake.wav"
+}
+
+"PDA.SoldierHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster_light.wav"
+}
+
+"PDA.MedicClothesRustleLong"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_long.wav"
+}
+
+"PDA.MedicClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.Swipe"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.210000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_swipe.wav"
+}
+
+"PDA.MedicGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.MedicGrabLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.MedicHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster_light.wav"
+}
+
+
+"PDA.HeavyEquipment"
+
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment.wav"
+}
+
+"PDA.HeavyGrabLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.HeavyClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.HeavyDraw"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_draw.wav"
+}
+
+"PDA.HeavyBeep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_beep2.wav"
+					"wave"	")player/cyoa_pda_beep3.wav"
+					"wave"	")player/cyoa_pda_beep4.wav"
+					"wave"	")player/cyoa_pda_beep5.wav"
+					"wave"	")player/cyoa_pda_beep6.wav"
+					"wave"	")player/cyoa_pda_beep7.wav"
+					"wave"	")player/cyoa_pda_beep8.wav"
+	}
+}
+
+"PDA.HeavyGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.HeavySpin"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_spin.wav"
+}
+
+"PDA.HeavyHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}
+
+"PDA.EngineerEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment.wav"
+}
+
+"PDA.EngineerClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.EngineerUnHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_unholster.wav"
+}
+
+"PDA.EngineerGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.EngineerEquipmentLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.525000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment_light.wav"
+}
+
+"PDA.EngineerHit"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.EngineerHitEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment_light.wav"
+}
+
+"PDA.EngineerHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}
+
+"PDA.EngineerGrabLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"95,105"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.SniperGrabLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.SniperClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.SniperEquipmentLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment_light.wav"
+}
+
+"PDA.SniperClothesRustle"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle.wav"
+}
+
+"PDA.SniperBeep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_beep2.wav"
+					"wave"	")player/cyoa_pda_beep3.wav"
+					"wave"	")player/cyoa_pda_beep4.wav"
+					"wave"	")player/cyoa_pda_beep5.wav"
+					"wave"	")player/cyoa_pda_beep6.wav"
+					"wave"	")player/cyoa_pda_beep7.wav"
+					"wave"	")player/cyoa_pda_beep8.wav"
+	}
+}
+
+"PDA.SniperSpin"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.070000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_spin.wav"
+}
+
+"PDA.SniperHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}
+
+"PDA.PyroClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.315000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.PyroEquipmentLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment_light.wav"
+}
+
+"PDA.PyroSpin"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.140000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_spin.wav"
+}
+
+"PDA.PyroGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.525000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.PyroBeep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_beep2.wav"
+					"wave"	")player/cyoa_pda_beep3.wav"
+					"wave"	")player/cyoa_pda_beep4.wav"
+					"wave"	")player/cyoa_pda_beep5.wav"
+					"wave"	")player/cyoa_pda_beep6.wav"
+					"wave"	")player/cyoa_pda_beep7.wav"
+					"wave"	")player/cyoa_pda_beep8.wav"
+	}
+}
+
+"PDA.PyroHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}
+
+"PDA.SpyGrabLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.SpyGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.SpyClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.315000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.SpySpin"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_spin.wav"
+}
+
+"PDA.SpyBeep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_beep2.wav"
+					"wave"	")player/cyoa_pda_beep3.wav"
+					"wave"	")player/cyoa_pda_beep4.wav"
+					"wave"	")player/cyoa_pda_beep5.wav"
+					"wave"	")player/cyoa_pda_beep6.wav"
+					"wave"	")player/cyoa_pda_beep7.wav"
+					"wave"	")player/cyoa_pda_beep8.wav"
+	}
+}
+
+"PDA.SpyDial"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_dial1.wav"
+					"wave"	")player/cyoa_pda_dial2.wav"
+					"wave"	")player/cyoa_pda_dial3.wav"
+					"wave"	")player/cyoa_pda_dial4.wav"
+					"wave"	")player/cyoa_pda_dial5.wav"
+	}
+}
+
+"PDA.SpyHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}	
+
+"PDA.DemoHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}
+
+"PDA.DemoClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.315000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.DemoEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_equipment.wav"
+}
+
+"PDA.DemoFlySwoosh"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_fly_swoosh.wav"
+}
+
+"PDA.DemoGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.DemoBeep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_beep2.wav"
+					"wave"	")player/cyoa_pda_beep3.wav"
+					"wave"	")player/cyoa_pda_beep4.wav"
+					"wave"	")player/cyoa_pda_beep5.wav"
+					"wave"	")player/cyoa_pda_beep6.wav"
+					"wave"	")player/cyoa_pda_beep7.wav"
+					"wave"	")player/cyoa_pda_beep8.wav"
+	}
+}
+
+"PDA.DemoClothesRustleLightItch"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.ScoutGrab"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_grab.wav"
+}
+
+"PDA.ScoutHolster"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.245000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/cyoa_pda_holster.wav"
+}
+
+"PDA.ScoutClothesRustleLight"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.315000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/cyoa_pda_clothes_rustle_light.wav"
+}
+
+"PDA.ScoutBeep"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.105000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	
+	"rndwave"
+	{
+					"wave"	")player/cyoa_pda_beep2.wav"
+					"wave"	")player/cyoa_pda_beep3.wav"
+					"wave"	")player/cyoa_pda_beep4.wav"
+					"wave"	")player/cyoa_pda_beep5.wav"
+					"wave"	")player/cyoa_pda_beep6.wav"
+					"wave"	")player/cyoa_pda_beep7.wav"
+					"wave"	")player/cyoa_pda_beep8.wav"
+	}
+}
+
+"Taunt.BumpkinsBanjoSitEquipment"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.175000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_equipment_gun1.wav"
+}
+
+"Taunt.BumpkinsBanjoSitClothes"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	"player/taunt_clothes_rustle.wav"
+}
+
+"Taunt.BumpkinsBanjoMusic"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_bumpkins_banjo_music.wav"
+}
+
+"Taunt.BumpkinsBanjoMusicFast"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_bumpkins_banjo_music_fast.wav"
+}
+
+"Taunt.BumpkinsBanjoMusicStop"
+{
+	"channel"	"CHAN_BODY"
+	"volume"	"0.595000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"			"PITCH_NORM"
+	"wave"	")player/taunt_bumpkins_banjo_music_stop.wav"
+}
+
+
+"Croc.SwimBurst"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_115dB"
+	
+	"wave"			")ambient/lair/crocs_swim_burst.wav"
+}
+
+"Crocs.Growl"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_88dB"
+	
+		"rndwave"
+	{
+					"wave"	")ambient_mp3/lair/crocs_growl1.mp3"
+					//"wave"	")ambient_mp3/lair/crocs_growl2.mp3"
+					//"wave"	")ambient_mp3/lair/crocs_growl3.mp3"
+					//"wave"	")ambient_mp3/lair/crocs_growl4.mp3"
+					"wave"	")ambient_mp3/lair/crocs_growl5.mp3"
+					"wave"	"common/null.wav"
+	}
+}
+
+"Crocs.Hiss"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_80dB"
+	
+		"rndwave"
+	{
+					"wave"	")ambient_mp3/lair/crocs_hiss1.mp3"
+					//"wave"	")ambient_mp3/lair/crocs_hiss2.mp3"
+					"wave"	")ambient_mp3/lair/crocs_hiss3.mp3"
+					//"wave"	")ambient_mp3/lair/crocs_hiss4.mp3"
+					"wave"	"common/null.wav"
+	}
+}
+
+"Crocs.JumpOut"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_88dB"
+	
+	"wave"			")ambient/lair/crocs_jump_out.wav"
+}
+
+"Crocs.JumpIn"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_88dB"
+	
+	"wave"			")ambient/lair/crocs_jump_in.wav"
+}
+
+"Crocs.JumpBite"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"PITCH_NORM"
+
+	"soundlevel"	"SNDLVL_88dB"
+	
+	"wave"			")ambient/lair/crocs_jump_bite.wav"
+}
 // Channels
 //	CHAN_AUTO		= 0,
 //	CHAN_WEAPON		= 1,
@@ -15197,6 +17250,43 @@
 	"wave"		")ambient/train.wav"
 }
 
+"Ambient.LairTramCap2"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"		"100"
+	"soundlevel"  	"SNDLVL_95dB"
+	"wave"		")ambient/lair/cap_2_tram.wav"
+}
+
+"Ambient.LairTramCap3"
+{
+	"channel"	"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"		"100"
+	"soundlevel"  	"SNDLVL_95dB"
+	"wave"		")ambient/lair/cap_3_tram.wav"
+}
+
+"Ambient.LairTramDoorOpen"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.350000"
+	"soundlevel"  	"SNDLVL_150dB"
+	"pitch"		"PITCH_NORM"
+
+	"wave"		")ambient/lair/cap_2_tram_door_open.wav"
+}
+
+"Ambient.LairTramDoorClose"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_150dB"
+	"pitch"		"PITCH_NORM"
+
+	"wave"		")ambient/lair/cap_2_tram_door_open.wav"
+}
 
 "Ambient.RailroadBells"
 {
@@ -15527,7 +17617,7 @@
 	"volume"	"0.700000"
 	"pitch"		"100"
 	"soundlevel"  	"SNDLVL_NORM"
-	"wave"		"misc/flame_engulf.wav"
+	"wave"		")misc/flame_engulf.wav"
 }
 
 "Camera.SnapShot"
@@ -15790,6 +17880,23 @@
 	"pitch"		"PITCH_NORM"
 
 	"wave"		")ambient_mp3/arrowlight.mp3"
+}
+
+"Yeti.StatueGrowl"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_84dB"
+	"pitch"		"PITCH_NORM"
+	"rndwave"
+	{
+		"wave"	")ambient/lair/yeti_statue_growl1.wav"
+		"wave"	")ambient/lair/yeti_statue_growl2.wav"
+		"wave"	")ambient/lair/yeti_statue_growl3.wav"
+		"wave"	")ambient/lair/yeti_statue_growl4.wav"
+		"wave"	")ambient/lair/yeti_statue_growl5.wav"
+		"wave"	")ambient/lair/yeti_statue_growl6.wav"
+	}
 }
 
 // ------------------------------------------------------------------------------------ //
@@ -17308,43 +19415,142 @@
 	"wave"			"ui/quest_alert.wav"
 }
 
-"Quest.StatusTick"
+"Quest.StatusTickNovice"
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
 	"soundlevel"  	"SNDLVL_NORM"
 	"pitch"			"PITCH_NORM"
-	"wave"			"ui/quest_status_tick.wav"
+	"wave"			"ui/quest_status_tick_novice.wav"
 }
 
-"Quest.StatusTickBonus"
+"Quest.StatusTickNoviceFriend"
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
 	"soundlevel"  	"SNDLVL_NORM"
 	"pitch"			"PITCH_NORM"
-	"wave"			"ui/quest_status_tick_bonus.wav"
+	"wave"			"ui/quest_status_tick_novice_friend.wav"
 }
 
-"Quest.StatusTickComplete"
+"Quest.StatusTickNovicePDA"
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
-	"soundlevel"  	"SNDLVL_NORM"
+	"soundlevel"  	"SNDLVL_70dB"
 	"pitch"			"PITCH_NORM"
-	"wave"			"ui/quest_status_tick_complete.wav"
+	"wave"			"ui/quest_status_tick_novice_PDA.wav"
 }
 
-"Quest.StatusTickBonusComplete"
+"Quest.StatusTickAdvanced"
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
 	"soundlevel"  	"SNDLVL_NORM"
 	"pitch"			"PITCH_NORM"
-	"wave"			"ui/quest_status_tick_bonus_complete.wav"
+	"wave"			"ui/quest_status_tick_advanced.wav"
+}
+
+"Quest.StatusTickAdvancedFriend"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_advanced_friend.wav"
+}
+
+"Quest.StatusTickAdvancedPDA"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_70dB"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_advanced_PDA.wav"
+}
+
+"Quest.StatusTickExpert"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_expert.wav"
+}
+
+"Quest.StatusTickExpertFriend"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_expert_friend.wav"
+}
+
+"Quest.StatusTickExpertPDA"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_70dB"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_expert_PDA.wav"
+}
+
+"Quest.StatusTickNoviceComplete"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_novice_complete.wav"
+}
+
+"Quest.StatusTickAdvancedComplete"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_advanced_complete.wav"
 } 
 
-"Quest.StatusComplete"
+"Quest.StatusTickExpertComplete"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_status_tick_expert_complete.wav"
+} 
+
+"Quest.StatusTickNoviceCompletePDA"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_85dB"
+	"pitch"			"PITCH_NORM"
+	"wave"			")ui/quest_status_tick_novice_complete_pda.wav"
+}
+
+"Quest.StatusTickAdvancedCompletePDA"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_85dB"
+	"pitch"			"PITCH_NORM"
+	"wave"			")ui/quest_status_tick_advanced_complete_pda.wav"
+} 
+
+"Quest.StatusTickExpertCompletePDA"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_85dB"
+	"pitch"			"PITCH_NORM"
+	"wave"			")ui/quest_status_tick_expert_complete_pda.wav"
+} 
+
+"Quest.StatusComplete" 
 {
 	"channel"		"CHAN_STATIC"
 	"volume"	"0.700000"
@@ -17389,7 +19595,6 @@
 	"wave"			"ui/quest_turn_in_decode.wav"
 }
 
-
 "Quest.TurnInAccepted"
 {
 	"channel"		"CHAN_STATIC"
@@ -17397,6 +19602,15 @@
 	"soundlevel"  	"SNDLVL_NORM"
 	"pitch"			"PITCH_NORM"
 	"wave"			"ui/quest_turn_in_accepted.wav"
+}
+
+"Quest.TurnInAcceptedLight"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NORM"
+	"pitch"			"PITCH_NORM"
+	"wave"			"ui/quest_turn_in_accepted_light.wav"
 }
 
 "Quest.OperationPassUse"
@@ -17821,6 +20035,23 @@
 	"wave"			"ui/mm_medal_click_rare.wav"
 } 
 
+"MatchMaking.MedalClickRareYeti"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"soundlevel"  	"SNDLVL_NONE"
+	"pitch"			"PITCH_NORM"
+	"rndwave"	
+	{
+		"wave"	"ui/mm_medal_click_rare_yeti.wav"
+		"wave"	"ui/mm_medal_click_rare_yeti1.wav"
+		"wave"	"ui/mm_medal_click_rare_yeti2.wav"
+		"wave"	"ui/mm_medal_click_rare_yeti3.wav"
+		"wave"	"ui/mm_medal_click_rare_yeti4.wav"
+	}
+} 
+
+
 "MatchMaking.CompBanner"
 {
 	"channel"		"CHAN_STATIC"
@@ -17848,6 +20079,26 @@
 	"wave"			"ui/mm_comp_banner_down.wav"
 }
 
+"MatchMaking.Qeue"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_NORM"
+	
+	"wave"	"ui/mm_qeue.wav"
+}
+
+"MatchMaking.Join"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_NORM"
+	
+	"wave"	"ui/mm_join.wav"
+}
+
 "DemoSupport.StartRecording"
 {
 	"channel"		"CHAN_STATIC"
@@ -17865,3 +20116,184 @@
 	"pitch"			"PITCH_NORM"
 	"wave"			"ui/demosupport_stop.wav"
 }
+
+"CYOA.MenuMusic"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.525000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	"rndwave"	
+	{
+		"wave"	"ui/cyoa_musicdrunkenpipebomb_tv.mp3"
+		"wave"	"ui/cyoa_musicfasterthanaspeedingbullet_tv.mp3"
+		"wave"	"ui/cyoa_musicintruderalert_tv.mp3"
+		"wave"	"ui/cyoa_musicmedic_tv.mp3"
+		"wave"	"ui/cyoa_musicmoregun_tv.mp3"
+		"wave"	"ui/cyoa_musicmoregun2_tv.mp3"
+		"wave"	"ui/cyoa_musicplayingwithdanger_tv.mp3"
+		"wave"	"ui/cyoa_musicrightbehindyou_tv.mp3"
+		"wave"	"ui/cyoa_musicteamfortress2_tv.mp3"
+	}
+}
+
+"CYOA.PingInProgress"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.525000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_ping_in_progress.wav"
+}
+
+"CYOA.PingAvailable"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.525000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_ping_available.wav"
+}
+
+"CYOA.StaticFade"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_map_open.wav"
+}
+
+"CYOA.MapOpen"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_map_open.wav"
+}
+
+"CYOA.MapClose"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_map_close.wav"
+}
+
+"CYOA.OrangePanelCollapse"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_orange_panel_collapse.wav"
+}
+
+"CYOA.ObjectivePanelExpand"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_objective_panel_expand.wav"
+}
+
+"CYOA.ObjectivePanelCollapse"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_objective_panel_collapse.wav"
+}
+
+"CYOA.NodeLocked"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_node_locked.wav"
+}
+
+"CYOA.NodeAbsent"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_node_absent.wav"
+}
+
+"CYOA.NodeActivate"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_node_activate.wav"
+}
+
+"CYOA.NodeDeactivate"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_node_deactivate.wav"
+}
+
+"CYOA.KeyGiven"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_key_given.wav"
+}
+
+"CYOA.KeyMinimize"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_key_minimize.wav"
+}
+
+"CYOA.Switch"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_84dB"
+	
+	"wave"	"ui/cyoa_switch.wav"
+}
+
+"Chat.DisplayText"
+{
+	"channel"		"CHAN_STATIC"
+	"volume"	"0.700000"
+	"pitch"			"100"
+	"soundlevel"  	"SNDLVL_NORM"
+	
+	"wave"	"ui/chat_display_text.wav"
+}
+

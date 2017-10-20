@@ -320,7 +320,7 @@
 	}
 
 //////////////////////////////////////////////////////////////////////
-// Economy events
+// Economy events, clientside
 //////////////////////////////////////////////////////////////////////
 	
 	"inventory_updated"
@@ -332,13 +332,16 @@
 	"store_pricesheet_updated"
 	{
 	}
-	"gc_connected"
+	"econ_inventory_connected"
+	{
+	}
+	"item_schema_initialized"
 	{
 	}
 	"gc_new_session"
 	{
 	}
-	"item_schema_initialized"
+	"gc_lost_session"
 	{
 	}
 }

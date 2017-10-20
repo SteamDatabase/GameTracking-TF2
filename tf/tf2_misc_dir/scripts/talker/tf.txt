@@ -51,6 +51,12 @@
 		criteria ConceptPlayerTaunt IsPyro WeaponIsFlamethrower
 		response PyroTauntPrimary
 	}
+	rule PyroTauntDragonsFury
+	{
+		criteria ConceptPlayerTaunt IsPyro WeaponIsDragonsFury
+		response PyroTauntPrimary
+	}
+
 	rule PyroTauntPlayerSecondary
 	{
 		criteria ConceptPlayerTaunt IsPyro WeaponIsShotgunPyro
@@ -116,6 +122,18 @@
 	{
 		criteria ConceptPlayerTaunt IsPyro WeaponIsPromoAnnihilator
 		response PyroTauntAnnihilator
+	}
+
+	Rule PyroTauntGasCan
+	{
+		criteria ConceptPlayerTaunt IsPyro WeaponIsGasCan
+		response PyroTauntSecondary
+	}
+	
+	Rule PyroTauntSlap
+	{
+		criteria ConceptPlayerTaunt IsPyro WeaponIsSlap
+		response PyroTauntSecondary
 	}	
 
 //============================================================================================================
@@ -206,6 +224,11 @@
 	rule HeavyTauntPlayerFestiveSandvich
 	{
 		criteria ConceptPlayerTaunt IsHeavy WeaponIsFestiveSandvich
+		response HeavyTauntPlayerItem1
+	}
+	rule HeavyTauntPlayerLunchbox
+	{
+		criteria ConceptPlayerTaunt IsHeavy WeaponIsLunchbox
 		response HeavyTauntPlayerItem1
 	}
 	// Custom stuff

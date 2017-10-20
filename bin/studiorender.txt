@@ -363,6 +363,7 @@
  T CStudioRender::RetireDecal(CStudioRender::DecalModelList_t&, unsigned short, int, int)
  T CStudioRender::SetEyeMaterialVars(IMaterial*, mstudioeyeball_t*, Vector const&, matrix3x4_t const&, matrix3x4_t const&)
  T CStudioRender::SetLightingRenderState()
+ T CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)
  T CStudioRender::Shutdown()
  T CStudioRender::TransformToDecalSpace(CStudioRender::DecalBuildInfo_t&, Vector const&, mstudioboneweight_t*, Vector2D&)
  T CStudioRender::UncacheGlint()
@@ -1144,12 +1145,15 @@
  b CStudioRender::R_StudioFlexVerts(mstudiomesh_t*, int)::warnCount
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::alphaRefCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::lightmapVarCache
+ b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::nOriginalTreeSwayVarCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalAlphaRefCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureFrameVarCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureVarCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::textureFrameVarCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::textureVarCache
  b CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::translucentCache
+ b CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)::originalVarCache
+ b CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)::varCache
  b CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)::bumpvarCache
  b CStudioRenderContext::ComputeMaterialFlags(studiohdr_t*, studioloddata_t&, IMaterial*)::phongVarCache
  b UsesMouthShader(IMaterial*)::clientShaderCache
@@ -1198,6 +1202,7 @@
  b vec4_invalid
  b vec4_origin
  cosf
+ d CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)::paramNames
  d g_SoftwareProcessMeshFunc
  d s_DefaultAccessor
  d s_nDLLIdentifier
@@ -1233,14 +1238,14 @@
  t ReleaseMaterialSystemObjects()
  t RestoreMaterialSystemObjects(int)
  t SortVertCount(void const*, void const*)
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.60889.O5AgA3.ii
- t _GLOBAL__sub_I_r_studiodr.stdout.rel_tf_osx_builder.61829.1a1Zpr.ii
- t _GLOBAL__sub_I_r_studiofl.stdout.rel_tf_osx_builder.61850.N1JXMS.ii
- t _GLOBAL__sub_I_r_studiost.stdout.rel_tf_osx_builder.61870.F7v6dk.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
- t _GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.61872.cxS70m.ii
- t _GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.61893.0ynAnw.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.61033.MTjuiX.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.8795.alg1Vs.ii
+ t _GLOBAL__sub_I_r_studiodr.stdout.rel_tf_osx_builder.9552.ZLdb1d.ii
+ t _GLOBAL__sub_I_r_studiofl.stdout.rel_tf_osx_builder.9573.Xfvz7o.ii
+ t _GLOBAL__sub_I_r_studiost.stdout.rel_tf_osx_builder.9591.akMON7.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
+ t _GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.9589.lRicGJ.ii
+ t _GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.9603.iOgb4P.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8901.EneIeD.ii
  t __CreateCStudioRenderContextIStudioRender_interface()
  typeinfo for std::bad_alloc
  vsnprintf

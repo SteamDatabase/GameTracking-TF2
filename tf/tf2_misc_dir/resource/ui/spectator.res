@@ -71,7 +71,7 @@
 		"ControlName"		"CExLabel"
 		"fieldName"		"ReinforcementsLabel"
 		"xpos"			"c-300"	[$WIN32]
-		"xpos_minmode"	"c-300"
+		"xpos_minmode"	"0"
 		"xpos"			"c-200"	[$X360]
 		"ypos"			"50"	[$WIN32]
 		"ypos_minmode"	"3"		[$WIN32]
@@ -89,7 +89,11 @@
 		"enabled"		"1"
 		"labelText"		"#game_respawntime_in_secs"
 		"textAlignment"		"center"
+		"textAlignment_minmode"		"west"
+		"use_proportional_insets_minmode"	"1"
+		"textinsetx_minmode"				"5"
 		"font"			"HudFontMediumSmallSecondary"
+		"font_minmode"			"HudFontSmall"
 	}
 	"BuyBackLabel"
 	{

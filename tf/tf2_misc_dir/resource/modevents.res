@@ -35,23 +35,8 @@
 	"intro_nextcamera"
 	{
 		"player"	"short"		// entindex of the player
-	}	
+	}
 
-	"mm_lobby_chat"
-	{
-		"steamid"	"string"	// steamID (64-bit value converted to string) of user who said the thing
-		"text"	"string"	// Their chat message
-		"type"	"short"	// What sort of message?  (Some "system" messages are sent by lobby leader)
-	}
-	"mm_lobby_member_join"
-	{
-		"steamid"	"string"	// steamID (64-bit value converted to string) of user who joined
-	}
-	"mm_lobby_member_leave"
-	{
-		"steamid"	"string"	// steamID (64-bit value converted to string) of user who joined
-		"flags"	"long"	// Bitfield of EChatMemberStateChange flags describing who entered or left
-	}
 	"player_changeclass"
 	{
 		"userid"	"short"		// user ID who changed class
@@ -559,8 +544,9 @@
 	
 	"player_extinguished"		// sent when a burning player is extinguished by a medic
 	{
-		"victim"	"byte"		// entindex of the player that was extinguished
-		"healer"	"byte"		// entindex of the player who did the extinguishing
+		"victim"		"byte"		// entindex of the player that was extinguished
+		"healer"		"byte"		// entindex of the player who did the extinguishing
+		"itemdefindex"	"short"		// item defindex that did the extinguishing
 	}
 	
 	"player_teleported"
@@ -936,6 +922,17 @@
 		"userid"	"short"	
 	}
 
+	"rocketpack_launch"
+	{
+		"userid"	"short"
+		"playsound"	"bool"
+	}
+	
+	"rocketpack_landed"
+	{
+		"userid"	"short"
+	}
+
 	"medic_defended"
 	{
 		"userid"	"short"	
@@ -1068,6 +1065,24 @@
 	
 	// clone of "fish_notice" (...clone of "player_death")
 	"fish_notice__arm"
+	{
+		"userid"	"short"   	// user ID who died				
+		"victim_entindex"	"long"
+		"inflictor_entindex"	"long"	// ent index of inflictor (a sentry, for example)
+		"attacker"	"short"	 	// user ID who killed
+		"weapon"	"string" 	// weapon name killer used 
+		"weaponid"	"short"		// ID of weapon killed used
+		"damagebits"	"long"		// bits of type of damage
+		"customkill"	"short"		// type of custom kill
+		"assister"	"short"		// user ID of assister
+		"weapon_logclassname"	"string" 	// weapon name that should be printed on the log
+		"stun_flags"	"short"	// victim's stun flags at the moment of death
+		"death_flags"	"short" //death flags.
+		"silent_kill"	"bool"
+		"assister_fallback"	"string"	// contains a string to use if "assister" is -1
+	}
+
+	"slap_notice"
 	{
 		"userid"	"short"   	// user ID who died				
 		"victim_entindex"	"long"
@@ -1233,9 +1248,44 @@
 		"victim"	"short"		// entindex of the victim
 		"zone_id"	"short"		// type of area (0 for general, 1 for capture zone)
 	}
+
+	// If your party changes ~at all~, heavyweight
 	"party_updated"
 	{
 	}
+
+	// Party's effective criteria has changed
+	"party_criteria_changed"
+	{
+	}
+
+	// Party's invite list changed
+	"party_invites_changed"
+	{
+	}
+	// Party's in-queue state changed
+	"party_queue_state_changed"
+	{
+	}
+
+	"party_chat"
+	{
+		"steamid" "string" // steamID (64-bit value converted to string) of user who said or did the thing.  May be
+		                   // empty-string for system actor.
+		"text"    "string" // The message.  May have different meaning for some types
+		"type"    "short"  // What sort of message?  ETFPartyChatType enum
+	}
+
+	"party_member_join"
+	{
+		"steamid" "string" // steamID (64-bit value converted to string) of joined
+	}
+
+	"party_member_leave"
+	{
+		"steamid" "string" // steamID (64-bit value converted to string) of leaver
+	}
+
 	"lobby_updated"
 	{
 	}
@@ -1561,7 +1611,8 @@
 	{
 		"quest_item_id_low"			"long"
 		"quest_item_id_hi"			"long"
-		"quest_objective_id"	"long"
+		"quest_objective_id"		"long"
+		"scorer_user_id"			"short"
 	}
 
 	"player_score_changed"
@@ -1588,6 +1639,7 @@
 	{
 		"attacker"	"byte"			// index of the player who shot the projectile
 		"victim"	"byte"			// index of the player who got direct-ht
+		"weapon_def_index"	"long"	// defindex of the direct hitting weapon
 	}
 
 	// passtime
@@ -1829,6 +1881,76 @@
 	}
 
 	"vote_maps_changed"
+	{}
+
+	"proto_def_changed"
+	{
+		"type"		"byte"
+		"defindex"	"long"
+		"created"	"bool"
+		"deleted"	"bool"
+		"erase_history" "bool"
+	}
+
+	"player_domination"
+	{
+		"dominator"	"short"	// userID of who gained domination
+		"dominated" "short"	// userID of who got dominated
+		"dominations" "short" // Number of dominations this dominator has
+	}
+
+	"player_rocketpack_pushed"
+	{
+		"pusher"	"short" // userID of who pushed
+		"pushed"	"short"	// userID of who got pushed
+	}
+
+	"quest_request"
+	{
+		"request"	"long"
+		"msg"		"string" // Protobuf serialized to a string
+	}
+
+	"quest_response"
+	{
+		"request"	"long"
+		"success"	"bool"
+		"msg"		"string" // Protobuf serialized to a string
+	}
+
+	"quest_progress"
+	{
+		"owner"				"short"
+		"scorer"			"short"
+		"type"				"byte"
+		"completed"			"bool"
+		"quest_defindex"	"long"
+	}
+
+	"projectile_removed"
+	{
+		"attacker"			"byte"
+		"weapon_def_index"	"long"
+		"num_hit"			"byte"
+		"num_direct_hit"	"byte"
+	}
+
+	"quest_map_data_changed"
+	{}
+
+	"gas_doused_player_ignited"
+	{
+		"igniter"	"short"		// entindex of the igniter
+		"douser"	"short"		// entindex of the douser
+		"victim"	"short"		// entindex of the victim
+	}
+	
+	"quest_turn_in_state"
+	{
+		"state"		"short"		// Maps to EQuestTurnInState
+	}
+
+	"items_acknowledged"
 	{}
 }
 

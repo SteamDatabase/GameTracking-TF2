@@ -8,13 +8,13 @@
 		{
 			"model"
 			{
-				"origin_x"		"50"
-				"origin_z"		"6"
+		//		"origin_x"		"50"
+		//		"origin_z"		"6"
 
-				"if_mini"
-				{
-					"origin_z"		"2"
-				}
+		//		"if_mini"
+		//		{
+		//			"origin_z"		"2"
+		//		}
 
 			}
 		}
