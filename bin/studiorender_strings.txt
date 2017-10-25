@@ -6,6 +6,7 @@
         texture memory: %double (Only valid in signed char rendering app)
     material: %short
   00  @0@
+"@@@@ ``pp
 "CreateInterface
 $AlphaTestReference
 $alphatest
@@ -30,6 +31,21 @@ $no_fullbright
 $nocull
 $phong
 $translucent_material
+$treesway
+$treeswayfalloffexp
+$treeswayheight
+$treeswayradius
+$treeswayscrumblefalloffexp
+$treeswayscrumblefrequency
+$treeswayscrumblespeed
+$treeswayscrumblestrength
+$treeswayspeed
+$treeswayspeedhighwindmultiplier
+$treeswayspeedlerpend
+$treeswayspeedlerpstart
+$treeswaystartheight
+$treeswaystartradius
+$treeswaystrength
 %short [%p]
 &fffff.
 *ffff.
@@ -150,7 +166,6 @@ $translucent_material
 <rFGCu
 @$@tN
 @(^_]
-@@@@ ``pp
 @CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CVProfNode::EnterScope()
 @CVProfNode::ExitScope()
@@ -208,7 +223,7 @@ $translucent_material
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
 AVBSA
-B`ARC`
+B`ARA`
 Bad data found in model "%short" (bad bone weights)
 BuildGammaTable(float, float, float, int)
 CBaseAppSystem<IStudioRender>
@@ -449,6 +464,7 @@ CStudioRender::R_StudioRenderModel(IMatRenderContext*, int, int, int, void*, IMa
 CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)
 CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::alphaRefCache
 CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::lightmapVarCache
+CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::nOriginalTreeSwayVarCache
 CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalAlphaRefCache
 CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureFrameVarCache
 CStudioRender::R_StudioSetupSkinAndLighting(IMatRenderContext*, int, IMaterial**, int, void*, ColorMeshInfo_t*, StudioModelLighting_t&)::originalTextureVarCache
@@ -462,6 +478,10 @@ CStudioRender::RenderGlintTexture(eyeballstate_t const*, Vector const&, Vector c
 CStudioRender::RetireDecal(CStudioRender::DecalModelList_t&, unsigned short, int, int)
 CStudioRender::SetEyeMaterialVars(IMaterial*, mstudioeyeball_t*, Vector const&, matrix3x4_t const&, matrix3x4_t const&)
 CStudioRender::SetLightingRenderState()
+CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)
+CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)::originalVarCache
+CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)::paramNames
+CStudioRender::SetupTreeSwayDepthWrite(IMaterial*, IMaterial*)::varCache
 CStudioRender::Shutdown()
 CStudioRender::TransformToDecalSpace(CStudioRender::DecalBuildInfo_t&, Vector const&, mstudioboneweight_t*, Vector2D&)
 CStudioRender::UncacheGlint()
@@ -812,16 +832,24 @@ _ThreadInterlockedIncrement
 _VectorNormalize(Vector&)
 _VectorNormalizeFast(Vector&)
 _Warning
-__ColorDepthWrite00
-__ColorDepthWrite01
-__ColorDepthWrite10
-__ColorDepthWrite11
+__ColorDepthWrite000
+__ColorDepthWrite001
+__ColorDepthWrite010
+__ColorDepthWrite011
+__ColorDepthWrite100
+__ColorDepthWrite101
+__ColorDepthWrite110
+__ColorDepthWrite111
 __CreateCStudioRenderContextIStudioRender_interface()
 __DATA
-__DepthWrite00
-__DepthWrite01
-__DepthWrite10
-__DepthWrite11
+__DepthWrite000
+__DepthWrite001
+__DepthWrite010
+__DepthWrite011
+__DepthWrite100
+__DepthWrite101
+__DepthWrite110
+__DepthWrite111
 __Function_R_LightEffectsWorldFunctionTable<0>::Run(LightDesc_t const*, lightpos_t const*, Vector const&, Vector&)
 __Function_R_LightEffectsWorldFunctionTable<100>::Run(LightDesc_t const*, lightpos_t const*, Vector const&, Vector&)
 __Function_R_LightEffectsWorldFunctionTable<101>::Run(LightDesc_t const*, lightpos_t const*, Vector const&, Vector&)
@@ -1345,14 +1373,14 @@ __Function_R_WorldLightDistanceFalloffFunctionTable<5>::Run(LightDesc_t const*, 
 __Function_R_WorldLightDistanceFalloffFunctionTable<6>::Run(LightDesc_t const*, Vector const&)
 __Function_R_WorldLightDistanceFalloffFunctionTable<7>::Run(LightDesc_t const*, Vector const&)
 __Function_R_WorldLightDistanceFalloffFunctionTable<8>::Run(LightDesc_t const*, Vector const&)
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.60889.O5AgA3.ii
-__GLOBAL__sub_I_r_studiodr.stdout.rel_tf_osx_builder.61829.1a1Zpr.ii
-__GLOBAL__sub_I_r_studiofl.stdout.rel_tf_osx_builder.61850.N1JXMS.ii
-__GLOBAL__sub_I_r_studiost.stdout.rel_tf_osx_builder.61870.F7v6dk.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
-__GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.61872.cxS70m.ii
-__GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.61893.0ynAnw.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.61033.MTjuiX.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.8795.alg1Vs.ii
+__GLOBAL__sub_I_r_studiodr.stdout.rel_tf_osx_builder.9552.ZLdb1d.ii
+__GLOBAL__sub_I_r_studiofl.stdout.rel_tf_osx_builder.9573.Xfvz7o.ii
+__GLOBAL__sub_I_r_studiost.stdout.rel_tf_osx_builder.9591.akMON7.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
+__GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.9589.lRicGJ.ii
+__GLOBAL__sub_I_studiorend.stdout.rel_tf_osx_builder.9603.iOgb4P.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8901.EneIeD.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume

@@ -1052,10 +1052,10 @@ CStdioFile::FS_vfprintf(char const*, char*)
 CStdioFile::m_LockedFDMap
 CStdioFile::m_MutexLockedFD
 CStdioFile::~CStdioFile()
-CStringPool::Allocate(char const*)
-CStringPool::CStringPool()
-CStringPool::Count() const
-CStringPool::~CStringPool()
+CStringPoolBase<unsigned int>::Allocate(char const*)
+CStringPoolBase<unsigned int>::CStringPoolBase()
+CStringPoolBase<unsigned int>::Count() const
+CStringPoolBase<unsigned int>::~CStringPoolBase()
 CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::Purge()
 CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::~CTSList()
 CTSList<FileJob_t*>::PushItem(FileJob_t* const&)
@@ -1181,7 +1181,6 @@ CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, CUtlStringList*, unsigned short>::Node_t
 CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long long, CThreadMutex*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CachedVPKRead_t, unsigned short>, unsigned short>::Grow(int)
-CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short>::Grow(int)
 CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
@@ -1350,20 +1349,20 @@ CUtlRBTree<TrackedVPKFile_t, int, bool (*)(TrackedVPKFile_t const&, TrackedVPKFi
 CUtlRBTree<TrackedVPKFile_t, int, bool (*)(TrackedVPKFile_t const&, TrackedVPKFile_t const&), CUtlMemory<UtlRBTreeNode_t<TrackedVPKFile_t, int>, int> >::RotateLeft(int)
 CUtlRBTree<TrackedVPKFile_t, int, bool (*)(TrackedVPKFile_t const&, TrackedVPKFile_t const&), CUtlMemory<UtlRBTreeNode_t<TrackedVPKFile_t, int>, int> >::RotateRight(int)
 CUtlRBTree<TrackedVPKFile_t, int, bool (*)(TrackedVPKFile_t const&, TrackedVPKFile_t const&), CUtlMemory<UtlRBTreeNode_t<TrackedVPKFile_t, int>, int> >::~CUtlRBTree()
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::Find(char const* const&) const
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::FindInsertionPosition(char const* const&, unsigned short&, bool&)
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::FirstInorder() const
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::Insert(char const* const&)
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::NewNode()
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::NextInorder(unsigned short) const
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::RemoveAll()
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::RotateRight(unsigned short)
-CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::~CUtlRBTree()
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::Find(char const* const&) const
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::FindInsertionPosition(char const* const&, unsigned int&, bool&)
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::FirstInorder() const
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::Insert(char const* const&)
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::InsertRebalance(unsigned int)
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::IsLeftChild(unsigned int) const
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::IsRightChild(unsigned int) const
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::Links(unsigned int) const::s_Sentinel
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::NewNode()
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::NextInorder(unsigned int) const
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::RemoveAll()
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::RotateLeft(unsigned int)
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::RotateRight(unsigned int)
+CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::~CUtlRBTree()
 CUtlSortVector<CZipPackFile::CPackFileEntry, CZipPackFile::CPackFileLessFunc, CUtlVector<CZipPackFile::CPackFileEntry, CUtlMemory<CZipPackFile::CPackFileEntry, int> > >::CompareHelper(CZipPackFile::CPackFileEntry const*, CZipPackFile::CPackFileEntry const*)
 CUtlSortVector<CZipPackFile::CPackFileEntry, CZipPackFile::CPackFileLessFunc, CUtlVector<CZipPackFile::CPackFileEntry, CUtlMemory<CZipPackFile::CPackFileEntry, int> > >::InsertNoSort(CZipPackFile::CPackFileEntry const&)
 CUtlSortVector<ChunkHashFraction_t, ChunkHashFractionLess_t, CUtlVector<ChunkHashFraction_t, CUtlMemory<ChunkHashFraction_t, int> > >::Insert(ChunkHashFraction_t const&)
@@ -2738,19 +2737,19 @@ __CreateCQueuedLoaderIQueuedLoader_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.65629.mD7WVY.ii
-__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.65580.mGe90r.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.60889.O5AgA3.ii
+__GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.12526.Ja3kql.ii
+__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.12480.Z57wk4.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.8795.alg1Vs.ii
 __GLOBAL__sub_I_cryptlib.cpp
-__GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.65577.HZwSAX.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.65601.d8NRFE.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.65605.KEiLMO.ii
-__GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.65613.ESkIC0.ii
-__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.60931.3egTz2.ii
-__GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.65625.XIT1yU.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.61033.MTjuiX.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.61063.QxU4yv.ii
-__GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.65579.05kiI7.ii
+__GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.12478.4YXjhT.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.12502.stE9tF.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.12506.eYfF3E.ii
+__GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.12514.QErMZC.ii
+__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.8832.Ns6DAt.ii
+__GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.12520.jMPIBo.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8901.EneIeD.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.8909.yFkzHL.ii
+__GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.12481.E5bbYW.ii
 __LINKEDIT
 __SpewInfo
 __SpewMessage
@@ -3059,7 +3058,7 @@ guard variable for CUtlRBTree<CachedVPKRead_t, unsigned short, bool (*)(CachedVP
 guard variable for CUtlRBTree<CreateHelper_t, int, bool (*)(CreateHelper_t const&, CreateHelper_t const&), CUtlMemory<UtlRBTreeNode_t<CreateHelper_t, int>, int> >::Links(int) const::s_Sentinel
 guard variable for CUtlRBTree<TrackedFile_t, int, bool (*)(TrackedFile_t const&, TrackedFile_t const&), CUtlMemory<UtlRBTreeNode_t<TrackedFile_t, int>, int> >::Links(int) const::s_Sentinel
 guard variable for CUtlRBTree<TrackedVPKFile_t, int, bool (*)(TrackedVPKFile_t const&, TrackedVPKFile_t const&), CUtlMemory<UtlRBTreeNode_t<TrackedVPKFile_t, int>, int> >::Links(int) const::s_Sentinel
-guard variable for CUtlRBTree<char const*, unsigned short, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
+guard variable for CUtlRBTree<char const*, unsigned int, bool (*)(char const* const&, char const* const&), CUtlMemory<UtlRBTreeNode_t<char const*, unsigned int>, unsigned int> >::Links(unsigned int) const::s_Sentinel
 guard variable for CryptoPP::NullRNG()::s_nullRNG
 guard variable for CryptoPP::Singleton<CryptoPP::Integer, CryptoPP::NewInteger<1l>, 0>::Ref() const::s_pObject
 guard variable for CryptoPP::Singleton<CryptoPP::Integer, CryptoPP::NewObject<CryptoPP::Integer>, 0>::Ref() const::s_pObject

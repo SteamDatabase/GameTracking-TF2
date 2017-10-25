@@ -33,6 +33,7 @@
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/mathlib.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api_internal.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/memoverride.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/platform.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/convar.h
@@ -88,7 +89,7 @@
 @_SteamAPI_GetHSteamPipe
 @_SteamAPI_GetHSteamUser
 @_SteamAPI_InitSafe
-@_SteamClient
+@_SteamInternal_CreateInterface
 @_Warning
 @__Unwind_Resume
 @___bzero
@@ -300,11 +301,11 @@ Couldn'unsigned short play rumble (strength %.f): %short
 DOWNARROW
 Dead zone near the zero point to not report movement.
 DebugTextureInfo001
-Debugging
 DefaultCompletionFunc(char const*, char (*) [64])
 Detected supported joystick #%int '%short'. Currently active joystick is #%i.
 DevMsg(char const*, ...)
 Did not detect any valid joysticks.
+Disables use of Steam Controller API
 DisconnectTier1Libraries()
 DisconnectTier2Libraries()
 ENTER
@@ -496,18 +497,18 @@ SHIFT
 SPACE
 START
 STEAMAPPLIST_INTERFACE_VERSION001
-STEAMAPPS_INTERFACE_VERSION007
+STEAMAPPS_INTERFACE_VERSION008
 STEAMHTMLSURFACE_INTERFACE_VERSION_003
 STEAMHTTP_INTERFACE_VERSION002
-STEAMINVENTORY_INTERFACE_V001
+STEAMINVENTORY_INTERFACE_V002
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
-STEAMREMOTESTORAGE_INTERFACE_VERSION013
-STEAMSCREENSHOTS_INTERFACE_VERSION002
-STEAMUGC_INTERFACE_VERSION007
+STEAMREMOTESTORAGE_INTERFACE_VERSION014
+STEAMSCREENSHOTS_INTERFACE_VERSION003
+STEAMUGC_INTERFACE_VERSION010
 STEAMUNIFIEDMESSAGES_INTERFACE_VERSION001
 STEAMUSERSTATS_INTERFACE_VERSION011
-STEAMVIDEO_INTERFACE_V001
+STEAMVIDEO_INTERFACE_V002
 STICK1
 STICK2
 SearchForDevice()
@@ -515,13 +516,14 @@ SetJoyXControllerFound(bool)
 SetJoyXControllerFound(bool)::joystickVar
 SetJoyXControllerFound(bool)::xcontrollerVar
 SpectatorControls
-SteamController003
+SteamClient017
+SteamController005
 SteamFriends015
 SteamMatchMaking009
 SteamMatchMakingServers002
 SteamNetworking005
-SteamUser018
-SteamUtils007
+SteamUser019
+SteamUtils009
 Sys_UnloadModule(CSysModule*)
 Tcvar
 U AXIS
@@ -586,16 +588,16 @@ _SDL_WasInit
 _SteamAPI_GetHSteamPipe
 _SteamAPI_GetHSteamUser
 _SteamAPI_InitSafe
-_SteamClient
+_SteamInternal_CreateInterface
 _Warning
 __CreateCInputSystemIInputSystem_interface()
 __DATA
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.60889.O5AgA3.ii
-__GLOBAL__sub_I_inputsyste.stdout.rel_tf_osx_builder.65806.8tH7RN.ii
-__GLOBAL__sub_I_joystick_s.stdout.rel_tf_osx_builder.65807.IR5kpy.ii
-__GLOBAL__sub_I_key_transl.stdout.rel_tf_osx_builder.65809.PiOctX.ii
-__GLOBAL__sub_I_steamcontr.stdout.rel_tf_osx_builder.65808.6uvxDs.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.61033.MTjuiX.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.8795.alg1Vs.ii
+__GLOBAL__sub_I_inputsyste.stdout.rel_tf_osx_builder.12657.iJsxrt.ii
+__GLOBAL__sub_I_joystick_s.stdout.rel_tf_osx_builder.12658.HcIb8p.ii
+__GLOBAL__sub_I_key_transl.stdout.rel_tf_osx_builder.12659.TQicFe.ii
+__GLOBAL__sub_I_steamcontr.stdout.rel_tf_osx_builder.68859.pwpjzU.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8901.EneIeD.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -652,7 +654,7 @@ _memcpy
 _memmove
 _s_NoEscConversion
 _s_StringCharConversion
-_sc_debug_sets
+_sc_disable
 _sc_joystick_map
 _strcasecmp
 _strcmp
@@ -725,7 +727,7 @@ s_pScanToButtonCode
 s_pScanToButtonCode_QWERTY
 s_pVirtualKeyToButtonCode
 s_pXControllerButtonCodeNames
-sc_debug_sets
+sc_disable
 sc_joystick_map
 scantokey
 std::terminate()

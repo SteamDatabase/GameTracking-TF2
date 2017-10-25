@@ -145,9 +145,9 @@ $znearer
 *** Error unserializing VTF file... is the file empty?
 *** Tried to load signed char non-VTF file as signed char VTF file!
 *** Unable to serialize... have no image data!
-*@@@@ 
 *CMaterialSystem::Lock: %0.2fms
 *CMaterialSystem::Unlock: %0.2fms
++@@@@ 
 ,^_[]
 ,fff.
 -1.000000
@@ -609,7 +609,7 @@ BGRX5551
 BGRX8888
 BRASBp
 BRB`fBRB`fBRB`
-BRGBA11CVTFTexture
+BRGBA
 Bad VTF data for %short, expected file size:%double actual file size:%double 
 Bffffff.
 Binding uncached material "%short", artificially incrementing refcount
@@ -3922,6 +3922,7 @@ CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
 CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
+CVTFTexture
 CVTFTexture::BlendCubeMapCornerPalettes(int, int, CCornerMatch const*)
 CVTFTexture::BlendCubeMapEdgePalettes(int, int, CEdgeMatch const*)
 CVTFTexture::BlendCubeMapFaceCorners(int, int, CCornerMatch const*)
@@ -4145,6 +4146,7 @@ F21CMatRenderContextBase
 F;short<|
 F;w0|
 FL@9FD}C
+Failed to ParseRangeFromKV: key name [%short], key val [%short]
 Failed to load $include VMT file (%short)
 Failed to load texture %short, this is non-recoverable.
 Failed to load texture '%short', this is non-recoverable.
@@ -4805,27 +4807,27 @@ __CreateMaterialSystem_Config_tMaterialSystem_Config_t_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.62326.2Fjjvy.ii
-__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.62341.6hk07q.ii
-__GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.62264.wJsaDI.ii
-__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.62327.a8VPPH.ii
-__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.62353.E0udbL.ii
-__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.62357.CIuSuw.ii
-__GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.62371.Wt1sLN.ii
-__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.62383.xKE7cK.ii
-__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.62393.K6hNL2.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.60889.O5AgA3.ii
-__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.62405.E6FtDm.ii
-__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.62414.c1e1xB.ii
-__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.62459.MrHXuE.ii
-__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.62466.LX8EXF.ii
-__GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.62473.4RGu9V.ii
-__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.62485.aMZXap.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.2617.EHGwXs.ii
-__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.62491.s87C7e.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.61033.MTjuiX.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.61063.QxU4yv.ii
-__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.61638.lI0zre.ii
+__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.9918.AkUSJz.ii
+__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.9933.O5Bh8Q.ii
+__GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.9856.Gghca0.ii
+__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.9919.TShBqG.ii
+__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.9945.Q4aaHP.ii
+__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.9949.LOtJ3f.ii
+__GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.9963.Uw0TPv.ii
+__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.9975.kytl6e.ii
+__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.9981.YQufyB.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.8795.alg1Vs.ii
+__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.9993.WsrofF.ii
+__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.9999.0uOzGv.ii
+__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.10017.UTAzKm.ii
+__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.10023.J3FbMa.ii
+__GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.10027.UJVFSG.ii
+__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.10041.4SwntZ.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
+__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.10047.mTJTcC.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8901.EneIeD.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.8909.yFkzHL.ii
+__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.9421.GiGczO.ii
 __LINKEDIT
 __SpewInfo
 __SpewMessage
@@ -5162,7 +5164,6 @@ g_Mathlib_LinearToGamma
 g_bDeleteUnreferencedTexturesEnabled
 game_shader_dx%double%short
 game_shader_generic*
-garrysmod
 gfff.
 greyalphazero
 groups
