@@ -1254,6 +1254,11 @@
 	{
 	}
 
+	// If one of the persisted party client preferences was changed (ignore invites etc.)
+	"party_pref_changed"
+	{
+	}
+
 	// Party's effective criteria has changed
 	"party_criteria_changed"
 	{

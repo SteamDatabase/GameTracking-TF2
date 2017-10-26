@@ -32735,6 +32735,7 @@
  T CQuest::CQuest()
  T CQuest::GetDefinition() const
  T CQuest::~CQuest()
+ T CQuestDefinition::AddModifiers(CTFQuestEvaluator*) const
  T CQuestDefinition::BPostDataLoaded(CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >*)
  T CQuestDefinition::GetMaxPoints(unsigned int) const
  T CQuestDefinition::~CQuestDefinition()
@@ -32769,6 +32770,7 @@
  T CQuestMapNode::GetNodeDefinition() const
  T CQuestMapNodeDefinition::BCanUnlock(CQuestMapHelper const&) const
  T CQuestMapNodeDefinition::BConditionsMet_Recursive(CMsgQuestMapNodeCondition const&, CUtlMap<unsigned int, CQuestMapNode const*, unsigned short> const&, CUtlMap<unsigned int, bool, unsigned short>*) const
+ T CQuestMapNodeDefinition::BIsMedalOffered(EQuestPoints) const
  T CQuestMapNodeDefinition::BPostDataLoaded(CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >*)
  T CQuestMapNodeDefinition::GetAssociatedOperation() const
  T CQuestMapNodeDefinition::GetStarType() const
@@ -37831,7 +37833,7 @@
  T CTFPointManager::Touch(CBaseEntity*)
  T CTFPointManager::Update()
  T CTFPointManager::UpdateOnRemove()
- T CTFPointManager::UpdatePoint(tf_point_t*, float, Vector*, Vector*, Vector*)
+ T CTFPointManager::UpdatePoint(tf_point_t*, int, float, Vector*, Vector*, Vector*)
  T CTFPointManager::UpdateTransmitState()
  T CTFPointManager::YouForgotToImplementOrDeclareServerClass()
  T CTFPointManager::~CTFPointManager()
@@ -56800,7 +56802,7 @@
  t _GLOBAL__sub_I_SpriteTrai.stdout.rel_tf_osx_builder.53923.3841aF.ii
  t _GLOBAL__sub_I_TemplateEn.stdout.rel_tf_osx_builder.56510.ksXTMJ.ii
  t _GLOBAL__sub_I_WaterLODCo.stdout.rel_tf_osx_builder.58331.sCYsOs.ii
- t _GLOBAL__sub_I_achievemen.stdout.rel_tf_osx_builder.79412.7hgPBT.ii
+ t _GLOBAL__sub_I_achievemen.stdout.rel_tf_osx_builder.54685.jMIpvT.ii
  t _GLOBAL__sub_I_activityli.stdout.rel_tf_osx_builder.53351.81Od3x.ii
  t _GLOBAL__sub_I_ai_baseact.stdout.rel_tf_osx_builder.54860.IICIMq.ii
  t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.54876.XejgHV.ii
@@ -56846,7 +56848,7 @@
  t _GLOBAL__sub_I_ai_utils.stdout.rel_tf_osx_builder.55207.38WNiV.ii
  t _GLOBAL__sub_I_ai_waypoin.stdout.rel_tf_osx_builder.55218.E9RTLb.ii
  t _GLOBAL__sub_I_archer_pro.stdout.rel_tf_osx_builder.80962.YRyGoz.ii
- t _GLOBAL__sub_I_attribute_.stdout.rel_tf_osx_builder.79496.iO3JKR.ii
+ t _GLOBAL__sub_I_attribute_.stdout.rel_tf_osx_builder.54730.35Zk7r.ii
  t _GLOBAL__sub_I_base_gcmes.stdout.rel_tf_osx_builder.20092.vzteQa.ii
  t _GLOBAL__sub_I_base_playe.stdout.rel_tf_osx_builder.53425.JXmUmI.ii
  t _GLOBAL__sub_I_baseachiev.stdout.rel_tf_osx_builder.53369.HE0Kl6.ii
@@ -56855,8 +56857,8 @@
  t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.53383.q0dzHp.ii
  t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.55234.PUAnCA.ii
  t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.55240.yqO4yW.ii
- t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.79415.kaENIg.ii
- t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.80126.kD502d.ii
+ t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.54692.k7GYiO.ii
+ t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.55180.gZqe5B.ii
  t _GLOBAL__sub_I_baseflex.stdout.rel_tf_osx_builder.55250.IAdRzx.ii
  t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.53391.wNO9Vf.ii
  t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.55260.rVKUL1.ii
@@ -56865,7 +56867,7 @@
  t _GLOBAL__sub_I_basemultip.stdout.rel_tf_osx_builder.55278.U43B8i.ii
  t _GLOBAL__sub_I_baseobject.stdout.rel_tf_osx_builder.79562.Q8f1Up.ii
  t _GLOBAL__sub_I_basepartic.stdout.rel_tf_osx_builder.53399.NdOTXG.ii
- t _GLOBAL__sub_I_baseplayer.stdout.rel_tf_osx_builder.79492.HKNI24.ii
+ t _GLOBAL__sub_I_baseplayer.stdout.rel_tf_osx_builder.54693.vFCRmk.ii
  t _GLOBAL__sub_I_baseprojec.stdout.rel_tf_osx_builder.53411.VyPVKb.ii
  t _GLOBAL__sub_I_basetempen.stdout.rel_tf_osx_builder.55282.8cO6yJ.ii
  t _GLOBAL__sub_I_baseviewmo.stdout.rel_tf_osx_builder.53415.GHwNmY.ii
@@ -56874,12 +56876,12 @@
  t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.41532.Ii8vaz.ii
  t _GLOBAL__sub_I_bmodels.stdout.rel_tf_osx_builder.55306.FgtxTK.ii
  t _GLOBAL__sub_I_bone_setup.stdout.rel_tf_osx_builder.13824.inj15X.ii
- t _GLOBAL__sub_I_bot_npc_ar.stdout.rel_tf_osx_builder.80620.K4jafu.ii
- t _GLOBAL__sub_I_bot_npc_de.stdout.rel_tf_osx_builder.80624.kt8S4s.ii
+ t _GLOBAL__sub_I_bot_npc_ar.stdout.rel_tf_osx_builder.55701.cHyWUd.ii
+ t _GLOBAL__sub_I_bot_npc_de.stdout.rel_tf_osx_builder.55713.GFoUxm.ii
  t _GLOBAL__sub_I_buttons.stdout.rel_tf_osx_builder.55314.yr6SYW.ii
  t _GLOBAL__sub_I_cbase.stdout.rel_tf_osx_builder.55320.hX9wn7.ii
  t _GLOBAL__sub_I_choreoeven.stdout.rel_tf_osx_builder.9451.U1qJLi.ii
- t _GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.80134.9JRI1z.ii
+ t _GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.55184.1of0x7.ii
  t _GLOBAL__sub_I_collisionp.stdout.rel_tf_osx_builder.53435.y7MkJW.ii
  t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.55328.zpZL9g.ii
  t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.55330.Azh8t2.ii
@@ -56895,36 +56897,36 @@
  t _GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.9264.SYzw37.ii
  t _GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.9265.wAEXEa.ii
  t _GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.9266.UelSqX.ii
- t _GLOBAL__sub_I_doors.stdout.rel_tf_osx_builder.80140.0Eov5w.ii
+ t _GLOBAL__sub_I_doors.stdout.rel_tf_osx_builder.55190.KeDK6b.ii
  t _GLOBAL__sub_I_dynamiclig.stdout.rel_tf_osx_builder.55374.638yFt.ii
  t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.53481.WV5oUC.ii
  t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.79506.YvZeyA.ii
  t _GLOBAL__sub_I_econ_gcmes.stdout.rel_tf_osx_builder.50674.pZPjqX.ii
- t _GLOBAL__sub_I_econ_holid.stdout.rel_tf_osx_builder.53487.oOsVZO.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.27561.upHPOC.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.27562.DeyTNx.ii
+ t _GLOBAL__sub_I_econ_holid.stdout.rel_tf_osx_builder.12720.hEedQA.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.12722.SgTKrX.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.12723.ThRkhX.ii
  t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.53501.ZXoOED.ii
  t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.53531.YuA9Kd.ii
  t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.53543.uCmzAv.ii
- t _GLOBAL__sub_I_econ_paint.stdout.rel_tf_osx_builder.27565.039TuT.ii
- t _GLOBAL__sub_I_econ_quest.stdout.rel_tf_osx_builder.29484.C98Q0w.ii
+ t _GLOBAL__sub_I_econ_paint.stdout.rel_tf_osx_builder.12725.WyoE65.ii
+ t _GLOBAL__sub_I_econ_quest.stdout.rel_tf_osx_builder.12765.e7gqQc.ii
  t _GLOBAL__sub_I_econ_weara.stdout.rel_tf_osx_builder.79518.0n4J7D.ii
  t _GLOBAL__sub_I_effect_dis.stdout.rel_tf_osx_builder.53577.pF5lIk.ii
  t _GLOBAL__sub_I_effects.stdout.rel_tf_osx_builder.55380.eeyq8q.ii
- t _GLOBAL__sub_I_entity_amm.stdout.rel_tf_osx_builder.80632.Bu6im8.ii
- t _GLOBAL__sub_I_entity_arm.stdout.rel_tf_osx_builder.80635.JFOWHk.ii
- t _GLOBAL__sub_I_entity_bir.stdout.rel_tf_osx_builder.80644.q9PAZx.ii
+ t _GLOBAL__sub_I_entity_amm.stdout.rel_tf_osx_builder.55719.MCTqxo.ii
+ t _GLOBAL__sub_I_entity_arm.stdout.rel_tf_osx_builder.55723.hZxE0t.ii
+ t _GLOBAL__sub_I_entity_bir.stdout.rel_tf_osx_builder.55729.TqVmR0.ii
  t _GLOBAL__sub_I_entity_bon.stdout.rel_tf_osx_builder.79568.3oDT7n.ii
- t _GLOBAL__sub_I_entity_cap.stdout.rel_tf_osx_builder.79572.2PzYdu.ii
- t _GLOBAL__sub_I_entity_cur.stdout.rel_tf_osx_builder.80648.359TnT.ii
- t _GLOBAL__sub_I_entity_for.stdout.rel_tf_osx_builder.80652.IgPPW5.ii
- t _GLOBAL__sub_I_entity_gam.stdout.rel_tf_osx_builder.80662.TNvNNq.ii
- t _GLOBAL__sub_I_entity_hal.stdout.rel_tf_osx_builder.79582.5nwRdk.ii
- t _GLOBAL__sub_I_entity_hea.stdout.rel_tf_osx_builder.30943.iYEl0P.ii
- t _GLOBAL__sub_I_entity_int.stdout.rel_tf_osx_builder.80670.9eZX6Y.ii
+ t _GLOBAL__sub_I_entity_cap.stdout.rel_tf_osx_builder.54754.Ol91WD.ii
+ t _GLOBAL__sub_I_entity_cur.stdout.rel_tf_osx_builder.55735.bIZ8NE.ii
+ t _GLOBAL__sub_I_entity_for.stdout.rel_tf_osx_builder.55739.CZkMZV.ii
+ t _GLOBAL__sub_I_entity_gam.stdout.rel_tf_osx_builder.55749.09YyJQ.ii
+ t _GLOBAL__sub_I_entity_hal.stdout.rel_tf_osx_builder.54756.46QCx2.ii
+ t _GLOBAL__sub_I_entity_hea.stdout.rel_tf_osx_builder.55755.wITGgF.ii
+ t _GLOBAL__sub_I_entity_int.stdout.rel_tf_osx_builder.55761.Sb9etM.ii
  t _GLOBAL__sub_I_entity_pas.stdout.rel_tf_osx_builder.57423.AhwlWn.ii
  t _GLOBAL__sub_I_entity_rou.stdout.rel_tf_osx_builder.57427.bXYZik.ii
- t _GLOBAL__sub_I_entity_run.stdout.rel_tf_osx_builder.80680.XIUbKF.ii
+ t _GLOBAL__sub_I_entity_run.stdout.rel_tf_osx_builder.55763.d1gHEE.ii
  t _GLOBAL__sub_I_entity_tfs.stdout.rel_tf_osx_builder.57443.6ULE6q.ii
  t _GLOBAL__sub_I_entity_too.stdout.rel_tf_osx_builder.55426.9vJBHT.ii
  t _GLOBAL__sub_I_entity_tra.stdout.rel_tf_osx_builder.57447.UE1y8t.ii
@@ -56947,7 +56949,7 @@
  t _GLOBAL__sub_I_eventlist.stdout.rel_tf_osx_builder.53617.P50o6A.ii
  t _GLOBAL__sub_I_explode.stdout.rel_tf_osx_builder.55554.jjiiTX.ii
  t _GLOBAL__sub_I_extension_set.cc
- t _GLOBAL__sub_I_eyeball_bo.stdout.rel_tf_osx_builder.80786.lFp2AE.ii
+ t _GLOBAL__sub_I_eyeball_bo.stdout.rel_tf_osx_builder.55827.L1od9i.ii
  t _GLOBAL__sub_I_filters.stdout.rel_tf_osx_builder.55560.hRmZ0S.ii
  t _GLOBAL__sub_I_fire.stdout.rel_tf_osx_builder.55564.oEhbE6.ii
  t _GLOBAL__sub_I_fire_smoke.stdout.rel_tf_osx_builder.55568.S6XKza.ii
@@ -56960,12 +56962,12 @@
  t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.55608.vmwFeE.ii
  t _GLOBAL__sub_I_func_break.stdout.rel_tf_osx_builder.55610.0qbosZ.ii
  t _GLOBAL__sub_I_func_break.stdout.rel_tf_osx_builder.55616.i4B9FA.ii
- t _GLOBAL__sub_I_func_captu.stdout.rel_tf_osx_builder.80690.dMuFaI.ii
+ t _GLOBAL__sub_I_func_captu.stdout.rel_tf_osx_builder.55769.Cm2fwz.ii
  t _GLOBAL__sub_I_func_chang.stdout.rel_tf_osx_builder.80698.gyQUi8.ii
  t _GLOBAL__sub_I_func_croc.stdout.rel_tf_osx_builder.80704.4i5tyA.ii
  t _GLOBAL__sub_I_func_dust.stdout.rel_tf_osx_builder.55622.uXDL9K.ii
- t _GLOBAL__sub_I_func_flag_.stdout.rel_tf_osx_builder.80710.9GeJx4.ii
- t _GLOBAL__sub_I_func_force.stdout.rel_tf_osx_builder.80714.yA1veY.ii
+ t _GLOBAL__sub_I_func_flag_.stdout.rel_tf_osx_builder.55777.teUNsz.ii
+ t _GLOBAL__sub_I_func_force.stdout.rel_tf_osx_builder.55783.gqbprp.ii
  t _GLOBAL__sub_I_func_ladde.stdout.rel_tf_osx_builder.53620.oJpnrV.ii
  t _GLOBAL__sub_I_func_ladde.stdout.rel_tf_osx_builder.55628.hql2Y5.ii
  t _GLOBAL__sub_I_func_lod.stdout.rel_tf_osx_builder.55634.36w9lE.ii
@@ -56974,45 +56976,45 @@
  t _GLOBAL__sub_I_func_no_bu.stdout.rel_tf_osx_builder.57495.hZTMYk.ii
  t _GLOBAL__sub_I_func_nogre.stdout.rel_tf_osx_builder.80720.10nzPt.ii
  t _GLOBAL__sub_I_func_occlu.stdout.rel_tf_osx_builder.55648.fZJOCB.ii
- t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.80728.ZqHqLs.ii
+ t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.55791.4NIg2V.ii
  t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.80734.Gg22Vb.ii
  t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.80740.yxAwlO.ii
- t _GLOBAL__sub_I_func_power.stdout.rel_tf_osx_builder.80744.bKOO5S.ii
+ t _GLOBAL__sub_I_func_power.stdout.rel_tf_osx_builder.55797.VXWmun.ii
  t _GLOBAL__sub_I_func_refle.stdout.rel_tf_osx_builder.55656.8LAK3h.ii
- t _GLOBAL__sub_I_func_regen.stdout.rel_tf_osx_builder.80750.j9C9bn.ii
+ t _GLOBAL__sub_I_func_regen.stdout.rel_tf_osx_builder.55803.vbliul.ii
+ t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.55809.3YH8QF.ii
  t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.80758.vo5fPa.ii
- t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.80760.0KQKo9.ii
  t _GLOBAL__sub_I_func_smoke.stdout.rel_tf_osx_builder.55662.2U3clI.ii
  t _GLOBAL__sub_I_func_sugge.stdout.rel_tf_osx_builder.57541.33bevr.ii
  t _GLOBAL__sub_I_game.stdout.rel_tf_osx_builder.55663.WcdrNt.ii
  t _GLOBAL__sub_I_game_ui.stdout.rel_tf_osx_builder.55704.6J5WG9.ii
  t _GLOBAL__sub_I_gamedll_re.stdout.rel_tf_osx_builder.55670.pIDXUt.ii
- t _GLOBAL__sub_I_gameinterf.stdout.rel_tf_osx_builder.80144.Cgsep3.ii
+ t _GLOBAL__sub_I_gameinterf.stdout.rel_tf_osx_builder.55196.IbtsRV.ii
  t _GLOBAL__sub_I_gamemoveme.stdout.rel_tf_osx_builder.53625.1AVLWQ.ii
  t _GLOBAL__sub_I_gamerules.stdout.rel_tf_osx_builder.53635.f49IRF.ii
  t _GLOBAL__sub_I_gamestring.stdout.rel_tf_osx_builder.53653.IN3I6c.ii
  t _GLOBAL__sub_I_gamevars_s.stdout.rel_tf_osx_builder.53657.eNq4kB.ii
  t _GLOBAL__sub_I_gameweapon.stdout.rel_tf_osx_builder.55694.bp7VT4.ii
- t _GLOBAL__sub_I_gc_clients.stdout.rel_tf_osx_builder.29485.il2Cko.ii
+ t _GLOBAL__sub_I_gc_clients.stdout.rel_tf_osx_builder.12771.L6lkTR.ii
  t _GLOBAL__sub_I_gc_replica.stdout.rel_tf_osx_builder.53669.YYIzfW.ii
  t _GLOBAL__sub_I_gcclient.stdout.rel_tf_osx_builder.16029.JeT0ID.ii
  t _GLOBAL__sub_I_gcsdk_gcme.stdout.rel_tf_osx_builder.12458.kxoLvu.ii
  t _GLOBAL__sub_I_gcsystemms.stdout.rel_tf_osx_builder.14156.uycMBA.ii
  t _GLOBAL__sub_I_genericact.stdout.rel_tf_osx_builder.55710.c7LOSj.ii
  t _GLOBAL__sub_I_genericmon.stdout.rel_tf_osx_builder.55714.9Gs2gq.ii
- t _GLOBAL__sub_I_ghost.stdout.rel_tf_osx_builder.80794.RpVIKY.ii
+ t _GLOBAL__sub_I_ghost.stdout.rel_tf_osx_builder.55839.vpLnH4.ii
  t _GLOBAL__sub_I_gib.stdout.rel_tf_osx_builder.55718.zbMC66.ii
  t _GLOBAL__sub_I_globalstat.stdout.rel_tf_osx_builder.55732.kTX4mL.ii
  t _GLOBAL__sub_I_guntarget.stdout.rel_tf_osx_builder.55746.xEyYpg.ii
- t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.80806.U6k1Cb.ii
- t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.80822.074nRr.ii
+ t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.55851.BhHHTT.ii
+ t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.55863.tOhHFL.ii
  t _GLOBAL__sub_I_hintsystem.stdout.rel_tf_osx_builder.53679.Vz0ZrU.ii
  t _GLOBAL__sub_I_hltvdirect.stdout.rel_tf_osx_builder.55768.5ZGkNT.ii
  t _GLOBAL__sub_I_igamesyste.stdout.rel_tf_osx_builder.53695.YmGHx3.ii
  t _GLOBAL__sub_I_info_camer.stdout.rel_tf_osx_builder.55776.jcS9Xq.ii
  t _GLOBAL__sub_I_info_overl.stdout.rel_tf_osx_builder.55782.FCJcEV.ii
  t _GLOBAL__sub_I_intermissi.stdout.rel_tf_osx_builder.55794.Lt96iO.ii
- t _GLOBAL__sub_I_item_world.stdout.rel_tf_osx_builder.80147.2Wx6Yv.ii
+ t _GLOBAL__sub_I_item_world.stdout.rel_tf_osx_builder.55204.wBYJz2.ii
  t _GLOBAL__sub_I_keyframe.stdout.rel_tf_osx_builder.13854.N0kvz8.ii
  t _GLOBAL__sub_I_lightglow.stdout.rel_tf_osx_builder.55804.dNgmBK.ii
  t _GLOBAL__sub_I_lights.stdout.rel_tf_osx_builder.55806.uQ46mD.ii
@@ -57022,25 +57024,25 @@
  t _GLOBAL__sub_I_logicentit.stdout.rel_tf_osx_builder.55822.KiaIsD.ii
  t _GLOBAL__sub_I_logicrelay.stdout.rel_tf_osx_builder.55826.58CBpl.ii
  t _GLOBAL__sub_I_maprules.stdout.rel_tf_osx_builder.55850.TOrQTs.ii
- t _GLOBAL__sub_I_maps_works.stdout.rel_tf_osx_builder.79405.rcObgk.ii
- t _GLOBAL__sub_I_merasmus.stdout.rel_tf_osx_builder.80826.sn8XLD.ii
- t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.80848.bUxoeR.ii
- t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.80890.fsXv2R.ii
- t _GLOBAL__sub_I_merasmus_t.stdout.rel_tf_osx_builder.80902.QejwwM.ii
+ t _GLOBAL__sub_I_maps_works.stdout.rel_tf_osx_builder.54683.370nTw.ii
+ t _GLOBAL__sub_I_merasmus.stdout.rel_tf_osx_builder.55867.hk4CW3.ii
+ t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.55884.L8ivgM.ii
+ t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.55927.7w1TSu.ii
+ t _GLOBAL__sub_I_merasmus_t.stdout.rel_tf_osx_builder.55931.UUMTLE.ii
  t _GLOBAL__sub_I_message_en.stdout.rel_tf_osx_builder.55864.n5Devh.ii
  t _GLOBAL__sub_I_messagelis.stdout.rel_tf_osx_builder.16185.ThAelR.ii
  t _GLOBAL__sub_I_modelentit.stdout.rel_tf_osx_builder.55872.cCFkSw.ii
  t _GLOBAL__sub_I_monster_re.stdout.rel_tf_osx_builder.57917.hjdAVO.ii
  t _GLOBAL__sub_I_monstermak.stdout.rel_tf_osx_builder.55876.0kvlaG.ii
  t _GLOBAL__sub_I_movement.stdout.rel_tf_osx_builder.55890.yS1gIw.ii
- t _GLOBAL__sub_I_movevars_s.stdout.rel_tf_osx_builder.79534.OwzeE7.ii
+ t _GLOBAL__sub_I_movevars_s.stdout.rel_tf_osx_builder.54734.8yXxiR.ii
  t _GLOBAL__sub_I_movie_expl.stdout.rel_tf_osx_builder.55896.2pZxQ5.ii
  t _GLOBAL__sub_I_msgprotobu.stdout.rel_tf_osx_builder.16227.V0cZqq.ii
- t _GLOBAL__sub_I_multiplay_.stdout.rel_tf_osx_builder.79544.40k5Mz.ii
- t _GLOBAL__sub_I_multiplaye.stdout.rel_tf_osx_builder.79540.cVJbC8.ii
+ t _GLOBAL__sub_I_multiplay_.stdout.rel_tf_osx_builder.54740.6g2juS.ii
+ t _GLOBAL__sub_I_multiplaye.stdout.rel_tf_osx_builder.54738.v4CwIq.ii
  t _GLOBAL__sub_I_nav_area.stdout.rel_tf_osx_builder.55898.0tCIhr.ii
  t _GLOBAL__sub_I_nav_edit.stdout.rel_tf_osx_builder.55912.epQmoy.ii
- t _GLOBAL__sub_I_nav_entiti.stdout.rel_tf_osx_builder.80158.yLFOjt.ii
+ t _GLOBAL__sub_I_nav_entiti.stdout.rel_tf_osx_builder.55206.2juPOq.ii
  t _GLOBAL__sub_I_nav_file.stdout.rel_tf_osx_builder.55926.ceKkNa.ii
  t _GLOBAL__sub_I_nav_genera.stdout.rel_tf_osx_builder.55930.DuxzEl.ii
  t _GLOBAL__sub_I_nav_merge.stdout.rel_tf_osx_builder.55944.4uof8m.ii
@@ -57094,7 +57096,7 @@
  t _GLOBAL__sub_I_props.stdout.rel_tf_osx_builder.56298.YgoVRc.ii
  t _GLOBAL__sub_I_props_shar.stdout.rel_tf_osx_builder.53848.I6LDy5.ii
  t _GLOBAL__sub_I_querycache.stdout.rel_tf_osx_builder.53852.yhmZDO.ii
- t _GLOBAL__sub_I_quest_obje.stdout.rel_tf_osx_builder.29489.P24Rdk.ii
+ t _GLOBAL__sub_I_quest_obje.stdout.rel_tf_osx_builder.54782.CpoMlp.ii
  t _GLOBAL__sub_I_ragdoll_ma.stdout.rel_tf_osx_builder.56310.f1USVS.ii
  t _GLOBAL__sub_I_ragdoll_sh.stdout.rel_tf_osx_builder.53858.z8FMAL.ii
  t _GLOBAL__sub_I_recipientf.stdout.rel_tf_osx_builder.56314.cimfnS.ii
@@ -57176,253 +57178,253 @@
  t _GLOBAL__sub_I_te_tfblood.stdout.rel_tf_osx_builder.57995.sLNPCb.ii
  t _GLOBAL__sub_I_te_worldde.stdout.rel_tf_osx_builder.56796.9ZNqWf.ii
  t _GLOBAL__sub_I_team.stdout.rel_tf_osx_builder.56478.iLEib7.ii
- t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.80164.vKzZt3.ii
- t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.80170.k4H2OL.ii
- t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.80176.Ru61i5.ii
+ t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.55214.2e14iP.ii
+ t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.55222.PkVINq.ii
+ t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.55228.cfyOJk.ii
  t _GLOBAL__sub_I_team_objec.stdout.rel_tf_osx_builder.56502.Vpxvbk.ii
  t _GLOBAL__sub_I_team_train.stdout.rel_tf_osx_builder.56503.OUMAPv.ii
  t _GLOBAL__sub_I_teamplay_g.stdout.rel_tf_osx_builder.53962.8S0SuN.ii
  t _GLOBAL__sub_I_teamplay_r.stdout.rel_tf_osx_builder.79552.fLOxpF.ii
- t _GLOBAL__sub_I_teamplayro.stdout.rel_tf_osx_builder.79548.sC3taG.ii
- t _GLOBAL__sub_I_teleport_v.stdout.rel_tf_osx_builder.79588.Qy62y4.ii
+ t _GLOBAL__sub_I_teamplayro.stdout.rel_tf_osx_builder.54748.TkfHKo.ii
+ t _GLOBAL__sub_I_teleport_v.stdout.rel_tf_osx_builder.54772.9qb6wL.ii
  t _GLOBAL__sub_I_tesla.stdout.rel_tf_osx_builder.56526.ohzLbS.ii
  t _GLOBAL__sub_I_test_ehand.stdout.rel_tf_osx_builder.53974.fDhxiG.ii
  t _GLOBAL__sub_I_test_proxy.stdout.rel_tf_osx_builder.56544.XNl40N.ii
  t _GLOBAL__sub_I_test_stres.stdout.rel_tf_osx_builder.56548.aOaPgL.ii
  t _GLOBAL__sub_I_testfuncti.stdout.rel_tf_osx_builder.56532.1n9bp8.ii
  t _GLOBAL__sub_I_testtracel.stdout.rel_tf_osx_builder.56536.XWTQ4x.ii
- t _GLOBAL__sub_I_tf_ammo_pa.stdout.rel_tf_osx_builder.81026.HNFsfL.ii
- t _GLOBAL__sub_I_tf_autobal.stdout.rel_tf_osx_builder.81034.IGhXSX.ii
- t _GLOBAL__sub_I_tf_base_bo.stdout.rel_tf_osx_builder.80967.jakddr.ii
- t _GLOBAL__sub_I_tf_bot.stdout.rel_tf_osx_builder.80584.IOcnRU.ii
- t _GLOBAL__sub_I_tf_bot_app.stdout.rel_tf_osx_builder.80434.KOEOJa.ii
- t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.80320.agAwDI.ii
- t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.80440.JgYmgb.ii
- t _GLOBAL__sub_I_tf_bot_beh.stdout.rel_tf_osx_builder.27725.Y0Uu4V.ii
- t _GLOBAL__sub_I_tf_bot_bod.stdout.rel_tf_osx_builder.80588.DZ9Zbf.ii
- t _GLOBAL__sub_I_tf_bot_cap.stdout.rel_tf_osx_builder.80304.CBdvvo.ii
- t _GLOBAL__sub_I_tf_bot_dea.stdout.rel_tf_osx_builder.80452.Y8hDUT.ii
- t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.80312.bWRLPc.ii
- t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.80318.RvPvyp.ii
- t _GLOBAL__sub_I_tf_bot_del.stdout.rel_tf_osx_builder.80332.0bbIKF.ii
- t _GLOBAL__sub_I_tf_bot_des.stdout.rel_tf_osx_builder.80455.MbsOIS.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80212.hkGvYz.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80218.p6K8I0.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80230.E6y07E.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80234.e6557J.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80242.cZjjiK.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80248.48EdKY.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.80252.H2AkRL.ii
- t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.80338.IkZ2LR.ii
- t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.80428.VDBlKX.ii
- t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.80460.1MN8zH.ii
- t _GLOBAL__sub_I_tf_bot_fet.stdout.rel_tf_osx_builder.80344.o73O05.ii
- t _GLOBAL__sub_I_tf_bot_gen.stdout.rel_tf_osx_builder.80546.Omuj2L.ii
- t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.80470.r1pXb9.ii
- t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.80476.WkS7NW.ii
+ t _GLOBAL__sub_I_tf_ammo_pa.stdout.rel_tf_osx_builder.56043.1pyv4j.ii
+ t _GLOBAL__sub_I_tf_autobal.stdout.rel_tf_osx_builder.56049.HGVX53.ii
+ t _GLOBAL__sub_I_tf_base_bo.stdout.rel_tf_osx_builder.55985.uPmT11.ii
+ t _GLOBAL__sub_I_tf_bot.stdout.rel_tf_osx_builder.55669.0AjSSa.ii
+ t _GLOBAL__sub_I_tf_bot_app.stdout.rel_tf_osx_builder.55525.dyrvGq.ii
+ t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.55419.yxJZid.ii
+ t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.55527.h9m6dF.ii
+ t _GLOBAL__sub_I_tf_bot_beh.stdout.rel_tf_osx_builder.60408.Wgc2Se.ii
+ t _GLOBAL__sub_I_tf_bot_bod.stdout.rel_tf_osx_builder.55672.7MKuGn.ii
+ t _GLOBAL__sub_I_tf_bot_cap.stdout.rel_tf_osx_builder.55401.Wr3VCo.ii
+ t _GLOBAL__sub_I_tf_bot_dea.stdout.rel_tf_osx_builder.55545.RdJrnt.ii
+ t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.55405.bfEvK4.ii
+ t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.55413.0HOSSp.ii
+ t _GLOBAL__sub_I_tf_bot_del.stdout.rel_tf_osx_builder.55425.hQ2rvn.ii
+ t _GLOBAL__sub_I_tf_bot_des.stdout.rel_tf_osx_builder.55547.n6vcSM.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55270.khQ3c2.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55276.7yQ5VO.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55282.9xUrnc.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55304.oWAG0P.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55308.eMY7tq.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55323.FEGUvW.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.55327.OWXzcQ.ii
+ t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.55427.NPRYvJ.ii
+ t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.55521.Y6O5es.ii
+ t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.55553.Wv7vD3.ii
+ t _GLOBAL__sub_I_tf_bot_fet.stdout.rel_tf_osx_builder.55434.jP4tN7.ii
+ t _GLOBAL__sub_I_tf_bot_gen.stdout.rel_tf_osx_builder.55635.nLc67K.ii
+ t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.55563.nuVNNq.ii
+ t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.55569.nUMazA.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.55638.oP7Psw.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.55645.dYTnP6.ii
  t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.57257.lozxuk.ii
  t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.57271.35Qe7f.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.80554.yUtaYy.ii
  t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.80558.XkUvvt.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.80566.aDjDWu.ii
- t _GLOBAL__sub_I_tf_bot_loc.stdout.rel_tf_osx_builder.80590.sSyu0P.ii
- t _GLOBAL__sub_I_tf_bot_man.stdout.rel_tf_osx_builder.80602.CoHCBs.ii
- t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.80255.xSUZZF.ii
- t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.80260.3acwRl.ii
- t _GLOBAL__sub_I_tf_bot_mel.stdout.rel_tf_osx_builder.80482.XlH4Vu.ii
- t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.80270.oorXoj.ii
- t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.80278.RZ58Jg.ii
- t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.80282.kw0CBY.ii
- t _GLOBAL__sub_I_tf_bot_mov.stdout.rel_tf_osx_builder.80488.rE0VGb.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.80194.xedGVV.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.80200.Rkv4nc.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.80204.wbXFXm.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.80206.qZaGkh.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.80494.1K75KI.ii
- t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.80290.aI1zRI.ii
- t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.80296.23qqXj.ii
- t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.80300.35yBFT.ii
- t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.80348.tNscrd.ii
- t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.80356.g3FCPc.ii
- t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.80360.8xmIfM.ii
- t _GLOBAL__sub_I_tf_bot_pre.stdout.rel_tf_osx_builder.80182.EzOaXP.ii
- t _GLOBAL__sub_I_tf_bot_pro.stdout.rel_tf_osx_builder.80572.eqIRAh.ii
- t _GLOBAL__sub_I_tf_bot_ret.stdout.rel_tf_osx_builder.80498.jnqrA7.ii
+ t _GLOBAL__sub_I_tf_bot_loc.stdout.rel_tf_osx_builder.55679.hPmLp1.ii
+ t _GLOBAL__sub_I_tf_bot_man.stdout.rel_tf_osx_builder.55683.DLYHgK.ii
+ t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.55333.e0CR9d.ii
+ t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.55349.dr7InS.ii
+ t _GLOBAL__sub_I_tf_bot_mel.stdout.rel_tf_osx_builder.55572.oslKRv.ii
+ t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.55363.KODpFu.ii
+ t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.55371.IGM5Jw.ii
+ t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.55377.AHH6GC.ii
+ t _GLOBAL__sub_I_tf_bot_mov.stdout.rel_tf_osx_builder.55577.8gK7YR.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.55242.Q8FNVu.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.55252.SwJIOe.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.55256.tkVD4A.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.55258.Cs5Hnh.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.55587.rMwtXd.ii
+ t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.55381.WcjEJy.ii
+ t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.55389.dEC1RX.ii
+ t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.55393.BeKnH0.ii
+ t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.55439.vu2BBT.ii
+ t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.55449.OKANsJ.ii
+ t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.55453.Hc9BTt.ii
+ t _GLOBAL__sub_I_tf_bot_pre.stdout.rel_tf_osx_builder.55232.BdoB8C.ii
+ t _GLOBAL__sub_I_tf_bot_pro.stdout.rel_tf_osx_builder.55657.Wf05zk.ii
+ t _GLOBAL__sub_I_tf_bot_ret.stdout.rel_tf_osx_builder.55593.Bsw4d6.ii
  t _GLOBAL__sub_I_tf_bot_ros.stdout.rel_tf_osx_builder.57277.WNnc7W.ii
- t _GLOBAL__sub_I_tf_bot_sce.stdout.rel_tf_osx_builder.80505.igR8AM.ii
- t _GLOBAL__sub_I_tf_bot_see.stdout.rel_tf_osx_builder.80510.QGqBOk.ii
- t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.80366.hkSCPw.ii
- t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.80368.vyiq71.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80380.K6m8GS.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80386.93ZtSp.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80392.Q9FnfD.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80396.w1K5JD.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80404.IYVygO.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80408.f7rJ33.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80411.ncteD9.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.80420.Q4Ocrq.ii
- t _GLOBAL__sub_I_tf_bot_squ.stdout.rel_tf_osx_builder.80604.0DwinP.ii
- t _GLOBAL__sub_I_tf_bot_sti.stdout.rel_tf_osx_builder.80186.q2IieS.ii
- t _GLOBAL__sub_I_tf_bot_tac.stdout.rel_tf_osx_builder.80516.sB6jX5.ii
- t _GLOBAL__sub_I_tf_bot_tau.stdout.rel_tf_osx_builder.80524.4m0iSX.ii
- t _GLOBAL__sub_I_tf_bot_tem.stdout.rel_tf_osx_builder.81040.fT6faL.ii
- t _GLOBAL__sub_I_tf_bot_tra.stdout.rel_tf_osx_builder.80542.U8HJA5.ii
- t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.80530.Yxv4kY.ii
- t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.80536.0787dX.ii
- t _GLOBAL__sub_I_tf_bot_vis.stdout.rel_tf_osx_builder.80610.pL4I4o.ii
+ t _GLOBAL__sub_I_tf_bot_sce.stdout.rel_tf_osx_builder.55597.0k9bXV.ii
+ t _GLOBAL__sub_I_tf_bot_see.stdout.rel_tf_osx_builder.55603.jux7mO.ii
+ t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.55459.nzocJC.ii
+ t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.55465.cEuT6q.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55473.GlRdmr.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55477.whXiHl.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55483.Xzu5Qs.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55487.9QLrih.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55497.ox1OxL.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55501.sgTLhF.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55507.TOSRYs.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.55515.xDZCXr.ii
+ t _GLOBAL__sub_I_tf_bot_squ.stdout.rel_tf_osx_builder.55692.TvgupQ.ii
+ t _GLOBAL__sub_I_tf_bot_sti.stdout.rel_tf_osx_builder.55240.JxynN7.ii
+ t _GLOBAL__sub_I_tf_bot_tac.stdout.rel_tf_osx_builder.55611.hqjTU6.ii
+ t _GLOBAL__sub_I_tf_bot_tau.stdout.rel_tf_osx_builder.55617.gYNx2Q.ii
+ t _GLOBAL__sub_I_tf_bot_tem.stdout.rel_tf_osx_builder.56055.8d7HTk.ii
+ t _GLOBAL__sub_I_tf_bot_tra.stdout.rel_tf_osx_builder.55629.mhnpnc.ii
+ t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.55621.Ut0OdY.ii
+ t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.55625.OgfUcJ.ii
+ t _GLOBAL__sub_I_tf_bot_vis.stdout.rel_tf_osx_builder.55697.9zgrUN.ii
  t _GLOBAL__sub_I_tf_classda.stdout.rel_tf_osx_builder.54126.Hg8xix.ii
  t _GLOBAL__sub_I_tf_conditi.stdout.rel_tf_osx_builder.79616.26cuaS.ii
- t _GLOBAL__sub_I_tf_dropped.stdout.rel_tf_osx_builder.79624.BWWk1e.ii
- t _GLOBAL__sub_I_tf_duel.stdout.rel_tf_osx_builder.80930.e4AVWs.ii
+ t _GLOBAL__sub_I_tf_dropped.stdout.rel_tf_osx_builder.54796.UMRvsW.ii
+ t _GLOBAL__sub_I_tf_duel.stdout.rel_tf_osx_builder.55961.dAoZ5b.ii
  t _GLOBAL__sub_I_tf_entity_.stdout.rel_tf_osx_builder.58023.SVl0uR.ii
- t _GLOBAL__sub_I_tf_eventlo.stdout.rel_tf_osx_builder.81052.Qj2Gyk.ii
+ t _GLOBAL__sub_I_tf_eventlo.stdout.rel_tf_osx_builder.56063.OkOALa.ii
  t _GLOBAL__sub_I_tf_extra_m.stdout.rel_tf_osx_builder.58035.Bs3zzA.ii
- t _GLOBAL__sub_I_tf_filters.stdout.rel_tf_osx_builder.81058.faNBMc.ii
- t _GLOBAL__sub_I_tf_flame.stdout.rel_tf_osx_builder.27623.V2fUtW.ii
+ t _GLOBAL__sub_I_tf_filters.stdout.rel_tf_osx_builder.56067.SZ893r.ii
+ t _GLOBAL__sub_I_tf_flame.stdout.rel_tf_osx_builder.60311.s79a1v.ii
  t _GLOBAL__sub_I_tf_fx.stdout.rel_tf_osx_builder.58049.s8ZGEL.ii
- t _GLOBAL__sub_I_tf_fx_shar.stdout.rel_tf_osx_builder.79636.35cLtK.ii
+ t _GLOBAL__sub_I_tf_fx_shar.stdout.rel_tf_osx_builder.54808.rSCYws.ii
  t _GLOBAL__sub_I_tf_gameint.stdout.rel_tf_osx_builder.58055.SvYZuP.ii
- t _GLOBAL__sub_I_tf_gamemov.stdout.rel_tf_osx_builder.79642.6tlbpc.ii
- t _GLOBAL__sub_I_tf_gamerul.stdout.rel_tf_osx_builder.31253.IcOWiA.ii
- t _GLOBAL__sub_I_tf_gamesta.stdout.rel_tf_osx_builder.81062.ALjXeq.ii
- t _GLOBAL__sub_I_tf_gc_api.stdout.rel_tf_osx_builder.79402.i4avkx.ii
- t _GLOBAL__sub_I_tf_gc_serv.stdout.rel_tf_osx_builder.31250.iOmGwY.ii
+ t _GLOBAL__sub_I_tf_gamemov.stdout.rel_tf_osx_builder.54814.MXOnoC.ii
+ t _GLOBAL__sub_I_tf_gamerul.stdout.rel_tf_osx_builder.60312.Z5c1xR.ii
+ t _GLOBAL__sub_I_tf_gamesta.stdout.rel_tf_osx_builder.56068.8l2JvN.ii
+ t _GLOBAL__sub_I_tf_gc_api.stdout.rel_tf_osx_builder.54680.nOH4Ot.ii
+ t _GLOBAL__sub_I_tf_gc_serv.stdout.rel_tf_osx_builder.54681.nahzUO.ii
  t _GLOBAL__sub_I_tf_gcmessa.stdout.rel_tf_osx_builder.98963.epugYp.ii
- t _GLOBAL__sub_I_tf_generic.stdout.rel_tf_osx_builder.79652.ceMGa8.ii
+ t _GLOBAL__sub_I_tf_generic.stdout.rel_tf_osx_builder.54826.lnzvGC.ii
  t _GLOBAL__sub_I_tf_glow.stdout.rel_tf_osx_builder.58065.yc7PWp.ii
- t _GLOBAL__sub_I_tf_hallowe.stdout.rel_tf_osx_builder.79656.aXeSnV.ii
+ t _GLOBAL__sub_I_tf_hallowe.stdout.rel_tf_osx_builder.54832.C5AZcK.ii
  t _GLOBAL__sub_I_tf_hltvdir.stdout.rel_tf_osx_builder.58073.vE4Ik0.ii
  t _GLOBAL__sub_I_tf_item.stdout.rel_tf_osx_builder.79666.An9VIA.ii
- t _GLOBAL__sub_I_tf_item_in.stdout.rel_tf_osx_builder.79672.VPh0Yo.ii
- t _GLOBAL__sub_I_tf_item_po.stdout.rel_tf_osx_builder.79678.b2uTxW.ii
- t _GLOBAL__sub_I_tf_item_sc.stdout.rel_tf_osx_builder.29494.s4cGzX.ii
- t _GLOBAL__sub_I_tf_item_we.stdout.rel_tf_osx_builder.79682.uVh9gu.ii
- t _GLOBAL__sub_I_tf_logic_h.stdout.rel_tf_osx_builder.79690.UG7HdD.ii
- t _GLOBAL__sub_I_tf_logic_o.stdout.rel_tf_osx_builder.81068.SG6iMv.ii
- t _GLOBAL__sub_I_tf_logic_p.stdout.rel_tf_osx_builder.79694.oW3DLz.ii
- t _GLOBAL__sub_I_tf_logic_r.stdout.rel_tf_osx_builder.79698.ClwNCH.ii
- t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.79702.HTWABl.ii
- t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.80972.BtXC6s.ii
- t _GLOBAL__sub_I_tf_mapinfo.stdout.rel_tf_osx_builder.79714.qNjsbt.ii
- t _GLOBAL__sub_I_tf_matchma.stdout.rel_tf_osx_builder.31256.qSOE2F.ii
- t _GLOBAL__sub_I_tf_nav_are.stdout.rel_tf_osx_builder.80938.z7cXi3.ii
+ t _GLOBAL__sub_I_tf_item_in.stdout.rel_tf_osx_builder.54836.NmYXre.ii
+ t _GLOBAL__sub_I_tf_item_po.stdout.rel_tf_osx_builder.54842.1nX5do.ii
+ t _GLOBAL__sub_I_tf_item_sc.stdout.rel_tf_osx_builder.12788.DyqbSt.ii
+ t _GLOBAL__sub_I_tf_item_we.stdout.rel_tf_osx_builder.54845.e78w8N.ii
+ t _GLOBAL__sub_I_tf_logic_h.stdout.rel_tf_osx_builder.54856.QfMIat.ii
+ t _GLOBAL__sub_I_tf_logic_o.stdout.rel_tf_osx_builder.56079.rRSzwP.ii
+ t _GLOBAL__sub_I_tf_logic_p.stdout.rel_tf_osx_builder.54862.WdNPkq.ii
+ t _GLOBAL__sub_I_tf_logic_r.stdout.rel_tf_osx_builder.54868.Q5KYiB.ii
+ t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.54872.s9U3c8.ii
+ t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.55995.2Cdezq.ii
+ t _GLOBAL__sub_I_tf_mapinfo.stdout.rel_tf_osx_builder.54880.zzbR87.ii
+ t _GLOBAL__sub_I_tf_matchma.stdout.rel_tf_osx_builder.54884.SLJNFE.ii
+ t _GLOBAL__sub_I_tf_nav_are.stdout.rel_tf_osx_builder.55967.BhM919.ii
  t _GLOBAL__sub_I_tf_nav_int.stdout.rel_tf_osx_builder.57797.Y21TKW.ii
+ t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.55972.pYVFCX.ii
  t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.57806.gWiljN.ii
- t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.80942.6Pr1Ra.ii
- t _GLOBAL__sub_I_tf_obj.stdout.rel_tf_osx_builder.81074.Aa1gVb.ii
+ t _GLOBAL__sub_I_tf_obj.stdout.rel_tf_osx_builder.56091.DLxWtv.ii
  t _GLOBAL__sub_I_tf_obj_bas.stdout.rel_tf_osx_builder.54304.TGkAxZ.ii
- t _GLOBAL__sub_I_tf_obj_dis.stdout.rel_tf_osx_builder.81094.6hmlIl.ii
- t _GLOBAL__sub_I_tf_obj_sap.stdout.rel_tf_osx_builder.81098.Slp9p1.ii
- t _GLOBAL__sub_I_tf_obj_sen.stdout.rel_tf_osx_builder.81106.usXey1.ii
- t _GLOBAL__sub_I_tf_obj_spy.stdout.rel_tf_osx_builder.81110.0Pwaea.ii
- t _GLOBAL__sub_I_tf_obj_tel.stdout.rel_tf_osx_builder.81115.pwSrcF.ii
- t _GLOBAL__sub_I_tf_objecti.stdout.rel_tf_osx_builder.81076.iw1Poq.ii
- t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.81124.KyZrjg.ii
- t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.81128.GJRg8M.ii
- t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.89918.eWxj96.ii
- t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.81154.pJqTUb.ii
- t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.85402.29WVqk.ii
+ t _GLOBAL__sub_I_tf_obj_dis.stdout.rel_tf_osx_builder.56103.B7wHDd.ii
+ t _GLOBAL__sub_I_tf_obj_sap.stdout.rel_tf_osx_builder.56107.0WwLjv.ii
+ t _GLOBAL__sub_I_tf_obj_sen.stdout.rel_tf_osx_builder.56108.El65dG.ii
+ t _GLOBAL__sub_I_tf_obj_spy.stdout.rel_tf_osx_builder.56121.ZmWNJj.ii
+ t _GLOBAL__sub_I_tf_obj_tel.stdout.rel_tf_osx_builder.56123.ZXoEHx.ii
+ t _GLOBAL__sub_I_tf_objecti.stdout.rel_tf_osx_builder.56097.QdUZxi.ii
+ t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.56133.OnqaBo.ii
+ t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.56139.DnOvfw.ii
+ t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.60412.9h6GpZ.ii
+ t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.56149.LFvh7c.ii
+ t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.60316.mGHA8S.ii
  t _GLOBAL__sub_I_tf_playerc.stdout.rel_tf_osx_builder.54325.1ILnFy.ii
  t _GLOBAL__sub_I_tf_playerm.stdout.rel_tf_osx_builder.81146.XPBSMz.ii
- t _GLOBAL__sub_I_tf_point_m.stdout.rel_tf_osx_builder.54340.xqz42j.ii
+ t _GLOBAL__sub_I_tf_point_m.stdout.rel_tf_osx_builder.60317.8NSLtm.ii
  t _GLOBAL__sub_I_tf_point_w.stdout.rel_tf_osx_builder.80975.qNDPM3.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.80980.VaOaye.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.80990.wR7ufk.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.80992.CNRCks.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.81004.SWKTgF.ii
- t _GLOBAL__sub_I_tf_powerup.stdout.rel_tf_osx_builder.81160.7AROpV.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.64665.ZLAZfp.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.79741.Tn7o1I.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.79754.Y79m9m.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.79762.ejxZwm.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.81163.0XjOAQ.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.81168.MSBdTF.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.81178.6M58ZX.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.55999.3S9g7p.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.56003.M3hq8O.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.56009.4LEJ0C.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.56015.k3C6Xp.ii
+ t _GLOBAL__sub_I_tf_powerup.stdout.rel_tf_osx_builder.56153.GKO5mt.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.54916.RkpTqf.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.54918.UV6yBf.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.56158.TpxTb2.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.56173.TXuJzg.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60318.D3fPlJ.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60319.TVAAFw.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60420.CjQ6fg.ii
  t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.81182.24DjnF.ii
- t _GLOBAL__sub_I_tf_props.stdout.rel_tf_osx_builder.81190.6TncpB.ii
- t _GLOBAL__sub_I_tf_proto_d.stdout.rel_tf_osx_builder.27643.Zh97lF.ii
- t _GLOBAL__sub_I_tf_proto_s.stdout.rel_tf_osx_builder.27649.OS9nui.ii
- t _GLOBAL__sub_I_tf_pumpkin.stdout.rel_tf_osx_builder.79768.Y2xxhL.ii
- t _GLOBAL__sub_I_tf_pushent.stdout.rel_tf_osx_builder.81196.8qsWNz.ii
- t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.27653.ZOa5km.ii
- t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.27661.1MFngW.ii
- t _GLOBAL__sub_I_tf_quest_r.stdout.rel_tf_osx_builder.89914.evrU3P.ii
- t _GLOBAL__sub_I_tf_revive.stdout.rel_tf_osx_builder.79780.mBBetR.ii
- t _GLOBAL__sub_I_tf_robot_d.stdout.rel_tf_osx_builder.79784.tXQBqy.ii
- t _GLOBAL__sub_I_tf_sharedd.stdout.rel_tf_osx_builder.79792.Z1GDmi.ii
- t _GLOBAL__sub_I_tf_spawner.stdout.rel_tf_osx_builder.80578.oEWvMy.ii
- t _GLOBAL__sub_I_tf_spell_p.stdout.rel_tf_osx_builder.80906.HBtXOl.ii
- t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.81010.EHjWNm.ii
- t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.81016.WXr9IB.ii
- t _GLOBAL__sub_I_tf_target_.stdout.rel_tf_osx_builder.79798.FcZxVB.ii
+ t _GLOBAL__sub_I_tf_props.stdout.rel_tf_osx_builder.56181.41CJS1.ii
+ t _GLOBAL__sub_I_tf_proto_d.stdout.rel_tf_osx_builder.12801.vEiCTO.ii
+ t _GLOBAL__sub_I_tf_proto_s.stdout.rel_tf_osx_builder.12805.MjuESs.ii
+ t _GLOBAL__sub_I_tf_pumpkin.stdout.rel_tf_osx_builder.54924.3YlrMC.ii
+ t _GLOBAL__sub_I_tf_pushent.stdout.rel_tf_osx_builder.56187.sU7oog.ii
+ t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.12809.GaCGyy.ii
+ t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.12815.vu92q7.ii
+ t _GLOBAL__sub_I_tf_quest_r.stdout.rel_tf_osx_builder.54932.eiz1Y9.ii
+ t _GLOBAL__sub_I_tf_revive.stdout.rel_tf_osx_builder.54938.O3y8lN.ii
+ t _GLOBAL__sub_I_tf_robot_d.stdout.rel_tf_osx_builder.54942.SizdBq.ii
+ t _GLOBAL__sub_I_tf_sharedd.stdout.rel_tf_osx_builder.54952.xKxmdd.ii
+ t _GLOBAL__sub_I_tf_spawner.stdout.rel_tf_osx_builder.55665.UqmjIk.ii
+ t _GLOBAL__sub_I_tf_spell_p.stdout.rel_tf_osx_builder.55934.vdQlmr.ii
+ t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.56021.v5RnIX.ii
+ t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.56031.mqNzOG.ii
+ t _GLOBAL__sub_I_tf_target_.stdout.rel_tf_osx_builder.54958.L7oGNl.ii
  t _GLOBAL__sub_I_tf_taunt_p.stdout.rel_tf_osx_builder.58217.ZJBLbD.ii
- t _GLOBAL__sub_I_tf_team.stdout.rel_tf_osx_builder.81206.MDuFEf.ii
- t _GLOBAL__sub_I_tf_trigger.stdout.rel_tf_osx_builder.27735.estuml.ii
- t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.79802.ieMxBv.ii
- t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.81022.BVCjxo.ii
- t _GLOBAL__sub_I_tf_viewmod.stdout.rel_tf_osx_builder.27677.ASNbIg.ii
- t _GLOBAL__sub_I_tf_voteiss.stdout.rel_tf_osx_builder.79404.0Wda5W.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.27689.B6B0vp.ii
+ t _GLOBAL__sub_I_tf_team.stdout.rel_tf_osx_builder.56193.J15XKg.ii
+ t _GLOBAL__sub_I_tf_trigger.stdout.rel_tf_osx_builder.56197.wmMeRV.ii
+ t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.54962.TaaPnO.ii
+ t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.56035.ASEu4T.ii
+ t _GLOBAL__sub_I_tf_viewmod.stdout.rel_tf_osx_builder.54966.pNwOiP.ii
+ t _GLOBAL__sub_I_tf_voteiss.stdout.rel_tf_osx_builder.54682.Dyd4Ly.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.27695.BF2t5j.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.27703.tIt8tQ.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.27709.zw78eA.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.27715.FPSitx.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.56256.8Xphhd.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.61607.A74srs.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79594.bvAIKJ.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79852.srhWab.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.54998.N1iznW.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55006.x9fGeu.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55012.JBpef8.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55016.GD7Dzu.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55042.YbWgh4.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55044.ByO6oG.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55054.jEGnB2.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55072.3JGMPF.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55078.KnxuvF.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55084.SNRaQe.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55088.jw9rZF.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55094.uCuDNv.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55100.zfdu2f.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55108.4dJULe.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55112.U0hZ8a.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55120.iB2lKV.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55126.jkRBgR.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55138.mbfz6l.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55142.hB9vUs.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55146.Ju6qlj.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55156.KRVLpR.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.55160.bHqoGP.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.56209.QzvDAE.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60310.axOPnf.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60360.U6SDUH.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60366.X07icY.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60370.eIXhzF.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60372.4pdJ01.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60384.Q6IgFw.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60390.JiQbnF.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60396.z4aowi.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60402.qLlWtB.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79857.eds1QI.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79864.nw3bLD.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79870.VjMmdD.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79874.YGIX5N.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79886.zs9hRM.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79890.11MvZQ.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79904.2fVeH3.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79912.GbP0Hh.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79918.ERSLnp.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79922.SZoTDc.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79930.XcVd5M.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79932.kTqjzN.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79938.bXAnKw.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79948.CIrpQe.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79954.fsGGyL.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79966.8aSk0G.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79972.9lanPQ.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79984.tjcZTR.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.79996.Q0W1h8.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80002.Yx6gZv.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80008.eJIHdR.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80014.RXJypv.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80020.ll0OsU.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80024.6eXEkB.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80028.yPM7jG.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80044.J0oEHw.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80050.8Vu79V.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80056.1ZDjrP.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80062.Nel5p3.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80068.gBtuql.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80072.3LBnce.ii
  t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80080.w5YFEK.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80084.ldwqx1.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.80092.SxZ5PV.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.81230.EYcLDY.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.27683.vCXE0E.ii
  t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.54480.gUUqSi.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.79824.bqPxyi.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.79832.0xAQdJ.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.79840.2afBXG.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.79844.RT8dAn.ii
- t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.29532.WHBqFN.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.54972.BvLGa5.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.54974.NMBAmC.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.54982.gLSvdV.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.54994.OHL00s.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60328.kk87oQ.ii
+ t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.12837.1DIXlZ.ii
+ t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.55168.cxTNGE.ii
  t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.80104.nt1rE3.ii
- t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.80110.WM4r20.ii
- t _GLOBAL__sub_I_tf_wheel_o.stdout.rel_tf_osx_builder.80116.LWc6x6.ii
+ t _GLOBAL__sub_I_tf_wheel_o.stdout.rel_tf_osx_builder.55174.o5wesx.ii
  t _GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.58271.TJolPQ.ii
  t _GLOBAL__sub_I_trains.stdout.rel_tf_osx_builder.58277.I5Q1lQ.ii
  t _GLOBAL__sub_I_trigger_ar.stdout.rel_tf_osx_builder.58289.WRJvew.ii
  t _GLOBAL__sub_I_trigger_ca.stdout.rel_tf_osx_builder.80120.y2l40D.ii
  t _GLOBAL__sub_I_trigger_ca.stdout.rel_tf_osx_builder.81238.CJQ3zb.ii
  t _GLOBAL__sub_I_trigger_pa.stdout.rel_tf_osx_builder.81244.BpTA4V.ii
- t _GLOBAL__sub_I_triggers.stdout.rel_tf_osx_builder.58281.S2rPoB.ii
+ t _GLOBAL__sub_I_triggers.stdout.rel_tf_osx_builder.12841.j9kSSa.ii
  t _GLOBAL__sub_I_usermessag.stdout.rel_tf_osx_builder.54786.A7mbFi.ii
  t _GLOBAL__sub_I_util.stdout.rel_tf_osx_builder.58293.rYIUus.ii
  t _GLOBAL__sub_I_util_share.stdout.rel_tf_osx_builder.54790.cpDtx0.ii
@@ -57433,7 +57435,7 @@
  t _GLOBAL__sub_I_vehicle_vi.stdout.rel_tf_osx_builder.54792.CMaSwD.ii
  t _GLOBAL__sub_I_vguiscreen.stdout.rel_tf_osx_builder.58319.fc6ruZ.ii
  t _GLOBAL__sub_I_voice_game.stdout.rel_tf_osx_builder.54798.bFDfTc.ii
- t _GLOBAL__sub_I_vote_contr.stdout.rel_tf_osx_builder.79406.lCt0kK.ii
+ t _GLOBAL__sub_I_vote_contr.stdout.rel_tf_osx_builder.54684.PnMGoN.ii
  t _GLOBAL__sub_I_waterbulle.stdout.rel_tf_osx_builder.58325.eWUyyh.ii
  t _GLOBAL__sub_I_wcedit.stdout.rel_tf_osx_builder.58335.j30Aad.ii
  t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.54810.I7Qzhs.ii
@@ -57442,8 +57444,8 @@
  t _GLOBAL__sub_I_weapon_par.stdout.rel_tf_osx_builder.54828.zm73XD.ii
  t _GLOBAL__sub_I_weight_but.stdout.rel_tf_osx_builder.58343.tnT0jw.ii
  t _GLOBAL__sub_I_world.stdout.rel_tf_osx_builder.58347.HTDrr1.ii
- t _GLOBAL__sub_I_zombie.stdout.rel_tf_osx_builder.80914.Ymuy3i.ii
- t _GLOBAL__sub_I_zombie_att.stdout.rel_tf_osx_builder.80920.QKXGGl.ii
+ t _GLOBAL__sub_I_zombie.stdout.rel_tf_osx_builder.55947.EUTatI.ii
+ t _GLOBAL__sub_I_zombie_att.stdout.rel_tf_osx_builder.55953.PtJPil.ii
  t _GLOBAL__sub_I_zombie_spa.stdout.rel_tf_osx_builder.57777.Od1ClD.ii
  t __CreateCEffectsServerIEffects_interface()
  t __CreateCGameMovementIGameMovement_interface()
@@ -57570,7 +57572,7 @@
  t __cxx_global_var_init343
  t __cxx_global_var_init37
  t __cxx_global_var_init4
- t __cxx_global_var_init464
+ t __cxx_global_var_init463
  t __cxx_global_var_init49
  t __cxx_global_var_init6
  t ai_debug_node_connect(CCommand const&)
