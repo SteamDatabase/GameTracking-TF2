@@ -1957,5 +1957,11 @@
 
 	"items_acknowledged"
 	{}
+
+	"capper_killed"
+	{
+		"blocker"	"short"	// entindex of the blocker
+		"victim"	"short"	// entindex of the victim
+	}
 }
 
