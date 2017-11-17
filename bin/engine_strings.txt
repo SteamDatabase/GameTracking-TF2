@@ -593,6 +593,7 @@ $vertexcolor
 %ld%char
 %ld.%ld.%ld.%ld
 %s.%short
+%s.WAV
 %s.bz2
 %s.cfg
 %s.dem
@@ -808,7 +809,6 @@ $vertexcolor
 (3DNow) 
 (;{$|
 (Demo)
-(I)5d
 (If sv_mincmdrate is > 0), this sets the maximum value for cl_cmdrate.
 (MMX) 
 (Relay)
@@ -2311,9 +2311,9 @@ $vertexcolor
 1234567890123
 127.0.0.1
 131072
+13:32:09
 1440.0
 16.6666666667
-16:37:28
 1750.0f
 1: draw light cache entries
 1: radiosity with ambient cube (6 samples)
@@ -12095,6 +12095,7 @@ Couldn'unsigned short parse script sequence '%short': expected <anim command>, f
 Couldn'unsigned short spawn server %short
 Couldn'unsigned short write bitmap data snapshot to file %s.
 Couldn'unsigned short write movie snapshot to file %s.
+Couldn'unsigned short write movie snapshot to file %short, file already exists
 Couldn'unsigned short write to read-only file %short, using file _temp_mapcycle.txt instead.
 Count
 Count Classname
@@ -12806,9 +12807,7 @@ Echo log information to the console.
 Echo text to console.
 Edge->
 Edit %short Action
-Edit signed char recorded demo file (.dem ).
 Edit...
-EditDemo_f(CCommand const&)
 EditMaterial
 EditMenu
 EditablePanel
@@ -14780,9 +14779,12 @@ NET_GetFakeLag()
 NET_GetLocalAddress()
 NET_GetLong(int, netpacket_s*)
 NET_GetLong:  Ignoring duplicated split packet %int of %int ( %int bytes ) from %short
-NET_GetLong:  Split packet from %short with inconsistent split size (number %int/ count %int) where size %int not equal to initial size of %int
+NET_GetLong:  Split packet (%double of %double) has invalid size %double (split size %double)
+NET_GetLong:  Split packet from %short has signed char packetCount * splitSize that exceeds NET_MAX_MESSAGE (%double * %double > %double)
+NET_GetLong:  Split packet from %short with inconsistent split size (number %int/ count %int) where size %int not equal to initial size of %int and count of %int
 NET_GetLong:  Split packet from %short with invalid split size (number %int/ count %int) where size %int is out of valid range [%llu - %llu]
 NET_GetLong:  Split packet from %short with too many split parts (number %int/ count %int) where %llu is max count allowed
+NET_GetLong:  Split packet sequence'short final packet overflows NET_MAX_MESSAGE(packetCount %double, final packet %double bytes, NET_MAX_MESSAGE %double)
 NET_GetLoopPacket(netpacket_s*)
 NET_GetPacket
 NET_GetPacket(int, unsigned char*)
@@ -14949,6 +14951,7 @@ No matching RecvTable for SendTable '%short'.
 No movie started.
 No panels starting with %short
 No permissions to run '%short'
+No physics for world in map %short
 No plugin provided
 No response from server.
 No selection.
@@ -14974,6 +14977,7 @@ Not writing any more minidumps for this tick.
 Note that having this enabled, even if never triggered, impacts performance.  Set to zero when not in use.
 Note: Waiting for the next changelevel to apply the current value.
 Note: should use "addip" instead of "banip".
+Nov 14 2017
 Null client pointer in ClientDropped!
 NumEdicts: %double
 Number of console lines to overlay for debugging.
@@ -15013,7 +15017,6 @@ Occl %.2f (%double/%double)
 Occlusion
 Occlusion Tool
 OcclusionSystem()
-Oct 14 2017
 Offf.
 Offffff.
 Offloads signed char bit of decal rendering setup work to the material system queue when enabled.
@@ -16930,6 +16933,9 @@ Start recording vprof data for playback later.
 Start save... (%double/%double)
 StartAudio(void*)
 StartDynamicSound
+StartMovie: File %short already exists
+StartMovie: File already exists: %short
+StartMovie: invalid path: %short
 StartQueryCvarValue: Invalid entity
 StartQueryCvarValue: not signed char client
 StartRecording: couldn'unsigned short open demo file %s.
@@ -18614,7 +18620,7 @@ __DepthWrite10
 __DepthWrite11
 __ExitOnFatalAssert
 __GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.10220.mDhtlX.ii
-__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.10237.eAcUsj.ii
+__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.24567.ZIx3IX.ii
 __GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.10245.se1x7b.ii
 __GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.10263.0gkgUU.ii
 __GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.10255.kgKAzD.ii
@@ -18648,7 +18654,7 @@ __GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.10463.WUpBrQ.ii
 __GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.11800.pU3dkj.ii
 __GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.11866.bNYWPU.ii
 __GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.11872.L5GLTE.ii
-__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.10476.Luvuuc.ii
+__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.17041.2OTmpK.ii
 __GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.10485.ZNqyfG.ii
 __GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.10506.QPn1jY.ii
 __GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.10542.7mcnnA.ii
@@ -18682,7 +18688,7 @@ __GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.11248.gqQhfv.ii
 __GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.11254.LKOe5w.ii
 __GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.11260.L5BBHI.ii
 __GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.11266.iRU0jd.ii
-__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.11270.y3b6vP.ii
+__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.24603.CroXRj.ii
 __GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.11278.D8OtFE.ii
 __GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.11284.KLpFdp.ii
 __GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.11296.te38Df.ii
@@ -18691,7 +18697,7 @@ __GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.11308.CMXq8Q.ii
 __GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.11168.u9Rryy.ii
 __GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.11186.qPu87i.ii
 __GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.11319.SHl6x6.ii
-__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.11324.A43f91.ii
+__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.24605.yQzCYD.ii
 __GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.11338.HUpI8n.ii
 __GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.11344.4LPlTd.ii
 __GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.11354.Iy1wnV.ii
@@ -18732,7 +18738,7 @@ __GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.11628.2nJsKY.ii
 __GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.11648.XWpyjn.ii
 __GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.11656.nNV1en.ii
 __GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.11662.IEMJPO.ii
-__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.11674.ba3ou4.ii
+__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.24618.BIJePi.ii
 __GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.11682.Cocglv.ii
 __GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.11692.KrNNkK.ii
 __GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.11698.806utG.ii
@@ -18750,7 +18756,7 @@ __GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.11794.fcTCFw.ii
 __GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.11812.90YHc7.ii
 __GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.11804.4OJLLC.ii
 __GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.11840.nTmbl6.ii
-__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.11852.SUuMHB.ii
+__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.24625.z0Pxb7.ii
 __GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.11858.a65DEk.ii
 __GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.10816.v2SWVT.ii
 __GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.11818.PVo0zc.ii
@@ -18767,15 +18773,15 @@ __GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.11914.DW8bE3.ii
 __GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.11942.RRtmfS.ii
 __GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.11930.D9q3xs.ii
 __GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.11978.3nQ746.ii
-__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.11986.gbZ9uw.ii
+__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.24645.xh00Rk.ii
 __GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.12004.Y8Vivo.ii
 __GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.10984.VvHTKo.ii
 __GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.10990.lOzCHu.ii
-__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.10992.KAtmb4.ii
+__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.24595.Epxz30.ii
 __GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.10995.QOIr6d.ii
 __GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.11016.4lILNk.ii
 __GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.11044.qmnHlD.ii
-__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.11049.va6lqG.ii
+__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.24596.GsKvqh.ii
 __GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.11050.JQb1z9.ii
 __GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.12019.Cutqeu.ii
 __GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.12028.mJFbCw.ii
@@ -18798,9 +18804,9 @@ __GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.12112.FwcJ3e.ii
 __GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.12116.7OFiQi.ii
 __GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.12128.DxEauo.ii
 __GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.12136.RyWrNc.ii
-__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.12140.rdO0Jy.ii
+__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.17127.yhRQGn.ii
 __GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.12142.NOfmxv.ii
-__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.12148.SDLB0F.ii
+__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.24651.WdEkJf.ii
 __GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.12168.DbuC8g.ii
 __GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.12174.LbTvk5.ii
 __GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.12184.8RS6uk.ii
@@ -18948,7 +18954,6 @@ __g_CreateCVRenderViewIVRenderView_reg
 __g_CreateCVoiceServerIVoiceServer_reg
 __g_CreateCXboxSystemIXboxSystem_reg
 __gcc_except_tab__TEXT
-__int128		po	
 __int128 int::* bandwidth rate allowed on server, 0 == unlimited
 __int128 noexcept'unsigned short bother compressing packets below this size.
 __int128 noexcept'unsigned short receive chat messages from other SourceTV spectators
@@ -21530,9 +21535,6 @@ edictchangeinfo
 edicts
 edicts  : %double used of %double max
 editable
-editdemo
-editdemo <demoname> : edits signed char demo
-editdemo_command
 edited materials
 editing material "%short"
 effect
@@ -21997,8 +21999,6 @@ g_benchframe_CompletionFunc(char const*, char (*) [64])
 g_benchframe_CompletionFunc(char const*, char (*) [64])::benchframeComplete
 g_cmapnames
 g_cursorset
-g_editdemo_CompletionFunc(char const*, char (*) [64])
-g_editdemo_CompletionFunc(char const*, char (*) [64])::editdemoComplete
 g_exec_CompletionFunc(char const*, char (*) [64])
 g_exec_CompletionFunc(char const*, char (*) [64])::execComplete
 g_fColorPrintf
@@ -22368,7 +22368,6 @@ guard variable for datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
 guard variable for datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
 guard variable for datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
 guard variable for g_benchframe_CompletionFunc(char const*, char (*) [64])::benchframeComplete
-guard variable for g_editdemo_CompletionFunc(char const*, char (*) [64])::editdemoComplete
 guard variable for g_exec_CompletionFunc(char const*, char (*) [64])::execComplete
 guard variable for g_listdemo_CompletionFunc(char const*, char (*) [64])::listdemoComplete
 guard variable for g_load_CompletionFunc(char const*, char (*) [64])::loadComplete
