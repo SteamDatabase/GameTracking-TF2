@@ -1,8 +1,8 @@
 	w4A1
   00  
- Video Subsystem Interface  '%short'
- Video Subsystem module '%short'
- failed to dlopen %short error=%short
+ Video Subsystem Interface  '%s'
+ Video Subsystem module '%s'
+ failed to dlopen %s error=%s
 "CreateInterface
 #Codec_CINEPACK
 #Codec_H261
@@ -14,13 +14,13 @@
 #Codec_MPEG4
 #Codec_SORENSON3
 #Codec_WEBM
-%short/%short
-%short/bin/%short
+%s/%s
+%s/bin/%s
 ,^_[]
 -allowdebug
 .dylib
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
 /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
 /Users/buildbot/buildslave/../.ccache/tmp/
@@ -57,6 +57,25 @@
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
+10IAppSystem
+12CEmptyConVar
+14CBaseAppSystemI14IVideoServicesE
+14ConCommandBase
+14IVideoServices
+15CTier0AppSystemI14IVideoServicesE
+15CTier1AppSystemI14IVideoServicesLi0EE
+15CTier2AppSystemI14IVideoServicesLi0EE
+15CTier3AppSystemI14IVideoServicesLi0EE
+16CDefaultAccessor
+18CUtlCharConversion
+19CUtlNoEscConversion
+19CValveVideoServices
+20CVideoCommonServices
+20IVideoCommonServices
+21CUtlCStringConversion
+23IConCommandBaseAccessor
+6ConVar
+7IConVar
 @(^_]
 @@0@P
 @@@@ 
@@ -64,6 +83,7 @@
 @_CGEventSourceKeyState
 @_CommandLine_Tier0
 @_Error
+@_Msg
 @_Plat_FloatTime
 @_Plat_IsInDebugSession
 @_Warning
@@ -76,7 +96,6 @@
 @___stack_chk_fail
 @___stack_chk_guard
 @___tolower
-@__float128 short::*
 @_atof
 @_atoi
 @_dlclose
@@ -107,10 +126,7 @@
 @vtable for __cxxabiv1::__vmi_class_type_info
 AVBSB
 BuiltDebug
-CBaseAppSystem<IVideoServices>
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -118,21 +134,13 @@ CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
 COLORCORRECTION_VERSION_1
-CTier0AppSystem<IVideoServices>
-CTier1AppSystem<IVideoServices, 0>
-CTier2AppSystem<IVideoServices, 0>
-CTier3AppSystem<IVideoServices, 0>
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlVector<CActiveVideoObjectRecord_t, CUtlMemory<CActiveVideoObjectRecord_t, int> >::AddToTail(CActiveVideoObjectRecord_t const&)
 CUtlVector<CActiveVideoObjectRecord_t, CUtlMemory<CActiveVideoObjectRecord_t, int> >::~CUtlVector()
 CUtlVector<VideoFileExtensionInfo_t, CUtlMemory<VideoFileExtensionInfo_t, int> >::~CUtlVector()
-CValveVideoServices
 CValveVideoServices::Connect(void* (*)(char const*, int*))
 CValveVideoServices::ConnectVideoLibraries(void* (*)(char const*, int*))
 CValveVideoServices::CreateVideoMaterial(char const*, char const*, char const*, VideoPlaybackFlags::EVideoPlaybackFlags_t, VideoSystem::EVideoSystem_t, bool)
@@ -166,19 +174,16 @@ CValveVideoServices::ResolveToPlayableVideoFile(char const*, char const*, VideoS
 CValveVideoServices::Shutdown()
 CValveVideoServices::SoundDeviceCommand(VideoSoundDeviceOperation::EVideoSoundDeviceOperation_t, void*, void*, VideoSystem::EVideoSystem_t)
 CValveVideoServices::~CValveVideoServices()
-CVideoCommonServices
 CVideoCommonServices::CalculateVideoDimensions(int, int, int, int, VideoPlaybackFlags::EVideoPlaybackFlags_t, int*, int*, int*, int*)
 CVideoCommonServices::GetSystemVolume()
 CVideoCommonServices::InitFullScreenPlaybackInputHandler(VideoPlaybackFlags::EVideoPlaybackFlags_t, float, bool)
 CVideoCommonServices::ProcessFullScreenInput(bool&, bool&, bool&)
 CVideoCommonServices::TerminateFullScreenPlaybackInputHandler()
 CVideoCommonServices::~CVideoCommonServices()
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -196,7 +201,7 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVarRef::IsValid() const
@@ -213,11 +218,6 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IConCommandBaseAccessor
-IConVar
-IVideoCommonServices
-IVideoServices
 IVideoServices002
 IVideoSubSystem002
 InputSystemVersion001
@@ -227,7 +227,7 @@ L^_[]
 MDLCache004
 MatSystemSurface008
 MaterialSystemHardwareConfig012
-Module %short is signed char debug build
+Module %s is a debug build
 NetworkSystemVersion001
 No such file
 QueuedLoaderVersion004

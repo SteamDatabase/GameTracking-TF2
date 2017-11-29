@@ -55,13 +55,31 @@
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
 0 0    P
-789:float
+10ConCommand
+10IAppSystem
+12CEmptyConVar
+12CInputSystem
+12IInputSystem
+14CBaseAppSystemI12IInputSystemE
+14ConCommandBase
+15CTier0AppSystemI12IInputSystemE
+15CTier1AppSystemI12IInputSystemLi0EE
+15CTier2AppSystemI12IInputSystemLi0EE
+16CDefaultAccessor
+18CUtlCharConversion
+19CUtlNoEscConversion
+21CUtlCStringConversion
+23IConCommandBaseAccessor
+6ConVar
+789:f
+7IConVar
 <^_[]
 @(^_]
 @@@@ 
 @ConMsg(char const*, ...)
 @DevMsg(char const*, ...)
 @_CommandLine_Tier0
+@_Msg
 @_Plat_MSTime
 @_SDL_AddEventWatch
 @_SDL_DelEventWatch
@@ -102,7 +120,6 @@
 @___gxx_personality_v0
 @___stack_chk_fail
 @___stack_chk_guard
-@__float128 short::*
 @_atof
 @_atoi
 @_dlclose
@@ -130,7 +147,7 @@ A>?5f
 AVBSB
 A_BUTTON
 Affffff.
-Analog axis range before signed char button press is registered.
+Analog axis range before a button press is registered.
 AnalogCode_AnalogCodeToString(AnalogCode_t)
 AnalogCode_StringToAnalogCode(char const*)
 Automatically set to 1 if an xcontroller has been detected.
@@ -145,18 +162,14 @@ ButtonCode_UpdateScanCodeLayout()
 ButtonCode_VirtualKeyToButtonCode(int)
 CAPSLOCK
 CAPSLOCKTOGGLE
-CBaseAppSystem<IInputSystem>
 CBaseAppSystem<IInputSystem>::QueryInterface(char const*)
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CInputSystem
 CInputSystem::ActivateSteamControllerActionSetForSlot(unsigned long long, GameActionSet_t)
 CInputSystem::AnalogCodeToString(AnalogCode_t) const
 CInputSystem::AttachToWindow(void*)
@@ -232,16 +245,10 @@ CInputSystem::VirtualKeyToButtonCode(int) const
 CInputSystem::~CInputSystem()
 COLORCORRECTION_VERSION_1
 CSteamAPIContext::Init()
-CTier0AppSystem<IInputSystem>
-CTier1AppSystem<IInputSystem, 0>
-CTier2AppSystem<IInputSystem, 0>
 CTier2AppSystem<IInputSystem, 0>::Disconnect()
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlString::Get() const
 CUtlString::Purge()
@@ -249,14 +256,12 @@ CUtlString::Set(char const*)
 CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
 CUtlVector<InputEvent_t, CUtlMemory<InputEvent_t, int> >::GrowVector(int)
 CUtlVector<InputEvent_t, CUtlMemory<InputEvent_t, int> >::~CUtlVector()
-ConCommand
 ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
 ConCommand::CanAutoComplete()
 ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
 ConCommand::Dispatch(CCommand const&)
 ConCommand::IsCommand() const
 ConCommand::~ConCommand()
-ConCommandBase
 ConCommandBase::AddFlags(int)
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
@@ -268,7 +273,6 @@ ConCommandBase::IsRegistered() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
 ConMsg(char const*, ...)
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -288,7 +292,7 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVarRef::IsValid() const
@@ -296,13 +300,13 @@ ConVar_Register(int, IConCommandBaseAccessor*)
 ConVar_Unregister()
 ConnectTier1Libraries(void* (**)(char const*, int*), int)
 ConnectTier2Libraries(void* (**)(char const*, int*), int)
-Could not open joystick %int: %short
-Couldn'unsigned short play rumble (strength %.f): %short
+Could not open joystick %i: %s
+Couldn't play rumble (strength %.1f): %s
 DOWNARROW
 Dead zone near the zero point to not report movement.
 DebugTextureInfo001
 DefaultCompletionFunc(char const*, char (*) [64])
-Detected supported joystick #%int '%short'. Currently active joystick is #%i.
+Detected supported joystick #%i '%s'. Currently active joystick is #%i.
 DevMsg(char const*, ...)
 Did not detect any valid joysticks.
 Disables use of Steam Controller API
@@ -321,26 +325,22 @@ FALCON_4
 FALCON_NULL
 FCVAR_NEVER_AS_STRING
 FPSControls
-Failed to open joystick %int: %short
-Found joystick '%short' (%short), but no recognized controller configuration for it.
+Failed to open joystick %i: %s
+Found joystick '%s' (%s), but no recognized controller configuration for it.
 Game controller mapping (passed to SDL with SDL_HINT_GAMECONTROLLERCONFIG), can also be configured in Steam Big Picture mode.
-Got hotplug remove event for removed joystick #%int, ignoring.
+Got hotplug remove event for removed joystick #%i, ignoring.
 H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
 How to map the analog joystick deadzone and extents 0 = Scaled Cross, 1 = Concentric Mapping to Square.
-IAppSystem
-IConCommandBaseAccessor
-IConVar
-IInputSystem
-Ignoring hotplug remove for #%int, active joystick is #%i.
+Ignoring hotplug remove for #%i, active joystick is #%i.
 InGameHUDControls
-Initializing joystick #%int and making it active.
+Initializing joystick #%i and making it active.
 InputSystemVersion001
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
-Invalid code for axis %int
+Invalid code for axis %i
 JOY10
 JOY11
 JOY12
@@ -364,8 +364,8 @@ JOY29
 JOY30
 JOY31
 JOY32
-Joystick #%int already initialized, removing it first.
-Joystick %int removed.
+Joystick #%i already initialized, removing it first.
+Joystick %i removed.
 Joystick init failed -- SDL_Init(SDL_INIT_GAMECONTROLLER|SDL_INIT_HAPTIC) failed: %s.
 Joystick is not recognized by the game controller system. You can configure the controller in Steam Big Picture mode.
 JoystickSDLWatcher(void*, SDL_Event*)
@@ -405,14 +405,14 @@ NUMLOCK
 NUMLOCKTOGGLE
 NetworkSystemVersion001
 No input system
-Not active device input system (%int long long %int)
+Not active device input system (%i x %i)
 PAUSE
 POV_DOWN
 POV_LEFT
 POV_RIGHT
 POV_UP
-Passing joy_gamecontroller_config to SDL ('%short').
-PrimaryUserId is %double
+Passing joy_gamecontroller_config to SDL ('%s').
+PrimaryUserId is %d
 QueuedLoaderVersion004
 R AXIS
 R AXIS NEG
@@ -530,7 +530,7 @@ U AXIS
 U AXIS NEG
 U AXIS POS
 UPARROW
-Unable to initialize rumble for joystick #%int: %short
+Unable to initialize rumble for joystick #%i: %s
 Updates game keyboard layout to current windows keyboard setting.
 V AXIS
 V AXIS NEG
@@ -687,7 +687,7 @@ joystick
 key_updatelayout
 key_updatelayout(CCommand const&)
 key_updatelayout_command
-long^_[]
+l^_[]
 menu_alt_function
 menu_cancel
 menu_down

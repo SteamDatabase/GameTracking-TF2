@@ -4,7 +4,7 @@
 '@@@@ @
 ,^_[]
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(LzmaDec.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(checksum_crc.o)
@@ -37,6 +37,17 @@
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
+10IAppSystem
+12CEmptyConVar
+14CBaseAppSystemI15ISceneFileCacheE
+14ConCommandBase
+15CSceneFileCache
+15ISceneFileCache
+18CUtlCharConversion
+19CUtlNoEscConversion
+21CUtlCStringConversion
+6ConVar
+7IConVar
 8VSIFu
 9F$r*
 9LZMA
@@ -80,9 +91,7 @@
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
 AVBRARA
-CBaseAppSystem<ISceneFileCache>
 CBaseAppSystem<ISceneFileCache>::QueryInterface(char const*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -95,8 +104,7 @@ CLZMA::Uncompress(unsigned char*, unsigned char*)
 CRC32_Final(unsigned int*)
 CRC32_Init(unsigned int*)
 CRC32_ProcessBuffer(unsigned int*, void const*, int)
-CSceneFileCache
-CSceneFileCache: Bad scene image file %short
+CSceneFileCache: Bad scene image file %s
 CSceneFileCache::Connect(void* (*)(char const*, int*))
 CSceneFileCache::Disconnect()
 CSceneFileCache::FindSceneInImage(char const*)
@@ -114,20 +122,15 @@ CUtlBuffer::AddNullTermination()
 CUtlBuffer::CUtlBuffer(int, int, int)
 CUtlBuffer::GetOverflow(int)
 CUtlBuffer::PutOverflow(int)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 C\BRA`
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -150,13 +153,10 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IConVar
-ISceneFileCache
-If set, attempt to keep signed char persistent buffer for the LZMA decoder dictionary. This avoids long double restrict-allocating signed char ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
+If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
-LZMA Decompression failed (%int)
+LZMA Decompression failed (%i)
 L^_[]
 LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
 LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)

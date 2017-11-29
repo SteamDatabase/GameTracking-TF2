@@ -1,7 +1,7 @@
 	w4A1
   0 @
   00  
- ##### CMaterialReference::Init got error material for %short in tex group %short
+ ##### CMaterialReference::Init got error material for %s in tex group %s
 !@@@@ 
 "CreateInterface
 $basetexture
@@ -63,6 +63,28 @@ $translucent
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
+10IAppSystem
+12CEmptyConVar
+14CBaseAppSystemI15IVideoSubSystemE
+14ConCommandBase
+14IBaseInterface
+14IVideoMaterial
+14IVideoRecorder
+15CTier0AppSystemI15IVideoSubSystemE
+15CTier1AppSystemI15IVideoSubSystemLi0EE
+15CTier2AppSystemI15IVideoSubSystemLi0EE
+15IVideoSubSystem
+16CDefaultAccessor
+18CQuickTimeMaterial
+18CUtlCharConversion
+19CUtlNoEscConversion
+19ITextureRegenerator
+21CUtlCStringConversion
+23IConCommandBaseAccessor
+24CQuickTimeVideoSubSystem
+39CQuicktimeMaterialRGBTextureRegenerator
+6ConVar
+7IConVar
 9>tMB
 <^_[]
 =@RGB
@@ -117,6 +139,7 @@ $translucent
 @_MediaGetPublicInfo
 @_MediaHasCharacteristic
 @_MoviesTask
+@_Msg
 @_NewHandle
 @_NewMovieFromDataRef
 @_NewMovieTrack
@@ -151,7 +174,6 @@ $translucent
 @___gxx_personality_v0
 @___stack_chk_fail
 @___stack_chk_guard
-@__float128 short::*
 @_atof
 @_atoi
 @_dlsym
@@ -179,10 +201,7 @@ ABGRt
 ARGBt
 AVBSA
 B23CQuickTimeVideoRecorder
-CBaseAppSystem<IVideoSubSystem>
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -207,7 +226,6 @@ CQTVideoFileComposer::SetMovieSourceImageParameters(int, int, VideoEncodeSourceF
 CQTVideoFileComposer::SetMovieVideoParameters(int, int, VideoFrameRate_t, VideoEncodeCodec::EVideoEncodeCodec_t, int, VideoEncodeGamma::EVideoEncodeGamma_t)
 CQTVideoFileComposer::SyncAndFlushAudio()
 CQTVideoFileComposer::~CQTVideoFileComposer()
-CQuickTimeMaterial
 CQuickTimeMaterial::CQuickTimeMaterial()
 CQuickTimeMaterial::CloseQTFile()
 CQuickTimeMaterial::CreateProceduralMaterial(char const*)
@@ -263,7 +281,6 @@ CQuickTimeVideoRecorder::SetMovieSourceAudioParameters(AudioEncodeSourceFormat::
 CQuickTimeVideoRecorder::SetMovieSourceImageParameters(VideoEncodeSourceFormat::EVideoEncodeSourceFormat_t, int, int)
 CQuickTimeVideoRecorder::SetMovieVideoParameters(VideoEncodeCodec::EVideoEncodeCodec_t, int, int, int, VideoFrameRate_t, VideoEncodeGamma::EVideoEncodeGamma_t)
 CQuickTimeVideoRecorder::~CQuickTimeVideoRecorder()
-CQuickTimeVideoSubSystem
 CQuickTimeVideoSubSystem::CheckCodecAvailability(VideoEncodeCodec::EVideoEncodeCodec_t)
 CQuickTimeVideoSubSystem::Connect(void* (*)(char const*, int*))
 CQuickTimeVideoSubSystem::CreateVideoMaterial(char const*, char const*, VideoPlaybackFlags::EVideoPlaybackFlags_t)
@@ -288,31 +305,22 @@ CQuickTimeVideoSubSystem::Shutdown()
 CQuickTimeVideoSubSystem::ShutdownVideoSystem()
 CQuickTimeVideoSubSystem::VideoSoundDeviceCMD(VideoSoundDeviceOperation::EVideoSoundDeviceOperation_t, void*, void*)
 CQuickTimeVideoSubSystem::~CQuickTimeVideoSubSystem()
-CQuicktimeMaterialRGBTextureRegenerator
 CQuicktimeMaterialRGBTextureRegenerator::RegenerateTextureBits(ITexture*, IVTFTexture*, Rect_t*)
 CQuicktimeMaterialRGBTextureRegenerator::Release()
 CTextureReference::CTextureReference()
 CTextureReference::InitProceduralTexture(char const*, char const*, int, int, ImageFormat, int)
 CTextureReference::Shutdown(bool)
 CTextureReference::~CTextureReference()
-CTier0AppSystem<IVideoSubSystem>
-CTier1AppSystem<IVideoSubSystem, 0>
-CTier2AppSystem<IVideoSubSystem, 0>
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlVector<IVideoMaterial*, CUtlMemory<IVideoMaterial*, int> >::~CUtlVector()
 CUtlVector<IVideoRecorder*, CUtlMemory<IVideoRecorder*, int> >::~CUtlVector()
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -331,7 +339,7 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVarRef::IsValid() const
@@ -358,14 +366,6 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IBaseInterface
-IConCommandBaseAccessor
-IConVar
-ITextureRegenerator
-IVideoMaterial
-IVideoRecorder
-IVideoSubSystem
 IVideoSubSystem002
 InputSystemVersion001
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
@@ -385,11 +385,11 @@ MediaGetStaticFrameRate(MediaType**, VideoFrameRate_t&, bool)
 MovieGetStaticFrameRate(MovieType**, VideoFrameRate_t&)
 NetworkSystemVersion001
 QueuedLoaderVersion004
-QuickTime Video Encode Gamma Target- 0=no gamma adjust  1=platform default gamma  2 = gamma 1.8  3 = gamma .2  4 = gamma .5
-QuickTime Video Playback Gamma Target- 0=no gamma adjust  1=platform default gamma  2 = gamma 1.8  3 = gamma .2  4 = gamma .5
-QuickTime video subsystem failed to connect to missing signed char required system
+QuickTime Video Encode Gamma Target- 0=no gamma adjust  1=platform default gamma  2 = gamma 1.8  3 = gamma 2.2  4 = gamma 2.5
+QuickTime Video Playback Gamma Target- 0=no gamma adjust  1=platform default gamma  2 = gamma 1.8  3 = gamma 2.2  4 = gamma 2.5
+QuickTime video subsystem failed to connect to missing a required system
 Quicktime
-Quicktime Error when attempting to EnterMovies, err = %double 
+Quicktime Error when attempting to EnterMovies, err = %d 
 RARAp
 RBRBRBRBRBRBp
 RBRBp
@@ -556,7 +556,7 @@ ffff.
 fffff.
 ffffff.
 g_QuickTimeSystem
-long^_[]
+l^_[]
 non-virtual thunk to CEmptyConVar::GetName() const
 non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
 non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -582,6 +582,8 @@ s_nDLLIdentifier
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 std::terminate()
+t	9_X
+t!=GB42t
 typeinfo for CBaseAppSystem<IVideoSubSystem>
 typeinfo for CDefaultAccessor
 typeinfo for CEmptyConVar
@@ -629,8 +631,6 @@ typeinfo name for ITextureRegenerator
 typeinfo name for IVideoMaterial
 typeinfo name for IVideoRecorder
 typeinfo name for IVideoSubSystem
-unsigned short	9_X
-unsigned short!=GB42t
 vec2_invalid
 vec2_origin
 vec4_invalid
@@ -652,5 +652,5 @@ vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
 vuymv4pm162h362h1cvaapjmbpjm3QVSdivc
-wXt	;wchar_t
+wXt	;w
 |^_[]

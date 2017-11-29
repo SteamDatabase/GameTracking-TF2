@@ -2,19 +2,19 @@
 	w4A1
   00  @@
   @P pPP`P `
-!!! WARNING: Can'unsigned short swap the physcollide lump!
+!!! WARNING: Can't swap the physcollide lump!
 "CreateInterface
 $^_[]
 $ffff.
 %d.vhv
 %d_%d_%d_%d_%d.tmp
-%short is not signed char IBSP file
-%short is version %int, not %int
+%s is not a IBSP file
+%s is version %i, not %i
 ,^_[]
 -ffffff.
 /=hlpduc
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/liblzma.a(LzFind.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/liblzma.a(LzmaDec.o)
@@ -91,8 +91,19 @@ $ffff.
 00  00@@ 
 0^_[]
 0p0  
+11CFileStream
+12CEmptyConVar
+12IWriteStream
+13CBufferStream
+14ConCommandBase
+18CUtlCharConversion
+19CUtlNoEscConversion
+21CUtlCStringConversion
 2fff.
+4CZip
+4IZip
 4p0SBpH
+4p8pH
 4p8pHp4p4p
 4p8pHp4p4p8pH
 4p8pHp4p4p8pHp0p
@@ -104,6 +115,10 @@ $ffff.
 4p8pHp8pHp4p4p8pH
 4p8pHp8pHp4p8pH
 4p8pHp8pHp8pH
+6ConVar
+7IConVar
+8CBSPPack
+8IBSPPack
 8fff.
 9F$r*
 9LZMA
@@ -133,6 +148,7 @@ $ffff.
 @DevMsg(char const*, ...)
 @_Error
 @_GetCPUInformation
+@_Msg
 @_ThreadInMainThread
 @_Warning
 @__DefaultRuneLocale
@@ -148,7 +164,6 @@ $ffff.
 @___stack_chk_fail
 @___stack_chk_guard
 @___tolower
-@__float128 short::*
 @_atof
 @_atoi
 @_cosf
@@ -212,11 +227,11 @@ AddFileToPak(IZip*, char const*, char const*, IZip::eCompressionType)
 AddGameLumps()
 AddLumpInternal(int, void*, int, int)
 AddOcclusionLump()
-Adding file to pakfile [ %short ]
+Adding file to pakfile [ %s ]
 AlignBuffer(CUtlBuffer&, int)
 Alignment
 BRA`=B\BRC`
-BSP: '%short', %short has no swap or copy function. Discarding!
+BSP: '%s', %s has no swap or copy function. Discarding!
 Bt2_MatchFinder_GetMatches(_CMatchFinder*, unsigned int*)
 Bt2_MatchFinder_Skip(_CMatchFinder*, unsigned int)
 Bt3_MatchFinder_GetMatches(_CMatchFinder*, unsigned int*)
@@ -227,7 +242,6 @@ BuildGammaTable(float, float, float, int)
 BuildStaticPropNameTable()
 C333333
 C;_0|
-CBSPPack
 CBSPPack::AddBufferToPack(char const*, void*, int, bool)
 CBSPPack::AddFileToPack(char const*, char const*)
 CBSPPack::ClearPackFile()
@@ -239,7 +253,6 @@ CBSPPack::SetHDRMode(bool)
 CBSPPack::SetPakFileLump(IFileSystem*, char const*, char const*, void*, int)
 CBSPPack::SwapBSPFile(IFileSystem*, char const*, char const*, bool, bool (*)(char const*, CUtlBuffer&, CUtlBuffer&, bool (*)(CUtlBuffer&, CUtlBuffer&)), bool (*)(char const*, char const*, CUtlBuffer&, CUtlBuffer&), bool (*)(CUtlBuffer&, CUtlBuffer&))
 CBSPPack::WriteBSPFile(char*)
-CBufferStream
 CBufferStream::Put(void const*, int)
 CBufferStream::Tell()
 CByteswap::SwapFieldToTargetEndian(void*, void*, typedescription_t*)
@@ -261,7 +274,6 @@ CDispTri_DataDescInit::g_DataMapHolder
 CDispVert
 CDispVert::m_DataMap
 CDispVert_DataDescInit::g_DataMapHolder
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -271,7 +283,6 @@ CEmptyConVar::~CEmptyConVar()
 CFaceMacroTextureInfo
 CFaceMacroTextureInfo::m_DataMap
 CFaceMacroTextureInfo_DataDescInit::g_DataMapHolder
-CFileStream
 CFileStream::Put(void const*, int)
 CFileStream::Tell()
 CGameLump::CreateGameLump(int, int, int, int)
@@ -322,10 +333,8 @@ CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::SetBufferType(bool, bool)
 CUtlBuffer::SetExternalBuffer(void*, int, int, int)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlLinkedList overflow! (exhausted index range)
 CUtlLinkedList overflow! (exhausted memory allocator)
@@ -340,7 +349,6 @@ CUtlLinkedList<void (*)(char const*), unsigned short, false, unsigned short, CUt
 CUtlMemory<UtlLinkedListElem_t<CZip*, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlLinkedListElem_t<GameLump_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
@@ -420,7 +428,6 @@ CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
 CUtlVector<variable_t, CUtlMemory<variable_t, int> >::~CUtlVector()
 CWin32File::CreateTempFile(CUtlString&, CUtlString&)
 CWin32File::CreateTempFile(CUtlString&, CUtlString&)::counter
-CZip
 CZip::ActivateByteSwapping(bool)
 CZip::AddBufferToZip(char const*, void*, int, bool, IZip::eCompressionType)
 CZip::AddFileToZip(char const*, char const*, IZip::eCompressionType)
@@ -464,12 +471,10 @@ Compressed bsp lump %u -> %u bytes
 CompressedLightCube
 CompressedLightCube::m_DataMap
 CompressedLightCube_DataDescInit::g_DataMapHolder
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -490,8 +495,8 @@ ConVar::SetValue(int)
 ConVar::~ConVar()
 ConvertPakFileContents(char const*)
 CreateInterface
-Created '%short' in lump pak in '%short'.
-Creating %short
+Created '%s' in lump pak in '%s'.
+Creating %s
 DataOffset
 Decompressed size differs from header, BSP may be corrupt
 DetailObjectDictLump_t
@@ -508,19 +513,19 @@ DetailSpriteDictLump_t::m_DataMap
 DetailSpriteDictLump_t_DataDescInit::g_DataMapHolder
 DevMsg(char const*, ...)
 DirectoryEntries
-Error opening %short
-Error opening %short! (Check for write enable)
-Error! Couldn'unsigned short open file %short!
-Error! Couldn'unsigned short open input file %short - BSP swap failed!
-Error! Couldn'unsigned short open output file %short - BSP swap failed!
-Error! Couldn'unsigned short read file %short - final BSP compression failed!
-Error! Failed to compress BSP '%short'!
+Error opening %s
+Error opening %s! (Check for write enable)
+Error! Couldn't open file %s!
+Error! Couldn't open input file %s - BSP swap failed!
+Error! Couldn't open output file %s - BSP swap failed!
+Error! Couldn't read file %s - final BSP compression failed!
+Error! Failed to compress BSP '%s'!
 Error! Missing VTF Conversion function
 Failed to CRC the bsp
-Failed to convert '%short' in '%short'.
-Failed to load '%short' from lump pak for conversion or copy in '%short'.
-Failed to load '%short' from lump pak for repacking.
-Failed to swap '%short' in '%short'.
+Failed to convert '%s' in '%s'.
+Failed to load '%s' from lump pak for conversion or copy in '%s'.
+Failed to load '%s' from lump pak for repacking.
+Failed to swap '%s' in '%s'.
 File read failure
 File write failure
 FileHeader_t
@@ -542,13 +547,9 @@ HardwareVerts::MeshHeader_t_DataDescInit::g_DataMapHolder
 Hc4_MatchFinder_GetMatches(_CMatchFinder*, unsigned int*)
 Hc4_MatchFinder_Skip(_CMatchFinder*, unsigned int)
 IBSPPACK004
-IBSPPack
-IConVar
-IWriteStream
-IZip
 IZip::CreateZip(char const*, bool)
 IZip::ReleaseZip(IZip*)
-If set, attempt to keep signed char persistent buffer for the LZMA decoder dictionary. This avoids long double restrict-allocating signed char ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
+If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
 Kfff.
@@ -613,8 +614,8 @@ LUMP_WATEROVERLAYS
 LUMP_WORLDLIGHTS
 LUMP_WORLDLIGHTS_HDR
 LUMP_XZIPPAKFILE
-LZMA Decompression failed (%int)
-LZMA encode failed (%int)
+LZMA Decompression failed (%i)
+LZMA encode failed (%i)
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?
 LZMA_Compress(unsigned char*, unsigned int, unsigned int*)
 L^_[]
@@ -635,7 +636,7 @@ LzmaEnc_Construct(CLzmaEnc*)
 LzmaEnc_Init(CLzmaEnc*)
 LzmaEnc_InitPrices(CLzmaEnc*)
 LzmaEncode(unsigned char const*, unsigned long, unsigned char*, unsigned long, unsigned long*)
-Map has too many texinfos (has %double, can have at most %double)
+Map has too many texinfos (has %d, can have at most %d)
 MatchFinder_CheckLimits(_CMatchFinder*)
 MatchFinder_GetIndexByte(_CMatchFinder*, int)
 MatchFinder_GetNumAvailableBytes(_CMatchFinder*)
@@ -650,11 +651,11 @@ Qffff.
 Qkkbal
 RARAp
 RASBRIpHp4p4p
-Reading unknown lump #%double (%double bytes)
+Reading unknown lump #%d (%d bytes)
 RepackBSP given invalid input data
 RepackBSP(CUtlBuffer&, CUtlBuffer&, bool (*)(CUtlBuffer&, CUtlBuffer&), IZip::eCompressionType)
 RepackBSPCallback_LZMA(CUtlBuffer&, CUtlBuffer&)
-Repacking BSP: Created '%short' in lump pak
+Repacking BSP: Created '%s' in lump pak
 ResolveStaticPropToModel(char const*)
 SAVA`PD`
 SafeOpenRead(char const*)
@@ -665,7 +666,7 @@ SetPakFileLump(char const*, char const*, void*, int)
 SinCos(float, float*, float*)
 SkipMatchesSpec(unsigned int, unsigned int, unsigned int, unsigned char const*, unsigned int*, unsigned int, unsigned int, unsigned int)
 SortLumpsByOffset(SortedLump_t const*, SortedLump_t const*)
-Static Prop '%short' failed to resolve actual model in '%short'.
+Static Prop '%s' failed to resolve actual model in '%s'.
 StaticPropDictLump_t
 StaticPropDictLump_t::m_DataMap
 StaticPropDictLump_t_DataDescInit::g_DataMapHolder
@@ -681,7 +682,7 @@ StaticPropLumpV5_t_DataDescInit::g_DataMapHolder
 StaticPropLump_t
 StaticPropLump_t::m_DataMap
 StaticPropLump_t_DataDescInit::g_DataMapHolder
-Stripping LDR: %short
+Stripping LDR: %s
 SwapBSPFile(char const*, char const*, bool, bool (*)(char const*, CUtlBuffer&, CUtlBuffer&, bool (*)(CUtlBuffer&, CUtlBuffer&)), bool (*)(char const*, char const*, CUtlBuffer&, CUtlBuffer&), bool (*)(CUtlBuffer&, CUtlBuffer&))
 SwapGameLumpsToDisk()
 SwapLeafAmbientLightingLumpToDisk()
@@ -690,16 +691,16 @@ SwapOcclusionLumpToDisk()
 SwapPakfileLumpToDisk(char const*)
 SwapPhyscollideLump(unsigned char*, unsigned char*, unsigned int&)
 SwapVHV(void*, void*)
-Swapping %short
+Swapping %s
 Sys_GetFactory(CSysModule*)
 SzAlloc(void*, unsigned long)
 SzFree(void*, void*)
 Tcvar
 UNKNOWN
 Unknown LUMP_LEAFS version
-Unknown Static Prop Lump version %double didn'unsigned short get swapped!
-Unknown Static Prop Lump version %double!
-Unknown game lump '%short' didn'unsigned short get swapped!
+Unknown Static Prop Lump version %d didn't get swapped!
+Unknown Static Prop Lump version %d!
+Unknown game lump '%s' didn't get swapped!
 Unknown occlusion lump version!
 UnloadBSPFile()
 Unrecognized LZMA data
@@ -724,16 +725,16 @@ V_strncat(char*, char const*, unsigned long, int)
 V_strncpy(char*, char const*, int)
 V_strnicmp(char const*, char const*, int)
 V_vsnprintf(char*, int, char const*, char*)
-ValidateLump: odd size for lump %double
-ValidateLump: old version for lump %double in map!
+ValidateLump: odd size for lump %d
+ValidateLump: old version for lump %d in map!
 Version
 WriteBSPFile(char const*, char*)
 WritePakFileLump()
-Writing unknown lump #%double (%double bytes)
-Wrote ZIP buffer, estimated size %int, actual size %int
-XZP%char %double
+Writing unknown lump #%d (%d bytes)
+Wrote ZIP buffer, estimated size %i, actual size %i
+XZP%c %d
 Xffff.
-ZIP Output overshot buffer estimate: Estimated %int, actual %int
+ZIP Output overshot buffer estimate: Estimated %i, actual %i
 ZIP_EndOfCentralDirRecord
 ZIP_EndOfCentralDirRecord::m_DataMap
 ZIP_EndOfCentralDirRecord_DataDescInit::g_DataMapHolder
@@ -1429,6 +1430,7 @@ kMatchNextStates
 kRepNextStates
 kShortRepNextStates
 keydataSize
+l^_[]
 lastModifiedDate
 lastModifiedTime
 leafWaterDataID
@@ -1437,7 +1439,6 @@ lightofs
 linear_attn
 lineartoscreen
 lineartotexture
-long^_[]
 lumpCount
 lump_t
 lump_t::m_DataMap
@@ -1556,7 +1557,6 @@ origFace
 origin
 otherarea
 owner
-p8pH
 pHp4pl
 planenum
 point

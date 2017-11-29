@@ -22,6 +22,17 @@
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
 0 P@@PP0     P00
+11IVoiceCodec
+12IAudioStream
+13IFrameEncoder
+16VoiceCodec_Frame
+18CUtlCharConversion
+18FrameEncoder_Miles
+19CUtlNoEscConversion
+21CUtlCStringConversion
+7CVAudio
+7IVAudio
+9CMilesMP3
 @_AIL_set_redist_directory
 @_AIL_shutdown
 @_AIL_startup
@@ -68,10 +79,9 @@ ASI_stream_open
 ASI_stream_process
 ASI_stream_property
 ASI_stream_seek
-ASI_stream_seek called, but it doesn'unsigned short exist.
+ASI_stream_seek called, but it doesn't exist.
 AudioStreamEventCB(unsigned int, void*, int, int)
 BYARBXBRBRARAp
-CMilesMP3
 CMilesMP3::Decode(void*, unsigned int)
 CMilesMP3::GetOutputBits()
 CMilesMP3::GetOutputChannels()
@@ -80,14 +90,10 @@ CMilesMP3::GetPosition()
 CMilesMP3::SetPosition(unsigned int)
 CMilesMP3::~CMilesMP3()
 CProvider::s_pHead
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
-CVAudio
 CVAudio::CreateMP3StreamDecoder(IAudioStreamEvent*)
 CVAudio::DestroyMP3StreamDecoder(IAudioStream*)
 CVAudio::~CVAudio()
@@ -100,7 +106,6 @@ DecodeStreamCB_fixup()
 DecrementRefMiles()
 EncodeStreamCB(unsigned int, void*, int, int)
 EncodeStreamCB_fixup()
-FrameEncoder_Miles
 FrameEncoder_Miles::DecodeFrame(char const*, char*)
 FrameEncoder_Miles::EncodeFrame(char const*, char*)
 FrameEncoder_Miles::Init(int, int&, int&)
@@ -111,10 +116,6 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAudioStream
-IFrameEncoder
-IVAudio
-IVoiceCodec
 IncrementRefMiles()
 IncrementRefMiles()::s_bInited
 Input channels
@@ -130,9 +131,8 @@ Output sample rate
 Output sample width
 Position
 RBXBp
-Unable to find Miles ASI codec input=%short, output=%short
+Unable to find Miles ASI codec input=%s, output=%s
 VAudio002
-VoiceCodec_Frame
 VoiceCodec_Frame::Compress(char const*, int, char*, int, bool)
 VoiceCodec_Frame::Decompress(char const*, int, char*, int)
 VoiceCodec_Frame::Init(int)

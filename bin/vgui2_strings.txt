@@ -1,8 +1,8 @@
-	panel '%short' of type '%short' leaked
+	panel '%s' of type '%s' leaked
 	w4A1
     0000@     
    0@ 0p
-  %2d: HFont:0x%8.8x, %short, %short, font:%short, tall:%double(%double). %short
+  %2d: HFont:0x%8.8x, %s, %s, font:%s, tall:%d(%d). %s
   00  
   KEY_SPACE
   ` P p 
@@ -13,7 +13,7 @@
 "Language" "English"
 "Tokens"
 "lang"
-"unsigned short=;E
+"t=;E
 #base
 #base is NULL 
 #include
@@ -23,17 +23,17 @@ $POSIX
 $WIN32
 $WINDOWS
 $X360
-%double %double
-%double %double %double %double
+%d %d
+%d %d %d %d
 %language%
-%long long %long long
-%s_%double
-%short Queue dispatching command( %short, %short -- %int )
-%short Queue dispatching( %short -- %int )
-%short%short-%short
-%short*.txt
+%s Queue dispatching command( %s, %s -- %i )
+%s Queue dispatching( %s -- %i )
+%s%s-%s
+%s*.txt
+%s_%d
+%x %x
 '"KEY_APOSTROPHE
-(*%short*), 
+(*%s*), 
 (no name)
 **KEY_PAD_MULTIPLY
 ++KEY_PAD_PLUS
@@ -50,7 +50,7 @@ $X360
 //KEY_PAD_DIVIDE
 /?KEY_SLASH
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
 /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
 /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
@@ -163,18 +163,42 @@ $X360
 0pp 00p
 0x%016llX
 1!KEY_1
+10ConCommand
+10IAppSystem
+11ImageBorder
+12CEmptyConVar
+12CInputSystem
+13VPanelWrapper
+14CBaseAppSystemIN4vgui5IVGuiEE
+14ConCommandBase
+14IBaseInterface
+15CTier0AppSystemIN4vgui5IVGuiEE
+15CTier1AppSystemIN4vgui5IVGuiELi0EE
+15CTier2AppSystemIN4vgui5IVGuiELi0EE
+15CTier3AppSystemIN4vgui5IVGuiELi0EE
+16CDefaultAccessor
+18CUtlCharConversion
+19CUtlNoEscConversion
+19ScalableImageBorder
 200 200 200 196
+21CLocalizedStringTable
+21CUtlCStringConversion
+23IConCommandBaseAccessor
 2@KEY_2
 3#KEY_3
 4$KEY_4
 40 40 40 196
 5%KEY_5
+6ConVar
 6^KEY_6
 7&KEY_7
+7CScheme
+7IConVar
 8*KEY_8
 814CSchemeManager
 9(KEY_9
 9>tlB9
+9ILocalize
 9w vy
 9~ptY
 ;:KEY_SEMICOLON
@@ -205,6 +229,7 @@ $X360
 @_DevMsg
 @_Error
 @_KeyValuesSystem
+@_Msg
 @_PasteboardClear
 @_PasteboardCopyItemFlavorData
 @_PasteboardCreate
@@ -233,7 +258,6 @@ $X360
 @___stack_chk_fail
 @___stack_chk_guard
 @___tolower
-@__float128 short::*
 @_atof
 @_atoi
 @_execlp
@@ -293,7 +317,7 @@ $X360
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
 ARB]ARB`
-ARB`Bp
+ARB`2Bp
 AVBSAR0
 A]BRBRB`)ARB`
 BaseBorder
@@ -324,18 +348,14 @@ Button.DepressedTextColor
 Button.FocusBorderColor
 Button.TextColor
 C;_0|
-CBaseAppSystem<vgui::IVGui>
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CInputSystem
 CInputSystem::ActivateInputContext(int)
 CInputSystem::AssociatePanelWithInputContext(int, unsigned int)
 CInputSystem::CInputSystem()
@@ -429,9 +449,8 @@ CInputSystem::WasMousePressed(ButtonCode_t)
 CInputSystem::WasMouseReleased(ButtonCode_t)
 CInputSystem::~CInputSystem()
 CKeyValuesErrorStack::ReportError(char const*)
-CLocalizedStringTable
 CLocalizedStringTable::AddAllLanguageFiles(char const*)
-CLocalizedStringTable::AddFile() failed to load file "%short".
+CLocalizedStringTable::AddFile() failed to load file "%s".
 CLocalizedStringTable::AddFile(char const*, char const*, bool)
 CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
 CLocalizedStringTable::AddString(char const*, wchar_t*, char const*)
@@ -458,7 +477,6 @@ CLocalizedStringTable::SymLess(CLocalizedStringTable::localizedstring_t const&, 
 CLocalizedStringTable::s_pTable
 CLocalizedStringTable::~CLocalizedStringTable()
 COLORCORRECTION_VERSION_1
-CScheme
 CScheme::GetBorder(char const*)
 CScheme::GetBorderAtIndex(int)
 CScheme::GetBorderCount() const
@@ -473,7 +491,7 @@ CScheme::GetMungedFontName(char const*, char const*, bool)::mungeBuffer
 CScheme::GetResourceString(char const*)
 CScheme::LoadBorders()
 CScheme::LoadFonts()
-CScheme::LoadFromFile( %short )
+CScheme::LoadFromFile( %s )
 CScheme::LoadFromFile(unsigned int, char const*, char const*, KeyValues*)
 CScheme::LookupSchemeSetting(char const*)
 CScheme::ReloadFontGlyphs()
@@ -545,10 +563,6 @@ CThreadRWLock::LockForWrite()
 CThreadRWLock::UnlockWrite()
 CThreadRWLock::WaitForRead()
 CThreadSyncObject::~CThreadSyncObject()
-CTier0AppSystem<vgui::IVGui>
-CTier1AppSystem<vgui::IVGui, 0>
-CTier2AppSystem<vgui::IVGui, 0>
-CTier3AppSystem<vgui::IVGui, 0>
 CUtlBuffer::AddNullTermination()
 CUtlBuffer::AssumeMemory(void*, int, int, int)
 CUtlBuffer::CUtlBuffer(void const*, int, int)
@@ -568,10 +582,8 @@ CUtlBuffer::PutOverflow(int)
 CUtlBuffer::Scanf(char const*, ...)
 CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlDict<CScheme::fontalias_t, int>::~CUtlDict()
 CUtlHandleTable<vgui::VPanel, 20>::AddHandle()
@@ -588,7 +600,6 @@ CUtlLinkedList<MessageItem_t, unsigned short, false, unsigned short, CUtlMemory<
 CUtlMemory<UtlLinkedListElem_t<CVGui::Context_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlLinkedListElem_t<MessageItem_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlPriorityQueue<MessageItem_t>::Insert(MessageItem_t const&)
 CUtlPriorityQueue<MessageItem_t>::RemoveAtHead()
@@ -766,14 +777,12 @@ ComboBoxButton.ArmedArrowColor
 ComboBoxButton.ArrowColor
 ComboBoxButton.BgColor
 ComboBoxButton.DisabledBgColor
-ConCommand
 ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
 ConCommand::CanAutoComplete()
 ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
 ConCommand::Dispatch(CCommand const&)
 ConCommand::IsCommand() const
 ConCommand::~ConCommand()
-ConCommandBase
 ConCommandBase::AddFlags(int)
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
@@ -784,7 +793,6 @@ ConCommandBase::IsFlagSet(int) const
 ConCommandBase::IsRegistered() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -802,7 +810,7 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::ConVarRef(char const*, bool)
 ConVarRef::Init(char const*, bool)::bFirst
@@ -823,7 +831,7 @@ DebugTextureInfo001
 Default
 DefaultCompletionFunc(char const*, char (*) [64])
 Delete
-Deleting in-use vpanel: %short/%short %p.
+Deleting in-use vpanel: %s/%s %p.
 DevMsg(char const*, ...)
 DimBaseText
 DisabledFgColor1
@@ -873,18 +881,12 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IBaseInterface
-IConCommandBaseAccessor
-IConVar
-ILocalize
 ILocalize::ConstructStringKeyValuesInternal(wchar_t*, int, wchar_t const*, KeyValues*)
 ILocalize::ConvertANSIToUnicode(char const*, wchar_t*, int)
 ITALIAN
 IVGui unable to connect to required interfaces!
 IVideoServices002
-Ignoring non-unicode close caption file %short
-ImageBorder
+Ignoring non-unicode close caption file %s
 ImageBorder::ApplySchemeSettings(vgui::IScheme*, KeyValues*)
 ImageBorder::GetBackgroundType()
 ImageBorder::GetInset(int&, int&, int&, int&)
@@ -963,7 +965,7 @@ KeyCode_VGUIToVirtualKey(ButtonCode_t)
 KeyCode_VirtualKeyToVGUI(int)
 KeyFocusTicked
 KeyTyped
-KeyValues Error: %short in file %short
+KeyValues Error: %s in file %s
 KeyValues::Clear()
 KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
 KeyValues::FindKey(char const*, bool)
@@ -979,17 +981,17 @@ KeyValues::KeyValues(char const*)
 KeyValues::KeyValues(char const*, char const*, int)
 KeyValues::KeyValues(char const*, char const*, int, char const*, int)
 KeyValues::KeyValues(char const*, char const*, wchar_t const*)
-KeyValues::LoadFromBuffer(%short%short%short): Begin
-KeyValues::LoadFromBuffer(%short%short%short): End
+KeyValues::LoadFromBuffer(%s%s%s): Begin
+KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
 KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
-KeyValues::LoadFromFile(%short%short%short): Begin
-KeyValues::LoadFromFile(%short%short%short): End / FileNotFound
-KeyValues::LoadFromFile(%short%short%short): End / Success
+KeyValues::LoadFromFile(%s%s%s): Begin
+KeyValues::LoadFromFile(%s%s%s): End / FileNotFound
+KeyValues::LoadFromFile(%s%s%s): End / Success
 KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
 KeyValues::MakeCopy() const
 KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
-KeyValues::ParseIncludedKeys: Couldn'unsigned short load included keyvalue file %short
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::ProcessResolutionKeys(char const*)
 KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
 KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
@@ -1000,7 +1002,7 @@ KeyValues::RemoveEverything()
 KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)
 KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
 KeyValues::SaveToFile(IBaseFileSystem*, char const*, char const*, bool, bool, bool)
-KeyValues::SaveToFile: couldn'unsigned short open file "%short" in path "%short".
+KeyValues::SaveToFile: couldn't open file "%s" in path "%s".
 KeyValues::SetInt(char const*, int)
 KeyValues::SetPtr(char const*, void*)
 KeyValues::SetString(char const*, char const*)
@@ -1057,10 +1059,23 @@ MouseFocusTicked
 MousePressed
 MouseReleased
 MouseWheeled
+N4vgui14IInputInternalE
+N4vgui14ISchemeManagerE
+N4vgui5IVGuiE
+N4vgui6BitmapE
+N4vgui6BorderE
+N4vgui6IImageE
+N4vgui6IInputE
+N4vgui6IPanelE
+N4vgui6VPanelE
+N4vgui7IBorderE
+N4vgui7ISchemeE
+N4vgui7ISystemE
+N4vgui9ILocalizeE
 NetworkSystemVersion001
 POLISH
 PORTUGUESE
-Panel '%short/%short' has invalid client: %p.
+Panel '%s/%s' has invalid client: %p.
 Panel.BgColor
 Panel.FgColor
 Primary
@@ -1104,7 +1119,6 @@ SARARARARARARARARARARARARARARARARARARARARARARARARARAp
 SARARARARARAp
 SCHINESE
 SPANISH
-ScalableImageBorder
 ScalableImageBorder::ApplySchemeSettings(vgui::IScheme*, KeyValues*)
 ScalableImageBorder::GetBackgroundType()
 ScalableImageBorder::GetInset(int&, int&, int&, int&)
@@ -1119,7 +1133,7 @@ ScalableImageBorder::SetInset(int, int, int, int)
 ScalableImageBorder::SetName(char const*)
 ScalableImageBorder::~ScalableImageBorder()
 Scheme
-Scheme: %short (%short)
+Scheme: %s (%s)
 ScrollBar.Wide
 ScrollBarButton.ArmedBgColor
 ScrollBarButton.ArmedFgColor
@@ -1189,7 +1203,7 @@ Tokens
 Tooltip.BgColor
 Tooltip.TextColor
 TreeView.BgColor
-UCS-LE
+UCS-2LE
 UTF-8
 Unaccounted
 UnhandledMouseClick
@@ -1210,7 +1224,6 @@ VGUI_ivgui008
 VMDLLIB001
 VMaterialSystem081
 VP4002
-VPanelWrapper
 VPanelWrapper::Client(unsigned int)
 VPanelWrapper::DeletePanel(unsigned int)
 VPanelWrapper::GetAbsPos(unsigned int, int&, int&)
@@ -1491,8 +1504,8 @@ bitmap
 bordertype
 cCKEY_C
 cfg/registry.vdf
-changing kb focus from %short to %short
-changing mouse focus from %short to %short
+changing kb focus from %s to %s
+changing mouse focus from %s to %s
 cl_hud_minmode
 cl_language
 color
@@ -1532,7 +1545,7 @@ japanese
 kKKEY_K
 korean
 lLKEY_L, L
-long^_[]
+l^_[]
 mMKEY_M
 messaging
 nNKEY_N
@@ -1562,7 +1575,7 @@ qQKEY_Q
 rRKEY_R
 range
 registry
-removing kb focus %short
+removing kb focus %s
 rotary
 sSKEY_S
 s_DefaultAccessor
@@ -1589,6 +1602,7 @@ string
 surface()->RunFrame()
 symbol
 system()->RunFrame()
+t+ff.
 tTKEY_T
 tchinese
 tiled
@@ -1678,13 +1692,11 @@ uUKEY_U
 underline
 unichar
 unknown
-unsigned short+ff.
 update cursor positions
 vVKEY_V
 vec2_invalid
 vec2_origin
-vgui/%short
-vgui::Bitmap
+vgui/%s
 vgui::Bitmap::Bitmap(char const*, bool)
 vgui::Bitmap::Evict()
 vgui::Bitmap::GetContentSize(int&, int&)
@@ -1699,7 +1711,6 @@ vgui::Bitmap::SetPos(int, int)
 vgui::Bitmap::SetRotation(int)
 vgui::Bitmap::SetSize(int, int)
 vgui::Bitmap::~Bitmap()
-vgui::Border
 vgui::Border::ApplySchemeSettings(vgui::IScheme*, KeyValues*)
 vgui::Border::Border()
 vgui::Border::GetBackgroundType()
@@ -1718,18 +1729,7 @@ vgui::CKeyRepeatHandler::KeyDown(ButtonCode_t)
 vgui::CKeyRepeatHandler::KeyRepeated()
 vgui::CKeyRepeatHandler::KeyUp(ButtonCode_t)
 vgui::Dar<vgui::VPanel*>::MoveElementToEnd(vgui::VPanel*)
-vgui::IBorder
-vgui::IImage
-vgui::IInput
-vgui::IInputInternal
-vgui::ILocalize
-vgui::IPanel
-vgui::IScheme
-vgui::ISchemeManager
-vgui::ISystem
-vgui::IVGui
 vgui::VGui_InternalLoadInterfaces(void* (**)(char const*, int*), int)
-vgui::VPanel
 vgui::VPanel::Client()
 vgui::VPanel::GetAbsPos(int&, int&)
 vgui::VPanel::GetChild(int)

@@ -1,33 +1,34 @@
 	w4A1
   00  
- ##### swap interval = %double     swap limit = %double #####
+ ##### swap interval = %d     swap limit = %d #####
  000p
  ReadToken overflow
- failed to dlopen %short error=%short
+ failed to dlopen %s error=%s
 #base
 #base is NULL 
 #include
 #include is NULL 
 $1sys
 $2sys
+$3sys
 $LINUX
 $POSIX
 $WIN32
 $WINDOWS
 $X360
+%s %s %s -reslistdir %s
+%s -reslistdir %s -rebuildaudio
+%s%c..%cbin
+%s%cfilesystem_stdio.dylib
+%s%cfilesystem_steam.dylib
 %s.lst
-%short %short %short -reslistdir %short
-%short -reslistdir %short -rebuildaudio
-%short%c..%cbin
-%short%cfilesystem_stdio.dylib
-%short%cfilesystem_steam.dylib
-%short/%short
-%short/bin/%short
-%short: failed to specify 'subdir' for item %short
-%short\%short
-%short\%short\%short
-%short\%short\%short\%short
-(*%short*), 
+%s/%s
+%s/bin/%s
+%s: failed to specify 'subdir' for item %s
+%s\%s
+%s\%s\%s
+%s\%s\%s\%s
+(*%s*), 
 (Unknown)
 (anonymous namespace)::GetSuggestGameInfoDirFn()::s_pfnSuggestGameInfoDir
 +mat_dxlevel
@@ -86,14 +87,13 @@ $X360
 -textmode
 -tools
 -vcrplayback
--vcrplayback: can'unsigned short open '%short' for reading.
+-vcrplayback: can't open '%s' for reading.
 -vcrrecord
--vcrrecord: can'unsigned short open '%short' for writing.
+-vcrrecord: can't open '%s' for writing.
 -vproject
 -width
 -window
 -windowed
-. Read http://www.valve-erc.com/srcsdk/faq.html#NoGameDir
 .dylib
 .objc_class_name_NSAutoreleasePool
 .objc_class_name_NSBundle
@@ -101,7 +101,7 @@ $X360
 .objc_class_name_NSOpenGLPixelFormat
 .objc_class_name_NSString
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /System/Library/Extensions/%@.bundle
 /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
 /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
@@ -186,10 +186,34 @@ $X360
 /usr/lib/libobjc.A.dylib
 0E7CSDLMgr
 0LauncherMain
+1. Read http://www.valve-erc.com/srcsdk/faq.html#NoGameDir
 1.6.16.11 (19.5.8f01)
-2. Run vconfig to specify which game you'long double restrict working on.
-3. Add -game <path> on the command line where <path> is the directory that %short is in.
-9F unsigned short 
+10ConCommand
+10IAppSystem
+11CVCRHelpers
+11IVCRHelpers
+12CEmptyConVar
+12GLMDisplayDB
+12ILauncherMgr
+14ConCommandBase
+15CAppSystemGroup
+15IAppSystemGroup
+16CDefaultAccessor
+17CResListGenerator
+17CSteamApplication
+17IResListGenerator
+18CUtlCharConversion
+19CUtlNoEscConversion
+2. Run vconfig to specify which game you're working on.
+20CSteamAppSystemGroup
+21CSourceAppSystemGroup
+21CUtlCStringConversion
+23IConCommandBaseAccessor
+3. Add -game <path> on the command line where <path> is the directory that %s is in.
+6ConVar
+7IConVar
+8CFmtStrNILi256ELb0EE
+9F t 
 <^_[]
 @(^_]
 @ConMsg(char const*, ...)
@@ -239,6 +263,7 @@ $X360
 @_IOServiceGetMatchingServices
 @_IOServiceMatching
 @_KeyValuesSystem
+@_Msg
 @_Plat_DebugString
 @_Plat_FloatTime
 @_Plat_IsInDebugSession
@@ -315,7 +340,6 @@ $X360
 @___stdoutp
 @___tolower
 @__exit
-@__float128 short::*
 @_access
 @_atof
 @_atoi
@@ -413,9 +437,9 @@ ARB_uniform_buffer
 AVBSAR0
 AYARBWARC`
 AllLogLessFunc(CUtlString const&, CUtlString const&)
-AppFramework : Unable to create system %short!
+AppFramework : Unable to create system %s!
 AppFramework : Unable to load module %p!
-AppFramework : Unable to load module %short!
+AppFramework : Unable to load module %s!
 AppSystemCreateInterfaceFn(char const*, int*)
 Assert!
 B09A0
@@ -424,7 +448,6 @@ Bffffff.
 BitsPerPixel
 BuiltDebug
 C;_$|
-CAppSystemGroup
 CAppSystemGroup::AddSystem(IAppSystem*, char const*)
 CAppSystemGroup::AddSystem(int, char const*)
 CAppSystemGroup::AddSystems(AppSystemInfo_t*)
@@ -441,9 +464,7 @@ CAppSystemGroup::OnShutdown()
 CAppSystemGroup::Run()
 CAppSystemGroup::Shutdown()
 CAppSystemGroup::Startup()
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -453,7 +474,6 @@ CEmptyConVar::~CEmptyConVar()
 CFBundleGetInfoString
 CFSMountContentInfo::CFSMountContentInfo()
 CFSSteamSetupInfo::CFSSteamSetupInfo()
-CFmtStrN<256, false>
 CFmtStrN<256, false>::CFmtStrN(char const*, ...)
 CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
 CFmtStrN<256, false>::InitQuietTruncation()
@@ -471,7 +491,6 @@ CONNECTION
 CRC32_Final(unsigned int*)
 CRC32_Init(unsigned int*)
 CRC32_ProcessBuffer(unsigned int*, void const*, int)
-CResListGenerator
 CResListGenerator::CResListGenerator()
 CResListGenerator::Collate()
 CResListGenerator::CollateFiles(char const*)
@@ -527,17 +546,14 @@ CSDLMgr::Shutdown()
 CSDLMgr::SizeWindow(int, int)
 CSDLMgr::WaitUntilUserInput(int)
 CSDLMgr::handleKeyInput(SDL_Event const&)
-CSourceAppSystemGroup
 CSourceAppSystemGroup::Create()
 CSourceAppSystemGroup::Destroy()
 CSourceAppSystemGroup::Main()
 CSourceAppSystemGroup::PostShutdown()
 CSourceAppSystemGroup::PreInit()
-CSteamAppSystemGroup
 CSteamAppSystemGroup::CSteamAppSystemGroup(IFileSystem*, CAppSystemGroup*)
 CSteamAppSystemGroup::LoadModuleDLL(char const*)
 CSteamAppSystemGroup::Setup(IFileSystem*, CAppSystemGroup*)
-CSteamApplication
 CSteamApplication::CSteamApplication(CSteamAppSystemGroup*)
 CSteamApplication::Create()
 CSteamApplication::Destroy()
@@ -568,17 +584,14 @@ CUtlBuffer::PutOverflow(int)
 CUtlBuffer::Scanf(char const*, ...)
 CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlLinkedList overflow! (exhausted index range)
 CUtlLinkedList overflow! (exhausted memory allocator)
 CUtlLinkedList<CCocoaEvent, int, false, int, CUtlMemory<UtlLinkedListElem_t<CCocoaEvent, int>, int> >::AllocInternal(bool)
 CUtlLinkedList<CCocoaEvent, int, false, int, CUtlMemory<UtlLinkedListElem_t<CCocoaEvent, int>, int> >::~CUtlLinkedList()
 CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<char const*, int, unsigned short>::Node_t const&) const
@@ -623,21 +636,18 @@ CUtlVector<IAppSystem*, CUtlMemory<IAppSystem*, int> >::AddToTail(IAppSystem* co
 CUtlVector<IAppSystem*, CUtlMemory<IAppSystem*, int> >::~CUtlVector()
 CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
 CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
-CVCRHelpers
 CVCRHelpers::ErrorMessage(char const*)
 CVCRHelpers::GetMainWindow()
 Caches:  Setting command line:
 CharacterSetBuild(characterset_t*, char const*)
 Check your -game parameter or VCONFIG setting.
 CheckGLError(int)
-ConCommand
 ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
 ConCommand::CanAutoComplete()
 ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
 ConCommand::Dispatch(CCommand const&)
 ConCommand::IsCommand() const
 ConCommand::~ConCommand()
-ConCommandBase
 ConCommandBase::AddFlags(int)
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
@@ -649,7 +659,6 @@ ConCommandBase::IsRegistered() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
 ConMsg(char const*, ...)
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -670,7 +679,7 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVarRef::IsValid() const
@@ -679,7 +688,7 @@ ConVar_Unregister()
 ConnectTier1Libraries(void* (**)(char const*, int*), int)
 ConnectTier2Libraries(void* (**)(char const*, int*), int)
 ConnectTier3Libraries(void* (**)(char const*, int*), int)
-Could not find required OpenGL entry point '%short'! Either your video card is unsupported, or your OpenGL driver needs to be updated.
+Could not find required OpenGL entry point '%s'! Either your video card is unsupported, or your OpenGL driver needs to be updated.
 CreateInterface
 CreateSDLMgr()
 DebugPrintf(char const*, ...)
@@ -696,8 +705,8 @@ EXT_vertex_array_bgra
 Error!
 EvaluateConditional(char const*)
 F(;F8}
-Failed to create GL context: %short
-Failed to create SDL window: %short
+Failed to create GL context: %s
+Failed to create SDL window: %s
 FileSystem_GetBaseDir failed.
 FileSystem_GetExecutableDir failed.
 FileSystem_GetExecutableDir(char*, int)
@@ -707,12 +716,11 @@ FileSystem_MountContent(CFSMountContentInfo&)
 FileSystem_SetBasePaths(IFileSystem*)
 FileSystem_SetErrorMode(FSErrorMode_t)
 FileSystem_SetupSteamEnvironment(CFSSteamSetupInfo&)
-FmtStrVSNPrintf truncated to %double without QUIET_TRUNCATION specified!
+FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!
 G;{$|
 GLMDetectSLGU()
 GLMDetectSLGU()::attribs
 GLMDetectScaledResolveMode(unsigned int, bool)
-GLMDisplayDB
 GLMDisplayDB::Dump()
 GLMDisplayDB::GLMDisplayDB()
 GLMDisplayDB::GetDisplayCount(int)
@@ -733,11 +741,11 @@ GLMDisplayMode::~GLMDisplayMode()
 GLMRendererInfo::GLMRendererInfo(GLMRendererInfoFields*)
 GLMRendererInfo::PopulateDisplays()
 GL_ARB_framebuffer_object
-GL_EXTENSIONS:%short
+GL_EXTENSIONS:%s
 GL_EXT_framebuffer_multisample_blit_scaled
-GL_RENDERER: %short
-GL_VENDOR: %short
-GL_VERSION: %short
+GL_RENDERER: %s
+GL_VENDOR: %s
+GL_VERSION: %s
 GetAppInstance()
 GetCStringCharConversion()
 GetNoEscCharConversion()
@@ -748,39 +756,32 @@ H__ZdlPv
 H__Znam
 H__Znwm
 Height
-IAppSystem
-IAppSystemGroup
-IConCommandBaseAccessor
-IConVar
-ILauncherMgr
 INITIALIZATION
 IOAccelerator
 IOGLBundleName
 IOService
-IResListGenerator
-IVCRHelpers
 IVideoServices002
 InputSystemVersion001
 InterfaceReg::s_pInterfaceRegs
 K0;H0~
-KeyValues Error: %short in file %short
+KeyValues Error: %s in file %s
 KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
 KeyValues::FindKey(char const*, bool)
 KeyValues::GetString(char const*, char const*)
 KeyValues::GetStringForSymbolClassic(int)
 KeyValues::GetSymbolForStringClassic(char const*, bool)
 KeyValues::KeyValues(char const*)
-KeyValues::LoadFromBuffer(%short%short%short): Begin
-KeyValues::LoadFromBuffer(%short%short%short): End
+KeyValues::LoadFromBuffer(%s%s%s): Begin
+KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
 KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
-KeyValues::LoadFromFile(%short%short%short): Begin
-KeyValues::LoadFromFile(%short%short%short): End / FileNotFound
-KeyValues::LoadFromFile(%short%short%short): End / Success
+KeyValues::LoadFromFile(%s%s%s): Begin
+KeyValues::LoadFromFile(%s%s%s): End / FileNotFound
+KeyValues::LoadFromFile(%s%s%s): End / Success
 KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
 KeyValues::MakeCopy() const
 KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
-KeyValues::ParseIncludedKeys: Couldn'unsigned short load included keyvalue file %short
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
 KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
 KeyValues::RecursiveMergeKeyValues(KeyValues*)
@@ -798,11 +799,11 @@ LoadFromBuffer: missing {
 LoadResList(CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >&, char const*, char const*)
 LocateGameInfoFile(CFSSteamSetupInfo const&, char*, int)
 MDLCache004
-Maplist file '%short' empty or missing!!!
+Maplist file '%s' empty or missing!!!
 MatSystemSurface008
 MaterialSystemHardwareConfig012
 MergeResLists(CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&, char const*, char const*)
-Module %short is signed char debug build
+Module %s is a debug build
 NSAutoreleasePool
 NSBundle
 NSOpenGLContext
@@ -836,14 +837,14 @@ Reslists:  Setting command line:
 Rffffff.
 SBRBRB]Ap
 SDL fullscreen display index.
-SDL video target is '%short'
+SDL video target is '%s'
 SDLMgrInterface001
-SDL_GL_LoadLibrary(NULL) failed: %short
-SDL_Init(SDL_INIT_VIDEO) failed: %short
-SDL_SetWindowGammaRamp failed: %double
+SDL_GL_LoadLibrary(NULL) failed: %s
+SDL_Init(SDL_INIT_VIDEO) failed: %s
+SDL_SetWindowGammaRamp failed: %d
 SaveResList(CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> > const&, char const*, char const*)
-SetWindowGrab( %short )
-Setup file '%short' doesn'unsigned short exist in subdirectory '%short'.
+SetWindowGrab( %s )
+Setup file '%s' doesn't exist in subdirectory '%s'.
 SetupFileSystemError(bool, FSReturnCode_t, char const*, ...)
 Should not be using filesystem_steam anymore!
 SortResList(char const*, char const*)
@@ -854,17 +855,17 @@ Sys_GetFactory(CSysModule*)
 Sys_LoadLibrary(char const*, Sys_Flags)
 Sys_LoadModule(char const*, Sys_Flags)
 Sys_UnloadModule(CSysModule*)
-System (%short) failed during stage %short
+System (%s) failed during stage %s
 This game does not support this type of graphics processor
 This game requires OS X version 10.6.7 or higher
 TryLocateGameInfoFile(char*, int, bool)
 UTF8String
 Unable to find %s. Solutions:
-Unable to load %short
-Unable to load '%short'
-Unable to load interface %short from %short
-Unable to maplist file %short
-Unable to parse keyvalues from '%short'
+Unable to load %s
+Unable to load '%s'
+Unable to load interface %s from %s
+Unable to maplist file %s
+Unable to parse keyvalues from '%s'
 UnknownModel
 UsableForDesktopGUI
 VBAllocTracker001
@@ -1284,7 +1285,7 @@ non-virtual thunk to ConVar::SetValue(float)
 non-virtual thunk to ConVar::SetValue(int)
 objectForKey:
 offffff.
-open "%short"
+open "%s"
 operator delete(void*)
 operator delete[](void*)
 operator new(unsigned long)
@@ -1319,7 +1320,7 @@ std::terminate()
 stringWithFormat:
 studiorender.dylib
 subdir
-sys
+t+ff.
 tWfffff.
 typeinfo for CAppSystemGroup
 typeinfo for CDefaultAccessor
@@ -1370,9 +1371,8 @@ typeinfo name for IConVar
 typeinfo name for ILauncherMgr
 typeinfo name for IResListGenerator
 typeinfo name for IVCRHelpers
-unexpected error %double trying to exclusively lock %short
+unexpected error %d trying to exclusively lock %s
 unknown
-unsigned short+ff.
 vec2_invalid
 vec2_origin
 vec4_invalid
@@ -1381,7 +1381,7 @@ vendor-id
 vgui2.dylib
 vguimatsurface.dylib
 video_services.dylib
-vm9G |unsigned char
+vm9G |h
 vphysics.dylib
 vstdlib.dylib
 vtable for CAppSystemGroup

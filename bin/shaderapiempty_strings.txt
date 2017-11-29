@@ -21,6 +21,26 @@
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
+10CEmptyMesh
+10IAppSystem
+10IShaderAPI
+12IIndexBuffer
+13IShaderDevice
+13IShaderShadow
+13IVertexBuffer
+15CShaderAPIEmpty
+16IShaderDeviceMgr
+17IDebugTextureInfo
+17IShaderDynamicAPI
+18CShaderDeviceEmpty
+18CShaderShadowEmpty
+18CUtlCharConversion
+19CUtlNoEscConversion
+21CShaderDeviceMgrEmpty
+21CUtlCStringConversion
+23IHardwareConfigInternal
+29IMaterialSystemHardwareConfig
+5IMesh
 @@@@  P
 @@@@00
 @_Plat_FloatTime
@@ -47,7 +67,6 @@
 A`'A`
 A`8A`
 A`LAWA`$BRBRBRBRDp
-CEmptyMesh
 CEmptyMesh::BeginCastBuffer(MaterialIndexFormat_t)
 CEmptyMesh::BeginCastBuffer(unsigned long long)
 CEmptyMesh::ComputeMemoryUsed()
@@ -86,7 +105,6 @@ CEmptyMesh::ValidateData(int, VertexDesc_t const&)
 CEmptyMesh::ValidateData(int, int, MeshDesc_t const&)
 CEmptyMesh::VertexCount() const
 CEmptyMesh::~CEmptyMesh()
-CShaderAPIEmpty
 CShaderAPIEmpty::AcquireThreadOwnership()
 CShaderAPIEmpty::ActuallySupportsPixelShaders_2_b() const
 CShaderAPIEmpty::BeginFrame()
@@ -432,7 +450,6 @@ CShaderAPIEmpty::UserClipTransform(VMatrix const&)
 CShaderAPIEmpty::UsesSRGBCorrectBlending() const
 CShaderAPIEmpty::UsesVertexAndPixelShaders(short) const
 CShaderAPIEmpty::~CShaderAPIEmpty()
-CShaderDeviceEmpty
 CShaderDeviceEmpty::AddView(void*)
 CShaderDeviceEmpty::CompileShader(char const*, unsigned long, char const*)
 CShaderDeviceEmpty::CreateGeometryShader(IShaderBuffer*)
@@ -469,7 +486,6 @@ CShaderDeviceEmpty::SetView(void*)
 CShaderDeviceEmpty::SpewDriverInfo() const
 CShaderDeviceEmpty::StencilBufferBits() const
 CShaderDeviceEmpty::~CShaderDeviceEmpty()
-CShaderDeviceMgrEmpty
 CShaderDeviceMgrEmpty::AddModeChangeCallback(void (*)())
 CShaderDeviceMgrEmpty::Connect(void* (*)(char const*, int*))
 CShaderDeviceMgrEmpty::Disconnect()
@@ -485,7 +501,6 @@ CShaderDeviceMgrEmpty::RemoveModeChangeCallback(void (*)())
 CShaderDeviceMgrEmpty::SetAdapter(int, int)
 CShaderDeviceMgrEmpty::SetMode(void*, int, ShaderDeviceInfo_t const&)
 CShaderDeviceMgrEmpty::Shutdown()
-CShaderShadowEmpty
 CShaderShadowEmpty::AlphaFunc(ShaderAlphaFunc_t, float)
 CShaderShadowEmpty::BlendFunc(ShaderBlendFactor_t, ShaderBlendFactor_t)
 CShaderShadowEmpty::BlendFuncSeparateAlpha(ShaderBlendFactor_t, ShaderBlendFactor_t)
@@ -540,12 +555,9 @@ CShaderShadowEmpty::StencilWriteMask(int)
 CShaderShadowEmpty::TexGen(TextureStage_t, ShaderTexGenParam_t)
 CShaderShadowEmpty::VertexShaderVertexFormat(unsigned int, int, int*, int)
 CShaderShadowEmpty::~CShaderShadowEmpty()
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CreateInterface
 DebugTextureInfo001
@@ -554,20 +566,8 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IDebugTextureInfo
-IHardwareConfigInternal
-IIndexBuffer
-IMaterialSystemHardwareConfig
 IMaterialSystemHardwareConfig::SupportsNormalMapCompression() const
-IMesh
-IShaderAPI
 IShaderAPI::SupportsNormalMapCompression() const
-IShaderDevice
-IShaderDeviceMgr
-IShaderDynamicAPI
-IShaderShadow
-IVertexBuffer
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
 MaterialSystemHardwareConfig012

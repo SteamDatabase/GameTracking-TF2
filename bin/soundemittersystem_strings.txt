@@ -1,12 +1,12 @@
-		"wave"	"%short"
-	"channel"		"%short"
-	"delay_msec"	"%int"
-	"pitch"			"%short"
+		"wave"	"%s"
+	"channel"		"%s"
+	"delay_msec"	"%i"
+	"pitch"			"%s"
 	"play_to_owner_only"	"1"
 	"rndwave"
-	"soundlevel"	"%short"
-	"volume"		"%short"
-	"wave"			"%short"
+	"soundlevel"	"%s"
+	"volume"		"%s"
+	"wave"			"%s"
 	w4A1
   00  @@
  ReadToken overflow
@@ -23,14 +23,14 @@ $X360
 $^_[]
 $gender
 %.3f, %.3f
-%int, %int
-%short is not writable, can'unsigned short save data to file
-%short%short%short
-%short:%short
-(*%short*), 
+%i, %i
+%s is not writable, can't save data to file
+%s%s%s
+%s:%s
+(*%s*), 
 ,^_[]
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(KeyValues.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(checksum_crc.o)
@@ -84,6 +84,18 @@ $gender
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
 0pp 00p
+10IAppSystem
+12CEmptyConVar
+14ConCommandBase
+18CUtlCharConversion
+19CUtlNoEscConversion
+20IUniformRandomStream
+21CUtlCStringConversion
+23CSoundEmitterSystemBase
+23ISoundEmitterSystemBase
+32CSoundEmitterUniformRandomStream
+6ConVar
+7IConVar
 9Q(~O
 ;J8s#
 <^_[]
@@ -94,6 +106,7 @@ $gender
 @_DevMsg
 @_Error
 @_KeyValuesSystem
+@_Msg
 @_RandomFloat
 @_RandomFloatExp
 @_RandomInt
@@ -113,7 +126,6 @@ $gender
 @___stack_chk_fail
 @___stack_chk_guard
 @___tolower
-@__float128 short::*
 @_atof
 @_atoi
 @_g_pMemAlloc
@@ -157,7 +169,6 @@ Bffffff.
 C;^0|
 C;_0|
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -176,18 +187,17 @@ CKeyValuesErrorStack::ReportError(char const*)
 CRC32_Final(unsigned int*)
 CRC32_Init(unsigned int*)
 CRC32_ProcessBuffer(unsigned int*, void const*, int)
-CSoundEmitterSystem:  Registered %int sounds
-CSoundEmitterSystem:  Unknown attenuation key %short
-CSoundEmitterSystem:  Unknown sound level %short
-CSoundEmitterSystem:  Warning, unknown channel type in sounds.txt (%short)
-CSoundEmitterSystem::AddSoundsFromFile:  No such file %short
-CSoundEmitterSystemBase
-CSoundEmitterSystemBase::AddSound( '%short', '%short', ... ), script file not list in manifest '%short'
+CSoundEmitterSystem:  Registered %i sounds
+CSoundEmitterSystem:  Unknown attenuation key %s
+CSoundEmitterSystem:  Unknown sound level %s
+CSoundEmitterSystem:  Warning, unknown channel type in sounds.txt (%s)
+CSoundEmitterSystem::AddSoundsFromFile:  No such file %s
+CSoundEmitterSystemBase::AddSound( '%s', '%s', ... ), script file not list in manifest '%s'
 CSoundEmitterSystemBase::AddSound(char const*, char const*, CSoundParametersInternal const&)
 CSoundEmitterSystemBase::AddSoundOverrides(char const*, bool)
 CSoundEmitterSystemBase::AddSoundsFromFile(char const*, bool, bool, bool)
 CSoundEmitterSystemBase::AddWaveName(char const*)
-CSoundEmitterSystemBase::BaseInit:  Manifest '%short' with bogus file type '%short', expecting 'declare_file' or 'precache_file'
+CSoundEmitterSystemBase::BaseInit:  Manifest '%s' with bogus file type '%s', expecting 'declare_file' or 'precache_file'
 CSoundEmitterSystemBase::CSoundEmitterSystemBase()
 CSoundEmitterSystemBase::CheckForMissingWavFiles(bool)
 CSoundEmitterSystemBase::ClearSoundOverrides()
@@ -206,11 +216,11 @@ CSoundEmitterSystemBase::GetManifestFileTimeChecksum()
 CSoundEmitterSystemBase::GetNumSoundScripts() const
 CSoundEmitterSystemBase::GetParametersForSound(char const*, CSoundParameters&, gender_t, bool)
 CSoundEmitterSystemBase::GetParametersForSound(char const*, CSoundParameters&, gender_t, bool)::soundWarnings
-CSoundEmitterSystemBase::GetParametersForSound:  No such sound %short
-CSoundEmitterSystemBase::GetParametersForSound:  sound %short has "attenuation" with %short value!
-CSoundEmitterSystemBase::GetParametersForSound:  sound %short has "soundlevel" with %short value!
-CSoundEmitterSystemBase::GetParametersForSound:  sound %short has no wave or rndwave key!
-CSoundEmitterSystemBase::GetParametersForSound:  sound '%short' references wave '%short' which doesn'unsigned short exist on disk!
+CSoundEmitterSystemBase::GetParametersForSound:  No such sound %s
+CSoundEmitterSystemBase::GetParametersForSound:  sound %s has "attenuation" with %s value!
+CSoundEmitterSystemBase::GetParametersForSound:  sound %s has "soundlevel" with %s value!
+CSoundEmitterSystemBase::GetParametersForSound:  sound %s has no wave or rndwave key!
+CSoundEmitterSystemBase::GetParametersForSound:  sound '%s' references wave '%s' which doesn't exist on disk!
 CSoundEmitterSystemBase::GetParametersForSoundEx(char const*, short&, CSoundParameters&, gender_t, bool)
 CSoundEmitterSystemBase::GetParametersForSoundEx(char const*, short&, CSoundParameters&, gender_t, bool)::soundWarnings
 CSoundEmitterSystemBase::GetSoundCount()
@@ -238,7 +248,7 @@ CSoundEmitterSystemBase::LookupSoundLevel(char const*)
 CSoundEmitterSystemBase::LookupSoundLevelByHandle(char const*, short&)
 CSoundEmitterSystemBase::ModInit()
 CSoundEmitterSystemBase::ModShutdown()
-CSoundEmitterSystemBase::MoveSound( '%short', '%short' ), script file not list in manifest '%short'
+CSoundEmitterSystemBase::MoveSound( '%s', '%s' ), script file not list in manifest '%s'
 CSoundEmitterSystemBase::MoveSound(char const*, char const*)
 CSoundEmitterSystemBase::Next(int) const
 CSoundEmitterSystemBase::QueryInterface(char const*)
@@ -246,12 +256,11 @@ CSoundEmitterSystemBase::ReloadSoundEntriesInList(IFileList*)
 CSoundEmitterSystemBase::RemoveSound(char const*)
 CSoundEmitterSystemBase::RenameSound(char const*, char const*)
 CSoundEmitterSystemBase::SaveChangesToSoundScript(int)
-CSoundEmitterSystemBase::SaveChangesToSoundScript:  No script file for index %int
+CSoundEmitterSystemBase::SaveChangesToSoundScript:  No script file for index %i
 CSoundEmitterSystemBase::Shutdown()
 CSoundEmitterSystemBase::TranslateAttenuation(char const*)
 CSoundEmitterSystemBase::UpdateSoundParameters(char const*, CSoundParametersInternal const&)
 CSoundEmitterSystemBase::~CSoundEmitterSystemBase()
-CSoundEmitterUniformRandomStream
 CSoundEmitterUniformRandomStream::RandomFloat(float, float)
 CSoundEmitterUniformRandomStream::RandomFloatExp(float, float, float)
 CSoundEmitterUniformRandomStream::RandomInt(int, int)
@@ -296,10 +305,8 @@ CUtlBuffer::PutString(char const*)
 CUtlBuffer::Scanf(char const*, ...)
 CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlHashtable<CUtlConstStringBase<char>, gender_t, CaselessStringHashFunctor, UTLConstStringCaselessStringEqualFunctor<char>, char const*>::BumpEntry(unsigned int)
 CUtlHashtable<CUtlConstStringBase<char>, gender_t, CaselessStringHashFunctor, UTLConstStringCaselessStringEqualFunctor<char>, char const*>::DoInsertUnconstructed(unsigned int, bool)
@@ -318,7 +325,6 @@ CUtlLinkedList<CUtlKeyValuePair<CSoundEntry*, empty_t>, unsigned short, false, u
 CUtlLinkedList<CUtlKeyValuePair<CSoundEntry*, empty_t>, unsigned short, false, unsigned short, CUtlMemory<UtlLinkedListElem_t<CUtlKeyValuePair<CSoundEntry*, empty_t>, unsigned short>, unsigned short> >::~CUtlLinkedList()
 CUtlMemory<UtlLinkedListElem_t<CUtlKeyValuePair<CSoundEntry*, empty_t>, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
@@ -352,20 +358,18 @@ CUtlVector<char const*, CUtlMemory<char const*, int> >::~CUtlVector()
 CUtlVector<int, CUtlMemory<int, int> >::AddToTail(int const&)
 CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
 CUtlVector<void*, CUtlMemory<void*, int> >::~CUtlVector()
-Can'unsigned short UpdateSoundParameters %short, no such sound
-Can'unsigned short move '%short', no such sound!
-Can'unsigned short remove %short, no such sound!
-Can'unsigned short rename %short to %short, new name already in list
-Can'unsigned short rename %short, no such sound
+Can't UpdateSoundParameters %s, no such sound
+Can't move '%s', no such sound!
+Can't remove %s, no such sound!
+Can't rename %s to %s, new name already in list
+Can't rename %s, no such sound
 Cffffff.
 CompatibilityAttenuation
-CompatibilityAttenuation for sound %short must have same start and end values.
-ConCommandBase
+CompatibilityAttenuation for sound %s must have same start and end values.
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -394,14 +398,10 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IConVar
-ISoundEmitterSystemBase
-IUniformRandomStream
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
 K4fffff.
-KeyValues Error: %short in file %short
+KeyValues Error: %s in file %s
 KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
 KeyValues::FindKey(char const*, bool)
 KeyValues::GetInt(char const*, int)
@@ -410,17 +410,17 @@ KeyValues::GetString(char const*, char const*)
 KeyValues::GetStringForSymbolClassic(int)
 KeyValues::GetSymbolForStringClassic(char const*, bool)
 KeyValues::KeyValues(char const*)
-KeyValues::LoadFromBuffer(%short%short%short): Begin
-KeyValues::LoadFromBuffer(%short%short%short): End
+KeyValues::LoadFromBuffer(%s%s%s): Begin
+KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
 KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
-KeyValues::LoadFromFile(%short%short%short): Begin
-KeyValues::LoadFromFile(%short%short%short): End / FileNotFound
-KeyValues::LoadFromFile(%short%short%short): End / Success
+KeyValues::LoadFromFile(%s%s%s): Begin
+KeyValues::LoadFromFile(%s%s%s): End / FileNotFound
+KeyValues::LoadFromFile(%s%s%s): End / Success
 KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
 KeyValues::MakeCopy() const
 KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
-KeyValues::ParseIncludedKeys: Couldn'unsigned short load included keyvalue file %short
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
 KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
 KeyValues::RecursiveMergeKeyValues(KeyValues*)
@@ -447,9 +447,9 @@ RecursiveLoadFromBuffer:  got conditional between key and value
 RecursiveLoadFromBuffer:  got empty keyname
 RecursiveLoadFromBuffer:  got } in key
 RecursiveLoadFromBuffer:  recursion overflow
-Reloading sound file '%short' due to pure settings.
+Reloading sound file '%s' due to pure settings.
 Rffffff.
-SA`B
+SA`1B
 SNDLVL_
 SNDLVL_100dB
 SNDLVL_105dB
@@ -481,16 +481,16 @@ SNDLVL_NONE
 SNDLVL_NORM
 SNDLVL_STATIC
 SNDLVL_TALKING
-SceneManager_SaveSoundsToScriptFile:  Unable to write file %short!!!
-Sound %short references missing file %short
-SoundEmitter:  adding map sound overrides from %short [%int total, %int replacements, %int duplicated replacements]
-SoundEmitter:  removing map sound overrides [%int to remove, %int to restore]
+SceneManager_SaveSoundsToScriptFile:  Unable to write file %s!!!
+Sound %s references missing file %s
+SoundEmitter:  adding map sound overrides from %s [%i total, %i replacements, %i duplicated replacements]
+SoundEmitter:  removing map sound overrides [%i to remove, %i to restore]
 Sys_GetFactoryThis()
 Tcvar
 TextToChannel(char const*)
 TextToSoundLevel(char const*)
 The soundemittersystem system requires the filesystem to run!
-Unable to load manifest file '%short'
+Unable to load manifest file '%s'
 VFileSystem022
 VOL_NORM
 VSoundEmitter002
@@ -642,11 +642,13 @@ s_pTokenBuf
 scripts/game_sounds_header.txt
 scripts/game_sounds_manifest.txt
 scripts/global_actors.txt
-sound/%short
+sound/%s
 sound_interval_t<float16_with_assign>::Random() const
 soundlevel
 std::terminate()
+t+ff.
 t5A9V
+t;A9V
 tAA9V
 typeinfo for CEmptyConVar
 typeinfo for CSoundEmitterSystemBase
@@ -679,8 +681,6 @@ unsigned int CUtlHashtable<CUtlConstStringBase<char>, gender_t, CaselessStringHa
 unsigned int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoLookup<CSoundEntry*>(CSoundEntry*, unsigned int, unsigned int*) const
 unsigned int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoLookup<char const*>(char const*, unsigned int, unsigned int*) const
 unsigned int CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::DoInsert<CSoundEntry*>(CSoundEntry*)
-unsigned short+ff.
-unsigned short;A9V
 vec2_invalid
 vec2_origin
 volume

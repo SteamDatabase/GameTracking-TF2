@@ -1,6 +1,6 @@
 	w4A1
   00  @0@
- ##### CMaterialReference::Init got error material for %short in tex group %short
+ ##### CMaterialReference::Init got error material for %s in tex group %s
 "CreateInterface
 $distortbounds
 $hudtranslucent
@@ -57,11 +57,31 @@ $hudundistort
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/tier3/tier3.cpp
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
+10ConCommand
+10IAppSystem
+12CEmptyConVar
+14CBaseAppSystemI21ISourceVirtualRealityE
+14ConCommandBase
+15CTier0AppSystemI21ISourceVirtualRealityE
+15CTier1AppSystemI21ISourceVirtualRealityLi0EE
+15CTier2AppSystemI21ISourceVirtualRealityLi0EE
+15CTier3AppSystemI21ISourceVirtualRealityLi0EE
+16CDefaultAccessor
+18CUtlCharConversion
+19CUtlNoEscConversion
+19ITextureRegenerator
+21CSourceVirtualReality
+21ISourceVirtualReality
+23CDistortionTextureRegen
+23IConCommandBaseAccessor
 333333
+6ConVar
+7IConVar
 <^_[]
 @(^_]
 @@@@ 
 @_GetCPUInformation
+@_Msg
 @_VR_Init
 @_VR_Shutdown
 @_Warning
@@ -73,7 +93,6 @@ $hudundistort
 @___gxx_personality_v0
 @___stack_chk_fail
 @___stack_chk_guard
-@__float128 short::*
 @_atan
 @_atof
 @_atoi
@@ -103,16 +122,12 @@ $hudundistort
 ASBRBRA`
 AVBSB
 BuildGammaTable(float, float, float, int)
-CBaseAppSystem<ISourceVirtualReality>
 CC_VR_Reset_Home_Pos(CCommand const&)
 CC_VR_Track_Reinit(CCommand const&)
 CC_vr_refresh_distortion_texture(CCommand const&)
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CDistortionTextureRegen
 CDistortionTextureRegen::RegenerateTextureBits(ITexture*, IVTFTexture*, Rect_t*)
 CDistortionTextureRegen::Release()
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -124,7 +139,6 @@ CMaterialReference::Init(char const*, char const*, bool)
 CMaterialReference::Shutdown()
 CMaterialReference::~CMaterialReference()
 COLORCORRECTION_VERSION_1
-CSourceVirtualReality
 CSourceVirtualReality::Activate()
 CSourceVirtualReality::CSourceVirtualReality()
 CSourceVirtualReality::CompositeHud(ISourceVirtualReality::VREye, float*, bool, bool, bool)
@@ -156,29 +170,21 @@ CTextureReference::CTextureReference()
 CTextureReference::Init(ITexture*)
 CTextureReference::Shutdown(bool)
 CTextureReference::~CTextureReference()
-CTier0AppSystem<ISourceVirtualReality>
-CTier1AppSystem<ISourceVirtualReality, 0>
-CTier2AppSystem<ISourceVirtualReality, 0>
-CTier3AppSystem<ISourceVirtualReality, 0>
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlString::Get() const
 CUtlString::Purge()
 CUtlString::Set(char const*)
 CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
-Can'unsigned short reset HMD tracker
-ConCommand
+Can't reset HMD tracker
 ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
 ConCommand::CanAutoComplete()
 ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
 ConCommand::Dispatch(CCommand const&)
 ConCommand::IsCommand() const
 ConCommand::~ConCommand()
-ConCommandBase
 ConCommandBase::AddFlags(int)
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
@@ -189,7 +195,6 @@ ConCommandBase::IsFlagSet(int) const
 ConCommandBase::IsRegistered() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -225,11 +230,6 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IAppSystem
-IConCommandBaseAccessor
-IConVar
-ISourceVirtualReality
-ITextureRegenerator
 IVideoServices002
 InputSystemVersion001
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
@@ -255,7 +255,7 @@ SourceVirtualReality001
 Sys_GetFactoryThis()
 Tcvar
 The head tracker requires the filesystem to run!
-Unable to initialize HMD tracker. Error code %double
+Unable to initialize HMD tracker. Error code %d
 VBAllocTracker001
 VDataCache003
 VDmeMakeFileUtils001
@@ -403,9 +403,9 @@ fffff.
 ffffff.
 g_Mathlib_GammaToLinear
 g_Mathlib_LinearToGamma
+l^_[]
 lineartoscreen
 lineartotexture
-long^_[]
 non-virtual thunk to CEmptyConVar::GetName() const
 non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
 non-virtual thunk to CEmptyConVar::SetValue(char const*)
@@ -508,4 +508,4 @@ vtable for ConVar
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
-yE>CUtlCStringConversion
+yE>21CUtlCStringConversion

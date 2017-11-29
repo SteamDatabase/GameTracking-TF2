@@ -1,7 +1,7 @@
 	Padding the vertex format with extra texcoords
 	Will not warn again.
 	w4A1
-	wchar_t@F1
+	w@F1
         000000  00``
      0
      PPP`
@@ -15,7 +15,7 @@
  ERROR: failed to create vertex decl for vertex format 0x%08llX! You'll probably see messed-up mesh rendering - to diagnose, build shaderapidx9.dll in debug.
  ReadToken overflow
  unrecognized shader compression type = file corrupt?
-!!!!!Using invalid shader combo!!!!!  Consult signed char programmer and tell them to build debug materialsystem.dll and stdshader*.dll.  Run with "mat_bufferprimitives 0" and look for CMaterial in the call stack and see what m_pDebugName is.  You are likely using signed char shader combo that has been skipped.
+!!!!!Using invalid shader combo!!!!!  Consult a programmer and tell them to build debug materialsystem.dll and stdshader*.dll.  Run with "mat_bufferprimitives 0" and look for CMaterial in the call stack and see what m_pDebugName is.  You are likely using a shader combo that has been skipped.
 "CreateInterface
 "ffffff.
 #base
@@ -28,11 +28,11 @@ $WIN32
 $WINDOWS
 $X360
 %1.2f 
-%double MB of system RAM
-%float %float %float %float
-%short ps-combo %double
-%short vs-combo %double
-(*%short*), 
+%d MB of system RAM
+%f %f %f %f
+%s ps-combo %d
+%s vs-combo %d
+(*%s*), 
 **** WARNING: Transition table overflow. Grab Brian
 ,^_[]
 -1 = use hardware caps. 0 = use hardware srgb. 1 = use shader srgb(software lookup)
@@ -55,7 +55,7 @@ $X360
 -shader
 -shadersondemand
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
 /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
 /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
@@ -202,20 +202,76 @@ $X360
 0pp    
 0pp 00p
 0x%016llX
+10ConCommand
+10IAppSystem
+10IShaderAPI
+11IRefCounted
 127.0.0.1
+12CBaseMeshDX8
+12CEmptyConVar
+12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE
+12CTempMeshDX8
+12IIndexBuffer
+13CShaderAPIDx8
+13CShaderBufferI11ID3DXBufferE
+13IShaderAPIDX8
+13IShaderBuffer
+13IShaderDevice
+13IShaderShadow
+13IVertexBuffer
+14CShaderAPIBase
+14CShaderManager
+14ConCommandBase
+14IShaderManager
+15CDynamicMeshDX8
+15CHardwareConfig
+15CIndexBufferDx8
+15CVBAllocTracker
+15IVBAllocTracker
+16CBufferedMeshDX8
+16CDefaultAccessor
+16CIndexBufferBase
+16CShaderDeviceDx8
+16CShaderShadowDX8
+16CTransitionTable
+16CVertexBufferDx8
+16IShaderDeviceMgr
+16IShaderShadowDX8
+17CShaderDeviceBase
+17CVertexBufferBase
+17IDebugTextureInfo
+17IShaderDynamicAPI
+18CUtlCharConversion
+19CShaderDeviceMgrDx8
+19CUtlNoEscConversion
+20CRefCountServiceBaseILb1E6CRefMTE
+20CShaderDeviceMgrBase
+23IConCommandBaseAccessor
+23IHardwareConfigInternal
+24CShaderAPIConVarAccessor
+29IMaterialSystemHardwareConfig
 2fff.
 32 bit buffer (hack)
 4fffff.
+5IMesh
+6ConVar
+7IConVar
+8CFunctor
+8CMeshDX8
+8CMeshMgr
+8IMeshMgr
 8fff.
-9@`u	9@double
+9@`u	9@d
 9@du<
 9@duG
+9CFunctor1IPFvP21IDirect3DBaseTexture9ES1_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
+9CMeshBase
 9F$r*
-9F<unsigned short"
-9G unsigned short^
+9F<t"
+9G t^
 9I`u	9Id
 9LZMA
-9[`u	9[double
+9[`u	9[d
 9ffffff.
 9v`u	9vd
 ;p$t>
@@ -227,10 +283,10 @@ $X360
 <rFGCu
 =BTI1u
 =CF24
+=DF16t
 =DF24
 =INTZ
 =RAWZu
-=unsigned short _Accum
 @(^_]
 @00PP`
 @@@0000    
@@ -377,6 +433,7 @@ $X360
 @_Error
 @_GetCPUInformation
 @_KeyValuesSystem
+@_Msg
 @_Plat_DebugString
 @_Plat_FloatTime
 @_Plat_GetPagedPoolInfo
@@ -409,7 +466,6 @@ $X360
 @___stack_chk_fail
 @___stack_chk_guard
 @___tolower
-@__float128 short::*
 @_atof
 @_atoi
 @_cosf
@@ -458,7 +514,7 @@ $X360
 @vtable for __cxxabiv1::__vmi_class_type_info
 A ff.
 ABGR8888
-ALPHA %short CUBEMAP %short MIPCUBEMAP %short SQUAREONLY %short
+ALPHA %s CUBEMAP %s MIPCUBEMAP %s SQUAREONLY %s
 ARGB8888
 ATI1N
 ATI1uC
@@ -500,11 +556,11 @@ ApplyTextureEnable(ShadowState_t const&, int)
 ApplyVertexBlendEnable(ShadowState_t const&, int)
 ApplyZWriteEnable(ShadowState_t const&, int)
 Assertion Failed: !m_bNeedsSort
-Attempted to set too many flex weights! long long signed char::* is %double
-Attempting set SRGBRead state on an invalid sampler (%double)!
-Attempting set shadow filtering state on an invalid sampler (%double)!
-Attempting to bind signed char texture to an invalid sampler (%double)!
-Attempting to bind signed char vertex texture (%short) which was not created as signed char vertex texture!
+Attempted to set too many flex weights! Max is %d
+Attempting set SRGBRead state on an invalid sampler (%d)!
+Attempting set shadow filtering state on an invalid sampler (%d)!
+Attempting to bind a texture to an invalid sampler (%d)!
+Attempting to bind a vertex texture (%s) which was not created as a vertex texture!
 BACKBUFFER
 BGR565
 BGR888
@@ -514,8 +570,8 @@ BGRA5551
 BGRA8888
 BGRX5551
 BGRX8888
-BI %double %double %double %double 
-BLENDOP %short CLIPPLANESCALEDPOINTS %short CLIPTLVERTS %short
+BI %d %d %d %d 
+BLENDOP %s CLIPPLANESCALEDPOINTS %s CLIPTLVERTS %s
 BTI1	
 BTI1BTI1BTI1
 BTI1]
@@ -526,13 +582,12 @@ BindsMax
 BlendFunc: invalid factor
 BlendOp: invalid op
 BlitTextureBits(TextureLoadInfo_t&, int, int, int)
-BlitVolumeBits: couldn'unsigned short lock volume texture rect
-BlitVolumeBits: couldn'unsigned short unlock volume texture rect
+BlitVolumeBits: couldn't lock volume texture rect
+BlitVolumeBits: couldn't unlock volume texture rect
 BuildGammaTable(float, float, float, int)
-C bool %3d __float128 %3d r %3d signed char %3d 
+C b %3d g %3d r %3d a %3d 
 C;_0|
-CANBLTSYSTONONLOCAL %short CANRENDERAFTERFLIP %short HWRASTERIZATION %short
-CBaseMeshDX8
+CANBLTSYSTONONLOCAL %s CANRENDERAFTERFLIP %s HWRASTERIZATION %s
 CBaseMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
 CBaseMeshDX8::BeginCastBuffer(unsigned long long)
 CBaseMeshDX8::BeginPass()
@@ -575,7 +630,6 @@ CBaseMeshDX8::ValidateData(int, IndexDesc_t const&)
 CBaseMeshDX8::ValidateData(int, VertexDesc_t const&)
 CBaseMeshDX8::ValidateData(int, int, MeshDesc_t const&)
 CBaseMeshDX8::VertexCount() const
-CBufferedMeshDX8
 CBufferedMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
 CBufferedMeshDX8::Draw(int, int)
 CBufferedMeshDX8::EndCastBuffer()
@@ -601,7 +655,6 @@ CBufferedMeshDX8::ValidateData(int, int, MeshDesc_t const&)
 CBufferedMeshDX8::~CBufferedMeshDX8()
 CC_DumpVBMemAllocs()
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
 CDynamicMeshDX8
 CDynamicMeshDX8::Draw
@@ -616,18 +669,14 @@ CDynamicMeshDX8::PreLock()
 CDynamicMeshDX8::SetVertexFormat(unsigned long long)
 CDynamicMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
 CDynamicMeshDX8::~CDynamicMeshDX8()
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CFunctor
-CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
 CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
 CFunctor1<void (*)(IDirect3DBaseTexture9*), IDirect3DBaseTexture9*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
-CHardwareConfig
 CHardwareConfig::ActuallySupportsPixelShaders_2_b() const
 CHardwareConfig::CanDoSRGBReadFromRTs() const
 CHardwareConfig::CanStretchRectFromTextures() const
@@ -719,12 +768,10 @@ CIndexBuffer::HandlePerFrameTextureStats(int)
 CIndexBuffer::HandlePerFrameTextureStats(int)::_counter
 CIndexBuffer::Lock(bool, int, int&, int)
 CIndexBuffer::~CIndexBuffer()::_counter
-CIndexBufferBase
 CIndexBufferBase::CIndexBufferBase(char const*)
 CIndexBufferBase::Spew(int, IndexDesc_t const&)
 CIndexBufferBase::ValidateData(int, IndexDesc_t const&)
 CIndexBufferBase::~CIndexBufferBase()
-CIndexBufferDx8
 CIndexBufferDx8::Allocate()
 CIndexBufferDx8::Allocate()::_counter
 CIndexBufferDx8::Allocate: CreateIndexBuffer failed!
@@ -746,11 +793,9 @@ CIndexBufferDx8::~CIndexBufferDx8()
 CIndexBufferX8::Lock
 CKeyValuesErrorStack::ReportError(char const*)
 CLZMA::Uncompress(unsigned char*, unsigned char*)
-CMeshBase
 CMeshBase::CMeshBase()
 CMeshBase::GetMesh()
 CMeshBase::~CMeshBase()
-CMeshDX8
 CMeshDX8::DisableFlexMesh()
 CMeshDX8::Draw(CPrimList*, int)
 CMeshDX8::Draw(int, int)
@@ -794,7 +839,6 @@ CMeshDX8::s_NumVertices
 CMeshDX8::s_nPrims
 CMeshDX8::s_pPrims
 CMeshDX8::~CMeshDX8()
-CMeshMgr
 CMeshMgr::BindIndexBuffer(IIndexBuffer*, int)
 CMeshMgr::BindVertexBuffer(int, IVertexBuffer*, int, int, int, unsigned long long, int)
 CMeshMgr::BufferCount() const
@@ -840,28 +884,23 @@ CMeshMgr::Shutdown()
 CMeshMgr::UseFatVertices(bool)
 CMeshMgr::~CMeshMgr()
 COLORCORRECTION_VERSION_1
-COLORWRITEENABLE %short MASKZ %short TSSARGTEMP %short
+COLORWRITEENABLE %s MASKZ %s TSSARGTEMP %s
 CPixelWriter::SetPixelMemory(ImageFormat, void*, int)
 CPixelWriter::SetPixelMemory(ImageFormat, void*, int)::format_error_printed
-CPixelWriter::SetPixelMemory:  Unsupported image format %int
+CPixelWriter::SetPixelMemory:  Unsupported image format %i
 CRC32_Final(unsigned int*)
 CRC32_Init(unsigned int*)
 CRC32_ProcessBuffer(unsigned int*, void const*, int)
-CRefCountServiceBase<true, CRefMT>
 CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
-CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
-CShaderAPIBase
 CShaderAPIBase::CShaderAPIBase()
 CShaderAPIBase::GetCurrentColorCorrection(ShaderColorCorrectionInfo_t*)
 CShaderAPIBase::~CShaderAPIBase()
-CShaderAPIConVarAccessor
 CShaderAPIConVarAccessor::RegisterConCommandBase(ConCommandBase*)
-CShaderAPIDX8::BlitTextureBits: couldn'unsigned short lock texture rect
-CShaderAPIDX8::BlitTextureBits: couldn'unsigned short unlock texture rect
+CShaderAPIDX8::BlitTextureBits: couldn't lock texture rect
+CShaderAPIDX8::BlitTextureBits: couldn't unlock texture rect
 CShaderAPIDX8::RenderPassWithVertexAndIndexBuffers
-CShaderAPIDx8
 CShaderAPIDx8::AcquireThreadOwnership()
 CShaderAPIDx8::AddBufferToTextureList(char const*, _D3DSURFACE_DESC&)
 CShaderAPIDx8::AddCommitFunc(CommitFuncType_t, CommitShaderType_t, void (*)(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool))
@@ -1215,11 +1254,9 @@ CShaderAPIDx8::UserClipTransform(VMatrix const&)
 CShaderAPIDx8::UsesVertexAndPixelShaders(short) const
 CShaderAPIDx8::UsingSoftwareVertexProcessing() const
 CShaderAPIDx8::~CShaderAPIDx8()
-CShaderBuffer<ID3DXBuffer>
 CShaderBuffer<ID3DXBuffer>::GetBits() const
 CShaderBuffer<ID3DXBuffer>::GetSize() const
 CShaderBuffer<ID3DXBuffer>::Release()
-CShaderDeviceBase
 CShaderDeviceBase::AddView(void*)
 CShaderDeviceBase::CShaderDeviceBase()
 CShaderDeviceBase::EvictManagedResourcesInternal()
@@ -1237,7 +1274,6 @@ CShaderDeviceBase::SetView(void*)
 CShaderDeviceBase::StencilBufferBits() const
 CShaderDeviceBase::ThreadOwnsDevice()
 CShaderDeviceBase::~CShaderDeviceBase()
-CShaderDeviceDx8
 CShaderDeviceDx8::AllocFrameSyncObjects()
 CShaderDeviceDx8::AllocNonInteractiveRefreshObjects()
 CShaderDeviceDx8::CShaderDeviceDx8()
@@ -1285,7 +1321,6 @@ CShaderDeviceDx8::SetPresentParameters(void*, int, ShaderDeviceInfo_t const&)
 CShaderDeviceDx8::ShutdownDevice()
 CShaderDeviceDx8::SpewDriverInfo() const
 CShaderDeviceDx8::~CShaderDeviceDx8()
-CShaderDeviceMgrBase
 CShaderDeviceMgrBase::AddModeChangeCallback(void (*)())
 CShaderDeviceMgrBase::CShaderDeviceMgrBase()
 CShaderDeviceMgrBase::Connect(void* (*)(char const*, int*))
@@ -1296,7 +1331,7 @@ CShaderDeviceMgrBase::GetClosestActualDXLevel(int) const
 CShaderDeviceMgrBase::GetHardwareCaps(int) const
 CShaderDeviceMgrBase::GetRecommendedConfigurationInfo(int, int, KeyValues*)
 CShaderDeviceMgrBase::GetRecommendedConfigurationInfo(int, int, int, int, KeyValues*)
-CShaderDeviceMgrBase::GetRecommendedConfigurationInfo: CPU speed: %double MHz, Processor: %short
+CShaderDeviceMgrBase::GetRecommendedConfigurationInfo: CPU speed: %d MHz, Processor: %s
 CShaderDeviceMgrBase::InvokeModeChangeCallbacks()
 CShaderDeviceMgrBase::LoadConfig(KeyValues*, KeyValues*)
 CShaderDeviceMgrBase::LoadHardwareCaps(KeyValues*, HardwareCaps_t&)
@@ -1307,7 +1342,6 @@ CShaderDeviceMgrBase::ReadHardwareCaps(HardwareCaps_t&, int)
 CShaderDeviceMgrBase::RemoveModeChangeCallback(void (*)())
 CShaderDeviceMgrBase::ShaderInterfaceFactory(char const*, int*)
 CShaderDeviceMgrBase::~CShaderDeviceMgrBase()
-CShaderDeviceMgrDx8
 CShaderDeviceMgrDx8::ComputeCapsFromD3D(HardwareCaps_t*, int)
 CShaderDeviceMgrDx8::Connect(void* (*)(char const*, int*))
 CShaderDeviceMgrDx8::Disconnect()
@@ -1324,7 +1358,6 @@ CShaderDeviceMgrDx8::SetMode(void*, int, ShaderDeviceInfo_t const&)
 CShaderDeviceMgrDx8::Shutdown()
 CShaderDeviceMgrDx8::ValidateMode(int, ShaderDeviceInfo_t const&) const
 CShaderDeviceMgrDx8::~CShaderDeviceMgrDx8()
-CShaderManager
 CShaderManager::BindPixelShader(PixelShaderHandle_t__*)
 CShaderManager::BindVertexShader(VertexShaderHandle_t__*)
 CShaderManager::CShaderManager()
@@ -1356,7 +1389,6 @@ CShaderManager::SetVertexShader(int)
 CShaderManager::Shutdown()
 CShaderManager::SpewVertexAndPixelShaders()
 CShaderManager::~CShaderManager()
-CShaderShadowDX8
 CShaderShadowDX8::AlphaFunc(ShaderAlphaFunc_t, float)
 CShaderShadowDX8::BlendFunc(ShaderBlendFactor_t, ShaderBlendFactor_t)
 CShaderShadowDX8::BlendFuncSeparateAlpha(ShaderBlendFactor_t, ShaderBlendFactor_t)
@@ -1420,7 +1452,6 @@ CShaderShadowDX8::TexGen(TextureStage_t, ShaderTexGenParam_t)
 CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)
 CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)::bComplained
 CShaderShadowDX8::~CShaderShadowDX8()
-CTempMeshDX8
 CTempMeshDX8::BeginPass()
 CTempMeshDX8::ClipTriangle(D3DXVECTOR3**, float, D3DXMATRIX&)
 CTempMeshDX8::CopyToMeshBuilder(int, int, int, int, int, CMeshBuilder&)
@@ -1449,7 +1480,6 @@ CThreadRWLock::LockForWrite()
 CThreadRWLock::UnlockWrite()
 CThreadRWLock::WaitForRead()
 CThreadSyncObject::~CThreadSyncObject()
-CTransitionTable
 CTransitionTable::ApplyAlphaBlend(ShadowState_t const&)
 CTransitionTable::ApplyAlphaTest(ShadowState_t const&)
 CTransitionTable::ApplyAlphaTextureStage(ShadowState_t const&, int)
@@ -1511,7 +1541,6 @@ CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::VaScanf(char const*, char*)
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlFixedMemory overflow!
 CUtlLinkedList overflow! (exhausted index range)
@@ -1533,7 +1562,6 @@ CUtlLinkedList<Texture_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<Te
 CUtlLinkedList<Texture_t, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<Texture_t, int> > >::Unlink(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
 CUtlMemoryAligned<unsigned char, 32>::~CUtlMemoryAligned()
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
@@ -1609,7 +1637,6 @@ CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::InsertMultipleBefo
 CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
 CUtlVector<void (*)(), CUtlMemory<void (*)(), int> >::~CUtlVector()
 CUtlVector<void (*)(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool), CUtlMemory<void (*)(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool), int> >::~CUtlVector()
-CVBAllocTracker
 CVBAllocTracker::CountVB(void*, bool, int, int, unsigned long long)
 CVBAllocTracker::TrackMeshAllocations(char const*)
 CVBAllocTracker::UnCountVB(void*)
@@ -1618,7 +1645,6 @@ CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
 CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
 CVertexBuffer::Create(IDirect3DDevice9*)
-CVertexBufferBase
 CVertexBufferBase::CVertexBufferBase(char const*)
 CVertexBufferBase::ComputeVertexDescription(unsigned char*, unsigned long long, VertexDesc_t&)
 CVertexBufferBase::PrintVertexFormat(unsigned long long)
@@ -1626,7 +1652,6 @@ CVertexBufferBase::Spew(int, VertexDesc_t const&)
 CVertexBufferBase::ValidateData(int, VertexDesc_t const&)
 CVertexBufferBase::VertexFormatSize(unsigned long long)
 CVertexBufferBase::~CVertexBufferBase()
-CVertexBufferDx8
 CVertexBufferDx8::Allocate()
 CVertexBufferDx8::Allocate: CreateVertexBuffer failed!
 CVertexBufferDx8::BeginCastBuffer(unsigned long long)
@@ -1640,9 +1665,9 @@ CVertexBufferDx8::Lock(int, bool, VertexDesc_t&)
 CVertexBufferDx8::Unlock(int, VertexDesc_t&)
 CVertexBufferDx8::VertexCount() const
 CVertexBufferDx8::~CVertexBufferDx8()
-Can'unsigned short blit from full-sized offscreen buffer!
+Can't blit from full-sized offscreen buffer!
 CentroidHack
-Chipset version %double %double %double %double
+Chipset version %d %d %d %d
 ClipTriangleAgainstPlane(D3DXVECTOR3**, int, D3DXVECTOR3**, int, float, bool)
 CommitFlexWeights(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
 CommitSetScissorRect(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, bool)
@@ -1651,7 +1676,6 @@ CommitVertexTextures(IDirect3DDevice9*, DynamicState_t const&, DynamicState_t&, 
 ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)
 ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
 ComputeVertexSpec(unsigned long long, _D3DVERTEXELEMENT9*, bool, bool, bool)
-ConCommand
 ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
 ConCommand::CanAutoComplete()
 ConCommand::ConCommand(char const*, void (*)(), char const*, int, int (*)(char const*, char (*) [64]))
@@ -1659,7 +1683,6 @@ ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int,
 ConCommand::Dispatch(CCommand const&)
 ConCommand::IsCommand() const
 ConCommand::~ConCommand()
-ConCommandBase
 ConCommandBase::AddFlags(int)
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
@@ -1670,7 +1693,6 @@ ConCommandBase::IsFlagSet(int) const
 ConCommandBase::IsRegistered() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar.mat_dxlevel
 ConVar.mat_picmip
 ConVar::AddFlags(int)
@@ -1692,20 +1714,20 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVar_Register(int, IConCommandBaseAccessor*)
 ConVar_Unregister()
 ConnectTier1Libraries(void* (**)(char const*, int*), int)
 ConnectTier2Libraries(void* (**)(char const*, int*), int)
-CopyToMeshBuilder called on something other than signed char temp mesh.
+CopyToMeshBuilder called on something other than a temp mesh.
 Could not find base GL shader cache file
 Could not find user GL shader cache file
-Could not link OpenGL shaders: %short (%double, %double) : %short (%double, %double)
-Could not load program cache file %short
+Could not link OpenGL shaders: %s (%d, %d) : %s (%d, %d)
+Could not load program cache file %s
 Could not write to program cache file!
-Couldn'unsigned short load %short shader %short
+Couldn't load %s shader %s
 Count
 Create convars from the current hardware config, useful for diffing purposes
 CreateD3DPixelShader(unsigned int*, unsigned int, int, char const*, char*)
@@ -1714,9 +1736,9 @@ CreateIndexBuffer failed!
 CreateInterfaceInternal(char const*, int*)
 CreateVertexIDBuffer
 CullMode: invalid cullMode
-D3DERR_DRIVERINTERNALERROR - Index Buffer Lock Failed in %short on line %double (offset %double, size %double, flags 0x%long long)
-D3DERR_INVALIDCALL - Index Buffer Lock Failed in %short on line %double(offset %double, size %double, flags 0x%long long)
-D3DERR_OUTOFVIDEOMEMORY - Index Buffer Lock Failed in %short on line %double (offset %double, size %double, flags 0x%long long)
+D3DERR_DRIVERINTERNALERROR - Index Buffer Lock Failed in %s on line %d (offset %d, size %d, flags 0x%x)
+D3DERR_INVALIDCALL - Index Buffer Lock Failed in %s on line %d(offset %d, size %d, flags 0x%x)
+D3DERR_OUTOFVIDEOMEMORY - Index Buffer Lock Failed in %s on line %d (offset %d, size %d, flags 0x%x)
 D3DQUERYTYPE_EVENT not available on this driver
 D3DSupportsCompressedTextures()
 D3DXMATRIX::operator float*()
@@ -1732,7 +1754,9 @@ D3DXVECTOR3::operator float*()
 D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
 DEFAULT
 DEPTHBUFFER
+DF16t
 DF16u
+DF24t
 DF24u,
 DTBRB`PBRBSHRASJRAS0|p
 DXLevel
@@ -1750,26 +1774,26 @@ DisableShaderOptimizations
 Disables HW morphing for particular mods
 DisconnectTier1Libraries()
 DisconnectTier2Libraries()
-Display mode : %double long long %double (%short)
+Display mode : %d x %d (%s)
 DrawIndexedPrimitive
-Driver : %short Version : %lld
-Driver Description :  %short
+Driver : %s Version : %lld
+Driver Description :  %s
 Dump VB memory allocation stats.
 Dx9Device()->DrawIndexedPrimitive
 ENABLE_VB_ALLOC_TRACKER must be 1 to enable VB mem alloc tracking
 ERROR: Compressed vertices in use but material does not support them!
 ERROR: Compressed vertices in use but vertex compression is disabled (or not supported on this hardware)!
 ERROR: dynamic meshes cannot use compressed vertices!
-ERROR: shader asking for signed char too-narrow vertex format - you will see errors if running with debug D3D DLLs!
+ERROR: shader asking for a too-narrow vertex format - you will see errors if running with debug D3D DLLs!
 EXECUTABLE_PATH
-Encountered signed char material with two passes that use different numbers of bones!
-Encountered signed char material with two passes that use different texture coord sizes!
-Encountered signed char material with two passes that use different user data sizes!
+Encountered a material with two passes that use different numbers of bones!
+Encountered a material with two passes that use different texture coord sizes!
+Encountered a material with two passes that use different user data sizes!
 Error 0x%lX.
 EvaluateConditional(char const*)
-FOGRANGE %short FOGTABLE %short FOGVERTEX %short ZFOG %short WFOG %short
+FOGRANGE %s FOGTABLE %s FOGVERTEX %s ZFOG %s WFOG %s
 FRONTBUFFER
-Failed to create %short device!
+Failed to create %s device!
 Failed to create D3D9!
 Failed to lock index buffer in CIndexBufferDx8::LockIndexBuffer
 Failed to lock vertex buffer in CVertexBufferDx8::Lock
@@ -1777,8 +1801,8 @@ FindNearestSupportedBackBufferFormat(unsigned int, _D3DDEVTYPE, ImageFormat, Ima
 FindNearestSupportedDepthFormat(int, ImageFormat, ImageFormat, _D3DFORMAT)
 FindNearestSupportedFormat(ImageFormat, bool, bool, bool)
 FindOrCreateVertexDecl(unsigned long long, bool, bool, bool)
-Force frame syncing to lock signed char managed texture.
-Forcefully resetting device (%short), resources release level was %d.
+Force frame syncing to lock a managed texture.
+Forcefully resetting device (%s), resources release level was %d.
 Format
 G9}(u
 GammaToLinear(float)
@@ -1795,16 +1819,13 @@ GetNoEscCharConversion()
 Gfff.
 GlobalMemoryStatus(_MEMORYSTATUS*)
 GlobalMemoryStatus: %llu
-HWTRANSFORMANDLIGHT %short NPATCHES %short PUREDEVICE %short
+HWTRANSFORMANDLIGHT %s NPATCHES %s PUREDEVICE %s
 H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
 HandleLateCreation
 Height
-IAppSystem
-IConCommandBaseAccessor
-IConVar
 ID3DXBuffer::GetBufferPointer()
 ID3DXBuffer::GetBufferSize()
 ID3DXMatrixStack::GetTop()
@@ -1818,7 +1839,6 @@ ID3DXMatrixStack::Release(int, char*)
 ID3DXMatrixStack::RotateAxisLocal(D3DXVECTOR3 const*, float)
 ID3DXMatrixStack::ScaleLocal(float, float, float)
 ID3DXMatrixStack::TranslateLocal(float, float, float)
-IDebugTextureInfo
 IDirect3D9::CheckDepthStencilMatch(unsigned int, _D3DDEVTYPE, _D3DFORMAT, _D3DFORMAT, _D3DFORMAT)
 IDirect3D9::CheckDeviceFormat(unsigned int, _D3DDEVTYPE, _D3DFORMAT, unsigned int, _D3DRESOURCETYPE, _D3DFORMAT)
 IDirect3D9::CheckDeviceMultiSampleType(unsigned int, _D3DDEVTYPE, _D3DFORMAT, int, _D3DMULTISAMPLE_TYPE, unsigned int*)
@@ -1897,50 +1917,33 @@ IDirect3DVertexBuffer9::UnlockActualSize(unsigned int, void const*)
 IDirect3DVolumeTexture9::GetLevelDesc(unsigned int, _D3DVOLUME_DESC*)
 IDirect3DVolumeTexture9::LockBox(unsigned int, _D3DLOCKED_BOX*, _D3DBOX const*, unsigned int)
 IDirect3DVolumeTexture9::UnlockBox(unsigned int)
-IHardwareConfigInternal
-IIndexBuffer
 IMAGE_FORMAT_R32F
 IMAGE_FORMAT_RGB323232F
 IMAGE_FORMAT_RGBA32323232F
 IMAGE_FORMAT_UVLX8888
-IMaterialSystemHardwareConfig
 IMaterialSystemHardwareConfig::SupportsNormalMapCompression() const
-IMesh
-IMeshMgr
 INTZRAWZDF16DF24NULLATI2ATI1
 INTZt
 INTZu
-IRefCounted
-IShaderAPI
 IShaderAPI::SupportsNormalMapCompression() const
-IShaderAPIDX8
-IShaderBuffer
-IShaderDevice
-IShaderDeviceMgr
-IShaderDynamicAPI
-IShaderManager
-IShaderShadow
-IShaderShadowDX8
-IVBAllocTracker
-IVertexBuffer
-If set, attempt to keep signed char persistent buffer for the LZMA decoder dictionary. This avoids long double restrict-allocating signed char ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
-If this value is not -1, the material system will limit the amount of texture memory it uses in signed char frame. Useful for identifying performance cliffs. The value is in kilobytes.
-Ignoring out-of-date shader cache (%short) with root key %short
+If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
+If this value is not -1, the material system will limit the amount of texture memory it uses in a frame. Useful for identifying performance cliffs. The value is in kilobytes.
+Ignoring out-of-date shader cache (%s) with root key %s
 ImageLoader::D3DFormatToImageFormat(_D3DFORMAT)
 ImageLoader::GetMemRequired(int, int, int, ImageFormat, bool)
 ImageLoader::ImageFormatInfo(ImageFormat)
 ImageLoader::ImageFormatToD3DFormat(ImageFormat)
-Indices: %double
-Indices: %double (First %double, Offset %double)
+Indices: %d
+Indices: %d (First %d, Offset %d)
 InitShaderAPICVars()::g_ConVarAccessor
 InitializeColorInformation(unsigned int, _D3DDEVTYPE, ImageFormat)
 InputSystemVersion001
 Intel
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
-Invalid shader linkage: %short (%double, %double) : %short (%double, %double)
+Invalid shader linkage: %s (%d, %d) : %s (%d, %d)
 IsIconic(void*)
-KeyValues Error: %short in file %short
+KeyValues Error: %s in file %s
 KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
 KeyValues::CreateNewKey()
 KeyValues::FindKey(char const*, bool)
@@ -1959,17 +1962,17 @@ KeyValues::GetStringForSymbolClassic(int)
 KeyValues::GetSymbolForStringClassic(char const*, bool)
 KeyValues::GetWString(char const*, wchar_t const*)
 KeyValues::KeyValues(char const*)
-KeyValues::LoadFromBuffer(%short%short%short): Begin
-KeyValues::LoadFromBuffer(%short%short%short): End
+KeyValues::LoadFromBuffer(%s%s%s): Begin
+KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
 KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
-KeyValues::LoadFromFile(%short%short%short): Begin
-KeyValues::LoadFromFile(%short%short%short): End / FileNotFound
-KeyValues::LoadFromFile(%short%short%short): End / Success
+KeyValues::LoadFromFile(%s%s%s): Begin
+KeyValues::LoadFromFile(%s%s%s): End / FileNotFound
+KeyValues::LoadFromFile(%s%s%s): End / Success
 KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
 KeyValues::MakeCopy() const
 KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
-KeyValues::ParseIncludedKeys: Couldn'unsigned short load included keyvalue file %short
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
 KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
 KeyValues::RecursiveMergeKeyValues(KeyValues*)
@@ -1980,7 +1983,7 @@ KeyValues::RemoveEverything()
 KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)
 KeyValues::SaveKeyToFile(KeyValues*, IBaseFileSystem*, void*, CUtlBuffer*, int, bool, bool)::buf
 KeyValues::SaveToFile(IBaseFileSystem*, char const*, char const*, bool, bool, bool)
-KeyValues::SaveToFile: couldn'unsigned short open file "%short" in path "%short".
+KeyValues::SaveToFile: couldn't open file "%s" in path "%s".
 KeyValues::SetColor(char const*, Color)
 KeyValues::SetFloat(char const*, float)
 KeyValues::SetInt(char const*, int)
@@ -1994,30 +1997,33 @@ KeyValues::operator new(unsigned long)
 KeyValues::s_pfGetStringForSymbol
 KeyValues::s_pfGetSymbolForString
 L=33s?
-LZMA Decompression failed (%int)
+LZMA Decompression failed (%i)
 L^_[]
 LinearToGammaFullRange(float)
 LoadCubeTextureFromVTF(TextureLoadInfo_t&, IVTFTexture*, int)
 LoadCubeTextureFromVTF: VTF dimensions do not match texture
-LoadCubeTextureFromVTF: couldn'unsigned short get texture level description
+LoadCubeTextureFromVTF: couldn't get texture level description
 LoadFromBuffer: missing {
 LoadSubTexture(TextureLoadInfo_t&, int, int, int)
 LoadTexture(TextureLoadInfo_t&)
 LoadTextureFromVTF(TextureLoadInfo_t&, IVTFTexture*, int)
 LoadTextureFromVTF: VTF dimensions do not match texture
-LoadTextureFromVTF: couldn'unsigned short get texture level description
+LoadTextureFromVTF: couldn't get texture level description
 LoadVolumeTextureFromVTF(TextureLoadInfo_t&, IVTFTexture*, int)
 LoadVolumeTextureFromVTF: VTF dimensions do not match texture
-LoadVolumeTextureFromVTF: couldn'unsigned short get texture level description
-Loaded program cache file "%short", total keyvalues: %int, total successfully linked: %int
+LoadVolumeTextureFromVTF: couldn't get texture level description
+Loaded program cache file "%s", total keyvalues: %i, total successfully linked: %i
 LockTexture(int, int, IDirect3DBaseTexture9*, int, _D3DCUBEMAP_FACES, int, int, int, int, bool, CPixelWriter&)
 LzmaDec_DecodeReal2(CLzmaDec*, unsigned long, unsigned char const*)
 LzmaDec_TryDummy(CLzmaDec const*, unsigned char const*, unsigned long)
-MIPMAPLODBIAS %short WBUFFER %short ZBIAS %short ZTEST %short
-Material %short does not support vertex format used by the mesh (maybe missing fields or mismatched vertex compression?), mesh will not be rendered. Grab signed char programmer!
+MIPMAPLODBIAS %s WBUFFER %s ZBIAS %s ZTEST %s
+Material %s does not support vertex format used by the mesh (maybe missing fields or mismatched vertex compression?), mesh will not be rendered. Grab a programmer!
 MaterialSystemHardwareConfig012
 MathLib_Init(float, float, float, int, bool, bool, bool, bool)
 MatrixTranspose(VMatrix const&, VMatrix&)
+Max Texture Aspect Ratio : *%d*
+Max Texture Dimensions : %d x %d
+Max Textures : %d Max Stages : %d
 MaxDXLevel
 MaxDeviceID
 MbP?9
@@ -2035,7 +2041,7 @@ NV_RAWZ
 NeedsReset
 NetworkSystemVersion001
 NoUserClipPlanes
-Num Pixel Shaders = %double Vertex Shaders=%double
+Num Pixel Shaders = %d Vertex Shaders=%d
 OpenGL
 Other Verts
 OtherAppInit
@@ -2047,7 +2053,7 @@ PPPPPPP0
 Please see the following for more info.
 PolyMode: invalid poly mode
 Pp@0P
-Precache: Took %double ms, Vertex %double, Pixel %double
+Precache: Took %d ms, Vertex %d, Pixel %d
 Primitive Caps :
 Print all vertex and pixel shaders currently loaded to the console
 Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
@@ -2068,7 +2074,7 @@ RGBA16161616F
 RGBA8888
 Raster Caps :
 ReacquireResources
-ReacquireResources being discarded is signed char bug: use IsDeactivated to check for signed char valid device.
+ReacquireResources being discarded is a bug: use IsDeactivated to check for a valid device.
 ReacquireResources has no effect, now at level %d.
 RecursiveLoadFromBuffer:  got EOF instead of keyname
 RecursiveLoadFromBuffer:  got NULL key
@@ -2080,7 +2086,7 @@ Refraction overhead
 ReleaseAllVertexDecl()
 ReleaseD3DTexture(IDirect3DBaseTexture9*)
 ReleaseResources
-ReleaseResources called twice is signed char bug: use IsDeactivated to check for signed char valid device.
+ReleaseResources called twice is a bug: use IsDeactivated to check for a valid device.
 ReleaseResources has no effect, now at level %d.
 RenderTargets
 ResizeWindow
@@ -2088,18 +2094,18 @@ ResizeWindow: Reset failed, hr = 0x%08lX.
 Rffffff.
 S %1.2f %1.2f %1.2f 
 S0\TARBRB`
-SEPARATETEXTUREMEMORIES %short TEXTURENONLOCALVIDMEM %short TEXTURESYSTEMMEMORY %short
+SEPARATETEXTUREMEMORIES %s TEXTURENONLOCALVIDMEM %s TEXTURESYSTEMMEMORY %s
 SHADERAPI CAPS:
 SMRBRBRB`
-SetHardwareGammaRamp( %float )
+SetHardwareGammaRamp( %f )
 SetIdentityMatrix(matrix3x4_t&)
-Shader %short is the wrong version %double, expecting %double
-Shader '%short' - All dynamic combos skipped. This is bad!
-Shader '%short' - Couldn'unsigned short load combo %double of shader (dyn=%double)
+Shader %s is the wrong version %d, expecting %d
+Shader '%s' - All dynamic combos skipped. This is bad!
+Shader '%s' - Couldn't load combo %d of shader (dyn=%d)
 Shader API Driver Info:
 Shader File Cache:
 Shader compilation failed! Reported the following errors:
-Shader specifying too-thin vertex format, should be at least %double bytes! (Suppressing furthur warnings)
+Shader specifying too-thin vertex format, should be at least %d bytes! (Suppressing furthur warnings)
 ShaderAPIDX8::CreateD3DTexture: D3DERR_INVALIDCALL
 ShaderAPIDX8::CreateD3DTexture: D3DERR_OUTOFVIDEOMEMORY
 ShaderAPIDX8::CreateD3DTexture: E_OUTOFMEMORY
@@ -2115,7 +2121,7 @@ ShaderDeviceMgr001
 ShaderShadow()
 ShaderShadow010
 SinCos(float, float*, float*)
-Size of Texture Memory : %double kb
+Size of Texture Memory : %d kb
 Sleep(unsigned int)
 SrgbGammaToLinear(float)
 SrgbLinearToGamma(float)
@@ -2124,38 +2130,38 @@ Sys_GetFactoryThis()
 SzAlloc(void*, unsigned long)
 SzFree(void*, void*)
 T %1.2f %1.2f %1.2f 
-T%double %.2f %.2f 
+T%d %.2f %.2f 
 TBRBp
-TEXTUREVIDEOMEMORY %short TLVERTEXSYSTEMMEMORY %short TLVERTEXVIDEOMEMORY %short
+TEXTUREVIDEOMEMORY %s TLVERTEXSYSTEMMEMORY %s TLVERTEXVIDEOMEMORY %s
 Tcvar
 TestTextureFormat(_D3DFORMAT, bool, bool, bool)
 TexGroup
 TexGroup_frame_
-TexGroup_frame_%short
+TexGroup_frame_%s
 TexGroup_frame_RenderTargets
 TexGroup_frame_Static Indices
 TexGroup_global_
-TexGroup_global_%short
+TexGroup_global_%s
 TexGroup_global_Dynamic Indices
 TexGroup_global_Dynamic Verts
 TexGroup_global_Static Indices
 Texture Caps :
 TextureList
-Too many indices for index buffer. . tell signed char programmer (%double>%double)
-Too many vertices for vertex buffer. . tell signed char programmer (%double>%double)
-Too many verts for signed char dynamic vertex buffer (%double>%double) Tell signed char programmer to up VERTEX_BUFFER_SIZE.
-Total Combos:%9d Static:%9d Dynamic:%7d SeekTable:%7d Ver:%double '%short'
-Total pixel shader sets: %double
-Total unique pixel shaders: %double
-Total unique vertex shaders: %double
-Total vertex shader sets: %double
+Too many indices for index buffer. . tell a programmer (%d>%d)
+Too many vertices for vertex buffer. . tell a programmer (%d>%d)
+Too many verts for a dynamic vertex buffer (%d>%d) Tell a programmer to up VERTEX_BUFFER_SIZE.
+Total Combos:%9d Static:%9d Dynamic:%7d SeekTable:%7d Ver:%d '%s'
+Total pixel shader sets: %d
+Total unique pixel shaders: %d
+Total unique vertex shaders: %d
+Total vertex shader sets: %d
 UNKNOWN
 UVWQ8888
 Unaccounted
 Unaccounted textures
 UnlockTexture(int, int, IDirect3DBaseTexture9*, int, _D3DCUBEMAP_FACES)
 VBAllocTracker001
-VERTEX_BONEWEIGHT(%double)%short|
+VERTEX_BONEWEIGHT(%d)%s|
 VERTEX_BONE_INDEX|
 VERTEX_COLOR|
 VERTEX_FORMAT_VERTEX_SHADER|
@@ -2165,8 +2171,8 @@ VERTEX_POSITION|
 VERTEX_SPECULAR|
 VERTEX_TANGENT_S|
 VERTEX_TANGENT_T|
-VERTEX_TEXCOORD_SIZE(%double,%double)
-VERTEX_USERDATA_SIZE(%double)|
+VERTEX_TEXCOORD_SIZE(%d,%d)
+VERTEX_USERDATA_SIZE(%d)|
 VEngineCvar004
 VFileSystem022
 VMDLLIB001
@@ -2186,9 +2192,9 @@ V_strncat(char*, char const*, unsigned long, int)
 V_strncmp(char const*, char const*, int)
 V_strncpy(char*, char const*, int)
 VendorID
-Vertex Shader Version : %d.%double Pixel Shader Version : %d.%double
+Vertex Shader Version : %d.%d Pixel Shader Version : %d.%d
 VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
-Verts %double (First %double, Offset %double) :
+Verts %d (First %d, Offset %d) :
 Verts: (Vertex Format %llx)
 Width
 Wr %8.2f 
@@ -2411,11 +2417,11 @@ _vsnprintf
 _wcslen
 _wcstol
 ``@@@@@@
-bad vertex size for material %short
+bad vertex size for material %s
 ccs_create_convars_from_hwconfig
 ccs_create_convars_from_hwconfig(CCommand const&)
 ccs_create_convars_from_hwconfig_command
-device id: 0x%long long
+device id: 0x%x
 display count of all shaders and reset that count
 dxsupport
 dxsupport_mac.cfg
@@ -2427,7 +2433,7 @@ f05
 f3
 failed to create shader
 failed to lock index buffer in CMeshDX8::LockIndexBuffer
-failed to lock vertex buffer in CMeshDX8::LockVertexBuffer: nVertexCount=%double, nFirstVertex=%double
+failed to lock vertex buffer in CMeshDX8::LockVertexBuffer: nVertexCount=%d, nFirstVertex=%d
 ffff.
 fffff.
 ffffff.
@@ -2489,12 +2495,9 @@ http://support.steampowered.com/cgi-bin/steampowered.cfg/php/enduser/std_adp.php
 int CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::ShadowStateDictEntry_t>(CTransitionTable::ShadowStateDictEntry_t const&, bool*) const
 int CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::SnapshotDictEntry_t>(CTransitionTable::SnapshotDictEntry_t const&, bool*) const
 int CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::FindLessOrEqual<CTransitionTable::TransitionList_t>(CTransitionTable::TransitionList_t const&, bool*) const
+l^_[]
 lineartoscreen
 lineartotexture
-long long signed char::* Texture Aspect Ratio : *%double*
-long long signed char::* Texture Dimensions : %double long long %double
-long long signed char::* Textures : %double long long signed char::* Stages : %double
-long^_[]
 lzma_persistent_buffer
 m_AlphaToCoverageDisableValue
 m_AlphaToCoverageEnableValue
@@ -2506,104 +2509,104 @@ m_HDRType: HDR_TYPE_FLOAT
 m_HDRType: HDR_TYPE_INTEGER
 m_HDRType: HDR_TYPE_NONE
 m_HasProjectedBumpEnv
-m_HasProjectedBumpEnv: %short
+m_HasProjectedBumpEnv: %s
 m_HasSetDeviceGammaRamp
-m_HasSetDeviceGammaRamp: %short
+m_HasSetDeviceGammaRamp: %s
 m_MaxBlendMatrices
-m_MaxBlendMatrices: %double
+m_MaxBlendMatrices: %d
 m_MaxBlendMatrixIndices
-m_MaxBlendMatrixIndices: %double
+m_MaxBlendMatrixIndices: %d
 m_MaxHDRType
 m_MaxNumLights
-m_MaxNumLights: %double
+m_MaxNumLights: %d
 m_MaxPixelShader30InstructionSlots
 m_MaxPrimitiveCount
-m_MaxPrimitiveCount: %double
+m_MaxPrimitiveCount: %d
 m_MaxSimultaneousRenderTargets
-m_MaxSimultaneousRenderTargets: %double
+m_MaxSimultaneousRenderTargets: %d
 m_MaxTextureAspectRatio
-m_MaxTextureAspectRatio: %double
+m_MaxTextureAspectRatio: %d
 m_MaxTextureDepth
 m_MaxTextureHeight
-m_MaxTextureHeight: %double
+m_MaxTextureHeight: %d
 m_MaxTextureWidth
-m_MaxTextureWidth: %double
+m_MaxTextureWidth: %d
 m_MaxUserClipPlanes
-m_MaxUserClipPlanes: %double
+m_MaxUserClipPlanes: %d
 m_MaxVertexShader30InstructionSlots
 m_MaxVertexShaderBlendMatrices
-m_MaxVertexShaderBlendMatrices: %double
+m_MaxVertexShaderBlendMatrices: %d
 m_NullTextureFormat
 m_NumBooleanPixelShaderConstants
 m_NumBooleanVertexShaderConstants
-m_NumBooleanVertexShaderConstants: %double
+m_NumBooleanVertexShaderConstants: %d
 m_NumIntegerPixelShaderConstants
 m_NumIntegerVertexShaderConstants
-m_NumIntegerVertexShaderConstants: %double
+m_NumIntegerVertexShaderConstants: %d
 m_NumPixelShaderConstants
-m_NumPixelShaderConstants: %double
-m_NumSamplers: %double
+m_NumPixelShaderConstants: %d
+m_NumSamplers: %d
 m_NumTextureStages
-m_NumTextureStages: %double
+m_NumTextureStages: %d
 m_NumVertexShaderConstants
-m_NumVertexShaderConstants: %double
+m_NumVertexShaderConstants: %d
 m_PreferDynamicTextures
-m_PreferDynamicTextures: %short
+m_PreferDynamicTextures: %s
 m_ShadowDepthTextureFormat
 m_SupportsCompressedTextures: COMPRESSED_TEXTURES_NOT_INITIALIZED
 m_SupportsCompressedTextures: COMPRESSED_TEXTURES_ON
-m_SupportsCompressedVertices: %double
+m_SupportsCompressedVertices: %d
 m_SupportsCubeMaps
-m_SupportsCubeMaps: %short
+m_SupportsCubeMaps: %s
 m_SupportsHardwareLighting
-m_SupportsHardwareLighting: %short
+m_SupportsHardwareLighting: %s
 m_SupportsMipmappedCubemaps
-m_SupportsMipmappedCubemaps: %short
+m_SupportsMipmappedCubemaps: %s
 m_SupportsMipmapping
-m_SupportsMipmapping: %short
+m_SupportsMipmapping: %s
 m_SupportsNonPow2Textures
-m_SupportsNonPow2Textures: %short
+m_SupportsNonPow2Textures: %s
 m_SupportsOverbright
-m_SupportsOverbright: %short
+m_SupportsOverbright: %s
 m_SupportsPixelShaders
-m_SupportsPixelShaders (1.1): %short
+m_SupportsPixelShaders (1.1): %s
 m_SupportsPixelShaders_1_4
-m_SupportsPixelShaders_1_4: %short
+m_SupportsPixelShaders_1_4: %s
 m_SupportsPixelShaders_2_0
-m_SupportsPixelShaders_2_0: %short
+m_SupportsPixelShaders_2_0: %s
 m_SupportsPixelShaders_2_b
-m_SupportsPixelShaders_2_b: %short
+m_SupportsPixelShaders_2_b: %s
 m_SupportsSRGB
-m_SupportsSRGB: %short
+m_SupportsSRGB: %s
 m_SupportsShaderModel_3_0
-m_SupportsShaderModel_3_0: %short
+m_SupportsShaderModel_3_0: %s
 m_SupportsVertexShaders
-m_SupportsVertexShaders (1.1): %short
+m_SupportsVertexShaders (1.1): %s
 m_SupportsVertexShaders_2_0
-m_SupportsVertexShaders_2_0: %short
+m_SupportsVertexShaders_2_0: %s
 m_TextureMemorySize
-m_TextureMemorySize: %double
+m_TextureMemorySize: %d
 m_UseFastClipping
-m_UseFastClipping: %short
+m_UseFastClipping: %s
 m_ZBiasAndSlopeScaledDepthBiasSupported
-m_ZBiasAndSlopeScaledDepthBiasSupported: %short
+m_ZBiasAndSlopeScaledDepthBiasSupported: %s
 m_bCanStretchRectFromTextures
 m_bColorOnSecondStream
-m_bColorOnSecondStream: %short
+m_bColorOnSecondStream: %s
 m_bDX10Blending
 m_bDX10Card
 m_bDeviceOk
 m_bDisableShaderOptimizations
-m_bDisableShaderOptimizations: %short
+m_bDisableShaderOptimizations: %s
 m_bFogColorAlwaysLinearSpace
 m_bFogColorSpecifiedInLinearSpace
 m_bNeedsATICentroidHack
-m_bNeedsATICentroidHack: %short
+m_bNeedsATICentroidHack: %s
 m_bScissorSupported
 m_bSoftwareVertexProcessing
 m_bSupportsAlphaToCoverage
 m_bSupportsAnisotropicFiltering
-m_bSupportsAnisotropicFiltering: %short
+m_bSupportsAnisotropicFiltering: %s
 m_bSupportsBorderColor
 m_bSupportsFetch4
 m_bSupportsFloat32RenderTargets
@@ -2611,22 +2614,22 @@ m_bSupportsGLMixedSizeTargets
 m_bSupportsMagAnisotropicFiltering
 m_bSupportsShadowDepthTextures
 m_bSupportsSpheremapping
-m_bSupportsSpheremapping: %short
+m_bSupportsSpheremapping: %s
 m_bSupportsStaticControlFlow
 m_bSupportsStreamOffset
 m_bSupportsVertexTextures
 m_flMaxGammaControlPoint
 m_flMinGammaControlPoint
-m_nDXSupportLevel: %double
+m_nDXSupportLevel: %d
 m_nGammaControlPointCount
 m_nMaxAnisotropy
-m_nMaxAnisotropy: %double
+m_nMaxAnisotropy: %d
 m_nMaxVertexTextureDimension
 m_nMaxViewports
 m_nVertexTextureCount
 m_pHardwareShaders was null
 m_pShaderDLL
-m_pShaderDLL: %short
+m_pShaderDLL: %s
 mat_alphacoverage
 mat_autoload_glshaders
 mat_autosave_glshaders
@@ -3011,10 +3014,10 @@ p`@@@`
 pixel
 pp0000  
 ppppPP``00@@    ``0@0@
-ps-file %short ps-index %double
+ps-file %s ps-index %d
 ps_dynamic
 ps_static
-psh 0x%8.8x: static combo:%9d dynamic combos:%6d refcount:%4d "%short"
+psh 0x%8.8x: static combo:%9d dynamic combos:%6d refcount:%4d "%s"
 pulCRCTable
 r_pix_recordframes
 r_pix_start
@@ -3044,13 +3047,16 @@ s_nDLLIdentifier
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 s_pTokenBuf
-shaders\%short\%s.vcs
+shaders\%s\%s.vcs
 shaders\fxc\%s.vcs
 std::terminate()
+t+ff.
+t@ffff.
 tF9@`u
 tQ9@`u
+t\ff.
 texturetolinear
-too many indices for index buffer. . tell signed char programmer (%double>%double)
+too many indices for index buffer. . tell a programmer (%d>%d)
 typeinfo for CBaseMeshDX8
 typeinfo for CBufferedMeshDX8
 typeinfo for CDefaultAccessor
@@ -3167,16 +3173,12 @@ typeinfo name for IShaderShadowDX8
 typeinfo name for IVBAllocTracker
 typeinfo name for IVertexBuffer
 unknown
-unsigned short _Accum
-unsigned short+ff.
-unsigned short@ffff.
-unsigned short\ff.
 unspecified
 vec2_invalid
 vec2_origin
 vec4_invalid
 vec4_origin
-vendor id: 0x%long long
+vendor id: 0x%x
 vertex
 void SafeAssign<CIndexBuffer>(CIndexBuffer**, CIndexBuffer*)
 void SafeRelease<CIndexBuffer>(CIndexBuffer**)
@@ -3186,10 +3188,10 @@ void ccs_create_convar_from_hwconfig<bool>(bool const&, char const*)
 void ccs_create_convar_from_hwconfig<float>(float const&, char const*)
 void ccs_create_convar_from_hwconfig<int>(int const&, char const*)
 void ccs_create_convar_from_hwconfig<unsigned long>(unsigned long const&, char const*)
-vs-file %short vs-index %double
+vs-file %s vs-index %d
 vs_dynamic
 vs_static
-vsh 0x%8.8x: static combo:%9d dynamic combos:%6d refcount:%4d "%short"
+vsh 0x%8.8x: static combo:%9d dynamic combos:%6d refcount:%4d "%s"
 vtable for CBufferedMeshDX8
 vtable for CDefaultAccessor
 vtable for CDynamicMeshDX8
@@ -3226,6 +3228,6 @@ vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
 wRuKf
 wn>Jj
-yE>CUtlCStringConversion
+yE>21CUtlCStringConversion
 |^_[]
 ~2ffff.

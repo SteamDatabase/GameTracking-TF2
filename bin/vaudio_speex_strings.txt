@@ -8,7 +8,7 @@ $8Laioa
 (/#(7&
 )") !
 .?ff&?
-.HTeu{{unsigned int
+.HTeu{{j
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(utlbuffer.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vaudio_speex.build/Objects-normal/i386/VoiceEncoder_Speex.o
@@ -53,9 +53,16 @@ $8Laioa
 /usr/lib/libiconv.2.dylib
 0@@@@@@
 10_32_table
+11IVoiceCodec
+13IFrameEncoder
+16VoiceCodec_Frame
 16_table
+18CUtlCharConversion
+18VoiceEncoder_Speex
+19CUtlNoEscConversion
 1M2Aru|vs`Z=
 20_32_table
+21CUtlCStringConversion
 256_table
 32_table
 333333
@@ -119,20 +126,17 @@ $8Laioa
 @typeinfo for std::bad_alloc
 @vtable for __cxxabiv1::__class_type_info
 @vtable for __cxxabiv1::__si_class_type_info
+A;U(t#
 A;U(u
-A;U(unsigned short#
 AXBRBRARAp
 B9U(u
 B;Q |
 BZHUDJ4
 BeS?=%
 Buffer too small to pack bits
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 Could not resize input buffer: not packing
 Could not resize input buffer: truncating input
@@ -144,23 +148,22 @@ Do not own input buffer: truncating input
 E$9E(
 E(+E$@9E
 ENCODED_FRAME_SIZE
-Fatal error: %short
+Fatal error: %s
 G!?33
 G!?fff?
 H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IFrameEncoder
-IVoiceCodec
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
 Invalid mode encountered: corrupted stream?
 Invalid wideband mode encountered. Corrupted stream?
 Invalid wideband mode encountered: corrupted stream?
+More than to wideband layers found: corrupted stream?
 NT~<1
 No fixed codebook
-No pitch prediction, what'short wrong
+No pitch prediction, what's wrong
 O?333333
 Packet if larger than allocated buffer: 
 RFXBp
@@ -170,14 +173,12 @@ Unknown nb_ctl request:
 Unknown nb_mode_query request: 
 Unknown wb_mode_query request: 
 V]JNC
-VoiceCodec_Frame
 VoiceCodec_Frame::Compress(char const*, int, char*, int, bool)
 VoiceCodec_Frame::Decompress(char const*, int, char*, int)
 VoiceCodec_Frame::Init(int)
 VoiceCodec_Frame::Release()
 VoiceCodec_Frame::ResetState()
 VoiceCodec_Frame::~VoiceCodec_Frame()
-VoiceEncoder_Speex
 VoiceEncoder_Speex::DecodeFrame(char const*, char*)
 VoiceEncoder_Speex::EncodeFrame(char const*, char*)
 VoiceEncoder_Speex::Init(int, int&, int&)
@@ -453,7 +454,6 @@ inband_handler
 index
 itch_
 lit_cb_s
-long double restrict unsigned __int128::* than to wideband layers found: corrupted stream?
 low_mode_request_handler
 lpc.c
 lsp.c
@@ -540,8 +540,8 @@ vtable for VoiceEncoder_Speex
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 w_lpc
-warning: %short
-warning: %short %double
+warning: %s
+warning: %s %d
 whole_bytes
 wideband (sub-band CELP)
 write

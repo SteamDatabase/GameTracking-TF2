@@ -1,11 +1,11 @@
 	0@p@
-(%u): %short
+(%u): %s
 (^_[]
 ,^_[]
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/libkern/i386/_OSByteOrder.h
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/sys/_types/_fd_def.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(IceKey.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(NetAdr.o)
@@ -43,6 +43,13 @@
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
+12CBugReporter
+12IBugReporter
+14IBaseInterface
+18CBlockingUDPSocket
+18CUtlCharConversion
+19CUtlNoEscConversion
+21CUtlCStringConversion
 <<Choose Item>>
 <<Invalid>>
 <^_[]
@@ -55,6 +62,7 @@
 @CThreadRWLock::WaitForRead()
 @CThreadSyncObject::~CThreadSyncObject()
 @_Error
+@_Msg
 @__DefaultRuneLocale
 @__Unwind_Resume
 @___bzero
@@ -67,7 +75,6 @@
 @___maskrune
 @___stack_chk_fail
 @___stack_chk_guard
-@__float128 short::*
 @_atoi
 @_bind$UNIX2003
 @_close$UNIX2003
@@ -110,13 +117,11 @@ BugReporter004
 BugUploadProgress(unsigned int, TBugReportProgress const&)
 C;^0|
 C;_0|
-CBlockingUDPSocket
 CBlockingUDPSocket::CBlockingUDPSocket()
 CBlockingUDPSocket::ReceiveSocketMessage(sockaddr_in*, unsigned char*, unsigned long)
 CBlockingUDPSocket::SendSocketMessage(sockaddr_in const&, unsigned char const*, unsigned long)
 CBlockingUDPSocket::WaitForMessage(float)
 CBlockingUDPSocket::~CBlockingUDPSocket()
-CBugReporter
 CBugReporter::AddIncludedFile(char const*)
 CBugReporter::CBugReporter()
 CBugReporter::CancelNewBugReport()
@@ -206,13 +211,10 @@ CUtlBuffer::Scanf(char const*, ...)
 CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::SetBigEndian(bool)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
@@ -265,7 +267,7 @@ Connection failed.
 CreateInterface
 Creating bug report upload socket.
 Creating initial report.
-Didn'unsigned short receive protocol failure data.
+Didn't receive protocol failure data.
 Download / Installation Problems
 Feature Request / Suggestion
 Game play / Strategy Problems
@@ -273,8 +275,6 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IBaseInterface
-IBugReporter
 IceKey::IceKey(int)
 IceKey::encrypt(unsigned char const*, unsigned char*) const
 IceKey::scheduleBuild(unsigned short*, int, int const*)
@@ -398,7 +398,7 @@ _strtoul
 _vsnprintf
 `@BRBRARAp
 bug .zip file size zero or unable to allocate memory for file.
-build:  %short
+build:  %s
 dyld_stub_binder
 ffff.
 fffff.
@@ -410,8 +410,8 @@ ice_pbox
 ice_sboxes_initialised
 ice_smod
 ice_sxor
-level:  %short
-long^_[]
+l^_[]
+level:  %s
 netadr_s::SetFromSockadr(sockaddr const*)
 netadr_s::SetIP(unsigned int)
 netadr_s::SetPort(unsigned short)
@@ -422,12 +422,13 @@ operator delete(void*)
 operator delete[](void*)
 operator new(unsigned long)
 operator new[](unsigned long)
-position:  setpos %short; setang %short
+position:  setpos %s; setang %s
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
-savegame:  %short
-screenshot:  %short
+savegame:  %s
+screenshot:  %s
 std::terminate()
+t\fff.
 typeinfo for CBlockingUDPSocket
 typeinfo for CBugReporter
 typeinfo for CUtlCStringConversion
@@ -446,7 +447,6 @@ typeinfo name for IBugReporter
 uKH+C 
 uTH+C 
 uUH+E
-unsigned short\fff.
 vec2_invalid
 vec2_origin
 vtable for CBlockingUDPSocket

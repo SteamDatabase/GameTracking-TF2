@@ -1,10 +1,10 @@
 	@P@p0
 	w4A1
-            %short%short
-        %double batch(es):
-        numPasses:%double
-        texture memory: %double (Only valid in signed char rendering app)
-    material: %short
+            %s%s
+        %d batch(es):
+        numPasses:%d
+        texture memory: %d (Only valid in a rendering app)
+    material: %s
   00  @0@
 "@@@@ ``pp
 "CreateInterface
@@ -46,7 +46,7 @@ $treeswayspeedlerpstart
 $treeswaystartheight
 $treeswaystartradius
 $treeswaystrength
-%short [%p]
+%s [%p]
 &fffff.
 *ffff.
 ,^_[]
@@ -60,7 +60,7 @@ $treeswaystrength
 //platform/materials/debug/debugvertexcolor
 //platform/materials/debug/debugworldwireframe
 //platform/materials/debug/env_cubemap_model
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(color_conversion.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(mathlib_base.o)
@@ -152,6 +152,35 @@ $treeswaystrength
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
 0pp 0p@0
+10IAppSystem
+11IRefCounted
+12CEmptyConVar
+12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE
+13IStudioRender
+14CBaseAppSystemI13IStudioRenderE
+14ConCommandBase
+15CMemberFunctor0IP13CStudioRenderMS0_FvvE12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+15CMemberFunctor1IP13CStudioRenderMS0_FvP21StudioDecalHandle_t__ES3_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+15CMemberFunctor3IP13CStudioRenderMS0_FvRK15DrawModelInfo_tRK21StudioRenderContext_tRK11matrix3x4_tES2_S5_S8_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+15CMemberFunctor4IP13CStudioRenderMS0_FvRK15DrawModelInfo_tRK21StudioRenderContext_tRK11matrix3x4_tiES2_S5_S8_i12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+15CMemberFunctor5IP13CStudioRenderMS0_FvP9IMaterialPvP17FlashlightState_tP7VMatrixP8ITextureES3_S4_S6_S8_SA_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+15CMemberFunctor5IP13CStudioRenderMS0_FvRK15DrawModelInfo_tRK21StudioRenderContext_tP11matrix3x4_tRK13FlexWeights_tiES2_S5_S9_SA_i12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+15CTier0AppSystemI13IStudioRenderE
+15CTier1AppSystemI13IStudioRenderLi0EE
+15CTier2AppSystemI13IStudioRenderLi0EE
+15CTier3AppSystemI13IStudioRenderLi0EE
+16CDefaultAccessor
+16CMemberFunctor11IP13CStudioRenderMS0_FvP21StudioDecalHandle_t__RK21StudioRenderContext_tP11matrix3x4_tP11studiohdr_tRK5Ray_tRK6VectorP9IMaterialfibiES3_S4_S8_SA_SB_SE_SI_fibi12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE18CFuncMemPolicyNoneE
+18CUtlCharConversion
+19CUtlNoEscConversion
+19ITextureRegenerator
+20CRefCountServiceBaseILb1E6CRefMTE
+20CStudioRenderContext
+23IConCommandBaseAccessor
+24CGlintTextureRegenerator
+6ConVar
+7IConVar
+8CFunctor
 8IDCV
 8IDCVu
 8IDCVu9
@@ -175,6 +204,7 @@ $treeswaystrength
 @_Error
 @_GetCPUInformation
 @_KeyValuesSystem
+@_Msg
 @_RandomFloat
 @_RandomInt
 @_ThreadGetCurrentId
@@ -191,7 +221,6 @@ $treeswaystrength
 @___gxx_personality_v0
 @___stack_chk_fail
 @___stack_chk_guard
-@__float128 short::*
 @_asin
 @_atof
 @_atoi
@@ -223,10 +252,9 @@ $treeswaystrength
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
 AVBSA
-B`ARA`
-Bad data found in model "%short" (bad bone weights)
+B`3ARA`
+Bad data found in model "%s" (bad bone weights)
 BuildGammaTable(float, float, float, int)
-CBaseAppSystem<IStudioRender>
 CCachedRenderData::CCachedRenderData()
 CCachedRenderData::CreateFlexVertex(int)
 CCachedRenderData::CreateThinFlexVertex(int)
@@ -238,43 +266,32 @@ CCachedRenderData::SetMesh(int)
 CCachedRenderData::SetModel(int)
 CCachedRenderData::SetupComputation(mstudiomesh_t*, bool)
 CCachedRenderData::StartModel()
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CFunctor
-CGlintTextureRegenerator
 CGlintTextureRegenerator::RegenerateTextureBits(ITexture*, IVTFTexture*, Rect_t*)
 CGlintTextureRegenerator::Release()
-CMemberFunctor0<CStudioRender*, void (CStudioRender::*)(), CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor0<CStudioRender*, void (CStudioRender::*)(), CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor0<CStudioRender*, void (CStudioRender::*)(), CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor0()
-CMemberFunctor11<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int), StudioDecalHandle_t__*, StudioRenderContext_t, matrix3x4_t*, studiohdr_t*, Ray_t, Vector, IMaterial*, float, int, bool, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor11<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int), StudioDecalHandle_t__*, StudioRenderContext_t, matrix3x4_t*, studiohdr_t*, Ray_t, Vector, IMaterial*, float, int, bool, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor11<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*, StudioRenderContext_t const&, matrix3x4_t*, studiohdr_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int), StudioDecalHandle_t__*, StudioRenderContext_t, matrix3x4_t*, studiohdr_t*, Ray_t, Vector, IMaterial*, float, int, bool, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor11()
-CMemberFunctor1<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*), StudioDecalHandle_t__*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor1<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*), StudioDecalHandle_t__*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor1<CStudioRender*, void (CStudioRender::*)(StudioDecalHandle_t__*), StudioDecalHandle_t__*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor1()
-CMemberFunctor3<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor3<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor3<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor3()
-CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor4<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor4()
-CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(DrawModelInfo_t const&, StudioRenderContext_t const&, matrix3x4_t*, FlexWeights_t const&, int), DrawModelInfo_t, StudioRenderContext_t, matrix3x4_t*, FlexWeights_t, int, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor5()
-CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>
 CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::operator()()
 CMemberFunctor5<CStudioRender*, void (CStudioRender::*)(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*), IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >, CFuncMemPolicyNone>::~CMemberFunctor5()
 COLORCORRECTION_VERSION_1
 CPixelWriter::SetPixelMemory(ImageFormat, void*, int)::format_error_printed
-CPixelWriter::SetPixelMemory:  Unsupported image format %int
+CPixelWriter::SetPixelMemory:  Unsupported image format %i
 CProcessMeshWrapper<0, 0, 0, 0, 0>::R_StudioSoftwareProcessMesh(mstudio_meshvertexdata_t const*, matrix3x4_t*, CCachedRenderData&, CMeshBuilder&, int, unsigned short*, unsigned int, IMaterial*)
 CProcessMeshWrapper<0, 0, 0, 0, 1>::R_StudioSoftwareProcessMesh(mstudio_meshvertexdata_t const*, matrix3x4_t*, CCachedRenderData&, CMeshBuilder&, int, unsigned short*, unsigned int, IMaterial*)
 CProcessMeshWrapper<0, 0, 0, 1, 0>::R_PerformLighting(Vector const&, float, Vector const&, Vector const&, unsigned int, unsigned int*)
@@ -379,9 +396,7 @@ CProcessMeshWrapper<1, 1, 1, 2, 0>::R_TransformVert(Vector const*, Vector const*
 CProcessMeshWrapper<1, 1, 1, 2, 1>::R_PerformLighting(Vector const&, float, Vector const&, Vector const&, unsigned int, unsigned int*)
 CProcessMeshWrapper<1, 1, 1, 2, 1>::R_StudioSoftwareProcessMesh(mstudio_meshvertexdata_t const*, matrix3x4_t*, CCachedRenderData&, CMeshBuilder&, int, unsigned short*, unsigned int, IMaterial*)
 CProcessMeshWrapper<1, 1, 1, 2, 1>::R_TransformVert(Vector const*, Vector const*, Vector4D const*, matrix3x4_t*, VectorAligned&, Vector&, Vector4DAligned&)
-CRefCountServiceBase<true, CRefMT>
 CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
-CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
 CStudioRender::AddClippedDecalToTriangle(CStudioRender::DecalBuildInfo_t&, DecalClipState_t&)
@@ -486,7 +501,6 @@ CStudioRender::Shutdown()
 CStudioRender::TransformToDecalSpace(CStudioRender::DecalBuildInfo_t&, Vector const&, mstudioboneweight_t*, Vector2D&)
 CStudioRender::UncacheGlint()
 CStudioRender::~CStudioRender()
-CStudioRenderContext
 CStudioRenderContext::AddDecal(StudioDecalHandle_t__*, studiohdr_t*, matrix3x4_t*, Ray_t const&, Vector const&, IMaterial*, float, int, bool, int)
 CStudioRenderContext::AddShadow(IMaterial*, void*, FlashlightState_t*, VMatrix*, ITexture*)
 CStudioRenderContext::BeginFrame()
@@ -555,17 +569,12 @@ CStudioRenderContext::UnlockFlexWeights()
 CStudioRenderContext::UpdateConfig(StudioRenderConfig_t const&)
 CStudioRenderContext::~CStudioRenderContext()
 CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
-CTier0AppSystem<IStudioRender>
-CTier1AppSystem<IStudioRender, 0>
-CTier2AppSystem<IStudioRender, 0>
-CTier3AppSystem<IStudioRender, 0>
 CUtlBuffer::AddNullTermination()
 CUtlBuffer::Printf(char const*, ...)
 CUtlBuffer::Put(void const*, int)
 CUtlBuffer::PutString(char const*)
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlFixedMemory overflow!
 CUtlLinkedList overflow! (exhausted index range)
@@ -596,7 +605,6 @@ CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalHistory_t, unsigned short>, u
 CUtlMemory<UtlLinkedListElem_t<CStudioRender::DecalMaterial_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlLinkedListElem_t<CStudioRender::Decal_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlLinkedListElem_t<DecalVertex_t, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >::InsertMultipleBefore(int, int)
 CUtlVector<CCachedRenderData::CacheDict_t, CUtlMemory<CCachedRenderData::CacheDict_t, int> >::~CUtlVector()
@@ -624,19 +632,17 @@ CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
 CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
-Cannot call CStudioRenderContext::AddShadows wchar_t/ proxies in queued mode!
+Cannot call CStudioRenderContext::AddShadows w/ proxies in queued mode!
 Cfff.
 ClipTriangleAgainstPlane(DecalClipState_t&, int, int, float)
 ComputePoseToWorld(matrix3x4_t*, studiohdr_t*, int, Vector const&, matrix3x4_t const*)
 ComputeSkinMatrix(mstudioboneweight_t&, matrix3x4_t*, matrix3x4_t&)
 ComputeTrianglePlane(Vector const&, Vector const&, Vector const&, Vector&, float&)
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
 ConMsg(char const*, ...)
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -675,7 +681,7 @@ DisconnectTier3Libraries()
 ERROR: R_StudioFlexVerts, model verts have been compressed, cannot render! (use "-no_compressed_vvds")
 ERROR: flex verts have not been converted (queued loader refcount bug?) - expect to see 'exploded' faces
 ERROR: model verts have been compressed, cannot render! (use "-no_compressed_vvds")
-Error! Model %short .vtx file out of synch with .mdl
+Error! Model %s .vtx file out of synch with .mdl
 EyeGlint
 F|^_[]
 GenerateLineLoopIndexBuffer(unsigned short*, int, int)
@@ -690,12 +696,6 @@ H__ZdlPv
 H__Znam
 H__Znwm
 Hardware morphing of decals will be busted! Too many unique bones on flexed vertices!
-IAppSystem
-IConCommandBaseAccessor
-IConVar
-IRefCounted
-IStudioRender
-ITextureRegenerator
 IVideoServices002
 Iffff.
 InputSystemVersion001
@@ -720,9 +720,9 @@ MathLib_Init(float, float, float, int, bool, bool, bool, bool)
 MathLib_SSEEnabled()
 MatrixCopy(matrix3x4_t const&, matrix3x4_t&)
 MatrixMultiply(VMatrix const&, VMatrix const&, VMatrix&)
-Missing LODs for %short, lod index is %d.
+Missing LODs for %s, lod index is %d.
 Model Verts
-Model has missing body part: %short
+Model has missing body part: %s
 Model textures
 MouthShader
 NetworkSystemVersion001
@@ -754,7 +754,7 @@ R_StudioDrawPoints
 R_StudioDrawStaticMesh
 R_StudioFlexMeshGroup
 R_StudioSetupModel(int, int, mstudiomodel_t**, studiohdr_t const*)
-R_StudioSetupModel: no such bodypart %double
+R_StudioSetupModel: no such bodypart %d
 R_StudioSetupSkin
 R_WorldLightDistanceFalloffFunctionTable::functions
 R_WorldLightDistanceFalloffFunctionTable::m
@@ -765,13 +765,13 @@ SetIdentityMatrix(matrix3x4_t&)
 SinCos(float, float*, float*)
 SortVertCount(void const*, void const*)
 StudioChangeCallback(IConVar*, char const*, float)
-StudioRender failed to connect to signed char required system
+StudioRender failed to connect to a required system
 StudioRender: OBSOLETE material missing: "models/obsolete/obsolete"
 Sys_GetFactoryThis()
 Tcvar
 TextureToLinear(int)
 UUUUUU
-Unable to apply decals to model (%short), it has more than 255 unique meshes!
+Unable to apply decals to model (%s), it has more than 255 unique meshes!
 Unaccounted
 UsesMouthShader(IMaterial*)::clientShaderCache
 VBAllocTracker001
@@ -1478,7 +1478,7 @@ _strncat
 _strncpy
 _studiorender
 _vsnprintf
-bone changes: %double bones/strip: %double
+bone changes: %d bones/strip: %d
 bool CStudioRenderContext::R_AddVertexToMesh<(VertexCompressionType_t)0>(char const*, bool, CMeshBuilder&, OptimizedModel::Vertex_t*, mstudiomesh_t*, mstudio_meshvertexdata_t const*, bool)
 bool CStudioRenderContext::R_AddVertexToMesh<(VertexCompressionType_t)1>(char const*, bool, CMeshBuilder&, OptimizedModel::Vertex_t*, mstudiomesh_t*, mstudio_meshvertexdata_t const*, bool)
 boxpnt
@@ -1506,10 +1506,10 @@ hwskinned
 illumVarCache
 irisUCache
 irisVCache
+l^_[]
 lightpos
 lineartoscreen
 lineartotexture
-long^_[]
 models/obsolete/obsolete
 mstudiomodel_t::CacheVertexData(void*)
 non-virtual thunk to CEmptyConVar::GetName() const
@@ -1567,10 +1567,12 @@ sg_IndexSwap
 std::terminate()
 studio_queue_mode
 swskinned 
+t;XH|
 tCfffff.
+t\ff.
 texturetolinear
 thinModelVertices_t::GetBoneWeights(int, mstudioboneweight_t*) const
-tris: %double 
+tris: %d 
 typeinfo for CBaseAppSystem<IStudioRender>
 typeinfo for CDefaultAccessor
 typeinfo for CEmptyConVar
@@ -1632,8 +1634,6 @@ typeinfo name for IConVar
 typeinfo name for IRefCounted
 typeinfo name for IStudioRender
 typeinfo name for ITextureRegenerator
-unsigned short;XH|
-unsigned short\ff.
 vec2_invalid
 vec2_origin
 vec4_invalid
@@ -1661,7 +1661,7 @@ vtable for ConVar
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
-yE>CUtlCStringConversion
+yE>21CUtlCStringConversion
 |^_[]
 }CC;]
 ~*ffff.

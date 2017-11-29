@@ -1,6 +1,6 @@
-	%short - %short
-	%short, labeled (%short) - status %short
-	%short: refcount: %double
+	%s - %s
+	%s, labeled (%s) - status %s
+	%s: refcount: %d
 	NewPtrSys
 	error
 	free_lock
@@ -12,7 +12,7 @@
 	set_provider_
 	write
                                 
-    float
+    f
  9^;O
  @X94<
  ample
@@ -22,18 +22,18 @@
  p,p,p@p.p*p.p
  size
  tv~`
-!-Result = %double
-!-Result = %float
+!-Result = %d
+!-Result = %f
 !-Result = %ld
 !-Result = %llu
-!-Result = %short
+!-Result = %s
 !-Result = 0x%X
 !-Result = 0x%lX
 !-Result = NULL (no error)
 !ERROR! RIB could not be loaded (possibly bad or old DLL).
 !Miles detected memory error - double freed memory...?(%X)
-!Miles memory allocation failed! (requested %double bytes)
-!RIB: Loaded provider %short = %X
+!Miles memory allocation failed! (requested %d bytes)
+!RIB: Loaded provider %s = %X
 !layback_
 !output_filter
 !type
@@ -54,17 +54,17 @@ $[^_]
 $channel_levels
 $configuration
 $speaker_scale_factors
-%.1f
-%.1f%%
 %04x;
-%char;%short;%double;
+%3.1f
+%3.1f%%
+%c;%s;%d;
 %count
-%float;%float;%float;%float;%float;%float;
+%f;%f;%f;%f;%f;%f;
 %rate
 %rocessor
-%short;%float;%float;%double;%double;%float;%float;%float;
-%short;%short;%short;%short;%double;%double;%double;%2x;%double;
-%short;%short;%short;%short;%short;%short;%short;%short;
+%s;%f;%f;%d;%d;%f;%f;%f;
+%s;%s;%s;%s;%d;%d;%d;%2x;%d;
+%s;%s;%s;%s;%s;%s;%s;%s;
 %vent_system_command_queue_remaining
 &fade_sample
 &get_
@@ -117,7 +117,7 @@ $speaker_scale_factors
 -ocess_digital_audio
 -quest_EOB_ASI_reset
 -sync
-.C double restrict
+.C rd
 .HHve
 .SPEEX16
 .SPEEX32
@@ -161,7 +161,7 @@ $speaker_scale_factors
 0mix_callback
 0pOpd
 0preference
-1@B`long double>X94<
+1@B`e>X94<
 1MMX_available
 1ize_processed_digital_audio
 1reverb_levels
@@ -222,6 +222,7 @@ $speaker_scale_factors
 9SYSE
 9Y>)F$
 9async_callbacks
+9callbacks
 9free
 9queue_event_
 9time
@@ -230,7 +231,7 @@ $speaker_scale_factors
 :count
 :free_info
 :next_event_step
-;%short;%short;%float;%short;%long long;%long long;%long long;
+;%s;%s;%f;%s;%x;%x;%x;
 ;0w#k
 ;0w(k
 ;1FCB
@@ -244,7 +245,7 @@ $speaker_scale_factors
 ;elemetry
 ;r_thread_handle
 ;soundbank_
-<	wchar_t float
+<	w f
 <@tj<=tu
 <IO_thread_handle
 <[^_]
@@ -276,15 +277,15 @@ $speaker_scale_factors
 @AIL_3D_doppler_factor(0x%lX)
 @AIL_3D_rolloff_factor(0x%lX)
 @AIL_MMX_available()
-@AIL_WAV_file_write(%short,0x%lX,%ld,%ld,%ld)
+@AIL_WAV_file_write(%s,0x%lX,%ld,%ld,%ld)
 @AIL_WAV_info(0x%lX,0x%lX)
 @AIL_active_sample_count(0x%lX)
 @AIL_allocate_bus(0x%lX)
 @AIL_allocate_sample_handle(0x%lX)
 @AIL_auto_service_stream(0x%lX, %ld)
 @AIL_background_CPU_percent()
-@AIL_bus_sample_handle(0x%lX,%double)
-@AIL_calculate_3D_channel_levels(0x%lX,0x%lX,0x%lX,0x%lX,0x%lX,0x%lX,%float,%float,%float,%float,%float,0x%lX,0x%lX,0x%lX,%float,0x%lX,%short)
+@AIL_bus_sample_handle(0x%lX,%d)
+@AIL_calculate_3D_channel_levels(0x%lX,0x%lX,0x%lX,0x%lX,0x%lX,0x%lX,%f,%f,%f,%f,%f,0x%lX,0x%lX,0x%lX,%f,0x%lX,%s)
 @AIL_close_digital_driver(0x%lX)
 @AIL_close_filter(0x%lX)
 @AIL_close_input(0x%lX)
@@ -300,7 +301,7 @@ $speaker_scale_factors
 @AIL_digital_output_filter(0x%lX)
 @AIL_end_fade_sample(0x%lX)
 @AIL_end_sample(0x%lX)
-@AIL_end_sample_group(0x%lX,%double)
+@AIL_end_sample_group(0x%lX,%d)
 @AIL_enumerate_filter_properties(%ld,0x%lX,0x%lX)
 @AIL_enumerate_filter_sample_properties(%ld,0x%lX,0x%lX)
 @AIL_enumerate_filters(0x%lX,0x%lX,0x%lX)
@@ -308,34 +309,34 @@ $speaker_scale_factors
 @AIL_enumerate_output_filter_sample_properties(%ld,0x%lX,0x%lX)
 @AIL_enumerate_sample_stage_properties(0x%lX,%ld,0x%lX,0x%lX)
 @AIL_file_error()
-@AIL_file_read(%short,0x%lX) from: %short, line: %double 
-@AIL_file_size(%short) from: %short, line: %double 
+@AIL_file_read(%s,0x%lX) from: %s, line: %d 
+@AIL_file_size(%s) from: %s, line: %d 
 @AIL_file_type(0x%lX,%lu)
-@AIL_file_type(0x%lX,%short,%lu)
-@AIL_file_write(%short,0x%lX,%ld)
-@AIL_filter_property(%ld,%short,0x%lX,0x%lX,0x%lX)
+@AIL_file_type(0x%lX,%s,%lu)
+@AIL_file_write(%s,0x%lX,%ld)
+@AIL_filter_property(%ld,%s,0x%lX,0x%lX,0x%lX)
 @AIL_get_input_info(0x%lX)
 @AIL_init_sample(0x%lX,%ld)
-@AIL_install_bus_compressor(0x%lX,%double,%double,%double)
+@AIL_install_bus_compressor(0x%lX,%d,%d,%d)
 @AIL_last_error()
 @AIL_listener_3D_orientation(0x%lX,0x%lX,0x%lX,0x%lX,0x%lX,0x%lX,0x%lX)
 @AIL_listener_3D_position(0x%lX,0x%lX,0x%lX,0x%lX)
 @AIL_listener_3D_velocity(0x%lX,0x%lX,0x%lX,0x%lX)
 @AIL_listener_relative_receiver_array(0x%lX,0x%lX)
 @AIL_load_sample_buffer(0x%lX,%ld,0x%lX,%lu)
-@AIL_mem_alloc_lock(%ld) from: %short, line: %double 
+@AIL_mem_alloc_lock(%ld) from: %s, line: %d 
 @AIL_mem_free_lock(0x%lX)
 @AIL_minimum_sample_buffer_size(0x%lX,%ld,%ld)
 @AIL_open_digital_driver(%ld, %ld, %ld, 0x%lX)
 @AIL_open_filter(%ld,0x%lX)
 @AIL_open_input(0x%lX)
-@AIL_open_stream(0x%lX, %short, %ld)
-@AIL_output_filter_driver_property(0x%lX,%short,0x%lX,0x%lX,0x%lX)
+@AIL_open_stream(0x%lX, %s, %ld)
+@AIL_output_filter_driver_property(0x%lX,%s,0x%lX,0x%lX,0x%lX)
 @AIL_pause_stream(0x%lX, %ld)
-@AIL_pop_system_state(0x%lX,%double)
+@AIL_pop_system_state(0x%lX,%d)
 @AIL_primary_digital_driver(0x%lX)
 @AIL_process_digital_audio(0x%lX,%li,%li,%li,%li,0x%lX)
-@AIL_push_system_state(0x%lX,%double,%double)
+@AIL_push_system_state(0x%lX,%d,%d)
 @AIL_register_EOB_callback(0x%lX,0x%lX)
 @AIL_register_EOS_callback(0x%lX,0x%lX)
 @AIL_register_SOB_callback(0x%lX,0x%lX)
@@ -347,7 +348,7 @@ $speaker_scale_factors
 @AIL_release_sample_handle(0x%lX)
 @AIL_release_timer_handle(%lu)
 @AIL_resume_sample(0x%lX)
-@AIL_resume_sample_group(0x%lX,%double,%double)
+@AIL_resume_sample_group(0x%lX,%d,%d)
 @AIL_room_type(0x%lX,%ld)
 @AIL_sample_3D_cone(0x%lX,0x%lX,0x%lX,0x%lX)
 @AIL_sample_3D_distances(0x%lX,0x%lX,0x%lX,0x%lX)
@@ -361,26 +362,26 @@ $speaker_scale_factors
 @AIL_sample_buffer_info(0x%lX,%ld,0x%lX,0x%lX,0x%lX,0x%lX)
 @AIL_sample_bus(0x%lX)
 @AIL_sample_channel_count(0x%lX,0x%lX)
-@AIL_sample_channel_levels(0x%lX,0x%lX,0x%lX,0x%lX,%double)
+@AIL_sample_channel_levels(0x%lX,0x%lX,0x%lX,0x%lX,%d)
 @AIL_sample_exclusion(0x%lX)
 @AIL_sample_granularity(0x%lX)
 @AIL_sample_loaded_len(0x%lX)
 @AIL_sample_loop_block(0x%lX,0x%lX,0x%lX)
 @AIL_sample_loop_count(0x%lX)
-@AIL_sample_low_pass_cut_off(0x%lX, %double)
-@AIL_sample_ms_lookup(0x%lX,%double,0x%lX)
+@AIL_sample_low_pass_cut_off(0x%lX, %d)
+@AIL_sample_ms_lookup(0x%lX,%d,0x%lX)
 @AIL_sample_ms_position(0x%lX,0x%lX,0x%lX)
 @AIL_sample_obstruction(0x%lX)
 @AIL_sample_occlusion(0x%lX)
-@AIL_sample_output_levels(0x%lX,0x%lX,0x%lX,0x%lX,%double)
+@AIL_sample_output_levels(0x%lX,0x%lX,0x%lX,0x%lX,%d)
 @AIL_sample_playback_delay(0x%lX)
 @AIL_sample_playback_rate(0x%lX)
 @AIL_sample_playback_rate_factor(0x%lX)
 @AIL_sample_position(0x%lX)
 @AIL_sample_processor(0x%lX,%ld)
 @AIL_sample_reverb_levels(0x%lX,0x%lX,0x%lX)
-@AIL_sample_speaker_scale_factors(0x%lX,0x%lX,0x%lX, %double)
-@AIL_sample_stage_property(0x%lX,%ld,%short,%ld,0x%lX,0x%lX,0x%lX)
+@AIL_sample_speaker_scale_factors(0x%lX,0x%lX,0x%lX, %d)
+@AIL_sample_stage_property(0x%lX,%ld,%s,%ld,0x%lX,0x%lX,0x%lX)
 @AIL_sample_status(0x%lX)
 @AIL_sample_user_data(0x%lX,%lu)
 @AIL_sample_volume_levels(0x%lX,0x%lX,0x%lX)
@@ -388,67 +389,67 @@ $speaker_scale_factors
 @AIL_schedule_start_sample(0x%lX,%llu)
 @AIL_serve()
 @AIL_service_stream(0x%lX, %ld)
-@AIL_set_3D_distance_factor(0x%lX,%float)
-@AIL_set_3D_doppler_factor(0x%lX,%float)
-@AIL_set_3D_rolloff_factor(0x%lX,%float)
+@AIL_set_3D_distance_factor(0x%lX,%f)
+@AIL_set_3D_doppler_factor(0x%lX,%f)
+@AIL_set_3D_rolloff_factor(0x%lX,%f)
 @AIL_set_digital_driver_processor(0x%lX,%ld,%ld)
-@AIL_set_digital_master_reverb(0x%lX,%ld,%float,%float,%float)
-@AIL_set_digital_master_reverb_levels(0x%lX,%ld,%float,%float)
-@AIL_set_digital_master_volume_level(0x%lX,%float)
-@AIL_set_error(%short)
+@AIL_set_digital_master_reverb(0x%lX,%ld,%f,%f,%f)
+@AIL_set_digital_master_reverb_levels(0x%lX,%ld,%f,%f)
+@AIL_set_digital_master_volume_level(0x%lX,%f)
+@AIL_set_error(%s)
 @AIL_set_error(NULL)
 @AIL_set_input_state(0x%lX,%ld)
-@AIL_set_listener_3D_orientation(0x%lX,%float,%float,%float,%float,%float,%float)
-@AIL_set_listener_3D_position(0x%lX,%float,%float,%float)
-@AIL_set_listener_3D_velocity(0x%lX,%float,%float,%float,%float)
-@AIL_set_listener_3D_velocity_vector(0x%lX,%float,%float,%float)
-@AIL_set_listener_relative_receiver_array(0x%lX,0x%lX,%double)
-@AIL_set_named_sample_file(0x%lX,%short,0x%lX,%ld,%ld)
+@AIL_set_listener_3D_orientation(0x%lX,%f,%f,%f,%f,%f,%f)
+@AIL_set_listener_3D_position(0x%lX,%f,%f,%f)
+@AIL_set_listener_3D_velocity(0x%lX,%f,%f,%f,%f)
+@AIL_set_listener_3D_velocity_vector(0x%lX,%f,%f,%f)
+@AIL_set_listener_relative_receiver_array(0x%lX,0x%lX,%d)
+@AIL_set_named_sample_file(0x%lX,%s,0x%lX,%ld,%ld)
 @AIL_set_preference(%ld,%ld)
-@AIL_set_room_type(0x%lX,%ld,%double)
-@AIL_set_sample_3D_cone(0x%lX,%float,%float,%float)
-@AIL_set_sample_3D_distances(0x%lX,%float,%float,%ld)
-@AIL_set_sample_3D_exclusion_falloff(0x%lX,0x%lX,%double)
-@AIL_set_sample_3D_lowpass_falloff(0x%lX,0x%lX,%double)
-@AIL_set_sample_3D_orientation(0x%lX,%float,%float,%float,%float,%float,%float)
-@AIL_set_sample_3D_position(0x%lX,%float,%float,%float)
-@AIL_set_sample_3D_position_segments(0x%lX,0x%lX,%double)
-@AIL_set_sample_3D_spread(0x%lX,%float)
-@AIL_set_sample_3D_spread_falloff(0x%lX,0x%lX,%double)
-@AIL_set_sample_3D_velocity(0x%lX,%float,%float,%float,%float)
-@AIL_set_sample_3D_velocity_vector(0x%lX,%float,%float,%float)
-@AIL_set_sample_3D_volume_falloff(0x%lX,0x%lX,%double)
-@AIL_set_sample_51_volume_levels(0x%lX,%float,%float,%float,%float,%float)
-@AIL_set_sample_51_volume_pan(0x%lX,%float,%float,%float,%float,%float)
+@AIL_set_room_type(0x%lX,%ld,%d)
+@AIL_set_sample_3D_cone(0x%lX,%f,%f,%f)
+@AIL_set_sample_3D_distances(0x%lX,%f,%f,%ld)
+@AIL_set_sample_3D_exclusion_falloff(0x%lX,0x%lX,%d)
+@AIL_set_sample_3D_lowpass_falloff(0x%lX,0x%lX,%d)
+@AIL_set_sample_3D_orientation(0x%lX,%f,%f,%f,%f,%f,%f)
+@AIL_set_sample_3D_position(0x%lX,%f,%f,%f)
+@AIL_set_sample_3D_position_segments(0x%lX,0x%lX,%d)
+@AIL_set_sample_3D_spread(0x%lX,%f)
+@AIL_set_sample_3D_spread_falloff(0x%lX,0x%lX,%d)
+@AIL_set_sample_3D_velocity(0x%lX,%f,%f,%f,%f)
+@AIL_set_sample_3D_velocity_vector(0x%lX,%f,%f,%f)
+@AIL_set_sample_3D_volume_falloff(0x%lX,0x%lX,%d)
+@AIL_set_sample_51_volume_levels(0x%lX,%f,%f,%f,%f,%f)
+@AIL_set_sample_51_volume_pan(0x%lX,%f,%f,%f,%f,%f)
 @AIL_set_sample_address(0x%lX,0x%lX,%lu)
 @AIL_set_sample_adpcm_block_size(0x%lX,%lu)
 @AIL_set_sample_buffer_count(0x%lX)
-@AIL_set_sample_bus(0x%lX,%double)
-@AIL_set_sample_channel_levels(0x%lX,0x%lX,0x%lX,0x%lX,%double)
-@AIL_set_sample_exclusion(0x%lX,%float)
+@AIL_set_sample_bus(0x%lX,%d)
+@AIL_set_sample_channel_levels(0x%lX,0x%lX,0x%lX,0x%lX,%d)
+@AIL_set_sample_exclusion(0x%lX,%f)
 @AIL_set_sample_file(0x%lX,0x%lX,%ld)
-@AIL_set_sample_id(0x%lX,%double)
+@AIL_set_sample_id(0x%lX,%d)
 @AIL_set_sample_info(0x%lX,0x%lX)
-@AIL_set_sample_is_3D(0x%lX, %double )
-@AIL_set_sample_level_mask(0x%lX,%double)
+@AIL_set_sample_is_3D(0x%lX, %d )
+@AIL_set_sample_level_mask(0x%lX,%d)
 @AIL_set_sample_loop_block(0x%lX,%ld,%ld)
 @AIL_set_sample_loop_count(0x%lX,%ld)
-@AIL_set_sample_low_pass_cut_off(0x%lX,%double,%float)
+@AIL_set_sample_low_pass_cut_off(0x%lX,%d,%f)
 @AIL_set_sample_ms_position(0x%lX,%lu)
-@AIL_set_sample_obstruction(0x%lX,%float)
-@AIL_set_sample_occlusion(0x%lX,%short)
+@AIL_set_sample_obstruction(0x%lX,%f)
+@AIL_set_sample_occlusion(0x%lX,%s)
 @AIL_set_sample_playback_delay(0x%lX,%ld)
 @AIL_set_sample_playback_rate(0x%lX,%ld)
-@AIL_set_sample_playback_rate_factor(0x%lX,%float)
+@AIL_set_sample_playback_rate_factor(0x%lX,%f)
 @AIL_set_sample_position(0x%lX,%lu)
 @AIL_set_sample_processor(0x%lX,%ld,%ld)
-@AIL_set_sample_reverb_levels(0x%lX,%float,%float)
-@AIL_set_sample_speaker_scale_factors(0x%lX,0x%lX,0x%lX, %double)
+@AIL_set_sample_reverb_levels(0x%lX,%f,%f)
+@AIL_set_sample_speaker_scale_factors(0x%lX,0x%lX,0x%lX, %d)
 @AIL_set_sample_user_data(0x%lX,%ld,%ld)
-@AIL_set_sample_volume_levels(0x%lX,%float,%float)
-@AIL_set_sample_volume_pan(0x%lX,%float,%float)
-@AIL_set_speaker_configuration(0x%lX,0x%lX,%ld,%float)
-@AIL_set_speaker_reverb_levels(0x%lX,0x%lX,0x%lX,0x%lX,%double)
+@AIL_set_sample_volume_levels(0x%lX,%f,%f)
+@AIL_set_sample_volume_pan(0x%lX,%f,%f)
+@AIL_set_speaker_configuration(0x%lX,0x%lX,%ld,%f)
+@AIL_set_speaker_reverb_levels(0x%lX,0x%lX,0x%lX,0x%lX,%d)
 @AIL_set_stream_loop_block(0x%lX,%ld,%ld)
 @AIL_set_stream_loop_count(0x%lX, %ld)
 @AIL_set_stream_ms_position(0x%lX,%lu)
@@ -464,13 +465,13 @@ $speaker_scale_factors
 @AIL_speaker_reverb_levels(0x%lX,0x%lX,0x%lX,0x%lX)
 @AIL_start_all_timers()
 @AIL_start_sample(0x%lX)
-@AIL_start_sample_group(0x%lX,%double,%double)
+@AIL_start_sample_group(0x%lX,%d,%d)
 @AIL_start_stream(0x%lX)
 @AIL_start_timer(%lu)
 @AIL_startup()
 @AIL_stop_all_timers()
 @AIL_stop_sample(0x%lX)
-@AIL_stop_sample_group(0x%lX,%double,%double)
+@AIL_stop_sample_group(0x%lX,%d,%d)
 @AIL_stop_timer(%lu)
 @AIL_stream_filled_percent(0x%lX)
 @AIL_stream_info(0x%lX, 0x%lX, 0x%lX, 0x%lX, 0x%lX)
@@ -480,8 +481,8 @@ $speaker_scale_factors
 @AIL_stream_sample_handle(0x%lX)
 @AIL_stream_status(0x%lX)
 @AIL_stream_user_data(0x%lX,%lu)
-@AIL_update_listener_3D_position(0x%lX,%float)
-@AIL_update_sample_3D_position(0x%lX,%float)
+@AIL_update_listener_3D_position(0x%lX,%f)
+@AIL_update_sample_3D_position(0x%lX,%f)
 @_AudioObjectAddPropertyListener
 @_AudioObjectRemovePropertyListener
 @_AudioQueueAllocateBuffer
@@ -596,33 +597,33 @@ ADCPM decompression
 ADH~OqW/`
 AIL_MMX_available
 AIL_add_event_system(0x%lX)
-AIL_add_soundbank(%short)
+AIL_add_soundbank(%s)
 AIL_background
 AIL_begin_event_queue_processing()
 AIL_clear_event_queue()
 AIL_complete_event_queue_processing()
 AIL_digital_configuration
-AIL_enqueue_event(%short,0x%lX,%double,%double,%ld)
-AIL_enqueue_event_by_name(%short)
-AIL_enqueue_event_context(0x%lX,%short,0x%lX,%double,%double,%ld)
+AIL_enqueue_event(%s,0x%lX,%d,%d,%ld)
+AIL_enqueue_event_by_name(%s)
+AIL_enqueue_event_context(0x%lX,%s,0x%lX,%d,%d,%ld)
 AIL_enumerate_preset_persists(0x%lX,0x%lX)
-AIL_enumerate_sound_instances(0x%lX,%double,%short,%ld,0x%lX)
-AIL_find_event(0x%lX,%short)
+AIL_enumerate_sound_instances(0x%lX,%d,%s,%ld,0x%lX)
+AIL_find_event(0x%lX,%s)
 AIL_mem_alloc_lock_info
 AIL_mem_free_lock
 AIL_register_random(0x%lX)
 AIL_release_soundbank(0x%lX)
 AIL_requeue_failed_asyncs()
 AIL_set_event_error_callback(0x%lX)
-AIL_set_sound_label_limits(%short)
-AIL_set_sound_start_offset(0x%lX,%double,%double)
-AIL_set_variable_float(0x%lX%short, %float)
-AIL_set_variable_int(0x%lX%short, %double)
+AIL_set_sound_label_limits(%s)
+AIL_set_sound_start_offset(0x%lX,%d,%d)
+AIL_set_variable_float(0x%lX%s, %f)
+AIL_set_variable_int(0x%lX%s, %d)
 AIL_shutdown_event_system()
-AIL_startup_event_system(0x%lX,%double,0x%lX
+AIL_startup_event_system(0x%lX,%d,0x%lX
 AIL_text_dump_event_system()
-AIL_variable_float(0x%lX%short, 0x%lX)
-AIL_variable_int(0x%lX%short, 0x%lX)
+AIL_variable_float(0x%lX%s, 0x%lX)
+AIL_variable_int(0x%lX%s, 0x%lX)
 ASI codec
 ASI provider for this file type failed to initialize
 ASI stream
@@ -641,18 +642,18 @@ Asound_preset
 Attempt to load obsolete (pre-V1.30) RIB
 B4data
 BH;^$tB
-Bank file name doesn'unsigned short match the loaded file.
-Bank file version doesn'unsigned short match this runtime.
+Bank file name doesn't match the loaded file.
+Bank file version doesn't match this runtime.
 BankFunctions
 Benvironment_preset
 Bink Audio decompression
 Bink Audio provider failed to initialize.
 Bink Audio provider not found.
 Both indices must refer to installed busses.
-Bx;^unsigned short,
+Bx;^$t,
 ByName
-C(9C void
-Can'unsigned short audition without signed char sound bank name.
+C(9C v
+Can't audition without a sound bank name.
 Cenvironment_preset
 Cevent_contents
 Channel buffer allocation failed.
@@ -668,15 +669,15 @@ Could not allocate memory for driver descriptor.
 Could not allocate memory for input driver descriptor.
 Could not allocate reverb build buffer.
 Could not retrieve system speaker config.
-Couldn'unsigned short create audio buffers.
-Couldn'unsigned short create output filter.
-Couldn'unsigned short find provider for this file type -- check your AIL_set_redist_directory() call.
-Couldn'unsigned short get sample rate
-Couldn'unsigned short open Sound Input Device
-Couldn'unsigned short open audio device.
-Couldn'unsigned short set compression type
-Couldn'unsigned short set valid number of bits
-Couldn'unsigned short set valid number of channels
+Couldn't create audio buffers.
+Couldn't create output filter.
+Couldn't find provider for this file type -- check your AIL_set_redist_directory() call.
+Couldn't get sample rate
+Couldn't open Sound Input Device
+Couldn't open audio device.
+Couldn't set compression type
+Couldn't set valid number of bits
+Couldn't set valid number of channels
 Creative
 Creative Labs EAX 2 (TM)
 Creative Labs EAX 3 (TM)
@@ -711,7 +712,7 @@ Eposition
 Error getting sound format.
 Error loading filter
 Event Not Found.
-Event System Count: %double
+Event System Count: %d
 EventErrorCallback
 EventSystem
 Exact get position
@@ -735,9 +736,9 @@ Failed to open sound bank.
 Failed to start audio device - check supported channels?
 FailedEvict
 False
-File open: %short (%short line: %double)
-File read: %short bytes: %double (%short line: %double)
-File seek: %short to %double (%short line: %double)
+File open: %s (%s line: %d)
+File read: %s bytes: %d (%s line: %d)
+File seek: %s to %d (%s line: %d)
 Flags
 Format conversion
 Input
@@ -762,7 +763,7 @@ Kff;Kdr
 L[^_]
 LabelLimits
 Length
-Loaded Bank Count: %double
+Loaded Bank Count: %d
 LoopEnd
 LoopStart
 Low-pass
@@ -789,7 +790,7 @@ Miles IO mutex
 Miles IO mutex block
 Miles Sound System usage script generated by MSS V9.3a
 Miles Timer
-Miles alloc: %unsigned short
+Miles alloc: %t
 Miles background processing
 Miles mixing
 Miles mutex
@@ -801,22 +802,22 @@ Miles/Format conversion (samples)
 Miles/Input deinterlace (samples)
 Miles/Low-pass (samples)
 Miles/MP3 (samples)
+Miles/Mix (samples)
 Miles/Ogg (samples)
 Miles/Other codec (samples)
 Miles/Reverb mix (samples)
-Miles/Streams/Stream %double %%
-Miles/long long int::* (samples)
+Miles/Streams/Stream %d %%
 MilesEvent: An asset requested by an event was not found in memory.
-MilesEvent: An asynchronous load returned failure (file doesn'unsigned short exist?).
+MilesEvent: An asynchronous load returned failure (file doesn't exist?).
 MilesEvent: Bad string passed to SetLimits.
 MilesEvent: Missing Variable.
-MilesEvent: Out float&& Memory (AIL_mem_alloc_lock failed).
+MilesEvent: Out Of Memory (AIL_mem_alloc_lock failed).
 MilesEvent: Out of event system memory (pool passed to event system startup exhausted).
 MilesEvent: The command buffer was full.
 MilesEvent: The enqueue buffer is full.
-MilesEvent: The event expected signed char selection that did not exist.
-MilesEvent: The requested blend has not been set as it doesn'unsigned short exist.
-MilesEvent: Too many sounds were start in signed char blended sound.
+MilesEvent: The event expected a selection that did not exist.
+MilesEvent: The requested blend has not been set as it doesn't exist.
+MilesEvent: Too many sounds were start in a blended sound.
 Minimum input block size
 Minimum input stream size
 Mismatched Miles/Telemetry versions.
@@ -824,7 +825,7 @@ No codec found for requested input type.
 No cue chunk found
 No list chunk found
 No mixer services exist.
-Not signed char filter provider
+Not a filter provider
 Ogg decompression
 Other decompression
 Out of available busses.
@@ -843,14 +844,14 @@ Output sample width
 PROVIDER_property
 P[^_]
 Percent done
-Persistent Preset Count: %double
+Persistent Preset Count: %d
 Pipeline filter driver services
 Pipeline filter sample services
 Position
 Preset Not Found.
 PresetPersists
 Profile index
-Q<9Z\short
+Q<9Z\s
 RIB_Main
 RIB_alloc_provider_handle
 RIB_register_interface
@@ -874,21 +875,21 @@ Sample_state_size
 Seek table lookup
 Silence
 Sound
-Sound Instance Count: %double
+Sound Instance Count: %d
 Sound Preset Error - Filter Not Found.
-Sound Source Count: %double
-Sound file isn'unsigned short signed char bank.
+Sound Source Count: %d
+Sound file isn't a bank.
 Speex
 Start of buffer callbacks
-Start time: %short
+Start time: %s
 StartOffset
 Stop recording failed
 Stream seek position
-System #%double
+System #%d
 TextDumpEventSystem
 Timer waiting
 Unable to create file.
-Unable to obtain signed char sample handle.
+Unable to obtain a sample handle.
 Unable to open file.
 Unable to write to file (disk full?).
 Unknown file type.
@@ -902,7 +903,7 @@ Waiting on Miles IO
 Waiting on SPU
 Y 9Y(
 Z 9Z(
-[%.02d:%.02d:%.d.%.03d] 
+[%.02d:%.02d:%.02d.%.03d] 
 \[^_]
 _AIL_3D_distance_factor
 _AIL_3D_doppler_factor
@@ -1450,7 +1451,6 @@ aster_
 ause_stream
 block
 bstruction
-callbacks
 cclusion
 chedule_start_sample
 chedule_time
@@ -1458,11 +1458,11 @@ complete
 compress_A
 configuration
 count
+d[^_]
 dec_provider
 delay
 digital_
 distances
-double[^_]
 dyld_stub_binder
 eaker_
 edist_directory
@@ -1495,6 +1495,7 @@ istsf
 it_sample
 ixed_ms
 ixed_samples
+l[^_]
 layback_
 learEventQueue
 lear_state_event_step
@@ -1506,7 +1507,6 @@ listener_3D_position
 llocate_
 load_
 lock_mutex
-long[^_]
 lookup
 loop_
 lose_
@@ -1810,10 +1810,14 @@ spread
 static_provider_library
 stream_callback
 system_data
+t	;G,
 t$[^_]
+t)9J(~
+t)9J,~
+t)9J0~
 t6<?t2
 tartup
-tc5E#int
+tc5E#i
 tem_state_level
 ter_property
 to_time
@@ -1821,13 +1825,9 @@ tream
 tream_
 type_string
 ume_sample
-ump:float
+ump:f
 unknown
 unregister_interface
-unsigned short	;G,
-unsigned short)9J(~
-unsigned short)9J,~
-unsigned short)9J0~
 upEventSystem
 user_data
 uto_service_stream

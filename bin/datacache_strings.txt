@@ -1,26 +1,26 @@
-	%16.16s : %12s : 0x%08x, 0x%p, 0x%p : %short : %short
+	%16.16s : %12s : 0x%08x, 0x%p, 0x%p : %s : %s
+	4p8pH
 	@P`p
-	p8pH
 	w4A1
   00  0@0@
- ##### Model %short not found and %short couldn'unsigned short be loaded
+ ##### Model %s not found and %s couldn't be loaded
  ^_[]
  bytes
 "CreateInterface
-%%.%if%short
-%short (block %int)
-%short - %short
-%short%s.mdl
-%short%s.phy
-%short%s.vtx
-%short%s.vvd
-%short/%short : missmatched parent bones on "%short"
+%%.%if%s
+%s (block %i)
+%s - %s
+%s%s.mdl
+%s%s.phy
+%s%s.vtx
+%s%s.vvd
+%s/%s : missmatched parent bones on "%s"
 ,^_[]
 -no_compressed_vvds
 .dx80.vtx
 .dx90.vtx
 .sw.vtx
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(convar.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(datamanager.o)
@@ -106,6 +106,37 @@
 0C25CDataCacheSectionFastFind
 0pp00 @
 1 - show hitches , 2 - show stalls
+10CDataCache
+10IAppSystem
+10IDataCache
+11IRefCounted
+12CDataManagerI15DataCacheItem_t19DataCacheItemData_tPS0_16CThreadFastMutexE
+12CEmptyConVar
+12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE
+14CBaseAppSystemI10IDataCacheE
+14CBaseAppSystemI9IMDLCacheE
+14ConCommandBase
+15CTier0AppSystemI10IDataCacheE
+15CTier0AppSystemI9IMDLCacheE
+15CTier1AppSystemI10IDataCacheLi0EE
+15CTier1AppSystemI9IMDLCacheLi0EE
+15CTier2AppSystemI10IDataCacheLi0EE
+15CTier2AppSystemI9IMDLCacheLi0EE
+15CTier3AppSystemI10IDataCacheLi0EE
+15CTier3AppSystemI9IMDLCacheLi0EE
+16CDataManagerBase
+16CDefaultAccessor
+16IDataCacheClient
+16IStudioDataCache
+17CDataCacheSection
+17IDataCacheSection
+18CUtlCharConversion
+19CUtlNoEscConversion
+20CRefCountServiceBaseILb1E6CRefMTE
+21CUtlCStringConversion
+23CDefaultDataCacheClient
+23IConCommandBaseAccessor
+4p8pH
 4p8pHp4p4p8pHp4p4p8pHp
 4p8pHp4p4p8pHp4p4p8pHp4p8pHp4p8pHp4p8pHp4p8pH
 4p8pHp4p4p8pHp4p4pl
@@ -118,8 +149,16 @@
 4plp4p4pl
 4plp4p4plp4p4pl
 4plp4plp4pl
+6ConVar
+7IConVar
+8CFmtStrNILi256ELb0EE
+8CFunctor
 8IDSTum
+9CFunctor1IPFvP12ModelParts_tES1_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
+9CFunctor1IPFvP19CleanupModelParts_tES1_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
+9CMDLCache
 9G\}N
+9IMDLCache
 ;G<}C
 ;V<}-
 ;V<}J
@@ -148,6 +187,7 @@
 @_CommandLine_Tier0
 @_DevMsg
 @_Error
+@_Msg
 @_Plat_IsInDebugSession
 @_Plat_MSTime
 @_ThreadGetCurrentId
@@ -173,7 +213,6 @@
 @___stack_chk_fail
 @___stack_chk_guard
 @___stdoutp
-@__float128 short::*
 @_atof
 @_atoi
 @_fflush
@@ -209,10 +248,7 @@ Async
 BodyPartHeader_t
 BoneStateChangeHeader_t
 C;_0|
-CBaseAppSystem<IDataCache>
-CBaseAppSystem<IMDLCache>
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
-CDataCache
 CDataCache::AddSection(IDataCacheClient*, char const*, DataCacheLimits_t const&, bool)
 CDataCache::Connect(void* (*)(char const*, int*))
 CDataCache::Disconnect()
@@ -235,7 +271,6 @@ CDataCache::SetSize(int)
 CDataCache::Shutdown()
 CDataCache::SortMemhandlesBySizeLessFunc(memhandle_t__* const&, memhandle_t__* const&)
 CDataCache::~CDataCache()
-CDataCacheSection
 CDataCacheSection::Add
 CDataCacheSection::Add(unsigned int, void const*, unsigned int, memhandle_t__**)
 CDataCacheSection::AddEx(unsigned int, void const*, unsigned int, unsigned int, memhandle_t__**)
@@ -293,14 +328,12 @@ CDataCacheSectionFastFind::CDataCacheSectionFastFind(CDataCache*, IDataCacheClie
 CDataCacheSectionFastFind::DoFind(unsigned int)
 CDataCacheSectionFastFind::OnAdd(unsigned int, memhandle_t__*)
 CDataCacheSectionFastFind::OnRemove(unsigned int)
-CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::DestroyResourceStorage(void*)
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::GetRealSize(void*)
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Lock()
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::TryLock()
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Unlock()
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::~CDataManager()
-CDataManagerBase
 CDataManagerBase::BreakLock(memhandle_t__*)
 CDataManagerBase::CDataManagerBase(unsigned int)
 CDataManagerBase::CreateHandle(bool)
@@ -333,30 +366,22 @@ CDataManagerBase::UsedSize()
 CDataManagerBase::~CDataManagerBase()
 CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
 CDefOps<int>::LessFunc(int const&, int const&)
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CDefaultDataCacheClient
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CFmtStrN<256, false>
 CFmtStrN<256, false>::CFmtStrN(char const*, ...)
 CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
 CFmtStrN<256, false>::InitQuietTruncation()
-CFunctor
-CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
 CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
 CFunctor1<void (*)(CleanupModelParts_t*), CleanupModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
-CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
 CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
 CFunctor1<void (*)(ModelParts_t*), ModelParts_t*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor1()
-CMDLCache
-CMDLCache:: Error MDLCACHE_STUDIOHDR not present for '%short'
-CMDLCache:: Late preload of model '%short'
+CMDLCache:: Error MDLCACHE_STUDIOHDR not present for '%s'
+CMDLCache:: Late preload of model '%s'
 CMDLCache:: Out of memory
 CMDLCache::AddRef(unsigned short)
 CMDLCache::BeginLock()
@@ -441,9 +466,7 @@ CMemoryPoolMT::Alloc(unsigned long)
 CMemoryPoolMT::Free(void*)
 CMemoryPoolMT::~CMemoryPoolMT()
 COLORCORRECTION_VERSION_1
-CRefCountServiceBase<true, CRefMT>
 CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
-CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
 CTSListBase: Misaligned list
@@ -453,14 +476,6 @@ CThreadLocalBase::Get() const
 CThreadLocalBase::Set(void*)
 CThreadLocalBase::~CThreadLocalBase()
 CThreadSyncObject::~CThreadSyncObject()
-CTier0AppSystem<IDataCache>
-CTier0AppSystem<IMDLCache>
-CTier1AppSystem<IDataCache, 0>
-CTier1AppSystem<IMDLCache, 0>
-CTier2AppSystem<IDataCache, 0>
-CTier2AppSystem<IMDLCache, 0>
-CTier3AppSystem<IDataCache, 0>
-CTier3AppSystem<IMDLCache, 0>
 CUtlBuffer::AddNullTermination()
 CUtlBuffer::CUtlBuffer(int, int, int)
 CUtlBuffer::CUtlBuffer(void const*, int, int)
@@ -469,10 +484,8 @@ CUtlBuffer::GetOverflow(int)
 CUtlBuffer::PutOverflow(int)
 CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::SetExternalBuffer(void*, int, int, int)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlDict<short, short>::~CUtlDict()
 CUtlDict<studiodata_t*, unsigned short>::~CUtlDict()
@@ -507,7 +520,6 @@ CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::Alloc()
 CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::LinkAfter(unsigned short, unsigned short, unsigned short)
 CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::LinkBefore(unsigned short, unsigned short, unsigned short)
 CUtlMultiList<CDataManagerBase::resource_lru_element_t, unsigned short>::~CUtlMultiList()
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlMap<char const*, short, short>::Node_t, short, CUtlMap<char const*, short, short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, short, short>::Node_t, short>, short> >::Find(CUtlMap<char const*, short, short>::Node_t const&) const
@@ -595,14 +607,12 @@ CUtlVector<void*, CUtlMemory<void*, int> >::~CUtlVector()
 CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
-Cannot find requested cache section "%short"
+Cannot find requested cache section "%s"
 CaselessStringLessThan(char const* const&, char const* const&)
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -641,16 +651,16 @@ DisconnectTier1Libraries()
 DisconnectTier2Libraries()
 DisconnectTier3Libraries()
 Duplicate add to data cache
-Error Index File for '%short' checksum %double should be %double
-Error Index File for '%short' version %double should be %double
-Error Vertex File for '%short' checksum %double should be %double
-Error Vertex File for '%short' id %double should be %double
-Error Vertex File for '%short' version %double should be %double
+Error Index File for '%s' checksum %d should be %d
+Error Index File for '%s' version %d should be %d
+Error Vertex File for '%s' checksum %d should be %d
+Error Vertex File for '%s' id %d should be %d
+Error Vertex File for '%s' version %d should be %d
 F$^_[]
-Failed to load %short!
-Failed to read model %short from buffer!
+Failed to load %s!
+Failed to read model %s from buffer!
 FileHeader_t
-FmtStrVSNPrintf truncated to %double without QUIET_TRUNCATION specified!
+FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!
 Force cache flush of unlocked resources on every alloc
 Forces all ANI file loading to stall for specified ms
 Forces all model file data into cache on model load.
@@ -659,63 +669,54 @@ H__ZdlPv
 H__Znam
 H__Znwm
 Hash4(void const*)
-IAppSystem
-IConCommandBaseAccessor
-IConVar
 IDSVu<
-IDataCache
-IDataCacheClient
-IDataCacheSection
-IMDLCache
-IRefCounted
-IStudioDataCache
 IVideoServices002
 InputSystemVersion001
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
 L^_[]
-Loading %short
-Loading virtual model for %short
-Locked %double
+Loading %s
+Loading virtual model for %s
+Locked %d
 MDLCache004
-MDLCache: %short load vcollide %short
-MDLCache: %short needs to be recompiled
-MDLCache: Alloc VTX %short
-MDLCache: Alloc VVD %short
-MDLCache: Alloc studiohdr %short
-MDLCache: Begin load Anim Block %short (block %int)
-MDLCache: Begin load VTX %short
-MDLCache: Begin load VVD %short
-MDLCache: Begin load studiomdl %short
-MDLCache: Data cache discard %short %short
-MDLCache: Failed load anim block %short (block %int)
-MDLCache: Failed load of .PHY data for %short
-MDLCache: Failed load of .VTX data for %short
-MDLCache: Failed load of .VVD data for %short
-MDLCache: Finish load anim block %short (block %int)
-MDLCache: Finish load vcollide for %short
-MDLCache: Free Anim block: %double
+MDLCache: %s load vcollide %s
+MDLCache: %s needs to be recompiled
+MDLCache: Alloc VTX %s
+MDLCache: Alloc VVD %s
+MDLCache: Alloc studiohdr %s
+MDLCache: Begin load Anim Block %s (block %i)
+MDLCache: Begin load VTX %s
+MDLCache: Begin load VVD %s
+MDLCache: Begin load studiomdl %s
+MDLCache: Data cache discard %s %s
+MDLCache: Failed load anim block %s (block %i)
+MDLCache: Failed load of .PHY data for %s
+MDLCache: Failed load of .VTX data for %s
+MDLCache: Failed load of .VVD data for %s
+MDLCache: Finish load anim block %s (block %i)
+MDLCache: Finish load vcollide for %s
+MDLCache: Free Anim block: %d
 MDLCache: Free VTX
 MDLCache: Free VVD
-MDLCache: Free VVD %short
+MDLCache: Free VVD %s
 MDLCache: Free studiohdr
-MDLCache: Free studiohdr %short
-MDLCache: Load VTX (verify) %short
-MDLCache: Load VVD (verify) %short
-MDLCache: Load VVD for %short
-MDLCache: Load studiohdr %short
-MDLCache: Load studiomdl %short
-MDLCache: Unload studiomdl %short
-MDLCache: Unload vcollide %short
+MDLCache: Free studiohdr %s
+MDLCache: Load VTX (verify) %s
+MDLCache: Load VVD (verify) %s
+MDLCache: Load VVD for %s
+MDLCache: Load studiohdr %s
+MDLCache: Load studiomdl %s
+MDLCache: Unload studiomdl %s
+MDLCache: Unload vcollide %s
 MatSystemSurface008
 MaterialReplacementHeader_t
 MaterialReplacementListHeader_t
 MaterialSystemHardwareConfig012
-Memory leak: mempool blocks left in memory: %double
+Memory leak: mempool blocks left in memory: %d
 MeshHeader_t
-Model %short has mismatched .vvd + .vtx files!
-Model %short not found and %short couldn'unsigned short be loaded
-Model %short not signed char .MDL format file!
+Model %s has mismatched .vvd + .vtx files!
+Model %s not a .MDL format file!
+Model %s not found and %s couldn't be loaded
 Model textures
 ModelData
 ModelHeader_t
@@ -748,7 +749,7 @@ OptimizedModel::Vertex_t::m_DataMap
 OptimizedModel::Vertex_t_DataDescInit::g_DataMapHolder
 P0pp 
 P@P0PPp
-Q4F;wchar_t
+Q4F;w
 QueuedLoaderVersion004
 RARAp
 RAVATBRBRBp
@@ -758,7 +759,7 @@ RBRBRBRBRBRBRBp
 RJVATAp
 ReleaseMaterialSystemObjects()
 RestoreMaterialSystemObjects(int)
-Section [%short]: %int resources total %short, %.2f %% of limit (%short)
+Section [%s]: %i resources total %s, %.2f %% of limit (%s)
 SetAsyncInfoIndex(unsigned short, MDLCacheDataType_t, int, int)
 Size in MB.
 StripGroupHeader_t
@@ -768,10 +769,10 @@ StudioByteSwap::legacysurfaceheader_t::m_DataMap
 StudioByteSwap::legacysurfaceheader_t_DataDescInit::g_DataMapHolder
 StudioByteSwap::swapcompactsurfaceheader_t::m_DataMap
 StudioByteSwap::swapcompactsurfaceheader_t_DataDescInit::g_DataMapHolder
-Summary: %int resources total %short, %.2f %% of capacity
+Summary: %i resources total %s, %.2f %% of capacity
 Sys_GetFactoryThis()
 Unaccounted
-Unknown cache section %short
+Unknown cache section %s
 VBAllocTracker001
 VDataCache003
 VDmeMakeFileUtils001
@@ -810,7 +811,7 @@ V_strncmp(char const*, char const*, int)
 V_strncpy(char*, char const*, int)
 V_vsnprintfRet(char*, int, char const*, char*, bool*)
 Vertex_t
-Warning: freed signed char locked resource
+Warning: freed a locked resource
 Xcvar
 \^_[]
 _CommandLine_Tier0
@@ -1272,6 +1273,7 @@ iris_scale
 keyvalueindex
 keyvaluesize
 kneeDir
+l^_[]
 lastframe
 legacysurfaceheader_t
 length
@@ -1292,7 +1294,6 @@ localnodenameindex
 localposeparamindex
 localseqindex
 lodOffset
-long^_[]
 lowerflexdesc
 lowerlidflexdesc
 lowertarget
@@ -1591,7 +1592,6 @@ opindex
 options
 origMeshVertID
 p4p4p8pHp4p8pH
-p8pH
 p8pHp4pl
 p8pHp4plpl
 pIndexBase
@@ -1691,6 +1691,7 @@ szindex2
 szlabelindex
 sznameindex
 sztypeindex
+t fff.
 t1ff.
 tL;{(}N
 tangentDataStart
@@ -1785,7 +1786,6 @@ typeinfo name for IMDLCache
 typeinfo name for IRefCounted
 typeinfo name for IStudioDataCache
 unknown
-unsigned short fff.
 unused
 unused0
 unused1

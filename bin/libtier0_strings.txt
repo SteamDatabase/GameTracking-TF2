@@ -6,8 +6,8 @@
        Sum (ms)         Avg Time/Frame (ms)     Avg Time/Call (ms)
       @@@
     00
-  %10.3f %6.2f      %10.3f %6.2f      %10.3f %6.2f   %6d %6.2f  %short%short
-  %10.3f %6.2f      %6d  %short%short
+  %10.3f %6.2f      %10.3f %6.2f      %10.3f %6.2f   %6d %6.2f  %s%s
+  %10.3f %6.2f      %6d  %s%s
   %52.52s%12d%12.3f%12.3f%7.2f%12.3f%7.2f%12.3f%12.3f%12.3f%12.3f
   ---------- ------      ------
   ---------- ------      ---------- ------      ---------- ------   ------ ------
@@ -27,30 +27,31 @@
 !Pointer
 !ffff.
 "0CVProfNode
-"CThread
+"7CThread
 "PointerIf
 "WorkerThread
 "fffff.
 #0UnlockReadEv
 #2LockForWriteEv
 #UnlockWriteEv
+$9CVProfile
 $UnlockWriteEv
 %.0f pct of time accounted for
-%8.4f / %8.4f:  %short
+%8.4f / %8.4f:  %s
 %GetNameEv
-%double frames sampled for %.2f seconds
+%d frames sampled for %.2f seconds
 %ffffff.
-%short (%double) : 
-%short test: multithread interleaved push/pop, %short
-%short test: multithread push, multithread pop, %short
-%short test: multithread push, sequential pop, %short
-%short test: multithread push, single thread pop, %short
-%short test: sequential push, multithread pop, %short
-%short test: single thread push, multithread pop, %short
-%short test: single thread push/pop, in order... 
-%short test: single thread push/pop, interleaved... 
-%short"%short"
-%short:%int
+%s (%d) : 
+%s test: multithread interleaved push/pop, %s
+%s test: multithread push, multithread pop, %s
+%s test: multithread push, sequential pop, %s
+%s test: multithread push, single thread pop, %s
+%s test: sequential push, multithread pop, %s
+%s test: single thread push, multithread pop, %s
+%s test: single thread push/pop, in order... 
+%s test: single thread push/pop, interleaved... 
+%s"%s"
+%s:%i
 %zu %zu %zu %zu %zu %zu %zu
 &1SetPriorityEi
 '21WaitForCreateCompleteEP12CThreadEvent
@@ -62,14 +63,14 @@ $UnlockWriteEv
 (32BWaitForThreadSuspendCooperativeEv
 (5IsThreadRunningEv
 (8SuspendCooperativeEv
-(CVProfile
+(9CVProfile
 (InitEv
 (TerminateEi
 (leepEj
 )0ThreadProcEPv
 )3GetThreadProcEv
 )OnExitEv
-*** VCR ASSERT FAILED: %short ***
+*** VCR ASSERT FAILED: %s ***
 ******** BEGIN VPROF REPORT ********
 ******** END VPROF REPORT ********
 *4CallEjjbPFjiPKP12CThreadEventijEP8CFunctor
@@ -103,18 +104,18 @@ $UnlockWriteEv
 /6ResumeEv
 /9DumpNodesEP10CVProfNodeib
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/__functional_base
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/__split_buffer
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/__tree
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/iterator
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/list
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/map
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/memory
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/new
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/type_traits
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/utility
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/vector
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tree
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/list
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/map
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector
 /FindNodeEP10CVProfNodePKc
 /ResetEv
 /ResetPeakEv
@@ -193,18 +194,23 @@ $UnlockWriteEv
 0Call
 10CVProfNodei
 11FreeNodes_REP10CVProfNode
+12CCommandLine
+12ICommandLine
 13AssertUseableEv
+13CWorkerThread
 14TermEv
 1ConColorMsgRK5ColorPKcz
 1EPFiPPviiEj
 1EPKPvi
 1HideBudgetGroupEib
+25CStackTop_CopyParentStack
 28RegisterNumBudgetGroupsChangedCallBackEPFvvE
 28ReleaseParentStackReferencesEv
 2CThread
 2EPFiPPviiEj
 2EPKPvi
 2Find
+30CStackTop_ReferenceParentStack
 33ResetCountersE14CounterGroup_t
 3GetNumBudgetGroupsEv
 3OrCreateCounterEPKc14CounterGroup_t
@@ -226,17 +232,21 @@ $UnlockWriteEv
 6SpinLockForWriteEj
 6VProf
 6dwClockSpeed
+7CThread
 7CThread11GetPriorityEv
 7CThreadSyncObjectntEv
 7CurrentProfile
 7llisecondsMultiplier
 8CreateSimpleThreadPFjPvES_Pmj
+9CVCRTrace
+9IMemAlloc
+9IVCRTrace
 :ffff.
-;;unsigned short)9
+;;t)9
 ;FDu[
 <^_[]
->CThread
-?CStdMemAlloc
+>7CThread
+?12CStdMemAlloc
 @@      
 @@@@     
 @P@pppppppppppppppppppp
@@ -367,7 +377,7 @@ $UnlockWriteEv
 @typeinfo name for CWorkerThread
 @vtable for __cxxabiv1::__class_type_info
 @vtable for __cxxabiv1::__si_class_type_info
-ASSERT: %short:%int: %short
+ASSERT: %s:%i: %s
 AbortOnAsserts
 Activate
 AddBudgetGroupNameEPKci
@@ -394,8 +404,7 @@ BudgetGroupNameEPKc
 BuildCmdLine
 CCallStackStorage::CCallStackStorage(int (*)(void**, int, int), unsigned int)
 CClockSpeedInit::Init()
-CCommandLine
-CCommandLine::AddArgument: exceeded %double parameters
+CCommandLine::AddArgument: exceeded %d parameters
 CCommandLine::AppendParm(char const*, char const*)
 CCommandLine::CheckParm(char const*, char const**) const
 CCommandLine::CreateCmdLine(char const*)
@@ -428,10 +437,8 @@ CSharedLibraryCache::CSharedLibraryItem::~CSharedLibraryItem()
 CSharedLibraryCache::GetCache()::Singleton
 CSharedLibraryCache::GetHandle(char const*)
 CSharedLibraryCache::~CSharedLibraryCache()
-CStackTop_CopyParentStack
 CStackTop_CopyParentStack::CStackTop_CopyParentStack(void* const*, int)
 CStackTop_CopyParentStack::~CStackTop_CopyParentStack()
-CStackTop_ReferenceParentStack
 CStackTop_ReferenceParentStack::CStackTop_ReferenceParentStack(void* const*, int)
 CStackTop_ReferenceParentStack::ReleaseParentStackReferences()
 CStackTop_ReferenceParentStack::~CStackTop_ReferenceParentStack()
@@ -488,7 +495,6 @@ CTSQueue<int, true>::Purge()
 CTSQueue<int, true>::Push(CTSQueue<int, true>::Node_t*)
 CTSQueue<int, true>::PushItem(int const&)
 CTSQueue<int, true>::~CTSQueue()
-CThread
 CThread::BWaitForThreadSuspendCooperative()
 CThread::CThread()
 CThread::Cleanup()
@@ -541,7 +547,6 @@ CThreadSyncObject::CThreadSyncObject()
 CThreadSyncObject::Wait(unsigned int)
 CThreadSyncObject::operator!() const
 CThreadSyncObject::~CThreadSyncObject()
-CVCRTrace
 CVCRTrace::Read(void*, int)
 CVCRTrace::ReadEvent()
 CVProfNode::EnterScope()
@@ -556,7 +561,6 @@ CVProfNode::Resume()
 CVProfNode::SetCurFrameTime(unsigned long)
 CVProfNode::s_iCurrentUniqueNodeID
 CVProfNode::~CVProfNode()
-CVProfile
 CVProfile::AddBudgetGroupName(char const*, int)
 CVProfile::BudgetGroupNameToBudgetGroupID(char const*)
 CVProfile::BudgetGroupNameToBudgetGroupID(char const*, int)
@@ -583,7 +587,6 @@ CVProfile::SumTimes(CVProfNode*, int)
 CVProfile::SumTimes(char const*, int)
 CVProfile::Term()
 CVProfile::~CVProfile()
-CWorkerThread
 CWorkerThread::BoostPriority()
 CWorkerThread::CWorkerThread()
 CWorkerThread::Call(unsigned int, unsigned int, bool, unsigned int (*)(int, CThreadEvent* const*, int, unsigned int), CFunctor*)
@@ -610,7 +613,7 @@ ConWarning(char const*, ...)
 ConWarningPKcz
 Corefile
 CreateSimpleThread(unsigned int (*)(void*), void*, unsigned long*, unsigned int)
-CreateSimpleThread: pthread_create failed. Someone not calling pthread_detach() or pthread_join. Ret:%double
+CreateSimpleThread: pthread_create failed. Someone not calling pthread_detach() or pthread_join. Ret:%d
 Current
 DSpewMessage
 DebugName
@@ -634,14 +637,14 @@ Dynamic_Light_Rendering
 Event
 ExitOnFatalAssert
 ExitScopeEv
-Expr: %short
+Expr: %s
 FAIL: !IsEmpty()
 FAIL: !Validate()
 FAIL: Not all items popped
 FailedNotifyFunc
 Fast Path Model Rendering
-Fatal assert failed: %short, line %d.  Application exiting.
-File: %short
+Fatal assert failed: %s, line %d.  Application exiting.
+File: %s
 FileAndLineFromAddress
 FileSystem
 FreeScratch
@@ -663,9 +666,6 @@ H__Znwm
 Handle
 HardwareDataBreakpoint
 HushAsserts
-ICommandLine
-IMemAlloc
-IVCRTrace
 Ignore
 Ignore All Asserts
 Ignore This File
@@ -677,7 +677,7 @@ IsAliveEv
 IsDebugBreakEnabled()::bResult
 L^_[]
 Light_Cache
-Line: %int
+Line: %i
 ListTests
 LockForReadEv
 LogPKcz
@@ -689,6 +689,9 @@ MemPageSize
 Message
 MsgPKcz
 Mutex7TryLockEv
+N11TSListTests8CListOpsE
+N11TSListTests8CTestOpsE
+N11TSListTests9CQueueOpsE
 Networking
 No samples
 NumCountersEv
@@ -701,10 +704,11 @@ Out of thread local storage!
 OutputFunc
 Overlays
 P0PP0
+PFjiPKP12CThreadEventijE
 POSIX_ASSERT_BACKTRACE
 PPp@`
 PagedPoolInfo
-Parameter file '%short' not found, skipping...
+Parameter file '%s' not found, skipping...
 Particle/Effect_Rendering
 PauseEv
 Peak %.2f ms frame
@@ -747,18 +751,15 @@ Static_Prop_Rendering
 StopEi
 SumTimesEP
 Swap_Buffers
-TSList cannot hold more that %double nodes
-TSListTests::CListOps
+TSList cannot hold more that %d nodes
 TSListTests::CListOps::IsEmpty()
 TSListTests::CListOps::Pop(int*)
 TSListTests::CListOps::Push(int)
 TSListTests::CListOps::Validate()
-TSListTests::CQueueOps
 TSListTests::CQueueOps::IsEmpty()
 TSListTests::CQueueOps::Pop(int*)
 TSListTests::CQueueOps::Push(int)
 TSListTests::CQueueOps::Validate()
-TSListTests::CTestOps
 TSListTests::MAX_THREADS
 TSListTests::MTPushMTPop(bool)
 TSListTests::MTPushPopPopInterleaved(bool)
@@ -791,13 +792,13 @@ TSListTests::g_nThreads
 TSListTests::g_pListType
 TSListTests::g_pTestBuckets
 TSListTests::g_pTestOps
-Test bucket %double has an invalid value %double
-Testing %double threads:
+Test bucket %d has an invalid value %d
+Testing %d threads:
 Tests done, purging test memory...
 Texture_Cache
 Thread failed to initialize
 Thread failed to respond, probably exited
-Thread(0x%long long/0x%long long)
+Thread(0x%x/0x%x)
 ThreadProcConvert(void*)
 ThreadRWLock1
 ThreadS
@@ -816,12 +817,12 @@ VCR_End()
 VCR_EnterCriticalSection(void*)
 VCR_Error(char const*, ...)
 VCR_Event(VCREvent)
-VCR_GenericPlayback( %short ) - data size in file (%double) different than desired (%double)
-VCR_GenericPlayback( %short ) - event name does not match '%short'
-VCR_GenericPlayback( %short ) - generic data too long (greater than maxLen: %double)
+VCR_GenericPlayback( %s ) - data size in file (%d) different than desired (%d)
+VCR_GenericPlayback( %s ) - event name does not match '%s'
+VCR_GenericPlayback( %s ) - generic data too long (greater than maxLen: %d)
 VCR_GenericPlayback(char const*, void*, int, bool)
-VCR_GenericRecord( %short ): nameLen too long (%double)
-VCR_GenericRecord( %short ): not recording signed char VCR file
+VCR_GenericRecord( %s ): nameLen too long (%d)
+VCR_GenericRecord( %s ): not recording a VCR file
 VCR_GenericRecord(char const*, void const*, int)
 VCR_GenericString(char const*, char const*)
 VCR_GenericValue(char const*, void*, int)
@@ -851,7 +852,7 @@ VCR_Hook_Time(long*)
 VCR_Hook_recv(int, char*, int, int)
 VCR_Hook_recvfrom(int, char*, int, int, sockaddr*, int*)
 VCR_Hook_send(int, char const*, int, int)
-VCR_Playback( %short ): not playing back signed char VCR file
+VCR_Playback( %s ): not playing back a VCR file
 VCR_SetEnabled(int)
 VCR_Start(char const*, bool, IVCRHelpers*)
 VCR_SyncToken(char const*)
@@ -870,8 +871,8 @@ WorkerEjjbP8CFunctor
 World Rendering
 [ func+child   func ]     Count
 [ func+child   func ]  [ func+child   func ]  [ func+child   func ]  Count   Peak
-[1;31m%short
-[1;32m:%int:
+[1;31m%s
+[1;32m:%i:
 [1;33mASSERT:
 \^_[]
 ^X9N\
@@ -1202,7 +1203,7 @@ allStack
 arning
 astVerifyHardwareKey
 bool std::__1::__insertion_sort_incomplete<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
-command line too long, %int max
+command line too long, %i max
 console
 crosecondsMultiplier
 ctime
@@ -1213,7 +1214,7 @@ dyld_stub_binder
 eateSimpleThread
 emoryInformation
 etNameEPKc
-fatalassert_%s_%double
+fatalassert_%s_%d
 faultSpewFunc
 ffff.
 fffff.
@@ -1245,6 +1246,7 @@ impleLog
 ineIu%
 inidumpUserStreamInfo
 itPME
+l^_[]
 lareCurrentThreadIsMainThread
 leaseThreadHandle
 len == (unsigned char)strlen(pToken)
@@ -1254,7 +1256,6 @@ llAssertFailedNotifyFunc
 llAssertsDisabled
 loatTime
 localtime
-long^_[]
 lorSpewMessage
 memcmp(pToken, test, len) == 0
 memstats
@@ -1317,6 +1318,8 @@ std::__1::map<CVProfNode*, double, std::__1::less<CVProfNode*>, std::__1::alloca
 std::__1::map<char const*, unsigned long, std::__1::less<char const*>, std::__1::allocator<std::__1::pair<char const* const, unsigned long> > >::~map()
 std::__1::vector<TimeSums_t, std::__1::allocator<TimeSums_t> >::~vector()
 std::terminate()
+t	9>u
+t	9Zp
 tackToolsNotify_LoadedLibrary
 tartEj
 tchAndWriteMiniDump
@@ -1349,11 +1352,8 @@ typeinfo name for TSListTests::CQueueOps
 typeinfo name for TSListTests::CTestOps
 uEfff.
 unknown
-unsigned int (*)(int, CThreadEvent* const*, int, unsigned int)
 unsigned int std::__1::__sort4<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
 unsigned int std::__1::__sort5<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, TimeSums_t*, TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
-unsigned short	9>u
-unsigned short	9Zp
 utdownPME
 void std::__1::__insertion_sort_3<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))
 void std::__1::__sort<bool (*&)(TimeSums_t const&, TimeSums_t const&), TimeSums_t*>(TimeSums_t*, TimeSums_t*, bool (*&)(TimeSums_t const&, TimeSums_t const&))

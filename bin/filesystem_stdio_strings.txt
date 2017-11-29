@@ -1,11 +1,11 @@
-	;L$@short
+	;L$@s
 	w4A1
       
   0 0
   00  0 
   00  @0@
-  Total Anonymous Claimed: %double
-  Total Anonymous Unclaimed: %double
+  Total Anonymous Claimed: %d
+  Total Anonymous Unclaimed: %d
  (invpk)
  (vpk)
  00  P0 0  0
@@ -15,12 +15,12 @@
  ReadToken overflow
  byte digest to 
  bytes
- failed to dlopen %short error=%short
- fnumber=%double ofs=0x%long long sz=%double
- is not signed char valid key length
+ failed to dlopen %s error=%s
+ fnumber=%d ofs=0x%x sz=%d
+ is not a valid key length
  operation failed with error 
 " not used
-"%short" "%short" %short%short
+"%s" "%s" %s%s
 #, Path, FileName, (PackFileID, PackFileNumber), FileLen, FileFraction
 #CreateInterface
 #base
@@ -36,24 +36,24 @@ $WIN32
 $WINDOWS
 $X360
 $^_[]
+%d %s %s ( %d, %d ) %d %d%s%s
+%d Active Jobs
+%d Queued Jobs
+%d Total Jobs
 %d_%d_%d_%d_%d.tmp
-%double %short %short ( %double, %double ) %double %double%short%short
-%double Active Jobs
-%double Queued Jobs
-%double Total Jobs
+%s%c%s
+%s%s%s crc=0x%x metadatasz=%d
+%s, %s, %s
 %s.vpk
+%s/%s
+%s/bin/%s
 %s_%03d.vpk
 %s_dir.vpk
-%short%char%short
-%short%short%short crc=0x%long long metadatasz=%double
-%short, %short, %short
-%short/%short
-%short/bin/%short
 &ffff.
 ', stored '
 ', trying to retrieve '
-(%short) 
-(*%short*), 
+(%s) 
+(*%s*), 
 (;D$@r
 (;t$@r
 (Late) 
@@ -68,10 +68,10 @@ $^_[]
 ---- FINISH BEFORE GAMEPLAY ( NORMAL PRIORITY )----
 ---- FINISH DURING PRELOAD ( HIGH PRIORITY )----
 ---------------
----FS%short:  %short %short (%.3f)
----FS%short:  close %short %p %int (%.3f)
----FS%short:  read %short %int %p (%.3f)
----FS%short:  write %short %int %p
+---FS%s:  %s %s (%.3f)
+---FS%s:  close %s %p %i (%.3f)
+---FS%s:  read %s %i %p (%.3f)
+---FS%s:  write %s %i %p
 -allowdebug
 -fs_log
 -fs_logbins
@@ -113,17 +113,17 @@ $^_[]
 .vpk/
 .zip/
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/__split_buffer
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/deque
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/iterator
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/memory
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/new
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/string
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/type_traits
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/typeinfo
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/utility
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/vector
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/deque
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iterator
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/typeinfo
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector
 /Users/Henry/perforce/workbook/main/src/external/crypto++-5.6.3/
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(KeyValues.o)
@@ -281,41 +281,111 @@ $^_[]
 0@000 
 0@@@0@0
 0@P@@@P
+10CStdioFile
+10ConCommand
+10IAppSystem
+11CFileHandle
+11CFileStream
+11CRefCountedI20CRefCountServiceBaseILb0E6CRefMTEE
+11CRefCountedI20CRefCountServiceBaseILb1E6CRefMTEE
+11IFileSystem
+11IRefCounted
+12CEmptyConVar
+12CPackedStore
+12CRefCounted1I11IRefCounted20CRefCountServiceBaseILb1E6CRefMTEE
+12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEE
+12CZipPackFile
+12IWriteStream
 12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+13CBufferStream
+13CFileAsyncJob
+13CFileTracker2
+13IQueuedLoader
+14CBaseAppSystemI11IFileSystemE
+14CBaseAppSystemI13IQueuedLoaderE
+14CDummyProgress
+14ConCommandBase
+15CBaseFileSystem
+15CPackFileHandle
+15CTier0AppSystemI11IFileSystemE
+15CTier0AppSystemI13IQueuedLoaderE
+15CTier1AppSystemI11IFileSystemLi0EE
+15CTier1AppSystemI13IQueuedLoaderLi0EE
+15CTier2AppSystemI13IQueuedLoaderLi0EE
+15IBaseFileSystem
+15ILoaderProgress
+16CDefaultAccessor
+16IResourcePreload
+17AsyncOpenedFile_t
+17CFileAsyncReadJob
+17CFileSystem_Stdio
+17CMemoryFileHandle
+18CFileAsyncWriteJob
+18CMemoryFileBacking
+18CStdFilesystemFile
+18CUtlCharConversion
+18CZipPackFileHandle
+18FileAsyncRequest_t
+19CUtlNoEscConversion
 1fff.
 1fffff.
+20CPackedStoreRefCount
+20CRefCountServiceBaseILb0E6CRefMTE
+20CRefCountServiceBaseILb1E6CRefMTE
+21CFileAsyncFileSizeJob
+21CUtlCStringConversion
 21__basic_string_commonILb1EEE
+22CFileAsyncWriteFileJob
+22CLZMAZipPackFileHandle
+23CFileAsyncAppendFileJob
+23IConCommandBaseAccessor
+25CResourcePreloadAnonymous
+25IThreadedFileMD5Processor
+34FileListToUnloadForWhitelistChange
 3JL3O
 3ZH3_
+4CJob
+4CZip
+4IZip
+4fff.
+4p8pH
 4p8pHp4p4p
 513CQueuedLoader
+6ConVar
+6fffff.
+7IConVar
+8CFunctor
 8fff.
+9CFunctor4IPFvP9FileJob_tPFvPvS2_PKvi13LoaderError_tES2_S2_ES1_S7_S2_S2_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
+9CFunctor4IPFvP9FileJob_tPvi13LoaderError_tES1_S2_iS3_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
+9CPackFile
 9D$$rv
 9D$4rz
 9F$r*
+9IFileList
 9LZMA
 9LZMAt
 9LZMAu
-9Wp}double
+9Wp}d
 9^ }I
 9ffffff.
 : Missing required parameter '
-: this object doesn'unsigned short support multiple channels
-: this object doesn'unsigned short support resynchronization
+: this object doesn't support multiple channels
+: this object doesn't support resynchronization
 :done
 :error
 :ffff.
 ;48tD
-;D$ unsigned short
+;D$ t
 ;D$hu
 ;T$<sd
 ;r(t.
-;t$(wchar_t
+;t$(w
 ;t$8r
 ;zTt7
 ;zTt;
-;|$(short<
-;|$<unsigned short
+;|$(s<
+;|$<t
 <^_[]
 ?)T$$+|$$
 ?LZMA
@@ -354,6 +424,7 @@ $^_[]
 @_DoNewAssertDialog
 @_Error
 @_KeyValuesSystem
+@_Msg
 @_Plat_FloatTime
 @_Plat_GetCommandLine
 @_Plat_IsInDebugSession
@@ -407,7 +478,6 @@ $^_[]
 @___toupper
 @___udivdi3
 @___umoddi3
-@__float128 short::*
 @_alphasort$INODE64
 @_atof
 @_atoi
@@ -547,7 +617,6 @@ Anonymous
 ArraySink: missing OutputBuffer argument
 Assertion Failed: !m_bNeedsSort
 Async I/O disabled from command line
-AsyncOpenedFile_t
 AsyncOpenedFile_t::~AsyncOpenedFile_t()
 AsyncWriteJobFilter(CJob*)
 BASE_PATH
@@ -555,15 +624,15 @@ BDaHFC
 BER decode error
 BRBRBRBRBRDRBRDp
 BRBTD`7AUC`7AUC`0AUBRB`1AUARB`
-BRBVB`E`FHp$p
+BRBVB`1E`FHp$p
 BRDp,TDRBYAZCp
 B]M]A\BXAR0<SCWESBSMSCWMSCWD`
-Bad or missing zip file, failed to open '%short'
+Bad or missing zip file, failed to open '%s'
 BaseFileSystem()
 Bffffff.
 BitBucket
-BufferedTransformation: this object can'unsigned short be reinitialized
-BufferedTransformation: this object doesn'unsigned short allow input
+BufferedTransformation: this object can't be reinitialized
+BufferedTransformation: this object doesn't allow input
 BufferedTransformation: this object is not attachable
 BuiltDebug
 C;^0|
@@ -573,10 +642,7 @@ CAsyncOpenedFiles::FindOrAdd(char const*)
 CAsyncOpenedFiles::Get(FSAsyncFile_t__*)
 CAsyncOpenedFiles::Release(FSAsyncFile_t__*)
 CAsyncOpenedFiles::~CAsyncOpenedFiles()
-CBaseAppSystem<IFileSystem>
-CBaseAppSystem<IQueuedLoader>
 CBaseAppSystem<IQueuedLoader>::QueryInterface(char const*)
-CBaseFileSystem
 CBaseFileSystem::AddFilesToFileCache(void*, char const**, int, char const*)
 CBaseFileSystem::AddLoggingFunc(void (*)(char const*, char const*))
 CBaseFileSystem::AddMapPackFile(char const*, char const*, SearchPathAdd_t)
@@ -768,7 +834,6 @@ CBaseFileSystem::m_DVDMode
 CBaseFileSystem::m_ExcludePaths
 CBaseFileSystem::m_GamePathID
 CBaseFileSystem::~CBaseFileSystem()
-CBufferStream
 CBufferStream::Put(void const*, int)
 CBufferStream::Tell()
 CByteswap::SwapFieldToTargetEndian(void*, void*, typedescription_t*)
@@ -783,56 +848,46 @@ CCompiledKeyValuesReader::Instance(char const*)
 CCompiledKeyValuesReader::InstanceInPlace(KeyValues&, char const*)
 CCompiledKeyValuesReader::LoadFile(char const*)
 CCompiledKeyValuesReader::LookupKeyValuesRootKeyName(char const*, char*, unsigned long)
-CCrypto::RSASign: VerifyMessage threw exception %short (%double)
+CCrypto::RSASign: VerifyMessage threw exception %s (%d)
 CCrypto::RSAVerifySignature
 CCrypto::RSAVerifySignatureSHA256(unsigned char const*, unsigned int, unsigned char const*, unsigned int, unsigned char const*, unsigned int)
 CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
 CDefOps<int>::LessFunc(int const&, int const&)
 CDefOps<unsigned long long>::LessFunc(unsigned long long const&, unsigned long long const&)
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CDummyProgress
 CDummyProgress::BeginProgress()
 CDummyProgress::EndProgress()
 CDummyProgress::UpdateProgress(float)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CFileAsyncAppendFileJob
 CFileAsyncAppendFileJob::CFileAsyncAppendFileJob(char const*, char const*)
 CFileAsyncAppendFileJob::Describe()
 CFileAsyncAppendFileJob::DoExecute()
 CFileAsyncAppendFileJob::IsWrite() const
 CFileAsyncAppendFileJob::~CFileAsyncAppendFileJob()
-CFileAsyncFileSizeJob
 CFileAsyncFileSizeJob::DoExecute()
 CFileAsyncFileSizeJob::~CFileAsyncFileSizeJob()
-CFileAsyncJob
 CFileAsyncJob::GetResult(void**, int*)
 CFileAsyncJob::IsWrite() const
 CFileAsyncJob::~CFileAsyncJob()
-CFileAsyncReadJob
 CFileAsyncReadJob::CFileAsyncReadJob(FileAsyncRequest_t const&, CBaseFileSystem*)
 CFileAsyncReadJob::Describe()
 CFileAsyncReadJob::DoExecute()
 CFileAsyncReadJob::GetResult(void**, int*)
 CFileAsyncReadJob::InterceptCallback(FileAsyncRequest_t const&, int, FSAsyncStatus_t)
 CFileAsyncReadJob::~CFileAsyncReadJob()
-CFileAsyncWriteFileJob
 CFileAsyncWriteFileJob::DoCleanup()
 CFileAsyncWriteFileJob::~CFileAsyncWriteFileJob()
-CFileAsyncWriteJob
 CFileAsyncWriteJob::CFileAsyncWriteJob(char const*, void const*, unsigned int, bool, bool)
 CFileAsyncWriteJob::Describe()
 CFileAsyncWriteJob::DoCleanup()
 CFileAsyncWriteJob::DoExecute()
 CFileAsyncWriteJob::IsWrite() const
 CFileAsyncWriteJob::~CFileAsyncWriteJob()
-CFileHandle
 CFileHandle::CFileHandle(CBaseFileSystem*)
 CFileHandle::EndOfFile()
 CFileHandle::GetSectorSize()
@@ -842,10 +897,8 @@ CFileHandle::Size()
 CFileHandle::~CFileHandle()
 CFileOpenInfo::HandleFileCRCTracking(char const*)
 CFileOpenInfo::SetAbsolutePath(char const*, ...)
-CFileStream
 CFileStream::Put(void const*, int)
 CFileStream::Tell()
-CFileSystem_Stdio
 CFileSystem_Stdio::AllocOptimalReadBuffer(void*, unsigned int, unsigned int)
 CFileSystem_Stdio::CancelWaitForResources(int)
 CFileSystem_Stdio::FS_FindClose(void*)
@@ -878,7 +931,6 @@ CFileSystem_Stdio::MountSteamContent(int)
 CFileSystem_Stdio::QueryInterface(char const*)
 CFileSystem_Stdio::WaitForResources(char const*)
 CFileSystem_Stdio::~CFileSystem_Stdio()
-CFileTracker2
 CFileTracker2::AddFileHashForVPKFile(int, int, int, MD5Value_t&, CPackedStoreFileHandle&)
 CFileTracker2::BlockUntilMD5RequestComplete(int, MD5Value_t*)
 CFileTracker2::CFileTracker2(CBaseFileSystem*)
@@ -898,15 +950,11 @@ CFileTracker2::ShutdownAsync()
 CFileTracker2::SubmitThreadedMD5Request(unsigned char*, int, int, int, int)
 CFileTracker2::ThreadedProcessMD5Requests()
 CFileTracker2::~CFileTracker2()
-CFunctor
-CFunctor4<void (*)(FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*), FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
 CFunctor4<void (*)(FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*), FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
 CFunctor4<void (*)(FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*), FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor4()
-CFunctor4<void (*)(FileJob_t*, void*, int, LoaderError_t), FileJob_t*, void*, int, LoaderError_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >
 CFunctor4<void (*)(FileJob_t*, void*, int, LoaderError_t), FileJob_t*, void*, int, LoaderError_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::operator()()
 CFunctor4<void (*)(FileJob_t*, void*, int, LoaderError_t), FileJob_t*, void*, int, LoaderError_t, CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> > >::~CFunctor4()
 CGlobalInitConstructor::CGlobalInitConstructor()
-CJob
 CJob::CJob(JobPriority_t)
 CJob::Describe()
 CJob::DoAbort(bool)
@@ -923,7 +971,6 @@ CLZMAStream::InitZIPHeader(unsigned int, unsigned int)
 CLZMAStream::Read(unsigned char*, unsigned int, unsigned char*, unsigned int, unsigned int&, unsigned int&)
 CLZMAStream::TryParseHeader(unsigned char*, unsigned int, unsigned int&)
 CLZMAStream::~CLZMAStream()
-CLZMAZipPackFileHandle
 CLZMAZipPackFileHandle::CLZMAZipPackFileHandle(CZipPackFile*, long long, unsigned int, unsigned int, unsigned int, unsigned int)
 CLZMAZipPackFileHandle::FillReadBuffer()
 CLZMAZipPackFileHandle::Read(void*, int, int)
@@ -932,17 +979,12 @@ CLZMAZipPackFileHandle::Seek(int, int)
 CLZMAZipPackFileHandle::Size()
 CLZMAZipPackFileHandle::Tell()
 CLZMAZipPackFileHandle::~CLZMAZipPackFileHandle()
-CMemoryFileBacking
 CMemoryFileBacking::~CMemoryFileBacking()
-CMemoryFileHandle
 CMemoryFileHandle::~CMemoryFileHandle()
 COLORCORRECTION_VERSION_1
-CPackFile
 CPackFile::DiscardPreloadData()
 CPackFile::SetupPreloadData()
 CPackFile::~CPackFile()
-CPackFileHandle
-CPackedStore
 CPackedStore::BTestDirectoryHash()
 CPackedStore::BTestMasterChunkHash()
 CPackedStore::BuildFindFirstCache()
@@ -972,9 +1014,8 @@ CPackedStoreReadCache::CPackedStoreReadCache(IBaseFileSystem*)
 CPackedStoreReadCache::CheckMd5Result(CachedVPKRead_t&)
 CPackedStoreReadCache::FindBufferToUse()
 CPackedStoreReadCache::ReadCacheLine(FileHandleTracker_t&, CachedVPKRead_t&)
-CPackedStoreRefCount
 CPackedStoreRefCount::~CPackedStoreRefCount()
-CQueuedLoader: Unclaimed I/O memory: total:%double anonymous:%double
+CQueuedLoader: Unclaimed I/O memory: total:%d anonymous:%d
 CQueuedLoader::AddJob(LoaderJob_t const*)
 CQueuedLoader::AddMapResource(char const*)
 CQueuedLoader::AddResourceToTable(char const*)
@@ -1015,27 +1056,18 @@ CQueuedLoader::~CQueuedLoader()
 CRC32_Final(unsigned int*)
 CRC32_Init(unsigned int*)
 CRC32_ProcessBuffer(unsigned int*, void const*, int)
-CRefCountServiceBase<false, CRefMT>
 CRefCountServiceBase<false, CRefMT>::OnFinalRelease()
-CRefCountServiceBase<true, CRefMT>
 CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
-CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
-CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >
 CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::Release()
-CRefCounted<CRefCountServiceBase<false, CRefMT> >
-CRefCounted<CRefCountServiceBase<true, CRefMT> >
-CResourcePreloadAnonymous
 CResourcePreloadAnonymous::CreateResource(char const*)
 CResourcePreloadAnonymous::OnEndMapLoading(bool)
 CResourcePreloadAnonymous::PurgeAll()
 CResourcePreloadAnonymous::PurgeUnreferencedResources()
 CRunTimeKeyValuesStringTable::ReadStringTable(int, CUtlBuffer&)
-CStdFilesystemFile
 CStdFilesystemFile::FS_GetSectorSize()
-CStdioFile
 CStdioFile::FS_fclose()
 CStdioFile::FS_feof()
 CStdioFile::FS_ferror()
@@ -1091,13 +1123,8 @@ CThreadSpinRWLock::SpinLockForWrite(unsigned int)
 CThreadSpinRWLock::UnlockRead()
 CThreadSpinRWLock::UnlockWrite()
 CThreadSyncObject::~CThreadSyncObject()
-CTier0AppSystem<IFileSystem>
-CTier0AppSystem<IQueuedLoader>
-CTier1AppSystem<IFileSystem, 0>
 CTier1AppSystem<IFileSystem, 0>::Connect(void* (*)(char const*, int*))
 CTier1AppSystem<IFileSystem, 0>::Disconnect()
-CTier1AppSystem<IQueuedLoader, 0>
-CTier2AppSystem<IQueuedLoader, 0>
 CTier2AppSystem<IQueuedLoader, 0>::Connect(void* (*)(char const*, int*))
 CTier2AppSystem<IQueuedLoader, 0>::Disconnect()
 CUtlBlockMemory overflow!
@@ -1131,10 +1158,8 @@ CUtlBuffer::SeekPut(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::SetBufferType(bool, bool)
 CUtlBuffer::SetExternalBuffer(void*, int, int, int)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlDict<FileJob_t*, int>::~CUtlDict()
 CUtlDict<int, int>::~CUtlDict()
@@ -1181,7 +1206,6 @@ CUtlMemory<UtlRBTreeNode_t<CUtlMap<int, CUtlStringList*, unsigned short>::Node_t
 CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long long, CThreadMutex*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CachedVPKRead_t, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CCompiledKeyValuesReader::FileInfo_t, unsigned short, bool (*)(CCompiledKeyValuesReader::FileInfo_t const&, CCompiledKeyValuesReader::FileInfo_t const&), CUtlMemory<UtlRBTreeNode_t<CCompiledKeyValuesReader::FileInfo_t, unsigned short>, unsigned short> >::Find(CCompiledKeyValuesReader::FileInfo_t const&) const
@@ -1440,7 +1464,6 @@ CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
 CWin32File::CreateTempFile(CUtlString&, CUtlString&)
 CWin32File::CreateTempFile(CUtlString&, CUtlString&)::counter
-CZip
 CZip::ActivateByteSwapping(bool)
 CZip::AddBufferToZip(char const*, void*, int, bool, IZip::eCompressionType)
 CZip::AddFileToZip(char const*, char const*, IZip::eCompressionType)
@@ -1476,7 +1499,6 @@ CZipFile::RemoveFileFromZip(char const*)
 CZipFile::SaveDirectory(IWriteStream&)
 CZipFile::SaveToBuffer(CUtlBuffer&)
 CZipFile::~CZipFile()
-CZipPackFile
 CZipPackFile::CZipPackFile(CBaseFileSystem*, void*)
 CZipPackFile::ContainsFile(char const*)
 CZipPackFile::DiscardPreloadData()
@@ -1489,7 +1511,6 @@ CZipPackFile::Prepare(long long, long long)
 CZipPackFile::ReadFromPack(int, void*, int, int, long long)
 CZipPackFile::SetupPreloadData()
 CZipPackFile::~CZipPackFile()
-CZipPackFileHandle
 CZipPackFileHandle::AbsoluteBaseOffset()
 CZipPackFileHandle::GetSectorSize()
 CZipPackFileHandle::Read(void*, int, int)
@@ -1503,15 +1524,13 @@ Calling AddBufferToZip with unknown compression type
 CaselessStringLessThan(char const* const&, char const* const&)
 Claimed
 Clone() is not implemented yet.
-Closing pack file with %double open files!
-ConCommand
+Closing pack file with %d open files!
 ConCommand::AutoCompleteSuggest(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
 ConCommand::CanAutoComplete()
 ConCommand::ConCommand(char const*, void (*)(CCommand const&), char const*, int, int (*)(char const*, char (*) [64]))
 ConCommand::Dispatch(CCommand const&)
 ConCommand::IsCommand() const
 ConCommand::~ConCommand()
-ConCommandBase
 ConCommandBase::AddFlags(int)
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
@@ -1522,7 +1541,6 @@ ConCommandBase::IsFlagSet(int) const
 ConCommandBase::IsRegistered() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -1546,8 +1564,8 @@ ConVar_Register(int, IConCommandBaseAccessor*)
 ConVar_Unregister()
 ConnectTier1Libraries(void* (**)(char const*, int*), int)
 ConnectTier2Libraries(void* (**)(char const*, int*), int)
-Corruption detected in %short
-Couldn'unsigned short open .bsp %short for embedded pack file check
+Corruption detected in %s
+Couldn't open .bsp %s for embedded pack file check
 CreateHelper_t::Less(CreateHelper_t const&, CreateHelper_t const&)
 CryptoMaterial: this object contains invalid values
 CryptoMaterial: this object does not support loading
@@ -1557,17 +1575,13 @@ CryptoPP::AAD_CHANNEL
 CryptoPP::ASN1::iso_us()
 CryptoPP::ASN1::pkcs()
 CryptoPP::ASN1::rsaEncryption()
-CryptoPP::ASN1CryptoMaterial<CryptoPP::PublicKey>
 CryptoPP::ASN1CryptoMaterial<CryptoPP::PublicKey>::Load(CryptoPP::BufferedTransformation&)
 CryptoPP::ASN1CryptoMaterial<CryptoPP::PublicKey>::Save(CryptoPP::BufferedTransformation&) const
 CryptoPP::ASN1CryptoMaterial<CryptoPP::PublicKey>::~ASN1CryptoMaterial()
-CryptoPP::ASN1Object
 CryptoPP::ASN1Object::BEREncode(CryptoPP::BufferedTransformation&) const
 CryptoPP::ASN1Object::~ASN1Object()
-CryptoPP::AbstractEuclideanDomain<CryptoPP::Integer>
 CryptoPP::AbstractEuclideanDomain<CryptoPP::Integer>::Gcd(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractEuclideanDomain<CryptoPP::Integer>::~AbstractEuclideanDomain()
-CryptoPP::AbstractGroup<CryptoPP::Integer>
 CryptoPP::AbstractGroup<CryptoPP::Integer>::Accumulate(CryptoPP::Integer&, CryptoPP::Integer const&) const
 CryptoPP::AbstractGroup<CryptoPP::Integer>::CascadeScalarMultiply(CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractGroup<CryptoPP::Integer>::Double(CryptoPP::Integer const&) const
@@ -1576,12 +1590,10 @@ CryptoPP::AbstractGroup<CryptoPP::Integer>::Reduce(CryptoPP::Integer&, CryptoPP:
 CryptoPP::AbstractGroup<CryptoPP::Integer>::ScalarMultiply(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractGroup<CryptoPP::Integer>::SimultaneousMultiply(CryptoPP::Integer*, CryptoPP::Integer const&, CryptoPP::Integer const*, unsigned int) const
 CryptoPP::AbstractGroup<CryptoPP::Integer>::Subtract(CryptoPP::Integer const&, CryptoPP::Integer const&) const
-CryptoPP::AbstractRing<CryptoPP::Integer>
 CryptoPP::AbstractRing<CryptoPP::Integer>::CascadeExponentiate(CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractRing<CryptoPP::Integer>::Divide(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractRing<CryptoPP::Integer>::Exponentiate(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroup() const
-CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroupT
 CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroupT::Accumulate(CryptoPP::Integer&, CryptoPP::Integer const&) const
 CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroupT::Add(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroupT::CascadeScalarMultiply(CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&) const
@@ -1596,62 +1608,47 @@ CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroupT::Subtract(Crypto
 CryptoPP::AbstractRing<CryptoPP::Integer>::MultiplicativeGroupT::~MultiplicativeGroupT()
 CryptoPP::AbstractRing<CryptoPP::Integer>::SimultaneousExponentiate(CryptoPP::Integer*, CryptoPP::Integer const&, CryptoPP::Integer const*, unsigned int) const
 CryptoPP::AbstractRing<CryptoPP::Integer>::Square(CryptoPP::Integer const&) const
-CryptoPP::Algorithm
 CryptoPP::Algorithm::Algorithm(bool)
 CryptoPP::Algorithm::AlgorithmName() const
 CryptoPP::Algorithm::~Algorithm()
-CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256>
 CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256>::AlgorithmName() const
-CryptoPP::AlgorithmImpl<CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >, CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> > >
 CryptoPP::AlgorithmImpl<CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >, CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> > >::AlgorithmName() const
-CryptoPP::AlgorithmImpl<CryptoPP::TF_VerifierBase, CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int> >
 CryptoPP::AlgorithmImpl<CryptoPP::TF_VerifierBase, CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int> >::AlgorithmName() const
-CryptoPP::AlgorithmParameters
 CryptoPP::AlgorithmParameters CryptoPP::MakeParameters<CryptoPP::ConstByteArrayParameter>(char const*, CryptoPP::ConstByteArrayParameter const&, bool)
 CryptoPP::AlgorithmParameters& CryptoPP::AlgorithmParameters::operator()<CryptoPP::ConstByteArrayParameter>(char const*, CryptoPP::ConstByteArrayParameter const&, bool)
 CryptoPP::AlgorithmParameters::AlgorithmParameters()
 CryptoPP::AlgorithmParameters::AlgorithmParameters(CryptoPP::AlgorithmParameters const&)
 CryptoPP::AlgorithmParameters::GetVoidValue(char const*, std::type_info const&, void*) const
 CryptoPP::AlgorithmParameters::~AlgorithmParameters()
-CryptoPP::AlgorithmParametersBase
 CryptoPP::AlgorithmParametersBase::GetVoidValue(char const*, std::type_info const&, void*) const
-CryptoPP::AlgorithmParametersBase::ParameterNotUsed
 CryptoPP::AlgorithmParametersBase::ParameterNotUsed::ParameterNotUsed(char const*)
 CryptoPP::AlgorithmParametersBase::ParameterNotUsed::~ParameterNotUsed()
 CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase()
-CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>
 CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::AlgorithmParametersTemplate(char const*, CryptoPP::ConstByteArrayParameter const&, bool)
 CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::AssignValue(char const*, std::type_info const&, void*) const
 CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::~AlgorithmParametersTemplate()
 CryptoPP::AllocatorBase<unsigned int>::CheckSize(unsigned long)
 CryptoPP::AlmostInverse(unsigned int*, unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
-CryptoPP::ArraySink
 CryptoPP::ArraySink::CreatePutSpace(unsigned long&)
 CryptoPP::ArraySink::IsolatedInitialize(CryptoPP::NameValuePairs const&)
 CryptoPP::ArraySink::Put2(unsigned char const*, unsigned long, int, bool)
 CryptoPP::ArraySink::~ArraySink()
 CryptoPP::AssignFromHelperClass<CryptoPP::RSAFunction, CryptoPP::RSAFunction>& CryptoPP::AssignFromHelperClass<CryptoPP::RSAFunction, CryptoPP::RSAFunction>::operator()<CryptoPP::Integer>(char const*, void (CryptoPP::RSAFunction::*)(CryptoPP::Integer const&))
 CryptoPP::AssignIntToInteger(std::type_info const&, void*, void const*)
-CryptoPP::AsymmetricAlgorithm
 CryptoPP::AsymmetricMultiply(unsigned int*, unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
-CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>
 CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::CanIncorporateEntropy() const
 CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::GenerateIntoBufferedTransformation(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long long)
 CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::IncorporateEntropy(unsigned char const*, unsigned long)
 CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::Reseed(bool, unsigned char const*, unsigned long)
 CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::Reseed(unsigned char const*, unsigned long, unsigned char const*, unsigned char const*)
 CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael>::~AutoSeededX917RNG()
-CryptoPP::AutoSignaling<CryptoPP::BufferedTransformation>
 CryptoPP::AutoSignaling<CryptoPP::BufferedTransformation>::GetAutoSignalPropagation() const
 CryptoPP::AutoSignaling<CryptoPP::BufferedTransformation>::SetAutoSignalPropagation(int)
-CryptoPP::AutoSignaling<CryptoPP::InputRejecting<CryptoPP::BufferedTransformation> >
 CryptoPP::AutoSignaling<CryptoPP::InputRejecting<CryptoPP::BufferedTransformation> >::GetAutoSignalPropagation() const
 CryptoPP::AutoSignaling<CryptoPP::InputRejecting<CryptoPP::BufferedTransformation> >::SetAutoSignalPropagation(int)
-CryptoPP::BERDecodeErr
 CryptoPP::BERDecodeErr::~BERDecodeErr()
 CryptoPP::BERDecodeError()
 CryptoPP::BERDecodeNull(CryptoPP::BufferedTransformation&)
-CryptoPP::BERGeneralDecoder
 CryptoPP::BERGeneralDecoder::BERGeneralDecoder(CryptoPP::BufferedTransformation&, unsigned char)
 CryptoPP::BERGeneralDecoder::CopyRangeTo2(CryptoPP::BufferedTransformation&, unsigned long long&, unsigned long long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool) const
 CryptoPP::BERGeneralDecoder::Init(unsigned char)
@@ -1660,7 +1657,6 @@ CryptoPP::BERGeneralDecoder::StoreInitialize(CryptoPP::NameValuePairs const&)
 CryptoPP::BERGeneralDecoder::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
 CryptoPP::BERGeneralDecoder::~BERGeneralDecoder()
 CryptoPP::BERLengthDecode(CryptoPP::BufferedTransformation&, unsigned long&)
-CryptoPP::BERSequenceDecoder
 CryptoPP::BERSequenceDecoder::~BERSequenceDecoder()
 CryptoPP::Baseline_Multiply16(unsigned int*, unsigned int const*, unsigned int const*)
 CryptoPP::Baseline_Multiply2(unsigned int*, unsigned int const*, unsigned int const*)
@@ -1678,29 +1674,22 @@ CryptoPP::Baseline_Square16(unsigned int*, unsigned int const*)
 CryptoPP::Baseline_Square2(unsigned int*, unsigned int const*)
 CryptoPP::Baseline_Square4(unsigned int*, unsigned int const*)
 CryptoPP::Baseline_Square8(unsigned int*, unsigned int const*)
-CryptoPP::BitBucket
 CryptoPP::BitBucket::AlgorithmName() const
 CryptoPP::BitBucket::IsolatedInitialize(CryptoPP::NameValuePairs const&)
 CryptoPP::BitBucket::Put2(unsigned char const*, unsigned long, int, bool)
 CryptoPP::BitBucket::~BitBucket()
-CryptoPP::BlockCipher
 CryptoPP::BlockCipher::GetAlgorithm() const
-CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>
 CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::BlockCipherFinal(CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc> const&)
 CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::IsForwardTransformation() const
 CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>::~BlockCipherFinal()
-CryptoPP::BlockCipherImpl<CryptoPP::Rijndael_Info, CryptoPP::BlockCipher>
 CryptoPP::BlockCipherImpl<CryptoPP::Rijndael_Info, CryptoPP::BlockCipher>::BlockSize() const
-CryptoPP::BlockTransformation
 CryptoPP::BlockTransformation::AdvancedProcessBlocks(unsigned char const*, unsigned char const*, unsigned char*, unsigned long, unsigned int) const
 CryptoPP::BlockTransformation::IsPermutation() const
 CryptoPP::BlockTransformation::OptimalDataAlignment() const
 CryptoPP::BlockTransformation::OptimalNumberOfParallelBlocks() const
-CryptoPP::BlockingRng
 CryptoPP::BlockingRng::BlockingRng()
 CryptoPP::BlockingRng::GenerateBlock(unsigned char*, unsigned long)
 CryptoPP::BlockingRng::~BlockingRng()
-CryptoPP::BufferedTransformation
 CryptoPP::BufferedTransformation::AnyMessages() const
 CryptoPP::BufferedTransformation::AnyRetrievable() const
 CryptoPP::BufferedTransformation::Attach(CryptoPP::BufferedTransformation*)
@@ -1730,7 +1719,6 @@ CryptoPP::BufferedTransformation::IsolatedMessageSeriesEnd(bool)
 CryptoPP::BufferedTransformation::MaxRetrievable() const
 CryptoPP::BufferedTransformation::MessageSeriesEnd(int, bool)
 CryptoPP::BufferedTransformation::NULL_CHANNEL
-CryptoPP::BufferedTransformation::NoChannelSupport
 CryptoPP::BufferedTransformation::NoChannelSupport::~NoChannelSupport()
 CryptoPP::BufferedTransformation::NumberOfMessageSeries() const
 CryptoPP::BufferedTransformation::NumberOfMessages() const
@@ -1747,12 +1735,8 @@ CryptoPP::BufferedTransformation::SkipMessages(unsigned int)
 CryptoPP::BufferedTransformation::TotalBytesRetrievable() const
 CryptoPP::BufferedTransformation::TransferAllTo2(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
 CryptoPP::BufferedTransformation::TransferMessagesTo2(CryptoPP::BufferedTransformation&, unsigned int&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
-CryptoPP::Bufferless<CryptoPP::BufferedTransformation>
 CryptoPP::Bufferless<CryptoPP::BufferedTransformation>::IsolatedFlush(bool, bool)
-CryptoPP::Bufferless<CryptoPP::Sink>
 CryptoPP::Bufferless<CryptoPP::Sink>::IsolatedFlush(bool, bool)
-CryptoPP::ByteArrayParameter
-CryptoPP::ByteQueue
 CryptoPP::ByteQueue::AnyRetrievable() const
 CryptoPP::ByteQueue::ByteQueue(unsigned long)
 CryptoPP::ByteQueue::CleanupUsedNodes()
@@ -1768,7 +1752,6 @@ CryptoPP::ByteQueue::Peek(unsigned char&) const
 CryptoPP::ByteQueue::Peek(unsigned char*, unsigned long) const
 CryptoPP::ByteQueue::Put2(unsigned char const*, unsigned long, int, bool)
 CryptoPP::ByteQueue::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
-CryptoPP::ByteQueue::Walker
 CryptoPP::ByteQueue::Walker::CopyRangeTo2(CryptoPP::BufferedTransformation&, unsigned long long&, unsigned long long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool) const
 CryptoPP::ByteQueue::Walker::Get(unsigned char&)
 CryptoPP::ByteQueue::Walker::Get(unsigned char*, unsigned long)
@@ -1779,19 +1762,12 @@ CryptoPP::ByteQueue::Walker::Peek(unsigned char*, unsigned long) const
 CryptoPP::ByteQueue::Walker::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
 CryptoPP::ByteQueue::Walker::~Walker()
 CryptoPP::ByteQueue::~ByteQueue()
-CryptoPP::ClassNullRNG
 CryptoPP::ClassNullRNG::AlgorithmName() const
 CryptoPP::ClassNullRNG::GenerateBlock(unsigned char*, unsigned long)
 CryptoPP::ClassNullRNG::~ClassNullRNG()
-CryptoPP::Clonable
 CryptoPP::Clonable::Clone() const
-CryptoPP::ClonableImpl<CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>, CryptoPP::Rijndael::Enc>
 CryptoPP::ClonableImpl<CryptoPP::BlockCipherFinal<(CryptoPP::CipherDir)0, CryptoPP::Rijndael::Enc>, CryptoPP::Rijndael::Enc>::Clone() const
-CryptoPP::ClonableImpl<CryptoPP::SHA256, CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256> >
 CryptoPP::ClonableImpl<CryptoPP::SHA256, CryptoPP::AlgorithmImpl<CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>, CryptoPP::SHA256> >::Clone() const
-CryptoPP::ConstByteArrayParameter
-CryptoPP::CryptoMaterial
-CryptoPP::CryptoMaterial::InvalidMaterial
 CryptoPP::CryptoMaterial::InvalidMaterial::~InvalidMaterial()
 CryptoPP::CryptoMaterial::Load(CryptoPP::BufferedTransformation&)
 CryptoPP::CryptoMaterial::LoadPrecomputation(CryptoPP::BufferedTransformation&)
@@ -1802,17 +1778,14 @@ CryptoPP::CryptoMaterial::SupportsPrecomputation() const
 CryptoPP::CryptoMaterial::ThrowIfInvalid(CryptoPP::RandomNumberGenerator&, unsigned int) const
 CryptoPP::DEFAULT_CHANNEL
 CryptoPP::DEREncodeNull(CryptoPP::BufferedTransformation&)
-CryptoPP::DERGeneralEncoder
 CryptoPP::DERGeneralEncoder::DERGeneralEncoder(CryptoPP::BufferedTransformation&, unsigned char)
 CryptoPP::DERGeneralEncoder::MessageEnd()
 CryptoPP::DERGeneralEncoder::~DERGeneralEncoder()
 CryptoPP::DERLengthEncode(CryptoPP::BufferedTransformation&, unsigned long long)
-CryptoPP::DERSequenceEncoder
 CryptoPP::DERSequenceEncoder::~DERSequenceEncoder()
 CryptoPP::DetectX86Features()
 CryptoPP::Divide(unsigned int*, unsigned int*, unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
 CryptoPP::DivideByPower2Mod(unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
-CryptoPP::EuclideanDomainOf<CryptoPP::Integer>
 CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::Accumulate(CryptoPP::Integer&, CryptoPP::Integer const&) const
 CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::Add(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::Divide(CryptoPP::Integer const&, CryptoPP::Integer const&) const
@@ -1831,11 +1804,9 @@ CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::Reduce(CryptoPP::Integer&, Crypt
 CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::Square(CryptoPP::Integer const&) const
 CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::Subtract(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::EuclideanDomainOf<CryptoPP::Integer>::~EuclideanDomainOf()
-CryptoPP::Exception
 CryptoPP::Exception::what() const
 CryptoPP::Exception::~Exception()
 CryptoPP::FIPS_140_2_ComplianceEnabled()
-CryptoPP::Filter
 CryptoPP::Filter::Attachable()
 CryptoPP::Filter::AttachedTransformation()
 CryptoPP::Filter::AttachedTransformation() const
@@ -1850,14 +1821,11 @@ CryptoPP::Filter::ShouldPropagateMessageEnd() const
 CryptoPP::Filter::ShouldPropagateMessageSeriesEnd() const
 CryptoPP::Filter::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
 CryptoPP::Filter::~Filter()
-CryptoPP::FixedBlockSize<16u>
 CryptoPP::GetPowerUpSelfTestStatus()
 CryptoPP::GetValueHelperClass<CryptoPP::RSAFunction, CryptoPP::RSAFunction>& CryptoPP::GetValueHelperClass<CryptoPP::RSAFunction, CryptoPP::RSAFunction>::operator()<CryptoPP::Integer>(char const*, CryptoPP::Integer const& (CryptoPP::RSAFunction::*)() const)
 CryptoPP::GetValueHelperClass<CryptoPP::RSAFunction, CryptoPP::RSAFunction>::Assignable()
 CryptoPP::GetValueHelperClass<CryptoPP::RSAFunction, CryptoPP::RSAFunction>::GetValueHelperClass(CryptoPP::RSAFunction const*, char const*, std::type_info const&, void*, CryptoPP::NameValuePairs const*)
-CryptoPP::HashInputTooLong
 CryptoPP::HashInputTooLong::~HashInputTooLong()
-CryptoPP::HashTransformation
 CryptoPP::HashTransformation::BlockSize() const
 CryptoPP::HashTransformation::CalculateDigest(unsigned char*, unsigned char const*, unsigned long)
 CryptoPP::HashTransformation::CalculateTruncatedDigest(unsigned char*, unsigned long, unsigned char const*, unsigned long)
@@ -1871,24 +1839,18 @@ CryptoPP::HashTransformation::TruncatedVerify(unsigned char const*, unsigned lon
 CryptoPP::HashTransformation::Verify(unsigned char const*)
 CryptoPP::HashTransformation::VerifyDigest(unsigned char const*, unsigned char const*, unsigned long)
 CryptoPP::HashTransformation::VerifyTruncatedDigest(unsigned char const*, unsigned long, unsigned char const*, unsigned long)
-CryptoPP::InitializeInteger
-CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>
 CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::ChannelMessageSeriesEnd(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int, bool)
 CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::ChannelPut2(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned char const*, unsigned long, int, bool)
-CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::InputRejected
 CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::InputRejected::~InputRejected()
 CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::IsolatedFlush(bool, bool)
 CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::IsolatedMessageSeriesEnd(bool)
 CryptoPP::InputRejecting<CryptoPP::BufferedTransformation>::Put2(unsigned char const*, unsigned long, int, bool)
-CryptoPP::InputRejecting<CryptoPP::Filter>
 CryptoPP::InputRejecting<CryptoPP::Filter>::ChannelMessageSeriesEnd(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, int, bool)
 CryptoPP::InputRejecting<CryptoPP::Filter>::ChannelPut2(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned char const*, unsigned long, int, bool)
-CryptoPP::InputRejecting<CryptoPP::Filter>::InputRejected
 CryptoPP::InputRejecting<CryptoPP::Filter>::InputRejected::~InputRejected()
 CryptoPP::InputRejecting<CryptoPP::Filter>::IsolatedFlush(bool, bool)
 CryptoPP::InputRejecting<CryptoPP::Filter>::IsolatedMessageSeriesEnd(bool)
 CryptoPP::InputRejecting<CryptoPP::Filter>::Put2(unsigned char const*, unsigned long, int, bool)
-CryptoPP::Integer
 CryptoPP::Integer::BERDecode(CryptoPP::BufferedTransformation&)
 CryptoPP::Integer::BitCount() const
 CryptoPP::Integer::ByteCount() const
@@ -1896,7 +1858,6 @@ CryptoPP::Integer::Compare(CryptoPP::Integer const&) const
 CryptoPP::Integer::DEREncode(CryptoPP::BufferedTransformation&) const
 CryptoPP::Integer::Decode(CryptoPP::BufferedTransformation&, unsigned long, CryptoPP::Integer::Signedness)
 CryptoPP::Integer::Divide(CryptoPP::Integer&, CryptoPP::Integer&, CryptoPP::Integer const&, CryptoPP::Integer const&)
-CryptoPP::Integer::DivideByZero
 CryptoPP::Integer::DivideByZero::~DivideByZero()
 CryptoPP::Integer::DividedBy(CryptoPP::Integer const&) const
 CryptoPP::Integer::Encode(CryptoPP::BufferedTransformation&, unsigned long, CryptoPP::Integer::Signedness) const
@@ -1926,19 +1887,14 @@ CryptoPP::Integer::operator<<=(unsigned long)
 CryptoPP::Integer::operator=(CryptoPP::Integer const&)
 CryptoPP::Integer::operator>>=(unsigned long)
 CryptoPP::Integer::~Integer()
-CryptoPP::InvalidArgument
 CryptoPP::InvalidArgument::~InvalidArgument()
-CryptoPP::InvalidDataFormat
 CryptoPP::InvalidDataFormat::~InvalidDataFormat()
-CryptoPP::InvalidKeyLength
 CryptoPP::InvalidKeyLength::InvalidKeyLength(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long)
 CryptoPP::InvalidKeyLength::~InvalidKeyLength()
-CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>
 CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::BlockSize() const
 CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::DataBuf()
 CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::GetByteOrder() const
 CryptoPP::IteratedHash<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, CryptoPP::HashTransformation>::~IteratedHash()
-CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>
 CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::CreateUpdateSpace(unsigned long&)
 CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::HashMultipleBlocks(unsigned int const*, unsigned long)
 CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::OptimalBlockSize() const
@@ -1947,7 +1903,6 @@ CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::Restart(
 CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::TruncatedFinal(unsigned char*, unsigned long)
 CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::Update(unsigned char const*, unsigned long)
 CryptoPP::IteratedHashBase<unsigned int, CryptoPP::HashTransformation>::~IteratedHashBase()
-CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>
 CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::DigestSize() const
 CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::HashEndianCorrectedBlock(unsigned int const*)
 CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::Init()
@@ -1955,7 +1910,6 @@ CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<Cry
 CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::IteratedHashWithStaticTransform(CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true> const&)
 CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::StateBuf()
 CryptoPP::IteratedHashWithStaticTransform<unsigned int, CryptoPP::EnumToType<CryptoPP::ByteOrder, 1>, 64u, 32u, CryptoPP::SHA256, 32u, true>::~IteratedHashWithStaticTransform()
-CryptoPP::MessageQueue
 CryptoPP::MessageQueue::AnyRetrievable() const
 CryptoPP::MessageQueue::CopyRangeTo2(CryptoPP::BufferedTransformation&, unsigned long long&, unsigned long long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool) const
 CryptoPP::MessageQueue::GetNextMessage()
@@ -1971,7 +1925,6 @@ CryptoPP::MessageQueue::Put2(unsigned char const*, unsigned long, int, bool)
 CryptoPP::MessageQueue::TotalBytesRetrievable() const
 CryptoPP::MessageQueue::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
 CryptoPP::MessageQueue::~MessageQueue()
-CryptoPP::ModularArithmetic
 CryptoPP::ModularArithmetic::Accumulate(CryptoPP::Integer&, CryptoPP::Integer const&) const
 CryptoPP::ModularArithmetic::Add(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::ModularArithmetic::CascadeExponentiate(CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&) const
@@ -1996,7 +1949,6 @@ CryptoPP::ModularArithmetic::Square(CryptoPP::Integer const&) const
 CryptoPP::ModularArithmetic::Subtract(CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::ModularArithmetic::~ModularArithmetic()
 CryptoPP::MontgomeryReduce(unsigned int*, unsigned int*, unsigned int*, unsigned int const*, unsigned int const*, unsigned long)
-CryptoPP::MontgomeryRepresentation
 CryptoPP::MontgomeryRepresentation::CascadeExponentiate(CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&, CryptoPP::Integer const&) const
 CryptoPP::MontgomeryRepresentation::Clone() const
 CryptoPP::MontgomeryRepresentation::ConvertIn(CryptoPP::Integer const&) const
@@ -2012,19 +1964,13 @@ CryptoPP::MontgomeryRepresentation::Square(CryptoPP::Integer const&) const
 CryptoPP::MontgomeryRepresentation::~MontgomeryRepresentation()
 CryptoPP::MultiplyByPower2Mod(unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
 CryptoPP::MultiplyTop(unsigned int*, unsigned int*, unsigned int const*, unsigned int const*, unsigned int const*, unsigned long)
-CryptoPP::NameValuePairs
 CryptoPP::NameValuePairs::ThrowIfTypeMismatch(char const*, std::type_info const&, std::type_info const&)
-CryptoPP::NameValuePairs::ValueTypeMismatch
 CryptoPP::NameValuePairs::ValueTypeMismatch::ValueTypeMismatch(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::type_info const&, std::type_info const&)
 CryptoPP::NameValuePairs::ValueTypeMismatch::~ValueTypeMismatch()
-CryptoPP::NonblockingRng
 CryptoPP::NonblockingRng::GenerateBlock(unsigned char*, unsigned long)
 CryptoPP::NonblockingRng::NonblockingRng()
 CryptoPP::NonblockingRng::~NonblockingRng()
-CryptoPP::NotCopyable
-CryptoPP::NotImplemented
 CryptoPP::NotImplemented::~NotImplemented()
-CryptoPP::NullNameValuePairs
 CryptoPP::NullNameValuePairs::GetVoidValue(char const*, std::type_info const&, void*) const
 CryptoPP::NullNameValuePairs::~NullNameValuePairs()
 CryptoPP::NullRNG()
@@ -2034,31 +1980,22 @@ CryptoPP::OID::BERDecodeAndCheck(CryptoPP::BufferedTransformation&) const
 CryptoPP::OID::DEREncode(CryptoPP::BufferedTransformation&) const
 CryptoPP::OID::EncodeValue(CryptoPP::BufferedTransformation&, unsigned int)
 CryptoPP::OS_GenerateRandomBlock(bool, unsigned char*, unsigned long)
-CryptoPP::OS_RNG_Err
 CryptoPP::OS_RNG_Err::OS_RNG_Err(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
 CryptoPP::OS_RNG_Err::~OS_RNG_Err()
-CryptoPP::ObjectHolder<CryptoPP::SHA256>
-CryptoPP::PKCS1v15_SignatureMessageEncodingMethod
 CryptoPP::PKCS1v15_SignatureMessageEncodingMethod::ComputeMessageRepresentative(CryptoPP::RandomNumberGenerator&, unsigned char const*, unsigned long, CryptoPP::HashTransformation&, std::__1::pair<unsigned char const*, unsigned long>, bool, unsigned char*, unsigned long) const
 CryptoPP::PKCS1v15_SignatureMessageEncodingMethod::MinRepresentativeBitLength(unsigned long, unsigned long) const
 CryptoPP::PKCS1v15_SignatureMessageEncodingMethod::~PKCS1v15_SignatureMessageEncodingMethod()
 CryptoPP::PKCS_DigestDecoration<CryptoPP::SHA256>::decoration
 CryptoPP::PKCS_DigestDecoration<CryptoPP::SHA256>::length
-CryptoPP::PK_DeterministicSignatureMessageEncodingMethod
 CryptoPP::PK_DeterministicSignatureMessageEncodingMethod::VerifyMessageRepresentative(CryptoPP::HashTransformation&, std::__1::pair<unsigned char const*, unsigned long>, bool, unsigned char*, unsigned long) const
-CryptoPP::PK_FinalTemplate<CryptoPP::TF_VerifierImpl<CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256> > >
 CryptoPP::PK_FinalTemplate<CryptoPP::TF_VerifierImpl<CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256> > >::~PK_FinalTemplate()
-CryptoPP::PK_MessageAccumulator
 CryptoPP::PK_MessageAccumulator::DigestSize() const
 CryptoPP::PK_MessageAccumulator::TruncatedFinal(unsigned char*, unsigned long)
-CryptoPP::PK_MessageAccumulatorBase
 CryptoPP::PK_MessageAccumulatorBase::PK_MessageAccumulatorBase()
 CryptoPP::PK_MessageAccumulatorBase::Update(unsigned char const*, unsigned long)
 CryptoPP::PK_MessageAccumulatorBase::~PK_MessageAccumulatorBase()
-CryptoPP::PK_MessageAccumulatorImpl<CryptoPP::SHA256>
 CryptoPP::PK_MessageAccumulatorImpl<CryptoPP::SHA256>::AccessHash()
 CryptoPP::PK_MessageAccumulatorImpl<CryptoPP::SHA256>::~PK_MessageAccumulatorImpl()
-CryptoPP::PK_SignatureMessageEncodingMethod
 CryptoPP::PK_SignatureMessageEncodingMethod::AllowNonrecoverablePart() const
 CryptoPP::PK_SignatureMessageEncodingMethod::MaxRecoverableLength(unsigned long, unsigned long, unsigned long) const
 CryptoPP::PK_SignatureMessageEncodingMethod::ProcessRecoverableMessage(CryptoPP::HashTransformation&, unsigned char const*, unsigned long, unsigned char const*, unsigned long, CryptoPP::SecBlock<unsigned char, CryptoPP::AllocatorWithCleanup<unsigned char, false> >&) const
@@ -2066,15 +2003,11 @@ CryptoPP::PK_SignatureMessageEncodingMethod::ProcessSemisignature(CryptoPP::Hash
 CryptoPP::PK_SignatureMessageEncodingMethod::RecoverMessageFromRepresentative(CryptoPP::HashTransformation&, std::__1::pair<unsigned char const*, unsigned long>, bool, unsigned char*, unsigned long, unsigned char*) const
 CryptoPP::PK_SignatureMessageEncodingMethod::RecoverMessageFromSemisignature(CryptoPP::HashTransformation&, std::__1::pair<unsigned char const*, unsigned long>, unsigned char const*, unsigned long, unsigned char const*, unsigned long, unsigned char*) const
 CryptoPP::PK_SignatureMessageEncodingMethod::RecoverablePartFirst() const
-CryptoPP::PK_SignatureScheme
-CryptoPP::PK_SignatureScheme::InvalidKeyLength
 CryptoPP::PK_SignatureScheme::InvalidKeyLength::~InvalidKeyLength()
-CryptoPP::PK_SignatureScheme::KeyTooShort
 CryptoPP::PK_SignatureScheme::KeyTooShort::~KeyTooShort()
 CryptoPP::PK_SignatureScheme::MaxSignatureLength(unsigned long) const
 CryptoPP::PK_SignatureScheme::SignatureUpfront() const
 CryptoPP::PK_SignatureScheme::~PK_SignatureScheme()
-CryptoPP::PK_Verifier
 CryptoPP::PK_Verifier::Recover(unsigned char*, CryptoPP::PK_MessageAccumulator*) const
 CryptoPP::PK_Verifier::RecoverMessage(unsigned char*, unsigned char const*, unsigned long, unsigned char const*, unsigned long) const
 CryptoPP::PK_Verifier::Verify(CryptoPP::PK_MessageAccumulator*) const
@@ -2084,13 +2017,9 @@ CryptoPP::PositiveDivide(CryptoPP::Integer&, CryptoPP::Integer&, CryptoPP::Integ
 CryptoPP::PositiveMultiply(CryptoPP::Integer&, CryptoPP::Integer const&, CryptoPP::Integer const&)
 CryptoPP::PositiveSubtract(CryptoPP::Integer&, CryptoPP::Integer const&, CryptoPP::Integer const&)
 CryptoPP::PowerUpSelfTestInProgressOnThisThread()
-CryptoPP::PublicKey
 CryptoPP::PublicKey::~PublicKey()
-CryptoPP::PublicKeyAlgorithm
 CryptoPP::PublicKeyAlgorithm::AccessMaterial()
 CryptoPP::PublicKeyAlgorithm::GetMaterial() const
-CryptoPP::RSAFunction
-CryptoPP::RSAFunction*
 CryptoPP::RSAFunction::ApplyFunction(CryptoPP::Integer const&) const
 CryptoPP::RSAFunction::AssignFrom(CryptoPP::NameValuePairs const&)
 CryptoPP::RSAFunction::BERDecodePublicKey(CryptoPP::BufferedTransformation&, bool, unsigned long)
@@ -2105,7 +2034,6 @@ CryptoPP::RSAFunction::SetModulus(CryptoPP::Integer const&)
 CryptoPP::RSAFunction::SetPublicExponent(CryptoPP::Integer const&)
 CryptoPP::RSAFunction::Validate(CryptoPP::RandomNumberGenerator&, unsigned int) const
 CryptoPP::RSAFunction::~RSAFunction()
-CryptoPP::RandomNumberGenerator
 CryptoPP::RandomNumberGenerator::CanIncorporateEntropy() const
 CryptoPP::RandomNumberGenerator::DiscardBytes(unsigned long)
 CryptoPP::RandomNumberGenerator::GenerateBit()
@@ -2114,24 +2042,19 @@ CryptoPP::RandomNumberGenerator::GenerateByte()
 CryptoPP::RandomNumberGenerator::GenerateIntoBufferedTransformation(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long long)
 CryptoPP::RandomNumberGenerator::GenerateWord32(unsigned int, unsigned int)
 CryptoPP::RandomNumberGenerator::IncorporateEntropy(unsigned char const*, unsigned long)
-CryptoPP::RandomizedTrapdoorFunction
 CryptoPP::RecursiveInverseModPower2(unsigned int*, unsigned int*, unsigned int const*, unsigned long)
 CryptoPP::RecursiveMultiply(unsigned int*, unsigned int*, unsigned int const*, unsigned int const*, unsigned long)
 CryptoPP::RecursiveMultiplyBottom(unsigned int*, unsigned int*, unsigned int const*, unsigned int const*, unsigned long)
 CryptoPP::RecursiveSquare(unsigned int*, unsigned int*, unsigned int const*, unsigned long)
-CryptoPP::Rijndael::Base
 CryptoPP::Rijndael::Base::FillDecTable()
 CryptoPP::Rijndael::Base::Sd
 CryptoPP::Rijndael::Base::Se
 CryptoPP::Rijndael::Base::UncheckedSetKey(unsigned char const*, unsigned int, CryptoPP::NameValuePairs const&)
 CryptoPP::Rijndael::Base::rcon
 CryptoPP::Rijndael::Base::~Base()
-CryptoPP::Rijndael::Enc
 CryptoPP::Rijndael::Enc::AdvancedProcessBlocks(unsigned char const*, unsigned char const*, unsigned char*, unsigned long, unsigned int) const
 CryptoPP::Rijndael::Enc::ProcessAndXorBlock(unsigned char const*, unsigned char const*, unsigned char*) const
-CryptoPP::Rijndael_Info
 CryptoPP::RoundupSizeTable
-CryptoPP::SHA256
 CryptoPP::SHA256::InitState(unsigned int*)
 CryptoPP::SHA256::InitState(unsigned int*)::s
 CryptoPP::SHA256::Transform(unsigned int*, unsigned int const*)
@@ -2139,9 +2062,7 @@ CryptoPP::SHA256::~SHA256()
 CryptoPP::SHA256_K
 CryptoPP::SecBlock<unsigned char, CryptoPP::AllocatorWithCleanup<unsigned char, false> >::Assign(CryptoPP::SecBlock<unsigned char, CryptoPP::AllocatorWithCleanup<unsigned char, false> > const&)
 CryptoPP::SecBlock<unsigned int, CryptoPP::AllocatorWithCleanup<unsigned int, false> >::CleanGrow(unsigned long)
-CryptoPP::SelfTestFailure
 CryptoPP::SelfTestFailure::~SelfTestFailure()
-CryptoPP::SimpleKeyingInterface
 CryptoPP::SimpleKeyingInterface::GetNextIV(CryptoPP::RandomNumberGenerator&, unsigned char*)
 CryptoPP::SimpleKeyingInterface::IVSize() const
 CryptoPP::SimpleKeyingInterface::IsValidKeyLength(unsigned long) const
@@ -2151,7 +2072,6 @@ CryptoPP::SimpleKeyingInterface::Resynchronize(unsigned char const*, int)
 CryptoPP::SimpleKeyingInterface::SetKey(unsigned char const*, unsigned long, CryptoPP::NameValuePairs const&)
 CryptoPP::SimpleKeyingInterface::ThrowIfInvalidKeyLength(unsigned long)
 CryptoPP::SimpleKeyingInterface::~SimpleKeyingInterface()
-CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >
 CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::DefaultKeyLength() const
 CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::GetValidKeyLength(unsigned long) const
 CryptoPP::SimpleKeyingInterfaceImpl<CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>, CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info> >::IVRequirement() const
@@ -2164,13 +2084,10 @@ CryptoPP::Singleton<CryptoPP::Integer, CryptoPP::NewObject<CryptoPP::Integer>, 0
 CryptoPP::Singleton<CryptoPP::Integer, CryptoPP::NewObject<CryptoPP::Integer>, 0>::Ref() const::s_pObject
 CryptoPP::Singleton<CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::NewObject<CryptoPP::PKCS1v15_SignatureMessageEncodingMethod>, 0>::Ref() const
 CryptoPP::Singleton<CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::NewObject<CryptoPP::PKCS1v15_SignatureMessageEncodingMethod>, 0>::Ref() const::s_pObject
-CryptoPP::Sink
 CryptoPP::Sink::CopyRangeTo2(CryptoPP::BufferedTransformation&, unsigned long long&, unsigned long long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool) const
 CryptoPP::Sink::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
-CryptoPP::Source
 CryptoPP::Source::PumpAll2(bool)
 CryptoPP::Source::~Source()
-CryptoPP::SourceTemplate<CryptoPP::StringStore>
 CryptoPP::SourceTemplate<CryptoPP::StringStore>::GetAutoSignalPropagation() const
 CryptoPP::SourceTemplate<CryptoPP::StringStore>::IsolatedInitialize(CryptoPP::NameValuePairs const&)
 CryptoPP::SourceTemplate<CryptoPP::StringStore>::Pump2(unsigned long long&, bool)
@@ -2180,26 +2097,20 @@ CryptoPP::SourceTemplate<CryptoPP::StringStore>::SetAutoSignalPropagation(int)
 CryptoPP::SourceTemplate<CryptoPP::StringStore>::SourceExhausted() const
 CryptoPP::SourceTemplate<CryptoPP::StringStore>::SourceTemplate(CryptoPP::BufferedTransformation*)
 CryptoPP::SourceTemplate<CryptoPP::StringStore>::~SourceTemplate()
-CryptoPP::Store
 CryptoPP::Store::GetNextMessage()
 CryptoPP::Store::IsolatedInitialize(CryptoPP::NameValuePairs const&)
 CryptoPP::Store::NumberOfMessages() const
-CryptoPP::StringSource
 CryptoPP::StringSource::StringSource(unsigned char const*, unsigned long, bool, CryptoPP::BufferedTransformation*)
 CryptoPP::StringSource::~StringSource()
-CryptoPP::StringStore
 CryptoPP::StringStore::CopyRangeTo2(CryptoPP::BufferedTransformation&, unsigned long long&, unsigned long long, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool) const
 CryptoPP::StringStore::StoreInitialize(CryptoPP::NameValuePairs const&)
 CryptoPP::StringStore::StringStore(char const*)
 CryptoPP::StringStore::StringStore(unsigned char const*, unsigned long)
 CryptoPP::StringStore::TransferTo2(CryptoPP::BufferedTransformation&, unsigned long long&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)
 CryptoPP::StringStore::~StringStore()
-CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod>
-CryptoPP::TF_ObjectImpl<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>
 CryptoPP::TF_ObjectImpl<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::AccessKey()
 CryptoPP::TF_ObjectImpl<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::GetKey() const
 CryptoPP::TF_ObjectImpl<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::~TF_ObjectImpl()
-CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>
 CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::AccessPublicKey()
 CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::GetDigestSize() const
 CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::GetHashIdentifier() const
@@ -2209,7 +2120,6 @@ CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSch
 CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::GetTrapdoorFunctionInterface() const
 CryptoPP::TF_ObjectImplBase<CryptoPP::TF_VerifierBase, CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256>, CryptoPP::RSAFunction>::NewVerificationAccumulator() const
 CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>::StaticAlgorithmName()
-CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >
 CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >::AllowNonrecoverablePart() const
 CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >::IsProbabilistic() const
 CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >::MaxRecoverableLength() const
@@ -2217,36 +2127,27 @@ CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<Crypto
 CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >::MessageRepresentativeBitLength() const
 CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >::RecoverablePartFirst() const
 CryptoPP::TF_SignatureSchemeBase<CryptoPP::PK_Verifier, CryptoPP::TF_Base<CryptoPP::TrapdoorFunction, CryptoPP::PK_SignatureMessageEncodingMethod> >::SignatureLength() const
-CryptoPP::TF_VerifierBase
 CryptoPP::TF_VerifierBase::InputSignature(CryptoPP::PK_MessageAccumulator&, unsigned char const*, unsigned long) const
 CryptoPP::TF_VerifierBase::RecoverAndRestart(unsigned char*, CryptoPP::PK_MessageAccumulator&) const
 CryptoPP::TF_VerifierBase::VerifyAndRestart(CryptoPP::PK_MessageAccumulator&) const
-CryptoPP::TF_VerifierImpl<CryptoPP::TF_SignatureSchemeOptions<CryptoPP::TF_SS<CryptoPP::PKCS1v15, CryptoPP::SHA256, CryptoPP::RSA, int>, CryptoPP::RSA, CryptoPP::PKCS1v15_SignatureMessageEncodingMethod, CryptoPP::SHA256> >
 CryptoPP::Td
 CryptoPP::Te
 CryptoPP::TheBitBucket()::bitBucket
-CryptoPP::TrapdoorFunction
 CryptoPP::TrapdoorFunction::ApplyRandomizedFunction(CryptoPP::RandomNumberGenerator&, CryptoPP::Integer const&) const
 CryptoPP::TrapdoorFunction::IsRandomized() const
 CryptoPP::TrapdoorFunction::~TrapdoorFunction()
-CryptoPP::TrapdoorFunctionBounds
 CryptoPP::TrapdoorFunctionBounds::MaxImage() const
 CryptoPP::TrapdoorFunctionBounds::MaxPreimage() const
-CryptoPP::TwoBases<CryptoPP::BlockCipher, CryptoPP::Rijndael_Info>
 CryptoPP::UnalignedAllocate(unsigned long)
 CryptoPP::UnalignedDeallocate(void*)
-CryptoPP::VariableKeyLength<16u, 16u, 32u, 8u, 4u, 0u>
 CryptoPP::VerifyBufsEqual(unsigned char const*, unsigned char const*, unsigned long)
-CryptoPP::Waitable
 CryptoPP::WindowSlider::FindNextWindow()
 CryptoPP::WindowSlider::WindowSlider(CryptoPP::Integer const&, bool, unsigned int)
-CryptoPP::X509PublicKey
 CryptoPP::X509PublicKey::BERDecode(CryptoPP::BufferedTransformation&)
 CryptoPP::X509PublicKey::BERDecodeAlgorithmParameters(CryptoPP::BufferedTransformation&)
 CryptoPP::X509PublicKey::DEREncode(CryptoPP::BufferedTransformation&) const
 CryptoPP::X509PublicKey::DEREncodeAlgorithmParameters(CryptoPP::BufferedTransformation&) const
 CryptoPP::X509PublicKey::~X509PublicKey()
-CryptoPP::X917RNG
 CryptoPP::X917RNG::GenerateIntoBufferedTransformation(CryptoPP::BufferedTransformation&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, unsigned long long)
 CryptoPP::X917RNG::X917RNG(CryptoPP::BlockTransformation*, unsigned char const*, unsigned char const*)
 CryptoPP::X917RNG::~X917RNG()
@@ -2276,7 +2177,7 @@ CryptoPP::simple_ptr<CryptoPP::Integer>::~simple_ptr()
 CryptoPP::simple_ptr<CryptoPP::PKCS1v15_SignatureMessageEncodingMethod>::~simple_ptr()
 CryptoPP::xorbuf(unsigned char*, unsigned char const*, unsigned char const*, unsigned long)
 CryptoPP::xorbuf(unsigned char*, unsigned char const*, unsigned long)
-Cryptographic algorithms are disabled after signed char power-up self test failed.
+Cryptographic algorithms are disabled after a power-up self test failed.
 Cryptographic algorithms are disabled before the power-up self tests are performed.
 Cubemaps
 D$ )G
@@ -2285,7 +2186,7 @@ D$ tb
 D$ u/
 D$$)C
 D$$)G
-D$$;D$(unsigned short
+D$$;D$(t
 D$$t>
 D$(B1
 D$,r!
@@ -2293,7 +2194,7 @@ D$43P4
 D$4tZ
 D$8;L$<
 D$<9D$@
-D$<;D$@unsigned short
+D$<;D$@t
 D$<te
 D$D;D$Ht
 D$Ht>
@@ -2312,7 +2213,7 @@ EXECUTABLE_PATH
 Encryption
 Errors occured loading files.
 EvaluateConditional(char const*)
-Exceeded limit of number of vpk files supported (%double)!
+Exceeded limit of number of vpk files supported (%d)!
 F,ff.
 FDMerF
 FS:  Tried to Close NULL file handle!
@@ -2329,15 +2230,13 @@ FS:  Tried to Size NULL filename!
 FS:  Tried to Tell NULL file handle!
 FS:  Tried to Write NULL file handle!
 FS:  Tried to Write NULL file pointer inside valid file handle!
-FS: Specified two path IDs (%short, %short).
+FS: Specified two path IDs (%s, %s).
 Ffffff.
-File %short offset %long long hash %short does not match ( should be %short ) 
-File %short was found in %short, but resulting abs filename won'unsigned short fit in callers buffer of %double bytes
+File %s offset %x hash %s does not match ( should be %s ) 
+File %s was found in %s, but resulting abs filename won't fit in callers buffer of %d bytes
 File hash information not found: Hashing all VPK files for pure server operation.
-File hashes checked. %double matches. %double failures.
-File hashes checked. %double matches. no failures.
-FileAsyncRequest_t
-FileListToUnloadForWhitelistChange
+File hashes checked. %d matches. %d failures.
+File hashes checked. %d matches. no failures.
 FileListToUnloadForWhitelistChange::AddFile(char const*)
 FileListToUnloadForWhitelistChange::IsFileInList(char const*)
 FileListToUnloadForWhitelistChange::Release()
@@ -2360,55 +2259,42 @@ H__Znam
 H__Znwm
 HashString(char const*)
 HashStringCaselessConventional(char const*)
-HashTransformation: can'unsigned short truncate signed char 
+HashTransformation: can't truncate a 
 Hfff.
-IAppSystem
-IBaseFileSystem
-IConCommandBaseAccessor
-IConVar
-IFileList
-IFileSystem
-ILoaderProgress
 IOAsyncCallback(FileAsyncRequest_t const&, int, FSAsyncStatus_t)
 IOComputationJob(FileJob_t*, void*, int, LoaderError_t)
 IOJob
-IQueuedLoader
-IRefCounted
-IResourcePreload
-IThreadedFileMD5Processor
-IWriteStream
-IZip
 IZip::CreateZip(char const*, bool)
 IZip::ReleaseZip(IZip*)
-If set, attempt to keep signed char persistent buffer for the LZMA decoder dictionary. This avoids long double restrict-allocating signed char ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
+If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
 InputBuffer
 InputSystemVersion001
 Integer: division by zero
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
-Invalid async read of %short
+Invalid async read of %s
 Invalid pack file signature
 IteratedHashBase: input data exceeds maximum allowed by hash function 
 Jffffff.
-K<9K@unsigned short%
+K<9K@t%
 KT9KXt
-KeyValues Error: %short in file %short
+KeyValues Error: %s in file %s
 KeyValues::AddSubKey(KeyValues*)
 KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
 KeyValues::GetStringForSymbolClassic(int)
 KeyValues::GetSymbolForStringClassic(char const*, bool)
 KeyValues::KeyValues(char const*)
-KeyValues::LoadFromBuffer(%short%short%short): Begin
-KeyValues::LoadFromBuffer(%short%short%short): End
+KeyValues::LoadFromBuffer(%s%s%s): Begin
+KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
 KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
-KeyValues::LoadFromFile(%short%short%short): Begin
-KeyValues::LoadFromFile(%short%short%short): End / FileNotFound
-KeyValues::LoadFromFile(%short%short%short): End / Success
+KeyValues::LoadFromFile(%s%s%s): Begin
+KeyValues::LoadFromFile(%s%s%s): End / FileNotFound
+KeyValues::LoadFromFile(%s%s%s): End / Success
 KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
 KeyValues::MakeCopy() const
 KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
-KeyValues::ParseIncludedKeys: Couldn'unsigned short load included keyvalue file %short
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
 KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
 KeyValues::RecursiveMergeKeyValues(KeyValues*)
@@ -2422,28 +2308,28 @@ KeyValues::operator new(unsigned long)
 KeyValues::s_pfGetStringForSymbol
 KeyValues::s_pfGetSymbolForString
 L$ 3r
-L$ unsigned short!
+L$ t!
 L$$t5
 L$$tg1
 L$(+D
 L$(9L$,
 L$(9L$,um1
 L$(I+L$ 
-L$(unsigned short	
+L$(t	
 L$43Q<
 L$4A;M
 L$8ffffff.
 L$Dff.
 L$H+L$T
-LZMA Decompression failed (%int)
+LZMA Decompression failed (%i)
 LZMA file handle: failed reading forward to desired seek position
 LZMA file handle: seeking backwards beyond backseek buffer size ( %u ), replaying read & decompression of %u bytes. Should avoid large back seeks in compressed files or increase backseek buffer sizing.
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?
 L^_[]
-Last Md5 Value %short Should be %short 
+Last Md5 Value %s Should be %s 
 Length
 LoadFromBuffer: missing {
-Loaded %double VPK file hashes from %short for pure server operation.
+Loaded %d VPK file hashes from %s for pure server operation.
 LogFileOpen(char const*, char const*, char const*)
 LogFileOpen(char const*, char const*, char const*)::mode
 Loose
@@ -2456,10 +2342,128 @@ MD5Update(MD5Context_t*, unsigned char const*, unsigned int)
 MaterialSystemHardwareConfig012
 Materials
 Models
-Module %short is signed char debug build
+Module %s is a debug build
 Modulus
 MontgomeryRepresentation: Montgomery representation requires an odd modulus
+N8CryptoPP10ASN1ObjectE
+N8CryptoPP10BufferlessINS_22BufferedTransformationEEE
+N8CryptoPP10BufferlessINS_4SinkEEE
+N8CryptoPP10OS_RNG_ErrE
+N8CryptoPP11BlockCipherE
+N8CryptoPP11BlockingRngE
+N8CryptoPP11NotCopyableE
+N8CryptoPP11PK_VerifierE
+N8CryptoPP11RSAFunctionE
+N8CryptoPP11StringStoreE
+N8CryptoPP12AbstractRingINS_7IntegerEE20MultiplicativeGroupTE
+N8CryptoPP12AbstractRingINS_7IntegerEEE
+N8CryptoPP12BERDecodeErrE
+N8CryptoPP12ClassNullRNGE
+N8CryptoPP12ClonableImplINS_16BlockCipherFinalILNS_9CipherDirE0ENS_8Rijndael3EncEEES4_EE
+N8CryptoPP12ClonableImplINS_6SHA256ENS_13AlgorithmImplINS_12IteratedHashIjNS_10EnumToTypeINS_9ByteOrderELi1EEELj64ENS_18HashTransformationEEES1_EEEE
+N8CryptoPP12IteratedHashIjNS_10EnumToTypeINS_9ByteOrderELi1EEELj64ENS_18HashTransformationEEE
+N8CryptoPP12MessageQueueE
+N8CryptoPP12ObjectHolderINS_6SHA256EEE
+N8CryptoPP12StringSourceE
+N8CryptoPP13AbstractGroupINS_7IntegerEEE
+N8CryptoPP13AlgorithmImplINS_12IteratedHashIjNS_10EnumToTypeINS_9ByteOrderELi1EEELj64ENS_18HashTransformationEEENS_6SHA256EEE
+N8CryptoPP13AlgorithmImplINS_15TF_VerifierBaseENS_5TF_SSINS_8PKCS1v15ENS_6SHA256ENS_3RSAEiEEEE
+N8CryptoPP13AlgorithmImplINS_25SimpleKeyingInterfaceImplINS_8TwoBasesINS_11BlockCipherENS_13Rijndael_InfoEEES5_EES6_EE
+N8CryptoPP13AutoSignalingINS_14InputRejectingINS_22BufferedTransformationEEEEE
+N8CryptoPP13AutoSignalingINS_22BufferedTransformationEEE
+N8CryptoPP13Rijndael_InfoE
+N8CryptoPP13TF_ObjectImplINS_15TF_VerifierBaseENS_25TF_SignatureSchemeOptionsINS_5TF_SSINS_8PKCS1v15ENS_6SHA256ENS_3RSAEiEES6_NS_39PKCS1v15_SignatureMessageEncodingMethodES5_EENS_11RSAFunctionEEE
+N8CryptoPP13X509PublicKeyE
+N8CryptoPP14CryptoMaterial15InvalidMaterialE
+N8CryptoPP14CryptoMaterialE
+N8CryptoPP14FixedBlockSizeILj16EEE
+N8CryptoPP14InputRejectingINS_22BufferedTransformationEE13InputRejectedE
+N8CryptoPP14InputRejectingINS_22BufferedTransformationEEE
+N8CryptoPP14InputRejectingINS_6FilterEE13InputRejectedE
+N8CryptoPP14InputRejectingINS_6FilterEEE
+N8CryptoPP14NameValuePairs17ValueTypeMismatchE
+N8CryptoPP14NameValuePairsE
+N8CryptoPP14NonblockingRngE
+N8CryptoPP14NotImplementedE
+N8CryptoPP14SourceTemplateINS_11StringStoreEEE
+N8CryptoPP15BlockCipherImplINS_13Rijndael_InfoENS_11BlockCipherEEE
+N8CryptoPP15InvalidArgumentE
+N8CryptoPP15SelfTestFailureE
+N8CryptoPP15TF_VerifierBaseE
+N8CryptoPP15TF_VerifierImplINS_25TF_SignatureSchemeOptionsINS_5TF_SSINS_8PKCS1v15ENS_6SHA256ENS_3RSAEiEES5_NS_39PKCS1v15_SignatureMessageEncodingMethodES4_EEEE
+N8CryptoPP16BlockCipherFinalILNS_9CipherDirE0ENS_8Rijndael3EncEEE
+N8CryptoPP16HashInputTooLongE
+N8CryptoPP16InvalidKeyLengthE
+N8CryptoPP16IteratedHashBaseIjNS_18HashTransformationEEE
+N8CryptoPP16PK_FinalTemplateINS_15TF_VerifierImplINS_25TF_SignatureSchemeOptionsINS_5TF_SSINS_8PKCS1v15ENS_6SHA256ENS_3RSAEiEES6_NS_39PKCS1v15_SignatureMessageEncodingMethodES5_EEEEEE
+N8CryptoPP16TrapdoorFunctionE
+N8CryptoPP17AutoSeededX917RNGINS_8RijndaelEEE
+N8CryptoPP17BERGeneralDecoderE
+N8CryptoPP17DERGeneralEncoderE
+N8CryptoPP17EuclideanDomainOfINS_7IntegerEEE
+N8CryptoPP17InitializeIntegerE
+N8CryptoPP17InvalidDataFormatE
+N8CryptoPP17ModularArithmeticE
+N8CryptoPP17TF_ObjectImplBaseINS_15TF_VerifierBaseENS_25TF_SignatureSchemeOptionsINS_5TF_SSINS_8PKCS1v15ENS_6SHA256ENS_3RSAEiEES6_NS_39PKCS1v15_SignatureMessageEncodingMethodES5_EENS_11RSAFunctionEEE
+N8CryptoPP17VariableKeyLengthILj16ELj16ELj32ELj8ELj4ELj0EEE
+N8CryptoPP18ASN1CryptoMaterialINS_9PublicKeyEEE
+N8CryptoPP18BERSequenceDecoderE
+N8CryptoPP18ByteArrayParameterE
+N8CryptoPP18DERSequenceEncoderE
+N8CryptoPP18HashTransformationE
+N8CryptoPP18NullNameValuePairsE
+N8CryptoPP18PK_SignatureScheme11KeyTooShortE
+N8CryptoPP18PK_SignatureScheme16InvalidKeyLengthE
+N8CryptoPP18PK_SignatureSchemeE
+N8CryptoPP18PublicKeyAlgorithmE
+N8CryptoPP19AlgorithmParametersE
+N8CryptoPP19AsymmetricAlgorithmE
+N8CryptoPP19BlockTransformationE
+N8CryptoPP21PK_MessageAccumulatorE
+N8CryptoPP21RandomNumberGeneratorE
+N8CryptoPP21SimpleKeyingInterfaceE
+N8CryptoPP22BufferedTransformation16NoChannelSupportE
+N8CryptoPP22BufferedTransformationE
+N8CryptoPP22TF_SignatureSchemeBaseINS_11PK_VerifierENS_7TF_BaseINS_16TrapdoorFunctionENS_33PK_SignatureMessageEncodingMethodEEEEE
+N8CryptoPP22TrapdoorFunctionBoundsE
+N8CryptoPP23AbstractEuclideanDomainINS_7IntegerEEE
+N8CryptoPP23AlgorithmParametersBase16ParameterNotUsedE
+N8CryptoPP23AlgorithmParametersBaseE
+N8CryptoPP23ConstByteArrayParameterE
+N8CryptoPP24MontgomeryRepresentationE
+N8CryptoPP25PK_MessageAccumulatorBaseE
+N8CryptoPP25PK_MessageAccumulatorImplINS_6SHA256EEE
+N8CryptoPP25SimpleKeyingInterfaceImplINS_8TwoBasesINS_11BlockCipherENS_13Rijndael_InfoEEES4_EE
+N8CryptoPP26RandomizedTrapdoorFunctionE
+N8CryptoPP27AlgorithmParametersTemplateINS_23ConstByteArrayParameterEEE
+N8CryptoPP31IteratedHashWithStaticTransformIjNS_10EnumToTypeINS_9ByteOrderELi1EEELj64ELj32ENS_6SHA256ELj32ELb1EEE
+N8CryptoPP33PK_SignatureMessageEncodingMethodE
+N8CryptoPP39PKCS1v15_SignatureMessageEncodingMethodE
+N8CryptoPP46PK_DeterministicSignatureMessageEncodingMethodE
+N8CryptoPP4SinkE
+N8CryptoPP5StoreE
+N8CryptoPP6FilterE
+N8CryptoPP6SHA256E
+N8CryptoPP6SourceE
+N8CryptoPP7Integer12DivideByZeroE
+N8CryptoPP7IntegerE
+N8CryptoPP7TF_BaseINS_16TrapdoorFunctionENS_33PK_SignatureMessageEncodingMethodEEE
+N8CryptoPP7X917RNGE
+N8CryptoPP8ClonableE
+N8CryptoPP8Rijndael3EncE
+N8CryptoPP8Rijndael4BaseE
+N8CryptoPP8TwoBasesINS_11BlockCipherENS_13Rijndael_InfoEEE
+N8CryptoPP8WaitableE
+N8CryptoPP9AlgorithmE
+N8CryptoPP9ArraySinkE
+N8CryptoPP9BitBucketE
+N8CryptoPP9ByteQueue6WalkerE
+N8CryptoPP9ByteQueueE
+N8CryptoPP9ExceptionE
+N8CryptoPP9PublicKeyE
 NSt3__1
+NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+NSt3__121__basic_string_commonILb1EEE
 NameValuePairs: type mismatch for '
 NetworkSystemVersion001
 Nffffff.
@@ -2467,10 +2471,11 @@ No VPK Errors occured loading files.
 No such file
 NodeSize
 NullRNG
-NullRNG: NullRNG should only be passed to functions that don'unsigned short need to generate random bytes
+NullRNG: NullRNG should only be passed to functions that don't need to generate random bytes
 OS_Rng: 
-Offset %double, expected %short, got %short
-Open( %short )
+Od+Ot
+Offset %d, expected %s, got %s
+Open( %s )
 Opening ZIP file with unsupported compression type
 Out of memory
 OutputBuffer
@@ -2478,9 +2483,11 @@ PK_MessageAccumulator: DigestSize() should not be called
 PK_MessageAccumulator: TruncatedFinal() should not be called
 PK_MessageEncodingMethod: this signature scheme does not support message recovery
 PK_Signer: key too short for this signature scheme
+PN8CryptoPP11RSAFunctionE
+PNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
 PP @ 0@00@0@PP
 PP0 PPPPPP
-Pack File %short at offset %long long length %long long errorcount = %double 
+Pack File %s at offset %x length %x errorcount = %d 
 Pack file uses unsupported compression method: %hi
 Pack file: reading from LZMA stream failed
 Paths:
@@ -2494,18 +2501,18 @@ PublicExponent
 Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
 Qkkbal
 Queued Loader:
-QueuedLoader: %short Creating: %.2f seconds
-QueuedLoader: Anonymous Job '%short' not found
-QueuedLoader: Computation:%8.8x, Size:%7d %short%short
-QueuedLoader: Failed to create resource %short
+QueuedLoader: %s Creating: %.2f seconds
+QueuedLoader: Anonymous Job '%s' not found
+QueuedLoader: Computation:%8.8x, Size:%7d %s%s
+QueuedLoader: Failed to create resource %s
 QueuedLoader: Finished I/O of all queued jobs!
-QueuedLoader: High Priority Jobs: %double
-QueuedLoader: Ignoring Anonymous Job: %short
-QueuedLoader: Late Queued Job: %short
+QueuedLoader: High Priority Jobs: %d
+QueuedLoader: Ignoring Anonymous Job: %s
+QueuedLoader: Late Queued Job: %s
 QueuedLoader: Resuming I/O at %.2f MB
 QueuedLoader: Suspending I/O at %.2f MB
 QueuedLoader: Total Creating: %.2f seconds
-QueuedLoader:: I/O Error on %short
+QueuedLoader:: I/O Error on %s
 QueuedLoaderVersion004
 Queuing Duration: %dms
 RASBRJTDp
@@ -2526,9 +2533,9 @@ RFRDp
 RHVATAp
 RJRBp
 RandomNumberGenerator: IncorporateEntropy not implemented
-Read From Pack: Sync I/O: Requested:%7d, Offset:0x%16.16llx, %short
-Read From Pack: [Preload] Requested:%double, Compressed:%double, %short
-Read From Pack: [Preload] Requested:%double, Total:%double, %short
+Read From Pack: Sync I/O: Requested:%7d, Offset:0x%16.16llx, %s
+Read From Pack: [Preload] Requested:%d, Compressed:%d, %s
+Read From Pack: [Preload] Requested:%d, Total:%d, %s
 Recomputing all VPK file hashes.
 RecursiveLoadFromBuffer:  got EOF instead of keyname
 RecursiveLoadFromBuffer:  got NULL key
@@ -2536,21 +2543,21 @@ RecursiveLoadFromBuffer:  got conditional between key and value
 RecursiveLoadFromBuffer:  got empty keyname
 RecursiveLoadFromBuffer:  got } in key
 RecursiveLoadFromBuffer:  recursion overflow
-Requested non-existent write path %short!
+Requested non-existent write path %s!
 Rffffff.
 RoundUpToMultipleOf: integer overflow
 SARBTBRH\ATCp
 SDRAUCp
 SHA-256
 Set the async filesystem mode (0 = async, 1 = synchronous)
-Simulate signed char delay of up to signed char set msec per file operation
-Size mismatch determining size of signed data block (%double vs %double)
+Simulate a delay of up to a set msec per file operation
+Size mismatch determining size of signed data block (%d vs %d)
 Size of per file buffers. 0 for none
 Sounds
 SplitFileComponents(char const*, char*, char*, char*)
 StrLess(char const* const&, char const* const&)
 StringStore: missing InputBuffer argument
-Submit:%5dms AsyncDuration:%5dms Tag:%double Thread:%8.8x Size:%7d %short%short
+Submit:%5dms AsyncDuration:%5dms Tag:%d Thread:%8.8x Size:%7d %s%s
 Sys_LoadLibrary(char const*, Sys_Flags)
 Sys_LoadModule(char const*, Sys_Flags)
 Sys_UnloadModule(CSysModule*)
@@ -2575,21 +2582,21 @@ ThisPointer:
 ThreadStubProcessMD5Requests(void*)
 TrackedFile_t::Less(TrackedFile_t const&, TrackedFile_t const&)
 TrackedVPKFile_t::Less(TrackedVPKFile_t const&, TrackedVPKFile_t const&)
-TrackedVPKFiles:%double AllOpenedFiles:%double files VPKfiles:%double StringPoolCount:%double
+TrackedVPKFiles:%d AllOpenedFiles:%d files VPKfiles:%d StringPoolCount:%d
 TrackerListAllFiles
 TrackerListVPKFiles
 Tried to Seek NULL file handle!
 Tried to close unknown file pointer %p
-Tried to read %int bytes from unknown file pointer %p
-Tried to write %int bytes from unknown file pointer %p
+Tried to read %i bytes from unknown file pointer %p
+Tried to write %i bytes from unknown file pointer %p
 Try verifying the integrity of your game cache.
 UARDp
 UA^DRAp
-Unable to remove %short!
-Unable to rename %short to %short!
+Unable to remove %s!
+Unable to rename %s to %s!
 Unaccounted
 Unclaimed
-Unknown version %double for vpk %short
+Unknown version %d for vpk %s
 Unrecognized LZMA data
 Unsupported compression type in Zip file: %u
 Use native FS or STDIO
@@ -2607,7 +2614,7 @@ VP4002
 VPK chunk hash hash does not match. File corrupted or modified.
 VPK dir file hash does not match. File corrupted or modified.
 VPK hash count does not match. VPK content may be corrupt.
-VPK hash for file %double failure at offset %x.
+VPK hash for file %d failure at offset %x.
 VPK hashes do not match. VPK content may be corrupt.
 VProcessUtils001
 VTT for CryptoPP::RSAFunction
@@ -2647,13 +2654,13 @@ ValueNames
 Verify integrity of your game files, perform memory and disk diagnostics on your system.
 Version
 WATATAWARATA\ATARA\ATBRA\ATBRA\ATBRATAp
-Wrote ZIP buffer, estimated size %int, actual size %int
+Wrote ZIP buffer, estimated size %i, actual size %i
 X917RNG: Continuous random number generator test failed.
-XZP%char %double
+XZP%c %d
 Xffff.
 YAZAp
 Z 9Y 
-ZIP Output overshot buffer estimate: Estimated %int, actual %int
+ZIP Output overshot buffer estimate: Estimated %i, actual %i
 ZIP_EndOfCentralDirRecord
 ZIP_EndOfCentralDirRecord::m_DataMap
 ZIP_EndOfCentralDirRecord_DataDescInit::g_DataMapHolder
@@ -2678,6 +2685,7 @@ Zip: Failed decompressing LZMA data
 \$8tr
 \$@tO
 \$H+\$P
+\$t+4
 \^_[]
 \cvar
 \ep2\zip
@@ -2688,7 +2696,6 @@ Zip: Failed decompressing LZMA data
 \platform\zip
 \portal\zip
 \tf\zip
-\unsigned short+4
 ^fff.
 _%s.tmp
 _.memset_pattern
@@ -2792,8 +2799,6 @@ __g_CreateCFileSystem_StdioIBaseFileSystem_reg
 __g_CreateCFileSystem_StdioIFileSystem_reg
 __g_CreateCQueuedLoaderIQueuedLoader_reg
 __gcc_except_tab__TEXT
-__int128\$pf
-__int128|$xf
 __la_symbol_ptr
 __mod_init_func
 __nl_symbol_ptr
@@ -2945,10 +2950,10 @@ async_suspend(CCommand const&)
 async_suspend_command
 asyncappend
 asyncwrite
-blocking load %short
-blocking write %short
+blocking load %s
+blocking write %s
 bool CryptoPP::NameValuePairs::GetThisObject<CryptoPP::RSAFunction>(CryptoPP::RSAFunction&) const
-cThreadedBlocks:%double cDupMD5s:%double
+cThreadedBlocks:%d cDupMD5s:%d
 centralDirectorySize
 commentLength
 compressedSize
@@ -2979,7 +2984,7 @@ copy "%%binsrc%%\hl2.dat" "%%fs_target%%"
 copy "%%binsrc%%\hl2.exe" "%%fs_target%%"
 copy "%%binsrc%%\hl2\bin\gameui.dll" "%%fs_target%%\hl2\bin"
 copy "%%binsrc%%\hl2\resource\*.ttf" "%%fs_target%%\hl2\resource"
-copy "%short" "%short"
+copy "%s" "%s"
 cpu.cpp
 crc32
 cryptlib.cpp
@@ -2996,14 +3001,12 @@ datamap_t* DataMapInit<ZIP_PreloadHeader>(ZIP_PreloadHeader*)::dataDesc
 datamap_t* DataMapInit<ZIP_PreloadHeader>(ZIP_PreloadHeader*)::nameHolder
 diskNumberStart
 dll.cpp
-double&&+unsigned short&&
 dyld_stub_binder
 echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo ERROR: must set fs_target=targetpath (ie. "set fs_target=u:\destdir")!
 externalFileAttribs
 extraFieldLength
-failed to read %double bytes
-fff.
+failed to read %d bytes
 ffff.
 fffff.
 ffffff.
@@ -3019,7 +3022,7 @@ filters.cpp
 fips140.cpp
 flags
 fs_debug
-fs_debug: %short
+fs_debug: %s
 fs_monitor_read_from_pack
 fs_report_sync_opens
 fs_warning_mode
@@ -3086,6 +3089,7 @@ integer.cpp
 internalFileAttribs
 iterhash.cpp
 kt$,8
+l^_[]
 lastModifiedDate
 lastModifiedTime
 loader_dump_table
@@ -3093,7 +3097,6 @@ loader_dump_table(CCommand const&)
 loader_dump_table_command
 loader_spew_info
 loader_spew_info_ex
-long^_[]
 lzma_persistent_buffer
 maps\
 materials\
@@ -3102,7 +3105,7 @@ mfff.
 misc.cpp
 mkdir "%%fs_target%%"
 mkdir "%%fs_target%%\bin"
-mkdir "%short"
+mkdir "%s"
 mod_write
 models\
 mqueue.cpp
@@ -3110,6 +3113,7 @@ nCentralDirectoryEntries_ThisDisk
 nCentralDirectoryEntries_Total
 nT$hf
 nT$tf
+n\$pf
 nl$Hf
 non-virtual thunk to CBaseFileSystem::Close(void*)
 non-virtual thunk to CBaseFileSystem::FileExists(char const*, char const*)
@@ -3189,8 +3193,9 @@ nt$lf
 nteluY
 numberOfTheDiskWithStartOfCentralDirectory
 numberOfThisDisk
+n|$xf
 offffff.
-ol$ float
+ol$ f
 open /dev/random
 open /dev/urandom
 opened_files.txt
@@ -3199,7 +3204,6 @@ operator delete[](void*)
 operator new(unsigned long)
 operator new[](unsigned long)
 osrng.cpp
-p8pH
 p`p``
 pkcspad.cpp
 pubkey.cpp
@@ -3224,6 +3228,7 @@ relativeOffsetOfLocalHeader
 rijndael.cpp
 rng.cpp
 rsa.cpp
+s )s$
 s_DefaultAccessor
 s_DummyProgress
 s_EmptyConVar
@@ -3238,15 +3243,13 @@ s_nDLLIdentifier
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 s_pTokenBuf
-set binsrc="%short"
-set fs_target="%short"
+set binsrc="%s"
+set fs_target="%s"
 setlocal
 sha.cpp
-short )s$
 signature
 sound\
 startOfCentralDirOffset
-std::__1::__basic_string_common<true>
 std::__1::__deque_base<unsigned int, std::__1::allocator<unsigned int> >::clear()
 std::__1::__deque_base<unsigned long long, std::__1::allocator<unsigned long long> >::clear()
 std::__1::__split_buffer<CryptoPP::WindowSlider, std::__1::allocator<CryptoPP::WindowSlider>&>::~__split_buffer()
@@ -3260,13 +3263,11 @@ std::__1::__split_buffer<unsigned long long*, std::__1::allocator<unsigned long 
 std::__1::__split_buffer<unsigned long long*, std::__1::allocator<unsigned long long*>&>::push_front(unsigned long long* const&)
 std::__1::__vector_base<CryptoPP::WindowSlider, std::__1::allocator<CryptoPP::WindowSlider> >::~__vector_base()
 std::__1::__vector_base_common<true>::__throw_length_error() const
-std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<int>(int, unsigned int)
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<unsigned int>(unsigned int, unsigned int)
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<unsigned long>(unsigned long, unsigned int)
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > std::__1::operator+<char, std::__1::char_traits<char>, std::__1::allocator<char> >(char const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > std::__1::operator+<char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, char const*)
-std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long)
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__init(char const*, unsigned long, unsigned long)
 std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*)
@@ -3307,8 +3308,10 @@ t$$ty
 t$(ff.
 t$0fffff.
 t$<tF
-t$@;t$<short?
-t$lu&float
+t$@;t$<s?
+t$lu&f
+t+Cffffff.
+t+ff.
 t5ff.
 t8fffff.
 tNfffff.
@@ -3708,8 +3711,6 @@ unsigned int CUtlHashtable<CUtlStableHashtable<CUtlConstStringBase<char>, empty_
 unsigned int CUtlHashtable<char const*, CMemoryFileBacking*, DefaultHashFunctor<char const*>, DefaultEqualFunctor<char const*>, undefined_t>::DoInsert<char const*>(char const*, CMemoryFileBacking*, unsigned int, bool*)
 unsigned int CUtlStableHashtable<CUtlConstStringBase<char>, empty_t, DefaultHashFunctor<CUtlConstStringBase<char> >, DefaultEqualFunctor<CUtlConstStringBase<char> >, unsigned short, char const*>::DoInsert<char const*>(char const*)
 unsigned int CryptoPP::DivideThreeWordsByTwo<unsigned int, CryptoPP::DWord>(unsigned int*, unsigned int, unsigned int, CryptoPP::DWord*)
-unsigned short+Cffffff.
-unsigned short+ff.
 vec2_invalid
 vec2_origin
 versionMadeBy
@@ -3828,7 +3829,7 @@ vtable for __cxxabiv1::__pointer_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
 w2fffff.
-wd+wchar_t`
+wd+w`
 wn>Jj
 yDaHFC
 yDaHFCu6

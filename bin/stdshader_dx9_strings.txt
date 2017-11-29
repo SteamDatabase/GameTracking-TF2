@@ -1,9 +1,9 @@
 	w4A1
      @p
-   PS dyn  var %short = %double (%short)
-   PS stat var %short = %double (%short)
-   VS dyn  var %short = %double (%short)
-   VS stat var %short = %double (%short)
+   PS dyn  var %s = %d (%s)
+   PS stat var %s = %d (%s)
+   VS dyn  var %s = %d (%s)
+   VS stat var %s = %d (%s)
   00  
   0@@@@@
  00@@@@@
@@ -87,6 +87,10 @@ $C1_W
 $C1_X
 $C1_Y
 $C1_Z
+$C2_W
+$C2_X
+$C2_Y
+$C2_Z
 $C3_W
 $C3_X
 $C3_Y
@@ -512,11 +516,11 @@ $texture2 texcoord transform
 (int)vertexCompression
 (nFixedLightingMode)?1:0
 (params[USEALTERNATEVIEWMATRIX]->GetIntValue() != 0)
-***need to set $abovewater for material %short
+***need to set $abovewater for material %s
 ,@@@@ 
 ,^_[]
 -softparticlesdefaultoff
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(color_conversion.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(mathlib_base.o)
@@ -956,35 +960,58 @@ $texture2 texcoord transform
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
 0 0 0
-0 = always face camera, 1 = rotate around ..., 2= parallel to ground
+0 = always face camera, 1 = rotate around z, 2= parallel to ground
 0 == Use diffuse bump lighting, 1 = No diffuse bump lighting
-0 == write ..., 1 = no write ...
+0 == write z, 1 = no write z
 0 for no fade out on silhouette, 1 for fade out on sillhouette
 0, 1, or 2 for how much blur you want
 0.0 == multiply by lightmap, 1.0 == multiply by 1
 00````p@pp 
 0@@@@@
-0@Shadow::CShader
+0@N6Shadow7CShaderE
 0^_[]
 1 1 1
 1.0 == mirror, 0.0 == water
 100000.0
+10CShaderDLL
+10IShaderDLL
+11CBaseShader
+12CEmptyConVar
+13CBaseVSShader
+14ConCommandBase
+16CDefaultAccessor
+17CSkin_DX9_Context
+17CWarp_DX9_Context
+18CUtlCharConversion
+18IShaderDLLInternal
+19CUtlNoEscConversion
+1D ramp texture for tinting scalar diffuse term
+23CPyroVision_DX9_Context
+23IConCommandBaseAccessor
+24CShaderLibConVarAccessor
+27CBasePerMaterialContextData
+29CVRDistortTexture_DX9_Context
+29CVertexLitGeneric_DX9_Context
 2D map for warping specular
 2D rate to scroll $flowmap
+31CLightmappedGeneric_DX9_Context
 400.0
+6ConVar
+7IConVar
+7IShader
 <^_[]
-<unsigned char~)=
->unsigned char~)<
-?Cloud::CShader
-?LightmappedReflective::CShader
-?Modulate::CShader
-?floatcombine::CShader
+<h~)=
+>h~)<
+?N12floatcombine7CShaderE
+?N21LightmappedReflective7CShaderE
+?N5Cloud7CShaderE
+?N8Modulate7CShaderE
 @(^_]
-@333?333?333?333?DepthWrite::CShader
-@Bik::CShader
+@333?333?333?333?N10DepthWrite7CShaderE
 @CVProfNode::EnterScope()
 @CVProfNode::ExitScope()
 @CVProfNode::GetSubNode(char const*, int, char const*, int)
+@N3Bik7CShaderE
 @_CommandLine_Tier0
 @_GetCPUInformation
 @_ThreadGetCurrentId
@@ -1046,7 +1073,6 @@ ARBSAp
 ARFSARB`
 AVBSB
 Aftershock
-Aftershock::CShader
 Aftershock::CShader::GetFallbackShader(IMaterialVar**) const
 Aftershock::CShader::GetFlags() const
 Aftershock::CShader::GetName() const
@@ -1066,7 +1092,6 @@ Aftershock_dx9::BLURAMOUNT
 Aftershock_dx9::BUMPFRAME
 Aftershock_dx9::BUMPTRANSFORM
 Aftershock_dx9::COLORTINT
-Aftershock_dx9::CShader
 Aftershock_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 Aftershock_dx9::CShader::GetFlags() const
 Aftershock_dx9::CShader::GetName() const
@@ -1134,7 +1159,6 @@ Bik::s_ShaderParams
 Blended texture
 Bloom
 Bloom::BLURTEXTURE
-Bloom::CShader
 Bloom::CShader::GetFallbackShader(IMaterialVar**) const
 Bloom::CShader::GetFlags() const
 Bloom::CShader::GetName() const
@@ -1151,7 +1175,6 @@ Bloom::FBTEXTURE
 Bloom::s_ShaderInstance
 Bloom::s_ShaderParams
 BlurFilterX
-BlurFilterX::CShader
 BlurFilterX::CShader::GetFallbackShader(IMaterialVar**) const
 BlurFilterX::CShader::GetFlags() const
 BlurFilterX::CShader::GetName() const
@@ -1168,7 +1191,6 @@ BlurFilterX::s_ShaderParams
 BlurFilterX_DX80
 BlurFilterY
 BlurFilterY::BLOOMAMOUNT
-BlurFilterY::CShader
 BlurFilterY::CShader::GetFallbackShader(IMaterialVar**) const
 BlurFilterY::CShader::GetFlags() const
 BlurFilterY::CShader::GetName() const
@@ -1189,7 +1211,6 @@ BlurFilterY_DX80
 BlurFilter_vs20
 Boost for rim lights
 BufferClearObeyStencil
-BufferClearObeyStencil::CShader
 BufferClearObeyStencil::CShader::GetFallbackShader(IMaterialVar**) const
 BufferClearObeyStencil::CShader::GetFlags() const
 BufferClearObeyStencil::CShader::GetName() const
@@ -1208,7 +1229,6 @@ BufferClearObeyStencil_DX9
 BufferClearObeyStencil_DX9::CLEARALPHA
 BufferClearObeyStencil_DX9::CLEARCOLOR
 BufferClearObeyStencil_DX9::CLEARDEPTH
-BufferClearObeyStencil_DX9::CShader
 BufferClearObeyStencil_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 BufferClearObeyStencil_DX9::CShader::GetFlags() const
 BufferClearObeyStencil_DX9::CShader::GetName() const
@@ -1226,8 +1246,6 @@ BufferClearObeyStencil_DX9::s_ShaderInstance
 BufferClearObeyStencil_DX9::s_ShaderParams
 BuildGammaTable(float, float, float, int)
 C33s?333333
-CBasePerMaterialContextData
-CBaseShader
 CBaseShader::BindTexture(Sampler_t, ITexture*, int)
 CBaseShader::BindTexture(Sampler_t, int, int)
 CBaseShader::CBaseShader()
@@ -1282,7 +1300,6 @@ CBaseShader::s_pShaderInit
 CBaseShader::s_pShaderShadow
 CBaseShader::s_pTextureGroupName
 CBaseShader::s_ppParams
-CBaseVSShader
 CBaseVSShader::DrawEqualDepthToDestAlpha()
 CBaseVSShader::DrawFlashlight_dx90(IMaterialVar**, IShaderDynamicAPI*, IShaderShadow*, CBaseVSShader::DrawFlashlight_dx90_Vars_t&)
 CBaseVSShader::EnablePixelShaderOverbright(int, bool, bool)
@@ -1313,16 +1330,13 @@ CBaseVSShader::SetVertexShaderTextureScaledTransform(int, int, int)
 CBaseVSShader::SetVertexShaderTextureTransform(int, int)
 CCommandBufferBuilder<CFixedCommandStorageBuffer<1000> >::SetVertexShaderTextureScaledTransform(int, int, int)
 CCommandBufferBuilder<CFixedCommandStorageBuffer<800> >::SetVertexShaderTextureScaledTransform(int, int, int)
-CDefaultAccessor
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
 CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
-CLightmappedGeneric_DX9_Context
 CLightmappedGeneric_DX9_Context::~CLightmappedGeneric_DX9_Context()
 CMBO_HUDUNDISTORT
 CMBO_USERENDERTARGET
@@ -1336,10 +1350,8 @@ COMPRESSED_VERTS
 CONSTANTCOLOR
 CONVERT_TO_SRGB
 CORECOLORTEXTURE
-CPyroVision_DX9_Context
 CPyroVision_DX9_Context::~CPyroVision_DX9_Context()
 CSTRIKE
-CShaderDLL
 CShaderDLL::Connect(void* (*)(char const*, int*))
 CShaderDLL::Connect(void* (*)(char const*, int*), bool)
 CShaderDLL::Disconnect()
@@ -1347,17 +1359,13 @@ CShaderDLL::Disconnect(bool)
 CShaderDLL::GetShader(int)
 CShaderDLL::InsertShader(IShader*)
 CShaderDLL::ShaderCount() const
-CShaderLibConVarAccessor
 CShaderLibConVarAccessor::RegisterConCommandBase(ConCommandBase*)
-CSkin_DX9_Context
 CSkin_DX9_Context::~CSkin_DX9_Context()
 CUBEMAP
 CUBEMAP_SPHERE_LEGACY
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlVector<Aftershock::CShaderParam*, CUtlMemory<Aftershock::CShaderParam*, int> >::~CUtlVector()
 CUtlVector<Aftershock_dx9::CShaderParam*, CUtlMemory<Aftershock_dx9::CShaderParam*, int> >::~CUtlVector()
@@ -1487,14 +1495,10 @@ CUtlVector<warp::CShaderParam*, CUtlMemory<warp::CShaderParam*, int> >::~CUtlVec
 CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
-CVRDistortTexture_DX9_Context
 CVRDistortTexture_DX9_Context::~CVRDistortTexture_DX9_Context()
-CVertexLitGeneric_DX9_Context
 CVertexLitGeneric_DX9_Context::~CVertexLitGeneric_DX9_Context()
-CWarp_DX9_Context
 CWarp_DX9_Context::~CWarp_DX9_Context()
 Cable
-Cable::CShader
 Cable::CShader::GetFallbackShader(IMaterialVar**) const
 Cable::CShader::GetFlags() const
 Cable::CShader::GetName() const
@@ -1511,7 +1515,6 @@ Cable::s_ShaderParams
 Cable_DX8
 Cable_DX9
 Cable_DX9::BUMPMAP
-Cable_DX9::CShader
 Cable_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Cable_DX9::CShader::GetFlags() const
 Cable_DX9::CShader::GetName() const
@@ -1529,10 +1532,10 @@ Cable_DX9::MINLIGHT
 Cable_DX9::s_ShaderInstance
 Cable_DX9::s_ShaderParams
 Cause the refraction to be blurry on ps2b hardware
+Cb Bink Texture
 Center of leaf cluster for lighting
 Cloak
 Cloak color tint
-Cloak::CShader
 Cloak::CShader::GetFallbackShader(IMaterialVar**) const
 Cloak::CShader::GetFlags() const
 Cloak::CShader::GetName() const
@@ -1553,7 +1556,6 @@ Cloak_DX90::BUMPFRAME
 Cloak_DX90::BUMPTRANSFORM
 Cloak_DX90::CLOAKFACTOR
 Cloak_DX90::COLOR
-Cloak_DX90::CShader
 Cloak_DX90::CShader::GetFallbackShader(IMaterialVar**) const
 Cloak_DX90::CShader::GetFlags() const
 Cloak_DX90::CShader::GetName() const
@@ -1611,7 +1613,6 @@ Cloud_dx9
 Cloud_dx9::BASETEXTURE
 Cloud_dx9::CLOUDALPHATEXTURE
 Cloud_dx9::CLOUDSCALE
-Cloud_dx9::CShader
 Cloud_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 Cloud_dx9::CShader::GetFlags() const
 Cloud_dx9::CShader::GetName() const
@@ -1631,7 +1632,6 @@ Cloud_dx9::s_pShaderParamOverrides
 Color texture
 Color tint
 ColorCorrection
-ColorCorrection::CShader
 ColorCorrection::CShader::GetFallbackShader(IMaterialVar**) const
 ColorCorrection::CShader::GetFlags() const
 ColorCorrection::CShader::GetName() const
@@ -1657,7 +1657,6 @@ ColorCorrection::s_ShaderInstance
 ColorCorrection::s_ShaderParams
 Compositor
 Compositor::COMBINE_MODE
-Compositor::CShader
 Compositor::CShader::GetFallbackShader(IMaterialVar**) const
 Compositor::CShader::GetFlags() const
 Compositor::CShader::GetName() const
@@ -1702,12 +1701,10 @@ Compositor::TEXTRANSFORM3
 Compositor::TEXTUREINPUTCOUNT
 Compositor::s_ShaderInstance
 Compositor::s_ShaderParams
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -1726,14 +1723,13 @@ ConVar::SetValue(char const*)
 ConVar::SetValue(float)
 ConVar::SetValue(int)
 ConVar::~ConVar()
-ConVarRef %short doesn'unsigned short point to an existing ConVar
+ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVar_Register(int, IConCommandBaseAccessor*)
 ConVar_Unregister()
 ConnectTier1Libraries(void* (**)(char const*, int*), int)
 Control drawing of non-ambient light ()
-Core::CShader
 Core::CShader::GetFallbackShader(IMaterialVar**) const
 Core::CShader::GetFlags() const
 Core::CShader::GetName() const
@@ -1754,7 +1750,6 @@ Core_DX90::BUMPTRANSFORM
 Core_DX90::COLOR
 Core_DX90::CORECOLORTEXTURE
 Core_DX90::CORECOLORTEXTUREFRAME
-Core_DX90::CShader
 Core_DX90::CShader::DrawPass(IMaterialVar**, IShaderShadow*, IShaderDynamicAPI*, int, VertexCompressionType_t)
 Core_DX90::CShader::GetFallbackShader(IMaterialVar**) const
 Core_DX90::CShader::GetFlags() const
@@ -1788,12 +1783,11 @@ Core_DX90::s_pShaderParamOverrides
 Core_dx80
 Cornea strength
 Cr Bink Texture
-D ramp texture for tinting scalar diffuse term
 DEBUG_LUXELS
 DEBUG_MODE
 DECAL
 DEPTHBLEND
-DEPTHBLEND not supported by bump mapped variations of vertexlitgeneric to avoid shader bloat. Either remove the bump map or convince signed char graphics programmer that it'short worth it.
+DEPTHBLEND not supported by bump mapped variations of vertexlitgeneric to avoid shader bloat. Either remove the bump map or convince a graphics programmer that it's worth it.
 DEPTH_IN_ALPHA
 DETAILTEXTURE
 DETAIL_ALPHA_MASK_BASE_TEXTURE
@@ -1808,7 +1802,6 @@ DOWATERFOG
 DUALSEQUENCE
 DYNAMIC_LIGHT
 DebugMRTTexture
-DebugMRTTexture::CShader
 DebugMRTTexture::CShader::GetFallbackShader(IMaterialVar**) const
 DebugMRTTexture::CShader::GetFlags() const
 DebugMRTTexture::CShader::GetName() const
@@ -1825,7 +1818,6 @@ DebugMRTTexture::MRTINDEX
 DebugMRTTexture::s_ShaderInstance
 DebugMRTTexture::s_ShaderParams
 DebugTextureView
-DebugTextureView::CShader
 DebugTextureView::CShader::GetFallbackShader(IMaterialVar**) const
 DebugTextureView::CShader::GetFlags() const
 DebugTextureView::CShader::GetName() const
@@ -1840,7 +1832,6 @@ DebugTextureView::CShader::OnInitShaderInstance(IMaterialVar**, IShaderInit*, ch
 DebugTextureView::s_ShaderInstance
 DebugTextureView::s_ShaderParams
 DebugTextureView_dx9
-DebugTextureView_dx9::CShader
 DebugTextureView_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 DebugTextureView_dx9::CShader::GetFlags() const
 DebugTextureView_dx9::CShader::GetName() const
@@ -1856,7 +1847,6 @@ DebugTextureView_dx9::SHOWALPHA
 DebugTextureView_dx9::s_ShaderInstance
 DebugTextureView_dx9::s_ShaderParams
 DecalBaseTimesLightmapAlphaBlendSelfIllum
-DecalBaseTimesLightmapAlphaBlendSelfIllum::CShader
 DecalBaseTimesLightmapAlphaBlendSelfIllum::CShader::GetFallbackShader(IMaterialVar**) const
 DecalBaseTimesLightmapAlphaBlendSelfIllum::CShader::GetFlags() const
 DecalBaseTimesLightmapAlphaBlendSelfIllum::CShader::GetName() const
@@ -1873,7 +1863,6 @@ DecalBaseTimesLightmapAlphaBlendSelfIllum::s_ShaderParams
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX8
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::BASETEXTURE
-DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::CShader
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::CShader::DrawDecal(IMaterialVar**, IShaderDynamicAPI*, IShaderShadow*)
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::CShader::GetFlags() const
@@ -1894,7 +1883,6 @@ DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::s_ShaderInstance
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::s_ShaderParams
 DecalBaseTimesLightmapAlphaBlendSelfIllum_DX9::s_pShaderParamOverrides
 DecalModulate
-DecalModulate::CShader
 DecalModulate::CShader::GetFallbackShader(IMaterialVar**) const
 DecalModulate::CShader::GetFlags() const
 DecalModulate::CShader::GetName() const
@@ -1911,7 +1899,6 @@ DecalModulate::s_ShaderParams
 DecalModulate_DX6
 DecalModulate_DX9
 DecalModulate_dx9
-DecalModulate_dx9::CShader
 DecalModulate_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 DecalModulate_dx9::CShader::GetFlags() const
 DecalModulate_dx9::CShader::GetName() const
@@ -1967,7 +1954,6 @@ Disables SRGB conversion of shader results.
 DisconnectTier1Libraries()
 Distance at which shadow starts to fade
 Downsample
-Downsample::CShader
 Downsample::CShader::GetFallbackShader(IMaterialVar**) const
 Downsample::CShader::GetFlags() const
 Downsample::CShader::GetName() const
@@ -1984,7 +1970,6 @@ Downsample::s_ShaderParams
 Downsample_nohdr
 Downsample_nohdr::BLOOMTINTENABLE
 Downsample_nohdr::CSTRIKE
-Downsample_nohdr::CShader
 Downsample_nohdr::CShader::GetFallbackShader(IMaterialVar**) const
 Downsample_nohdr::CShader::GetFlags() const
 Downsample_nohdr::CShader::GetName() const
@@ -2040,11 +2025,10 @@ Enable glow/shadow for distance coded textures.
 Enable outline for distance coded textures.
 Enable soft edges to distance coded textures.
 Enable software anti-aliasing
-Enables cloak render in signed char second pass
-Enables weapon sheen render in signed char second pass
+Enables cloak render in a second pass
+Enables weapon sheen render in a second pass
 End value for soft edges for distancealpha.
 Engine_Post
-Engine_Post::CShader
 Engine_Post::CShader::GetFallbackShader(IMaterialVar**) const
 Engine_Post::CShader::GetFlags() const
 Engine_Post::CShader::GetName() const
@@ -2064,7 +2048,6 @@ Engine_Post_dx9::AAINTERNAL1
 Engine_Post_dx9::AAINTERNAL2
 Engine_Post_dx9::AAINTERNAL3
 Engine_Post_dx9::BLOOMENABLE
-Engine_Post_dx9::CShader
 Engine_Post_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 Engine_Post_dx9::CShader::GetFlags() const
 Engine_Post_dx9::CShader::GetName() const
@@ -2083,7 +2066,6 @@ Engine_Post_dx9::s_ShaderInstance
 Engine_Post_dx9::s_ShaderParams
 Exponent for rim lights
 EyeGlint
-EyeGlint::CShader
 EyeGlint::CShader::GetFallbackShader(IMaterialVar**) const
 EyeGlint::CShader::GetFlags() const
 EyeGlint::CShader::GetName() const
@@ -2098,7 +2080,6 @@ EyeGlint::CShader::OnInitShaderInstance(IMaterialVar**, IShaderInit*, char const
 EyeGlint::s_ShaderInstance
 EyeGlint::s_ShaderParams
 EyeGlint_dx9
-EyeGlint_dx9::CShader
 EyeGlint_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 EyeGlint_dx9::CShader::GetFlags() const
 EyeGlint_dx9::CShader::GetName() const
@@ -2113,7 +2094,6 @@ EyeGlint_dx9::CShader::OnInitShaderInstance(IMaterialVar**, IShaderInit*, char c
 EyeGlint_dx9::s_ShaderInstance
 EyeGlint_dx9::s_ShaderParams
 EyeRefract
-EyeRefract::CShader
 EyeRefract::CShader::GetFallbackShader(IMaterialVar**) const
 EyeRefract::CShader::GetFlags() const
 EyeRefract::CShader::GetName() const
@@ -2135,7 +2115,6 @@ EyeRefract_dx9::CLOAKFACTOR
 EyeRefract_dx9::CLOAKPASSENABLED
 EyeRefract_dx9::CORNEABUMPSTRENGTH
 EyeRefract_dx9::CORNEATEXTURE
-EyeRefract_dx9::CShader
 EyeRefract_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 EyeRefract_dx9::CShader::GetFlags() const
 EyeRefract_dx9::CShader::GetName() const
@@ -2180,7 +2159,6 @@ Eyeball radius for ray casting
 Eyes_Overbright2
 Eyes_dx8
 Eyes_dx9
-Eyes_dx9::CShader
 Eyes_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 Eyes_dx9::CShader::GetFlags() const
 Eyes_dx9::CShader::GetName() const
@@ -2224,7 +2202,6 @@ FULLBRIGHT
 Film dust texture
 Film grain texture
 FilmDust
-FilmDust::CShader
 FilmDust::CShader::GetFallbackShader(IMaterialVar**) const
 FilmDust::CShader::GetFlags() const
 FilmDust::CShader::GetName() const
@@ -2241,7 +2218,6 @@ FilmDust::s_ShaderParams
 FilmDust_DX8
 FilmDust_dx9
 FilmDust_dx9::CHANNEL_SELECT
-FilmDust_dx9::CShader
 FilmDust_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 FilmDust_dx9::CShader::GetFlags() const
 FilmDust_dx9::CShader::GetName() const
@@ -2259,7 +2235,6 @@ FilmDust_dx9::DUST_TEXTURE
 FilmDust_dx9::s_ShaderInstance
 FilmDust_dx9::s_ShaderParams
 FilmGrain
-FilmGrain::CShader
 FilmGrain::CShader::GetFallbackShader(IMaterialVar**) const
 FilmGrain::CShader::GetFlags() const
 FilmGrain::CShader::GetName() const
@@ -2275,7 +2250,6 @@ FilmGrain::s_ShaderInstance
 FilmGrain::s_ShaderParams
 FilmGrain_dx8
 FilmGrain_dx9
-FilmGrain_dx9::CShader
 FilmGrain_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 FilmGrain_dx9::CShader::GetFlags() const
 FilmGrain_dx9::CShader::GetName() const
@@ -2297,8 +2271,8 @@ Flashlight pass sets N.L=1.0
 Flesh Debug full flesh
 Flesh Noise UV scalar for border
 Flesh border
+Flesh border 1D texture
 Flesh border Color
-Flesh border D texture
 Flesh border softness (> 0.0 && <= 0.5)
 Flesh color texture
 Flesh cubemap texture
@@ -2310,8 +2284,8 @@ Flesh normal texture
 Flesh scroll speed
 Flesh subsurface texture
 Force the material to write alpha to the dest buffer
-Forces ... to be written if set
 Forces this material to receive flashlights.
+Forces z to be written if set
 Forward direction vector for teeth lighting
 Full framebuffer texture
 GammaToLinear(float)
@@ -2326,7 +2300,6 @@ HALFLAMBERT
 HASALPHAMASK
 HASSTATICTEXTURE
 HDRCombineTo16Bit
-HDRCombineTo16Bit::CShader
 HDRCombineTo16Bit::CShader::GetFallbackShader(IMaterialVar**) const
 HDRCombineTo16Bit::CShader::GetFlags() const
 HDRCombineTo16Bit::CShader::GetName() const
@@ -2343,7 +2316,6 @@ HDRCombineTo16Bit::s_ShaderInstance
 HDRCombineTo16Bit::s_ShaderParams
 HDRENABLED
 HDRSelectRange
-HDRSelectRange::CShader
 HDRSelectRange::CShader::GetFallbackShader(IMaterialVar**) const
 HDRSelectRange::CShader::GetFlags() const
 HDRSelectRange::CShader::GetName() const
@@ -2361,7 +2333,6 @@ HDRSelectRange::s_ShaderParams
 HDRSelectRange_vs20
 HDRTYPE
 HEATHAZE
-HSV::CShader
 HSV::CShader::GetFallbackShader(IMaterialVar**) const
 HSV::CShader::GetFlags() const
 HSV::CShader::GetName() const
@@ -2381,18 +2352,13 @@ H__ZdlPv
 H__Znam
 H__Znwm
 How cloaked?  Zero is not cloaked, 1 is fully cloaked.
-IConCommandBaseAccessor
-IConVar
 INTRO
 ISCUBEMAP
 IS_FLAG_SET( MATERIAL_VAR_HALFLAMBERT )
 IS_FLAG_SET( MATERIAL_VAR_VERTEXCOLOR )
 IS_PARAM_DEFINED( X360APPCHOOSER ) ? params[X360APPCHOOSER]->GetIntValue() : 0
-IShader
-IShaderDLL
-IShaderDLLInternal
 If this is 1, then when detail alpha=0, no base texture is blended and when detail alpha=1, you get detail*base*lightmap
-If we bind signed char texture here, it overrides base alpha (if any) for self illum
+If we bind a texture here, it overrides base alpha (if any) for self illum
 Index of the Effect Type (Color Additive, Override etc...)
 Indicates whether or not to use alpha channel of exponent texture to mask the rim term
 InitAftershock(CBaseVSShader*, IMaterialVar**, AftershockVars_t&)
@@ -2430,7 +2396,6 @@ InterfaceReg::s_pInterfaceRegs
 Internal anti-aliasing values set via material proxy
 Internal motion blur value set by proxy
 IntroScreenSpaceEffect
-IntroScreenSpaceEffect::CShader
 IntroScreenSpaceEffect::CShader::GetFallbackShader(IMaterialVar**) const
 IntroScreenSpaceEffect::CShader::GetFlags() const
 IntroScreenSpaceEffect::CShader::GetName() const
@@ -2472,7 +2437,6 @@ LightmappedGeneric::BUMPMAP2
 LightmappedGeneric::BUMPMASK
 LightmappedGeneric::BUMPTRANSFORM
 LightmappedGeneric::BUMPTRANSFORM2
-LightmappedGeneric::CShader
 LightmappedGeneric::CShader::GetFallbackShader(IMaterialVar**) const
 LightmappedGeneric::CShader::GetFlags() const
 LightmappedGeneric::CShader::GetName() const
@@ -2541,7 +2505,6 @@ LightmappedReflective::s_ShaderParams
 LightmappedReflective_DX90
 LightmappedReflective_DX90::BUMPFRAME
 LightmappedReflective_DX90::BUMPTRANSFORM
-LightmappedReflective_DX90::CShader
 LightmappedReflective_DX90::CShader::DrawReflectionRefraction(IMaterialVar**, IShaderShadow*, IShaderDynamicAPI*, bool, bool)
 LightmappedReflective_DX90::CShader::GetFallbackShader(IMaterialVar**) const
 LightmappedReflective_DX90::CShader::GetFlags() const
@@ -2584,6 +2547,7 @@ MathLib_Init(float, float, float, int, bool, bool, bool, bool)
 MatrixMultiply(VMatrix const&, VMatrix const&, VMatrix&)
 MatrixSetIdentity(VMatrix&)
 MatrixTranspose(VMatrix const&, VMatrix&)
+Max shadow distance
 Maximum amount of light
 Minimum amount of light (0-1 value)
 Modulate
@@ -2605,7 +2569,6 @@ Modulate_DX9
 Modulate_DX9::CLOAKCOLORTINT
 Modulate_DX9::CLOAKFACTOR
 Modulate_DX9::CLOAKPASSENABLED
-Modulate_DX9::CShader
 Modulate_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Modulate_DX9::CShader::GetFlags() const
 Modulate_DX9::CShader::GetName() const
@@ -2627,7 +2590,6 @@ Modulate_DX9::WRITEZ
 Modulate_DX9::s_ShaderInstance
 Modulate_DX9::s_ShaderParams
 MonitorScreen
-MonitorScreen::CShader
 MonitorScreen::CShader::GetFallbackShader(IMaterialVar**) const
 MonitorScreen::CShader::GetFlags() const
 MonitorScreen::CShader::GetName() const
@@ -2644,7 +2606,6 @@ MonitorScreen::s_ShaderParams
 MonitorScreen_DX8
 MonitorScreen_DX9
 MonitorScreen_DX9::CONTRAST
-MonitorScreen_DX9::CShader
 MonitorScreen_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 MonitorScreen_DX9::CShader::GetFlags() const
 MonitorScreen_DX9::CShader::GetName() const
@@ -2666,7 +2627,6 @@ MonitorScreen_DX9::TINT
 MonitorScreen_DX9::s_ShaderInstance
 MonitorScreen_DX9::s_ShaderParams
 MotionBlur
-MotionBlur::CShader
 MotionBlur::CShader::GetFallbackShader(IMaterialVar**) const
 MotionBlur::CShader::GetFlags() const
 MotionBlur::CShader::GetName() const
@@ -2681,7 +2641,6 @@ MotionBlur::CShader::OnInitShaderInstance(IMaterialVar**, IShaderInit*, char con
 MotionBlur::s_ShaderInstance
 MotionBlur::s_ShaderParams
 MotionBlur_dx9
-MotionBlur_dx9::CShader
 MotionBlur_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 MotionBlur_dx9::CShader::GetFlags() const
 MotionBlur_dx9::CShader::GetName() const
@@ -2697,6 +2656,124 @@ MotionBlur_dx9::CShader::OnInitShaderParams(IMaterialVar**, char const*)
 MotionBlur_dx9::MOTIONBLURINTERNAL
 MotionBlur_dx9::s_ShaderInstance
 MotionBlur_dx9::s_ShaderParams
+N10Aftershock7CShaderE
+N10Cloak_DX907CShaderE
+N10Compositor7CShaderE
+N10Downsample7CShaderE
+N10EyeRefract7CShaderE
+N10MotionBlur7CShaderE
+N10Sprite_DX97CShaderE
+N10Spritecard7CShaderE
+N10Water_DX9013Water_DX9_HDR7CShaderE
+N10Water_DX907CShaderE
+N10WriteZ_DX97CShaderE
+N11BlurFilterX7CShaderE
+N11BlurFilterY7CShaderE
+N11Engine_Post7CShaderE
+N11Portal_DX907CShaderE
+N11ShadowBuild7CShaderE
+N11ShadowModel7CShaderE
+N11Sky_HDR_DX97CShaderE
+N11pyro_vision7CShaderE
+N12EyeGlint_dx97CShaderE
+N12FilmDust_dx97CShaderE
+N12Modulate_DX97CShaderE
+N12Refract_DX907CShaderE
+N12UnlitGeneric7CShaderE
+N12VolumeClouds7CShaderE
+N12VortWarp_DX97CShaderE
+N12WriteStencil7CShaderE
+N13DecalModulate7CShaderE
+N13FilmGrain_dx97CShaderE
+N13MonitorScreen7CShaderE
+N13Occlusion_DX97CShaderE
+N13PortalRefract7CShaderE
+N13Wireframe_DX97CShaderE
+N13floattoscreen7CShaderE
+N14Aftershock_dx97CShaderE
+N14EyeRefract_dx97CShaderE
+N14HDRSelectRange7CShaderE
+N14MotionBlur_dx97CShaderE
+N14ParticleSphere7CShaderE
+N14ShatteredGlass7CShaderE
+N14WindowImposter7CShaderE
+N14vr_distort_hud7CShaderE
+N15ColorCorrection7CShaderE
+N15DebugMRTTexture7CShaderE
+N15Engine_Post_dx97CShaderE
+N15Sample4x4_Blend7CShaderE
+N15ShadowBuild_DX97CShaderE
+N15ShadowModel_DX97CShaderE
+N15UnlitTwoTexture7CShaderE
+N16DebugTextureView7CShaderE
+N16Downsample_nohdr7CShaderE
+N16VertexLitGeneric7CShaderE
+N16VolumeClouds_dx97CShaderE
+N16WorldVertexAlpha7CShaderE
+N16WriteStencil_DX97CShaderE
+N16accumbuff4sample7CShaderE
+N16accumbuff5sample7CShaderE
+N16color_projection7CShaderE
+N17DecalModulate_dx97CShaderE
+N17HDRCombineTo16Bit7CShaderE
+N17MonitorScreen_DX97CShaderE
+N17PortalRefract_dx97CShaderE
+N18LightmappedGeneric7CShaderE
+N18ParticleSphere_DX97CShaderE
+N18vr_distort_texture7CShaderE
+N19PortalStaticOverlay7CShaderE
+N19UnlitTwoTexture_DX97CShaderE
+N19WindowImposter_DX907CShaderE
+N19hsl_filmgrain_pass17CShaderE
+N19hsl_filmgrain_pass27CShaderE
+N19screenspace_general7CShaderE
+N20DebugTextureView_dx97CShaderE
+N20WorldTwoTextureBlend7CShaderE
+N21WorldVertexTransition7CShaderE
+N21floattoscreen_vanilla7CShaderE
+N21sfm_downsample_shader7CShaderE
+N22BufferClearObeyStencil7CShaderE
+N22IntroScreenSpaceEffect7CShaderE
+N22ParticleLitGeneric_DX97CShaderE
+N22sfm_blurfilterx_shader7CShaderE
+N22sfm_blurfiltery_shader7CShaderE
+N23floatcombine_autoexpose7CShaderE
+N23screenspace_general_dx97CShaderE
+N25WorldVertexTransition_DX97CShaderE
+N25sfm_integercombine_shader7CShaderE
+N26BufferClearObeyStencil_DX97CShaderE
+N26LightmappedReflective_DX907CShaderE
+N3HSV7CShaderE
+N3Sky7CShaderE
+N41DecalBaseTimesLightmapAlphaBlendSelfIllum7CShaderE
+N45DecalBaseTimesLightmapAlphaBlendSelfIllum_DX97CShaderE
+N4Core7CShaderE
+N4eyes7CShaderE
+N4warp7CShaderE
+N5Bloom7CShaderE
+N5Cable7CShaderE
+N5Cloak7CShaderE
+N5Teeth7CShaderE
+N5Water7CShaderE
+N5showz7CShaderE
+N6Portal7CShaderE
+N6Sprite7CShaderE
+N6WriteZ7CShaderE
+N7Refract7CShaderE
+N7Sky_DX97CShaderE
+N8EyeGlint7CShaderE
+N8Eyes_dx97CShaderE
+N8FilmDust7CShaderE
+N8TreeLeaf7CShaderE
+N8VortWarp7CShaderE
+N9Cable_DX97CShaderE
+N9Cloud_dx97CShaderE
+N9Core_DX907CShaderE
+N9FilmGrain7CShaderE
+N9Occlusion7CShaderE
+N9Sample4x47CShaderE
+N9Teeth_DX97CShaderE
+N9Wireframe7CShaderE
 NEED_ANOMYLIZE
 NEED_BLINDMK
 NEED_MONOCHROME
@@ -2714,7 +2791,6 @@ ORIENTATION
 OUTER_GLOW
 OUTLINE
 Occlusion
-Occlusion::CShader
 Occlusion::CShader::GetFallbackShader(IMaterialVar**) const
 Occlusion::CShader::GetFlags() const
 Occlusion::CShader::GetName() const
@@ -2730,7 +2806,6 @@ Occlusion::s_ShaderInstance
 Occlusion::s_ShaderParams
 Occlusion_DX8
 Occlusion_DX9
-Occlusion_DX9::CShader
 Occlusion_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Occlusion_DX9::CShader::GetFlags() const
 Occlusion_DX9::CShader::GetName() const
@@ -2759,7 +2834,6 @@ ParticleLitGeneric_DX9
 ParticleLitGeneric_DX9::BUMPFRAME
 ParticleLitGeneric_DX9::BUMPMAP
 ParticleLitGeneric_DX9::BUMPTRANSFORM
-ParticleLitGeneric_DX9::CShader
 ParticleLitGeneric_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 ParticleLitGeneric_DX9::CShader::GetFlags() const
 ParticleLitGeneric_DX9::CShader::GetName() const
@@ -2776,7 +2850,6 @@ ParticleLitGeneric_DX9::CShaderParam::CShaderParam(char const*, ShaderParamType_
 ParticleLitGeneric_DX9::s_ShaderInstance
 ParticleLitGeneric_DX9::s_ShaderParams
 ParticleSphere
-ParticleSphere::CShader
 ParticleSphere::CShader::GetFallbackShader(IMaterialVar**) const
 ParticleSphere::CShader::GetFlags() const
 ParticleSphere::CShader::GetName() const
@@ -2793,7 +2866,6 @@ ParticleSphere::s_ShaderParams
 ParticleSphere_DX8
 ParticleSphere_DX9
 ParticleSphere_DX9::BUMPMAP
-ParticleSphere_DX9::CShader
 ParticleSphere_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 ParticleSphere_DX9::CShader::GetFlags() const
 ParticleSphere_DX9::CShader::GetName() const
@@ -2819,12 +2891,11 @@ Phong Exponent map
 Phong exponent for local specular lights
 Phong overbrightening factor (specular mask channel should be authored to account for this)
 Phong tint for local specular lights
-Points to signed char material to grab translucency from
+Points to a material to grab translucency from
 Portal
 Portal color scale
 Portal open amount 0.0-1.0
 Portal static amount 0.0-1.0
-Portal::CShader
 Portal::CShader::GetFallbackShader(IMaterialVar**) const
 Portal::CShader::GetFlags() const
 Portal::CShader::GetName() const
@@ -2839,7 +2910,6 @@ Portal::CShader::OnInitShaderInstance(IMaterialVar**, IShaderInit*, char const*)
 Portal::s_ShaderInstance
 Portal::s_ShaderParams
 PortalRefract
-PortalRefract::CShader
 PortalRefract::CShader::GetFallbackShader(IMaterialVar**) const
 PortalRefract::CShader::GetFlags() const
 PortalRefract::CShader::GetName() const
@@ -2855,7 +2925,6 @@ PortalRefract::s_ShaderInstance
 PortalRefract::s_ShaderParams
 PortalRefract_dx8
 PortalRefract_dx9
-PortalRefract_dx9::CShader
 PortalRefract_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 PortalRefract_dx9::CShader::GetFlags() const
 PortalRefract_dx9::CShader::GetName() const
@@ -2885,7 +2954,6 @@ PortalStaticOverlay::ALPHA
 PortalStaticOverlay::ALPHAMASKTEXTURE
 PortalStaticOverlay::ALPHAMASKTEXTUREFRAME
 PortalStaticOverlay::COLOR
-PortalStaticOverlay::CShader
 PortalStaticOverlay::CShader::GetFallbackShader(IMaterialVar**) const
 PortalStaticOverlay::CShader::GetFlags() const
 PortalStaticOverlay::CShader::GetName() const
@@ -2914,7 +2982,6 @@ Portal_DX90::ALPHAMASKTEXTURE
 Portal_DX90::ALPHAMASKTEXTUREFRAME
 Portal_DX90::ALTERNATEVIEWMATRIX
 Portal_DX90::COLOR
-Portal_DX90::CShader
 Portal_DX90::CShader::GetFallbackShader(IMaterialVar**) const
 Portal_DX90::CShader::GetFlags() const
 Portal_DX90::CShader::GetName() const
@@ -2954,7 +3021,6 @@ RELIEF_MAPPING
 RIMLIGHT
 Raytrace sphere
 Refract
-Refract::CShader
 Refract::CShader::GetFallbackShader(IMaterialVar**) const
 Refract::CShader::GetFlags() const
 Refract::CShader::GetName() const
@@ -2977,7 +3043,6 @@ Refract_DX90::BUMPFRAME2
 Refract_DX90::BUMPTRANSFORM
 Refract_DX90::BUMPTRANSFORM2
 Refract_DX90::COLOR
-Refract_DX90::CShader
 Refract_DX90::CShader::GetFallbackShader(IMaterialVar**) const
 Refract_DX90::CShader::GetFlags() const
 Refract_DX90::CShader::GetName() const
@@ -3038,7 +3103,6 @@ STRIPES
 STRIPES_USE_NORMAL2
 Sample4x4
 Sample4x4::BASETEXTURE
-Sample4x4::CShader
 Sample4x4::CShader::GetFallbackShader(IMaterialVar**) const
 Sample4x4::CShader::GetFlags() const
 Sample4x4::CShader::GetName() const
@@ -3056,7 +3120,6 @@ Sample4x4::s_ShaderInstance
 Sample4x4::s_ShaderParams
 Sample4x4_Blend
 Sample4x4_Blend::BASETEXTURE
-Sample4x4_Blend::CShader
 Sample4x4_Blend::CShader::GetFallbackShader(IMaterialVar**) const
 Sample4x4_Blend::CShader::GetFlags() const
 Sample4x4_Blend::CShader::GetName() const
@@ -3099,7 +3162,6 @@ Shadow::CShader::OnInitShaderParams(IMaterialVar**, char const*)
 Shadow::s_ShaderInstance
 Shadow::s_ShaderParams
 ShadowBuild
-ShadowBuild::CShader
 ShadowBuild::CShader::GetFallbackShader(IMaterialVar**) const
 ShadowBuild::CShader::GetFlags() const
 ShadowBuild::CShader::GetName() const
@@ -3116,7 +3178,6 @@ ShadowBuild::s_ShaderParams
 ShadowBuild_DX6
 ShadowBuild_DX8
 ShadowBuild_DX9
-ShadowBuild_DX9::CShader
 ShadowBuild_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 ShadowBuild_DX9::CShader::GetFlags() const
 ShadowBuild_DX9::CShader::GetName() const
@@ -3133,7 +3194,6 @@ ShadowBuild_DX9::TRANSLUCENT_MATERIAL
 ShadowBuild_DX9::s_ShaderInstance
 ShadowBuild_DX9::s_ShaderParams
 ShadowModel
-ShadowModel::CShader
 ShadowModel::CShader::GetFallbackShader(IMaterialVar**) const
 ShadowModel::CShader::GetFlags() const
 ShadowModel::CShader::GetName() const
@@ -3151,7 +3211,6 @@ ShadowModel_DX8
 ShadowModel_DX9
 ShadowModel_DX9::BASETEXTUREOFFSET
 ShadowModel_DX9::BASETEXTURESCALE
-ShadowModel_DX9::CShader
 ShadowModel_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 ShadowModel_DX9::CShader::GetFlags() const
 ShadowModel_DX9::CShader::GetName() const
@@ -3173,7 +3232,6 @@ ShadowModel_DX9::s_ShaderParams
 Shadow_DX8
 ShatteredGlass
 ShatteredGlass::BASETEXTURE
-ShatteredGlass::CShader
 ShatteredGlass::CShader::GetFallbackShader(IMaterialVar**) const
 ShatteredGlass::CShader::GetFlags() const
 ShatteredGlass::CShader::GetName() const
@@ -3206,7 +3264,6 @@ ShatteredGlass_DX8
 ShouldDrawMaterialSheen(IMaterialVar**, WeaponSheenPassVars_t&)
 Silhouette color tint
 SinCos(float, float*, float*)
-Sky::CShader
 Sky::CShader::GetFallbackShader(IMaterialVar**) const
 Sky::CShader::GetFlags() const
 Sky::CShader::GetName() const
@@ -3223,7 +3280,6 @@ Sky::s_ShaderParams
 Sky_DX9
 Sky_DX9::ALPHA
 Sky_DX9::COLOR
-Sky_DX9::CShader
 Sky_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Sky_DX9::CShader::GetFlags() const
 Sky_DX9::CShader::GetName() const
@@ -3241,7 +3297,6 @@ Sky_DX9::s_ShaderParams
 Sky_DX9::s_pShaderParamOverrides
 Sky_HDR_DX9
 Sky_HDR_DX9::COLOR
-Sky_HDR_DX9::CShader
 Sky_HDR_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Sky_HDR_DX9::CShader::GetFlags() const
 Sky_HDR_DX9::CShader::GetName() const
@@ -3265,7 +3320,6 @@ Sky_HDR_DX9::s_ShaderParams
 Sky_HDR_DX9::s_pShaderParamOverrides
 Special depth handling, intended for rendering bug workarounds for extremely close polygons
 Sprite
-Sprite::CShader
 Sprite::CShader::GetFallbackShader(IMaterialVar**) const
 Sprite::CShader::GetFlags() const
 Sprite::CShader::GetName() const
@@ -3282,7 +3336,6 @@ Sprite::s_ShaderParams
 SpriteCard_DX8
 Sprite_DX8
 Sprite_DX9
-Sprite_DX9::CShader
 Sprite_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Sprite_DX9::CShader::GetFlags() const
 Sprite_DX9::CShader::GetName() const
@@ -3311,7 +3364,6 @@ Spritecard::ADDBASETEXTURE2
 Spritecard::ADDOVERBLEND
 Spritecard::ADDSELF
 Spritecard::BLENDFRAMES
-Spritecard::CShader
 Spritecard::CShader::GetFallbackShader(IMaterialVar**) const
 Spritecard::CShader::GetFlags() const
 Spritecard::CShader::GetName() const
@@ -3359,7 +3411,6 @@ TREESWAY
 Take the distance-coded alpha mask from the detail texture.
 Tcvar
 Teeth
-Teeth::CShader
 Teeth::CShader::GetFallbackShader(IMaterialVar**) const
 Teeth::CShader::GetFlags() const
 Teeth::CShader::GetName() const
@@ -3375,7 +3426,6 @@ Teeth::s_ShaderInstance
 Teeth::s_ShaderParams
 Teeth_DX9
 Teeth_DX9::BUMPMAP
-Teeth_DX9::CShader
 Teeth_DX9::CShader::DrawFlashlight(IMaterialVar**, IShaderDynamicAPI*, IShaderShadow*, VertexCompressionType_t)
 Teeth_DX9::CShader::DrawUsingVertexShader(IMaterialVar**, IShaderDynamicAPI*, IShaderShadow*, VertexCompressionType_t)
 Teeth_DX9::CShader::GetFallbackShader(IMaterialVar**) const
@@ -3409,10 +3459,9 @@ The alternate view matrix to use when $usealternateviewmatrix is enabled
 The direction the sheen should move (length direction of weapon) XYZ, 0,1,2
 This is the directional light color.
 This is the directional light position.
-This is the distance from the eye in inches that the shader should finish transitioning to signed char cheaper water shader.
-This is the distance from the eye in inches that the shader should start transitioning to signed char cheaper water shader.
+This is the distance from the eye in inches that the shader should finish transitioning to a cheaper water shader.
+This is the distance from the eye in inches that the shader should start transitioning to a cheaper water shader.
 TreeLeaf
-TreeLeaf::CShader
 TreeLeaf::CShader::GetFallbackShader(IMaterialVar**) const
 TreeLeaf::CShader::GetFlags() const
 TreeLeaf::CShader::GetName() const
@@ -3439,7 +3488,6 @@ Unaccounted
 UnlitGeneric
 UnlitGeneric::ALBEDO
 UnlitGeneric::ALPHATESTREFERENCE
-UnlitGeneric::CShader
 UnlitGeneric::CShader::GetFallbackShader(IMaterialVar**) const
 UnlitGeneric::CShader::GetFlags() const
 UnlitGeneric::CShader::GetName() const
@@ -3512,7 +3560,6 @@ UnlitGeneric::s_ShaderParams
 UnlitGeneric_DX6
 UnlitGeneric_DX8
 UnlitTwoTexture
-UnlitTwoTexture::CShader
 UnlitTwoTexture::CShader::GetFallbackShader(IMaterialVar**) const
 UnlitTwoTexture::CShader::GetFlags() const
 UnlitTwoTexture::CShader::GetName() const
@@ -3531,7 +3578,6 @@ UnlitTwoTexture_DX9
 UnlitTwoTexture_DX9::CLOAKCOLORTINT
 UnlitTwoTexture_DX9::CLOAKFACTOR
 UnlitTwoTexture_DX9::CLOAKPASSENABLED
-UnlitTwoTexture_DX9::CShader
 UnlitTwoTexture_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 UnlitTwoTexture_DX9::CShader::GetFlags() const
 UnlitTwoTexture_DX9::CShader::GetName() const
@@ -3592,7 +3638,6 @@ VertexLitGeneric::CLOAKCOLORTINT
 VertexLitGeneric::CLOAKFACTOR
 VertexLitGeneric::CLOAKPASSENABLED
 VertexLitGeneric::COMPRESS
-VertexLitGeneric::CShader
 VertexLitGeneric::CShader::GetFallbackShader(IMaterialVar**) const
 VertexLitGeneric::CShader::GetFlags() const
 VertexLitGeneric::CShader::GetName() const
@@ -3722,7 +3767,6 @@ Volume Texture Weight 1
 Volume Texture Weight 2
 Volume Texture Weight 3
 VolumeClouds
-VolumeClouds::CShader
 VolumeClouds::CShader::GetFallbackShader(IMaterialVar**) const
 VolumeClouds::CShader::GetFlags() const
 VolumeClouds::CShader::GetName() const
@@ -3740,7 +3784,6 @@ VolumeClouds_dx9
 VolumeClouds_dx9::BASETEXTURE
 VolumeClouds_dx9::BASETEXTURE2
 VolumeClouds_dx9::BASETEXTURE3
-VolumeClouds_dx9::CShader
 VolumeClouds_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 VolumeClouds_dx9::CShader::GetFlags() const
 VolumeClouds_dx9::CShader::GetName() const
@@ -3759,7 +3802,6 @@ VolumeClouds_dx9::TIME
 VolumeClouds_dx9::s_ShaderInstance
 VolumeClouds_dx9::s_ShaderParams
 VortWarp
-VortWarp::CShader
 VortWarp::CShader::GetFallbackShader(IMaterialVar**) const
 VortWarp::CShader::GetFlags() const
 VortWarp::CShader::GetName() const
@@ -3779,7 +3821,6 @@ VortWarp_DX9::AMBIENTONLY
 VortWarp_DX9::BUMPFRAME
 VortWarp_DX9::BUMPMAP
 VortWarp_DX9::BUMPTRANSFORM
-VortWarp_DX9::CShader
 VortWarp_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 VortWarp_DX9::CShader::GetFlags() const
 VortWarp_DX9::CShader::GetName() const
@@ -3830,7 +3871,6 @@ WRINKLEMAP
 WRITEWATERFOGTODESTALPHA
 WRITE_DEPTH_TO_DESTALPHA
 Water
-Water::CShader
 Water::CShader::GetFallbackShader(IMaterialVar**) const
 Water::CShader::GetFlags() const
 Water::CShader::GetName() const
@@ -3852,7 +3892,6 @@ Water_DX90::BUMPFRAME
 Water_DX90::BUMPTRANSFORM
 Water_DX90::CHEAPWATERENDDISTANCE
 Water_DX90::CHEAPWATERSTARTDISTANCE
-Water_DX90::CShader
 Water_DX90::CShader::DrawCheapWater(IMaterialVar**, IShaderShadow*, IShaderDynamicAPI*, bool, bool)
 Water_DX90::CShader::DrawReflectionRefraction(IMaterialVar**, IShaderShadow*, IShaderDynamicAPI*, bool, bool)
 Water_DX90::CShader::GetFallbackShader(IMaterialVar**) const
@@ -3891,7 +3930,6 @@ Water_DX90::SCROLL1
 Water_DX90::SCROLL2
 Water_DX90::TIME
 Water_DX90::WATERDEPTH
-Water_DX90::Water_DX9_HDR::CShader
 Water_DX90::Water_DX9_HDR::CShader::GetFallbackShader(IMaterialVar**) const
 Water_DX90::Water_DX9_HDR::CShader::GetFlags() const
 Water_DX90::Water_DX9_HDR::CShader::GetName() const
@@ -3901,10 +3939,9 @@ Water_DX90::s_ShaderParams
 Water_DX9_HDR
 Weight for Samples
 When adding static, this is the texture that gets blended in
-When using signed char phong exponent texture, this will be multiplied by the 0..1 that comes out of the texture.
+When using a phong exponent texture, this will be multiplied by the 0..1 that comes out of the texture.
 Which mode should the combiner operate in? 0: Mul, 1: Add, 2: Lerp, 3: Select
 WindowImposter
-WindowImposter::CShader
 WindowImposter::CShader::GetFallbackShader(IMaterialVar**) const
 WindowImposter::CShader::GetFlags() const
 WindowImposter::CShader::GetName() const
@@ -3920,7 +3957,6 @@ WindowImposter::s_ShaderInstance
 WindowImposter::s_ShaderParams
 WindowImposter_DX80
 WindowImposter_DX90
-WindowImposter_DX90::CShader
 WindowImposter_DX90::CShader::GetFallbackShader(IMaterialVar**) const
 WindowImposter_DX90::CShader::GetFlags() const
 WindowImposter_DX90::CShader::GetName() const
@@ -3937,7 +3973,6 @@ WindowImposter_DX90::ENVMAP
 WindowImposter_DX90::s_ShaderInstance
 WindowImposter_DX90::s_ShaderParams
 Wireframe
-Wireframe::CShader
 Wireframe::CShader::GetFallbackShader(IMaterialVar**) const
 Wireframe::CShader::GetFlags() const
 Wireframe::CShader::GetName() const
@@ -3952,7 +3987,6 @@ Wireframe::CShader::OnInitShaderInstance(IMaterialVar**, IShaderInit*, char cons
 Wireframe::s_ShaderInstance
 Wireframe::s_ShaderParams
 Wireframe_DX9
-Wireframe_DX9::CShader
 Wireframe_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 Wireframe_DX9::CShader::GetFlags() const
 Wireframe_DX9::CShader::GetName() const
@@ -3973,7 +4007,6 @@ WorldTwoTextureBlend::BASETEXTURE
 WorldTwoTextureBlend::BUMPFRAME
 WorldTwoTextureBlend::BUMPMAP
 WorldTwoTextureBlend::BUMPTRANSFORM
-WorldTwoTextureBlend::CShader
 WorldTwoTextureBlend::CShader::DrawPass(IMaterialVar**, IShaderDynamicAPI*, IShaderShadow*, bool, VertexCompressionType_t)
 WorldTwoTextureBlend::CShader::GetFallbackShader(IMaterialVar**) const
 WorldTwoTextureBlend::CShader::GetFlags() const
@@ -4001,7 +4034,6 @@ WorldTwoTextureBlend::s_pShaderParamOverrides
 WorldTwoTextureBlend_DX6
 WorldTwoTextureBlend_DX8
 WorldVertexAlpha
-WorldVertexAlpha::CShader
 WorldVertexAlpha::CShader::GetFallbackShader(IMaterialVar**) const
 WorldVertexAlpha::CShader::GetFlags() const
 WorldVertexAlpha::CShader::GetName() const
@@ -4018,7 +4050,6 @@ WorldVertexAlpha::s_ShaderInstance
 WorldVertexAlpha::s_ShaderParams
 WorldVertexAlpha_DX8
 WorldVertexTransition
-WorldVertexTransition::CShader
 WorldVertexTransition::CShader::GetFallbackShader(IMaterialVar**) const
 WorldVertexTransition::CShader::GetFlags() const
 WorldVertexTransition::CShader::GetName() const
@@ -4047,7 +4078,6 @@ WorldVertexTransition_DX9::BUMPMAP2
 WorldVertexTransition_DX9::BUMPMASK
 WorldVertexTransition_DX9::BUMPTRANSFORM
 WorldVertexTransition_DX9::BUMPTRANSFORM2
-WorldVertexTransition_DX9::CShader
 WorldVertexTransition_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 WorldVertexTransition_DX9::CShader::GetFlags() const
 WorldVertexTransition_DX9::CShader::GetName() const
@@ -4090,7 +4120,6 @@ WorldVertexTransition_DX9::s_ShaderParams
 WorldVertexTransition_Editor
 Write depth as color
 WriteStencil
-WriteStencil::CShader
 WriteStencil::CShader::GetFallbackShader(IMaterialVar**) const
 WriteStencil::CShader::GetFlags() const
 WriteStencil::CShader::GetName() const
@@ -4106,7 +4135,6 @@ WriteStencil::s_ShaderInstance
 WriteStencil::s_ShaderParams
 WriteStencil_DX8
 WriteStencil_DX9
-WriteStencil_DX9::CShader
 WriteStencil_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 WriteStencil_DX9::CShader::GetFlags() const
 WriteStencil_DX9::CShader::GetName() const
@@ -4122,7 +4150,6 @@ WriteStencil_DX9::CShader::OnInitShaderParams(IMaterialVar**, char const*)
 WriteStencil_DX9::s_ShaderInstance
 WriteStencil_DX9::s_ShaderParams
 WriteZ
-WriteZ::CShader
 WriteZ::CShader::GetFallbackShader(IMaterialVar**) const
 WriteZ::CShader::GetFlags() const
 WriteZ::CShader::GetName() const
@@ -4138,7 +4165,6 @@ WriteZ::s_ShaderInstance
 WriteZ::s_ShaderParams
 WriteZ_DX8
 WriteZ_DX9
-WriteZ_DX9::CShader
 WriteZ_DX9::CShader::GetFallbackShader(IMaterialVar**) const
 WriteZ_DX9::CShader::GetFlags() const
 WriteZ_DX9::CShader::GetName() const
@@ -4197,10 +4223,6 @@ _ThreadGetCurrentId
 _VectorNormalize(Vector&)
 _VectorNormalizeFast(Vector&)
 _Warning
-_Wcomplex 
-_Xcomplex 
-_Ycomplex 
-_Zcomplex 
 __DATA
 __GLOBAL__sub_I_AccumBuff4.stdout.rel_tf_osx_builder.51114.4oWBgZ.ii
 __GLOBAL__sub_I_BaseShader.stdout.rel_tf_osx_builder.9855.0FEKaw.ii
@@ -4386,7 +4408,6 @@ aaEnabled
 aaQualityMode
 aaReduceOnePixelLineBlur
 accumbuff4sample
-accumbuff4sample::CShader
 accumbuff4sample::CShader::GetFallbackShader(IMaterialVar**) const
 accumbuff4sample::CShader::GetFlags() const
 accumbuff4sample::CShader::GetName() const
@@ -4409,7 +4430,6 @@ accumbuff4sample::s_ShaderParams
 accumbuff4sample_ps20
 accumbuff4sample_ps20b
 accumbuff5sample
-accumbuff5sample::CShader
 accumbuff5sample::CShader::GetFallbackShader(IMaterialVar**) const
 accumbuff5sample::CShader::GetFlags() const
 accumbuff5sample::CShader::GetName() const
@@ -4443,7 +4463,7 @@ alpha
 alpha value for outline
 amount of base texture to additively blend in
 amount to blend second texture into frame by
-amount to gradually zoom between frames on the second sequence. .0 will double the size of signed char frame over its lifetime.
+amount to gradually zoom between frames on the second sequence. 2.0 will double the size of a frame over its lifetime.
 animation param between 0 and 1
 array of lights
 bAddSelf
@@ -4557,7 +4577,7 @@ bik_ps20
 bik_ps20b
 bik_vs20
 blend amount for detail texture.
-blend between tint acting as signed char multiplication versus signed char replace
+blend between tint acting as a multiplication versus a replace
 blend two separate animated sequences.
 blend using texture with no vertex alpha. For using texture blending on non-displacements
 blendType == BT_BLEND
@@ -4567,7 +4587,6 @@ blurAmount
 blurfilter_ps20
 blurfilter_ps20b
 blurfilter_vs20
-boolcomplex  Bink Texture
 bufferclearobeystencil_ps20
 bufferclearobeystencil_ps20b
 bufferclearobeystencil_vs20
@@ -4604,7 +4623,6 @@ color of outter glow for distance coded line art.
 color2
 color_projection
 color_projection::CONTRAST_CORRECTION
-color_projection::CShader
 color_projection::CShader::GetFallbackShader(IMaterialVar**) const
 color_projection::CShader::GetFlags() const
 color_projection::CShader::GetName() const
@@ -4654,7 +4672,7 @@ decalmodulate_ps30
 decals/decalporthole001b
 decals/decalporthole001b_mask
 defines that self illum value comes from env map mask alpha
-defines the blend mode between the images un dual sequence particles. 0 = avg, 1=alpha from first, rgb from nd, 2= first over second
+defines the blend mode between the images un dual sequence particles. 0 = avg, 1=alpha from first, rgb from 2nd, 2= first over second
 depthtodestalpha_ps20b
 depthtodestalpha_vs20
 depthwrite_ps20
@@ -4686,7 +4704,7 @@ enables rim lighting
 end value for glow/shadow
 engine_post_ps20b
 env_cubemap
-env_cubemap used on world geometry without rebuilding map. . ignoring: %short
+env_cubemap used on world geometry without rebuilding map. . ignoring: %s
 envmap
 envmap frame number
 envmap mask
@@ -4702,7 +4720,6 @@ eye_refract_vs30
 eyeglint_ps20
 eyeglint_ps20b
 eyeglint_vs20
-eyes::CShader
 eyes::CShader::GetFallbackShader(IMaterialVar**) const
 eyes::CShader::GetFlags() const
 eyes::CShader::GetName() const
@@ -4783,7 +4800,6 @@ floatcombine_autoexpose::AUTOEXPOSE_MIN
 floatcombine_autoexpose::BLOOMAMOUNT
 floatcombine_autoexpose::BLOOMEXPONENT
 floatcombine_autoexpose::BLOOMTEXTURE
-floatcombine_autoexpose::CShader
 floatcombine_autoexpose::CShader::GetFallbackShader(IMaterialVar**) const
 floatcombine_autoexpose::CShader::GetFlags() const
 floatcombine_autoexpose::CShader::GetName() const
@@ -4809,7 +4825,6 @@ floatcombine_autoexpose_ps20b
 floatcombine_ps20
 floatcombine_ps20b
 floattoscreen
-floattoscreen::CShader
 floattoscreen::CShader::GetFallbackShader(IMaterialVar**) const
 floattoscreen::CShader::GetFlags() const
 floattoscreen::CShader::GetName() const
@@ -4829,7 +4844,6 @@ floattoscreen::s_ShaderParams
 floattoscreen_ps20
 floattoscreen_ps20b
 floattoscreen_vanilla
-floattoscreen_vanilla::CShader
 floattoscreen_vanilla::CShader::GetFallbackShader(IMaterialVar**) const
 floattoscreen_vanilla::CShader::GetFlags() const
 floattoscreen_vanilla::CShader::GetName() const
@@ -4849,7 +4863,7 @@ flowmap
 fogIndex
 fogType == MATERIAL_FOG_LINEAR_BELOW_FOG_Z
 fogType == MATERIAL_FOG_LINEAR_BELOW_FOG_Z && blendType != BT_BLENDADD && blendType != BT_BLEND && !bIsAlphaTested
-forces signed char 2x modulate so that you can brighten and darken things
+forces a 2x modulate so that you can brighten and darken things
 frame for the iris texture
 frame number for $basetexture2
 frame number for $bumpmap
@@ -4894,7 +4908,6 @@ hdrcombineto16bit_vs20
 hdrselectrange_ps20
 hdrselectrange_ps20b
 hsl_filmgrain_pass1
-hsl_filmgrain_pass1::CShader
 hsl_filmgrain_pass1::CShader::GetFallbackShader(IMaterialVar**) const
 hsl_filmgrain_pass1::CShader::GetFlags() const
 hsl_filmgrain_pass1::CShader::GetName() const
@@ -4916,7 +4929,6 @@ hsl_filmgrain_pass1::s_ShaderParams
 hsl_filmgrain_pass1_ps20
 hsl_filmgrain_pass1_ps20b
 hsl_filmgrain_pass2
-hsl_filmgrain_pass2::CShader
 hsl_filmgrain_pass2::CShader::GetFallbackShader(IMaterialVar**) const
 hsl_filmgrain_pass2::CShader::GetFlags() const
 hsl_filmgrain_pass2::CShader::GetName() const
@@ -4941,8 +4953,8 @@ ignore vertex colors
 indicates that there is no normal map and that the phong mask is in base alpha
 inner end value for outline
 inner start value for outline
+instead of blending between animation frames for the 2nd sequence, select pixels based upon max luminance
 instead of blending between animation frames for the first sequence, select pixels based upon max luminance
-instead of blending between animation frames for the nd sequence, select pixels based upon max luminance
 interval over which to fade out far away particles
 introscreenspaceeffect_ps20b
 invert the phong mask (0=full phong, 1=no phong)
@@ -4967,6 +4979,7 @@ kDefaultStripeFadeNormal1
 kDefaultStripeFadeNormal2
 kDefaultStripeScale
 kDefaultSubsurfaceTint
+l^_[]
 light munging lookup texture
 lightState.HasDynamicLight()
 lightState.m_bAmbientLight ? 1 : 0
@@ -4986,8 +4999,6 @@ lightmappedreflective_ps20b
 lightmappedreflective_vs20
 lineartoscreen
 lineartotexture
-long long signed char::* shadow distance
-long^_[]
 mask using dest alpha
 maskscale
 mat_color_projection
@@ -4999,9 +5010,9 @@ mat_motion_blur_percent_of_screen_max
 mat_reduceparticles
 mat_use_compressed_hdr_textures
 mat_visualize_dof
-material %short has signed char normal map and $basealphaenvmapmask.  Must use $normalmapalphaenvmapmask to get specular.
-material %short has signed char normal map and an envmapmask.  Must use $normalmapalphaenvmapmask.
-material %short needs to have signed char $fogcolor.
+material %s has a normal map and $basealphaenvmapmask.  Must use $normalmapalphaenvmapmask to get specular.
+material %s has a normal map and an envmapmask.  Must use $normalmapalphaenvmapmask.
+material %s needs to have a $fogcolor.
 maximum distance to draw particles at
 maximum screen fractional size of particle
 minimum screen fractional size of particle
@@ -5108,7 +5119,6 @@ pyro_vision::CANVAS_COLOR_START
 pyro_vision::CANVAS_SCALE
 pyro_vision::CANVAS_STEP_RANGE
 pyro_vision::COLORBAR
-pyro_vision::CShader
 pyro_vision::CShader::GetFallbackShader(IMaterialVar**) const
 pyro_vision::CShader::GetFlags() const
 pyro_vision::CShader::GetName() const
@@ -5191,7 +5201,6 @@ scale of the detail texture
 screen fractional size to finish fading particle out
 screen fractional size to start fading particle out
 screenspace_general
-screenspace_general::CShader
 screenspace_general::CShader::GetFallbackShader(IMaterialVar**) const
 screenspace_general::CShader::GetFlags() const
 screenspace_general::CShader::GetName() const
@@ -5227,7 +5236,6 @@ screenspace_general_dx9::C3_X
 screenspace_general_dx9::C3_Y
 screenspace_general_dx9::C3_Z
 screenspace_general_dx9::COPYALPHA
-screenspace_general_dx9::CShader
 screenspace_general_dx9::CShader::GetFallbackShader(IMaterialVar**) const
 screenspace_general_dx9::CShader::GetFlags() const
 screenspace_general_dx9::CShader::GetName() const
@@ -5259,7 +5267,6 @@ self-illum texture
 self-illum texture frame
 self-illumination map
 sfm_blurfilterx_shader
-sfm_blurfilterx_shader::CShader
 sfm_blurfilterx_shader::CShader::GetFallbackShader(IMaterialVar**) const
 sfm_blurfilterx_shader::CShader::GetFlags() const
 sfm_blurfilterx_shader::CShader::GetName() const
@@ -5274,7 +5281,6 @@ sfm_blurfilterx_shader::CShader::OnInitShaderInstance(IMaterialVar**, IShaderIni
 sfm_blurfilterx_shader::s_ShaderInstance
 sfm_blurfilterx_shader::s_ShaderParams
 sfm_blurfiltery_shader
-sfm_blurfiltery_shader::CShader
 sfm_blurfiltery_shader::CShader::GetFallbackShader(IMaterialVar**) const
 sfm_blurfiltery_shader::CShader::GetFlags() const
 sfm_blurfiltery_shader::CShader::GetName() const
@@ -5290,7 +5296,6 @@ sfm_blurfiltery_shader::s_ShaderInstance
 sfm_blurfiltery_shader::s_ShaderParams
 sfm_combine_vs20
 sfm_downsample_shader
-sfm_downsample_shader::CShader
 sfm_downsample_shader::CShader::GetFallbackShader(IMaterialVar**) const
 sfm_downsample_shader::CShader::GetFlags() const
 sfm_downsample_shader::CShader::GetName() const
@@ -5309,7 +5314,6 @@ sfm_integercombine_ps20b
 sfm_integercombine_shader
 sfm_integercombine_shader::BLOOMAMOUNT
 sfm_integercombine_shader::BLURREDTEXTURE
-sfm_integercombine_shader::CShader
 sfm_integercombine_shader::CShader::GetFallbackShader(IMaterialVar**) const
 sfm_integercombine_shader::CShader::GetFlags() const
 sfm_integercombine_shader::CShader::GetName() const
@@ -5350,7 +5354,6 @@ sheenmap mask
 sheenmap tint
 showz
 showz::ALPHADEPTH
-showz::CShader
 showz::CShader::GetFallbackShader(IMaterialVar**) const
 showz::CShader::GetFlags() const
 showz::CShader::GetName() const
@@ -5408,9 +5411,9 @@ teeth_ps30
 teeth_vs20
 teeth_vs30
 texkill pixels not on sphere
-texture offset long long for glow mask.
-texture offset unsigned long long for glow mask.
-texture to use r/__float128 channels for blend range for
+texture offset x for glow mask.
+texture offset y for glow mask.
+texture to use r/g channels for blend range for
 texturetolinear
 the scale for the seamless mapping. # of repetions of texture per inch.
 tint value to be applied when running on new-style srgb parts
@@ -5747,7 +5750,6 @@ vp_parallel
 vp_parallel_oriented
 vr_distort_hud
 vr_distort_hud::BASETEXTURE
-vr_distort_hud::CShader
 vr_distort_hud::CShader::GetFallbackShader(IMaterialVar**) const
 vr_distort_hud::CShader::GetFlags() const
 vr_distort_hud::CShader::GetName() const
@@ -5776,7 +5778,6 @@ vr_distort_map
 vr_distort_map_left
 vr_distort_texture
 vr_distort_texture::BASETEXTURE
-vr_distort_texture::CShader
 vr_distort_texture::CShader::GetFallbackShader(IMaterialVar**) const
 vr_distort_texture::CShader::GetFlags() const
 vr_distort_texture::CShader::GetName() const
@@ -5945,7 +5946,6 @@ vtable for warp::CShader
 warp specular term
 warp the specular term
 warp::BASETEXTURE
-warp::CShader
 warp::CShader::GetFallbackShader(IMaterialVar**) const
 warp::CShader::GetFlags() const
 warp::CShader::GetName() const
@@ -5980,7 +5980,7 @@ weapon_sheen_pass_vs30
 where to apply seamless mapping to the detail texture.
 whether or not to smoothly blend between animated frames
 whether or not to use alternate bumpmap format with height
-whether to apply seamless mapping to the base texture. requires signed char smooth model.
+whether to apply seamless mapping to the base texture. requires a smooth model.
 whether to use GPU vertex instancing (submit 1 vert per particle quad)
 white_ps20
 windowimposter_ps20
@@ -5992,6 +5992,6 @@ worldtwotextureblend_ps20b
 worldvertexalpha_ps20
 worldvertexalpha_ps20b
 writez_vs20
-yE>CUtlCStringConversion
+yE>21CUtlCStringConversion
 {255 255 255}
 |^_[]

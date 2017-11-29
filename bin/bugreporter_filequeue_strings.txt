@@ -11,15 +11,15 @@ $POSIX
 $WIN32
 $WINDOWS
 $X360
-%short%cbug.txt
-%short%char%04i%02i%02i-%02i%02i%02i-%short
-%short="%short"
+%s%c%04i%02i%02i-%02i%02i%02i-%s
+%s%cbug.txt
+%s="%s"
 '@@@@ p
-(*%short*), 
+(*%s*), 
 *fffff.
 ,^_[]
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/char++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(KeyValues.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(convar.o)
@@ -61,6 +61,16 @@ $X360
 /usr/lib/libiconv.2.dylib
 0@@@@@P@@@@@@@@@@@@
 0p00p
+12CBugReporter
+12CEmptyConVar
+12IBugReporter
+14ConCommandBase
+14IBaseInterface
+18CUtlCharConversion
+19CUtlNoEscConversion
+21CUtlCStringConversion
+6ConVar
+7IConVar
 <<Invalid>>
 <<None>>
 <^_[]
@@ -130,7 +140,6 @@ BugReporter004
 Build
 C;^0|
 C;_0|
-CBugReporter
 CBugReporter::AddIncludedFile(char const*)
 CBugReporter::CancelNewBugReport()
 CBugReporter::CommitBugReport(int&)
@@ -197,7 +206,6 @@ CBugReporter::Shutdown()
 CBugReporter::StartNewBugReport()
 CBugReporter::~CBugReporter()
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
-CEmptyConVar
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
 CEmptyConVar::SetValue(char const*)
@@ -228,14 +236,11 @@ CUtlBuffer::PutString(char const*)
 CUtlBuffer::Scanf(char const*, ...)
 CUtlBuffer::SeekGet(CUtlBuffer::SeekType_t, int)
 CUtlBuffer::VaScanf(char const*, char*)
-CUtlCStringConversion
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
-CUtlCharConversion
 CUtlCharConversion::FindConversion(char const*, int*)
 CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
-CUtlNoEscConversion
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
 CUtlRBTree<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short, CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<CUtlSymbol, CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >*, unsigned short>::Node_t const&) const
@@ -277,12 +282,10 @@ CUtlVector<CUtlSymbol, CUtlMemory<CUtlSymbol, int> >::~CUtlVector()
 CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
 CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
 CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
-ConCommandBase
 ConCommandBase::CreateBase(char const*, char const*, int)
 ConCommandBase::GetDLLIdentifier() const
 ConCommandBase::s_pAccessor
 ConCommandBase::s_pConCommandBases
-ConVar
 ConVar::AddFlags(int)
 ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
@@ -310,12 +313,9 @@ H__ZdaPv
 H__ZdlPv
 H__Znam
 H__Znwm
-IBaseInterface
-IBugReporter
-IConVar
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
-KeyValues Error: %short in file %short
+KeyValues Error: %s in file %s
 KeyValues::CreateKeyUsingKnownLastChild(char const*, KeyValues*)
 KeyValues::FindKey(char const*, bool)
 KeyValues::GetName() const
@@ -323,17 +323,17 @@ KeyValues::GetString(char const*, char const*)
 KeyValues::GetStringForSymbolClassic(int)
 KeyValues::GetSymbolForStringClassic(char const*, bool)
 KeyValues::KeyValues(char const*)
-KeyValues::LoadFromBuffer(%short%short%short): Begin
-KeyValues::LoadFromBuffer(%short%short%short): End
+KeyValues::LoadFromBuffer(%s%s%s): Begin
+KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromBuffer(char const*, CUtlBuffer&, IBaseFileSystem*, char const*)
 KeyValues::LoadFromBuffer(char const*, char const*, IBaseFileSystem*, char const*)
-KeyValues::LoadFromFile(%short%short%short): Begin
-KeyValues::LoadFromFile(%short%short%short): End / FileNotFound
-KeyValues::LoadFromFile(%short%short%short): End / Success
+KeyValues::LoadFromFile(%s%s%s): Begin
+KeyValues::LoadFromFile(%s%s%s): End / FileNotFound
+KeyValues::LoadFromFile(%s%s%s): End / Success
 KeyValues::LoadFromFile(IBaseFileSystem*, char const*, char const*, bool)
 KeyValues::MakeCopy() const
 KeyValues::ParseIncludedKeys(char const*, char const*, IBaseFileSystem*, char const*, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >&)
-KeyValues::ParseIncludedKeys: Couldn'unsigned short load included keyvalue file %short
+KeyValues::ParseIncludedKeys: Couldn't load included keyvalue file %s
 KeyValues::ReadToken(CUtlBuffer&, bool&, bool&)
 KeyValues::RecursiveLoadFromBuffer(char const*, CUtlBuffer&)
 KeyValues::RecursiveMergeKeyValues(KeyValues*)
@@ -490,6 +490,7 @@ s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 s_pTokenBuf
 std::terminate()
+t+ff.
 typeinfo for CBugReporter
 typeinfo for CEmptyConVar
 typeinfo for CUtlCStringConversion
@@ -513,7 +514,6 @@ typeinfo name for IBugReporter
 typeinfo name for IConVar
 umount /Volumes/bugsub
 unknown
-unsigned short+ff.
 vec2_invalid
 vec2_origin
 vtable for CBugReporter
