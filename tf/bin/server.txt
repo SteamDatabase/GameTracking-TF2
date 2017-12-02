@@ -45717,6 +45717,7 @@
  T IEconItemInterface::IsCommodity() const
  T IEconItemInterface::IsMarketable() const
  T IEconItemInterface::IsPermanentlyUntradable() const
+ T IEconItemInterface::IsTemporaryItem() const
  T IEconItemInterface::IsTradable() const
  T IEconItemInterface::IsUsableInCrafting() const
  T IEconItemUntypedAttributeIterator::OnIterateAttributeValue(CEconItemAttributeDefinition const*, CAttribute_DynamicRecipeComponent const&)
@@ -50833,6 +50834,8 @@
  b IEconItemInterface::IsPermanentlyUntradable() const::pAttrib_AlwaysTradable
  b IEconItemInterface::IsPermanentlyUntradable() const::pAttrib_CannotTrade
  b IEconItemInterface::IsPermanentlyUntradable() const::pAttrib_NonEconomy
+ b IEconItemInterface::IsTemporaryItem() const::pLoanerIDHiAttrib
+ b IEconItemInterface::IsTemporaryItem() const::pLoanerIDLowAttrib
  b IEconItemInterface::IsUsableInCrafting() const::pAttrib_AlwaysUsableInCraft
  b IEconItemInterface::IsUsableInCrafting() const::pAttrib_NeverCraftable
  b IEconTool::ShouldDisplayQuantity(IEconItemInterface const*) const::pAttrDef_UnlimitedQuantity
@@ -52884,6 +52887,8 @@
  b guard variable for IEconItemInterface::IsPermanentlyUntradable() const::pAttrib_AlwaysTradable
  b guard variable for IEconItemInterface::IsPermanentlyUntradable() const::pAttrib_CannotTrade
  b guard variable for IEconItemInterface::IsPermanentlyUntradable() const::pAttrib_NonEconomy
+ b guard variable for IEconItemInterface::IsTemporaryItem() const::pLoanerIDHiAttrib
+ b guard variable for IEconItemInterface::IsTemporaryItem() const::pLoanerIDLowAttrib
  b guard variable for IEconItemInterface::IsUsableInCrafting() const::pAttrib_AlwaysUsableInCraft
  b guard variable for IEconItemInterface::IsUsableInCrafting() const::pAttrib_NeverCraftable
  b guard variable for IEconTool::ShouldDisplayQuantity(IEconItemInterface const*) const::pAttrDef_UnlimitedQuantity
@@ -57350,11 +57355,11 @@
  t _GLOBAL__sub_I_tf_fx.stdout.rel_tf_osx_builder.32717.LM2wsA.ii
  t _GLOBAL__sub_I_tf_fx_shar.stdout.rel_tf_osx_builder.1022.IFb4Jq.ii
  t _GLOBAL__sub_I_tf_gameint.stdout.rel_tf_osx_builder.32721.iyeZrp.ii
- t _GLOBAL__sub_I_tf_gamemov.stdout.rel_tf_osx_builder.1026.pMDKZx.ii
- t _GLOBAL__sub_I_tf_gamerul.stdout.rel_tf_osx_builder.1034.0qMa6W.ii
+ t _GLOBAL__sub_I_tf_gamemov.stdout.rel_tf_osx_builder.4595.L1Ul6D.ii
+ t _GLOBAL__sub_I_tf_gamerul.stdout.rel_tf_osx_builder.56028.nhNoD2.ii
  t _GLOBAL__sub_I_tf_gamesta.stdout.rel_tf_osx_builder.2502.nJt8yi.ii
  t _GLOBAL__sub_I_tf_gc_api.stdout.rel_tf_osx_builder.810.eMguhi.ii
- t _GLOBAL__sub_I_tf_gc_serv.stdout.rel_tf_osx_builder.812.pccBMU.ii
+ t _GLOBAL__sub_I_tf_gc_serv.stdout.rel_tf_osx_builder.56025.BvQE8l.ii
  t _GLOBAL__sub_I_tf_gcmessa.stdout.rel_tf_osx_builder.29210.0aD3Ij.ii
  t _GLOBAL__sub_I_tf_generic.stdout.rel_tf_osx_builder.1038.f2H3Z4.ii
  t _GLOBAL__sub_I_tf_glow.stdout.rel_tf_osx_builder.32731.CQVcVW.ii
@@ -57372,7 +57377,7 @@
  t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.1100.ZqXKF0.ii
  t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.2412.zQ3yO7.ii
  t _GLOBAL__sub_I_tf_mapinfo.stdout.rel_tf_osx_builder.1104.Dnt97y.ii
- t _GLOBAL__sub_I_tf_matchma.stdout.rel_tf_osx_builder.1112.JNvInY.ii
+ t _GLOBAL__sub_I_tf_matchma.stdout.rel_tf_osx_builder.56031.zOxtqX.ii
  t _GLOBAL__sub_I_tf_nav_are.stdout.rel_tf_osx_builder.2376.p97lRC.ii
  t _GLOBAL__sub_I_tf_nav_int.stdout.rel_tf_osx_builder.31979.prdurN.ii
  t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.2382.bjWQBP.ii
@@ -57387,9 +57392,9 @@
  t _GLOBAL__sub_I_tf_objecti.stdout.rel_tf_osx_builder.2520.saIDcK.ii
  t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.2571.5Wzsbc.ii
  t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.2575.fzJzAw.ii
- t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.2583.dZPtqV.ii
- t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.1128.SgzMQQ.ii
+ t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.56045.wMiwFp.ii
  t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.2603.Pi6o2M.ii
+ t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.4598.PN9olc.ii
  t _GLOBAL__sub_I_tf_playerc.stdout.rel_tf_osx_builder.27866.vaWF1q.ii
  t _GLOBAL__sub_I_tf_playerm.stdout.rel_tf_osx_builder.2594.Cke4O9.ii
  t _GLOBAL__sub_I_tf_point_m.stdout.rel_tf_osx_builder.27880.q8lEfq.ii
@@ -57405,8 +57410,8 @@
  t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.1150.IU57r2.ii
  t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.2613.6x8MLV.ii
  t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.2617.8gAq7e.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.2627.42Wu55.ii
  t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.2631.HwYeCm.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.4603.G9VzBH.ii
  t _GLOBAL__sub_I_tf_props.stdout.rel_tf_osx_builder.2637.H3f2yS.ii
  t _GLOBAL__sub_I_tf_proto_d.stdout.rel_tf_osx_builder.93357.YMLv9A.ii
  t _GLOBAL__sub_I_tf_proto_s.stdout.rel_tf_osx_builder.27941.NnHmic.ii
