@@ -1241,7 +1241,7 @@
 	{
 		"userid"	"short"
 	}
-	
+
 	"player_killed_achievement_zone"
 	{
 		"attacker"	"short"		// entindex of the attacker
@@ -1268,9 +1268,11 @@
 	"party_invites_changed"
 	{
 	}
+
 	// Party's in-queue state changed
 	"party_queue_state_changed"
 	{
+		"matchgroup" "short" // ETFMatchGroup
 	}
 
 	"party_chat"
@@ -1291,10 +1293,15 @@
 		"steamid" "string" // steamID (64-bit value converted to string) of leaver
 	}
 
+	// GC Match invites changed
+	"match_invites_updated"
+	{
+	}
+
 	"lobby_updated"
 	{
 	}
-	
+
 	"mvm_mission_update"
 	{
 		"class"		"short"
@@ -1563,8 +1570,6 @@
 	"competitive_stats_update"
 	{
 		"index"		"short"		// entindex of the player
-		"rating"	"long"		// skillrating
-		"delta"		"short"		// skillrating adjustment
 		"kills_rank"	"byte"	// num std deviations above
 		"score_rank"	"byte"	//
 		"damage_rank"	"byte"	//
@@ -1963,5 +1968,11 @@
 		"blocker"	"short"	// entindex of the blocker
 		"victim"	"short"	// entindex of the victim
 	}
+
+	"mainmenu_stabilized"
+	{}
+
+	"world_status_changed"
+	{}
 }
 
