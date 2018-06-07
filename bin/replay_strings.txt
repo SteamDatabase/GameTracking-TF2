@@ -692,6 +692,8 @@ $terlace_handling
 2ACB;M
 2fff.
 30CClientRecordingSessionManager
+30CNetMessageRatelimitPolicyBase
+30CNetMessageRatelimitPolicyNone
 30CServerRecordingSessionManager
 33CBaseRecordingSessionBlockManager
 35CClientRecordingSessionBlockManager
@@ -1307,11 +1309,16 @@ CLocalPublishJob::DoExecute()
 CLocalPublishJob::~CLocalPublishJob()
 CMd5Job::DoExecute()
 CMd5Job::~CMd5Job()
+CNetMessage::BIncomingMessageForProcessing(double, int)
 CNetMessage::GetGroup() const
 CNetMessage::GetNetChannel() const
 CNetMessage::IsReliable() const
+CNetMessage::Process()
 CNetMessage::SetNetChannel(INetChannel*)
+CNetMessage::SetRatePolicy()
 CNetMessage::SetReliable(bool)
+CNetMessage::~CNetMessage()
+CNetMessageRatelimitPolicyNone::BIncomingMessageForProcessing(double, int)
 CNullSpewer::PrintBlockEnd() const
 CNullSpewer::PrintBlockStart() const
 CNullSpewer::PrintEmptyLine() const
@@ -1878,7 +1885,6 @@ Could not compress stream.
 CreateCompressor(CompressorType_t)
 DEFAULT_WRITE_PATH
 DNS lookup failed!
-D^ARA^ARD`
 Data error in compressed datastream in %s chunk
 Data validation failed.
 DebugTextureInfo001
@@ -2461,9 +2467,9 @@ Use 'replay_add_fake_replays' <num fake replays to add> <today only>
 VBAllocTracker001
 VBRAVBXA`%A`
 VBRBRBRBRAYAp
+VBRBVB
 VBRBVBRBZAVCp
 VBRBWAp
-VBRBp
 VClientEntityList003
 VDRASBp
 VDebugOverlay003
@@ -2566,12 +2572,12 @@ __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
 __GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.95445.YplMS3.ii
-__GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.42007.w5TpXU.ii
+__GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.40459.MDyPdM.ii
 __GLOBAL__sub_I_cl_cvars.stdout.rel_tf_osx_builder.42006.PmgcrD.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
-__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.42001.a8xGXn.ii
+__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.40458.qqVmFX.ii
 __GLOBAL__sub_I_replay_dbg.stdout.rel_tf_osx_builder.42159.6PND5n.ii
-__GLOBAL__sub_I_replaysyst.stdout.rel_tf_osx_builder.42154.HTkouW.ii
+__GLOBAL__sub_I_replaysyst.stdout.rel_tf_osx_builder.40461.SanTd9.ii
 __GLOBAL__sub_I_shared_cva.stdout.rel_tf_osx_builder.42176.yfFsLe.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
 __GLOBAL__sub_I_sv_command.stdout.rel_tf_osx_builder.42204.b4ZNft.ii
@@ -3892,6 +3898,8 @@ typeinfo for CLocalFileserverPublisher
 typeinfo for CLocalPublishJob
 typeinfo for CMd5Job
 typeinfo for CNetMessage
+typeinfo for CNetMessageRatelimitPolicyBase
+typeinfo for CNetMessageRatelimitPolicyNone
 typeinfo for CNullSpewer
 typeinfo for CPerformanceController
 typeinfo for CRefCountServiceBase<true, CRefMT>
@@ -4001,6 +4009,8 @@ typeinfo name for CLocalFileserverPublisher
 typeinfo name for CLocalPublishJob
 typeinfo name for CMd5Job
 typeinfo name for CNetMessage
+typeinfo name for CNetMessageRatelimitPolicyBase
+typeinfo name for CNetMessageRatelimitPolicyNone
 typeinfo name for CNullSpewer
 typeinfo name for CPerformanceController
 typeinfo name for CRefCountServiceBase<true, CRefMT>
@@ -4136,6 +4146,8 @@ vtable for CLocalFileDeleterJob
 vtable for CLocalFileserverPublisher
 vtable for CLocalPublishJob
 vtable for CMd5Job
+vtable for CNetMessage
+vtable for CNetMessageRatelimitPolicyNone
 vtable for CNullSpewer
 vtable for CPerformanceController
 vtable for CRenderQueue

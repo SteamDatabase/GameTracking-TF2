@@ -156,6 +156,8 @@
  D typeinfo for CLocalPublishJob
  D typeinfo for CMd5Job
  D typeinfo for CNetMessage
+ D typeinfo for CNetMessageRatelimitPolicyBase
+ D typeinfo for CNetMessageRatelimitPolicyNone
  D typeinfo for CNullSpewer
  D typeinfo for CPerformanceController
  D typeinfo for CRefCountServiceBase<true, CRefMT>
@@ -261,6 +263,8 @@
  D vtable for CLocalFileserverPublisher
  D vtable for CLocalPublishJob
  D vtable for CMd5Job
+ D vtable for CNetMessage
+ D vtable for CNetMessageRatelimitPolicyNone
  D vtable for CNullSpewer
  D vtable for CPerformanceController
  D vtable for CRenderQueue
@@ -338,6 +342,8 @@
  R typeinfo name for CLocalPublishJob
  R typeinfo name for CMd5Job
  R typeinfo name for CNetMessage
+ R typeinfo name for CNetMessageRatelimitPolicyBase
+ R typeinfo name for CNetMessageRatelimitPolicyNone
  R typeinfo name for CNullSpewer
  R typeinfo name for CPerformanceController
  R typeinfo name for CRefCountServiceBase<true, CRefMT>
@@ -803,11 +809,16 @@
  T CLocalPublishJob::~CLocalPublishJob()
  T CMd5Job::DoExecute()
  T CMd5Job::~CMd5Job()
+ T CNetMessage::BIncomingMessageForProcessing(double, int)
  T CNetMessage::GetGroup() const
  T CNetMessage::GetNetChannel() const
  T CNetMessage::IsReliable() const
+ T CNetMessage::Process()
  T CNetMessage::SetNetChannel(INetChannel*)
+ T CNetMessage::SetRatePolicy()
  T CNetMessage::SetReliable(bool)
+ T CNetMessage::~CNetMessage()
+ T CNetMessageRatelimitPolicyNone::BIncomingMessageForProcessing(double, int)
  T CNullSpewer::PrintBlockEnd() const
  T CNullSpewer::PrintBlockStart() const
  T CNullSpewer::PrintEmptyLine() const
@@ -2206,12 +2217,12 @@
  strtoul
  swprintf
  t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.95445.YplMS3.ii
- t _GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.42007.w5TpXU.ii
+ t _GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.40459.MDyPdM.ii
  t _GLOBAL__sub_I_cl_cvars.stdout.rel_tf_osx_builder.42006.PmgcrD.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
- t _GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.42001.a8xGXn.ii
+ t _GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.40458.qqVmFX.ii
  t _GLOBAL__sub_I_replay_dbg.stdout.rel_tf_osx_builder.42159.6PND5n.ii
- t _GLOBAL__sub_I_replaysyst.stdout.rel_tf_osx_builder.42154.HTkouW.ii
+ t _GLOBAL__sub_I_replaysyst.stdout.rel_tf_osx_builder.40461.SanTd9.ii
  t _GLOBAL__sub_I_shared_cva.stdout.rel_tf_osx_builder.42176.yfFsLe.ii
  t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
  t _GLOBAL__sub_I_sv_command.stdout.rel_tf_osx_builder.42204.b4ZNft.ii
