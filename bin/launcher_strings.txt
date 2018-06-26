@@ -587,40 +587,26 @@ CUtlBuffer::VaScanf(char const*, char*)
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
 CUtlCharConversion::FindConversion(char const*, int*)
+CUtlDict<int, unsigned short>::RemoveAll()
 CUtlLinkedList overflow! (exhausted index range)
 CUtlLinkedList overflow! (exhausted memory allocator)
 CUtlLinkedList<CCocoaEvent, int, false, int, CUtlMemory<UtlLinkedListElem_t<CCocoaEvent, int>, int> >::AllocInternal(bool)
 CUtlLinkedList<CCocoaEvent, int, false, int, CUtlMemory<UtlLinkedListElem_t<CCocoaEvent, int>, int> >::~CUtlLinkedList()
-CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
+CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<char const*, int, unsigned short>::Node_t const&) const
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<char const*, int, unsigned short>::Node_t const&, unsigned short&, bool&)
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::FirstInorder() const
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<char const*, int, unsigned short>::Node_t const&)
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::NewNode()
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::NextInorder(unsigned short) const
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RemoveAll()
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
-CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Find(CUtlString const&) const
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::FindInsertionPosition(CUtlString const&, int&, bool&)
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::FirstInorder() const
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t const&)
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::NextInorder(unsigned short) const
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
 CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Insert(CUtlString const&)
 CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::InsertRebalance(int)
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::IsLeftChild(int) const
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::IsRightChild(int) const
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Links(int) const::s_Sentinel
 CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::NewNode()
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::NextInorder(int) const
 CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::RemoveAll()
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::RotateLeft(int)
-CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::RotateRight(int)
 CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::~CUtlRBTree()
 CUtlString::Get() const
 CUtlString::Purge()
@@ -821,8 +807,9 @@ Qkkbal
 QueuedLoaderVersion004
 RARARCRB`
 RBRARAp
-RBRBp,p
-RJRBRAp
+RBRBp
+RBRBp$p
+RDRAp
 RecursiveLoadFromBuffer:  got EOF instead of keyname
 RecursiveLoadFromBuffer:  got NULL key
 RecursiveLoadFromBuffer:  got conditional between key and value
@@ -1031,11 +1018,11 @@ _VStdLib_GetICVarFactory
 _Warning
 __DATA
 __DefaultRuneLocale
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
-__GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.99320.l4TkUb.ii
-__GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.99321.jERYgd.ii
-__GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.95903.Jta9GH.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+__GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.46487.2CHxT4.ii
+__GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.46488.iJVR9f.ii
+__GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.41016.EHN7Yp.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
 __LINKEDIT
 __OBJC
 __TEXT
@@ -1259,8 +1246,6 @@ grab_window(CCommand const&)
 grab_window_command
 guard variable for CSDLMgr::CreateHiddenGameWindow(char const*, int, int)::glGetIntegerv
 guard variable for CSDLMgr::CreateHiddenGameWindow(char const*, int, int)::glGetString
-guard variable for CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
-guard variable for CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Links(int) const::s_Sentinel
 image not found
 infoDictionary
 initWithAttributes:
@@ -1321,7 +1306,7 @@ stringWithFormat:
 studiorender.dylib
 subdir
 t+ff.
-tWfffff.
+t4fffff.
 typeinfo for CAppSystemGroup
 typeinfo for CDefaultAccessor
 typeinfo for CEmptyConVar

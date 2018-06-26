@@ -166,8 +166,6 @@ ATTN_RICOCHET
 ATTN_STATIC
 AVBRAR0
 Bffffff.
-C;^0|
-C;_0|
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
 CEmptyConVar::GetName() const
 CEmptyConVar::IsFlagSet(int) const
@@ -327,15 +325,10 @@ CUtlMemory<UtlLinkedListElem_t<CUtlKeyValuePair<CSoundEntry*, empty_t>, unsigned
 CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
 CUtlNoEscConversion::FindConversion(char const*, int*)
 CUtlRBTree overflow!
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Purge()
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
@@ -392,6 +385,8 @@ DevMsg(char const*, ...)
 EvaluateConditional(char const*)
 Exceeded max number of actors in scripts/global_actors.txt
 Exceeded maximum number of sound emitter entries
+F;w0|
+G;~0|
 GetCStringCharConversion()
 GetNoEscCharConversion()
 H__ZdaPv
@@ -504,7 +499,6 @@ V_strncmp(char const*, char const*, int)
 V_strncpy(char*, char const*, int)
 V_strnicmp(char const*, char const*, int)
 V_vsnprintf(char*, int, char const*, char*)
-Xffff.
 \^_[]
 _COM_TimestampedLog
 _ChannelToString(int)::sz
@@ -523,10 +517,10 @@ _ZERO_FLOAT16
 __CreateCSoundEmitterSystemBaseISoundEmitterSystemBase_interface()
 __DATA
 __DefaultRuneLocale
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
-__GLOBAL__sub_I_soundemitt.stdout.rel_tf_osx_builder.96072.oOGr5e.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.95625.uNbVmq.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+__GLOBAL__sub_I_soundemitt.stdout.rel_tf_osx_builder.41186.xCA8HW.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -609,7 +603,6 @@ g_pPitchLookup
 g_pSoundLevels
 guard variable for CSoundEmitterSystemBase::GetParametersForSound(char const*, CSoundParameters&, gender_t, bool)::soundWarnings
 guard variable for CSoundEmitterSystemBase::GetParametersForSoundEx(char const*, short&, CSoundParameters&, gender_t, bool)::soundWarnings
-guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
 int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoRemove<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex const&>(CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex const&, unsigned int)
 int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoRemove<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex>(CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, unsigned int)
 non-virtual thunk to CEmptyConVar::GetName() const

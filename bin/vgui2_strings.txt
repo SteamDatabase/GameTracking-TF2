@@ -40,6 +40,7 @@ $X360
 +ffffff.
 ,<KEY_COMMA
 ,^_[]
+,ffff.
 --KEY_PAD_MINUS
 -_KEY_MINUS
 -all_languages
@@ -160,6 +161,7 @@ $X360
 0)KEY_0
 00@@@@@@@@`
 0E7CSystem
+0fffff.
 0pp 00p
 0x%016llX
 1!KEY_1
@@ -185,6 +187,7 @@ $X360
 21CUtlCStringConversion
 23IConCommandBaseAccessor
 2@KEY_2
+2ffff.
 3#KEY_3
 4$KEY_4
 40 40 40 196
@@ -198,8 +201,9 @@ $X360
 814CSchemeManager
 9(KEY_9
 9>tlB9
+9G v7
 9ILocalize
-9w vy
+9r v#
 9~ptY
 ;:KEY_SEMICOLON
 ;E$~0
@@ -208,7 +212,7 @@ $X360
 <Unknown font>
 <^_[]
 =+KEY_EQUAL, L
-@   00
+?fff.
 @(^_]
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
@@ -316,6 +320,7 @@ $X360
 @vtable for __cxxabiv1::__class_type_info
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
+AL;\8
 ARB]ARB`
 ARB`2Bp
 AVBSAR0
@@ -347,7 +352,6 @@ Button.DepressedBgColor
 Button.DepressedTextColor
 Button.FocusBorderColor
 Button.TextColor
-C;_0|
 CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
 CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
 CEmptyConVar::GetName() const
@@ -454,6 +458,7 @@ CLocalizedStringTable::AddFile() failed to load file "%s".
 CLocalizedStringTable::AddFile(char const*, char const*, bool)
 CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
 CLocalizedStringTable::AddString(char const*, wchar_t*, char const*)
+CLocalizedStringTable::BuildFastValueLookup()
 CLocalizedStringTable::ConstructString(wchar_t*, int, char const*, KeyValues*)
 CLocalizedStringTable::ConstructString(wchar_t*, int, unsigned long, KeyValues*)
 CLocalizedStringTable::FastValueLessFunc(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&)
@@ -585,7 +590,8 @@ CUtlBuffer::VaScanf(char const*, char*)
 CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
 CUtlCStringConversion::FindConversion(char const*, int*)
 CUtlCharConversion::FindConversion(char const*, int*)
-CUtlDict<CScheme::fontalias_t, int>::~CUtlDict()
+CUtlDict<CScheme::fontalias_t, int>::RemoveAll()
+CUtlDict<CScheme::fontrange_t, int>::RemoveAll()
 CUtlHandleTable<vgui::VPanel, 20>::AddHandle()
 CUtlLinkedList overflow! (exhausted index range)
 CUtlLinkedList overflow! (exhausted memory allocator)
@@ -605,83 +611,33 @@ CUtlPriorityQueue<MessageItem_t>::Insert(MessageItem_t const&)
 CUtlPriorityQueue<MessageItem_t>::RemoveAtHead()
 CUtlQueue<int, CUtlMemory<int, int> >::Insert(int const&)
 CUtlRBTree overflow!
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Find(CLocalizedStringTable::fastvalue_t const&) const
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::FindInsertionPosition(CLocalizedStringTable::fastvalue_t const&, int&, bool&)
 CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Insert(CLocalizedStringTable::fastvalue_t const&)
 CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::InsertRebalance(int)
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::IsLeftChild(int) const
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::IsRightChild(int) const
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Links(int) const::s_Sentinel
 CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::NewNode()
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::RemoveAll()
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::RotateLeft(int)
-CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::RotateRight(int)
 CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::~CUtlRBTree()
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Find(CLocalizedStringTable::localizedstring_t const&) const
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::FindInsertionPosition(CLocalizedStringTable::localizedstring_t const&, unsigned long&, bool&)
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::FirstInorder() const
 CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Insert(CLocalizedStringTable::localizedstring_t const&)
 CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::InsertRebalance(unsigned long)
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::IsLeftChild(unsigned long) const
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::IsRightChild(unsigned long) const
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Links(unsigned long) const::s_Sentinel
 CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::NewNode()
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::NextInorder(unsigned long) const
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::RemoveAll()
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::RotateLeft(unsigned long)
-CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::RotateRight(unsigned long)
+CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Purge()
 CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::~CUtlRBTree()
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Find(CSchemeManager::CachedBitmapHandle_t const&) const
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::FindInsertionPosition(CSchemeManager::CachedBitmapHandle_t const&, int&, bool&)
 CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Insert(CSchemeManager::CachedBitmapHandle_t const&)
 CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::InsertRebalance(int)
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::IsLeftChild(int) const
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::IsRightChild(int) const
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Links(int) const::s_Sentinel
 CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::NewNode()
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::RemoveAll()
 CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::RemoveRebalance(int)
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::RotateLeft(int)
-CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::RotateRight(int)
 CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Unlink(int)
 CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::~CUtlRBTree()
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Find(CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t const&) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::FindInsertionPosition(CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t const&, int&, bool&)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::FirstInorder() const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Insert(CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t const&)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::InsertRebalance(int)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::IsLeftChild(int) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::IsRightChild(int) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::NewNode()
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::NextInorder(int) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::RemoveAll()
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::RotateLeft(int)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::RotateRight(int)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::~CUtlRBTree()
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Find(CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t const&) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::FindInsertionPosition(CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t const&, int&, bool&)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::FirstInorder() const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Insert(CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t const&)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::InsertRebalance(int)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::IsLeftChild(int) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::IsRightChild(int) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::NewNode()
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::NextInorder(int) const
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::RemoveAll()
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::RotateLeft(int)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::RotateRight(int)
-CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::~CUtlRBTree()
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
+CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::Insert(CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t const&)
+CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::InsertRebalance(int)
+CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::NewNode()
+CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::~CUtlRBTree()
+CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::Insert(CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t const&)
+CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::InsertRebalance(int)
+CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::NewNode()
+CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::~CUtlRBTree()
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
-CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Purge()
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
 CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
@@ -842,6 +798,7 @@ DisconnectTier3Libraries()
 DoCompositionString
 ENGLISH
 EvaluateConditional(char const*)
+F;w0|
 FRENCH
 FgColor
 FgColorDim
@@ -1073,6 +1030,7 @@ N4vgui7ISchemeE
 N4vgui7ISystemE
 N4vgui9ILocalizeE
 NetworkSystemVersion001
+Nfffff.
 POLISH
 PORTUGUESE
 Panel '%s/%s' has invalid client: %p.
@@ -1094,7 +1052,6 @@ RARASARAp
 RBRARAp
 RBRBRBRBRBR0H`AARBRBRBp
 RBRBp
-RMVARAXARARARARARARARARARARARARARARAp
 RUSSIAN
 RadioButton.SelectedTextColor
 RadioButton.TextColor
@@ -1114,7 +1071,7 @@ RichText.SelectedBgColor
 RichText.SelectedTextColor
 RichText.TextColor
 Right
-SARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARBRBR0Lp
+SARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARARCRBSASAp
 SARARARARARARARARARARARARARARARARARARARARARARARARARAp
 SARARARARARAp
 SCHINESE
@@ -1311,7 +1268,7 @@ WindowBgColor
 WindowDisabledFgColor
 WindowFgColor
 WizardSubPanel.BgColor
-Xffff.
+XARAXARARARARARARARARARARARARARARAp
 [english]
 [{KEY_LBRACKET
 \^_[]
@@ -1351,15 +1308,15 @@ __CreateCVGuiIVGui_interface()
 __CreateVPanelWrapperIPanel_interface()
 __DATA
 __DefaultRuneLocale
-__GLOBAL__sub_I_InputWin32.stdout.rel_tf_osx_builder.99699.dDuiPT.ii
-__GLOBAL__sub_I_LocalizedS.stdout.rel_tf_osx_builder.5412.YDHL9c.ii
-__GLOBAL__sub_I_Scheme.stdout.rel_tf_osx_builder.99753.oTh3nW.ii
-__GLOBAL__sub_I_VPanelWrap.stdout.rel_tf_osx_builder.99788.CZbWIM.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
-__GLOBAL__sub_I_system_pos.stdout.rel_tf_osx_builder.99762.8UEXfy.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.95625.uNbVmq.ii
-__GLOBAL__sub_I_vgui.stdout.rel_tf_osx_builder.5413.55uFU4.ii
+__GLOBAL__sub_I_InputWin32.stdout.rel_tf_osx_builder.46903.Ekmw2x.ii
+__GLOBAL__sub_I_LocalizedS.stdout.rel_tf_osx_builder.46917.Ux3dTD.ii
+__GLOBAL__sub_I_Scheme.stdout.rel_tf_osx_builder.46940.YnPF7f.ii
+__GLOBAL__sub_I_VPanelWrap.stdout.rel_tf_osx_builder.46979.jbzeBV.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+__GLOBAL__sub_I_system_pos.stdout.rel_tf_osx_builder.46945.S5GTCC.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
+__GLOBAL__sub_I_vgui.stdout.rel_tf_osx_builder.46954.E8IQqN.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -1528,12 +1485,6 @@ ffffff.
 gGKEY_G
 g_CleanupSymbolTable
 guard variable for CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
-guard variable for CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::Links(int) const::s_Sentinel
-guard variable for CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Links(unsigned long) const::s_Sentinel
-guard variable for CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Links(int) const::s_Sentinel
-guard variable for CUtlRBTree<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontalias_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontalias_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
-guard variable for CUtlRBTree<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int, CUtlMap<char const*, CScheme::fontrange_t, int>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, CScheme::fontrange_t, int>::Node_t, int>, int> >::Links(int) const::s_Sentinel
-guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
 hHKEY_H
 iIKEY_I
 image
@@ -1602,7 +1553,9 @@ string
 surface()->RunFrame()
 symbol
 system()->RunFrame()
+t*fffff.
 t+ff.
+t/ffffff.
 tTKEY_T
 tchinese
 tiled

@@ -192,8 +192,6 @@
  D CDispTri::m_DataMap
  D CDispVert::m_DataMap
  D CFaceMacroTextureInfo::m_DataMap
- D CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::Links(int) const::s_Sentinel
  D CWin32File::CreateTempFile(CUtlString&, CUtlString&)::counter
  D CompressedLightCube::m_DataMap
  D DetailObjectDictLump_t::m_DataMap
@@ -246,8 +244,6 @@
  D dwateroverlay_t::m_DataMap
  D dworldlight_t::m_DataMap
  D dworldlights
- D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D guard variable for CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::Links(int) const::s_Sentinel
  D lump_t::m_DataMap
  D pNumworldlights
  D pdlightdata
@@ -391,30 +387,18 @@
  T CUtlMemory<UtlLinkedListElem_t<GameLump_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Purge()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::Find(CZipFile::CZipEntry const&) const
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::FindInsertionPosition(CZipFile::CZipEntry const&, int&, bool&)
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::FirstInorder() const
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::Insert(CZipFile::CZipEntry const&)
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::InsertRebalance(int)
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::IsLeftChild(int) const
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::IsRightChild(int) const
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::NewNode()
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::NextInorder(int) const
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::RemoveAll()
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::RemoveRebalance(int)
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::RotateLeft(int)
- T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::RotateRight(int)
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::Unlink(int)
  T CUtlRBTree<CZipFile::CZipEntry, int, bool (*)(CZipFile::CZipEntry const&, CZipFile::CZipEntry const&), CUtlMemory<UtlRBTreeNode_t<CZipFile::CZipEntry, int>, int> >::~CUtlRBTree()
  T CUtlString::Get() const
@@ -491,8 +475,10 @@
  T CZipFile::CZipFile(char const*, bool)
  T CZipFile::CalculateSize()
  T CZipFile::FileExistsInZip(char const*)
+ T CZipFile::GetNextFilename(int, char*, int, int&)
  T CZipFile::ParseFromBuffer(void*, int)
  T CZipFile::ParseFromDisk(char const*)
+ T CZipFile::PrintDirectory()
  T CZipFile::ReadFileFromZip(void*, char const*, bool, CUtlBuffer&)
  T CZipFile::RemoveFileFromZip(char const*)
  T CZipFile::SaveDirectory(IWriteStream&)
@@ -1002,16 +988,16 @@
  t SzAlloc(void*, unsigned long)
  t SzFree(void*, void*)
  t WritePakFileLump()
- t _GLOBAL__sub_I_bsplib.stdout.rel_tf_osx_builder.99487.dVbBVz.ii
- t _GLOBAL__sub_I_bsppack.stdout.rel_tf_osx_builder.99518.kf8u1P.ii
- t _GLOBAL__sub_I_cmdlib.stdout.rel_tf_osx_builder.99488.yHC5pI.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
- t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.95508.u9PrD0.ii
- t _GLOBAL__sub_I_scriplib.stdout.rel_tf_osx_builder.99517.WjO5CJ.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.95625.uNbVmq.ii
- t _GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.99486.zgYFKP.ii
+ t _GLOBAL__sub_I_bsplib.stdout.rel_tf_osx_builder.46669.MdplpA.ii
+ t _GLOBAL__sub_I_bsppack.stdout.rel_tf_osx_builder.46703.X3ujQe.ii
+ t _GLOBAL__sub_I_cmdlib.stdout.rel_tf_osx_builder.46670.npim6L.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.40460.ZcOO71.ii
+ t _GLOBAL__sub_I_scriplib.stdout.rel_tf_osx_builder.46696.UdL1Pn.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
+ t _GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.46668.44qE2S.ii
  t __CreateCBSPPackIBSPPack_interface()
  time
  tmpnam

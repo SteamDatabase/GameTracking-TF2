@@ -94,14 +94,10 @@
  CommandLine_Tier0
  ConMsg(char const*, ...)
  D CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
- D CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Links(int) const::s_Sentinel
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
  D g_KeyValuesErrorStack
  D g_lockfd
- D guard variable for CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D guard variable for CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Links(int) const::s_Sentinel
  D reslistgenerator
  D typeinfo for CAppSystemGroup
  D typeinfo for CDefaultAccessor
@@ -370,35 +366,23 @@
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
  T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlDict<int, unsigned short>::RemoveAll()
  T CUtlLinkedList<CCocoaEvent, int, false, int, CUtlMemory<UtlLinkedListElem_t<CCocoaEvent, int>, int> >::AllocInternal(bool)
  T CUtlLinkedList<CCocoaEvent, int, false, int, CUtlMemory<UtlLinkedListElem_t<CCocoaEvent, int>, int> >::~CUtlLinkedList()
- T CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<char const*, int, unsigned short>::Node_t const&) const
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<char const*, int, unsigned short>::Node_t const&, unsigned short&, bool&)
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::FirstInorder() const
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<char const*, int, unsigned short>::Node_t const&)
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::NextInorder(unsigned short) const
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RemoveAll()
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Find(CUtlString const&) const
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::FindInsertionPosition(CUtlString const&, int&, bool&)
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::FirstInorder() const
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t const&)
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::NextInorder(unsigned short) const
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short, CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, int, unsigned short, bool (*)(char const* const&, char const* const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::Insert(CUtlString const&)
  T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::InsertRebalance(int)
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::IsLeftChild(int) const
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::IsRightChild(int) const
  T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::NewNode()
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::NextInorder(int) const
  T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::RemoveAll()
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::RotateLeft(int)
- T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::RotateRight(int)
  T CUtlRBTree<CUtlString, int, bool (*)(CUtlString const&, CUtlString const&), CUtlMemory<UtlRBTreeNode_t<CUtlString, int>, int> >::~CUtlRBTree()
  T CUtlString::Get() const
  T CUtlString::Purge()
@@ -715,11 +699,11 @@
  t DebugPrintf(char const*, ...)
  t ReslistLogLessFunc(CUtlString const&, CUtlString const&)
  t TryLocateGameInfoFile(char*, int, bool)
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
- t _GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.99320.l4TkUb.ii
- t _GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.99321.jERYgd.ii
- t _GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.95903.Jta9GH.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+ t _GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.46487.2CHxT4.ii
+ t _GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.46488.iJVR9f.ii
+ t _GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.41016.EHN7Yp.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
  t grab_window(CCommand const&)
  t sdl_displayindex_changed(IConVar*, char const*, float)
  typeinfo for std::bad_alloc

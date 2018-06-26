@@ -68,8 +68,6 @@
  COM_TimestampedLog
  CommandLine_Tier0
  ConMsg(char const*, ...)
- D CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D GLMContext::SetMaxUsedVertexShaderConstantsHint(unsigned int)::bUseMaxVertexShadeConstantHints
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
@@ -87,8 +85,6 @@
  D g_preloadTexVertexProgramText
  D g_shaderSectionMarkers
  D glAttachFromClass
- D guard variable for CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D guard variable for CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
  D guard variable for GLMContext::SetMaxUsedVertexShaderConstantsHint(unsigned int)::bUseMaxVertexShadeConstantHints
  D kIslandTemplate
  D pfFastCos
@@ -240,6 +236,7 @@
  T CGLMTex::WriteTexels(GLMTexLockDesc*, bool, bool)
  T CGLMTex::~CGLMTex()
  T CGLMTexLayoutTable::CGLMTexLayoutTable()
+ T CGLMTexLayoutTable::DelLayoutRef(GLMTexLayout*)
  T CGLMTexLayoutTable::DumpStats()
  T CGLMTexLayoutTable::NewLayoutRef(GLMTexLayoutKey*)
  T CGLMTextSectioner::CGLMTextSectioner(char*, int, char const**)
@@ -283,30 +280,22 @@
  T CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCStringConversion::FindConversion(char const*, int*)
  T CUtlCharConversion::FindConversion(char const*, int*)
- T CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
- T CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t const&) const
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t const&, unsigned short&, bool&)
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t const&)
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
- T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Find(CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t const&) const
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t const&, unsigned short&, bool&)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t const&)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RemoveAll()
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RemoveRebalance(unsigned short)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short>::Node_t, unsigned short>, unsigned short> >::Unlink(unsigned short)
+ T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t const&)
+ T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short, CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<GLMTexLayoutKey, GLMTexLayout*, unsigned short, bool (*)(GLMTexLayoutKey const&, GLMTexLayoutKey const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t const&)
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::RemoveRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short, CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<RenderTargetState_t, CGLMFBO*, unsigned short, bool (*)(RenderTargetState_t const&, RenderTargetState_t const&)>::Node_t, unsigned short>, unsigned short> >::Unlink(unsigned short)
  T CUtlSortVector<KeyValues*, CUtlSortVectorKeyValuesByName, CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> > >::CompareHelper(KeyValues* const*, KeyValues* const*)
  T CUtlString::Get() const
  T CUtlString::Purge()
@@ -874,15 +863,15 @@
  t FillD3DCaps9(GLMRendererInfoFields const&, _D3DCAPS9*)
  t GetOpenGLVersion(int*, int*, int*)
  t PrintDoubleInt(char*, unsigned int, double, unsigned int)
- t _GLOBAL__sub_I_cglmbuffer.stdout.rel_tf_osx_builder.99232.ttI9Dp.ii
- t _GLOBAL__sub_I_cglmprogra.stdout.rel_tf_osx_builder.99234.C3k8JA.ii
- t _GLOBAL__sub_I_cglmquery.stdout.rel_tf_osx_builder.99235.UEr6FT.ii
- t _GLOBAL__sub_I_cglmtex.stdout.rel_tf_osx_builder.99236.4uuwQK.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
- t _GLOBAL__sub_I_dxabstract.stdout.rel_tf_osx_builder.99238.kbnOn4.ii
- t _GLOBAL__sub_I_glmgr.stdout.rel_tf_osx_builder.99280.llYdTx.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
+ t _GLOBAL__sub_I_cglmbuffer.stdout.rel_tf_osx_builder.46389.Yqt5Ko.ii
+ t _GLOBAL__sub_I_cglmprogra.stdout.rel_tf_osx_builder.46391.9qWyR3.ii
+ t _GLOBAL__sub_I_cglmquery.stdout.rel_tf_osx_builder.46392.1d8UOo.ii
+ t _GLOBAL__sub_I_cglmtex.stdout.rel_tf_osx_builder.46393.l4zdBy.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+ t _GLOBAL__sub_I_dxabstract.stdout.rel_tf_osx_builder.46398.HEdrtZ.ii
+ t _GLOBAL__sub_I_glmgr.stdout.rel_tf_osx_builder.46440.P7bII1.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
  t gl_dump_stats_func(CCommand const&)
  t gl_persistent_buffer_max_offset(CCommand const&)
  t gl_shader_compile_time_dump(CCommand const&)

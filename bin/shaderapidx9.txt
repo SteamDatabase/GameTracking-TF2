@@ -69,8 +69,6 @@
  D CIndexBuffer::HandlePerFrameTextureStats(int)::_counter
  D CIndexBuffer::~CIndexBuffer()::_counter
  D CPixelWriter::SetPixelMemory(ImageFormat, void*, int)::format_error_printed
- D CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Links(int) const::s_Sentinel
  D ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
@@ -85,8 +83,6 @@
  D guard variable for CIndexBuffer::CIndexBuffer(IDirect3DDevice9*, int, bool, bool)::_counter
  D guard variable for CIndexBuffer::HandlePerFrameTextureStats(int)::_counter
  D guard variable for CIndexBuffer::~CIndexBuffer()::_counter
- D guard variable for CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Links(unsigned short) const::s_Sentinel
- D guard variable for CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Links(int) const::s_Sentinel
  D guard variable for ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
  D k_pszShaderCacheRootKey
  D pfFastCos
@@ -1302,29 +1298,16 @@
  T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemoryAligned<unsigned char, 32>::~CUtlMemoryAligned()
  T CUtlNoEscConversion::FindConversion(char const*, int*)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Find(CUtlSymbolTable::CStringPoolIndex const&) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::FindInsertionPosition(CUtlSymbolTable::CStringPoolIndex const&, unsigned short&, bool&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsLeftChild(unsigned short) const
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::IsRightChild(unsigned short) const
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RemoveAll()
+ T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Purge()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Find(VertexDeclLookup_t const&) const
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::FindInsertionPosition(VertexDeclLookup_t const&, int&, bool&)
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::FirstInorder() const
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::Insert(VertexDeclLookup_t const&)
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::InsertRebalance(int)
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::IsLeftChild(int) const
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::IsRightChild(int) const
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::NewNode()
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::NextInorder(int) const
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::RemoveAll()
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::RotateLeft(int)
- T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::RotateRight(int)
  T CUtlRBTree<VertexDeclLookup_t, int, bool (*)(VertexDeclLookup_t const&, VertexDeclLookup_t const&), CUtlMemory<UtlRBTreeNode_t<VertexDeclLookup_t, int>, int> >::~CUtlRBTree()
  T CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::Insert(CTransitionTable::ShadowStateDictEntry_t const&)
  T CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::Insert(CTransitionTable::SnapshotDictEntry_t const&)
@@ -2095,19 +2078,19 @@
  t SzFree(void*, void*)
  t TestTextureFormat(_D3DFORMAT, bool, bool, bool)
  t VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.95449.Owvev6.ii
- t _GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.40737.gpy4R7.ii
- t _GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.40738.BJTouZ.ii
- t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.95508.u9PrD0.ii
- t _GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.40740.sx4AZB.ii
- t _GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.40742.g2GWTj.ii
- t _GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.40775.zVW4V4.ii
- t _GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.40777.mDsGsg.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.42111.NkTK4Y.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.95601.MsVdQc.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.95625.uNbVmq.ii
- t _GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.40807.kfMX45.ii
- t _GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.76120.qwTCNn.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+ t _GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.83312.2Srrgj.ii
+ t _GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.83313.d64pNm.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.40460.ZcOO71.ii
+ t _GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.83315.9nATRw.ii
+ t _GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.83341.DvydoI.ii
+ t _GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.83353.Dkze0t.ii
+ t _GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.83356.OI39oX.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
+ t _GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.83385.Xyblhg.ii
+ t _GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.83389.eCeGs2.ii
  t __CreateCHardwareConfigIMaterialSystemHardwareConfig_interface()
  t __CreateCShaderAPIDx8IDebugTextureInfo_interface()
  t __CreateCShaderAPIDx8IShaderAPI_interface()
