@@ -3911,7 +3911,6 @@ Bfff.
 Bffff.
 Bffffff.
 BgColor
-Bi9u$
 Bias(float, float)
 Bias(float, float)::lastExponent
 Bind a key.
@@ -11313,6 +11312,7 @@ CVideoMode_MaterialSystem::~CVideoMode_MaterialSystem()
 CVirtualTerrain::GetTrianglesInSphere(void*, Vector const&, float, virtualmeshtrianglelist_t*)
 CVirtualTerrain::GetVirtualMesh(void*, virtualmeshlist_t*)
 CVirtualTerrain::GetWorldspaceBounds(void*, Vector*, Vector*)
+CVirtualTerrain::LevelInit(dphysdisp_t*, int)
 CVirtualTerrain::~CVirtualTerrain()
 CVisibleFogVolumeQuery::RecursiveGetVisibleFogVolume(mnode_t*)
 CVmtTextEntry
@@ -11718,6 +11718,7 @@ CollisionBSPData_LoadAreas(CCollisionBSPData*)
 CollisionBSPData_LoadBrushSides(CCollisionBSPData*, CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >&)
 CollisionBSPData_LoadBrushes(CCollisionBSPData*)
 CollisionBSPData_LoadDispInfo(CCollisionBSPData*)
+CollisionBSPData_LoadDispInfo: Bad displacement info - invalid displacement power
 CollisionBSPData_LoadEntityString(CCollisionBSPData*)
 CollisionBSPData_LoadLeafBrushes(CCollisionBSPData*)
 CollisionBSPData_LoadLeafs(CCollisionBSPData*)
@@ -14044,6 +14045,7 @@ Level Performance Tools
 Level transition ERROR
 Level unlit, setting 'mat_fullbright 1'
 Level:  %s
+LevelInit: Bad map data - displacement data does not match displacement collision data
 LevelInitPreEntity: end %d
 LevelInitPreEntity: start %d
 Levels
@@ -18557,7 +18559,7 @@ __GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.4062.6t8gMB.ii
 __GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.44142.TgP6e1.ii
 __GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.4194.1MnVv7.ii
 __GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.44425.idMsX4.ii
-__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.44448.gGuSD7.ii
+__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.34021.SnvNIg.ii
 __GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.4200.IydsEC.ii
 __GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.4208.TXJxK4.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
