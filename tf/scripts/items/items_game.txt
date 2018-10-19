@@ -261,12 +261,13 @@
 		"arm_tatoos"		"1"
 		"flair"				"1"
 		"head_skin"			"1"			
-		"earbuds_special"	"1"
+		"ears"				"1"
 		"left_shoulder"		"1"			
 		"belt_misc"	"1"					
 		"disconnected_floating_item"	"1"
 		"zombie_body"		"1"
 		"sleeves"			"1"
+		"right_shoulder"	"1"			
 
 		"shared"
 		{
@@ -10854,6 +10855,89 @@
 		}
 		"name"		"Collect a Soul"
 	}
+
+	"232"
+	{
+		"name"		"Collect souls"
+		"condition_logic"
+		{
+			"type"		"event_listener"
+			"event_name"		"halloween_soul_collected"
+			"score_key_name"		"soul_count"
+			"0"
+			{
+				"type"		"player_is_owner"
+				"player_key"		"collecting_player"
+				"get_player"		"by_id"
+				"is_owner"		"1"
+			}
+		}
+	}
+	"233"
+	{
+		"name"		"Collect crumpkins"
+		"condition_logic"
+		{
+			"type"		"event_listener"
+			"event_name"		"halloween_pumpkin_grab"
+			"0"
+			{
+				"type"		"player_is_owner"
+				"player_key"		"userid"
+				"get_player"		"by_id"
+				"is_owner"		"1"
+			}
+		}
+	}
+	"234"
+	{
+		"name"		"Kill with pumpkin bomb"
+		"condition_logic"
+		{
+			"type"		"event_listener"
+			"event_name"		"player_death"
+			"0"
+			{
+				"type"		"AND"
+				"0"
+				{
+					"type"		"player_is_owner"
+					"player_key"		"userid"
+					"get_player"		"by_id"
+					"is_owner"		"0"
+				}
+				"0"
+				{
+					"type"		"player_is_owner"
+					"player_key"		"attacker"
+					"get_player"		"by_id"
+					"is_owner"		"1"
+				}
+				"0"
+				{
+					"type"		"custom_damage"
+					"custom_damage_key"		"customkill"
+					"value"		"TF_DMG_CUSTOM_PUMPKIN_BOMB"
+				}
+			}
+		}
+	}
+	"235"
+	{
+		"name"		"Deposit lost souls"
+		"condition_logic"
+		{
+			"type"		"event_listener"
+			"event_name"		"special_score"
+			"0"
+			{
+				"type"		"player_is_owner"
+				"player_key"		"player"
+				"get_player"		"by_entindex"
+				"is_owner"		"1"
+			}
+		}
+	}
 }
 	"item_series_types"
 	{
@@ -11077,6 +11161,8 @@
 			{
 				"Halloween 2015 Collection Dummy"		"10"
 				"Halloween 2016 Collection Dummy"		"10"
+				"Halloween 2018 Collection Dummy"		"10"
+				"Scream Fortress 2018 War Paint Dummy"	"10"
 			}
 		}
 
@@ -11952,6 +12038,78 @@
 				}
 			}
 		}
+	
+		"halloween2018_collection"
+		{
+			"name"				"#halloween2018_collection_name"
+			"description"		"#halloween2018_collection_desc"
+			"items"
+			{
+				"ancient"
+				{
+					"Lucky Cat Hat"					"10"
+				}
+				"legendary"
+				{
+					"Mr. Quackers"					"10"
+					"Terror-antula"					"10"
+					"Defragmenting Hard Hat 17%"	"10"
+				}
+				"mythical"
+				{
+					"The Tank Top"					"10"
+					"Gaelic Glutton"				"10"
+					"Athenian Attire"				"10"
+					"Pyro in Chinatown"				"10"
+					"Dressperado"					"10"
+					"Mister Sentry"					"10"
+				}
+				"rare"
+				{
+					"Mini-Engy"						"10"
+					"Deadbeats"						"10"
+					"Mann-O-War"					"10"
+					"Hephaistos' Handcraft"			"10"
+					"Olympic Leapers"				"10"
+					"Vampire Vanquisher"			"10"
+					"Highway Star"					"10"
+					"Bandit's Boots"				"10"
+					"Murderer's Motif"				"10"
+					"The Arachno-Arsonist"			"10"
+				}
+			}
+		}
+
+		"Halloween2018Paintkits_collection"
+		{
+			"name"				"#Halloween2018Paintkits_collection"
+			"description"		"#Halloween2018Paintkits_collection_desc"
+			"items"
+			{
+				"ancient"
+				{
+					"Paintkit 241"       		"10"
+				}
+				"legendary"
+				{
+					"Paintkit 242"       		"10"
+					"Paintkit 243"       		"10"
+				}
+				"mythical"
+				{
+					"Paintkit 235"       		"10"
+					"Paintkit 237"       		"10"
+					"Paintkit 244"       		"10"
+				}
+				"rare"
+				{
+					"Paintkit 236"       		"10"
+					"Paintkit 238"       		"10"
+					"Paintkit 239"       		"10"
+					"Paintkit 240"       		"10"
+				}
+			}
+		}
 
 	} 
 	"operations"
@@ -12084,6 +12242,19 @@
 			"stop_giving_to_player_date"		"2038-01-01 00:00:00" 
 			"contracts_end_date"				"2038-01-01 00:00:00" 
 			"is_campaign"						"1"
+			"uses_credits"						"1"
+		}
+
+		"9"
+		{
+			"name"								"operation_halloween2018"
+			"required_item_name"				"Activated Halloween Pass"
+			"operation_start_date"				"2018-10-01 00:00:00" 
+			"stop_adding_to_queue_date"			"2018-11-15 00:00:00" 
+			"stop_giving_to_player_date"		"2018-11-15 00:00:00" 
+			"contracts_end_date"				"2018-11-15 00:00:00" 
+			"is_campaign"						"1"
+			"max_drop_count"					"26"
 			"uses_credits"						"1"
 		}
 	}
@@ -24073,7 +24244,7 @@
 			"item_name"	"#TF_OSXItem"
 			"item_description"	"#TF_OSXItem_Desc"
 			"item_slot"	"misc"
-			"equip_region"	"earbuds_special"
+			"equip_region"	"ears"
 			"item_quality"	"unique"
 			"image_inventory"	"backpack/player/items/all_class/earbuds"
 			"image_inventory_size_w"		"128"
@@ -60677,6 +60848,171 @@
 			"mouse_pressed_sound" 	"ui/item_paper_pickup.wav"
 			"drop_sound" 		"ui/item_paper_pickup.wav"
 		}
+		"1196"
+		{
+			"name"	"Taunt: Panzer Pants"
+			"prefab"	"valve taunt"
+			"first_sale_date"		"2018/10/18"
+			"item_name"	"#TF_Taunt_Tank"
+			"item_description"	"#TF_Taunt_Tank_Desc"
+			"ad_text"			"#TF_Taunt_Tank_AdText"
+			"image_inventory"	"backpack/player/items/all_class/taunt_tank"
+			"image_inventory_size_w"	"128"
+			"image_inventory_size_h"	"82"
+			"item_quality"		"unique"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"used_by_classes"
+			{
+				"soldier"	"1"
+			}
+			"attributes"
+			{
+				"taunt move speed"
+				{
+					"attribute_class"	"taunt_move_speed"
+					"value"				"65"
+				}
+				"taunt force move forward"
+				{
+					"attribute_class"	"taunt_force_move_forward"
+					"value"				"1"
+				}
+				"taunt is press and hold"
+				{
+					"attribute_class"	"enable_misc2_holdtaunt"
+					"value"				"1"
+				}
+				"taunt move acceleration time"
+				{
+					"attribute_class"	"taunt_move_acceleration_time"
+					"value"				"1"
+				}
+				"taunt turn speed"
+				{
+					"attribute_class"	"taunt_turn_speed"
+					"value"				"60"
+				}
+				"taunt turn acceleration time"
+				{
+					"attribute_class"	"taunt_turn_acceleration_time"
+					"value"				"0.2"
+				}
+				"taunt success sound loop"
+				{
+					"attribute_class"	"taunt_success_sound_loop"
+					"value"				"Taunt.TankForward"
+				}
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"soldier"	"scenes\player\soldier\low\taunt_vehicle_tank.vcd"
+				}
+				"custom_taunt_outro_scene_per_class"
+				{
+					"soldier"	"scenes\player\soldier\low\taunt_vehicle_tank_end.vcd"
+				}
+				"custom_taunt_input_remap"
+				{
+					"IN_ATTACK"
+					{
+						"pressed"
+						{
+							"soldier"	"scenes\player\soldier\low\taunt_vehicle_tank_fire.vcd"
+						}
+					}
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"soldier"	"models/player/items/taunts/tank/tank.mdl"
+				}
+			}
+		}
+		"1197"
+		{
+			"name"	"Taunt: The Scooty Scoot"
+			"prefab"	"valve taunt"
+			"first_sale_date"		"2018/10/18"
+			"item_name"	"#TF_Taunt_Moped"
+			"item_description"	"#TF_Taunt_Moped_Desc"
+			"ad_text"			"#TF_Taunt_Moped_AdText"
+			"image_inventory"	"backpack/player/items/all_class/taunt_moped"
+			"image_inventory_size_w"	"128"
+			"image_inventory_size_h"	"82"
+			"item_quality"		"unique"
+			"min_ilevel"	"1"
+			"max_ilevel"	"100"
+			"used_by_classes"
+			{
+				"scout"	"1"
+			}
+			"attributes"
+			{
+				"taunt move speed"
+				{
+					"attribute_class"	"taunt_move_speed"
+					"value"				"100"
+				}
+				"taunt force move forward"
+				{
+					"attribute_class"	"taunt_force_move_forward"
+					"value"				"1"
+				}
+				"taunt is press and hold"
+				{
+					"attribute_class"	"enable_misc2_holdtaunt"
+					"value"				"1"
+				}
+				"taunt move acceleration time"
+				{
+					"attribute_class"	"taunt_move_acceleration_time"
+					"value"				"1"
+				}
+				"taunt turn speed"
+				{
+					"attribute_class"	"taunt_turn_speed"
+					"value"				"60"
+				}
+				"taunt turn acceleration time"
+				{
+					"attribute_class"	"taunt_turn_acceleration_time"
+					"value"				"0.2"
+				}
+				"taunt success sound loop"
+				{
+					"attribute_class"	"taunt_success_sound_loop"
+					"value"				"Taunt.MopedForward"
+				}
+			}
+			"taunt"
+			{
+				"custom_taunt_scene_per_class"
+				{
+					"scout"		"scenes\player\scout\low\taunt_vehicle_moped.vcd"
+
+				}
+				"custom_taunt_outro_scene_per_class"
+				{
+					"scout"		"scenes\player\scout\low\taunt_vehicle_moped_end.vcd"
+				}
+				"custom_taunt_input_remap"
+				{
+					"IN_ATTACK"
+					{
+						"pressed"
+						{
+							"scout"		"scenes\player\scout\low\taunt_vehicle_moped_wheely.vcd"
+						}
+					}
+				}
+				"custom_taunt_prop_per_class"
+				{
+					"scout"		"models/player/items/taunts/scooter/scooter.mdl"
+				}
+			}
+		}
 
 
 
@@ -65138,6 +65474,107 @@
 				"paintkit_proto_def_index"					"234"
 			}
 		}
+
+		"17235" 
+		{
+			"name"		"Paintkit 235"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"235"
+			}
+		}
+
+		"17236" 
+		{
+			"name"		"Paintkit 236"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"236"
+			}
+		}
+
+		"17237" 
+		{
+			"name"		"Paintkit 237"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"237"
+			}
+		}
+
+		"17238" 
+		{
+			"name"		"Paintkit 238"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"238"
+			}
+		}
+
+		"17239" 
+		{
+			"name"		"Paintkit 239"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"239"
+			}
+		}
+
+		"17240" 
+		{
+			"name"		"Paintkit 240"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"240"
+			}
+		}
+
+		"17241" 
+		{
+			"name"		"Paintkit 241"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"241"
+			}
+		}
+
+		"17242" 
+		{
+			"name"		"Paintkit 242"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"242"
+			}
+		}
+
+		"17243" 
+		{
+			"name"		"Paintkit 243"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"243"
+			}
+		}
+
+		"17244" 
+		{
+			"name"		"Paintkit 244"
+			"prefab"	"paintkit_tool"
+			"static_attrs"
+			{
+				"paintkit_proto_def_index"					"244"
+			}
+		}
+
 
 		"18000"
 		{
@@ -87191,6 +87628,669 @@
 					"attribute_class"		"set_attached_particle_static"
 					"value"		"28"
 				}
+			}
+		}
+		"30994"
+		{
+			"name"		"A Shell of a Mann"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_shell_of_a_mann"
+			"item_description"		"#TF_hwn2018_shell_of_a_mann_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"back"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2018_shell_of_a_mann/hwn2018_shell_of_a_mann"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"model_player"		"models/workshop/player/items/engineer/hwn2018_shell_of_a_mann/hwn2018_shell_of_a_mann.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+		}
+		"30995"
+		{
+			"name"		"Dell in the Shell"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_dell_in_the_shell"
+			"item_description"		"#TF_hwn2018_dell_in_the_shell_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"head_skin"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2018_dell_in_the_shell/hwn2018_dell_in_the_shell"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"model_player"		"models/workshop/player/items/engineer/hwn2018_dell_in_the_shell/hwn2018_dell_in_the_shell.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"head"		"1"
+				}
+			}
+		}
+		"30996"
+		{
+			"name"		"Terror-antula"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_terror_antula"
+			"item_description"		"#TF_hwn2018_terror_antula_Desc"
+			"item_type_name"		"#TF_Wearable_Mascot"
+			"equip_region"		"left_shoulder"
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2018_terror_antula/hwn2018_terror_antula"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2018_terror_antula/hwn2018_terror_antula_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+			"attributes"
+			{
+				"counts as assister is some kind of pet this update is going to be awesome"
+				{
+					"attribute_class"		"counts_as_assister"
+					"value"		"1"
+				}
+			}
+		}
+		"30997"
+		{
+			"name"		"Deadbeats"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_deadbeats"
+			"item_description"		"#TF_hwn2018_deadbeats_Desc"
+			"item_type_name"		"#TF_Wearable_Headphones"
+			"equip_region"		"ears"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2018_deadbeats/hwn2018_deadbeats"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2018_deadbeats/hwn2018_deadbeats_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+		}
+		"30998"
+		{
+			"name"		"Lucky Cat Hat"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_lucky_cat_hat"
+			"item_description"		"#TF_hwn2018_lucky_cat_hat_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/all_class/hwn2018_lucky_cat_hat/hwn2018_lucky_cat_hat"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player_per_class"
+			{
+				"basename"		"models/workshop/player/items/all_class/hwn2018_lucky_cat_hat/hwn2018_lucky_cat_hat_%s.mdl"
+			}
+			"used_by_classes"
+			{
+				"scout"		"1"
+				"sniper"		"1"
+				"soldier"		"1"
+				"demoman"		"1"
+				"medic"		"1"
+				"heavy"		"1"
+				"pyro"		"1"
+				"spy"		"1"
+				"engineer"		"1"
+			}
+		}
+		"30999"
+		{
+			"name"		"Olympic Leapers"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_olympic_leapers"
+			"item_description"		"#TF_hwn2018_olympic_leapers_Desc"
+			"item_type_name"		"#TF_Wearable_Shoes"
+			"equip_region"		"feet"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"shoes_socks"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2018_olympic_leapers/hwn2018_olympic_leapers"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2018_olympic_leapers/hwn2018_olympic_leapers.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+		}
+		"31000"
+		{
+			"name"		"Hephaistos' Handcraft"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_hephaistos_handcraft"
+			"item_description"		"#TF_hwn2018_hephaistos_handcraft_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+					"headphones"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2018_hephaistos_handcraft/hwn2018_hephaistos_handcraft"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2018_hephaistos_handcraft/hwn2018_hephaistos_handcraft.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+		}
+		"31001"
+		{
+			"name"		"Athenian Attire"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_athenian_attire"
+			"item_description"		"#TF_hwn2018_athenian_attire_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"dogtags"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/scout/hwn2018_athenian_attire/hwn2018_athenian_attire"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/scout/hwn2018_athenian_attire/hwn2018_athenian_attire.mdl"
+			"used_by_classes"
+			{
+				"scout"		"1"
+			}
+		}
+		"31002"
+		{
+			"name"		"The Tank Top"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_tank_top"
+			"item_description"		"#TF_hwn2018_tank_top_Desc"
+			"equip_region"		"hat"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/soldier/hwn2018_tank_top/hwn2018_tank_top"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/hwn2018_tank_top/hwn2018_tank_top.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+		}
+		"31003"
+		{
+			"name"		"Vampire Vanquisher"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_vampire_vanquisher"
+			"item_description"		"#TF_hwn2018_vampire_vanquisher_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/soldier/hwn2018_vampire_vanquisher/hwn2018_vampire_vanquisher"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/soldier/hwn2018_vampire_vanquisher/hwn2018_vampire_vanquisher.mdl"
+			"used_by_classes"
+			{
+				"soldier"		"1"
+			}
+		}
+		"31004"
+		{
+			"name"		"Pyro in Chinatown"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_pyro_in_chinatown"
+			"item_description"		"#TF_hwn2018_pyro_in_chinatown_Desc"
+			"item_type_name"		"#TF_Wearable_Flair"
+			"equip_region"		"glasses"
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2018_pyro_in_chinatown/hwn2018_pyro_in_chinatown"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2018_pyro_in_chinatown/hwn2018_pyro_in_chinatown.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2018_pyro_in_chinatown/hwn2018_pyro_in_chinatown.mdl"
+						"name"		"#TF_hwn2018_pyro_in_chinatown_style1"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/pyro/hwn2018_pyro_in_little_chinatown/hwn2018_pyro_in_little_chinatown.mdl"
+						"name"		"#TF_hwn2018_pyro_in_chinatown_style2"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+					}
+				}
+			}
+		}
+		"31005"
+		{
+			"name"		"Scopers Scales"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_scopers_scales"
+			"item_description"		"#TF_hwn2018_scopers_scales_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_regions"
+			{
+				"arms"		"1"
+				"sniper_legs"		"1"
+			}
+			"image_inventory"		"backpack/workshop/player/items/sniper/hwn2018_scopers_scales/hwn2018_scopers_scales"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/hwn2018_scopers_scales/hwn2018_scopers_scales.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+			"holiday_restriction"		"halloween_or_fullmoon"
+		}
+		"31006"
+		{
+			"name"		"Mr. Quackers"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_mr_quackers"
+			"item_description"		"#TF_hwn2018_mr_quackers_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_region"		"pyro_head_replacement"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"head"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2018_mr_quackers/hwn2018_mr_quackers"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2018_mr_quackers/hwn2018_mr_quackers.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+		}
+		"31007"
+		{
+			"name"		"The Arachno-Arsonist"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_arachno_arsonist"
+			"item_description"		"#TF_hwn2018_arachno_arsonist_Desc"
+			"item_type_name"		"#TF_Wearable_Mask"
+			"equip_region"		"pyro_head_replacement"
+			"propername"		"1"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"head"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/pyro/hwn2018_arachno_arsonist/hwn2018_arachno_arsonist"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/pyro/hwn2018_arachno_arsonist/hwn2018_arachno_arsonist.mdl"
+			"used_by_classes"
+			{
+				"pyro"		"1"
+			}
+		}
+		"31008"
+		{
+			"name"		"Mann-O-War"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_mann_o_war"
+			"item_description"		"#TF_hwn2018_mann_o_war_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/heavy/hwn2018_mann_o_war/hwn2018_mann_o_war"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/heavy/hwn2018_mann_o_war/hwn2018_mann_o_war.mdl"
+			"used_by_classes"
+			{
+				"heavy"		"1"
+			}
+		}
+		"31009"
+		{
+			"name"		"Crocodile Mun-Dee"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_crocodile_mun_dee"
+			"item_description"		"#TF_hwn2018_crocodile_mun_dee_Desc"
+			"item_type_name"		"#TF_Wearable_Costume"
+			"equip_region"		"whole_head"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/sniper/hwn2018_crocodile_mun_dee/hwn2018_crocodile_mun_dee"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"holiday_restriction"		"halloween_or_fullmoon"
+			"model_player"		"models/workshop/player/items/sniper/hwn2018_crocodile_mun_dee/hwn2018_crocodile_mun_dee.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+		}
+		"31010"
+		{
+			"name"		"Highway Star"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_highway_star"
+			"item_description"		"#TF_hwn2018_highway_star_Desc"
+			"item_type_name"		"#TF_Wearable_Bandana"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/sniper/hwn2018_highway_star/hwn2018_highway_star"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/sniper/hwn2018_highway_star/hwn2018_highway_star.mdl"
+			"used_by_classes"
+			{
+				"sniper"		"1"
+			}
+		}
+		"31011"
+		{
+			"name"		"Defragmenting Hard Hat 17%"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_defragmenting_hat"
+			"item_description"		"#TF_hwn2018_defragmenting_hat_Desc"
+			"equip_region"		"hat"
+			"visuals"
+			{
+				"player_bodygroups"
+				{
+					"hat"		"1"
+				}
+			}
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2018_defragmenting_hat/hwn2018_defragmenting_hat"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2018_defragmenting_hat/hwn2018_defragmenting_hat.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+		}
+		"31012"
+		{
+			"name"		"Mister Sentry"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_aimbot_assistant"
+			"item_description"		"#TF_hwn2018_aimbot_assistant_Desc"
+			"item_type_name"		"#TF_Wearable_Mascot"
+			"equip_region"		"right_shoulder"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2018_aimbot_assistant/hwn2018_aimbot_assistant"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2018_aimbot_assistant/hwn2018_aimbot_assistant.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"attributes"
+			{
+				"counts as assister is some kind of pet this update is going to be awesome"
+				{
+					"attribute_class"		"counts_as_assister"
+					"value"		"1"
+				}
+			}
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"model_player"		"models/workshop/player/items/engineer/hwn2018_aimbot_assistant/hwn2018_aimbot_assistant.mdl"
+						"name"		"#TF_hwn2018_aimbot_assistant_style1"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+					}
+					"1"
+					{
+						"model_player"		"models/workshop/player/items/engineer/hwn2018_aimbot_assistant_s2/hwn2018_aimbot_assistant_s2.mdl"
+						"name"		"#TF_hwn2018_aimbot_assistant_style2"
+						"skin_red"		"0"
+						"skin_blu"		"1"
+					}
+				}
+			}
+		}
+		"31013"
+		{
+			"name"		"Mini-Engy"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_mini_engy"
+			"item_description"		"#TF_hwn2018_mini_engy_Desc"
+			"item_type_name"		"#TF_Wearable_Mascot"
+			"equip_region"		"engineer_belt"
+			"image_inventory"		"backpack/workshop/player/items/engineer/hwn2018_mini_engy/hwn2018_mini_engy"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/engineer/hwn2018_mini_engy/hwn2018_mini_engy.mdl"
+			"used_by_classes"
+			{
+				"engineer"		"1"
+			}
+			"attributes"
+			{
+				"counts as assister is some kind of pet this update is going to be awesome"
+				{
+					"attribute_class"		"counts_as_assister"
+					"value"		"1"
+				}
+			}
+		}
+		"31014"
+		{
+			"name"		"Dressperado"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_dressperado"
+			"item_description"		"#TF_hwn2018_dressperado_Desc"
+			"item_type_name"		"#TF_Wearable_Shirt"
+			"equip_region"		"shirt"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2018_dressperado/hwn2018_dressperado"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2018_dressperado/hwn2018_dressperado.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+		}
+		"31015"
+		{
+			"name"		"Bandit's Boots"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_bandits_boots"
+			"item_description"		"#TF_hwn2018_bandits_boots_Desc"
+			"item_type_name"		"#TF_Wearable_Boots"
+			"equip_region"		"feet"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2018_bandits_boots/hwn2018_bandits_boots"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2018_bandits_boots/hwn2018_bandits_boots.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+		}
+		"31016"
+		{
+			"name"		"Murderer's Motif"
+			"prefab"		"no_craft hat marketable"
+			"item_name"		"#TF_hwn2018_murderers_motif"
+			"item_description"		"#TF_hwn2018_murderers_motif_Desc"
+			"equip_region"		"hat"
+			"image_inventory"		"backpack/workshop/player/items/spy/hwn2018_murderers_motif/hwn2018_murderers_motif"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+				"paintable"		"1"
+			}
+			"model_player"		"models/workshop/player/items/spy/hwn2018_murderers_motif/hwn2018_murderers_motif.mdl"
+			"used_by_classes"
+			{
+				"spy"		"1"
+			}
+		}
+		"31017"
+		{
+			"name"		"Gaelic Glutton"
+			"prefab"		"no_craft misc marketable"
+			"item_name"		"#TF_hwn2018_gaelic_glutton"
+			"item_description"		"#TF_hwn2018_gaelic_glutton_Desc"
+			"item_type_name"		"#TF_Wearable_Chin"
+			"equip_region"		"beard"
+			"image_inventory"		"backpack/workshop/player/items/demo/hwn2018_gaelic_glutton/hwn2018_gaelic_glutton"
+			"capabilities"
+			{
+				"can_craft_count"		"1"
+			}
+			"model_player"		"models/workshop/player/items/demo/hwn2018_gaelic_glutton/hwn2018_gaelic_glutton.mdl"
+			"used_by_classes"
+			{
+				"demoman"		"1"
 			}
 		}
 
@@ -111013,6 +112113,10 @@
 		{
 			"name"	"Rally Call 2018 Whale"
 			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
 			"item_type_name"	"#TF_Wearable_CommunityMedal"
 			"item_name"	"#TF_TournamentMedal_RallyCall_Charity_2018_Whale"
 			"item_description"	"#TF_TournamentMedal_2018"
@@ -111026,6 +112130,10 @@
 		{
 			"name"	"Rally Call 2018 Whale Donor"
 			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
 			"item_type_name"	"#TF_Wearable_CommunityMedal"
 			"item_name"	"#TF_TournamentMedal_RallyCall_Charity_2018_WhaleDonor"
 			"item_description"	"#TF_TournamentMedal_2018"
@@ -114118,6 +115226,325 @@
 				"basename"	"models/workshop/player/items/all_class/moscow_lan_helper/moscow_lan_helper_%s.mdl"
 			}
 		}
+ 		"10264"
+		{	
+			"name"	"Jaunty Mountaineer 2018"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_type_name"	"#TF_Wearable_CommunityMedal"
+			"item_name"				"#TF_Medal_TipOfTheHatsTier3_2018"
+			"item_description"		"#TF_Medal_TipOfTheHats2018_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/toth2018_t3/toth2018_t3"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/toth2018_t3/toth2018_t3_%s.mdl"
+			}
+		}
+ 		"10265"
+		{	
+			"name"	"Jaunty Ranger 2018"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_type_name"	"#TF_Wearable_CommunityMedal"
+			"item_name"				"#TF_Medal_TipOfTheHatsTier2_2018"
+			"item_description"		"#TF_Medal_TipOfTheHats2018_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/toth2018_t2/toth2018_t2"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/toth2018_t2/toth2018_t2_%s.mdl"
+			}
+		}
+ 		"10266"
+		{	
+			"name"	"Jaunty Explorer 2018"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_type_name"	"#TF_Wearable_CommunityMedal"
+			"item_name"				"#TF_Medal_TipOfTheHatsTier1_2018"
+			"item_description"		"#TF_Medal_TipOfTheHats2018_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/toth2018_t1/toth2018_t1"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/toth2018_t1/toth2018_t1_%s.mdl"
+			}
+		}
+		"10267"
+		{		
+			"name"				"ozfortress Premier 1st Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Premier_First_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_prem_first/ozfortress_sixes_prem_first"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_prem_first/ozfortress_sixes_prem_first_demo.mdl"
+		}
+		"10268"
+		{		
+			"name"				"ozfortress Premier 2nd Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Premier_Second_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_prem_second/ozfortress_sixes_prem_second"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_prem_second/ozfortress_sixes_prem_second_demo.mdl"
+		}
+		"10269"
+		{		
+			"name"				"ozfortress Premier 3rd Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Premier_Third_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_prem_third/ozfortress_sixes_prem_third"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_prem_third/ozfortress_sixes_prem_third_demo.mdl"
+		}
+		"10270"
+		{		
+			"name"				"ozfortress Premier Participant Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Premier_Participant"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_prem_participant/ozfortress_sixes_prem_participant"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_prem_participant/ozfortress_sixes_prem_participant_demo.mdl"
+		}
+		"10271"
+		{		
+			"name"				"ozfortress Intermediate 1st Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Intermediate_First_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_first/ozfortress_sixes_regular_first"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_first/ozfortress_sixes_regular_first_demo.mdl"
+		}
+		"10272"
+		{		
+			"name"				"ozfortress Intermediate 2nd Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Intermediate_Second_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_second/ozfortress_sixes_regular_second"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_second/ozfortress_sixes_regular_second_demo.mdl"
+		}
+		"10273"
+		{		
+			"name"				"ozfortress Intermediate 3rd Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Intermediate_Third_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_third/ozfortress_sixes_regular_third"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_third/ozfortress_sixes_regular_third_demo.mdl"
+		}
+		"10274"
+		{		
+			"name"				"ozfortress Intermediate Participant Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Intermediate_Participant"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_participant/ozfortress_sixes_regular_participant"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_participant/ozfortress_sixes_regular_participant_demo.mdl"
+		}
+		"10275"
+		{		
+			"name"				"ozfortress Open 1st Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Open_First_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_first/ozfortress_sixes_regular_first"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_first/ozfortress_sixes_regular_first_demo.mdl"
+		}
+		"10276"
+		{		
+			"name"				"ozfortress Open 2nd Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Open_Second_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_second/ozfortress_sixes_regular_second"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_second/ozfortress_sixes_regular_second_demo.mdl"
+		}
+		"10277"
+		{		
+			"name"				"ozfortress Open 3rd Place Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Open_Third_Place"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_third/ozfortress_sixes_regular_third"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_third/ozfortress_sixes_regular_third_demo.mdl"
+		}
+		"10278"
+		{		
+			"name"				"ozfortress Open Participant Season 23"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_OzFortress_Open_Participant"
+			"item_description"	"#TF_TournamentMedal_Season23"
+			"image_inventory"	"backpack/workshop/player/items/all_class/ozfortress_sixes_regular_participant/ozfortress_sixes_regular_participant"
+			"model_player"		"models/workshop/player/items/all_class/ozfortress_sixes_regular_participant/ozfortress_sixes_regular_participant_demo.mdl"
+		}
+		"10279"
+		{
+			"name"	"TFNew Cup 1st Place Medal"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_name"	"#TF_TournamentMedal_TFNew_Gold"
+			"item_description"	"#TF_TournamentMedal_TFNew_Gold_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/tfn_gold/tfn_gold"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/tfn_gold/tfn_gold_%s.mdl"
+			}
+		}
+		"10280"
+		{
+			"name"	"TFNew Cup 2nd Place Medal"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_name"	"#TF_TournamentMedal_TFNew_Silver"
+			"item_description"	"#TF_TournamentMedal_TFNew_Silver_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/tfn_silver/tfn_silver"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/tfn_silver/tfn_silver_%s.mdl"
+			}
+		}
+		"10281"
+		{
+			"name"	"TFNew Cup 3rd Place Medal"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_name"	"#TF_TournamentMedal_TFNew_Bronze"
+			"item_description"	"#TF_TournamentMedal_TFNew_Bronze_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/tfn_bronze/tfn_bronze"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/tfn_bronze/tfn_bronze_%s.mdl"
+			}
+		}
+		"10282"
+		{
+			"name"	"TFNew Cup Participant Medal"
+			"prefab"			"tournament_medal"
+			"capabilities"
+			{
+				"paintable"		"1"
+			}
+			"item_name"	"#TF_TournamentMedal_TFNew_Participant"
+			"item_description"	"#TF_TournamentMedal_TFNew_Participant_Desc"
+			"image_inventory"		"backpack/workshop/player/items/all_class/tfn_participation/tfn_participation"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/tfn_participation/tfn_participation_%s.mdl"
+			}
+		}
+		"10283"
+		{		
+			"name"				"RGB 3 LAN 1st Place 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_RGB3_LAN_Gold"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/rgb3_lan_gold/rgb3_lan_gold"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/rgb3_lan_gold/rgb3_lan_gold_%s.mdl"
+			}
+		}
+		"10284"
+		{		
+			"name"				"RGB 3 LAN 2nd Place 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_RGB3_LAN_Silver"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/rgb3_lan_silver/rgb3_lan_silver"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/rgb3_lan_silver/rgb3_lan_silver_%s.mdl"
+			}
+		}
+		"10285"
+		{		
+			"name"				"RGB 3 LAN 3rd Place 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_RGB3_LAN_Bronze"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/rgb3_lan_bronze/rgb3_lan_bronze"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/rgb3_lan_bronze/rgb3_lan_bronze_%s.mdl"
+			}
+		}
+		"10286"
+		{		
+			"name"				"RGB 3 LAN Participant 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_RGB3_LAN_Participant"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/rgb3_lan_participant/rgb3_lan_participant"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/rgb3_lan_participant/rgb3_lan_participant_%s.mdl"
+			}
+		}
+		"10287"
+		{		
+			"name"				"UDL 1st Place 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_UDL_Gold"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/udl_gold/udl_gold"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/udl_gold/udl_gold_%s.mdl"
+			}
+		}
+		"10288"
+		{		
+			"name"				"UDL 2nd Place 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_UDL_Silver"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/udl_silver/udl_silver"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/udl_silver/udl_silver_%s.mdl"
+			}
+		}
+		"10289"
+		{		
+			"name"				"UDL 3rd Place 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_UDL_Bronze"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/udl_bronze/udl_bronze"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/udl_bronze/udl_bronze_%s.mdl"
+			}
+		}
+		"10290"
+		{		
+			"name"				"UDL Participant 2018"
+			"prefab"			"tournament_medal"
+			"item_name"			"#TF_TournamentMedal_UDL_Participant"
+			"item_description"	"#TF_TournamentMedal_2018"
+			"image_inventory"	"backpack/workshop/player/items/all_class/udl_participant/udl_participant"
+			"model_player_per_class"
+			{
+				"basename"	"models/workshop/player/items/all_class/udl_participant/udl_participant_%s.mdl"
+			}
+		}
 
 
 
@@ -114700,6 +116127,62 @@
 			"ad_text"			"#TF_MapToken_Brazil_AdText"
 			"image_inventory"	"backpack/player/items/all_class/stamp_brazil"
 		}
+		"1948"
+		{
+			"name" "Map Token Bagel Event"
+			"first_sale_date"	"2018/10/16"
+			"prefab"		"map_token"
+			"item_name"		"#TF_MapToken_BagelEvent"
+			"item_description"	"#TF_MapToken_BagelEvent_Desc"
+			"map_name"		"#TF_Map_BagelEvent"
+			"ad_text"			"#TF_MapToken_BagelEvent_AdText"
+			"image_inventory"	"backpack/player/items/all_class/stamp_bagel_event"
+		}
+		"1949"
+		{
+			"name" "Map Token Rumble Event"
+			"first_sale_date"	"2018/10/16"
+			"prefab"		"map_token"
+			"item_name"		"#TF_MapToken_RumbleEvent"
+			"item_description"	"#TF_MapToken_RumbleEvent_Desc"
+			"map_name"		"#TF_Map_RumbleEvent"
+			"ad_text"			"#TF_MapToken_RumbleEvent_AdText"
+			"image_inventory"	"backpack/player/items/all_class/stamp_rumble_event"
+		}
+		"1950"
+		{
+			"name" "Map Token Monster Bash"
+			"first_sale_date"	"2018/10/16"
+			"prefab"		"map_token"
+			"item_name"		"#TF_MapToken_MonsterBash"
+			"item_description"	"#TF_MapToken_MonsterBash_Desc"
+			"map_name"		"#TF_Map_MonsterBash"
+			"ad_text"			"#TF_MapToken_MonsterBash_AdText"
+			"image_inventory"	"backpack/player/items/all_class/stamp_monster_bash"
+		}
+		"1951"
+		{
+			"name" "Map Token Slasher"
+			"first_sale_date"	"2018/10/16"
+			"prefab"		"map_token"
+			"item_name"		"#TF_MapToken_Slasher"
+			"item_description"	"#TF_MapToken_Slasher_Desc"
+			"map_name"		"#TF_Map_Slasher"
+			"ad_text"			"#TF_MapToken_Slasher_AdText"
+			"image_inventory"	"backpack/player/items/all_class/stamp_slasher"
+		}
+		"1952"
+		{
+			"name" "Map Token Cursed Cove"
+			"first_sale_date"	"2018/10/16"
+			"prefab"		"map_token"
+			"item_name"		"#TF_MapToken_CursedCove"
+			"item_description"	"#TF_MapToken_CursedCove_Desc"
+			"map_name"		"#TF_Map_CursedCove"
+			"ad_text"			"#TF_MapToken_CursedCove_AdText"
+			"image_inventory"	"backpack/player/items/all_class/stamp_cursed_cove"
+		}
+
 
 
 
@@ -120283,7 +121766,7 @@
 				"allow_halloween_offering"			"1"
 				"never craftable"					"1"
 				
-				"deactive date"					"1510236000"	
+				"deactive date"					"1542290400"	
 				
 				"kill eater score type"			"106"			
 				"kill eater score type 2"		"107"			
@@ -121054,6 +122537,16 @@
 				"weapon_allow_inspect"			"1"
 			}
 			"collection_reference"		"halloween2016_collection_lootlist"
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"skin" "0"
+					}
+				}
+			}
 		}
 		"5862"
 		{
@@ -121770,6 +123263,122 @@
 				}
 			}
 		}
+		"5894" 
+		{
+			"name"	"Halloween 2018 Case"
+			"first_sale_date"	"2018/10/15"
+			"prefab" "base_cosmetic_case"
+			"tool"
+			{
+				"restriction"	"halloween2018"
+			}
+			"item_name"			"#halloween2018_collection_case"
+			"item_description"	"#halloween2018_collection_case_desc"
+			"ad_text"			"#halloween2018_collection_case_adtext"
+			"image_inventory"	"backpack/player/items/crafting/halloween2018_case"
+			"model_player"		"models/player/items/crafting/halloween_case.mdl"
+			"inspect_panel_dist" "100"
+			"static_attrs"
+			{
+				"set supply crate series"		"120"		
+				"hide crate series number"		"1"
+				"decoded by itemdefindex"		"5895"
+				"weapon_allow_inspect"			"1"
+			}
+			"event_desc_footer"			"#halloween2018_collection_case_footer"			
+			"collection_reference"		"halloween2018_collection"
+			"visuals"
+			{
+				"styles"
+				{
+					"0"
+					{
+						"skin" "1"
+					}
+				}
+			}
+		}
+		"5895"
+		{
+			"name"	"Halloween 2018 Key" 
+			"first_sale_date"	"2018/10/15"
+			"prefab" 			"eventkey"
+			"item_name"			"#halloween2018_collection_key"					
+			"item_description"	"#halloween2018_collection_key_desc"						
+			"ad_text"			"#halloween2018_collection_key_adtext"
+			"image_inventory"	"backpack/crafting/halloween2018_key"
+			"tool"
+			{
+				"type"	"decoder_ring"
+				"usage_capabilities"
+				{
+					"decodable"	"1"
+				}
+				"restriction"	"halloween2018"
+			}
+		}
+		"5896"
+		{
+			"name"	"Halloween 2018 Collection Dummy"
+			"prefab" "dummy_item"
+			"item_name"	"#halloween2018_collection_name"
+			"collection_reference"		"halloween2018_collection"
+			"item_rarity"	"rare"
+		}
+
+		"5897" 
+		{
+			"name"	"Scream Fortress 2018 War Paint Case"
+			"first_sale_date"	"2018/10/17"
+			"prefab" "base_weapon_case"
+			"tool"
+			{
+				"restriction"	"halloween2018paintkit"
+			}
+			"item_name"			"#TF_Halloween2018WarPaintCase"
+			"item_description"	"#TF_Halloween2018WarPaintCase_desc"
+			"ad_text"			"#TF_Halloween2018WarPaintCase_AdText"
+			"image_inventory"	"backpack/player/items/crafting/weapons_case_workshop_paintkit_halloween2018"
+			"model_player"		"models/player/items/crafting/weapons_case.mdl"
+			"default_skin"		"9"																
+			"static_attrs"
+			{
+				"set supply crate series"		"121"		
+				"hide crate series number"		"1"
+				"decoded by itemdefindex"		"5898"
+				"weapon_allow_inspect"			"1"
+			}
+			"collection_reference"			"Halloween2018Paintkits_collection"	
+		}	
+
+		"5898"
+		{
+			"name"	"Scream Fortress 2018 War Paint Key"
+			"first_sale_date"	"2018/10/17"
+			"prefab" "eventkey"
+			"item_name"			"#TF_Tool_Halloween2018WarPaintKey"				
+			"item_description"	"#TF_Tool_Halloween2018WarPaintKey_desc"					
+			"ad_text"			"#TF_Tool_Halloween2018WarPaintKey_AdText"
+			"image_inventory"	"backpack/player/items/crafting/weapon_case_key_halloween2018"
+			"tool"
+			{
+				"type"	"decoder_ring"
+				"usage_capabilities"
+				{
+					"decodable"	"1"
+				}
+				"restriction"	"halloween2018paintkit"
+			}
+		}
+		"5899"
+		{
+			"name"	"Scream Fortress 2018 War Paint Dummy"
+			"prefab" "dummy_item"
+			"item_name"	"#Halloween2018Paintkits_collection"
+			"collection_reference"		"Halloween2018Paintkits_collection"
+			"item_rarity"	"rare"
+		}
+
 
 		"5999"				
 		{
@@ -124242,6 +125851,96 @@
 			"item_description"	"#TF_StrangeFilter_CommunityMapBrazil_Desc"
 			"ad_text"			"#TF_MapToken_Brazil_AdText"
 		}
+		"6565"
+		{
+			"name"	"Strange Filter: Bagel Event (Community)"
+			"first_sale_date"	"2018/10/18"
+			"prefab"	"strange_part_restriction"
+			"tool"
+			{
+				"usage"
+				{
+					"restriction_type"	"map"
+					"restriction_value"	"koth_bagel_event"
+				}
+			}
+			"image_inventory"	"backpack/crafting/strange_filter_bagel_event"
+			"item_name"	"#TF_StrangeFilter_CommunityMapBagelEvent"
+			"item_description"	"#TF_StrangeFilter_CommunityMapBagelEvent_Desc"
+			"ad_text"			"#TF_MapToken_BagelEvent_AdText"
+		}
+		"6566"
+		{
+			"name"	"Strange Filter: Rumble Event (Community)"
+			"first_sale_date"	"2018/10/18"
+			"prefab"	"strange_part_restriction"
+			"tool"
+			{
+				"usage"
+				{
+					"restriction_type"	"map"
+					"restriction_value"	"pl_rumble_event"
+				}
+			}
+			"image_inventory"	"backpack/crafting/strange_filter_rumble_event"
+			"item_name"	"#TF_StrangeFilter_CommunityMapRumbleEvent"
+			"item_description"	"#TF_StrangeFilter_CommunityMapRumbleEvent_Desc"
+			"ad_text"			"#TF_MapToken_RumbleEvent_AdText"
+		}
+		"6567"
+		{
+			"name"	"Strange Filter: Monster Bash (Community)"
+			"first_sale_date"	"2018/10/18"
+			"prefab"	"strange_part_restriction"
+			"tool"
+			{
+				"usage"
+				{
+					"restriction_type"	"map"
+					"restriction_value"	"pd_monster_bash"
+				}
+			}
+			"image_inventory"	"backpack/crafting/strange_filter_monster_bash"
+			"item_name"	"#TF_StrangeFilter_CommunityMapMonsterBash"
+			"item_description"	"#TF_StrangeFilter_CommunityMapMonsterBash_Desc"
+			"ad_text"			"#TF_MapToken_MonsterBash_AdText"
+		}
+		"6568"
+		{
+			"name"	"Strange Filter: Slasher (Community)"
+			"first_sale_date"	"2018/10/18"
+			"prefab"	"strange_part_restriction"
+			"tool"
+			{
+				"usage"
+				{
+					"restriction_type"	"map"
+					"restriction_value"	"koth_slasher"
+				}
+			}
+			"image_inventory"	"backpack/crafting/strange_filter_slasher"
+			"item_name"	"#TF_StrangeFilter_CommunityMapSlasher"
+			"item_description"	"#TF_StrangeFilter_CommunityMapSlasher_Desc"
+			"ad_text"			"#TF_MapToken_Slasher_AdText"
+		}
+		"6569"
+		{
+			"name"	"Strange Filter: Cursed Cove (Community)"
+			"first_sale_date"	"2018/10/18"
+			"prefab"	"strange_part_restriction"
+			"tool"
+			{
+				"usage"
+				{
+					"restriction_type"	"map"
+					"restriction_value"	"pd_cursed_cove_event"
+				}
+			}
+			"image_inventory"	"backpack/crafting/strange_filter_cursed_cove"
+			"item_name"	"#TF_StrangeFilter_CommunityMapCursedCove"
+			"item_description"	"#TF_StrangeFilter_CommunityMapCursedCove_Desc"
+			"ad_text"			"#TF_MapToken_CursedCove_AdText"
+		}
 		
 		"8926"
 		{
@@ -124467,7 +126166,7 @@
 			"prefab"	"unusualifier_base"
 			"static_attrs"
 			{
-				"unusualifier_attribute_template_name"	"taunt_unusualifier_effects"
+				"unusualifier_attribute_template_name"		"taunt_unusualifier_halloween2018_effects"
 			}
 		}
 
@@ -130433,6 +132132,84 @@
 					"value"	"1"
 				}
 			}
+		}
+		"2162"
+		{
+			"name" "Map Token Bundle 14"
+			"prefab"	"default_bundle_payment"
+			"first_sale_date"	"2018/10/17"
+			"item_class"	"bundle"
+			"capabilities"
+			{
+				"can_craft_if_purchased"	"1"
+			}
+			"bundle"
+			{
+				"Map Token Egypt"		"1"
+				"Map Token Coldfront"	"1"
+				"Map Token Fastlane"	"1"
+				"Map Token Turbine"		"1"
+				"Map Token Steel"		"1"
+				"Map Token Junction"	"1"
+				"Map Token Watchtower"	"1"
+				"Map Token Hoodoo"		"1"
+				"Map Token Offblast"	"1"
+				"Map Token Yukon"		"1"
+				"Map Token Harvest"		"1"
+				"Map Token Freight"		"1"
+				"Map Token Mountain Lab"		"1"
+				"Map Token Manor Event"			"1"
+				"Map Token Nightfall"			"1"
+				"Map Token Frontier"			"1"
+				"Map Token Lakeside"			"1"
+				"Map Token Gullywash"			"1"
+				"Map Token Kong King"			"1"
+				"Map Token Process"				"1"
+				"Map Token Standin"				"1"
+				"Map Token Snakewater"			"1"
+				"Map Token Snowplow"			"1"
+				"Map Token Borneo"				"1"
+				"Map Token Suijin"				"1"
+				"Map Token 2Fort Invasion"		"1"
+				"Map Token Probed"				"1"
+				"Map Token Watergate"			"1"
+				"Map Token Byre"				"1"
+				"Map Token Gorge Event"			"1"
+				"Map Token Sunshine Event"		"1"
+				"Map Token Moonshine Event"		"1"
+				"Map Token Millstone Event"		"1"
+				"Map Token Snowycoast"			"1"
+				"Map Token Vanguard"			"1"
+				"Map Token Landfall"			"1"
+				"Map Token Highpass"			"1"
+				"Map Token Sunshine"			"1"
+				"Map Token Metalworks"			"1"
+				"Map Token Swiftwater"			"1"
+				"Map Token Maple Ridge Event"	"1"
+				"Map Token Fifth Curve Event"	"1"
+				"Map Token Pit Of Death"		"1"
+				"Map Token Mossrock"			"1"
+				"Map Token Lazarus"				"1"
+				"Map Token Banana Bay"			"1"
+				"Map Token Enclosure"			"1"
+				"Map Token Brazil"				"1"
+				"Map Token Bagel Event"			"1"
+				"Map Token Rumble Event"		"1"
+				"Map Token Monster Bash"		"1"
+				"Map Token Slasher"				"1"
+				"Map Token Cursed Cove"			"1"
+			}
+			"item_type_name"	"#TF_StoreBundle"
+			"item_name"		"#TF_Bundle_MapTokens"
+			"item_description"	"#TF_Bundle_MapTokens_Desc"
+			"image_inventory"	"backpack/player/items/all_class/stamp_collection"
+			"image_inventory_size_w"	"128"
+			"image_inventory_size_h"	"82"
+			"item_quality"		"unique"
+			"min_ilevel"	"50"
+			"max_ilevel"	"50"
+			"mouse_pressed_sound"	"ui/item_paper_pickup.wav"
+			"drop_sound"		"ui/item_paper_pickup.wav"
 		}
 
 
@@ -139933,6 +141710,37 @@
 				"hat only unusual effect"			"110"
 			}
 		}
+		
+		"unusual_hat_chance_halloween2018_case"
+		{
+			"item_criteria_templates"
+			{
+				"unusual_hat_criteria"			"1"
+			}
+
+			"is_even_chance_attr"
+			{
+				"hat only unusual effect"			"111" 
+				"hat only unusual effect"			"112" 
+				"hat only unusual effect"			"113" 
+
+				"hat only unusual effect"			"114" 
+				"hat only unusual effect"			"115" 
+				"hat only unusual effect"			"116" 
+
+				"hat only unusual effect"			"117" 
+				"hat only unusual effect"			"118" 
+				"hat only unusual effect"			"119" 
+
+				"hat only unusual effect"			"120"
+				"hat only unusual effect"			"120"
+				"hat only unusual effect"			"120"
+
+				"hat only unusual effect"			"121"
+				"hat only unusual effect"			"121"
+				"hat only unusual effect"			"121"
+			}
+		}
 
 		"kill_eater_template"
 		{
@@ -140360,6 +142168,29 @@
 			}
 		}
 
+		"taunt_unusualifier_halloween2018_effects"
+		{
+			"item_criteria_templates"
+			{
+				"unusual_taunt_criteria"			"1"
+			}
+
+			"is_even_chance_attr"
+			{
+				"taunt only unusual effect"			"3017" 
+				"taunt only unusual effect"			"3018" 
+				"taunt only unusual effect"			"3019" 
+
+				"taunt only unusual effect"			"3020" 
+				"taunt only unusual effect"			"3020" 
+				"taunt only unusual effect"			"3020" 
+
+				"taunt only unusual effect"			"3021" 
+				"taunt only unusual effect"			"3021" 
+				"taunt only unusual effect"			"3022" 
+			}
+		}
+
 		"taunt_unusualifier_items"
 		{
 			"is_even_chance_attr"
@@ -140390,7 +142221,8 @@
 				"tool target item"		"1172"	
 				"tool target item"		"1182"	
 				"tool target item"		"1183"	
-
+				"tool target item"		"1196"	
+				"tool target item"		"1197"	
 
 				"tool target item"		"30570"	
 				"tool target item"		"30572"	
@@ -140838,7 +142670,6 @@
 				"paintkit_proto_def_index"		"390"
 			}
 		}
-
 	}
 	"lootlist_job_template_definitions"
 	{
@@ -141057,8 +142888,8 @@
 		{
 			"attribute_templates"
 			{
-				"unusual_hat_chance_cosmetics_case"		"1"		
-				"check_unusual_quality"					"1"		
+				"unusual_hat_chance_halloween2018_case"		"1"		
+				"check_unusual_quality"						"1"		
 			}
 		}
 
@@ -143762,6 +145593,30 @@
 			"hide_lootlist"		"1"
 			"loot_list_collection"		"BlueMoonCosmetics_collection"
 		}
+		"halloween_2018_bonus_items"
+		{
+			"Crocodile Mun-Dee"		"1"
+			"Scopers Scales"		"1"
+			"Dell in the Shell"		"1"
+			"A Shell of a Mann"		"1"
+		}
+		"halloween2018_cosmetic_loot_list_120"
+		{
+			"hide_lootlist"		"1"
+			"loot_list_collection"		"halloween2018_collection"
+			"lootlist_jobs"
+			{
+				"additional_drop"
+				{
+					"loot_list"					"halloween_2018_bonus_items"
+				}
+			}
+		}
+		"halloween2018_war_paint_loot_list_121"
+		{
+			"hide_lootlist"		"1"
+			"loot_list_collection"		"Halloween2018Paintkits_collection"
+		}
 	}
 	"revolving_loot_lists"
 	{
@@ -143881,7 +145736,8 @@
 		"winter2017_cosmetic_loot_list_117"	"117"	
 		"winter2017_war_paint_loot_list_118"	"118"	
 		"bluemoon_cosmetic_loot_list_119"	"119"	
-		
+		"halloween2018_cosmetic_loot_list_120"	"120"	
+		"halloween2018_war_paint_loot_list_121"	"121"	
 		
 		"kill_eater_set_demo_a"						"-1"
 		"kill_eater_set_soldier_a"					"-2"
@@ -153297,6 +155153,72 @@
 				"attach_to_rootbone"	"1"
 				"attachment"		"unusual"
 			}
+			"111"
+			{
+				"system"			"unusual_bubble_mess_parent_green"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"112"
+			{
+				"system"			"unusual_bubble_mess_parent_orange"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"113"
+			{
+				"system"			"unusual_bubble_mess_parent_purple"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"114"
+			{
+				"system"			"unusual_constellations_blue"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"115"
+			{
+				"system"			"unusual_constellations_pink"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"116"
+			{
+				"system"			"unusual_constellations_purple"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"117"
+			{
+				"system"			"unusual_symbols_parent_fire"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"118"
+			{
+				"system"			"unusual_symbols_parent_dead"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"119"
+			{
+				"system"			"unusual_symbols_parent_lightning"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"120"
+			{
+				"system"			"unusual_crystalball"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
+			"121"
+			{
+				"system"			"unusual_psychic_eye"
+				"attach_to_rootbone"	"1"
+				"attachment"		"unusual"
+			}
 		}
 		
 		"weapon_unusual_effects"
@@ -153492,6 +155414,31 @@
 			"3016"
 			{
 				"system"			"utaunt_merasmus"
+			}
+			"3017"
+			{
+				"system"			"utaunt_bubbles_glow_green_parent"
+			}
+			"3018"
+			{
+				"system"			"utaunt_bubbles_glow_orange_parent"
+			}
+			"3019"
+			{
+				"system"			"utaunt_bubbles_glow_purple_parent"
+			}
+			"3020"
+			{
+				"system"			"utaunt_firework_dragon_parent"
+				"refire_time"		"4.0"
+			}
+			"3021"
+			{
+				"system"			"utaunt_smoke_moon_parent"
+			}
+			"3022"
+			{
+				"system"			"utaunt_smoke_moon_green_parent"
 			}
 		}
 	}
@@ -155830,6 +157777,45 @@
 			}
 		}
 	}
+	"featured"
+	{
+		"mm_type"		"special_events"
+		"localized_name"		"#Gametype_HalloweenFeatured"
+		"localized_desc"		"#Gametype_HalloweenFeatured_Desc"
+		"list_image"		"casual/gametype_halloween"
+		"restrictions"
+		{
+			"holiday"		"halloween"
+		}
+		"maplist"
+		{
+			"1"
+			{
+				"name"		"koth_bagel_event"
+				"enabled"		"1"
+			}
+			"2"
+			{
+				"name"		"pl_rumble_event"
+				"enabled"		"1"
+			}
+			"3"
+			{
+				"name"		"pd_monster_bash"
+				"enabled"		"1"
+			}
+			"4"
+			{
+				"name"		"koth_slasher"
+				"enabled"		"1"
+			}
+			"5"
+			{
+				"name"		"pd_cursed_cove_event"
+				"enabled"		"1"
+			}
+		}
+	}
 	"halloween"
 	{
 		"mm_type"		"special_events"
@@ -156055,22 +158041,6 @@
 			"1"
 			{
 				"name"		"pl_upward"
-				"enabled"		"1"
-			}
-		}
-	}
-	"featured"
-	{
-		"mm_type"		""
-		"localized_name"		""
-		"localized_desc"		""
-		"list_image"		""
-
-		"maplist"
-		{
-			"1"
-			{
-				"name"		"cp_mercenarypark"
 				"enabled"		"1"
 			}
 		}
@@ -157614,6 +159584,91 @@
 		"rolling_match_target_tags"
 		{
 			"koth"	"1"
+		}	
+	}
+	"107"
+	{
+		"name"		"koth_bagel_event"
+		"localizedname"		"#TF_Map_BagelEvent"
+		"strangeprefixtoken"		"#TF_Map_BagelEvent_StrangePrefix"
+		"maptoken"		"Map Token Bagel Event"
+		"authors"		"#koth_bagel_event_authors"
+		"rolling_match_tags"
+		{
+			"halloween"	"1"
+			"featured"	"1"
+		}
+		"rolling_match_target_tags"
+		{
+			"featured"	"1"
+		}	
+	}
+	"108"
+	{
+		"name"		"pl_rumble_event"
+		"localizedname"		"#TF_Map_RumbleEvent"
+		"strangeprefixtoken"		"#TF_Map_RumbleEvent_StrangePrefix"
+		"maptoken"		"Map Token Rumble Event"
+		"authors"		"#pl_rumble_event_authors"
+		"rolling_match_tags"
+		{
+			"halloween"	"1"
+			"featured"	"1"
+		}
+		"rolling_match_target_tags"
+		{
+			"featured"	"1"
+		}		
+	}
+	"109"
+	{
+		"name"		"pd_monster_bash"
+		"localizedname"		"#TF_Map_MonsterBash"
+		"strangeprefixtoken"		"#TF_Map_MonsterBash_StrangePrefix"
+		"maptoken"		"Map Token Monster Bash"
+		"authors"		"#pd_monster_bash_authors"
+		"rolling_match_tags"
+		{
+			"halloween"	"1"
+			"featured"	"1"
+		}
+		"rolling_match_target_tags"
+		{
+			"featured"	"1"
+		}		
+	}
+	"110"
+	{
+		"name"		"koth_slasher"
+		"localizedname"		"#TF_Map_Slasher"
+		"strangeprefixtoken"		"#TF_Map_Slasher_StrangePrefix"
+		"maptoken"		"Map Token Slasher"
+		"authors"		"#koth_slasher_authors"
+		"rolling_match_tags"
+		{
+			"halloween"	"1"
+			"featured"	"1"
+		}
+		"rolling_match_target_tags"
+		{
+			"featured"	"1"
+		}		
+	}
+	"111"
+	{
+		"name"		"pd_cursed_cove_event"
+		"localizedname"		"#TF_Map_CursedCove"
+		"strangeprefixtoken"		"#TF_Map_CursedCove_StrangePrefix"
+		"maptoken"		"Map Token Cursed Cove"
+		"authors"		"#pd_cursed_cove_event_authors"
+		"rolling_match_tags"
+		{
+			"halloween"	"1"
+			"featured"	"1"
+		}
+		"rolling_match_target_tags"
+		{
+			"featured"	"1"
 		}	
 	}
 }
