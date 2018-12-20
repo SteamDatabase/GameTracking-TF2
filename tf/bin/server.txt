@@ -5325,6 +5325,7 @@
  D typeinfo for CDataObjectAccessSystem
  D typeinfo for CDateBasedHoliday
  D typeinfo for CDateBasedHolidayNoSpecificYear
+ D typeinfo for CDateBasedHolidayNoSpecificYear_WrapIntoFollowingYear
  D typeinfo for CDebugHistory
  D typeinfo for CDecal
  D typeinfo for CDecalEmitterSystem
@@ -8583,6 +8584,7 @@
  D vtable for CDataObjectAccessSystem
  D vtable for CDateBasedHoliday
  D vtable for CDateBasedHolidayNoSpecificYear
+ D vtable for CDateBasedHolidayNoSpecificYear_WrapIntoFollowingYear
  D vtable for CDebugHistory
  D vtable for CDecal
  D vtable for CDecalEmitterSystem
@@ -11647,6 +11649,7 @@
  R typeinfo name for CDataObjectAccessSystem
  R typeinfo name for CDateBasedHoliday
  R typeinfo name for CDateBasedHolidayNoSpecificYear
+ R typeinfo name for CDateBasedHolidayNoSpecificYear_WrapIntoFollowingYear
  R typeinfo name for CDebugHistory
  R typeinfo name for CDecal
  R typeinfo name for CDecalEmitterSystem
@@ -20865,8 +20868,11 @@
  T CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
  T CDateBasedHoliday::IsActive(CRTime const&)
  T CDateBasedHoliday::~CDateBasedHoliday()
+ T CDateBasedHolidayNoSpecificYear::GetEndYear(int)
  T CDateBasedHolidayNoSpecificYear::IsActive(CRTime const&)
  T CDateBasedHolidayNoSpecificYear::~CDateBasedHolidayNoSpecificYear()
+ T CDateBasedHolidayNoSpecificYear_WrapIntoFollowingYear::GetEndYear(int)
+ T CDateBasedHolidayNoSpecificYear_WrapIntoFollowingYear::~CDateBasedHolidayNoSpecificYear_WrapIntoFollowingYear()
  T CDebugHistory::GetDataDescMap()
  T CDebugHistory::Restore(IRestore&)
  T CDebugHistory::Save(ISave&)
@@ -56352,7 +56358,7 @@
  t _GLOBAL__sub_I_baseviewmo.stdout.rel_tf_osx_builder.38300.weXoGb.ii
  t _GLOBAL__sub_I_beam_share.stdout.rel_tf_osx_builder.36428.IEsFhx.ii
  t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.40378.YalEcN.ii
- t _GLOBAL__sub_I_bmodels.stdout.rel_tf_osx_builder.38316.1mtmdS.ii
+ t _GLOBAL__sub_I_bmodels.stdout.rel_tf_osx_builder.64015.flx5Or.ii
  t _GLOBAL__sub_I_bone_setup.stdout.rel_tf_osx_builder.47982.Z0lJP0.ii
  t _GLOBAL__sub_I_bot_npc_ar.stdout.rel_tf_osx_builder.40352.sWNuxN.ii
  t _GLOBAL__sub_I_bot_npc_de.stdout.rel_tf_osx_builder.40364.YIqrRv.ii
@@ -56380,7 +56386,7 @@
  t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.36476.LtiXjm.ii
  t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.36480.XWTGl5.ii
  t _GLOBAL__sub_I_econ_gcmes.stdout.rel_tf_osx_builder.4550.MuPcb2.ii
- t _GLOBAL__sub_I_econ_holid.stdout.rel_tf_osx_builder.36484.unaJOm.ii
+ t _GLOBAL__sub_I_econ_holid.stdout.rel_tf_osx_builder.64007.IyrQWp.ii
  t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36498.vTO0Gu.ii
  t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36512.j6Ijsg.ii
  t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36522.ovXuLP.ii
@@ -56803,8 +56809,8 @@
  t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.41142.EtOmKP.ii
  t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.41148.epf8eX.ii
  t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.41154.rEPjol.ii
- t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.37320.Atwzdk.ii
  t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.41167.FZHt9c.ii
+ t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.64011.naObYC.ii
  t _GLOBAL__sub_I_tf_playerc.stdout.rel_tf_osx_builder.37316.FO7zOQ.ii
  t _GLOBAL__sub_I_tf_playerm.stdout.rel_tf_osx_builder.41166.upnkuv.ii
  t _GLOBAL__sub_I_tf_point_m.stdout.rel_tf_osx_builder.37326.EFYFVg.ii
