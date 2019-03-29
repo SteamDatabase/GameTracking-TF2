@@ -682,8 +682,10 @@
  B CMsgPartySetOptionsResponse::default_instance_
  B CMsgPlayerLeftMatch::default_instance_
  B CMsgPlayerLeftMatchResponse::default_instance_
- B CMsgPlayerVoteKickedAfterLeavingMatch::default_instance_
  B CMsgPlayerVoteKickedAfterLeavingMatchResponse::default_instance_
+ B CMsgProcessMatchVoteKick::default_instance_
+ B CMsgProcessMatchVoteKickResponse::default_instance_
+ B CMsgProcessMatchVoteKick_Vote::default_instance_
  B CMsgProtoBufHeader::default_instance_
  B CMsgProtoDefHeader::default_instance_
  B CMsgProtoDefID::default_instance_
@@ -766,8 +768,6 @@
  B CMsgTFSaxxyBroadcast::default_instance_
  B CMsgTFThankedBySomeone::default_instance_
  B CMsgTFThankedSomeone::default_instance_
- B CMsgTFVoteKickBanPlayer::default_instance_
- B CMsgTFVoteKickBanPlayerResult::default_instance_
  B CMsgTFWorldStatus::default_instance_
  B CMsgTFXPSource::default_instance_
  B CMsgTFXPSourceBreakdown::default_instance_
@@ -2936,7 +2936,6 @@
  B sv_vote_issue_extendlevel_quorum
  B sv_vote_issue_kick_allowed
  B sv_vote_issue_kick_allowed_mvm
- B sv_vote_issue_kick_limit_gc
  B sv_vote_issue_kick_limit_mvm
  B sv_vote_issue_kick_min_connect_time_mvm
  B sv_vote_issue_kick_namelock_duration
@@ -4550,10 +4549,10 @@
  D GCSDK::CProtoBufMsg<CMsgPlayerLeftMatch>::s_pMemoryPool
  D GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>::s_bRegisteredWithMemoryPoolMgr
  D GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>::s_pMemoryPool
- D GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>::s_bRegisteredWithMemoryPoolMgr
- D GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>::s_pMemoryPool
- D GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::s_bRegisteredWithMemoryPoolMgr
- D GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::s_pMemoryPool
+ D GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>::s_bRegisteredWithMemoryPoolMgr
+ D GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>::s_pMemoryPool
+ D GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>::s_bRegisteredWithMemoryPoolMgr
+ D GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>::s_pMemoryPool
  D GCSDK::CProtoBufMsg<CMsgReplicateConVars>::s_bRegisteredWithMemoryPoolMgr
  D GCSDK::CProtoBufMsg<CMsgReplicateConVars>::s_pMemoryPool
  D GCSDK::CProtoBufMsg<CMsgSOCacheSubscribed>::s_bRegisteredWithMemoryPoolMgr
@@ -6294,7 +6293,6 @@
  D typeinfo for CGCUpdateItemSchema
  D typeinfo for CGCUpdateServerModificationItemStateJob
  D typeinfo for CGCUseServerModificationItemJob
- D typeinfo for CGCVoteSystemVoteKickResponse
  D typeinfo for CGC_GameServer_AuthChallenge
  D typeinfo for CGC_GameServer_AuthResult
  D typeinfo for CGC_GameServer_Duel_Request
@@ -6381,7 +6379,8 @@
  D typeinfo for CJobReliableMessageBase<ReliableMsgMvMVictory, CMsgMvMVictory, (ETFGCMsg)6297, CMsgMvMMannUpVictoryReply, (ETFGCMsg)6298>
  D typeinfo for CJobReliableMessageBase<ReliableMsgNewMatchForLobby, CMsgGCNewMatchForLobbyRequest, (ETFGCMsg)6537, CMsgGCNewMatchForLobbyResponse, (ETFGCMsg)6538>
  D typeinfo for CJobReliableMessageBase<ReliableMsgPlayerLeftMatch, CMsgPlayerLeftMatch, (ETFGCMsg)6522, CMsgPlayerLeftMatchResponse, (ETFGCMsg)6523>
- D typeinfo for CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>
+ D typeinfo for CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>
+ D typeinfo for CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>
  D typeinfo for CKeepUpright
  D typeinfo for CKeyValuesDumpContextAsDevMsg
  D typeinfo for CKickIssue
@@ -6731,8 +6730,10 @@
  D typeinfo for CMsgPartySetOptionsResponse
  D typeinfo for CMsgPlayerLeftMatch
  D typeinfo for CMsgPlayerLeftMatchResponse
- D typeinfo for CMsgPlayerVoteKickedAfterLeavingMatch
  D typeinfo for CMsgPlayerVoteKickedAfterLeavingMatchResponse
+ D typeinfo for CMsgProcessMatchVoteKick
+ D typeinfo for CMsgProcessMatchVoteKickResponse
+ D typeinfo for CMsgProcessMatchVoteKick_Vote
  D typeinfo for CMsgProtoBufHeader
  D typeinfo for CMsgProtoDefHeader
  D typeinfo for CMsgProtoDefID
@@ -6815,8 +6816,6 @@
  D typeinfo for CMsgTFSaxxyBroadcast
  D typeinfo for CMsgTFThankedBySomeone
  D typeinfo for CMsgTFThankedSomeone
- D typeinfo for CMsgTFVoteKickBanPlayer
- D typeinfo for CMsgTFVoteKickBanPlayerResult
  D typeinfo for CMsgTFWorldStatus
  D typeinfo for CMsgTFXPSource
  D typeinfo for CMsgTFXPSourceBreakdown
@@ -7970,8 +7969,8 @@
  D typeinfo for GCSDK::CProtoBufMsg<CMsgMvMVictory>
  D typeinfo for GCSDK::CProtoBufMsg<CMsgPlayerLeftMatch>
  D typeinfo for GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>
- D typeinfo for GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>
- D typeinfo for GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>
+ D typeinfo for GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>
+ D typeinfo for GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>
  D typeinfo for GCSDK::CProtoBufMsg<CMsgReplicateConVars>
  D typeinfo for GCSDK::CProtoBufMsg<CMsgSOCacheSubscribed>
  D typeinfo for GCSDK::CProtoBufMsg<CMsgSOCacheSubscriptionCheck>
@@ -8024,8 +8023,8 @@
  D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgMvMVictory>
  D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatch>
  D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatchResponse>
- D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatch>
- D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatchResponse>
+ D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKick>
+ D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKickResponse>
  D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgProtoBufHeader>
  D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgReplicateConVars>
  D typeinfo for GCSDK::CProtoBufMsgMemoryPool<CMsgSOCacheSubscribed>
@@ -8279,7 +8278,8 @@
  D typeinfo for ReliableMsgMvMVictory
  D typeinfo for ReliableMsgNewMatchForLobby
  D typeinfo for ReliableMsgPlayerLeftMatch
- D typeinfo for ReliableMsgPlayerVoteKickedAfterLeavingMatch
+ D typeinfo for ReliableMsgProcessMatchVoteKick
+ D typeinfo for ReliableMsgVoteKickPlayerRequest
  D typeinfo for RocketTrail
  D typeinfo for SendProp
  D typeinfo for SmokeTrail
@@ -9546,7 +9546,6 @@
  D vtable for CGCUpdateItemSchema
  D vtable for CGCUpdateServerModificationItemStateJob
  D vtable for CGCUseServerModificationItemJob
- D vtable for CGCVoteSystemVoteKickResponse
  D vtable for CGC_GameServer_AuthChallenge
  D vtable for CGC_GameServer_AuthResult
  D vtable for CGC_GameServer_Duel_Request
@@ -9632,7 +9631,8 @@
  D vtable for CJobReliableMessageBase<ReliableMsgMvMVictory, CMsgMvMVictory, (ETFGCMsg)6297, CMsgMvMMannUpVictoryReply, (ETFGCMsg)6298>
  D vtable for CJobReliableMessageBase<ReliableMsgNewMatchForLobby, CMsgGCNewMatchForLobbyRequest, (ETFGCMsg)6537, CMsgGCNewMatchForLobbyResponse, (ETFGCMsg)6538>
  D vtable for CJobReliableMessageBase<ReliableMsgPlayerLeftMatch, CMsgPlayerLeftMatch, (ETFGCMsg)6522, CMsgPlayerLeftMatchResponse, (ETFGCMsg)6523>
- D vtable for CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>
+ D vtable for CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>
+ D vtable for CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>
  D vtable for CKeepUpright
  D vtable for CKeyValuesDumpContextAsDevMsg
  D vtable for CKickIssue
@@ -9980,8 +9980,10 @@
  D vtable for CMsgPartySetOptionsResponse
  D vtable for CMsgPlayerLeftMatch
  D vtable for CMsgPlayerLeftMatchResponse
- D vtable for CMsgPlayerVoteKickedAfterLeavingMatch
  D vtable for CMsgPlayerVoteKickedAfterLeavingMatchResponse
+ D vtable for CMsgProcessMatchVoteKick
+ D vtable for CMsgProcessMatchVoteKickResponse
+ D vtable for CMsgProcessMatchVoteKick_Vote
  D vtable for CMsgProtoBufHeader
  D vtable for CMsgProtoDefHeader
  D vtable for CMsgProtoDefID
@@ -10064,8 +10066,6 @@
  D vtable for CMsgTFSaxxyBroadcast
  D vtable for CMsgTFThankedBySomeone
  D vtable for CMsgTFThankedSomeone
- D vtable for CMsgTFVoteKickBanPlayer
- D vtable for CMsgTFVoteKickBanPlayerResult
  D vtable for CMsgTFWorldStatus
  D vtable for CMsgTFXPSource
  D vtable for CMsgTFXPSourceBreakdown
@@ -11126,8 +11126,8 @@
  D vtable for GCSDK::CProtoBufMsg<CMsgMvMVictory>
  D vtable for GCSDK::CProtoBufMsg<CMsgPlayerLeftMatch>
  D vtable for GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>
- D vtable for GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>
- D vtable for GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>
+ D vtable for GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>
+ D vtable for GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>
  D vtable for GCSDK::CProtoBufMsg<CMsgReplicateConVars>
  D vtable for GCSDK::CProtoBufMsg<CMsgSOCacheSubscribed>
  D vtable for GCSDK::CProtoBufMsg<CMsgSOCacheSubscriptionCheck>
@@ -11179,8 +11179,8 @@
  D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgMvMVictory>
  D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatch>
  D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatchResponse>
- D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatch>
- D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatchResponse>
+ D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKick>
+ D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKickResponse>
  D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgProtoBufHeader>
  D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgReplicateConVars>
  D vtable for GCSDK::CProtoBufMsgMemoryPool<CMsgSOCacheSubscribed>
@@ -11301,7 +11301,8 @@
  D vtable for ReliableMsgMvMVictory
  D vtable for ReliableMsgNewMatchForLobby
  D vtable for ReliableMsgPlayerLeftMatch
- D vtable for ReliableMsgPlayerVoteKickedAfterLeavingMatch
+ D vtable for ReliableMsgProcessMatchVoteKick
+ D vtable for ReliableMsgVoteKickPlayerRequest
  D vtable for RocketTrail
  D vtable for SendProp
  D vtable for SmokeTrail
@@ -12616,7 +12617,6 @@
  R typeinfo name for CGCUpdateItemSchema
  R typeinfo name for CGCUpdateServerModificationItemStateJob
  R typeinfo name for CGCUseServerModificationItemJob
- R typeinfo name for CGCVoteSystemVoteKickResponse
  R typeinfo name for CGC_GameServer_AuthChallenge
  R typeinfo name for CGC_GameServer_AuthResult
  R typeinfo name for CGC_GameServer_Duel_Request
@@ -12703,7 +12703,8 @@
  R typeinfo name for CJobReliableMessageBase<ReliableMsgMvMVictory, CMsgMvMVictory, (ETFGCMsg)6297, CMsgMvMMannUpVictoryReply, (ETFGCMsg)6298>
  R typeinfo name for CJobReliableMessageBase<ReliableMsgNewMatchForLobby, CMsgGCNewMatchForLobbyRequest, (ETFGCMsg)6537, CMsgGCNewMatchForLobbyResponse, (ETFGCMsg)6538>
  R typeinfo name for CJobReliableMessageBase<ReliableMsgPlayerLeftMatch, CMsgPlayerLeftMatch, (ETFGCMsg)6522, CMsgPlayerLeftMatchResponse, (ETFGCMsg)6523>
- R typeinfo name for CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>
+ R typeinfo name for CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>
+ R typeinfo name for CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>
  R typeinfo name for CKeepUpright
  R typeinfo name for CKeyValuesDumpContextAsDevMsg
  R typeinfo name for CKickIssue
@@ -13053,8 +13054,10 @@
  R typeinfo name for CMsgPartySetOptionsResponse
  R typeinfo name for CMsgPlayerLeftMatch
  R typeinfo name for CMsgPlayerLeftMatchResponse
- R typeinfo name for CMsgPlayerVoteKickedAfterLeavingMatch
  R typeinfo name for CMsgPlayerVoteKickedAfterLeavingMatchResponse
+ R typeinfo name for CMsgProcessMatchVoteKick
+ R typeinfo name for CMsgProcessMatchVoteKickResponse
+ R typeinfo name for CMsgProcessMatchVoteKick_Vote
  R typeinfo name for CMsgProtoBufHeader
  R typeinfo name for CMsgProtoDefHeader
  R typeinfo name for CMsgProtoDefID
@@ -13137,8 +13140,6 @@
  R typeinfo name for CMsgTFSaxxyBroadcast
  R typeinfo name for CMsgTFThankedBySomeone
  R typeinfo name for CMsgTFThankedSomeone
- R typeinfo name for CMsgTFVoteKickBanPlayer
- R typeinfo name for CMsgTFVoteKickBanPlayerResult
  R typeinfo name for CMsgTFWorldStatus
  R typeinfo name for CMsgTFXPSource
  R typeinfo name for CMsgTFXPSourceBreakdown
@@ -14292,8 +14293,8 @@
  R typeinfo name for GCSDK::CProtoBufMsg<CMsgMvMVictory>
  R typeinfo name for GCSDK::CProtoBufMsg<CMsgPlayerLeftMatch>
  R typeinfo name for GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>
- R typeinfo name for GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>
- R typeinfo name for GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>
+ R typeinfo name for GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>
+ R typeinfo name for GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>
  R typeinfo name for GCSDK::CProtoBufMsg<CMsgReplicateConVars>
  R typeinfo name for GCSDK::CProtoBufMsg<CMsgSOCacheSubscribed>
  R typeinfo name for GCSDK::CProtoBufMsg<CMsgSOCacheSubscriptionCheck>
@@ -14346,8 +14347,8 @@
  R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgMvMVictory>
  R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatch>
  R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatchResponse>
- R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatch>
- R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatchResponse>
+ R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKick>
+ R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKickResponse>
  R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgProtoBufHeader>
  R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgReplicateConVars>
  R typeinfo name for GCSDK::CProtoBufMsgMemoryPool<CMsgSOCacheSubscribed>
@@ -14601,7 +14602,8 @@
  R typeinfo name for ReliableMsgMvMVictory
  R typeinfo name for ReliableMsgNewMatchForLobby
  R typeinfo name for ReliableMsgPlayerLeftMatch
- R typeinfo name for ReliableMsgPlayerVoteKickedAfterLeavingMatch
+ R typeinfo name for ReliableMsgProcessMatchVoteKick
+ R typeinfo name for ReliableMsgVoteKickPlayerRequest
  R typeinfo name for RocketTrail
  R typeinfo name for SendProp
  R typeinfo name for SmokeTrail
@@ -18909,10 +18911,8 @@
  T CBaseGrenadeTimed::~CBaseGrenadeTimed()
  T CBaseIssue::BRecordVoteFailureEventForEntity(int) const
  T CBaseIssue::CBaseIssue(char const*)
- T CBaseIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CBaseIssue::CanTeamCallVote(int) const
  T CBaseIssue::CountPotentialVoters()
- T CBaseIssue::GCResponseReceived(bool, int)
  T CBaseIssue::GetDetailsString()
  T CBaseIssue::GetNumberVoteOptions()
  T CBaseIssue::GetQuorumRatio()
@@ -18924,12 +18924,12 @@
  T CBaseIssue::IsTeamRestrictedVote()
  T CBaseIssue::IsYesNoVote()
  T CBaseIssue::ListStandardNoArgCommand(CBasePlayer*, char const*)
- T CBaseIssue::NeedsPermissionFromGC()
  T CBaseIssue::OnVoteEnded()
  T CBaseIssue::OnVoteFailed(int)
  T CBaseIssue::OnVoteStarted()
+ T CBaseIssue::ProcessResults(CUtlVector<char const*, CUtlMemory<char const*, int> > const&, int const*, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)> const&, int, int, int)
+ T CBaseIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CBaseIssue::SetIssueDetails(char const*)
- T CBaseIssue::SetYesNoVoteCount(int, int, int)
  T CBaseIssue::~CBaseIssue()
  T CBaseMoveBehavior::Activate()
  T CBaseMoveBehavior::GetDataDescMap()
@@ -20366,7 +20366,6 @@
  T CChangeLevel::TouchChangeLevel(CBaseEntity*)
  T CChangeLevel::WarnAboutActiveLead()
  T CChangeLevel::~CChangeLevel()
- T CChangeLevelIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CChangeLevelIssue::CanTeamCallVote(int) const
  T CChangeLevelIssue::ExecuteCommand()
  T CChangeLevelIssue::GetDetailsString()
@@ -20375,6 +20374,7 @@
  T CChangeLevelIssue::IsEnabled()
  T CChangeLevelIssue::IsYesNoVote()
  T CChangeLevelIssue::ListIssueDetails(CBasePlayer*)
+ T CChangeLevelIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CChangeLevelIssue::~CChangeLevelIssue()
  T CCheckClient::LevelInitPreEntity()
  T CCheckClient::~CCheckClient()
@@ -20515,7 +20515,6 @@
  T CChoreoScene::~CChoreoScene()
  T CChoreoStringPool::FindOrAddString(char const*)
  T CChoreoStringPool::GetString(short, char*, int)
- T CClassLimitsIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CClassLimitsIssue::ExecuteCommand()
  T CClassLimitsIssue::GetDetailsString()
  T CClassLimitsIssue::GetDisplayString()
@@ -20523,6 +20522,7 @@
  T CClassLimitsIssue::GetVotePassedString()
  T CClassLimitsIssue::IsEnabled()
  T CClassLimitsIssue::ListIssueDetails(CBasePlayer*)
+ T CClassLimitsIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CClassLimitsIssue::~CClassLimitsIssue()
  T CClassMemoryPool<GCSDK::CNetPacket>::~CClassMemoryPool()
  T CClassPtrSaveRestoreOps::IsEmpty(SaveRestoreFieldInfo_t const&)
@@ -21465,7 +21465,6 @@
  T CEmptyConVar::~CEmptyConVar()
  T CEnableMotionFixup::~CEnableMotionFixup()
  T CEnableTemporaryHalloweenIssue::BRecordVoteFailureEventForEntity(int) const
- T CEnableTemporaryHalloweenIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CEnableTemporaryHalloweenIssue::ExecuteCommand()
  T CEnableTemporaryHalloweenIssue::GetDisplayString()
  T CEnableTemporaryHalloweenIssue::GetVotePassedString()
@@ -21473,6 +21472,7 @@
  T CEnableTemporaryHalloweenIssue::IsYesNoVote()
  T CEnableTemporaryHalloweenIssue::ListIssueDetails(CBasePlayer*)
  T CEnableTemporaryHalloweenIssue::OnVoteFailed(int)
+ T CEnableTemporaryHalloweenIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CEnableTemporaryHalloweenIssue::~CEnableTemporaryHalloweenIssue()
  T CEntFireAutoCompletionFunctor::CommandCallback(CCommand const&)
  T CEntFireAutoCompletionFunctor::CommandCompletionCallback(char const*, CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >&)
@@ -23971,13 +23971,13 @@
  T CEventsSaveDataOps::Parse(SaveRestoreFieldInfo_t const&, char const*)
  T CEventsSaveDataOps::Restore(SaveRestoreFieldInfo_t const&, IRestore*)
  T CEventsSaveDataOps::Save(SaveRestoreFieldInfo_t const&, ISave*)
- T CExtendLevelIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CExtendLevelIssue::ExecuteCommand()
  T CExtendLevelIssue::GetDisplayString()
  T CExtendLevelIssue::GetQuorumRatio()
  T CExtendLevelIssue::GetVotePassedString()
  T CExtendLevelIssue::IsEnabled()
  T CExtendLevelIssue::ListIssueDetails(CBasePlayer*)
+ T CExtendLevelIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CExtendLevelIssue::~CExtendLevelIssue()
  T CExtraMapEntity::AnimThink()
  T CExtraMapEntity::GetDataDescMap()
@@ -25214,8 +25214,6 @@
  T CGCUpdateServerModificationItemStateJob::~CGCUpdateServerModificationItemStateJob()
  T CGCUseServerModificationItemJob::BYieldingRunGCJob(GCSDK::IMsgNetPacket*)
  T CGCUseServerModificationItemJob::~CGCUseServerModificationItemJob()
- T CGCVoteSystemVoteKickResponse::BYieldingRunJobFromMsg(GCSDK::IMsgNetPacket*)
- T CGCVoteSystemVoteKickResponse::~CGCVoteSystemVoteKickResponse()
  T CGC_GameServer_AuthChallenge::BYieldingRunGCJob(GCSDK::IMsgNetPacket*)
  T CGC_GameServer_AuthChallenge::~CGC_GameServer_AuthChallenge()
  T CGC_GameServer_AuthResult::BYieldingRunGCJob(GCSDK::IMsgNetPacket*)
@@ -26003,11 +26001,16 @@
  T CJobReliableMessageBase<ReliableMsgPlayerLeftMatch, CMsgPlayerLeftMatch, (ETFGCMsg)6522, CMsgPlayerLeftMatchResponse, (ETFGCMsg)6523>::CJobReliableMessageBase()
  T CJobReliableMessageBase<ReliableMsgPlayerLeftMatch, CMsgPlayerLeftMatch, (ETFGCMsg)6522, CMsgPlayerLeftMatchResponse, (ETFGCMsg)6523>::Finalize()
  T CJobReliableMessageBase<ReliableMsgPlayerLeftMatch, CMsgPlayerLeftMatch, (ETFGCMsg)6522, CMsgPlayerLeftMatchResponse, (ETFGCMsg)6523>::~CJobReliableMessageBase()
- T CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>::BYieldingRunJob(void*)
- T CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>::BYieldingRunJobInternal()
- T CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>::CJobReliableMessageBase()
- T CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>::Finalize()
- T CJobReliableMessageBase<ReliableMsgPlayerVoteKickedAfterLeavingMatch, CMsgPlayerVoteKickedAfterLeavingMatch, (ETFGCMsg)6551, CMsgPlayerVoteKickedAfterLeavingMatchResponse, (ETFGCMsg)6552>::~CJobReliableMessageBase()
+ T CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>::BYieldingRunJob(void*)
+ T CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>::BYieldingRunJobInternal()
+ T CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>::CJobReliableMessageBase()
+ T CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>::Finalize()
+ T CJobReliableMessageBase<ReliableMsgProcessMatchVoteKick, CMsgProcessMatchVoteKick, (ETFGCMsg)6581, CMsgProcessMatchVoteKickResponse, (ETFGCMsg)6582>::~CJobReliableMessageBase()
+ T CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>::BYieldingRunJob(void*)
+ T CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>::BYieldingRunJobInternal()
+ T CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>::CJobReliableMessageBase()
+ T CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>::Finalize()
+ T CJobReliableMessageBase<ReliableMsgVoteKickPlayerRequest, CMsgGC_TFVoteKickPlayerRequest, (ETFGCMsg)6513, CMsgGC_VoteKickPlayerRequestResponse, (ETFGCMsg)6514>::~CJobReliableMessageBase()
  T CKeepUpright::Activate()
  T CKeepUpright::GetDataDescMap()
  T CKeepUpright::InputSetAngularLimit(inputdata_t&)
@@ -26019,7 +26022,6 @@
  T CKeyValuesDumpContextAsDevMsg::KvBeginKey(KeyValues*, int)
  T CKeyValuesDumpContextAsDevMsg::KvWriteText(char const*)
  T CKeyValuesErrorStack::ReportError(char const*)
- T CKickIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CKickIssue::CreateVoteDataFromDetails(char const*)
  T CKickIssue::ExecuteCommand()
  T CKickIssue::GetDetailsString()
@@ -26027,12 +26029,14 @@
  T CKickIssue::GetVotePassedString()
  T CKickIssue::IsEnabled()
  T CKickIssue::IsTeamRestrictedVote()
+ T CKickIssue::KickReasonString(TFVoteKickReason)
  T CKickIssue::ListIssueDetails(CBasePlayer*)
- T CKickIssue::NeedsPermissionFromGC()
- T CKickIssue::OnVoteEnded()
  T CKickIssue::OnVoteFailed(int)
  T CKickIssue::OnVoteStarted()
+ T CKickIssue::ParseKickReason(char const*)
  T CKickIssue::PrintLogData()
+ T CKickIssue::ProcessResults(CUtlVector<char const*, CUtlMemory<char const*, int> > const&, int const*, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)> const&, int, int, int)
+ T CKickIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CKickIssue::~CKickIssue()
  T CKnownCollector::Inspect(CKnownEntity const&)
  T CKnownEntity::Destroy()
@@ -26221,7 +26225,6 @@
  T CMD_SelectAmbushAreas()
  T CMD_TankHealth(CCommand const&)
  T CMD_TankKill()
- T CMannVsMachineChangeChallengeIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CMannVsMachineChangeChallengeIssue::CanTeamCallVote(int) const
  T CMannVsMachineChangeChallengeIssue::ExecuteCommand()
  T CMannVsMachineChangeChallengeIssue::GetDetailsString()
@@ -26231,6 +26234,7 @@
  T CMannVsMachineChangeChallengeIssue::IsEnabled()
  T CMannVsMachineChangeChallengeIssue::IsYesNoVote()
  T CMannVsMachineChangeChallengeIssue::ListIssueDetails(CBasePlayer*)
+ T CMannVsMachineChangeChallengeIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CMannVsMachineChangeChallengeIssue::~CMannVsMachineChangeChallengeIssue()
  T CMannVsMachineLogic* _CreateEntityTemplate<CMannVsMachineLogic>(CMannVsMachineLogic*, char const*)
  T CMannVsMachineLogic::GetDataDescMap()
@@ -29496,21 +29500,7 @@
  T CMsgPlayerLeftMatchResponse::default_instance()
  T CMsgPlayerLeftMatchResponse::descriptor()
  T CMsgPlayerLeftMatchResponse::~CMsgPlayerLeftMatchResponse()
- T CMsgPlayerVoteKickedAfterLeavingMatch::ByteSize() const
- T CMsgPlayerVoteKickedAfterLeavingMatch::CMsgPlayerVoteKickedAfterLeavingMatch()
- T CMsgPlayerVoteKickedAfterLeavingMatch::Clear()
- T CMsgPlayerVoteKickedAfterLeavingMatch::GetCachedSize() const
- T CMsgPlayerVoteKickedAfterLeavingMatch::GetMetadata() const
- T CMsgPlayerVoteKickedAfterLeavingMatch::IsInitialized() const
- T CMsgPlayerVoteKickedAfterLeavingMatch::MergeFrom(CMsgPlayerVoteKickedAfterLeavingMatch const&)
- T CMsgPlayerVoteKickedAfterLeavingMatch::New() const
- T CMsgPlayerVoteKickedAfterLeavingMatch::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgPlayerVoteKickedAfterLeavingMatch::SetCachedSize(int) const
- T CMsgPlayerVoteKickedAfterLeavingMatch::default_instance()
- T CMsgPlayerVoteKickedAfterLeavingMatch::descriptor()
- T CMsgPlayerVoteKickedAfterLeavingMatch::~CMsgPlayerVoteKickedAfterLeavingMatch()
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::ByteSize() const
- T CMsgPlayerVoteKickedAfterLeavingMatchResponse::CMsgPlayerVoteKickedAfterLeavingMatchResponse()
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::Clear()
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::GetCachedSize() const
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::GetMetadata() const
@@ -29519,9 +29509,44 @@
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::New() const
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::SerializeWithCachedSizesToArray(unsigned char*) const
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::SetCachedSize(int) const
- T CMsgPlayerVoteKickedAfterLeavingMatchResponse::default_instance()
- T CMsgPlayerVoteKickedAfterLeavingMatchResponse::descriptor()
  T CMsgPlayerVoteKickedAfterLeavingMatchResponse::~CMsgPlayerVoteKickedAfterLeavingMatchResponse()
+ T CMsgProcessMatchVoteKick::ByteSize() const
+ T CMsgProcessMatchVoteKick::CMsgProcessMatchVoteKick()
+ T CMsgProcessMatchVoteKick::Clear()
+ T CMsgProcessMatchVoteKick::GetCachedSize() const
+ T CMsgProcessMatchVoteKick::GetMetadata() const
+ T CMsgProcessMatchVoteKick::IsInitialized() const
+ T CMsgProcessMatchVoteKick::MergeFrom(CMsgProcessMatchVoteKick const&)
+ T CMsgProcessMatchVoteKick::New() const
+ T CMsgProcessMatchVoteKick::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgProcessMatchVoteKick::SetCachedSize(int) const
+ T CMsgProcessMatchVoteKick::default_instance()
+ T CMsgProcessMatchVoteKick::descriptor()
+ T CMsgProcessMatchVoteKick::~CMsgProcessMatchVoteKick()
+ T CMsgProcessMatchVoteKickResponse::ByteSize() const
+ T CMsgProcessMatchVoteKickResponse::CMsgProcessMatchVoteKickResponse()
+ T CMsgProcessMatchVoteKickResponse::Clear()
+ T CMsgProcessMatchVoteKickResponse::GetCachedSize() const
+ T CMsgProcessMatchVoteKickResponse::GetMetadata() const
+ T CMsgProcessMatchVoteKickResponse::IsInitialized() const
+ T CMsgProcessMatchVoteKickResponse::MergeFrom(CMsgProcessMatchVoteKickResponse const&)
+ T CMsgProcessMatchVoteKickResponse::New() const
+ T CMsgProcessMatchVoteKickResponse::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgProcessMatchVoteKickResponse::SetCachedSize(int) const
+ T CMsgProcessMatchVoteKickResponse::default_instance()
+ T CMsgProcessMatchVoteKickResponse::descriptor()
+ T CMsgProcessMatchVoteKickResponse::~CMsgProcessMatchVoteKickResponse()
+ T CMsgProcessMatchVoteKick_Vote::ByteSize() const
+ T CMsgProcessMatchVoteKick_Vote::CMsgProcessMatchVoteKick_Vote()
+ T CMsgProcessMatchVoteKick_Vote::Clear()
+ T CMsgProcessMatchVoteKick_Vote::GetCachedSize() const
+ T CMsgProcessMatchVoteKick_Vote::GetMetadata() const
+ T CMsgProcessMatchVoteKick_Vote::IsInitialized() const
+ T CMsgProcessMatchVoteKick_Vote::MergeFrom(CMsgProcessMatchVoteKick_Vote const&)
+ T CMsgProcessMatchVoteKick_Vote::New() const
+ T CMsgProcessMatchVoteKick_Vote::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgProcessMatchVoteKick_Vote::SetCachedSize(int) const
+ T CMsgProcessMatchVoteKick_Vote::~CMsgProcessMatchVoteKick_Vote()
  T CMsgProtoBufHeader::ByteSize() const
  T CMsgProtoBufHeader::CMsgProtoBufHeader()
  T CMsgProtoBufHeader::Clear()
@@ -30428,26 +30453,6 @@
  T CMsgTFThankedSomeone::SerializeWithCachedSizesToArray(unsigned char*) const
  T CMsgTFThankedSomeone::SetCachedSize(int) const
  T CMsgTFThankedSomeone::~CMsgTFThankedSomeone()
- T CMsgTFVoteKickBanPlayer::ByteSize() const
- T CMsgTFVoteKickBanPlayer::Clear()
- T CMsgTFVoteKickBanPlayer::GetCachedSize() const
- T CMsgTFVoteKickBanPlayer::GetMetadata() const
- T CMsgTFVoteKickBanPlayer::IsInitialized() const
- T CMsgTFVoteKickBanPlayer::MergeFrom(CMsgTFVoteKickBanPlayer const&)
- T CMsgTFVoteKickBanPlayer::New() const
- T CMsgTFVoteKickBanPlayer::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgTFVoteKickBanPlayer::SetCachedSize(int) const
- T CMsgTFVoteKickBanPlayer::~CMsgTFVoteKickBanPlayer()
- T CMsgTFVoteKickBanPlayerResult::ByteSize() const
- T CMsgTFVoteKickBanPlayerResult::Clear()
- T CMsgTFVoteKickBanPlayerResult::GetCachedSize() const
- T CMsgTFVoteKickBanPlayerResult::GetMetadata() const
- T CMsgTFVoteKickBanPlayerResult::IsInitialized() const
- T CMsgTFVoteKickBanPlayerResult::MergeFrom(CMsgTFVoteKickBanPlayerResult const&)
- T CMsgTFVoteKickBanPlayerResult::New() const
- T CMsgTFVoteKickBanPlayerResult::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgTFVoteKickBanPlayerResult::SetCachedSize(int) const
- T CMsgTFVoteKickBanPlayerResult::~CMsgTFVoteKickBanPlayerResult()
  T CMsgTFWorldStatus::ByteSize() const
  T CMsgTFWorldStatus::Clear()
  T CMsgTFWorldStatus::GetCachedSize() const
@@ -31235,7 +31240,6 @@
  T CNetworkVectorBase<Vector, CTFBaseRocket::NetworkVar_m_vInitialVelocity>::Init(float, float, float)
  T CNetworkVectorBase<Vector, CTFRagdoll::NetworkVar_m_vecRagdollOrigin>::Init(float, float, float)
  T CNetworkVectorBase<Vector, CTFRagdoll::NetworkVar_m_vecRagdollVelocity>::Init(float, float, float)
- T CNextLevelIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CNextLevelIssue::CanTeamCallVote(int) const
  T CNextLevelIssue::ExecuteCommand()
  T CNextLevelIssue::GetDetailsString()
@@ -31247,6 +31251,7 @@
  T CNextLevelIssue::IsEnabled()
  T CNextLevelIssue::IsYesNoVote()
  T CNextLevelIssue::ListIssueDetails(CBasePlayer*)
+ T CNextLevelIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CNextLevelIssue::~CNextLevelIssue()
  T CNoGrenadesZone::InputDisable(inputdata_t&)
  T CNoGrenadesZone::InputEnable(inputdata_t&)
@@ -31749,13 +31754,13 @@
  T CPathTrack::~CPathTrack()
  T CPathfindNearestNodeFilter::IsValid(CAI_Node*)
  T CPathfindNearestNodeFilter::ShouldContinue()
- T CPauseGameIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CPauseGameIssue::ExecuteCommand()
  T CPauseGameIssue::GetDetailsString()
  T CPauseGameIssue::GetDisplayString()
  T CPauseGameIssue::GetVotePassedString()
  T CPauseGameIssue::IsEnabled()
  T CPauseGameIssue::ListIssueDetails(CBasePlayer*)
+ T CPauseGameIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CPauseGameIssue::~CPauseGameIssue()
  T CPeriodicSpawnPopulator::CPeriodicSpawnPopulator(CPopulationManager*)
  T CPeriodicSpawnPopulator::Parse(KeyValues*)
@@ -32955,12 +32960,12 @@
  T CResponseSystem::ScoreCriteriaAgainstRuleCriteria(AI_CriteriaSet const&, int, bool&, bool)
  T CResponseSystem::SelectWeightedResponseFromResponseGroup(ResponseGroup*, IResponseFilter*)
  T CResponseSystem::~CResponseSystem()
- T CRestartGameIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CRestartGameIssue::ExecuteCommand()
  T CRestartGameIssue::GetDisplayString()
  T CRestartGameIssue::GetVotePassedString()
  T CRestartGameIssue::IsEnabled()
  T CRestartGameIssue::ListIssueDetails(CBasePlayer*)
+ T CRestartGameIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CRestartGameIssue::~CRestartGameIssue()
  T CRestore::CRestore(CSaveRestoreData*)
  T CRestore::DoReadAll(void*, datamap_t*, datamap_t*)
@@ -33704,12 +33709,12 @@
  T CSchemaAttributeType_WorldItemPlacement::BConvertStringToEconAttributeValue(CEconItemAttributeDefinition const*, char const*, attribute_data_union_t*, bool) const
  T CSchemaAttributeType_WorldItemPlacement::ConvertEconAttributeValueToString(CEconItemAttributeDefinition const*, attribute_data_union_t const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*) const
  T CSchemaAttributeType_WorldItemPlacement::~CSchemaAttributeType_WorldItemPlacement()
- T CScrambleTeams::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CScrambleTeams::ExecuteCommand()
  T CScrambleTeams::GetDisplayString()
  T CScrambleTeams::GetVotePassedString()
  T CScrambleTeams::IsEnabled()
  T CScrambleTeams::ListIssueDetails(CBasePlayer*)
+ T CScrambleTeams::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CScrambleTeams::~CScrambleTeams()
  T CScriptedTarget::DrawDebugGeometryOverlays()
  T CScriptedTarget::DrawDebugTextOverlays()
@@ -35792,6 +35797,8 @@
  T CTFForceRespawn::InputForceTeamRespawn(inputdata_t&)
  T CTFForceRespawn::~CTFForceRespawn()
  T CTFGCServerSystem::BLateJoinEligible()
+ T CTFGCServerSystem::BPlayerWasVoteKicked(CSteamID) const
+ T CTFGCServerSystem::BVoteKickPending() const
  T CTFGCServerSystem::CTFGCServerSystem()
  T CTFGCServerSystem::CanChangeMatchPlayerTeams()
  T CTFGCServerSystem::CanRequestNewMatchForLobby()
@@ -35813,8 +35820,8 @@
  T CTFGCServerSystem::LevelShutdownPostEntity()
  T CTFGCServerSystem::MMServerModeChanged()
  T CTFGCServerSystem::MatchPlayerAbandonThink()
- T CTFGCServerSystem::MatchPlayerVoteKicked(CSteamID)
  T CTFGCServerSystem::NewMatchForLobbyResponse(bool)
+ T CTFGCServerSystem::PlayerRequestVoteKick(CSteamID const&, CSteamID const&, TFVoteKickReason)
  T CTFGCServerSystem::PostInitGC()
  T CTFGCServerSystem::PostSOUpdate(CSteamID const&, GCSDK::ESOCacheEvent)
  T CTFGCServerSystem::PreClientUpdate()
@@ -35836,8 +35843,10 @@
  T CTFGCServerSystem::ShouldHideServer()
  T CTFGCServerSystem::Shutdown()
  T CTFGCServerSystem::SteamIDAllowedToConnect(CSteamID const&) const
+ T CTFGCServerSystem::SubmitVoteKickResults(CSteamID, CSteamID, TFVoteKickReason, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)> const&, bool)
  T CTFGCServerSystem::UpdateConnectedPlayersAndServerInfo(CMsgGameServerMatchmakingStatus_Event, bool)
  T CTFGCServerSystem::UpdateServerDetails()
+ T CTFGCServerSystem::VoteKickPlayerRequestResponse(CSteamID, CSteamID, TFVoteKickReason, bool, bool, bool)
  T CTFGCServerSystem::~CTFGCServerSystem()
  T CTFGSLobby::Dump() const
  T CTFGSLobby::GSObj()
@@ -39802,7 +39811,6 @@
  T CTeam::UpdateTransmitState()
  T CTeam::YouForgotToImplementOrDeclareServerClass()
  T CTeam::~CTeam()
- T CTeamAutoBalanceIssue::CanCallVote(int, char const*, vote_create_failed_t&, int&)
  T CTeamAutoBalanceIssue::ExecuteCommand()
  T CTeamAutoBalanceIssue::GetDisplayString()
  T CTeamAutoBalanceIssue::GetQuorumRatio()
@@ -39810,6 +39818,7 @@
  T CTeamAutoBalanceIssue::GetVotePassedString()
  T CTeamAutoBalanceIssue::IsEnabled()
  T CTeamAutoBalanceIssue::ListIssueDetails(CBasePlayer*)
+ T CTeamAutoBalanceIssue::RequestCallVote(int, char const*, vote_create_failed_t&, int&)
  T CTeamAutoBalanceIssue::~CTeamAutoBalanceIssue()
  T CTeamControlPoint::AnimThink()
  T CTeamControlPoint::CTeamControlPoint()
@@ -41039,6 +41048,7 @@
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CPhysCollide const*, BBox_t, unsigned short, bool (*)(CPhysCollide const* const&, CPhysCollide const* const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, GCSDK::CGCClientSharedObjectCache*, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlConstStringBase<char>, int, unsigned short, bool (*)(CUtlConstStringBase<char> const&, CUtlConstStringBase<char> const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlMap<CUtlString, float, unsigned short, bool (*)(CUtlString const&, CUtlString const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
@@ -41297,6 +41307,13 @@
  T CUtlRBTree<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
  T CUtlRBTree<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::Unlink(unsigned short)
  T CUtlRBTree<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, float, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t const&)
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t const&)
  T CUtlRBTree<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
  T CUtlRBTree<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short, CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<CSteamID, unsigned int, unsigned short, bool (*)(CSteamID const&, CSteamID const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
@@ -42844,7 +42861,6 @@
  T CVoteController::AddPlayerToNameLockedList(CSteamID, float, int)
  T CVoteController::CanEntityCallVote(CBasePlayer*, int&, vote_create_failed_t&)
  T CVoteController::CreateVote(int, char const*, char const*)
- T CVoteController::GCResponseReceived(bool, int)
  T CVoteController::GetDataDescMap()
  T CVoteController::GetServerClass()
  T CVoteController::IsValidVoter(CBasePlayer*)
@@ -43466,7 +43482,6 @@
  T CreateJob_CGCUpdateItemSchema(GCSDK::CGCClient*, void*)
  T CreateJob_CGCUpdateServerModificationItemStateJob(GCSDK::CGCClient*, void*)
  T CreateJob_CGCUseServerModificationItemJob(GCSDK::CGCClient*, void*)
- T CreateJob_CGCVoteSystemVoteKickResponse(GCSDK::CGCClient*, void*)
  T CreateJob_CGC_GameServer_AuthChallenge(GCSDK::CGCClient*, void*)
  T CreateJob_CGC_GameServer_AuthResult(GCSDK::CGCClient*, void*)
  T CreateJob_CGC_GameServer_Duel_Request(GCSDK::CGCClient*, void*)
@@ -44475,13 +44490,13 @@
  T GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>::AllocProto()
  T GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>::GetGenericBody() const
  T GCSDK::CProtoBufMsg<CMsgPlayerLeftMatchResponse>::~CProtoBufMsg()
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>::AllocProto()
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>::CProtoBufMsg(unsigned int)
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>::GetGenericBody() const
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatch>::~CProtoBufMsg()
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::AllocProto()
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::GetGenericBody() const
- T GCSDK::CProtoBufMsg<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::~CProtoBufMsg()
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>::AllocProto()
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>::CProtoBufMsg(unsigned int)
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>::GetGenericBody() const
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKick>::~CProtoBufMsg()
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>::AllocProto()
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>::GetGenericBody() const
+ T GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>::~CProtoBufMsg()
  T GCSDK::CProtoBufMsg<CMsgReplicateConVars>::AllocProto()
  T GCSDK::CProtoBufMsg<CMsgReplicateConVars>::GetGenericBody() const
  T GCSDK::CProtoBufMsg<CMsgReplicateConVars>::~CProtoBufMsg()
@@ -44642,12 +44657,12 @@
  T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatchResponse>::GetName()
  T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatchResponse>::InternalAlloc()
  T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerLeftMatchResponse>::~CProtoBufMsgMemoryPool()
- T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatch>::GetName()
- T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatch>::InternalAlloc()
- T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatch>::~CProtoBufMsgMemoryPool()
- T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::GetName()
- T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::InternalAlloc()
- T GCSDK::CProtoBufMsgMemoryPool<CMsgPlayerVoteKickedAfterLeavingMatchResponse>::~CProtoBufMsgMemoryPool()
+ T GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKick>::GetName()
+ T GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKick>::InternalAlloc()
+ T GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKick>::~CProtoBufMsgMemoryPool()
+ T GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKickResponse>::GetName()
+ T GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKickResponse>::InternalAlloc()
+ T GCSDK::CProtoBufMsgMemoryPool<CMsgProcessMatchVoteKickResponse>::~CProtoBufMsgMemoryPool()
  T GCSDK::CProtoBufMsgMemoryPool<CMsgProtoBufHeader>::GetName()
  T GCSDK::CProtoBufMsgMemoryPool<CMsgProtoBufHeader>::InternalAlloc()
  T GCSDK::CProtoBufMsgMemoryPool<CMsgProtoBufHeader>::~CProtoBufMsgMemoryPool()
@@ -44893,7 +44908,6 @@
  T GetHintTypeDescription(Hint_e)
  T GetInvalidWeaponInfoHandle()
  T GetItemSchema()
- T GetKickBanPlayerReason(char const*)
  T GetKillEaterAttrCount()
  T GetKillEaterAttr_IsUserCustomizable(int)
  T GetKillEaterAttr_Restriction(int)
@@ -46213,7 +46227,9 @@
  T ReliableMsgMvMVictory::~ReliableMsgMvMVictory()
  T ReliableMsgNewMatchForLobby::~ReliableMsgNewMatchForLobby()
  T ReliableMsgPlayerLeftMatch::~ReliableMsgPlayerLeftMatch()
- T ReliableMsgPlayerVoteKickedAfterLeavingMatch::~ReliableMsgPlayerVoteKickedAfterLeavingMatch()
+ T ReliableMsgProcessMatchVoteKick::OnReply(GCSDK::CProtoBufMsg<CMsgProcessMatchVoteKickResponse>&)
+ T ReliableMsgProcessMatchVoteKick::~ReliableMsgProcessMatchVoteKick()
+ T ReliableMsgVoteKickPlayerRequest::~ReliableMsgVoteKickPlayerRequest()
  T ReloadSceneFromDisk(CBaseEntity*)
  T RemapViewAngles(ViewSmoothingData_t*, QAngle&)
  T RemoveActorFromScriptedScenes(CBaseFlex*, bool, bool, char const*)
@@ -46538,6 +46554,7 @@
  T TFSyncedMMUIState::SetCachedSize(int) const
  T TFSyncedMMUIState::~TFSyncedMMUIState()
  T TFTeamMgr()
+ T TFVoteKickReason_descriptor()
  T TF_EditClearAllAttributes()
  T TF_EditClearAttribute(CCommand const&)
  T TF_EditMarkAttribute(CCommand const&)
@@ -49645,8 +49662,12 @@
  b (anonymous namespace)::CMsgPlayerLeftMatch_reflection_
  b (anonymous namespace)::CMsgPlayerVoteKickedAfterLeavingMatchResponse_descriptor_
  b (anonymous namespace)::CMsgPlayerVoteKickedAfterLeavingMatchResponse_reflection_
- b (anonymous namespace)::CMsgPlayerVoteKickedAfterLeavingMatch_descriptor_
- b (anonymous namespace)::CMsgPlayerVoteKickedAfterLeavingMatch_reflection_
+ b (anonymous namespace)::CMsgProcessMatchVoteKickResponse_descriptor_
+ b (anonymous namespace)::CMsgProcessMatchVoteKickResponse_reflection_
+ b (anonymous namespace)::CMsgProcessMatchVoteKick_Vote_descriptor_
+ b (anonymous namespace)::CMsgProcessMatchVoteKick_Vote_reflection_
+ b (anonymous namespace)::CMsgProcessMatchVoteKick_descriptor_
+ b (anonymous namespace)::CMsgProcessMatchVoteKick_reflection_
  b (anonymous namespace)::CMsgProtoBufHeader_descriptor_
  b (anonymous namespace)::CMsgProtoBufHeader_reflection_
  b (anonymous namespace)::CMsgProtoDefHeader_descriptor_
@@ -49816,10 +49837,6 @@
  b (anonymous namespace)::CMsgTFThankedBySomeone_reflection_
  b (anonymous namespace)::CMsgTFThankedSomeone_descriptor_
  b (anonymous namespace)::CMsgTFThankedSomeone_reflection_
- b (anonymous namespace)::CMsgTFVoteKickBanPlayerResult_descriptor_
- b (anonymous namespace)::CMsgTFVoteKickBanPlayerResult_reflection_
- b (anonymous namespace)::CMsgTFVoteKickBanPlayer_descriptor_
- b (anonymous namespace)::CMsgTFVoteKickBanPlayer_reflection_
  b (anonymous namespace)::CMsgTFWorldStatus_descriptor_
  b (anonymous namespace)::CMsgTFWorldStatus_reflection_
  b (anonymous namespace)::CMsgTFXPSourceBreakdown_descriptor_
@@ -49981,6 +49998,7 @@
  b (anonymous namespace)::TFPendingPartyMember_reflection_
  b (anonymous namespace)::TFSyncedMMUIState_descriptor_
  b (anonymous namespace)::TFSyncedMMUIState_reflection_
+ b (anonymous namespace)::TFVoteKickReason_descriptor_
  b (anonymous namespace)::TF_GC_GameState_descriptor_
  b (anonymous namespace)::TF_GC_TEAM_descriptor_
  b (anonymous namespace)::__g_CreateCPlayerInfoManager_V1IPlayerInfoManager_V1_reg
@@ -55372,7 +55390,6 @@
  d g_JobType_CGCUpdateItemSchema
  d g_JobType_CGCUpdateServerModificationItemStateJob
  d g_JobType_CGCUseServerModificationItemJob
- d g_JobType_CGCVoteSystemVoteKickResponse
  d g_JobType_CGC_GameServer_AuthChallenge
  d g_JobType_CGC_GameServer_AuthResult
  d g_JobType_CGC_GameServer_Duel_Request
@@ -55939,7 +55956,9 @@
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgPlayerLeftMatchResponse_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgPlayerLeftMatch_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgPlayerVoteKickedAfterLeavingMatchResponse_offsets_
- r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgPlayerVoteKickedAfterLeavingMatch_offsets_
+ r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgProcessMatchVoteKickResponse_offsets_
+ r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgProcessMatchVoteKick_Vote_offsets_
+ r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgProcessMatchVoteKick_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgQuestProgressReport_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgReplaySubmitContestEntryResponse_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgReplaySubmitContestEntry_offsets_
@@ -55970,8 +55989,6 @@
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFSaxxyBroadcast_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFThankedBySomeone_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFThankedSomeone_offsets_
- r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFVoteKickBanPlayerResult_offsets_
- r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFVoteKickBanPlayer_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFWorldStatus_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFXPSourceBreakdown_offsets_
  r protobuf_AssignDesc_tf_5fgcmessages_2eproto()::CMsgTFXPSource_offsets_
@@ -56244,692 +56261,692 @@
  t ValidateMOTDFilename(IConVar*, char const*, float)
  t VoiceServerDebug(char const*, ...)
  t WriteAchievementGlobalState(KeyValues*, bool)
- t _GLOBAL__sub_I_AI_Criteri.stdout.rel_tf_osx_builder.37982.HGZmyy.ii
- t _GLOBAL__sub_I_AI_Respons.stdout.rel_tf_osx_builder.38138.Xs3Xbm.ii
- t _GLOBAL__sub_I_BaseAnimat.stdout.rel_tf_osx_builder.38238.yFzZ5O.ii
- t _GLOBAL__sub_I_CRagdollMa.stdout.rel_tf_osx_builder.38372.zwyjKD.ii
- t _GLOBAL__sub_I_Commentary.stdout.rel_tf_osx_builder.38348.Pm2uvP.ii
- t _GLOBAL__sub_I_EffectsSer.stdout.rel_tf_osx_builder.38398.oNYawo.ii
- t _GLOBAL__sub_I_EntityDiss.stdout.rel_tf_osx_builder.38412.amBaPG.ii
- t _GLOBAL__sub_I_EntityFlam.stdout.rel_tf_osx_builder.38420.BEyjjM.ii
- t _GLOBAL__sub_I_EntityPart.stdout.rel_tf_osx_builder.36596.HVzoQC.ii
- t _GLOBAL__sub_I_EntityPart.stdout.rel_tf_osx_builder.38428.qCEjPf.ii
- t _GLOBAL__sub_I_EnvBeam.stdout.rel_tf_osx_builder.38444.hoWcVE.ii
- t _GLOBAL__sub_I_EnvFade.stdout.rel_tf_osx_builder.38448.EUSZOx.ii
- t _GLOBAL__sub_I_EnvHudHint.stdout.rel_tf_osx_builder.38454.GN8jjQ.ii
- t _GLOBAL__sub_I_EnvLaser.stdout.rel_tf_osx_builder.38458.9VnYx2.ii
- t _GLOBAL__sub_I_EnvMessage.stdout.rel_tf_osx_builder.38468.bWpATP.ii
- t _GLOBAL__sub_I_EnvShake.stdout.rel_tf_osx_builder.38478.VSqquU.ii
- t _GLOBAL__sub_I_EnvSpark.stdout.rel_tf_osx_builder.38486.UKkQWz.ii
- t _GLOBAL__sub_I_Func_Monit.stdout.rel_tf_osx_builder.38766.u8iNhP.ii
- t _GLOBAL__sub_I_GameStats.stdout.rel_tf_osx_builder.36644.zADTI1.ii
- t _GLOBAL__sub_I_MaterialMo.stdout.rel_tf_osx_builder.38909.xGJzVc.ii
- t _GLOBAL__sub_I_NextBot.stdout.rel_tf_osx_builder.39035.wmjGTY.ii
- t _GLOBAL__sub_I_NextBotInt.stdout.rel_tf_osx_builder.39063.IEhXxM.ii
- t _GLOBAL__sub_I_NextBotMan.stdout.rel_tf_osx_builder.39075.nogqwz.ii
- t _GLOBAL__sub_I_NextBotPat.stdout.rel_tf_osx_builder.39095.NtA1p0.ii
- t _GLOBAL__sub_I_NextBotPat.stdout.rel_tf_osx_builder.39101.IznWyd.ii
- t _GLOBAL__sub_I_NextBotPla.stdout.rel_tf_osx_builder.39103.N03fgo.ii
- t _GLOBAL__sub_I_NextBotPla.stdout.rel_tf_osx_builder.39113.JGCVVm.ii
- t _GLOBAL__sub_I_NextBotPla.stdout.rel_tf_osx_builder.39119.EN7T7w.ii
- t _GLOBAL__sub_I_NextBotVis.stdout.rel_tf_osx_builder.39083.NokwP8.ii
- t _GLOBAL__sub_I_PointAngul.stdout.rel_tf_osx_builder.39299.aXptKs.ii
- t _GLOBAL__sub_I_RagdollBoo.stdout.rel_tf_osx_builder.39351.SNXTBJ.ii
- t _GLOBAL__sub_I_ServerNetw.stdout.rel_tf_osx_builder.39411.lRonXJ.ii
- t _GLOBAL__sub_I_SkyCamera.stdout.rel_tf_osx_builder.39421.1bJnAY.ii
- t _GLOBAL__sub_I_SoundEmitt.stdout.rel_tf_osx_builder.36868.8vBZCh.ii
- t _GLOBAL__sub_I_Sprite.stdout.rel_tf_osx_builder.36882.8bVT0W.ii
- t _GLOBAL__sub_I_SpriteTrai.stdout.rel_tf_osx_builder.36888.xkzk6R.ii
- t _GLOBAL__sub_I_TemplateEn.stdout.rel_tf_osx_builder.39559.rQiOsD.ii
- t _GLOBAL__sub_I_WaterLODCo.stdout.rel_tf_osx_builder.41379.r9hDFw.ii
- t _GLOBAL__sub_I_achievemen.stdout.rel_tf_osx_builder.36292.xR0Ave.ii
- t _GLOBAL__sub_I_activityli.stdout.rel_tf_osx_builder.36308.DksK21.ii
- t _GLOBAL__sub_I_ai_baseact.stdout.rel_tf_osx_builder.37874.FxoxLB.ii
- t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.37886.eKAk0V.ii
- t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.37888.hEl1lw.ii
- t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.37904.NMlS0F.ii
- t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.37916.iNIiO9.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37926.9P0ZgB.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37934.9RopaX.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37938.w9BHJL.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37944.WzEq34.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37950.tABbbF.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37958.TxytPo.ii
- t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.37962.F7Sev4.ii
- t _GLOBAL__sub_I_ai_blended.stdout.rel_tf_osx_builder.37968.4iKnz8.ii
- t _GLOBAL__sub_I_ai_default.stdout.rel_tf_osx_builder.37986.jve7Zu.ii
- t _GLOBAL__sub_I_ai_dynamic.stdout.rel_tf_osx_builder.37994.RGOezW.ii
- t _GLOBAL__sub_I_ai_goalent.stdout.rel_tf_osx_builder.38006.c1PwnL.ii
- t _GLOBAL__sub_I_ai_hint.stdout.rel_tf_osx_builder.38010.WjI9vw.ii
- t _GLOBAL__sub_I_ai_hull.stdout.rel_tf_osx_builder.38014.Zz8Y0Y.ii
- t _GLOBAL__sub_I_ai_inituti.stdout.rel_tf_osx_builder.38022.gQZHIN.ii
- t _GLOBAL__sub_I_ai_localna.stdout.rel_tf_osx_builder.38042.O50ZzY.ii
- t _GLOBAL__sub_I_ai_looktar.stdout.rel_tf_osx_builder.38046.u3nw0Y.ii
- t _GLOBAL__sub_I_ai_memory.stdout.rel_tf_osx_builder.38054.WCPusK.ii
- t _GLOBAL__sub_I_ai_motor.stdout.rel_tf_osx_builder.38060.rtO6tU.ii
- t _GLOBAL__sub_I_ai_movepro.stdout.rel_tf_osx_builder.38066.ld3gAJ.ii
- t _GLOBAL__sub_I_ai_movesho.stdout.rel_tf_osx_builder.38070.L7nbBq.ii
- t _GLOBAL__sub_I_ai_navigat.stdout.rel_tf_osx_builder.38090.v96IA0.ii
- t _GLOBAL__sub_I_ai_network.stdout.rel_tf_osx_builder.38092.W46FDu.ii
- t _GLOBAL__sub_I_ai_network.stdout.rel_tf_osx_builder.38102.jperSO.ii
- t _GLOBAL__sub_I_ai_pathfin.stdout.rel_tf_osx_builder.38110.DNOQPY.ii
- t _GLOBAL__sub_I_ai_playera.stdout.rel_tf_osx_builder.38118.BciYPv.ii
- t _GLOBAL__sub_I_ai_relatio.stdout.rel_tf_osx_builder.38130.ZYC5iX.ii
- t _GLOBAL__sub_I_ai_route.stdout.rel_tf_osx_builder.38144.BppX6w.ii
- t _GLOBAL__sub_I_ai_scriptc.stdout.rel_tf_osx_builder.38160.SOtKOT.ii
- t _GLOBAL__sub_I_ai_senses.stdout.rel_tf_osx_builder.38163.nknbRa.ii
- t _GLOBAL__sub_I_ai_sentenc.stdout.rel_tf_osx_builder.38170.wE9pxK.ii
- t _GLOBAL__sub_I_ai_speech.stdout.rel_tf_osx_builder.38180.z0AK1c.ii
- t _GLOBAL__sub_I_ai_speechf.stdout.rel_tf_osx_builder.38186.lv9PiE.ii
- t _GLOBAL__sub_I_ai_squad.stdout.rel_tf_osx_builder.38192.2G1baE.ii
- t _GLOBAL__sub_I_ai_squadsl.stdout.rel_tf_osx_builder.38196.GYFi5D.ii
- t _GLOBAL__sub_I_ai_tactica.stdout.rel_tf_osx_builder.38204.iTnsbq.ii
- t _GLOBAL__sub_I_ai_trackpa.stdout.rel_tf_osx_builder.38214.OMe3Mq.ii
- t _GLOBAL__sub_I_ai_utils.stdout.rel_tf_osx_builder.38216.u3jfQF.ii
- t _GLOBAL__sub_I_ai_waypoin.stdout.rel_tf_osx_builder.38228.21Cmyn.ii
- t _GLOBAL__sub_I_archer_pro.stdout.rel_tf_osx_builder.40844.hQdouF.ii
- t _GLOBAL__sub_I_attribute_.stdout.rel_tf_osx_builder.36452.lgfwXx.ii
+ t _GLOBAL__sub_I_AI_Criteri.stdout.rel_tf_osx_builder.60839.6aN4NV.ii
+ t _GLOBAL__sub_I_AI_Respons.stdout.rel_tf_osx_builder.60999.vAMFuA.ii
+ t _GLOBAL__sub_I_BaseAnimat.stdout.rel_tf_osx_builder.61101.Rhx582.ii
+ t _GLOBAL__sub_I_CRagdollMa.stdout.rel_tf_osx_builder.61233.3I3rQm.ii
+ t _GLOBAL__sub_I_Commentary.stdout.rel_tf_osx_builder.61211.39fBdt.ii
+ t _GLOBAL__sub_I_EffectsSer.stdout.rel_tf_osx_builder.61286.6S8irp.ii
+ t _GLOBAL__sub_I_EntityDiss.stdout.rel_tf_osx_builder.61298.GquG6w.ii
+ t _GLOBAL__sub_I_EntityFlam.stdout.rel_tf_osx_builder.61318.mHvOPm.ii
+ t _GLOBAL__sub_I_EntityPart.stdout.rel_tf_osx_builder.59457.axV8Lr.ii
+ t _GLOBAL__sub_I_EntityPart.stdout.rel_tf_osx_builder.61332.678i6r.ii
+ t _GLOBAL__sub_I_EnvBeam.stdout.rel_tf_osx_builder.61342.zYEV1H.ii
+ t _GLOBAL__sub_I_EnvFade.stdout.rel_tf_osx_builder.61350.baVceP.ii
+ t _GLOBAL__sub_I_EnvHudHint.stdout.rel_tf_osx_builder.61354.f8g47S.ii
+ t _GLOBAL__sub_I_EnvLaser.stdout.rel_tf_osx_builder.61358.CAl5OG.ii
+ t _GLOBAL__sub_I_EnvMessage.stdout.rel_tf_osx_builder.61368.O4udV5.ii
+ t _GLOBAL__sub_I_EnvShake.stdout.rel_tf_osx_builder.61376.N9dEDy.ii
+ t _GLOBAL__sub_I_EnvSpark.stdout.rel_tf_osx_builder.61386.12tbAw.ii
+ t _GLOBAL__sub_I_Func_Monit.stdout.rel_tf_osx_builder.61668.DRe6zr.ii
+ t _GLOBAL__sub_I_GameStats.stdout.rel_tf_osx_builder.59505.GdV5Te.ii
+ t _GLOBAL__sub_I_MaterialMo.stdout.rel_tf_osx_builder.61768.LnMve8.ii
+ t _GLOBAL__sub_I_NextBot.stdout.rel_tf_osx_builder.61894.1HkqER.ii
+ t _GLOBAL__sub_I_NextBotInt.stdout.rel_tf_osx_builder.61924.JMyejd.ii
+ t _GLOBAL__sub_I_NextBotMan.stdout.rel_tf_osx_builder.61938.Jr0oX1.ii
+ t _GLOBAL__sub_I_NextBotPat.stdout.rel_tf_osx_builder.61956.fRvpJg.ii
+ t _GLOBAL__sub_I_NextBotPat.stdout.rel_tf_osx_builder.61962.eEQtRu.ii
+ t _GLOBAL__sub_I_NextBotPla.stdout.rel_tf_osx_builder.61966.NzZkGH.ii
+ t _GLOBAL__sub_I_NextBotPla.stdout.rel_tf_osx_builder.61974.aOYiOs.ii
+ t _GLOBAL__sub_I_NextBotPla.stdout.rel_tf_osx_builder.61978.amQ1SC.ii
+ t _GLOBAL__sub_I_NextBotVis.stdout.rel_tf_osx_builder.61944.E5oIV4.ii
+ t _GLOBAL__sub_I_PointAngul.stdout.rel_tf_osx_builder.62160.nrbfxH.ii
+ t _GLOBAL__sub_I_RagdollBoo.stdout.rel_tf_osx_builder.62214.321BNg.ii
+ t _GLOBAL__sub_I_ServerNetw.stdout.rel_tf_osx_builder.62270.2v9HHY.ii
+ t _GLOBAL__sub_I_SkyCamera.stdout.rel_tf_osx_builder.62281.gPokJz.ii
+ t _GLOBAL__sub_I_SoundEmitt.stdout.rel_tf_osx_builder.59731.nElqnM.ii
+ t _GLOBAL__sub_I_Sprite.stdout.rel_tf_osx_builder.59743.2QIFz8.ii
+ t _GLOBAL__sub_I_SpriteTrai.stdout.rel_tf_osx_builder.59749.3gp33n.ii
+ t _GLOBAL__sub_I_TemplateEn.stdout.rel_tf_osx_builder.62418.g0PYVQ.ii
+ t _GLOBAL__sub_I_WaterLODCo.stdout.rel_tf_osx_builder.64239.1i4CsL.ii
+ t _GLOBAL__sub_I_achievemen.stdout.rel_tf_osx_builder.59193.y2UNMZ.ii
+ t _GLOBAL__sub_I_activityli.stdout.rel_tf_osx_builder.59211.7YMGDA.ii
+ t _GLOBAL__sub_I_ai_baseact.stdout.rel_tf_osx_builder.60735.lU2u0A.ii
+ t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.60747.MpA4bY.ii
+ t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.60751.xksZNH.ii
+ t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.60767.pEnZ3k.ii
+ t _GLOBAL__sub_I_ai_basenpc.stdout.rel_tf_osx_builder.60777.30fBhB.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60786.FQGiHX.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60795.feUJAG.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60799.5ZPXJ0.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60805.4nwgbf.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60811.R14MDv.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60819.QXjVSG.ii
+ t _GLOBAL__sub_I_ai_behavio.stdout.rel_tf_osx_builder.60823.gDdzHQ.ii
+ t _GLOBAL__sub_I_ai_blended.stdout.rel_tf_osx_builder.60831.w0hZcD.ii
+ t _GLOBAL__sub_I_ai_default.stdout.rel_tf_osx_builder.60849.SpHUkW.ii
+ t _GLOBAL__sub_I_ai_dynamic.stdout.rel_tf_osx_builder.60855.eWupLF.ii
+ t _GLOBAL__sub_I_ai_goalent.stdout.rel_tf_osx_builder.60867.XLwkct.ii
+ t _GLOBAL__sub_I_ai_hint.stdout.rel_tf_osx_builder.60873.MYNmDH.ii
+ t _GLOBAL__sub_I_ai_hull.stdout.rel_tf_osx_builder.60877.O7bDvt.ii
+ t _GLOBAL__sub_I_ai_inituti.stdout.rel_tf_osx_builder.60885.C0AcA9.ii
+ t _GLOBAL__sub_I_ai_localna.stdout.rel_tf_osx_builder.60903.uOGmN6.ii
+ t _GLOBAL__sub_I_ai_looktar.stdout.rel_tf_osx_builder.60905.HKAKlH.ii
+ t _GLOBAL__sub_I_ai_memory.stdout.rel_tf_osx_builder.60915.k3AJxT.ii
+ t _GLOBAL__sub_I_ai_motor.stdout.rel_tf_osx_builder.60919.iYfAlU.ii
+ t _GLOBAL__sub_I_ai_movepro.stdout.rel_tf_osx_builder.60927.aCLTFF.ii
+ t _GLOBAL__sub_I_ai_movesho.stdout.rel_tf_osx_builder.60933.ACOTss.ii
+ t _GLOBAL__sub_I_ai_navigat.stdout.rel_tf_osx_builder.60951.5BRhGZ.ii
+ t _GLOBAL__sub_I_ai_network.stdout.rel_tf_osx_builder.60955.KPC31e.ii
+ t _GLOBAL__sub_I_ai_network.stdout.rel_tf_osx_builder.60963.dtJ6Yq.ii
+ t _GLOBAL__sub_I_ai_pathfin.stdout.rel_tf_osx_builder.60975.3dAw67.ii
+ t _GLOBAL__sub_I_ai_playera.stdout.rel_tf_osx_builder.60984.dBiba6.ii
+ t _GLOBAL__sub_I_ai_relatio.stdout.rel_tf_osx_builder.60989.MvOmHl.ii
+ t _GLOBAL__sub_I_ai_route.stdout.rel_tf_osx_builder.61005.lmRmaI.ii
+ t _GLOBAL__sub_I_ai_scriptc.stdout.rel_tf_osx_builder.61021.W6GGga.ii
+ t _GLOBAL__sub_I_ai_senses.stdout.rel_tf_osx_builder.61025.VmR5Vi.ii
+ t _GLOBAL__sub_I_ai_sentenc.stdout.rel_tf_osx_builder.61029.Ollxzy.ii
+ t _GLOBAL__sub_I_ai_speech.stdout.rel_tf_osx_builder.61041.713BVS.ii
+ t _GLOBAL__sub_I_ai_speechf.stdout.rel_tf_osx_builder.61047.svgW8S.ii
+ t _GLOBAL__sub_I_ai_squad.stdout.rel_tf_osx_builder.61053.gGdAoS.ii
+ t _GLOBAL__sub_I_ai_squadsl.stdout.rel_tf_osx_builder.61057.MiwBWT.ii
+ t _GLOBAL__sub_I_ai_tactica.stdout.rel_tf_osx_builder.61065.VuOqJT.ii
+ t _GLOBAL__sub_I_ai_trackpa.stdout.rel_tf_osx_builder.61075.bvehFR.ii
+ t _GLOBAL__sub_I_ai_utils.stdout.rel_tf_osx_builder.61081.tNOxF9.ii
+ t _GLOBAL__sub_I_ai_waypoin.stdout.rel_tf_osx_builder.61089.SDXMOb.ii
+ t _GLOBAL__sub_I_archer_pro.stdout.rel_tf_osx_builder.63747.uX8H2N.ii
+ t _GLOBAL__sub_I_attribute_.stdout.rel_tf_osx_builder.59315.YsoA8d.ii
  t _GLOBAL__sub_I_base_gcmes.stdout.rel_tf_osx_builder.4482.uErNtN.ii
- t _GLOBAL__sub_I_base_playe.stdout.rel_tf_osx_builder.36422.k16n19.ii
- t _GLOBAL__sub_I_baseachiev.stdout.rel_tf_osx_builder.36324.bfnHbP.ii
- t _GLOBAL__sub_I_baseanimat.stdout.rel_tf_osx_builder.38234.R3Ehdp.ii
- t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.36357.tm4Nyu.ii
- t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.36367.KETZ43.ii
- t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.38244.nDV4u0.ii
- t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.38252.8GndBh.ii
- t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.36371.34DbR3.ii
- t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.38256.CiLSV4.ii
- t _GLOBAL__sub_I_baseflex.stdout.rel_tf_osx_builder.38260.btzmiZ.ii
- t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.36381.gvT49p.ii
- t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.38270.gZOy7m.ii
- t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.38276.8NY6jv.ii
- t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.38282.kSV7CR.ii
- t _GLOBAL__sub_I_basemultip.stdout.rel_tf_osx_builder.38288.W2gQPc.ii
- t _GLOBAL__sub_I_baseobject.stdout.rel_tf_osx_builder.37013.rBjLBB.ii
- t _GLOBAL__sub_I_basepartic.stdout.rel_tf_osx_builder.36388.kMjh22.ii
- t _GLOBAL__sub_I_baseplayer.stdout.rel_tf_osx_builder.36402.PeMXOD.ii
- t _GLOBAL__sub_I_baseprojec.stdout.rel_tf_osx_builder.36406.DIJZG9.ii
- t _GLOBAL__sub_I_basetempen.stdout.rel_tf_osx_builder.38292.poG2DR.ii
- t _GLOBAL__sub_I_baseviewmo.stdout.rel_tf_osx_builder.36410.atrEZY.ii
- t _GLOBAL__sub_I_baseviewmo.stdout.rel_tf_osx_builder.38300.weXoGb.ii
- t _GLOBAL__sub_I_beam_share.stdout.rel_tf_osx_builder.36428.IEsFhx.ii
+ t _GLOBAL__sub_I_base_playe.stdout.rel_tf_osx_builder.59283.D8tPMe.ii
+ t _GLOBAL__sub_I_baseachiev.stdout.rel_tf_osx_builder.59227.ojind2.ii
+ t _GLOBAL__sub_I_baseanimat.stdout.rel_tf_osx_builder.61095.IGWhvc.ii
+ t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.59235.rkS5kV.ii
+ t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.59241.gKsVIz.ii
+ t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.61105.waXVEG.ii
+ t _GLOBAL__sub_I_basecombat.stdout.rel_tf_osx_builder.61113.rpqCSo.ii
+ t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.59244.tQHkv8.ii
+ t _GLOBAL__sub_I_baseentity.stdout.rel_tf_osx_builder.61117.vthnkN.ii
+ t _GLOBAL__sub_I_baseflex.stdout.rel_tf_osx_builder.61123.jhuQw4.ii
+ t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.59247.QGe6FG.ii
+ t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.61129.Zrtmp4.ii
+ t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.61137.E56EqK.ii
+ t _GLOBAL__sub_I_basegrenad.stdout.rel_tf_osx_builder.61143.4eq0kC.ii
+ t _GLOBAL__sub_I_basemultip.stdout.rel_tf_osx_builder.61149.YPUUlH.ii
+ t _GLOBAL__sub_I_baseobject.stdout.rel_tf_osx_builder.59875.hzlST9.ii
+ t _GLOBAL__sub_I_basepartic.stdout.rel_tf_osx_builder.59253.d1Qo85.ii
+ t _GLOBAL__sub_I_baseplayer.stdout.rel_tf_osx_builder.59265.ncXe9Q.ii
+ t _GLOBAL__sub_I_baseprojec.stdout.rel_tf_osx_builder.59269.dheHoE.ii
+ t _GLOBAL__sub_I_basetempen.stdout.rel_tf_osx_builder.61154.ywExdn.ii
+ t _GLOBAL__sub_I_baseviewmo.stdout.rel_tf_osx_builder.59275.cK1IGY.ii
+ t _GLOBAL__sub_I_baseviewmo.stdout.rel_tf_osx_builder.61159.tzWhvj.ii
+ t _GLOBAL__sub_I_beam_share.stdout.rel_tf_osx_builder.59289.WHfeEW.ii
  t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.40378.YalEcN.ii
- t _GLOBAL__sub_I_bmodels.stdout.rel_tf_osx_builder.64015.flx5Or.ii
+ t _GLOBAL__sub_I_bmodels.stdout.rel_tf_osx_builder.61177.C7roBQ.ii
  t _GLOBAL__sub_I_bone_setup.stdout.rel_tf_osx_builder.47982.Z0lJP0.ii
- t _GLOBAL__sub_I_bot_npc_ar.stdout.rel_tf_osx_builder.40352.sWNuxN.ii
- t _GLOBAL__sub_I_bot_npc_de.stdout.rel_tf_osx_builder.40364.YIqrRv.ii
- t _GLOBAL__sub_I_buttons.stdout.rel_tf_osx_builder.38324.uGiY1i.ii
- t _GLOBAL__sub_I_cbase.stdout.rel_tf_osx_builder.38329.wY1NY8.ii
+ t _GLOBAL__sub_I_bot_npc_ar.stdout.rel_tf_osx_builder.63214.vfC76S.ii
+ t _GLOBAL__sub_I_bot_npc_de.stdout.rel_tf_osx_builder.63226.mLnjTz.ii
+ t _GLOBAL__sub_I_buttons.stdout.rel_tf_osx_builder.61185.GcVChR.ii
+ t _GLOBAL__sub_I_cbase.stdout.rel_tf_osx_builder.61191.obF6e3.ii
  t _GLOBAL__sub_I_choreoeven.stdout.rel_tf_osx_builder.41257.C1m1NQ.ii
- t _GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.38334.PZDAJM.ii
- t _GLOBAL__sub_I_collisionp.stdout.rel_tf_osx_builder.36432.daSpem.ii
- t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.38338.PGQjjq.ii
- t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.38344.53RX7V.ii
- t _GLOBAL__sub_I_controlent.stdout.rel_tf_osx_builder.38356.lCVQoQ.ii
+ t _GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.61194.WyzUHI.ii
+ t _GLOBAL__sub_I_collisionp.stdout.rel_tf_osx_builder.59293.hA1NLd.ii
+ t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.61201.1vSESI.ii
+ t _GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.61207.XHCVPB.ii
+ t _GLOBAL__sub_I_controlent.stdout.rel_tf_osx_builder.61215.CZKXy4.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
  t _GLOBAL__sub_I_coroutine.stdout.rel_tf_osx_builder.40736.E8xRtO.ii
  t _GLOBAL__sub_I_cryptlib.cpp
  t _GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.46555.bNLYhR.ii
- t _GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.36450.l3Mf0u.ii
+ t _GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.59310.5uUkt1.ii
  t _GLOBAL__sub_I_descriptor.cc
  t _GLOBAL__sub_I_descriptor.pb.cc
  t _GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.41059.t5JaVF.ii
  t _GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.41060.1fVoP8.ii
  t _GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.41061.jX3gDE.ii
  t _GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.41062.6ZpHZE.ii
- t _GLOBAL__sub_I_doors.stdout.rel_tf_osx_builder.38380.WPeju8.ii
- t _GLOBAL__sub_I_dynamiclig.stdout.rel_tf_osx_builder.38386.lkfIHZ.ii
- t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.36476.LtiXjm.ii
- t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.36480.XWTGl5.ii
+ t _GLOBAL__sub_I_doors.stdout.rel_tf_osx_builder.61259.7XteVK.ii
+ t _GLOBAL__sub_I_dynamiclig.stdout.rel_tf_osx_builder.61261.XXzOxj.ii
+ t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.59337.ETAGAW.ii
+ t _GLOBAL__sub_I_econ_entit.stdout.rel_tf_osx_builder.59341.LkAJJe.ii
  t _GLOBAL__sub_I_econ_gcmes.stdout.rel_tf_osx_builder.4550.MuPcb2.ii
- t _GLOBAL__sub_I_econ_holid.stdout.rel_tf_osx_builder.52928.qBGeoe.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36498.vTO0Gu.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36512.j6Ijsg.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36522.ovXuLP.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36528.tGvBm4.ii
- t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.36542.2RAR3o.ii
- t _GLOBAL__sub_I_econ_paint.stdout.rel_tf_osx_builder.36546.fy2zDa.ii
- t _GLOBAL__sub_I_econ_quest.stdout.rel_tf_osx_builder.36552.NOBjY9.ii
- t _GLOBAL__sub_I_econ_weara.stdout.rel_tf_osx_builder.36560.GKB1zW.ii
- t _GLOBAL__sub_I_effect_dis.stdout.rel_tf_osx_builder.36576.c994TG.ii
- t _GLOBAL__sub_I_effects.stdout.rel_tf_osx_builder.38388.xMkL7V.ii
- t _GLOBAL__sub_I_entity_amm.stdout.rel_tf_osx_builder.40382.0Kxdz2.ii
- t _GLOBAL__sub_I_entity_arm.stdout.rel_tf_osx_builder.40386.2DMKfB.ii
- t _GLOBAL__sub_I_entity_bir.stdout.rel_tf_osx_builder.40398.IUj7wz.ii
- t _GLOBAL__sub_I_entity_bon.stdout.rel_tf_osx_builder.37022.SiaFjD.ii
- t _GLOBAL__sub_I_entity_cap.stdout.rel_tf_osx_builder.37024.ZXbcPS.ii
- t _GLOBAL__sub_I_entity_cur.stdout.rel_tf_osx_builder.40404.1Rl3jM.ii
- t _GLOBAL__sub_I_entity_for.stdout.rel_tf_osx_builder.40408.cwlYj1.ii
- t _GLOBAL__sub_I_entity_gam.stdout.rel_tf_osx_builder.40410.yfZASJ.ii
- t _GLOBAL__sub_I_entity_hal.stdout.rel_tf_osx_builder.37034.EXlmui.ii
- t _GLOBAL__sub_I_entity_hea.stdout.rel_tf_osx_builder.40413.oX1sV2.ii
- t _GLOBAL__sub_I_entity_int.stdout.rel_tf_osx_builder.40428.oWl9dP.ii
- t _GLOBAL__sub_I_entity_pas.stdout.rel_tf_osx_builder.40430.gYRMMt.ii
- t _GLOBAL__sub_I_entity_rou.stdout.rel_tf_osx_builder.40440.Cl2ufj.ii
- t _GLOBAL__sub_I_entity_run.stdout.rel_tf_osx_builder.40444.0o6SHS.ii
- t _GLOBAL__sub_I_entity_tfs.stdout.rel_tf_osx_builder.40452.HSup0J.ii
- t _GLOBAL__sub_I_entity_too.stdout.rel_tf_osx_builder.38434.NGlkRS.ii
- t _GLOBAL__sub_I_entity_tra.stdout.rel_tf_osx_builder.40456.EyCfV1.ii
- t _GLOBAL__sub_I_entitybloc.stdout.rel_tf_osx_builder.38408.ymC6Gr.ii
- t _GLOBAL__sub_I_entitylist.stdout.rel_tf_osx_builder.38426.VIPaNl.ii
- t _GLOBAL__sub_I_env_debugh.stdout.rel_tf_osx_builder.38490.S5US1E.ii
- t _GLOBAL__sub_I_env_detail.stdout.rel_tf_osx_builder.36602.J9jBzP.ii
- t _GLOBAL__sub_I_env_effect.stdout.rel_tf_osx_builder.38494.UfJR5j.ii
- t _GLOBAL__sub_I_env_entity.stdout.rel_tf_osx_builder.38502.ZiV6RD.ii
- t _GLOBAL__sub_I_env_partic.stdout.rel_tf_osx_builder.38508.sQprmC.ii
- t _GLOBAL__sub_I_env_player.stdout.rel_tf_osx_builder.38516.kEFN1q.ii
- t _GLOBAL__sub_I_env_projec.stdout.rel_tf_osx_builder.38522.SW68mF.ii
- t _GLOBAL__sub_I_env_screen.stdout.rel_tf_osx_builder.38526.eST1x7.ii
- t _GLOBAL__sub_I_env_textur.stdout.rel_tf_osx_builder.38532.J2fsgi.ii
- t _GLOBAL__sub_I_env_tonema.stdout.rel_tf_osx_builder.38534.SaEsgG.ii
- t _GLOBAL__sub_I_env_wind_s.stdout.rel_tf_osx_builder.36608.KfU9Us.ii
- t _GLOBAL__sub_I_env_zoom.stdout.rel_tf_osx_builder.38546.uwO9nr.ii
- t _GLOBAL__sub_I_envmicroph.stdout.rel_tf_osx_builder.38474.xknHGA.ii
- t _GLOBAL__sub_I_event_temp.stdout.rel_tf_osx_builder.38554.N53WPP.ii
- t _GLOBAL__sub_I_eventlist.stdout.rel_tf_osx_builder.36614.FHXFRX.ii
- t _GLOBAL__sub_I_explode.stdout.rel_tf_osx_builder.38564.ZhF5y6.ii
+ t _GLOBAL__sub_I_econ_holid.stdout.rel_tf_osx_builder.59349.BHcXIE.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.59357.I3KhQn.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.59373.mByAZy.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.59385.biuWx3.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.59389.tB3e3i.ii
+ t _GLOBAL__sub_I_econ_item_.stdout.rel_tf_osx_builder.59401.g5t7AB.ii
+ t _GLOBAL__sub_I_econ_paint.stdout.rel_tf_osx_builder.59407.7BVxOT.ii
+ t _GLOBAL__sub_I_econ_quest.stdout.rel_tf_osx_builder.59411.EHgnvp.ii
+ t _GLOBAL__sub_I_econ_weara.stdout.rel_tf_osx_builder.59421.8DB5Ey.ii
+ t _GLOBAL__sub_I_effect_dis.stdout.rel_tf_osx_builder.59437.YsfVip.ii
+ t _GLOBAL__sub_I_effects.stdout.rel_tf_osx_builder.61265.yw4RK3.ii
+ t _GLOBAL__sub_I_entity_amm.stdout.rel_tf_osx_builder.63242.7c2aHw.ii
+ t _GLOBAL__sub_I_entity_arm.stdout.rel_tf_osx_builder.63248.MFYcuE.ii
+ t _GLOBAL__sub_I_entity_bir.stdout.rel_tf_osx_builder.63258.vcVG4S.ii
+ t _GLOBAL__sub_I_entity_bon.stdout.rel_tf_osx_builder.59883.8ky7CU.ii
+ t _GLOBAL__sub_I_entity_cap.stdout.rel_tf_osx_builder.59887.uiX8yy.ii
+ t _GLOBAL__sub_I_entity_cur.stdout.rel_tf_osx_builder.63264.UjN5Tf.ii
+ t _GLOBAL__sub_I_entity_for.stdout.rel_tf_osx_builder.63268.2DRHPO.ii
+ t _GLOBAL__sub_I_entity_gam.stdout.rel_tf_osx_builder.63274.7MMyDX.ii
+ t _GLOBAL__sub_I_entity_hal.stdout.rel_tf_osx_builder.59895.CGOijP.ii
+ t _GLOBAL__sub_I_entity_hea.stdout.rel_tf_osx_builder.63278.9lYYTx.ii
+ t _GLOBAL__sub_I_entity_int.stdout.rel_tf_osx_builder.63288.wQ0TiI.ii
+ t _GLOBAL__sub_I_entity_pas.stdout.rel_tf_osx_builder.63292.Vb0Pzq.ii
+ t _GLOBAL__sub_I_entity_rou.stdout.rel_tf_osx_builder.63296.fwdlg1.ii
+ t _GLOBAL__sub_I_entity_run.stdout.rel_tf_osx_builder.63306.hqCUjE.ii
+ t _GLOBAL__sub_I_entity_tfs.stdout.rel_tf_osx_builder.63312.8stn1Y.ii
+ t _GLOBAL__sub_I_entity_too.stdout.rel_tf_osx_builder.61338.iclpLc.ii
+ t _GLOBAL__sub_I_entity_tra.stdout.rel_tf_osx_builder.63316.THEr9f.ii
+ t _GLOBAL__sub_I_entitybloc.stdout.rel_tf_osx_builder.61290.fGPSUx.ii
+ t _GLOBAL__sub_I_entitylist.stdout.rel_tf_osx_builder.61326.O4Zi9C.ii
+ t _GLOBAL__sub_I_env_debugh.stdout.rel_tf_osx_builder.61390.GnmfN9.ii
+ t _GLOBAL__sub_I_env_detail.stdout.rel_tf_osx_builder.59463.6Jiqxw.ii
+ t _GLOBAL__sub_I_env_effect.stdout.rel_tf_osx_builder.61396.QgECsb.ii
+ t _GLOBAL__sub_I_env_entity.stdout.rel_tf_osx_builder.61400.GzgHCb.ii
+ t _GLOBAL__sub_I_env_partic.stdout.rel_tf_osx_builder.61408.WSRNnq.ii
+ t _GLOBAL__sub_I_env_player.stdout.rel_tf_osx_builder.61416.sCruB2.ii
+ t _GLOBAL__sub_I_env_projec.stdout.rel_tf_osx_builder.61420.mbpW1D.ii
+ t _GLOBAL__sub_I_env_screen.stdout.rel_tf_osx_builder.61426.u7G8BR.ii
+ t _GLOBAL__sub_I_env_textur.stdout.rel_tf_osx_builder.61432.2Xs2Um.ii
+ t _GLOBAL__sub_I_env_tonema.stdout.rel_tf_osx_builder.61438.ErFYVi.ii
+ t _GLOBAL__sub_I_env_wind_s.stdout.rel_tf_osx_builder.59469.jQ4NhI.ii
+ t _GLOBAL__sub_I_env_zoom.stdout.rel_tf_osx_builder.61446.kPmz9L.ii
+ t _GLOBAL__sub_I_envmicroph.stdout.rel_tf_osx_builder.61374.fzjXDZ.ii
+ t _GLOBAL__sub_I_event_temp.stdout.rel_tf_osx_builder.61454.ar6Vxz.ii
+ t _GLOBAL__sub_I_eventlist.stdout.rel_tf_osx_builder.59475.iWPqhW.ii
+ t _GLOBAL__sub_I_explode.stdout.rel_tf_osx_builder.61464.xCF4BO.ii
  t _GLOBAL__sub_I_extension_set.cc
- t _GLOBAL__sub_I_eyeball_bo.stdout.rel_tf_osx_builder.40614.aKcddB.ii
- t _GLOBAL__sub_I_filters.stdout.rel_tf_osx_builder.38570.TvNmx2.ii
- t _GLOBAL__sub_I_fire.stdout.rel_tf_osx_builder.38572.zIcyaY.ii
- t _GLOBAL__sub_I_fire_smoke.stdout.rel_tf_osx_builder.38578.BnejM2.ii
- t _GLOBAL__sub_I_fish.stdout.rel_tf_osx_builder.38582.JBsZuW.ii
- t _GLOBAL__sub_I_fogcontrol.stdout.rel_tf_osx_builder.38592.1H4eLn.ii
- t _GLOBAL__sub_I_fourwheelv.stdout.rel_tf_osx_builder.38596.R1AUBz.ii
- t _GLOBAL__sub_I_func_achie.stdout.rel_tf_osx_builder.40462.krFCWn.ii
- t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.38602.vcvdof.ii
- t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.38612.n03Vtc.ii
- t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.38618.lbW4o4.ii
- t _GLOBAL__sub_I_func_break.stdout.rel_tf_osx_builder.38622.D633mW.ii
- t _GLOBAL__sub_I_func_break.stdout.rel_tf_osx_builder.38626.nfxRDM.ii
- t _GLOBAL__sub_I_func_captu.stdout.rel_tf_osx_builder.40464.DopGMj.ii
- t _GLOBAL__sub_I_func_chang.stdout.rel_tf_osx_builder.40476.xOesqW.ii
- t _GLOBAL__sub_I_func_croc.stdout.rel_tf_osx_builder.40482.tMz4Ob.ii
- t _GLOBAL__sub_I_func_dust.stdout.rel_tf_osx_builder.38634.2cAjdM.ii
- t _GLOBAL__sub_I_func_flag_.stdout.rel_tf_osx_builder.40486.eji3lz.ii
- t _GLOBAL__sub_I_func_force.stdout.rel_tf_osx_builder.40494.6HFCDu.ii
- t _GLOBAL__sub_I_func_ladde.stdout.rel_tf_osx_builder.36618.PU0uRx.ii
- t _GLOBAL__sub_I_func_ladde.stdout.rel_tf_osx_builder.38636.3gU3a6.ii
- t _GLOBAL__sub_I_func_lod.stdout.rel_tf_osx_builder.38638.gVWdFe.ii
- t _GLOBAL__sub_I_func_movel.stdout.rel_tf_osx_builder.38648.cNhped.ii
- t _GLOBAL__sub_I_func_nav_p.stdout.rel_tf_osx_builder.39027.HnpjFc.ii
- t _GLOBAL__sub_I_func_no_bu.stdout.rel_tf_osx_builder.40504.XyifTU.ii
- t _GLOBAL__sub_I_func_nogre.stdout.rel_tf_osx_builder.40500.nJyxq0.ii
- t _GLOBAL__sub_I_func_occlu.stdout.rel_tf_osx_builder.38660.zETPXN.ii
- t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.40512.meD4UN.ii
- t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.40518.cp9QhS.ii
- t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.40524.OsppYV.ii
- t _GLOBAL__sub_I_func_power.stdout.rel_tf_osx_builder.40528.cG6zm2.ii
- t _GLOBAL__sub_I_func_refle.stdout.rel_tf_osx_builder.38666.c2VEDD.ii
- t _GLOBAL__sub_I_func_regen.stdout.rel_tf_osx_builder.40534.StZ5o4.ii
- t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.40542.FB966r.ii
- t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.40546.NyWFwB.ii
- t _GLOBAL__sub_I_func_smoke.stdout.rel_tf_osx_builder.38672.dbHW4h.ii
- t _GLOBAL__sub_I_func_sugge.stdout.rel_tf_osx_builder.40550.tpZxpj.ii
- t _GLOBAL__sub_I_game.stdout.rel_tf_osx_builder.38674.sDxwHT.ii
- t _GLOBAL__sub_I_game_ui.stdout.rel_tf_osx_builder.38714.lWAo49.ii
- t _GLOBAL__sub_I_gamedll_re.stdout.rel_tf_osx_builder.38676.S80UyY.ii
- t _GLOBAL__sub_I_gameinterf.stdout.rel_tf_osx_builder.38684.AFyO2a.ii
- t _GLOBAL__sub_I_gamemoveme.stdout.rel_tf_osx_builder.36622.c77NRl.ii
- t _GLOBAL__sub_I_gamerules.stdout.rel_tf_osx_builder.36632.9DEC1Y.ii
- t _GLOBAL__sub_I_gamestring.stdout.rel_tf_osx_builder.36650.On1IfB.ii
- t _GLOBAL__sub_I_gamevars_s.stdout.rel_tf_osx_builder.36654.iZvDwl.ii
- t _GLOBAL__sub_I_gameweapon.stdout.rel_tf_osx_builder.38708.EJfABN.ii
- t _GLOBAL__sub_I_gc_clients.stdout.rel_tf_osx_builder.36662.QrY2lE.ii
- t _GLOBAL__sub_I_gc_replica.stdout.rel_tf_osx_builder.36668.fWpnB5.ii
+ t _GLOBAL__sub_I_eyeball_bo.stdout.rel_tf_osx_builder.63474.sXSWI2.ii
+ t _GLOBAL__sub_I_filters.stdout.rel_tf_osx_builder.61470.RGqp1C.ii
+ t _GLOBAL__sub_I_fire.stdout.rel_tf_osx_builder.61473.8mI8f6.ii
+ t _GLOBAL__sub_I_fire_smoke.stdout.rel_tf_osx_builder.61478.ehKMuU.ii
+ t _GLOBAL__sub_I_fish.stdout.rel_tf_osx_builder.61488.SJdbzc.ii
+ t _GLOBAL__sub_I_fogcontrol.stdout.rel_tf_osx_builder.61492.chgkZ2.ii
+ t _GLOBAL__sub_I_fourwheelv.stdout.rel_tf_osx_builder.61495.0Y4ik9.ii
+ t _GLOBAL__sub_I_func_achie.stdout.rel_tf_osx_builder.63320.Mp1TAd.ii
+ t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.61502.Blaktd.ii
+ t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.61512.ixDV3f.ii
+ t _GLOBAL__sub_I_func_areap.stdout.rel_tf_osx_builder.61518.btCTVw.ii
+ t _GLOBAL__sub_I_func_break.stdout.rel_tf_osx_builder.61522.fqbR8m.ii
+ t _GLOBAL__sub_I_func_break.stdout.rel_tf_osx_builder.61528.Q7BsyS.ii
+ t _GLOBAL__sub_I_func_captu.stdout.rel_tf_osx_builder.63328.8Q0DVx.ii
+ t _GLOBAL__sub_I_func_chang.stdout.rel_tf_osx_builder.63336.d2OEws.ii
+ t _GLOBAL__sub_I_func_croc.stdout.rel_tf_osx_builder.63340.TTfL95.ii
+ t _GLOBAL__sub_I_func_dust.stdout.rel_tf_osx_builder.61536.HHSKjT.ii
+ t _GLOBAL__sub_I_func_flag_.stdout.rel_tf_osx_builder.63344.TK0Z4m.ii
+ t _GLOBAL__sub_I_func_force.stdout.rel_tf_osx_builder.63354.3Cakbx.ii
+ t _GLOBAL__sub_I_func_ladde.stdout.rel_tf_osx_builder.59479.UTFxc3.ii
+ t _GLOBAL__sub_I_func_ladde.stdout.rel_tf_osx_builder.61537.gCZjKV.ii
+ t _GLOBAL__sub_I_func_lod.stdout.rel_tf_osx_builder.61544.ZO4EuJ.ii
+ t _GLOBAL__sub_I_func_movel.stdout.rel_tf_osx_builder.61548.bFg3Dv.ii
+ t _GLOBAL__sub_I_func_nav_p.stdout.rel_tf_osx_builder.61890.GohQTS.ii
+ t _GLOBAL__sub_I_func_no_bu.stdout.rel_tf_osx_builder.63364.W1ZUMX.ii
+ t _GLOBAL__sub_I_func_nogre.stdout.rel_tf_osx_builder.63360.dqrwVO.ii
+ t _GLOBAL__sub_I_func_occlu.stdout.rel_tf_osx_builder.61560.Aukx2u.ii
+ t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.63372.Wx5mlT.ii
+ t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.63378.GdR1sj.ii
+ t _GLOBAL__sub_I_func_passt.stdout.rel_tf_osx_builder.63382.TZ8hog.ii
+ t _GLOBAL__sub_I_func_power.stdout.rel_tf_osx_builder.63386.oe3Fpg.ii
+ t _GLOBAL__sub_I_func_refle.stdout.rel_tf_osx_builder.61566.nQHMjP.ii
+ t _GLOBAL__sub_I_func_regen.stdout.rel_tf_osx_builder.63392.qpH7L4.ii
+ t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.63402.DcxL58.ii
+ t _GLOBAL__sub_I_func_respa.stdout.rel_tf_osx_builder.63406.LUIEf3.ii
+ t _GLOBAL__sub_I_func_smoke.stdout.rel_tf_osx_builder.61572.cU9KSV.ii
+ t _GLOBAL__sub_I_func_sugge.stdout.rel_tf_osx_builder.63410.QTSeQm.ii
+ t _GLOBAL__sub_I_game.stdout.rel_tf_osx_builder.61576.Pa1FQo.ii
+ t _GLOBAL__sub_I_game_ui.stdout.rel_tf_osx_builder.61614.573vQe.ii
+ t _GLOBAL__sub_I_gamedll_re.stdout.rel_tf_osx_builder.61582.iYP9ZP.ii
+ t _GLOBAL__sub_I_gameinterf.stdout.rel_tf_osx_builder.61586.k7iTyY.ii
+ t _GLOBAL__sub_I_gamemoveme.stdout.rel_tf_osx_builder.59484.nXATfk.ii
+ t _GLOBAL__sub_I_gamerules.stdout.rel_tf_osx_builder.59491.l8Zn2R.ii
+ t _GLOBAL__sub_I_gamestring.stdout.rel_tf_osx_builder.59511.QelOTj.ii
+ t _GLOBAL__sub_I_gamevars_s.stdout.rel_tf_osx_builder.59515.FjDjTr.ii
+ t _GLOBAL__sub_I_gameweapon.stdout.rel_tf_osx_builder.61608.1QHUaK.ii
+ t _GLOBAL__sub_I_gc_clients.stdout.rel_tf_osx_builder.59523.W8nbuc.ii
+ t _GLOBAL__sub_I_gc_replica.stdout.rel_tf_osx_builder.59527.FgRphc.ii
  t _GLOBAL__sub_I_gcclient.stdout.rel_tf_osx_builder.4121.Mf4WTa.ii
  t _GLOBAL__sub_I_gcsdk_gcme.stdout.rel_tf_osx_builder.4119.oglTWI.ii
  t _GLOBAL__sub_I_gcsystemms.stdout.rel_tf_osx_builder.51915.s3ALZW.ii
- t _GLOBAL__sub_I_genericact.stdout.rel_tf_osx_builder.38720.NGhmcd.ii
- t _GLOBAL__sub_I_genericmon.stdout.rel_tf_osx_builder.38722.etgh53.ii
- t _GLOBAL__sub_I_ghost.stdout.rel_tf_osx_builder.40616.9c1NIB.ii
- t _GLOBAL__sub_I_gib.stdout.rel_tf_osx_builder.38728.2ZITFt.ii
- t _GLOBAL__sub_I_globalstat.stdout.rel_tf_osx_builder.38738.70QPNo.ii
- t _GLOBAL__sub_I_guntarget.stdout.rel_tf_osx_builder.38754.B2uVDR.ii
- t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.40632.DvG6yy.ii
- t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.40662.ukn3XK.ii
- t _GLOBAL__sub_I_hintsystem.stdout.rel_tf_osx_builder.36678.BGQ8fN.ii
- t _GLOBAL__sub_I_hltvdirect.stdout.rel_tf_osx_builder.38778.uFaroO.ii
- t _GLOBAL__sub_I_igamesyste.stdout.rel_tf_osx_builder.36692.DIX2Fj.ii
- t _GLOBAL__sub_I_info_camer.stdout.rel_tf_osx_builder.38784.gxf1Gq.ii
- t _GLOBAL__sub_I_info_overl.stdout.rel_tf_osx_builder.38798.zeZLJn.ii
- t _GLOBAL__sub_I_intermissi.stdout.rel_tf_osx_builder.38818.UCX7UD.ii
- t _GLOBAL__sub_I_item_world.stdout.rel_tf_osx_builder.38826.4K9ghM.ii
+ t _GLOBAL__sub_I_genericact.stdout.rel_tf_osx_builder.61620.GEmsPa.ii
+ t _GLOBAL__sub_I_genericmon.stdout.rel_tf_osx_builder.61624.ti4Vjd.ii
+ t _GLOBAL__sub_I_ghost.stdout.rel_tf_osx_builder.63478.GLDG4U.ii
+ t _GLOBAL__sub_I_gib.stdout.rel_tf_osx_builder.61628.88UZK0.ii
+ t _GLOBAL__sub_I_globalstat.stdout.rel_tf_osx_builder.61638.EbMEch.ii
+ t _GLOBAL__sub_I_guntarget.stdout.rel_tf_osx_builder.61654.V5aRGs.ii
+ t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.63492.EVp8PA.ii
+ t _GLOBAL__sub_I_headless_h.stdout.rel_tf_osx_builder.63522.gd4E3H.ii
+ t _GLOBAL__sub_I_hintsystem.stdout.rel_tf_osx_builder.59539.vxbZ3f.ii
+ t _GLOBAL__sub_I_hltvdirect.stdout.rel_tf_osx_builder.61678.L5YnE7.ii
+ t _GLOBAL__sub_I_igamesyste.stdout.rel_tf_osx_builder.59553.IMl40X.ii
+ t _GLOBAL__sub_I_info_camer.stdout.rel_tf_osx_builder.61685.8hVQBu.ii
+ t _GLOBAL__sub_I_info_overl.stdout.rel_tf_osx_builder.61698.4YAMSV.ii
+ t _GLOBAL__sub_I_intermissi.stdout.rel_tf_osx_builder.61702.yZVdyH.ii
+ t _GLOBAL__sub_I_item_world.stdout.rel_tf_osx_builder.61708.3Kae2Q.ii
  t _GLOBAL__sub_I_keyframe.stdout.rel_tf_osx_builder.48022.kmLx7L.ii
- t _GLOBAL__sub_I_lightglow.stdout.rel_tf_osx_builder.38837.P8OBM1.ii
- t _GLOBAL__sub_I_lights.stdout.rel_tf_osx_builder.38839.0BgXRb.ii
- t _GLOBAL__sub_I_logic_meas.stdout.rel_tf_osx_builder.38883.b9Kt6l.ii
- t _GLOBAL__sub_I_logic_navi.stdout.rel_tf_osx_builder.38887.jqLRHC.ii
- t _GLOBAL__sub_I_logicauto.stdout.rel_tf_osx_builder.38855.anX1VL.ii
- t _GLOBAL__sub_I_logicentit.stdout.rel_tf_osx_builder.38859.8NfeDX.ii
- t _GLOBAL__sub_I_logicrelay.stdout.rel_tf_osx_builder.38867.d92HTM.ii
- t _GLOBAL__sub_I_maprules.stdout.rel_tf_osx_builder.38899.xrImL5.ii
- t _GLOBAL__sub_I_maps_works.stdout.rel_tf_osx_builder.36248.ADWaJO.ii
- t _GLOBAL__sub_I_merasmus.stdout.rel_tf_osx_builder.40672.fvSeX9.ii
- t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.40688.a9r8X4.ii
- t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.40745.q2PGxn.ii
- t _GLOBAL__sub_I_merasmus_t.stdout.rel_tf_osx_builder.40752.XaCPvl.ii
- t _GLOBAL__sub_I_message_en.stdout.rel_tf_osx_builder.38913.2KJs7S.ii
+ t _GLOBAL__sub_I_lightglow.stdout.rel_tf_osx_builder.61716.ATtS4k.ii
+ t _GLOBAL__sub_I_lights.stdout.rel_tf_osx_builder.61718.bG8FyQ.ii
+ t _GLOBAL__sub_I_logic_meas.stdout.rel_tf_osx_builder.61746.Up9vq2.ii
+ t _GLOBAL__sub_I_logic_navi.stdout.rel_tf_osx_builder.61750.ErHi99.ii
+ t _GLOBAL__sub_I_logicauto.stdout.rel_tf_osx_builder.61728.STFhSq.ii
+ t _GLOBAL__sub_I_logicentit.stdout.rel_tf_osx_builder.61732.5Wt6Xn.ii
+ t _GLOBAL__sub_I_logicrelay.stdout.rel_tf_osx_builder.61736.85gJ6d.ii
+ t _GLOBAL__sub_I_maprules.stdout.rel_tf_osx_builder.61761.iJj0wP.ii
+ t _GLOBAL__sub_I_maps_works.stdout.rel_tf_osx_builder.59151.1WYYZB.ii
+ t _GLOBAL__sub_I_merasmus.stdout.rel_tf_osx_builder.63533.i9BTMh.ii
+ t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.63548.RLHTlT.ii
+ t _GLOBAL__sub_I_merasmus_d.stdout.rel_tf_osx_builder.63602.1iHseA.ii
+ t _GLOBAL__sub_I_merasmus_t.stdout.rel_tf_osx_builder.63612.tLgbNj.ii
+ t _GLOBAL__sub_I_message_en.stdout.rel_tf_osx_builder.61774.ljwY33.ii
  t _GLOBAL__sub_I_messagelis.stdout.rel_tf_osx_builder.4186.X7BBEr.ii
- t _GLOBAL__sub_I_modelentit.stdout.rel_tf_osx_builder.38919.XhOC9m.ii
- t _GLOBAL__sub_I_monster_re.stdout.rel_tf_osx_builder.40926.0uFMgt.ii
- t _GLOBAL__sub_I_monstermak.stdout.rel_tf_osx_builder.38927.lKk257.ii
- t _GLOBAL__sub_I_movement.stdout.rel_tf_osx_builder.38937.sv5Q9J.ii
- t _GLOBAL__sub_I_movevars_s.stdout.rel_tf_osx_builder.36714.4uvxaD.ii
- t _GLOBAL__sub_I_movie_expl.stdout.rel_tf_osx_builder.38945.F0LENj.ii
+ t _GLOBAL__sub_I_modelentit.stdout.rel_tf_osx_builder.61782.ms1hi0.ii
+ t _GLOBAL__sub_I_monster_re.stdout.rel_tf_osx_builder.63825.ixKIO3.ii
+ t _GLOBAL__sub_I_monstermak.stdout.rel_tf_osx_builder.61788.pfNby3.ii
+ t _GLOBAL__sub_I_movement.stdout.rel_tf_osx_builder.61798.PHX5b0.ii
+ t _GLOBAL__sub_I_movevars_s.stdout.rel_tf_osx_builder.59575.4RQ35w.ii
+ t _GLOBAL__sub_I_movie_expl.stdout.rel_tf_osx_builder.61806.nQeFEa.ii
  t _GLOBAL__sub_I_msgprotobu.stdout.rel_tf_osx_builder.4192.Smq02E.ii
- t _GLOBAL__sub_I_multiplay_.stdout.rel_tf_osx_builder.36734.ksMvuG.ii
- t _GLOBAL__sub_I_multiplaye.stdout.rel_tf_osx_builder.36726.yi1ozA.ii
- t _GLOBAL__sub_I_nav_area.stdout.rel_tf_osx_builder.38947.uu2W2A.ii
- t _GLOBAL__sub_I_nav_edit.stdout.rel_tf_osx_builder.38959.1g6NjF.ii
- t _GLOBAL__sub_I_nav_entiti.stdout.rel_tf_osx_builder.38967.GYnK1e.ii
- t _GLOBAL__sub_I_nav_file.stdout.rel_tf_osx_builder.38975.N9FLnb.ii
- t _GLOBAL__sub_I_nav_genera.stdout.rel_tf_osx_builder.38979.OLUrOF.ii
- t _GLOBAL__sub_I_nav_merge.stdout.rel_tf_osx_builder.38993.llpfXB.ii
- t _GLOBAL__sub_I_nav_mesh.stdout.rel_tf_osx_builder.38995.U5tTh4.ii
- t _GLOBAL__sub_I_nav_node.stdout.rel_tf_osx_builder.39011.n2CJcx.ii
- t _GLOBAL__sub_I_nav_simpli.stdout.rel_tf_osx_builder.39015.yTCb7x.ii
- t _GLOBAL__sub_I_ndebugover.stdout.rel_tf_osx_builder.39021.dyB4hj.ii
+ t _GLOBAL__sub_I_multiplay_.stdout.rel_tf_osx_builder.59595.rTxyXU.ii
+ t _GLOBAL__sub_I_multiplaye.stdout.rel_tf_osx_builder.59587.pP27hE.ii
+ t _GLOBAL__sub_I_nav_area.stdout.rel_tf_osx_builder.61810.gVqxBl.ii
+ t _GLOBAL__sub_I_nav_edit.stdout.rel_tf_osx_builder.61822.ScgcHm.ii
+ t _GLOBAL__sub_I_nav_entiti.stdout.rel_tf_osx_builder.61830.aAUY96.ii
+ t _GLOBAL__sub_I_nav_file.stdout.rel_tf_osx_builder.61836.uHOqjD.ii
+ t _GLOBAL__sub_I_nav_genera.stdout.rel_tf_osx_builder.61842.gl4mKX.ii
+ t _GLOBAL__sub_I_nav_merge.stdout.rel_tf_osx_builder.61852.dGxBud.ii
+ t _GLOBAL__sub_I_nav_mesh.stdout.rel_tf_osx_builder.61856.DY59Qr.ii
+ t _GLOBAL__sub_I_nav_node.stdout.rel_tf_osx_builder.61872.ggkQfg.ii
+ t _GLOBAL__sub_I_nav_simpli.stdout.rel_tf_osx_builder.61876.Riz6Ow.ii
+ t _GLOBAL__sub_I_ndebugover.stdout.rel_tf_osx_builder.61882.r88e7a.ii
  t _GLOBAL__sub_I_netpacketp.stdout.rel_tf_osx_builder.4204.rosNTq.ii
- t _GLOBAL__sub_I_npc_vehicl.stdout.rel_tf_osx_builder.39131.nJ7iSy.ii
- t _GLOBAL__sub_I_obstacle_p.stdout.rel_tf_osx_builder.36740.bGUrie.ii
- t _GLOBAL__sub_I_particle_f.stdout.rel_tf_osx_builder.39137.mLrGhl.ii
- t _GLOBAL__sub_I_particle_l.stdout.rel_tf_osx_builder.39143.GmnO6W.ii
- t _GLOBAL__sub_I_particle_p.stdout.rel_tf_osx_builder.36752.kHeFeV.ii
- t _GLOBAL__sub_I_particle_s.stdout.rel_tf_osx_builder.39149.94s05k.ii
- t _GLOBAL__sub_I_particle_s.stdout.rel_tf_osx_builder.39155.OILa7a.ii
+ t _GLOBAL__sub_I_npc_vehicl.stdout.rel_tf_osx_builder.61990.INJkMf.ii
+ t _GLOBAL__sub_I_obstacle_p.stdout.rel_tf_osx_builder.59601.H20SiG.ii
+ t _GLOBAL__sub_I_particle_f.stdout.rel_tf_osx_builder.61996.y7bJwa.ii
+ t _GLOBAL__sub_I_particle_l.stdout.rel_tf_osx_builder.62004.Kikj2M.ii
+ t _GLOBAL__sub_I_particle_p.stdout.rel_tf_osx_builder.59608.Dwqpgh.ii
+ t _GLOBAL__sub_I_particle_s.stdout.rel_tf_osx_builder.62010.tVwHao.ii
+ t _GLOBAL__sub_I_particle_s.stdout.rel_tf_osx_builder.62016.bUdnsW.ii
  t _GLOBAL__sub_I_particles.stdout.rel_tf_osx_builder.41113.sjx3hH.ii
- t _GLOBAL__sub_I_particlesy.stdout.rel_tf_osx_builder.36744.7yMO5p.ii
- t _GLOBAL__sub_I_passtime_c.stdout.rel_tf_osx_builder.37050.GKeXmf.ii
- t _GLOBAL__sub_I_pathcorner.stdout.rel_tf_osx_builder.39159.CI75k5.ii
- t _GLOBAL__sub_I_pathtrack.stdout.rel_tf_osx_builder.39167.Wfj45R.ii
- t _GLOBAL__sub_I_phys_contr.stdout.rel_tf_osx_builder.39233.e2vQbH.ii
- t _GLOBAL__sub_I_physconstr.stdout.rel_tf_osx_builder.39173.87He8f.ii
- t _GLOBAL__sub_I_physics.stdout.rel_tf_osx_builder.39177.ffA9t0.ii
- t _GLOBAL__sub_I_physics_bo.stdout.rel_tf_osx_builder.39183.6G9AVP.ii
- t _GLOBAL__sub_I_physics_ca.stdout.rel_tf_osx_builder.39191.w5pUzz.ii
- t _GLOBAL__sub_I_physics_ma.stdout.rel_tf_osx_builder.36758.sGrUsq.ii
- t _GLOBAL__sub_I_physics_ma.stdout.rel_tf_osx_builder.39207.VQcCfv.ii
- t _GLOBAL__sub_I_physics_np.stdout.rel_tf_osx_builder.39215.gSwGK1.ii
- t _GLOBAL__sub_I_physics_pr.stdout.rel_tf_osx_builder.39221.eRsvJg.ii
- t _GLOBAL__sub_I_physics_sa.stdout.rel_tf_osx_builder.36762.FXgVNd.ii
- t _GLOBAL__sub_I_physobj.stdout.rel_tf_osx_builder.39223.V7ZFjp.ii
- t _GLOBAL__sub_I_plasma.stdout.rel_tf_osx_builder.39237.5xToYE.ii
- t _GLOBAL__sub_I_player.stdout.rel_tf_osx_builder.39243.UFRcu9.ii
- t _GLOBAL__sub_I_player_com.stdout.rel_tf_osx_builder.39261.63isCk.ii
- t _GLOBAL__sub_I_player_lag.stdout.rel_tf_osx_builder.39269.h25sio.ii
- t _GLOBAL__sub_I_player_res.stdout.rel_tf_osx_builder.39273.rZ7rN8.ii
- t _GLOBAL__sub_I_playerclas.stdout.rel_tf_osx_builder.36776.ANkWRE.ii
- t _GLOBAL__sub_I_playerinfo.stdout.rel_tf_osx_builder.39251.djfVmV.ii
- t _GLOBAL__sub_I_playerloca.stdout.rel_tf_osx_builder.39257.DxxCxo.ii
- t _GLOBAL__sub_I_plugin_che.stdout.rel_tf_osx_builder.39281.yhg9WE.ii
- t _GLOBAL__sub_I_point_bonu.stdout.rel_tf_osx_builder.36782.CKliZe.ii
- t _GLOBAL__sub_I_point_came.stdout.rel_tf_osx_builder.39313.CeaKwK.ii
- t _GLOBAL__sub_I_point_devs.stdout.rel_tf_osx_builder.39319.HRTxHc.ii
- t _GLOBAL__sub_I_point_play.stdout.rel_tf_osx_builder.39323.tiPC4T.ii
- t _GLOBAL__sub_I_point_pose.stdout.rel_tf_osx_builder.36786.jvMOZh.ii
- t _GLOBAL__sub_I_point_spot.stdout.rel_tf_osx_builder.39331.8zMNDQ.ii
- t _GLOBAL__sub_I_point_temp.stdout.rel_tf_osx_builder.39339.GCyrOf.ii
- t _GLOBAL__sub_I_pointangle.stdout.rel_tf_osx_builder.39293.kHm7Ya.ii
- t _GLOBAL__sub_I_pointhurt.stdout.rel_tf_osx_builder.39303.tRRS9H.ii
- t _GLOBAL__sub_I_pointtelep.stdout.rel_tf_osx_builder.39311.t4KSxl.ii
- t _GLOBAL__sub_I_props.stdout.rel_tf_osx_builder.39347.Dbwz2S.ii
- t _GLOBAL__sub_I_props_shar.stdout.rel_tf_osx_builder.36806.N9l3A8.ii
- t _GLOBAL__sub_I_querycache.stdout.rel_tf_osx_builder.36810.wjJMQQ.ii
- t _GLOBAL__sub_I_quest_obje.stdout.rel_tf_osx_builder.37064.PdPV2n.ii
- t _GLOBAL__sub_I_ragdoll_ma.stdout.rel_tf_osx_builder.39359.3hyHjt.ii
- t _GLOBAL__sub_I_ragdoll_sh.stdout.rel_tf_osx_builder.36818.mUi4vq.ii
- t _GLOBAL__sub_I_recipientf.stdout.rel_tf_osx_builder.39363.Z2GOGy.ii
- t _GLOBAL__sub_I_rope.stdout.rel_tf_osx_builder.39364.snKWkz.ii
- t _GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.36830.cGGpXM.ii
- t _GLOBAL__sub_I_sceneentit.stdout.rel_tf_osx_builder.36848.BxtlAN.ii
- t _GLOBAL__sub_I_sceneentit.stdout.rel_tf_osx_builder.39383.FcrFip.ii
- t _GLOBAL__sub_I_scripted.stdout.rel_tf_osx_builder.39395.AJ9MCi.ii
- t _GLOBAL__sub_I_scriptedta.stdout.rel_tf_osx_builder.39401.7M9ack.ii
- t _GLOBAL__sub_I_sendproxy.stdout.rel_tf_osx_builder.39405.00hoyA.ii
- t _GLOBAL__sub_I_serverbenc.stdout.rel_tf_osx_builder.36243.zSNXVt.ii
- t _GLOBAL__sub_I_serverbenc.stdout.rel_tf_osx_builder.36244.GnurA9.ii
- t _GLOBAL__sub_I_shadowcont.stdout.rel_tf_osx_builder.39417.0d7q9c.ii
- t _GLOBAL__sub_I_shared_obj.stdout.rel_tf_osx_builder.37072.vxdpna.ii
+ t _GLOBAL__sub_I_particlesy.stdout.rel_tf_osx_builder.59605.t4elrL.ii
+ t _GLOBAL__sub_I_passtime_c.stdout.rel_tf_osx_builder.59909.pZB5IB.ii
+ t _GLOBAL__sub_I_pathcorner.stdout.rel_tf_osx_builder.62020.Gs3Mgs.ii
+ t _GLOBAL__sub_I_pathtrack.stdout.rel_tf_osx_builder.62026.ywpfCQ.ii
+ t _GLOBAL__sub_I_phys_contr.stdout.rel_tf_osx_builder.62094.xlmgzB.ii
+ t _GLOBAL__sub_I_physconstr.stdout.rel_tf_osx_builder.62034.J04R1o.ii
+ t _GLOBAL__sub_I_physics.stdout.rel_tf_osx_builder.62038.H99NKy.ii
+ t _GLOBAL__sub_I_physics_bo.stdout.rel_tf_osx_builder.62044.uUtdHC.ii
+ t _GLOBAL__sub_I_physics_ca.stdout.rel_tf_osx_builder.62052.4OjYyy.ii
+ t _GLOBAL__sub_I_physics_ma.stdout.rel_tf_osx_builder.59619.EvEZdw.ii
+ t _GLOBAL__sub_I_physics_ma.stdout.rel_tf_osx_builder.62068.YTdm8r.ii
+ t _GLOBAL__sub_I_physics_np.stdout.rel_tf_osx_builder.62074.PEQTiH.ii
+ t _GLOBAL__sub_I_physics_pr.stdout.rel_tf_osx_builder.62082.yuYRcz.ii
+ t _GLOBAL__sub_I_physics_sa.stdout.rel_tf_osx_builder.59623.PXB9qa.ii
+ t _GLOBAL__sub_I_physobj.stdout.rel_tf_osx_builder.62086.h9nY47.ii
+ t _GLOBAL__sub_I_plasma.stdout.rel_tf_osx_builder.62095.h9h4nb.ii
+ t _GLOBAL__sub_I_player.stdout.rel_tf_osx_builder.62106.uABwfy.ii
+ t _GLOBAL__sub_I_player_com.stdout.rel_tf_osx_builder.62124.YWI7sn.ii
+ t _GLOBAL__sub_I_player_lag.stdout.rel_tf_osx_builder.62130.jb08hR.ii
+ t _GLOBAL__sub_I_player_res.stdout.rel_tf_osx_builder.62138.RJPh24.ii
+ t _GLOBAL__sub_I_playerclas.stdout.rel_tf_osx_builder.59637.mH1CZa.ii
+ t _GLOBAL__sub_I_playerinfo.stdout.rel_tf_osx_builder.62110.lnd27l.ii
+ t _GLOBAL__sub_I_playerloca.stdout.rel_tf_osx_builder.62118.uinBa3.ii
+ t _GLOBAL__sub_I_plugin_che.stdout.rel_tf_osx_builder.62144.bneysS.ii
+ t _GLOBAL__sub_I_point_bonu.stdout.rel_tf_osx_builder.59643.fY2phl.ii
+ t _GLOBAL__sub_I_point_came.stdout.rel_tf_osx_builder.62176.19UAcJ.ii
+ t _GLOBAL__sub_I_point_devs.stdout.rel_tf_osx_builder.62180.u0cIlh.ii
+ t _GLOBAL__sub_I_point_play.stdout.rel_tf_osx_builder.62184.pdNtrz.ii
+ t _GLOBAL__sub_I_point_pose.stdout.rel_tf_osx_builder.59647.IET0gr.ii
+ t _GLOBAL__sub_I_point_spot.stdout.rel_tf_osx_builder.62185.Oc5Jm6.ii
+ t _GLOBAL__sub_I_point_temp.stdout.rel_tf_osx_builder.62198.JIDD2v.ii
+ t _GLOBAL__sub_I_pointangle.stdout.rel_tf_osx_builder.62152.hUkCE8.ii
+ t _GLOBAL__sub_I_pointhurt.stdout.rel_tf_osx_builder.62166.LiRvHf.ii
+ t _GLOBAL__sub_I_pointtelep.stdout.rel_tf_osx_builder.62172.ZDrhDe.ii
+ t _GLOBAL__sub_I_props.stdout.rel_tf_osx_builder.62208.eRsCX4.ii
+ t _GLOBAL__sub_I_props_shar.stdout.rel_tf_osx_builder.59667.byM2aH.ii
+ t _GLOBAL__sub_I_querycache.stdout.rel_tf_osx_builder.59671.sElVeD.ii
+ t _GLOBAL__sub_I_quest_obje.stdout.rel_tf_osx_builder.59925.BuYzbv.ii
+ t _GLOBAL__sub_I_ragdoll_ma.stdout.rel_tf_osx_builder.62220.H9kEkL.ii
+ t _GLOBAL__sub_I_ragdoll_sh.stdout.rel_tf_osx_builder.59679.PVgyvu.ii
+ t _GLOBAL__sub_I_recipientf.stdout.rel_tf_osx_builder.62224.sTpQHz.ii
+ t _GLOBAL__sub_I_rope.stdout.rel_tf_osx_builder.62227.OOcEWX.ii
+ t _GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.59691.unlkBA.ii
+ t _GLOBAL__sub_I_sceneentit.stdout.rel_tf_osx_builder.59709.viLkX1.ii
+ t _GLOBAL__sub_I_sceneentit.stdout.rel_tf_osx_builder.62243.tRAYfq.ii
+ t _GLOBAL__sub_I_scripted.stdout.rel_tf_osx_builder.62256.8hvfxe.ii
+ t _GLOBAL__sub_I_scriptedta.stdout.rel_tf_osx_builder.62262.SUUDZs.ii
+ t _GLOBAL__sub_I_sendproxy.stdout.rel_tf_osx_builder.62266.OV8uux.ii
+ t _GLOBAL__sub_I_serverbenc.stdout.rel_tf_osx_builder.59146.AiJhZs.ii
+ t _GLOBAL__sub_I_serverbenc.stdout.rel_tf_osx_builder.59147.EaiWuX.ii
+ t _GLOBAL__sub_I_shadowcont.stdout.rel_tf_osx_builder.62278.GQbOIp.ii
+ t _GLOBAL__sub_I_shared_obj.stdout.rel_tf_osx_builder.59935.Tkq3wt.ii
  t _GLOBAL__sub_I_sharedobje.stdout.rel_tf_osx_builder.4214.mPnHG3.ii
- t _GLOBAL__sub_I_simple_bot.stdout.rel_tf_osx_builder.39122.xLDSTf.ii
- t _GLOBAL__sub_I_simtimer.stdout.rel_tf_osx_builder.36858.sXjfkj.ii
- t _GLOBAL__sub_I_slideshow_.stdout.rel_tf_osx_builder.39425.DJ6vr3.ii
- t _GLOBAL__sub_I_smoke_trai.stdout.rel_tf_osx_builder.39441.e6UYku.ii
- t _GLOBAL__sub_I_smokestack.stdout.rel_tf_osx_builder.39437.rOuncz.ii
- t _GLOBAL__sub_I_sound.stdout.rel_tf_osx_builder.39449.Ps6dAM.ii
- t _GLOBAL__sub_I_soundent.stdout.rel_tf_osx_builder.39453.YbMp3W.ii
- t _GLOBAL__sub_I_soundenvel.stdout.rel_tf_osx_builder.36874.N7rkbv.ii
- t _GLOBAL__sub_I_soundscape.stdout.rel_tf_osx_builder.39459.JXSnW6.ii
- t _GLOBAL__sub_I_soundscape.stdout.rel_tf_osx_builder.39465.EKBrVj.ii
- t _GLOBAL__sub_I_spotlighte.stdout.rel_tf_osx_builder.39469.Dja0VH.ii
- t _GLOBAL__sub_I_sprite_per.stdout.rel_tf_osx_builder.39477.Ia9cLZ.ii
+ t _GLOBAL__sub_I_simple_bot.stdout.rel_tf_osx_builder.61986.AyGoUS.ii
+ t _GLOBAL__sub_I_simtimer.stdout.rel_tf_osx_builder.59719.LeqQd2.ii
+ t _GLOBAL__sub_I_slideshow_.stdout.rel_tf_osx_builder.62288.JUsTLI.ii
+ t _GLOBAL__sub_I_smoke_trai.stdout.rel_tf_osx_builder.62302.YRx6f9.ii
+ t _GLOBAL__sub_I_smokestack.stdout.rel_tf_osx_builder.62298.IwxfX7.ii
+ t _GLOBAL__sub_I_sound.stdout.rel_tf_osx_builder.62310.FrQt8Q.ii
+ t _GLOBAL__sub_I_soundent.stdout.rel_tf_osx_builder.62314.J215bf.ii
+ t _GLOBAL__sub_I_soundenvel.stdout.rel_tf_osx_builder.59737.cwjARg.ii
+ t _GLOBAL__sub_I_soundscape.stdout.rel_tf_osx_builder.62318.WT4EmR.ii
+ t _GLOBAL__sub_I_soundscape.stdout.rel_tf_osx_builder.62326.DmmLUE.ii
+ t _GLOBAL__sub_I_spotlighte.stdout.rel_tf_osx_builder.62332.BdBlDG.ii
+ t _GLOBAL__sub_I_sprite_per.stdout.rel_tf_osx_builder.62340.aAPpY2.ii
  t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
- t _GLOBAL__sub_I_steamjet.stdout.rel_tf_osx_builder.39491.78WbjP.ii
+ t _GLOBAL__sub_I_steamjet.stdout.rel_tf_osx_builder.62352.fei7Op.ii
  t _GLOBAL__sub_I_steammessa.stdout.rel_tf_osx_builder.5927.CEqYax.ii
- t _GLOBAL__sub_I_steamworks.stdout.rel_tf_osx_builder.36896.NsjHrZ.ii
+ t _GLOBAL__sub_I_steamworks.stdout.rel_tf_osx_builder.59757.FWTd1k.ii
  t _GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.22591.zRkBcl.ii
- t _GLOBAL__sub_I_subs.stdout.rel_tf_osx_builder.39495.8HBmtY.ii
- t _GLOBAL__sub_I_sun.stdout.rel_tf_osx_builder.39499.zNDbjT.ii
- t _GLOBAL__sub_I_tactical_m.stdout.rel_tf_osx_builder.39509.IDS1Dx.ii
- t _GLOBAL__sub_I_takedamage.stdout.rel_tf_osx_builder.36906.m8ptuO.ii
- t _GLOBAL__sub_I_tanktrain.stdout.rel_tf_osx_builder.39511.PGcwbP.ii
- t _GLOBAL__sub_I_te.stdout.rel_tf_osx_builder.39513.aBXoI7.ii
- t _GLOBAL__sub_I_te_armorri.stdout.rel_tf_osx_builder.39607.EYLqcJ.ii
- t _GLOBAL__sub_I_te_basebea.stdout.rel_tf_osx_builder.39609.Aq137m.ii
- t _GLOBAL__sub_I_te_beament.stdout.rel_tf_osx_builder.39619.5dDhxo.ii
- t _GLOBAL__sub_I_te_beament.stdout.rel_tf_osx_builder.39629.gN0fSd.ii
- t _GLOBAL__sub_I_te_beamfol.stdout.rel_tf_osx_builder.39635.eMJAoN.ii
- t _GLOBAL__sub_I_te_beamlas.stdout.rel_tf_osx_builder.39641.wS0It4.ii
- t _GLOBAL__sub_I_te_beampoi.stdout.rel_tf_osx_builder.39645.pEf6Hp.ii
- t _GLOBAL__sub_I_te_beamrin.stdout.rel_tf_osx_builder.39647.4Yrg9O.ii
- t _GLOBAL__sub_I_te_beamrin.stdout.rel_tf_osx_builder.39651.mpaY8b.ii
- t _GLOBAL__sub_I_te_beamspl.stdout.rel_tf_osx_builder.39662.cAfHbB.ii
- t _GLOBAL__sub_I_te_bloodsp.stdout.rel_tf_osx_builder.39669.v6lkyr.ii
- t _GLOBAL__sub_I_te_bloodst.stdout.rel_tf_osx_builder.39677.6nxah0.ii
- t _GLOBAL__sub_I_te_breakmo.stdout.rel_tf_osx_builder.39681.LP7xml.ii
- t _GLOBAL__sub_I_te_bspdeca.stdout.rel_tf_osx_builder.39689.CSKuqi.ii
- t _GLOBAL__sub_I_te_bubbles.stdout.rel_tf_osx_builder.39693.VCh1ma.ii
- t _GLOBAL__sub_I_te_bubblet.stdout.rel_tf_osx_builder.39695.191lR4.ii
- t _GLOBAL__sub_I_te_clientp.stdout.rel_tf_osx_builder.39696.LEzgX9.ii
- t _GLOBAL__sub_I_te_decal.stdout.rel_tf_osx_builder.39707.dWxXFl.ii
- t _GLOBAL__sub_I_te_dynamic.stdout.rel_tf_osx_builder.39719.aXCg8t.ii
- t _GLOBAL__sub_I_te_effect_.stdout.rel_tf_osx_builder.39725.7bCWrG.ii
- t _GLOBAL__sub_I_te_energys.stdout.rel_tf_osx_builder.39731.g8yiV3.ii
- t _GLOBAL__sub_I_te_explosi.stdout.rel_tf_osx_builder.39737.MFJDNr.ii
- t _GLOBAL__sub_I_te_fizz.stdout.rel_tf_osx_builder.39741.FbxzaH.ii
- t _GLOBAL__sub_I_te_footpri.stdout.rel_tf_osx_builder.39743.RpNfjd.ii
- t _GLOBAL__sub_I_te_gaussex.stdout.rel_tf_osx_builder.38774.nTKTvS.ii
- t _GLOBAL__sub_I_te_glasssh.stdout.rel_tf_osx_builder.39745.sWiKJl.ii
- t _GLOBAL__sub_I_te_glowspr.stdout.rel_tf_osx_builder.39755.fgbkRa.ii
- t _GLOBAL__sub_I_te_impact.stdout.rel_tf_osx_builder.39767.pMuKd9.ii
- t _GLOBAL__sub_I_te_killpla.stdout.rel_tf_osx_builder.39773.P5vLBC.ii
- t _GLOBAL__sub_I_te_largefu.stdout.rel_tf_osx_builder.39779.qIHq88.ii
- t _GLOBAL__sub_I_te_muzzlef.stdout.rel_tf_osx_builder.39785.NuukSN.ii
- t _GLOBAL__sub_I_te_particl.stdout.rel_tf_osx_builder.39789.Ame6aE.ii
- t _GLOBAL__sub_I_te_physics.stdout.rel_tf_osx_builder.39795.5J8pV8.ii
- t _GLOBAL__sub_I_te_playerd.stdout.rel_tf_osx_builder.39799.yglTbs.ii
- t _GLOBAL__sub_I_te_project.stdout.rel_tf_osx_builder.39805.N8ZrG4.ii
- t _GLOBAL__sub_I_te_showlin.stdout.rel_tf_osx_builder.39807.drorSe.ii
- t _GLOBAL__sub_I_te_smoke.stdout.rel_tf_osx_builder.39821.6iq1pG.ii
- t _GLOBAL__sub_I_te_sparks.stdout.rel_tf_osx_builder.39827.PcsmV5.ii
- t _GLOBAL__sub_I_te_sprite.stdout.rel_tf_osx_builder.39831.Q496rp.ii
- t _GLOBAL__sub_I_te_sprites.stdout.rel_tf_osx_builder.39837.0vOkrc.ii
- t _GLOBAL__sub_I_te_tfblood.stdout.rel_tf_osx_builder.41004.YJfmbX.ii
- t _GLOBAL__sub_I_te_worldde.stdout.rel_tf_osx_builder.39845.zVc7oA.ii
- t _GLOBAL__sub_I_team.stdout.rel_tf_osx_builder.39521.BdFhW2.ii
- t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.39533.3jiiXO.ii
- t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.39539.mfUBhZ.ii
- t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.39543.QrorhH.ii
- t _GLOBAL__sub_I_team_objec.stdout.rel_tf_osx_builder.39547.aV87bW.ii
- t _GLOBAL__sub_I_team_train.stdout.rel_tf_osx_builder.39557.CZDWXA.ii
- t _GLOBAL__sub_I_teamplay_g.stdout.rel_tf_osx_builder.36918.aFZOAL.ii
- t _GLOBAL__sub_I_teamplay_r.stdout.rel_tf_osx_builder.36924.mLduOC.ii
- t _GLOBAL__sub_I_teamplayro.stdout.rel_tf_osx_builder.36912.AQGsxP.ii
- t _GLOBAL__sub_I_teleport_v.stdout.rel_tf_osx_builder.37039.3d6R6c.ii
- t _GLOBAL__sub_I_tesla.stdout.rel_tf_osx_builder.39573.vs0Cr2.ii
- t _GLOBAL__sub_I_test_ehand.stdout.rel_tf_osx_builder.36930.k97i6a.ii
- t _GLOBAL__sub_I_test_proxy.stdout.rel_tf_osx_builder.39593.HjTgGo.ii
- t _GLOBAL__sub_I_test_stres.stdout.rel_tf_osx_builder.39596.LA8a7n.ii
- t _GLOBAL__sub_I_testfuncti.stdout.rel_tf_osx_builder.39581.pSAj3G.ii
- t _GLOBAL__sub_I_testtracel.stdout.rel_tf_osx_builder.39587.9HDE9i.ii
- t _GLOBAL__sub_I_tf_ammo_pa.stdout.rel_tf_osx_builder.41010.wx3u2r.ii
- t _GLOBAL__sub_I_tf_autobal.stdout.rel_tf_osx_builder.41012.olBgll.ii
- t _GLOBAL__sub_I_tf_base_bo.stdout.rel_tf_osx_builder.40932.n4wi5f.ii
- t _GLOBAL__sub_I_tf_bot.stdout.rel_tf_osx_builder.40314.a7m1Xj.ii
- t _GLOBAL__sub_I_tf_bot_app.stdout.rel_tf_osx_builder.40135.66WDWK.ii
- t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.39993.xBZVc4.ii
- t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.40137.RbzpaJ.ii
- t _GLOBAL__sub_I_tf_bot_beh.stdout.rel_tf_osx_builder.40151.9OXGq2.ii
- t _GLOBAL__sub_I_tf_bot_bod.stdout.rel_tf_osx_builder.40320.uPmMkR.ii
- t _GLOBAL__sub_I_tf_bot_cap.stdout.rel_tf_osx_builder.39973.zngrsl.ii
- t _GLOBAL__sub_I_tf_bot_dea.stdout.rel_tf_osx_builder.40157.mUzvzt.ii
- t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.39981.OwZHrA.ii
- t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.39989.YaWPh3.ii
- t _GLOBAL__sub_I_tf_bot_del.stdout.rel_tf_osx_builder.40001.U0ILAL.ii
- t _GLOBAL__sub_I_tf_bot_des.stdout.rel_tf_osx_builder.40161.6GVfDk.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39885.nRs8Zs.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39893.cIBKX6.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39899.GBeA4H.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39903.J7my5D.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39907.u00fam.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39917.0mopD4.ii
- t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.39923.Z79T4I.ii
- t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.40005.08ppGH.ii
- t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.40131.sjYHDN.ii
- t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.40169.fwmmhk.ii
- t _GLOBAL__sub_I_tf_bot_fet.stdout.rel_tf_osx_builder.40013.Vpda2R.ii
- t _GLOBAL__sub_I_tf_bot_gen.stdout.rel_tf_osx_builder.40252.ex1PM3.ii
- t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.40175.fWm68C.ii
- t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.40179.doAjqx.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.40260.SU2JSZ.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.40266.dWfM2H.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.40272.Znwjrg.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.40276.56PZTn.ii
- t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.40280.5qvdqL.ii
- t _GLOBAL__sub_I_tf_bot_loc.stdout.rel_tf_osx_builder.40324.OZPluW.ii
- t _GLOBAL__sub_I_tf_bot_man.stdout.rel_tf_osx_builder.40328.yvsMWv.ii
- t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.39925.sFl1qS.ii
- t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.39931.RhKRRF.ii
- t _GLOBAL__sub_I_tf_bot_mel.stdout.rel_tf_osx_builder.40181.YKFQG2.ii
- t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.39941.t6rorA.ii
- t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.39947.nqTZjI.ii
- t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.39951.ULLTPF.ii
- t _GLOBAL__sub_I_tf_bot_mov.stdout.rel_tf_osx_builder.40189.sZAPfK.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.39855.TliRnu.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.39869.YKQQqM.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.39873.1mcgl7.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.39879.dpzeKR.ii
- t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.40199.zqBGIR.ii
- t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.39953.1sMZWR.ii
- t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.39965.3kTGPs.ii
- t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.39971.6utHZw.ii
- t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.40025.aUHHg5.ii
- t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.40031.bFpYnz.ii
- t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.40037.M7jEK9.ii
- t _GLOBAL__sub_I_tf_bot_pre.stdout.rel_tf_osx_builder.39849.qn5WbA.ii
- t _GLOBAL__sub_I_tf_bot_pro.stdout.rel_tf_osx_builder.40286.KC9Vc3.ii
- t _GLOBAL__sub_I_tf_bot_ret.stdout.rel_tf_osx_builder.40203.pWiIct.ii
- t _GLOBAL__sub_I_tf_bot_ros.stdout.rel_tf_osx_builder.40294.pdECQZ.ii
- t _GLOBAL__sub_I_tf_bot_sce.stdout.rel_tf_osx_builder.40211.cs4D0L.ii
- t _GLOBAL__sub_I_tf_bot_see.stdout.rel_tf_osx_builder.40217.QazVZV.ii
- t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.40071.iCvRv0.ii
- t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.40079.InbpGM.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40083.uWdVvX.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40089.m4Zj2C.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40093.WFulgu.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40099.kW4cGI.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40109.Jln2LO.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40113.NijLXQ.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40121.AKjrGX.ii
- t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.40127.GJQSO6.ii
- t _GLOBAL__sub_I_tf_bot_squ.stdout.rel_tf_osx_builder.40334.nGv5ir.ii
- t _GLOBAL__sub_I_tf_bot_sti.stdout.rel_tf_osx_builder.39853.5FTrjj.ii
- t _GLOBAL__sub_I_tf_bot_tac.stdout.rel_tf_osx_builder.40223.Hhbm2x.ii
- t _GLOBAL__sub_I_tf_bot_tau.stdout.rel_tf_osx_builder.40227.dDI1Xk.ii
- t _GLOBAL__sub_I_tf_bot_tem.stdout.rel_tf_osx_builder.41022.3yGYDU.ii
- t _GLOBAL__sub_I_tf_bot_tra.stdout.rel_tf_osx_builder.40248.gwqZEW.ii
- t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.40231.28qj6M.ii
- t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.40237.xqfo0D.ii
- t _GLOBAL__sub_I_tf_bot_vis.stdout.rel_tf_osx_builder.40340.9ThhjG.ii
- t _GLOBAL__sub_I_tf_classda.stdout.rel_tf_osx_builder.37082.cN6F5W.ii
- t _GLOBAL__sub_I_tf_conditi.stdout.rel_tf_osx_builder.37086.FGdl4e.ii
- t _GLOBAL__sub_I_tf_dropped.stdout.rel_tf_osx_builder.37092.pXs8ab.ii
- t _GLOBAL__sub_I_tf_duel.stdout.rel_tf_osx_builder.40788.oPYWaZ.ii
- t _GLOBAL__sub_I_tf_entity_.stdout.rel_tf_osx_builder.41032.kF73UP.ii
- t _GLOBAL__sub_I_tf_eventlo.stdout.rel_tf_osx_builder.41040.0UVzMu.ii
- t _GLOBAL__sub_I_tf_extra_m.stdout.rel_tf_osx_builder.41044.lRW5C7.ii
- t _GLOBAL__sub_I_tf_filters.stdout.rel_tf_osx_builder.41052.5axxLO.ii
- t _GLOBAL__sub_I_tf_flame.stdout.rel_tf_osx_builder.37106.UuYny1.ii
- t _GLOBAL__sub_I_tf_fx.stdout.rel_tf_osx_builder.41058.7yOPb6.ii
- t _GLOBAL__sub_I_tf_fx_shar.stdout.rel_tf_osx_builder.37112.EkjzRS.ii
- t _GLOBAL__sub_I_tf_gameint.stdout.rel_tf_osx_builder.41060.SBSeYF.ii
- t _GLOBAL__sub_I_tf_gamemov.stdout.rel_tf_osx_builder.37117.8Ydz6n.ii
- t _GLOBAL__sub_I_tf_gamerul.stdout.rel_tf_osx_builder.37122.3swlPN.ii
- t _GLOBAL__sub_I_tf_gamesta.stdout.rel_tf_osx_builder.41066.2FI90l.ii
- t _GLOBAL__sub_I_tf_gc_api.stdout.rel_tf_osx_builder.36245.IsAz6l.ii
- t _GLOBAL__sub_I_tf_gc_serv.stdout.rel_tf_osx_builder.36246.Wpngi9.ii
- t _GLOBAL__sub_I_tf_gcmessa.stdout.rel_tf_osx_builder.37138.ZThdi8.ii
- t _GLOBAL__sub_I_tf_generic.stdout.rel_tf_osx_builder.37154.XCMKOf.ii
- t _GLOBAL__sub_I_tf_glow.stdout.rel_tf_osx_builder.41074.gjJ5gG.ii
- t _GLOBAL__sub_I_tf_hallowe.stdout.rel_tf_osx_builder.37158.gFPRj7.ii
- t _GLOBAL__sub_I_tf_hltvdir.stdout.rel_tf_osx_builder.41082.K6Hpce.ii
- t _GLOBAL__sub_I_tf_item.stdout.rel_tf_osx_builder.37162.r5BxSp.ii
- t _GLOBAL__sub_I_tf_item_in.stdout.rel_tf_osx_builder.37178.KlLRXS.ii
- t _GLOBAL__sub_I_tf_item_po.stdout.rel_tf_osx_builder.37182.EcK22T.ii
- t _GLOBAL__sub_I_tf_item_sc.stdout.rel_tf_osx_builder.37190.9uXrWw.ii
- t _GLOBAL__sub_I_tf_item_we.stdout.rel_tf_osx_builder.37198.LLp4yI.ii
- t _GLOBAL__sub_I_tf_logic_h.stdout.rel_tf_osx_builder.37226.FBKlQ3.ii
- t _GLOBAL__sub_I_tf_logic_o.stdout.rel_tf_osx_builder.41086.qeDhCF.ii
- t _GLOBAL__sub_I_tf_logic_p.stdout.rel_tf_osx_builder.37228.O3Ba64.ii
- t _GLOBAL__sub_I_tf_logic_r.stdout.rel_tf_osx_builder.37238.3sHR44.ii
- t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.37244.UR6DLl.ii
- t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.40940.E3BxZf.ii
- t _GLOBAL__sub_I_tf_mapinfo.stdout.rel_tf_osx_builder.37248.yYJxLM.ii
- t _GLOBAL__sub_I_tf_match_d.stdout.rel_tf_osx_builder.37268.Oq0Ff0.ii
- t _GLOBAL__sub_I_tf_match_d.stdout.rel_tf_osx_builder.37272.lim7Pb.ii
- t _GLOBAL__sub_I_tf_match_d.stdout.rel_tf_osx_builder.37278.JY7OXc.ii
- t _GLOBAL__sub_I_tf_matchma.stdout.rel_tf_osx_builder.37252.fP5Bx7.ii
- t _GLOBAL__sub_I_tf_nav_are.stdout.rel_tf_osx_builder.40800.w4LyWI.ii
- t _GLOBAL__sub_I_tf_nav_int.stdout.rel_tf_osx_builder.40806.JLC8h1.ii
- t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.40812.Ao2vLb.ii
- t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.40816.z0P2V1.ii
- t _GLOBAL__sub_I_tf_obj.stdout.rel_tf_osx_builder.41093.lSkNUF.ii
- t _GLOBAL__sub_I_tf_obj_bas.stdout.rel_tf_osx_builder.37290.Yd6HbI.ii
- t _GLOBAL__sub_I_tf_obj_dis.stdout.rel_tf_osx_builder.41110.Nthnxk.ii
- t _GLOBAL__sub_I_tf_obj_sap.stdout.rel_tf_osx_builder.41118.76JyFA.ii
- t _GLOBAL__sub_I_tf_obj_sen.stdout.rel_tf_osx_builder.41122.lRV2Ic.ii
- t _GLOBAL__sub_I_tf_obj_spy.stdout.rel_tf_osx_builder.41130.hkDFG7.ii
- t _GLOBAL__sub_I_tf_obj_tel.stdout.rel_tf_osx_builder.41136.PdXMcu.ii
- t _GLOBAL__sub_I_tf_objecti.stdout.rel_tf_osx_builder.41100.sALkpI.ii
- t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.41142.EtOmKP.ii
- t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.41148.epf8eX.ii
- t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.15184.14oJzy.ii
- t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.41167.FZHt9c.ii
- t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.64011.naObYC.ii
- t _GLOBAL__sub_I_tf_playerc.stdout.rel_tf_osx_builder.37316.FO7zOQ.ii
- t _GLOBAL__sub_I_tf_playerm.stdout.rel_tf_osx_builder.41166.upnkuv.ii
- t _GLOBAL__sub_I_tf_point_m.stdout.rel_tf_osx_builder.37326.EFYFVg.ii
- t _GLOBAL__sub_I_tf_point_w.stdout.rel_tf_osx_builder.40944.FOomoi.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.40956.hXccUO.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.40960.iHexl4.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.40966.QgGa1l.ii
- t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.40974.34lOVH.ii
- t _GLOBAL__sub_I_tf_powerup.stdout.rel_tf_osx_builder.41178.cd7lu0.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.37356.ZRWrxz.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.37364.XKQDC6.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.37368.Li813K.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.37372.J2PMiy.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.41184.iXxZng.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.41185.KxVos4.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.41196.PNh8AG.ii
- t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.41200.lWSEcw.ii
- t _GLOBAL__sub_I_tf_props.stdout.rel_tf_osx_builder.41224.uctMfl.ii
+ t _GLOBAL__sub_I_subs.stdout.rel_tf_osx_builder.62356.zRI4gn.ii
+ t _GLOBAL__sub_I_sun.stdout.rel_tf_osx_builder.62359.tjdqj0.ii
+ t _GLOBAL__sub_I_tactical_m.stdout.rel_tf_osx_builder.62366.JBjMQV.ii
+ t _GLOBAL__sub_I_takedamage.stdout.rel_tf_osx_builder.59767.Z4EKdg.ii
+ t _GLOBAL__sub_I_tanktrain.stdout.rel_tf_osx_builder.62368.576kFm.ii
+ t _GLOBAL__sub_I_te.stdout.rel_tf_osx_builder.62378.Pwv6gU.ii
+ t _GLOBAL__sub_I_te_armorri.stdout.rel_tf_osx_builder.62467.u2jwHA.ii
+ t _GLOBAL__sub_I_te_basebea.stdout.rel_tf_osx_builder.62472.9At3Fd.ii
+ t _GLOBAL__sub_I_te_beament.stdout.rel_tf_osx_builder.62477.16wBHh.ii
+ t _GLOBAL__sub_I_te_beament.stdout.rel_tf_osx_builder.62490.uurYgg.ii
+ t _GLOBAL__sub_I_te_beamfol.stdout.rel_tf_osx_builder.62496.FHFDlq.ii
+ t _GLOBAL__sub_I_te_beamlas.stdout.rel_tf_osx_builder.62502.a3O39q.ii
+ t _GLOBAL__sub_I_te_beampoi.stdout.rel_tf_osx_builder.62504.8e7Xa7.ii
+ t _GLOBAL__sub_I_te_beamrin.stdout.rel_tf_osx_builder.62510.zjQYR5.ii
+ t _GLOBAL__sub_I_te_beamrin.stdout.rel_tf_osx_builder.62514.w5hIy7.ii
+ t _GLOBAL__sub_I_te_beamspl.stdout.rel_tf_osx_builder.62518.JwY7Ci.ii
+ t _GLOBAL__sub_I_te_bloodsp.stdout.rel_tf_osx_builder.62528.o9FXPE.ii
+ t _GLOBAL__sub_I_te_bloodst.stdout.rel_tf_osx_builder.62538.aXyJ63.ii
+ t _GLOBAL__sub_I_te_breakmo.stdout.rel_tf_osx_builder.62542.WWweCd.ii
+ t _GLOBAL__sub_I_te_bspdeca.stdout.rel_tf_osx_builder.62550.XvSPVf.ii
+ t _GLOBAL__sub_I_te_bubbles.stdout.rel_tf_osx_builder.62554.5kU3mh.ii
+ t _GLOBAL__sub_I_te_bubblet.stdout.rel_tf_osx_builder.62558.1WG5Y5.ii
+ t _GLOBAL__sub_I_te_clientp.stdout.rel_tf_osx_builder.62562.e7fMcW.ii
+ t _GLOBAL__sub_I_te_decal.stdout.rel_tf_osx_builder.62568.GMz5GW.ii
+ t _GLOBAL__sub_I_te_dynamic.stdout.rel_tf_osx_builder.62576.irezCM.ii
+ t _GLOBAL__sub_I_te_effect_.stdout.rel_tf_osx_builder.62586.cSRmOT.ii
+ t _GLOBAL__sub_I_te_energys.stdout.rel_tf_osx_builder.62590.jEzMOD.ii
+ t _GLOBAL__sub_I_te_explosi.stdout.rel_tf_osx_builder.62598.ZihhSt.ii
+ t _GLOBAL__sub_I_te_fizz.stdout.rel_tf_osx_builder.62600.fxQeSa.ii
+ t _GLOBAL__sub_I_te_footpri.stdout.rel_tf_osx_builder.62606.Nq3I4Y.ii
+ t _GLOBAL__sub_I_te_gaussex.stdout.rel_tf_osx_builder.61674.QUvCRN.ii
+ t _GLOBAL__sub_I_te_glasssh.stdout.rel_tf_osx_builder.62610.JlwK9m.ii
+ t _GLOBAL__sub_I_te_glowspr.stdout.rel_tf_osx_builder.62613.cFsmRK.ii
+ t _GLOBAL__sub_I_te_impact.stdout.rel_tf_osx_builder.62624.zD1fQR.ii
+ t _GLOBAL__sub_I_te_killpla.stdout.rel_tf_osx_builder.62634.NfyC19.ii
+ t _GLOBAL__sub_I_te_largefu.stdout.rel_tf_osx_builder.62640.Fr0yGI.ii
+ t _GLOBAL__sub_I_te_muzzlef.stdout.rel_tf_osx_builder.62646.ykNWU7.ii
+ t _GLOBAL__sub_I_te_particl.stdout.rel_tf_osx_builder.62650.7OybfG.ii
+ t _GLOBAL__sub_I_te_physics.stdout.rel_tf_osx_builder.62651.NHodVF.ii
+ t _GLOBAL__sub_I_te_playerd.stdout.rel_tf_osx_builder.62660.HV4eLb.ii
+ t _GLOBAL__sub_I_te_project.stdout.rel_tf_osx_builder.62664.0skfDH.ii
+ t _GLOBAL__sub_I_te_showlin.stdout.rel_tf_osx_builder.62671.sj8BFk.ii
+ t _GLOBAL__sub_I_te_smoke.stdout.rel_tf_osx_builder.62682.drtKA6.ii
+ t _GLOBAL__sub_I_te_sparks.stdout.rel_tf_osx_builder.62688.ROkOW1.ii
+ t _GLOBAL__sub_I_te_sprite.stdout.rel_tf_osx_builder.62694.fSegDY.ii
+ t _GLOBAL__sub_I_te_sprites.stdout.rel_tf_osx_builder.62698.VcszVy.ii
+ t _GLOBAL__sub_I_te_tfblood.stdout.rel_tf_osx_builder.63903.kzODWc.ii
+ t _GLOBAL__sub_I_te_worldde.stdout.rel_tf_osx_builder.62706.3kx4OT.ii
+ t _GLOBAL__sub_I_team.stdout.rel_tf_osx_builder.62386.hWLJ63.ii
+ t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.62394.VXzpA8.ii
+ t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.62400.EX5AtW.ii
+ t _GLOBAL__sub_I_team_contr.stdout.rel_tf_osx_builder.62404.NAdl8V.ii
+ t _GLOBAL__sub_I_team_objec.stdout.rel_tf_osx_builder.62408.0E6NDD.ii
+ t _GLOBAL__sub_I_team_train.stdout.rel_tf_osx_builder.62412.B6NIZ0.ii
+ t _GLOBAL__sub_I_teamplay_g.stdout.rel_tf_osx_builder.59779.2ctDRw.ii
+ t _GLOBAL__sub_I_teamplay_r.stdout.rel_tf_osx_builder.59787.9a3alp.ii
+ t _GLOBAL__sub_I_teamplayro.stdout.rel_tf_osx_builder.59773.wf5Tlh.ii
+ t _GLOBAL__sub_I_teleport_v.stdout.rel_tf_osx_builder.59900.5X9aLc.ii
+ t _GLOBAL__sub_I_tesla.stdout.rel_tf_osx_builder.62434.kzyX69.ii
+ t _GLOBAL__sub_I_test_ehand.stdout.rel_tf_osx_builder.59791.3QiV9M.ii
+ t _GLOBAL__sub_I_test_proxy.stdout.rel_tf_osx_builder.62454.MDky4p.ii
+ t _GLOBAL__sub_I_test_stres.stdout.rel_tf_osx_builder.62458.5Yq6WM.ii
+ t _GLOBAL__sub_I_testfuncti.stdout.rel_tf_osx_builder.62442.u1yhZ0.ii
+ t _GLOBAL__sub_I_testtracel.stdout.rel_tf_osx_builder.62448.aWzpqo.ii
+ t _GLOBAL__sub_I_tf_ammo_pa.stdout.rel_tf_osx_builder.63909.aw1hS9.ii
+ t _GLOBAL__sub_I_tf_autobal.stdout.rel_tf_osx_builder.63913.ndIHew.ii
+ t _GLOBAL__sub_I_tf_base_bo.stdout.rel_tf_osx_builder.63831.RP8w07.ii
+ t _GLOBAL__sub_I_tf_bot.stdout.rel_tf_osx_builder.63174.yXxhb7.ii
+ t _GLOBAL__sub_I_tf_bot_app.stdout.rel_tf_osx_builder.62998.xoCs5u.ii
+ t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.62854.3xRM1h.ii
+ t _GLOBAL__sub_I_tf_bot_att.stdout.rel_tf_osx_builder.63001.CF0kxf.ii
+ t _GLOBAL__sub_I_tf_bot_beh.stdout.rel_tf_osx_builder.63008.MWDxQt.ii
+ t _GLOBAL__sub_I_tf_bot_bod.stdout.rel_tf_osx_builder.63180.y1IA8v.ii
+ t _GLOBAL__sub_I_tf_bot_cap.stdout.rel_tf_osx_builder.62836.ctPWIW.ii
+ t _GLOBAL__sub_I_tf_bot_dea.stdout.rel_tf_osx_builder.63018.rAu8a8.ii
+ t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.62842.IH82cM.ii
+ t _GLOBAL__sub_I_tf_bot_def.stdout.rel_tf_osx_builder.62850.18q91A.ii
+ t _GLOBAL__sub_I_tf_bot_del.stdout.rel_tf_osx_builder.62862.dEoVpz.ii
+ t _GLOBAL__sub_I_tf_bot_des.stdout.rel_tf_osx_builder.63022.VYdQbV.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62746.eWlpXh.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62754.MTN02s.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62760.eQItPI.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62764.XcbcxJ.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62768.tkI0zy.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62778.SGN0gI.ii
+ t _GLOBAL__sub_I_tf_bot_eng.stdout.rel_tf_osx_builder.62784.3kRNPU.ii
+ t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.62866.fdApUg.ii
+ t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.62994.qBRXGP.ii
+ t _GLOBAL__sub_I_tf_bot_esc.stdout.rel_tf_osx_builder.63030.73bgoz.ii
+ t _GLOBAL__sub_I_tf_bot_fet.stdout.rel_tf_osx_builder.62874.yPVDS4.ii
+ t _GLOBAL__sub_I_tf_bot_gen.stdout.rel_tf_osx_builder.63114.j9u4i4.ii
+ t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.63036.ErvYgL.ii
+ t _GLOBAL__sub_I_tf_bot_get.stdout.rel_tf_osx_builder.63042.Jf8skh.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.63120.VHKyvC.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.63126.c8sXGP.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.63132.C1sDsp.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.63136.Hf6S35.ii
+ t _GLOBAL__sub_I_tf_bot_hin.stdout.rel_tf_osx_builder.63140.bKeAov.ii
+ t _GLOBAL__sub_I_tf_bot_loc.stdout.rel_tf_osx_builder.63186.st4b7f.ii
+ t _GLOBAL__sub_I_tf_bot_man.stdout.rel_tf_osx_builder.63190.Npcya7.ii
+ t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.62788.zBOEQX.ii
+ t _GLOBAL__sub_I_tf_bot_med.stdout.rel_tf_osx_builder.62794.tvYE9V.ii
+ t _GLOBAL__sub_I_tf_bot_mel.stdout.rel_tf_osx_builder.63046.j7j9EK.ii
+ t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.62802.R0dhRZ.ii
+ t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.62808.MbMxsf.ii
+ t _GLOBAL__sub_I_tf_bot_mis.stdout.rel_tf_osx_builder.62812.l7s3Wy.ii
+ t _GLOBAL__sub_I_tf_bot_mov.stdout.rel_tf_osx_builder.63052.koD7jA.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.62717.yUNNWv.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.62730.xEVhRv.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.62736.r3j3My.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.62741.W5MzD8.ii
+ t _GLOBAL__sub_I_tf_bot_mvm.stdout.rel_tf_osx_builder.63060.ICfrB6.ii
+ t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.62816.zRZ6zp.ii
+ t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.62826.bFmpa2.ii
+ t _GLOBAL__sub_I_tf_bot_nav.stdout.rel_tf_osx_builder.62832.zyAsxc.ii
+ t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.62886.aVB0Er.ii
+ t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.62890.SHuLhF.ii
+ t _GLOBAL__sub_I_tf_bot_pay.stdout.rel_tf_osx_builder.62898.40IC8i.ii
+ t _GLOBAL__sub_I_tf_bot_pre.stdout.rel_tf_osx_builder.62710.5Wc6x5.ii
+ t _GLOBAL__sub_I_tf_bot_pro.stdout.rel_tf_osx_builder.63150.Kr5vaY.ii
+ t _GLOBAL__sub_I_tf_bot_ret.stdout.rel_tf_osx_builder.63064.C9Mg2W.ii
+ t _GLOBAL__sub_I_tf_bot_ros.stdout.rel_tf_osx_builder.63154.lS0Unz.ii
+ t _GLOBAL__sub_I_tf_bot_sce.stdout.rel_tf_osx_builder.63072.cZPSQn.ii
+ t _GLOBAL__sub_I_tf_bot_see.stdout.rel_tf_osx_builder.63078.cuNkUC.ii
+ t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.62931.3qLwcx.ii
+ t _GLOBAL__sub_I_tf_bot_sni.stdout.rel_tf_osx_builder.62940.eBYfD1.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62946.bv5RLQ.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62950.4rqO2i.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62956.UjV3UJ.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62958.coorbE.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62970.GiJsDn.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62974.0A2kN3.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62982.Ytml2e.ii
+ t _GLOBAL__sub_I_tf_bot_spy.stdout.rel_tf_osx_builder.62988.iTlWHN.ii
+ t _GLOBAL__sub_I_tf_bot_squ.stdout.rel_tf_osx_builder.63194.ftRzg5.ii
+ t _GLOBAL__sub_I_tf_bot_sti.stdout.rel_tf_osx_builder.62714.nAB8Ty.ii
+ t _GLOBAL__sub_I_tf_bot_tac.stdout.rel_tf_osx_builder.63084.PSLNup.ii
+ t _GLOBAL__sub_I_tf_bot_tau.stdout.rel_tf_osx_builder.63090.hkImmI.ii
+ t _GLOBAL__sub_I_tf_bot_tem.stdout.rel_tf_osx_builder.63921.MpLolG.ii
+ t _GLOBAL__sub_I_tf_bot_tra.stdout.rel_tf_osx_builder.63106.FFvbX2.ii
+ t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.63094.M1rQwK.ii
+ t _GLOBAL__sub_I_tf_bot_use.stdout.rel_tf_osx_builder.63098.eXX5Pu.ii
+ t _GLOBAL__sub_I_tf_bot_vis.stdout.rel_tf_osx_builder.63202.Gvi62E.ii
+ t _GLOBAL__sub_I_tf_classda.stdout.rel_tf_osx_builder.59943.vERHYt.ii
+ t _GLOBAL__sub_I_tf_conditi.stdout.rel_tf_osx_builder.59949.ne9KC9.ii
+ t _GLOBAL__sub_I_tf_dropped.stdout.rel_tf_osx_builder.59953.9J2WdC.ii
+ t _GLOBAL__sub_I_tf_duel.stdout.rel_tf_osx_builder.63687.2rmOaq.ii
+ t _GLOBAL__sub_I_tf_entity_.stdout.rel_tf_osx_builder.63931.IaQdVs.ii
+ t _GLOBAL__sub_I_tf_eventlo.stdout.rel_tf_osx_builder.63939.5HJKGv.ii
+ t _GLOBAL__sub_I_tf_extra_m.stdout.rel_tf_osx_builder.63943.Tfm5QN.ii
+ t _GLOBAL__sub_I_tf_filters.stdout.rel_tf_osx_builder.63951.BehMEF.ii
+ t _GLOBAL__sub_I_tf_flame.stdout.rel_tf_osx_builder.59967.WaKWie.ii
+ t _GLOBAL__sub_I_tf_fx.stdout.rel_tf_osx_builder.63957.Jh0gBa.ii
+ t _GLOBAL__sub_I_tf_fx_shar.stdout.rel_tf_osx_builder.59973.PtJFaS.ii
+ t _GLOBAL__sub_I_tf_gameint.stdout.rel_tf_osx_builder.63961.5pefEz.ii
+ t _GLOBAL__sub_I_tf_gamemov.stdout.rel_tf_osx_builder.59977.J0JmL3.ii
+ t _GLOBAL__sub_I_tf_gamerul.stdout.rel_tf_osx_builder.59983.Jimqdt.ii
+ t _GLOBAL__sub_I_tf_gamesta.stdout.rel_tf_osx_builder.63969.fjyMw4.ii
+ t _GLOBAL__sub_I_tf_gc_api.stdout.rel_tf_osx_builder.59148.56PueO.ii
+ t _GLOBAL__sub_I_tf_gc_serv.stdout.rel_tf_osx_builder.59149.JixkAp.ii
+ t _GLOBAL__sub_I_tf_gcmessa.stdout.rel_tf_osx_builder.60001.cUtJL5.ii
+ t _GLOBAL__sub_I_tf_generic.stdout.rel_tf_osx_builder.60015.E5IqhF.ii
+ t _GLOBAL__sub_I_tf_glow.stdout.rel_tf_osx_builder.63973.irUKMY.ii
+ t _GLOBAL__sub_I_tf_hallowe.stdout.rel_tf_osx_builder.60019.0fI5aQ.ii
+ t _GLOBAL__sub_I_tf_hltvdir.stdout.rel_tf_osx_builder.63981.9PpnaB.ii
+ t _GLOBAL__sub_I_tf_item.stdout.rel_tf_osx_builder.60021.j5YvjF.ii
+ t _GLOBAL__sub_I_tf_item_in.stdout.rel_tf_osx_builder.60039.RRIrjV.ii
+ t _GLOBAL__sub_I_tf_item_po.stdout.rel_tf_osx_builder.60043.cTvvhW.ii
+ t _GLOBAL__sub_I_tf_item_sc.stdout.rel_tf_osx_builder.60051.vi0kgO.ii
+ t _GLOBAL__sub_I_tf_item_we.stdout.rel_tf_osx_builder.60060.aRghU9.ii
+ t _GLOBAL__sub_I_tf_logic_h.stdout.rel_tf_osx_builder.60087.RJXxMX.ii
+ t _GLOBAL__sub_I_tf_logic_o.stdout.rel_tf_osx_builder.63985.e2RCia.ii
+ t _GLOBAL__sub_I_tf_logic_p.stdout.rel_tf_osx_builder.60091.JzNQxH.ii
+ t _GLOBAL__sub_I_tf_logic_r.stdout.rel_tf_osx_builder.60099.5YHopo.ii
+ t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.60105.WgnwRJ.ii
+ t _GLOBAL__sub_I_tf_mann_vs.stdout.rel_tf_osx_builder.63839.nFHIRc.ii
+ t _GLOBAL__sub_I_tf_mapinfo.stdout.rel_tf_osx_builder.60109.yLAE35.ii
+ t _GLOBAL__sub_I_tf_match_d.stdout.rel_tf_osx_builder.60129.imjya8.ii
+ t _GLOBAL__sub_I_tf_match_d.stdout.rel_tf_osx_builder.60133.teTTOT.ii
+ t _GLOBAL__sub_I_tf_match_d.stdout.rel_tf_osx_builder.60141.ccyexy.ii
+ t _GLOBAL__sub_I_tf_matchma.stdout.rel_tf_osx_builder.60115.3xC5I2.ii
+ t _GLOBAL__sub_I_tf_nav_are.stdout.rel_tf_osx_builder.63697.xEQXOs.ii
+ t _GLOBAL__sub_I_tf_nav_int.stdout.rel_tf_osx_builder.63705.run2xO.ii
+ t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.63711.sbBlf1.ii
+ t _GLOBAL__sub_I_tf_nav_mes.stdout.rel_tf_osx_builder.63715.cD2jX4.ii
+ t _GLOBAL__sub_I_tf_obj.stdout.rel_tf_osx_builder.63991.2sF6Dm.ii
+ t _GLOBAL__sub_I_tf_obj_bas.stdout.rel_tf_osx_builder.60149.TJYYn9.ii
+ t _GLOBAL__sub_I_tf_obj_dis.stdout.rel_tf_osx_builder.64009.4NYgmT.ii
+ t _GLOBAL__sub_I_tf_obj_sap.stdout.rel_tf_osx_builder.64017.nv88Z2.ii
+ t _GLOBAL__sub_I_tf_obj_sen.stdout.rel_tf_osx_builder.64023.C7y7ut.ii
+ t _GLOBAL__sub_I_tf_obj_spy.stdout.rel_tf_osx_builder.64029.HeubVU.ii
+ t _GLOBAL__sub_I_tf_obj_tel.stdout.rel_tf_osx_builder.64035.uMB0KE.ii
+ t _GLOBAL__sub_I_tf_objecti.stdout.rel_tf_osx_builder.63999.yaEMVl.ii
+ t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.64039.F7I7G9.ii
+ t _GLOBAL__sub_I_tf_passtim.stdout.rel_tf_osx_builder.64047.a15HF6.ii
+ t _GLOBAL__sub_I_tf_player.stdout.rel_tf_osx_builder.64053.y0XqRe.ii
+ t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.60181.gf8OK7.ii
+ t _GLOBAL__sub_I_tf_player_.stdout.rel_tf_osx_builder.64069.nUsF0d.ii
+ t _GLOBAL__sub_I_tf_playerc.stdout.rel_tf_osx_builder.60177.wXrMdS.ii
+ t _GLOBAL__sub_I_tf_playerm.stdout.rel_tf_osx_builder.64065.J0abUb.ii
+ t _GLOBAL__sub_I_tf_point_m.stdout.rel_tf_osx_builder.60187.sfvX8A.ii
+ t _GLOBAL__sub_I_tf_point_w.stdout.rel_tf_osx_builder.63847.dQUTuL.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.63855.r8owmI.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.63861.I4nsEV.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.63865.4QQBQh.ii
+ t _GLOBAL__sub_I_tf_populat.stdout.rel_tf_osx_builder.63873.QYI9X8.ii
+ t _GLOBAL__sub_I_tf_powerup.stdout.rel_tf_osx_builder.64077.Eak9OC.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60219.Ir154s.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60225.CCtBu3.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60229.2fTd5M.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.60235.PON02O.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.64083.rRKSvT.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.64087.LcFYXZ.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.64095.qefRLn.ii
+ t _GLOBAL__sub_I_tf_project.stdout.rel_tf_osx_builder.64101.46PW7h.ii
+ t _GLOBAL__sub_I_tf_props.stdout.rel_tf_osx_builder.64107.9oaTDs.ii
  t _GLOBAL__sub_I_tf_proto_d.stdout.rel_tf_osx_builder.43670.trOb3z.ii
- t _GLOBAL__sub_I_tf_proto_s.stdout.rel_tf_osx_builder.37380.FVQtBM.ii
- t _GLOBAL__sub_I_tf_pumpkin.stdout.rel_tf_osx_builder.37386.QwFWAy.ii
- t _GLOBAL__sub_I_tf_pushent.stdout.rel_tf_osx_builder.41241.yzZ0FK.ii
- t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.37394.sWOcBn.ii
- t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.37400.YAecMA.ii
- t _GLOBAL__sub_I_tf_quest_r.stdout.rel_tf_osx_builder.37410.LhP38L.ii
- t _GLOBAL__sub_I_tf_revive.stdout.rel_tf_osx_builder.37416.q5slHZ.ii
- t _GLOBAL__sub_I_tf_robot_d.stdout.rel_tf_osx_builder.37420.E8IzWv.ii
- t _GLOBAL__sub_I_tf_sharedd.stdout.rel_tf_osx_builder.37426.ORkWcx.ii
- t _GLOBAL__sub_I_tf_spawner.stdout.rel_tf_osx_builder.40300.XpJJOB.ii
- t _GLOBAL__sub_I_tf_spell_p.stdout.rel_tf_osx_builder.40758.VpczuO.ii
- t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.40978.bY09wP.ii
- t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.40986.DeaZlt.ii
- t _GLOBAL__sub_I_tf_target_.stdout.rel_tf_osx_builder.37433.wPc3U3.ii
- t _GLOBAL__sub_I_tf_taunt_p.stdout.rel_tf_osx_builder.41263.7tYTi0.ii
- t _GLOBAL__sub_I_tf_team.stdout.rel_tf_osx_builder.41271.5iutvf.ii
- t _GLOBAL__sub_I_tf_trigger.stdout.rel_tf_osx_builder.41275.xenQKz.ii
- t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.37438.HjvCpQ.ii
- t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.40990.HumeDz.ii
- t _GLOBAL__sub_I_tf_viewmod.stdout.rel_tf_osx_builder.37454.U8vHa7.ii
- t _GLOBAL__sub_I_tf_voteiss.stdout.rel_tf_osx_builder.36247.Vk6rh3.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37044.9X4FCF.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37502.yzGFyl.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37508.6VN7Ix.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37514.O7AGuk.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37520.SxpdTX.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37522.kWPljm.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37532.rbPIHt.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37538.8l308Y.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37544.tdGEQQ.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37550.oj31e6.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37554.GcGUny.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37562.kVhpX3.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37566.lTG271.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37570.fD8oT7.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37580.I2TKkP.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37582.QPNZuj.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37588.NKUoLs.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37598.l12Hb4.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37604.QBJz6G.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37608.8VXLj9.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37613.NJNnGE.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37618.gRUnEO.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37628.9Fv3v2.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37634.WjK3l0.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37640.dRMxOZ.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37652.X3z2Tm.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37656.gne3WO.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37660.taLGVm.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37670.rrCM2J.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37676.mjwdN7.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37680.8X5L8u.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37682.U28XsO.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37686.8gJgts.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37700.NjUfXn.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37704.6FHI0v.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37710.gZ5nXC.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37718.XE4Dw3.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37724.bbSSin.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37726.ypYnZF.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37732.eBNUuC.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37740.c8Oa4i.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37748.OKsVKI.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.37750.8lEKUW.ii
- t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.41295.BdAWwb.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.37464.5WqfD6.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.37470.jWTOyd.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.37474.J74Aj9.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.37482.P1Hwf2.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.37488.lTmyW5.ii
- t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.37496.GCAYrU.ii
- t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.37756.ebNrK1.ii
- t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.37762.ddNy9T.ii
- t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.37772.4FbjPi.ii
- t _GLOBAL__sub_I_tf_wheel_o.stdout.rel_tf_osx_builder.37776.SKfDwn.ii
- t _GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.41317.KrPFP6.ii
- t _GLOBAL__sub_I_trains.stdout.rel_tf_osx_builder.41325.y8CAQX.ii
- t _GLOBAL__sub_I_trigger_ar.stdout.rel_tf_osx_builder.41337.SJzxxN.ii
- t _GLOBAL__sub_I_trigger_ca.stdout.rel_tf_osx_builder.37782.Zh0rKF.ii
- t _GLOBAL__sub_I_trigger_ca.stdout.rel_tf_osx_builder.41299.0aiXho.ii
- t _GLOBAL__sub_I_trigger_pa.stdout.rel_tf_osx_builder.41307.LbnaL9.ii
- t _GLOBAL__sub_I_triggers.stdout.rel_tf_osx_builder.41327.xTHkfe.ii
- t _GLOBAL__sub_I_usermessag.stdout.rel_tf_osx_builder.37796.69tyh8.ii
- t _GLOBAL__sub_I_util.stdout.rel_tf_osx_builder.41341.RrK1iX.ii
- t _GLOBAL__sub_I_util_share.stdout.rel_tf_osx_builder.37800.uymr8q.ii
+ t _GLOBAL__sub_I_tf_proto_s.stdout.rel_tf_osx_builder.60241.3uuoCV.ii
+ t _GLOBAL__sub_I_tf_pumpkin.stdout.rel_tf_osx_builder.60244.LcFnHj.ii
+ t _GLOBAL__sub_I_tf_pushent.stdout.rel_tf_osx_builder.64113.s4Syld.ii
+ t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.60255.DBXYN2.ii
+ t _GLOBAL__sub_I_tf_quest_m.stdout.rel_tf_osx_builder.60261.AFgVOY.ii
+ t _GLOBAL__sub_I_tf_quest_r.stdout.rel_tf_osx_builder.60271.dHSHw3.ii
+ t _GLOBAL__sub_I_tf_revive.stdout.rel_tf_osx_builder.60273.3g6me6.ii
+ t _GLOBAL__sub_I_tf_robot_d.stdout.rel_tf_osx_builder.60285.A4zkcz.ii
+ t _GLOBAL__sub_I_tf_sharedd.stdout.rel_tf_osx_builder.60287.BPDnJg.ii
+ t _GLOBAL__sub_I_tf_spawner.stdout.rel_tf_osx_builder.63158.kvRhHf.ii
+ t _GLOBAL__sub_I_tf_spell_p.stdout.rel_tf_osx_builder.63634.IUk7Nd.ii
+ t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.63877.jEy21P.ii
+ t _GLOBAL__sub_I_tf_tank_bo.stdout.rel_tf_osx_builder.63885.m3cjlA.ii
+ t _GLOBAL__sub_I_tf_target_.stdout.rel_tf_osx_builder.60293.eTg0Jj.ii
+ t _GLOBAL__sub_I_tf_taunt_p.stdout.rel_tf_osx_builder.64125.EOypW4.ii
+ t _GLOBAL__sub_I_tf_team.stdout.rel_tf_osx_builder.64131.Hg3mcM.ii
+ t _GLOBAL__sub_I_tf_trigger.stdout.rel_tf_osx_builder.64135.o8TPtp.ii
+ t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.60301.3v6Lnu.ii
+ t _GLOBAL__sub_I_tf_upgrade.stdout.rel_tf_osx_builder.63887.nd2t5Q.ii
+ t _GLOBAL__sub_I_tf_viewmod.stdout.rel_tf_osx_builder.60315.PPmpef.ii
+ t _GLOBAL__sub_I_tf_voteiss.stdout.rel_tf_osx_builder.59150.EzbDgX.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.59905.RDa6JM.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60363.5hyFwa.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60367.zhLuhl.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60375.EFWued.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60381.b2RqJy.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60384.C2dvDg.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60393.kmWZys.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60397.dCPqCj.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60405.lX92xW.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60411.UBXM2E.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60415.1wBDGL.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60423.RNZAkg.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60427.2nnNpp.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60433.M6HRgG.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60441.kWNrHP.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60445.8fUw2I.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60449.4MpJBk.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60459.HtXgrW.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60465.PSOlSU.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60471.QHQ5tH.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60475.MklnWs.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60479.tEQ6ry.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60489.xaFZBo.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60495.vX1pQZ.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60499.ZxDNGM.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60513.3LsHub.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60517.xOhzr3.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60523.gNZdLI.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60531.qRLhK3.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60537.s775CR.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60541.yezLGw.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60545.GWHSKd.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60549.uhvEaE.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60561.ZwRvOB.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60567.Us7Fxc.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60571.nSzB4H.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60579.kNcCuT.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60585.5d9uTG.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60589.6d3slD.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60593.5Bx67H.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60603.scdTHd.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60609.1gxaQZ.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.60613.CAuBTY.ii
+ t _GLOBAL__sub_I_tf_weapon_.stdout.rel_tf_osx_builder.64155.khClVC.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60327.4AgdpY.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60331.a3DgwC.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60337.8g4jLC.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60343.ZTD5Nz.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60348.LbsFcp.ii
+ t _GLOBAL__sub_I_tf_weaponb.stdout.rel_tf_osx_builder.60357.Kn93y0.ii
+ t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.60619.AaCTZu.ii
+ t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.60625.46ONcG.ii
+ t _GLOBAL__sub_I_tf_wearabl.stdout.rel_tf_osx_builder.60633.tKvK82.ii
+ t _GLOBAL__sub_I_tf_wheel_o.stdout.rel_tf_osx_builder.60637.Ddecrh.ii
+ t _GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.64179.zgY5oE.ii
+ t _GLOBAL__sub_I_trains.stdout.rel_tf_osx_builder.64185.4dVu5N.ii
+ t _GLOBAL__sub_I_trigger_ar.stdout.rel_tf_osx_builder.64197.4ygsww.ii
+ t _GLOBAL__sub_I_trigger_ca.stdout.rel_tf_osx_builder.60643.KUGFdb.ii
+ t _GLOBAL__sub_I_trigger_ca.stdout.rel_tf_osx_builder.64159.T2V7oZ.ii
+ t _GLOBAL__sub_I_trigger_pa.stdout.rel_tf_osx_builder.64167.76p9G0.ii
+ t _GLOBAL__sub_I_triggers.stdout.rel_tf_osx_builder.64191.AjMaRC.ii
+ t _GLOBAL__sub_I_usermessag.stdout.rel_tf_osx_builder.60657.EUhYty.ii
+ t _GLOBAL__sub_I_util.stdout.rel_tf_osx_builder.64203.PtHqc3.ii
+ t _GLOBAL__sub_I_util_share.stdout.rel_tf_osx_builder.60661.XP7yRK.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
  t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
- t _GLOBAL__sub_I_vehicle_ba.stdout.rel_tf_osx_builder.41353.KIHqlN.ii
- t _GLOBAL__sub_I_vehicle_ba.stdout.rel_tf_osx_builder.41357.KfH1eM.ii
- t _GLOBAL__sub_I_vehicle_vi.stdout.rel_tf_osx_builder.37806.vViCr0.ii
- t _GLOBAL__sub_I_vguiscreen.stdout.rel_tf_osx_builder.41367.f2eiIN.ii
- t _GLOBAL__sub_I_voice_game.stdout.rel_tf_osx_builder.37810.b3bH7c.ii
- t _GLOBAL__sub_I_vote_contr.stdout.rel_tf_osx_builder.36249.xnU6fc.ii
- t _GLOBAL__sub_I_waterbulle.stdout.rel_tf_osx_builder.41373.Bxr0e0.ii
- t _GLOBAL__sub_I_wcedit.stdout.rel_tf_osx_builder.41380.aSQMqP.ii
- t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.37813.H0rQWq.ii
- t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.37826.O0GKK2.ii
- t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.37830.zbgF6N.ii
- t _GLOBAL__sub_I_weapon_par.stdout.rel_tf_osx_builder.37838.XbdVPj.ii
- t _GLOBAL__sub_I_weight_but.stdout.rel_tf_osx_builder.41391.wZi0Ci.ii
- t _GLOBAL__sub_I_world.stdout.rel_tf_osx_builder.41393.sWRjuX.ii
- t _GLOBAL__sub_I_zombie.stdout.rel_tf_osx_builder.40764.kUDin1.ii
- t _GLOBAL__sub_I_zombie_att.stdout.rel_tf_osx_builder.40768.XJEboa.ii
- t _GLOBAL__sub_I_zombie_spa.stdout.rel_tf_osx_builder.40786.4rOwBa.ii
+ t _GLOBAL__sub_I_vehicle_ba.stdout.rel_tf_osx_builder.64215.Erftuw.ii
+ t _GLOBAL__sub_I_vehicle_ba.stdout.rel_tf_osx_builder.64219.NjbeTr.ii
+ t _GLOBAL__sub_I_vehicle_vi.stdout.rel_tf_osx_builder.60665.72XblX.ii
+ t _GLOBAL__sub_I_vguiscreen.stdout.rel_tf_osx_builder.64227.VWm0SG.ii
+ t _GLOBAL__sub_I_voice_game.stdout.rel_tf_osx_builder.60671.OojJjx.ii
+ t _GLOBAL__sub_I_vote_contr.stdout.rel_tf_osx_builder.59152.Ybz9Au.ii
+ t _GLOBAL__sub_I_waterbulle.stdout.rel_tf_osx_builder.64233.xitRai.ii
+ t _GLOBAL__sub_I_wcedit.stdout.rel_tf_osx_builder.64243.W9JZet.ii
+ t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.60676.kT0T7i.ii
+ t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.60687.lwMPmN.ii
+ t _GLOBAL__sub_I_weapon_ifm.stdout.rel_tf_osx_builder.60691.n39Rr9.ii
+ t _GLOBAL__sub_I_weapon_par.stdout.rel_tf_osx_builder.60699.2RoN7p.ii
+ t _GLOBAL__sub_I_weight_but.stdout.rel_tf_osx_builder.64251.hmlISf.ii
+ t _GLOBAL__sub_I_world.stdout.rel_tf_osx_builder.64255.FnXgWc.ii
+ t _GLOBAL__sub_I_zombie.stdout.rel_tf_osx_builder.63651.94OAFy.ii
+ t _GLOBAL__sub_I_zombie_att.stdout.rel_tf_osx_builder.63655.Ldyh47.ii
+ t _GLOBAL__sub_I_zombie_spa.stdout.rel_tf_osx_builder.63683.LZhliQ.ii
  t __CreateCEffectsServerIEffects_interface()
  t __CreateCGameMovementIGameMovement_interface()
  t __CreateCHLTVDirectorIHLTVDirector_interface()
