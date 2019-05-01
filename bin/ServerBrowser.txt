@@ -290,6 +290,29 @@
  D CVACBannedConnRefusedDialog::KB_ChainToMap()::chained
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
+ D SteamAppList()::s_CallbackCounterAndContext
+ D SteamApps()::s_CallbackCounterAndContext
+ D SteamClient()::s_CallbackCounterAndContext
+ D SteamController()::s_CallbackCounterAndContext
+ D SteamFriends()::s_CallbackCounterAndContext
+ D SteamGameSearch()::s_CallbackCounterAndContext
+ D SteamHTMLSurface()::s_CallbackCounterAndContext
+ D SteamHTTP()::s_CallbackCounterAndContext
+ D SteamInput()::s_CallbackCounterAndContext
+ D SteamInventory()::s_CallbackCounterAndContext
+ D SteamMatchmaking()::s_CallbackCounterAndContext
+ D SteamMatchmakingServers()::s_CallbackCounterAndContext
+ D SteamMusic()::s_CallbackCounterAndContext
+ D SteamMusicRemote()::s_CallbackCounterAndContext
+ D SteamNetworking()::s_CallbackCounterAndContext
+ D SteamParentalSettings()::s_CallbackCounterAndContext
+ D SteamRemoteStorage()::s_CallbackCounterAndContext
+ D SteamScreenshots()::s_CallbackCounterAndContext
+ D SteamUGC()::s_CallbackCounterAndContext
+ D SteamUser()::s_CallbackCounterAndContext
+ D SteamUserStats()::s_CallbackCounterAndContext
+ D SteamUtils()::s_CallbackCounterAndContext
+ D SteamVideo()::s_CallbackCounterAndContext
  D TagInfoLabel::ChainToAnimationMap()::chained
  D TagInfoLabel::ChainToMap()::chained
  D TagInfoLabel::GetKBMap()::s_pMap
@@ -1599,13 +1622,14 @@
  R typeinfo name for vgui::TreeViewSubPanel
  R typeinfo name for vgui::URLLabel
  RandomFloat
- SteamAPI_GetHSteamPipe
  SteamAPI_GetHSteamUser
  SteamAPI_InitSafe
  SteamAPI_RegisterCallback
  SteamAPI_SetTryCatchCallbacks
  SteamAPI_UnregisterCallback
+ SteamInternal_ContextInit
  SteamInternal_CreateInterface
+ SteamInternal_FindOrCreateUserInterface
  T Bias(float, float)
  T BlacklistedAtCompare(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
  T BlacklistedIPAddressCompare(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
@@ -1734,11 +1758,15 @@
  T CBuildModeNavCombo::OnShowMenu(vgui::Menu*)
  T CBuildModeNavCombo::~CBuildModeNavCombo()
  T CCallback<CBaseGamesPage, FavoritesListChanged_t, false>::Run(void*)
+ T CCallback<CBaseGamesPage, FavoritesListChanged_t, false>::~CCallback()
  T CCallback<CDialogGameInfo, PersonaStateChange_t, false>::Run(void*)
+ T CCallback<CDialogGameInfo, PersonaStateChange_t, false>::~CCallback()
  T CCallbackImpl<12>::GetCallbackSizeBytes()
  T CCallbackImpl<12>::Run(void*, bool, unsigned long long)
+ T CCallbackImpl<12>::~CCallbackImpl()
  T CCallbackImpl<28>::GetCallbackSizeBytes()
  T CCallbackImpl<28>::Run(void*, bool, unsigned long long)
+ T CCallbackImpl<28>::~CCallbackImpl()
  T CCheckBoxWithStatus::CCheckBoxWithStatus(vgui::Panel*, char const*, char const*)
  T CCheckBoxWithStatus::GetAnimMap()
  T CCheckBoxWithStatus::GetKBMap()
@@ -2512,6 +2540,29 @@
  T ServerQualitySort(serverqualitysort_t const*, serverqualitysort_t const*)
  T SortServerTags(char* const*, char* const*)
  T SortTagsInUse(tagentry_t const*, tagentry_t const*)
+ T SteamInternal_Init_SteamAppList(ISteamAppList**)
+ T SteamInternal_Init_SteamApps(ISteamApps**)
+ T SteamInternal_Init_SteamClient(ISteamClient**)
+ T SteamInternal_Init_SteamController(ISteamController**)
+ T SteamInternal_Init_SteamFriends(ISteamFriends**)
+ T SteamInternal_Init_SteamGameSearch(ISteamGameSearch**)
+ T SteamInternal_Init_SteamHTMLSurface(ISteamHTMLSurface**)
+ T SteamInternal_Init_SteamHTTP(ISteamHTTP**)
+ T SteamInternal_Init_SteamInput(ISteamInput**)
+ T SteamInternal_Init_SteamInventory(ISteamInventory**)
+ T SteamInternal_Init_SteamMatchmaking(ISteamMatchmaking**)
+ T SteamInternal_Init_SteamMatchmakingServers(ISteamMatchmakingServers**)
+ T SteamInternal_Init_SteamMusic(ISteamMusic**)
+ T SteamInternal_Init_SteamMusicRemote(ISteamMusicRemote**)
+ T SteamInternal_Init_SteamNetworking(ISteamNetworking**)
+ T SteamInternal_Init_SteamParentalSettings(ISteamParentalSettings**)
+ T SteamInternal_Init_SteamRemoteStorage(ISteamRemoteStorage**)
+ T SteamInternal_Init_SteamScreenshots(ISteamScreenshots**)
+ T SteamInternal_Init_SteamUGC(ISteamUGC**)
+ T SteamInternal_Init_SteamUser(ISteamUser**)
+ T SteamInternal_Init_SteamUserStats(ISteamUserStats**)
+ T SteamInternal_Init_SteamUtils(ISteamUtils**)
+ T SteamInternal_Init_SteamVideo(ISteamVideo**)
  T StringLessThan(char const* const&, char const* const&)
  T TagInfoLabel::DoOpenCustomServerInfoURL()
  T TagInfoLabel::GetAnimMap()
@@ -4989,16 +5040,16 @@
  t ListFileTypeSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
  t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.43007.eYiwWd.ii
  t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.43008.ovnUBy.ii
- t _GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.5583.08c4JC.ii
+ t _GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.26484.fuM3Wk.ii
  t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.43009.klBBMl.ii
- t _GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.5584.VoqGGm.ii
+ t _GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.26485.oJTpOo.ii
  t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.3772.fZ8RsH.ii
  t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.21759.hZrfvR.ii
- t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.43056.KntMV1.ii
+ t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.12701.wLKW0q.ii
  t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.21760.lKob9E.ii
  t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.21762.CYRhKi.ii
  t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.21763.S5fTgZ.ii
- t _GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.5585.wkyHaw.ii
+ t _GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.26486.yik8wk.ii
  t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.21766.ap4Rtx.ii
  t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.43112.0bLKil.ii
  t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.21806.cz1fLz.ii
@@ -5007,9 +5058,9 @@
  t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
  t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
  t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
- t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.21860.Y76Toh.ii
+ t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
  t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
- t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.21870.OUXbvu.ii
+ t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.12706.fi991S.ii
  t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.43236.dRZvh7.ii
  t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.21876.rKeAaD.ii
  t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.21884.uPLoxr.ii
@@ -5018,11 +5069,11 @@
  t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.43268.9Irv2u.ii
  t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.21902.BnMMxf.ii
  t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.21924.KuLzlB.ii
- t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.21930.PGIpOe.ii
+ t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.12712.nZxaKB.ii
  t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.43349.ai3IHx.ii
  t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.43363.FWejpu.ii
- t _GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.5652.AbAz9G.ii
- t _GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.5663.YQsgtn.ii
+ t _GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.26558.rugBgC.ii
+ t _GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.26573.P49WS8.ii
  t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.21947.ZqZxrf.ii
  t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.21956.JCPg8N.ii
  t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.43416.Wzt3mF.ii
@@ -5034,7 +5085,7 @@
  t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
  t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
- t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.47012.GBhPc0.ii
+ t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.14157.LID42a.ii
  t __CreateCServerBrowserIServerBrowser_interface()
  t __CreateCServerBrowserIVGuiModule_interface()
  tanf

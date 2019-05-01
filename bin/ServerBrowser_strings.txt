@@ -15,7 +15,7 @@
  0P`@pp0
  @00 `
  @P000p p
- P0000
+ P0000@
  PPPPP
  ReadToken overflow
  `pp 
@@ -373,9 +373,30 @@ $ffff.
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/mathlib.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector4d.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamapplist.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamapps.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamclient.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamcontroller.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamfriends.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamhtmlsurface.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamhttp.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteaminput.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteaminventory.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteammatchmaking.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteammusic.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteammusicremote.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamnetworking.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamparentalsettings.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamremotestorage.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamscreenshots.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamugc.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamuser.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamuserstats.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamutils.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamvideo.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/matchmakingtypes.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api_common.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api_internal.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steamclientpublic.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/basetypes.h
@@ -575,6 +596,7 @@ $ffff.
 00@@@@p
 00P0@P  
 00Pp p `P
+0@@0@@@@@@@@@@@@@@@@@@@
 0@@p p@P@@0p
 0PP@@`0`0P0
 0ffff.
@@ -676,6 +698,7 @@ $ffff.
 @@@@0
 @@@p@
 @@PPp
+@@p p
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
 @CThreadRWLock::LockForWrite()
@@ -696,13 +719,14 @@ $ffff.
 @_Msg
 @_Plat_FloatTime
 @_RandomFloat
-@_SteamAPI_GetHSteamPipe
 @_SteamAPI_GetHSteamUser
 @_SteamAPI_InitSafe
 @_SteamAPI_RegisterCallback
 @_SteamAPI_SetTryCatchCallbacks
 @_SteamAPI_UnregisterCallback
+@_SteamInternal_ContextInit
 @_SteamInternal_CreateInterface
+@_SteamInternal_FindOrCreateUserInterface
 @_ThreadGetCurrentId
 @_Warning
 @__DefaultRuneLocale
@@ -1047,11 +1071,15 @@ CBuildModeNavCombo::KB_ChainToMap()::chained
 CBuildModeNavCombo::OnShowMenu(vgui::Menu*)
 CBuildModeNavCombo::~CBuildModeNavCombo()
 CCallback<CBaseGamesPage, FavoritesListChanged_t, false>::Run(void*)
+CCallback<CBaseGamesPage, FavoritesListChanged_t, false>::~CCallback()
 CCallback<CDialogGameInfo, PersonaStateChange_t, false>::Run(void*)
+CCallback<CDialogGameInfo, PersonaStateChange_t, false>::~CCallback()
 CCallbackImpl<12>::GetCallbackSizeBytes()
 CCallbackImpl<12>::Run(void*, bool, unsigned long long)
+CCallbackImpl<12>::~CCallbackImpl()
 CCallbackImpl<28>::GetCallbackSizeBytes()
 CCallbackImpl<28>::Run(void*, bool, unsigned long long)
+CCallbackImpl<28>::~CCallbackImpl()
 CCheckBoxWithStatus
 CCheckBoxWithStatus::CCheckBoxWithStatus(vgui::Panel*, char const*, char const*)
 CCheckBoxWithStatus::ChainToAnimationMap()::chained
@@ -2165,6 +2193,7 @@ InputDialog
 InputSystemVersion001
 InterfaceReg::InterfaceReg(void* (*)(), char const*)
 InterfaceReg::s_pInterfaceRegs
+Invalid URL in FireActionSignal '%s'
 Invalidate
 IsReplayServer(gameserveritem_t&)
 ItemDeselected
@@ -2562,15 +2591,15 @@ RoundedCorners
 RunGameEngine005
 STEAMAPPLIST_INTERFACE_VERSION001
 STEAMAPPS_INTERFACE_VERSION008
-STEAMHTMLSURFACE_INTERFACE_VERSION_003
-STEAMHTTP_INTERFACE_VERSION002
-STEAMINVENTORY_INTERFACE_V002
+STEAMHTMLSURFACE_INTERFACE_VERSION_005
+STEAMHTTP_INTERFACE_VERSION003
+STEAMINVENTORY_INTERFACE_V003
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
+STEAMPARENTALSETTINGS_INTERFACE_VERSION001
 STEAMREMOTESTORAGE_INTERFACE_VERSION014
 STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION010
-STEAMUNIFIEDMESSAGES_INTERFACE_VERSION001
+STEAMUGC_INTERFACE_VERSION012
 STEAMUSERSTATS_INTERFACE_VERSION011
 STEAMVIDEO_INTERFACE_V002
 Save button - saves all settings to file. 
@@ -2665,19 +2694,66 @@ SpectateGames
 Spew TabContainer dimensions.
 Spline
 StatusLabel
-SteamClient017
-SteamController005
-SteamFriends015
+SteamAppList()::s_CallbackCounterAndContext
+SteamApps()::s_CallbackCounterAndContext
+SteamClient()::s_CallbackCounterAndContext
+SteamClient018
+SteamController()::s_CallbackCounterAndContext
+SteamController007
+SteamFriends()::s_CallbackCounterAndContext
+SteamFriends017
+SteamGameSearch()::s_CallbackCounterAndContext
+SteamHTMLSurface()::s_CallbackCounterAndContext
+SteamHTTP()::s_CallbackCounterAndContext
+SteamInput()::s_CallbackCounterAndContext
+SteamInput001
+SteamInternal_Init_SteamAppList(ISteamAppList**)
+SteamInternal_Init_SteamApps(ISteamApps**)
+SteamInternal_Init_SteamClient(ISteamClient**)
+SteamInternal_Init_SteamController(ISteamController**)
+SteamInternal_Init_SteamFriends(ISteamFriends**)
+SteamInternal_Init_SteamGameSearch(ISteamGameSearch**)
+SteamInternal_Init_SteamHTMLSurface(ISteamHTMLSurface**)
+SteamInternal_Init_SteamHTTP(ISteamHTTP**)
+SteamInternal_Init_SteamInput(ISteamInput**)
+SteamInternal_Init_SteamInventory(ISteamInventory**)
+SteamInternal_Init_SteamMatchmaking(ISteamMatchmaking**)
+SteamInternal_Init_SteamMatchmakingServers(ISteamMatchmakingServers**)
+SteamInternal_Init_SteamMusic(ISteamMusic**)
+SteamInternal_Init_SteamMusicRemote(ISteamMusicRemote**)
+SteamInternal_Init_SteamNetworking(ISteamNetworking**)
+SteamInternal_Init_SteamParentalSettings(ISteamParentalSettings**)
+SteamInternal_Init_SteamRemoteStorage(ISteamRemoteStorage**)
+SteamInternal_Init_SteamScreenshots(ISteamScreenshots**)
+SteamInternal_Init_SteamUGC(ISteamUGC**)
+SteamInternal_Init_SteamUser(ISteamUser**)
+SteamInternal_Init_SteamUserStats(ISteamUserStats**)
+SteamInternal_Init_SteamUtils(ISteamUtils**)
+SteamInternal_Init_SteamVideo(ISteamVideo**)
+SteamInventory()::s_CallbackCounterAndContext
+SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
+SteamMatchmaking()::s_CallbackCounterAndContext
+SteamMatchmakingServers()::s_CallbackCounterAndContext
+SteamMusic()::s_CallbackCounterAndContext
+SteamMusicRemote()::s_CallbackCounterAndContext
+SteamNetworking()::s_CallbackCounterAndContext
 SteamNetworking005
-SteamUser019
+SteamParentalSettings()::s_CallbackCounterAndContext
+SteamRemoteStorage()::s_CallbackCounterAndContext
+SteamScreenshots()::s_CallbackCounterAndContext
+SteamUGC()::s_CallbackCounterAndContext
+SteamUser()::s_CallbackCounterAndContext
+SteamUser020
+SteamUserStats()::s_CallbackCounterAndContext
+SteamUtils()::s_CallbackCounterAndContext
 SteamUtils009
+SteamVideo()::s_CallbackCounterAndContext
 StopPanelAnimations
 StoreUndo
 StringLessThan(char const* const&, char const* const&)
 SubTabPosition
-TBR0L`
 TabActiveBorder
 TabBorder
 TabContainer
@@ -2770,6 +2846,7 @@ UpButton
 UpdateControlData
 VACBannedConnRefusedDialog
 VBAllocTracker001
+VBR0D`
 VDataCache003
 VDmeMakeFileUtils001
 VEngineCvar004
@@ -2939,13 +3016,14 @@ _JoiningSecureServerCall
 _KeyValuesSystem
 _Plat_FloatTime
 _RandomFloat
-_SteamAPI_GetHSteamPipe
 _SteamAPI_GetHSteamUser
 _SteamAPI_InitSafe
 _SteamAPI_RegisterCallback
 _SteamAPI_SetTryCatchCallbacks
 _SteamAPI_UnregisterCallback
+_SteamInternal_ContextInit
 _SteamInternal_CreateInterface
+_SteamInternal_FindOrCreateUserInterface
 _ThreadGetCurrentId
 _Warning
 __CreateCServerBrowserIServerBrowser_interface()
@@ -2954,16 +3032,16 @@ __DATA
 __DefaultRuneLocale
 __GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.43007.eYiwWd.ii
 __GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.43008.ovnUBy.ii
-__GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.5583.08c4JC.ii
+__GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.26484.fuM3Wk.ii
 __GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.43009.klBBMl.ii
-__GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.5584.VoqGGm.ii
+__GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.26485.oJTpOo.ii
 __GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.3772.fZ8RsH.ii
 __GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.21759.hZrfvR.ii
-__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.43056.KntMV1.ii
+__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.12701.wLKW0q.ii
 __GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.21760.lKob9E.ii
 __GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.21762.CYRhKi.ii
 __GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.21763.S5fTgZ.ii
-__GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.5585.wkyHaw.ii
+__GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.26486.yik8wk.ii
 __GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.21766.ap4Rtx.ii
 __GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.43112.0bLKil.ii
 __GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.21806.cz1fLz.ii
@@ -2972,9 +3050,9 @@ __GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.21812.W6sazA.ii
 __GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
 __GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
 __GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
-__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.21860.Y76Toh.ii
+__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
 __GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.21870.OUXbvu.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.12706.fi991S.ii
 __GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.43236.dRZvh7.ii
 __GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.21876.rKeAaD.ii
 __GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.21884.uPLoxr.ii
@@ -2983,11 +3061,11 @@ __GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.3776.cfsOcQ.ii
 __GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.43268.9Irv2u.ii
 __GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.21902.BnMMxf.ii
 __GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.21924.KuLzlB.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.21930.PGIpOe.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.12712.nZxaKB.ii
 __GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.43349.ai3IHx.ii
 __GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.43363.FWejpu.ii
-__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.5652.AbAz9G.ii
-__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.5663.YQsgtn.ii
+__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.26558.rugBgC.ii
+__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.26573.P49WS8.ii
 __GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.21947.ZqZxrf.ii
 __GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.21956.JCPg8N.ii
 __GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.43416.Wzt3mF.ii
@@ -2999,7 +3077,7 @@ __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
 __GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
 __GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
-__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.47012.GBhPc0.ii
+__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.14157.LID42a.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -3771,6 +3849,8 @@ guard variable for vgui::URLLabel::GetKBMap()::s_pMap
 guard variable for vgui::URLLabel::GetMessageMap()::s_pMap
 handle
 history
+http://
+https://
 iconImage
 if_workshop_enabled
 image

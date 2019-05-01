@@ -27,6 +27,29 @@
  B sc_joystick_map
  CommandLine_Tier0
  ConMsg(char const*, ...)
+ D SteamAppList()::s_CallbackCounterAndContext
+ D SteamApps()::s_CallbackCounterAndContext
+ D SteamClient()::s_CallbackCounterAndContext
+ D SteamController()::s_CallbackCounterAndContext
+ D SteamFriends()::s_CallbackCounterAndContext
+ D SteamGameSearch()::s_CallbackCounterAndContext
+ D SteamHTMLSurface()::s_CallbackCounterAndContext
+ D SteamHTTP()::s_CallbackCounterAndContext
+ D SteamInput()::s_CallbackCounterAndContext
+ D SteamInventory()::s_CallbackCounterAndContext
+ D SteamMatchmaking()::s_CallbackCounterAndContext
+ D SteamMatchmakingServers()::s_CallbackCounterAndContext
+ D SteamMusic()::s_CallbackCounterAndContext
+ D SteamMusicRemote()::s_CallbackCounterAndContext
+ D SteamNetworking()::s_CallbackCounterAndContext
+ D SteamParentalSettings()::s_CallbackCounterAndContext
+ D SteamRemoteStorage()::s_CallbackCounterAndContext
+ D SteamScreenshots()::s_CallbackCounterAndContext
+ D SteamUGC()::s_CallbackCounterAndContext
+ D SteamUser()::s_CallbackCounterAndContext
+ D SteamUserStats()::s_CallbackCounterAndContext
+ D SteamUtils()::s_CallbackCounterAndContext
+ D SteamVideo()::s_CallbackCounterAndContext
  D typeinfo for CBaseAppSystem<IInputSystem>
  D typeinfo for CDefaultAccessor
  D typeinfo for CEmptyConVar
@@ -95,10 +118,11 @@
  SDL_QuitSubSystem
  SDL_SetHint
  SDL_WasInit
- SteamAPI_GetHSteamPipe
  SteamAPI_GetHSteamUser
  SteamAPI_InitSafe
+ SteamInternal_ContextInit
  SteamInternal_CreateInterface
+ SteamInternal_FindOrCreateUserInterface
  T AnalogCode_AnalogCodeToString(AnalogCode_t)
  T AnalogCode_StringToAnalogCode(char const*)
  T ButtonCode_ButtonCodeToString(ButtonCode_t, bool)
@@ -244,6 +268,29 @@
  T DisconnectTier2Libraries()
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T SearchForDevice()
+ T SteamInternal_Init_SteamAppList(ISteamAppList**)
+ T SteamInternal_Init_SteamApps(ISteamApps**)
+ T SteamInternal_Init_SteamClient(ISteamClient**)
+ T SteamInternal_Init_SteamController(ISteamController**)
+ T SteamInternal_Init_SteamFriends(ISteamFriends**)
+ T SteamInternal_Init_SteamGameSearch(ISteamGameSearch**)
+ T SteamInternal_Init_SteamHTMLSurface(ISteamHTMLSurface**)
+ T SteamInternal_Init_SteamHTTP(ISteamHTTP**)
+ T SteamInternal_Init_SteamInput(ISteamInput**)
+ T SteamInternal_Init_SteamInventory(ISteamInventory**)
+ T SteamInternal_Init_SteamMatchmaking(ISteamMatchmaking**)
+ T SteamInternal_Init_SteamMatchmakingServers(ISteamMatchmakingServers**)
+ T SteamInternal_Init_SteamMusic(ISteamMusic**)
+ T SteamInternal_Init_SteamMusicRemote(ISteamMusicRemote**)
+ T SteamInternal_Init_SteamNetworking(ISteamNetworking**)
+ T SteamInternal_Init_SteamParentalSettings(ISteamParentalSettings**)
+ T SteamInternal_Init_SteamRemoteStorage(ISteamRemoteStorage**)
+ T SteamInternal_Init_SteamScreenshots(ISteamScreenshots**)
+ T SteamInternal_Init_SteamUGC(ISteamUGC**)
+ T SteamInternal_Init_SteamUser(ISteamUser**)
+ T SteamInternal_Init_SteamUserStats(ISteamUserStats**)
+ T SteamInternal_Init_SteamUtils(ISteamUtils**)
+ T SteamInternal_Init_SteamVideo(ISteamVideo**)
  T Sys_UnloadModule(CSysModule*)
  T V_atof(char const*)
  T V_snprintf(char*, int, char const*, ...)
@@ -325,10 +372,10 @@
  t JoystickSDLWatcher(void*, SDL_Event*)
  t SetJoyXControllerFound(bool)
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
- t _GLOBAL__sub_I_inputsyste.stdout.rel_tf_osx_builder.4793.k0oUd3.ii
- t _GLOBAL__sub_I_joystick_s.stdout.rel_tf_osx_builder.4794.hWEfIt.ii
+ t _GLOBAL__sub_I_inputsyste.stdout.rel_tf_osx_builder.14093.84SaFb.ii
+ t _GLOBAL__sub_I_joystick_s.stdout.rel_tf_osx_builder.14094.bBT5sb.ii
  t _GLOBAL__sub_I_key_transl.stdout.rel_tf_osx_builder.46778.a8y0Pf.ii
- t _GLOBAL__sub_I_steamcontr.stdout.rel_tf_osx_builder.46779.oaT3T5.ii
+ t _GLOBAL__sub_I_steamcontr.stdout.rel_tf_osx_builder.14095.Nrdqso.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
  t __CreateCInputSystemIInputSystem_interface()
  t joy_active_changed_f(IConVar*, char const*, float)

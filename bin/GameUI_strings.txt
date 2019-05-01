@@ -47,8 +47,8 @@
  00@0p
  0@P`p
  0P`@pp0
- @00 
  @00 `
+ @@0@@@@@@@@@@@@@@@@@@@
  @P000 
  @P0@
  @tIME
@@ -1061,6 +1061,27 @@ $terlace_handling
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector4d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/sourcevr/isourcevirtualreality.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamapplist.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamapps.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamclient.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamcontroller.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamfriends.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamhtmlsurface.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamhttp.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteaminput.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteaminventory.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteammatchmaking.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteammusic.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteammusicremote.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamnetworking.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamparentalsettings.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamremotestorage.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamscreenshots.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamugc.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamuser.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamuserstats.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamutils.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/isteamvideo.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api_internal.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/basetypes.h
@@ -1515,10 +1536,10 @@ $terlace_handling
 @_SDL_GetDisplayBounds
 @_SDL_GetNumVideoDisplays
 @_ShouldUseNewAssertDialog
-@_SteamAPI_GetHSteamPipe
 @_SteamAPI_GetHSteamUser
 @_SteamInternal_ContextInit
 @_SteamInternal_CreateInterface
+@_SteamInternal_FindOrCreateUserInterface
 @_ThreadGetCurrentId
 @_ThreadInterlockedAssignIf64
 @_ThreadSleep
@@ -5253,6 +5274,7 @@ Invalid JPEG file structure: two SOF markers
 Invalid JPEG file structure: two SOI markers
 Invalid PLTE after IDAT
 Invalid SOS parameters for sequential JPEG
+Invalid URL in FireActionSignal '%s'
 Invalid attempt to read row data
 Invalid bKGD after IDAT
 Invalid background palette index
@@ -6190,15 +6212,15 @@ SHA-256
 SLIDER
 STEAMAPPLIST_INTERFACE_VERSION001
 STEAMAPPS_INTERFACE_VERSION008
-STEAMHTMLSURFACE_INTERFACE_VERSION_003
-STEAMHTTP_INTERFACE_VERSION002
-STEAMINVENTORY_INTERFACE_V002
+STEAMHTMLSURFACE_INTERFACE_VERSION_005
+STEAMHTTP_INTERFACE_VERSION003
+STEAMINVENTORY_INTERFACE_V003
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
+STEAMPARENTALSETTINGS_INTERFACE_VERSION001
 STEAMREMOTESTORAGE_INTERFACE_VERSION014
 STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION010
-STEAMUNIFIEDMESSAGES_INTERFACE_VERSION001
+STEAMUGC_INTERFACE_VERSION012
 STEAMUSERSTATS_INTERFACE_VERSION011
 STEAMVIDEO_INTERFACE_V002
 STRING
@@ -6378,18 +6400,64 @@ StartSystemLinkHost
 StatusLabel
 Steam config directory: %s
 SteamApp
-SteamClient017
-SteamController005
-SteamFriends015
-SteamInternal_ModuleContext()::s_CallbackCounterAndContext
-SteamInternal_OnContextInit(void*)
+SteamAppList()::s_CallbackCounterAndContext
+SteamApps()::s_CallbackCounterAndContext
+SteamClient()::s_CallbackCounterAndContext
+SteamClient018
+SteamController()::s_CallbackCounterAndContext
+SteamController007
+SteamFriends()::s_CallbackCounterAndContext
+SteamFriends017
+SteamGameSearch()::s_CallbackCounterAndContext
+SteamHTMLSurface()::s_CallbackCounterAndContext
+SteamHTTP()::s_CallbackCounterAndContext
+SteamInput()::s_CallbackCounterAndContext
+SteamInput001
+SteamInternal_Init_SteamAppList(ISteamAppList**)
+SteamInternal_Init_SteamApps(ISteamApps**)
+SteamInternal_Init_SteamClient(ISteamClient**)
+SteamInternal_Init_SteamController(ISteamController**)
+SteamInternal_Init_SteamFriends(ISteamFriends**)
+SteamInternal_Init_SteamGameSearch(ISteamGameSearch**)
+SteamInternal_Init_SteamHTMLSurface(ISteamHTMLSurface**)
+SteamInternal_Init_SteamHTTP(ISteamHTTP**)
+SteamInternal_Init_SteamInput(ISteamInput**)
+SteamInternal_Init_SteamInventory(ISteamInventory**)
+SteamInternal_Init_SteamMatchmaking(ISteamMatchmaking**)
+SteamInternal_Init_SteamMatchmakingServers(ISteamMatchmakingServers**)
+SteamInternal_Init_SteamMusic(ISteamMusic**)
+SteamInternal_Init_SteamMusicRemote(ISteamMusicRemote**)
+SteamInternal_Init_SteamNetworking(ISteamNetworking**)
+SteamInternal_Init_SteamParentalSettings(ISteamParentalSettings**)
+SteamInternal_Init_SteamRemoteStorage(ISteamRemoteStorage**)
+SteamInternal_Init_SteamScreenshots(ISteamScreenshots**)
+SteamInternal_Init_SteamUGC(ISteamUGC**)
+SteamInternal_Init_SteamUser(ISteamUser**)
+SteamInternal_Init_SteamUserStats(ISteamUserStats**)
+SteamInternal_Init_SteamUtils(ISteamUtils**)
+SteamInternal_Init_SteamVideo(ISteamVideo**)
+SteamInventory()::s_CallbackCounterAndContext
 SteamLightGreen
+SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
+SteamMatchmaking()::s_CallbackCounterAndContext
+SteamMatchmakingServers()::s_CallbackCounterAndContext
+SteamMusic()::s_CallbackCounterAndContext
+SteamMusicRemote()::s_CallbackCounterAndContext
+SteamNetworking()::s_CallbackCounterAndContext
 SteamNetworking005
-SteamUser019
+SteamParentalSettings()::s_CallbackCounterAndContext
+SteamRemoteStorage()::s_CallbackCounterAndContext
+SteamScreenshots()::s_CallbackCounterAndContext
+SteamUGC()::s_CallbackCounterAndContext
+SteamUser()::s_CallbackCounterAndContext
+SteamUser020
+SteamUserStats()::s_CallbackCounterAndContext
+SteamUtils()::s_CallbackCounterAndContext
 SteamUtils002
 SteamUtils009
+SteamVideo()::s_CallbackCounterAndContext
 SteamVoiceSettings
 StopPanelAnimations
 StorageDeviceDenied
@@ -6921,10 +6989,10 @@ _SDL_GetDisplayBounds
 _SDL_GetNumVideoDisplays
 _SYS_NO_ERROR
 _ShouldUseNewAssertDialog
-_SteamAPI_GetHSteamPipe
 _SteamAPI_GetHSteamUser
 _SteamInternal_ContextInit
 _SteamInternal_CreateInterface
+_SteamInternal_FindOrCreateUserInterface
 _ThreadGetCurrentId
 _ThreadInterlockedAssignIf64
 _ThreadSleep
@@ -6939,13 +7007,13 @@ __ExitOnFatalAssert
 __GLOBAL__sub_I_AnalogBar.stdout.rel_tf_osx_builder.21758.iemzdH.ii
 __GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.43007.eYiwWd.ii
 __GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.43008.ovnUBy.ii
-__GLOBAL__sub_I_BasePanel.stdout.rel_tf_osx_builder.5499.ybKY7a.ii
+__GLOBAL__sub_I_BasePanel.stdout.rel_tf_osx_builder.26344.032yL5.ii
 __GLOBAL__sub_I_BenchmarkD.stdout.rel_tf_osx_builder.35965.EGveis.ii
 __GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.43009.klBBMl.ii
 __GLOBAL__sub_I_BonusMapsD.stdout.rel_tf_osx_builder.84199.YdbL8r.ii
 __GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.3772.fZ8RsH.ii
 __GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.21759.hZrfvR.ii
-__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.43056.KntMV1.ii
+__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.12701.wLKW0q.ii
 __GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.21760.lKob9E.ii
 __GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.21762.CYRhKi.ii
 __GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.21763.S5fTgZ.ii
@@ -6957,26 +7025,26 @@ __GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.43112.0bLKil.ii
 __GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.21806.cz1fLz.ii
 __GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.21808.6bXa3M.ii
 __GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.21812.W6sazA.ii
-__GLOBAL__sub_I_GameConsol.stdout.rel_tf_osx_builder.84289.p9T564.ii
-__GLOBAL__sub_I_GameUI_Int.stdout.rel_tf_osx_builder.5501.4IWfrF.ii
+__GLOBAL__sub_I_GameConsol.stdout.rel_tf_osx_builder.26348.j2cczf.ii
+__GLOBAL__sub_I_GameUI_Int.stdout.rel_tf_osx_builder.26350.BeEu37.ii
 __GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
 __GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
 __GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
-__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.21860.Y76Toh.ii
+__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
 __GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
 __GLOBAL__sub_I_LoadCommen.stdout.rel_tf_osx_builder.84331.BI6A6O.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.21870.OUXbvu.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.12706.fi991S.ii
 __GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.43236.dRZvh7.ii
 __GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.21876.rKeAaD.ii
 __GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.21884.uPLoxr.ii
 __GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.43254.0xQJy2.ii
-__GLOBAL__sub_I_OptionsDia.stdout.rel_tf_osx_builder.36106.nIFXjR.ii
-__GLOBAL__sub_I_OptionsSub.stdout.rel_tf_osx_builder.36110.Rot4eF.ii
+__GLOBAL__sub_I_OptionsDia.stdout.rel_tf_osx_builder.26382.tLrf5S.ii
+__GLOBAL__sub_I_OptionsSub.stdout.rel_tf_osx_builder.26390.E25Fxq.ii
 __GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.3776.cfsOcQ.ii
 __GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.43268.9Irv2u.ii
 __GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.21902.BnMMxf.ii
 __GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.21924.KuLzlB.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.21930.PGIpOe.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.12712.nZxaKB.ii
 __GLOBAL__sub_I_RunGameEng.stdout.rel_tf_osx_builder.84513.x7nTuI.ii
 __GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.43349.ai3IHx.ii
 __GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.43363.FWejpu.ii
@@ -6987,20 +7055,20 @@ __GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.43416.Wzt3mF.ii
 __GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.43426.yWwuwn.ii
 __GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.21968.LjXC4x.ii
 __GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.21969.yTrVmA.ii
-__GLOBAL__sub_I_URLButton.stdout.rel_tf_osx_builder.84559.SdtYEk.ii
+__GLOBAL__sub_I_URLButton.stdout.rel_tf_osx_builder.26413.01BND7.ii
 __GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.21980.XTaOs1.ii
 __GLOBAL__sub_I_VGuiSystem.stdout.rel_tf_osx_builder.36177.ULCfCy.ii
 __GLOBAL__sub_I_basedialog.stdout.rel_tf_osx_builder.84351.fVWxIN.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
 __GLOBAL__sub_I_cryptlib.cpp
-__GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.46555.bNLYhR.ii
+__GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.14045.l0M2fG.ii
 __GLOBAL__sub_I_cvarslider.stdout.rel_tf_osx_builder.69074.ymuVBB.ii
 __GLOBAL__sub_I_leaderboar.stdout.rel_tf_osx_builder.36070.ZruvF2.ii
 __GLOBAL__sub_I_sessionlob.stdout.rel_tf_osx_builder.36084.xzVqTH.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
 __GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
 __GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
-__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.47012.GBhPc0.ii
+__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.14157.LID42a.ii
 __GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.41227.qLgrGV.ii
 __LINKEDIT
 __SpewInfo
@@ -9065,6 +9133,8 @@ hostname "%s"
 hostname "Speaker Test"
 hostranked
 hoststandard
+http://
+https://
 hu_HU
 hud/icon_complete
 hud\icon_locked.vtf
@@ -9445,6 +9515,7 @@ outoffocus_bgcolor_override
 output_message(jpeg_common_struct*)
 output_pass_setup(jpeg_decompress_struct*)
 output_value(jpeg_decompress_struct*, int, int, int)
+p SD`
 p p  
 p p  p p00p `
 p p  pP
@@ -9480,17 +9551,16 @@ p pp pp pp pp pp p
 p ppp
 p00@@@@
 p0p @
-p<RC`
 p@@0pp`
 p@@`0P0p
 p@`0@p
 pHp4p4p8pH
+pPRC`
 p_floatconverter
 p_intconverter
 p_screenspace_intconverter_X
 p_screenspace_intconverter_Y
 p`@       0 
-p`SD`
 paintbackground
 paintborder
 palette
