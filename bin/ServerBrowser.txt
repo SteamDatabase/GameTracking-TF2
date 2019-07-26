@@ -33,6 +33,7 @@
  B g_GraphPanelPullInModule
  B g_ImagePanelLinkerHack
  B g_ImagePanelPullInModule
+ B g_KeyValuesErrorStack
  B g_LabelLinkerHack
  B g_LabelPullInModule
  B g_ListPanelLinkerHack
@@ -130,6 +131,7 @@
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CThreadRWLock::LockForWrite()
  CThreadRWLock::UnlockWrite()
  CThreadRWLock::WaitForRead()
@@ -620,7 +622,6 @@
  D construction vtable for vgui::ToggleButton-in-vgui::ExpandButton
  D construction vtable for vgui::ToggleButton-in-vgui::RadioButton
  D construction vtable for vgui::URLLabel-in-TagInfoLabel
- D g_KeyValuesErrorStack
  D g_PinCornerStrings
  D guard variable for CBaseGamesPage::GetKBMap()::s_pMap
  D guard variable for CBaseGamesPage::GetMessageMap()::s_pMap
@@ -4757,6 +4758,8 @@
  T void ConstructStringVArgsInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, int, char*)
  T void ILocalize::ConstructString<wchar_t>(wchar_t*, int, wchar_t const*, int, ...)
  ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedExchange
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
@@ -4816,6 +4819,7 @@
  b g_GraphPanel_Helper
  b g_ImagePanel_Helper
  b g_KBMgr
+ b g_KVMutex
  b g_Label_Helper
  b g_ListPanel_Helper
  b g_ListViewPanel_Helper
@@ -5057,6 +5061,7 @@
  t _GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.21812.W6sazA.ii
  t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
  t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
  t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
  t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii

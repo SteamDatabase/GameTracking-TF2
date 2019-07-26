@@ -3,15 +3,16 @@
  B ConCommandBase::s_pConCommandBases
  B InterfaceReg::s_pInterfaceRegs
  B cvar
+ B g_KeyValuesErrorStack
  B g_bugreporter
  B g_pCVar
  B s_NoEscConversion
  B s_StringCharConversion
  COM_TimestampedLog
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CThreadSyncObject::~CThreadSyncObject()
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
- D g_KeyValuesErrorStack
  D typeinfo for CBugReporter
  D typeinfo for CEmptyConVar
  D typeinfo for CUtlCStringConversion
@@ -239,6 +240,9 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
+ ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedExchange
  ThreadSleep
  Warning
  _DefaultRuneLocale
@@ -259,6 +263,7 @@
  b __g_CBugReporter_singleton
  b __g_CreateCBugReporterIBugReporter_reg
  b g_CleanupSymbolTable
+ b g_KVMutex
  b s_EmptyConVar
  b s_pTokenBuf
  b vec2_invalid
@@ -293,6 +298,7 @@
  strtol
  strtoul
  system$UNIX2003
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.84060.cKqVCe.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii

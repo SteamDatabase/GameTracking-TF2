@@ -163,6 +163,7 @@ $X360
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/basetypes.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/memoverride.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/platform.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/threadtools.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/KeyValues.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/byteswap.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/smartptr.h
@@ -237,6 +238,7 @@ $X360
 ;ffffff.
 <^_[]
 @(^_]
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @DevMsg(char const*, ...)
 @DevWarning(char const*, ...)
 @_COM_TimestampedLog
@@ -247,6 +249,9 @@ $X360
 @_Msg
 @_Plat_IsInDebugSession
 @_SpewOutputFunc
+@_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
+@_ThreadInterlockedExchange
 @_Warning
 @__DefaultRuneLocale
 @__Unwind_Resume
@@ -331,7 +336,7 @@ ATI1N
 ATI2N
 ATI_DST16
 ATI_DST24
-AVBSAR0
+AVBSASA
 Adding .vmt parameter: "%s"	"%s"
 Affffff.
 AttachShtFile(char const*, IVTFTexture*, unsigned int*)
@@ -392,6 +397,7 @@ CRC32_Init(unsigned int*)
 CRC32_ProcessBuffer(unsigned int*, void const*, int)
 CRGBA
 CSuggestGameDirHelper::SuggestFn(CFSSteamSetupInfo const*, char*, int, bool*)
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CTier2AppSystem<IVTex, 0>::Connect(void* (*)(char const*, int*))
 CTier2AppSystem<IVTex, 0>::Disconnect()
 CTier2AppSystem<IVTex, 0>::Init()
@@ -569,6 +575,18 @@ DXT1_ONEBITALPHA
 DXT1_RUNTIME
 DXT5_RUNTIME
 D^_[]
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 DebugTextureInfo001
 Depth must be 1 for cubemaps!
 DestroyVTFTexture(IVTFTexture*)
@@ -665,6 +683,20 @@ ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUV88(unsigned char const*, int, in
 ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVLX8888(unsigned char const*, int, int, unsigned char*)
 ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVWQ8888(unsigned char const*, int, int, unsigned char*)
 ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 ImageLoader::FlipImageHorizontally(void*, void*, int, int, ImageFormat, int)
 ImageLoader::FlipImageVertically(void*, void*, int, int, ImageFormat, int)
 ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)
@@ -822,7 +854,7 @@ RecursiveLoadFromBuffer:  got empty keyname
 RecursiveLoadFromBuffer:  got } in key
 RecursiveLoadFromBuffer:  recursion overflow
 Rffffff.
-SBYA`PCWAYARAp
+SBYA`UBWAYARAp
 SB`;ARBZBp
 SUCCESS: %s is up-to-date
 SUCCESS: Vtf file created
@@ -956,6 +988,9 @@ _SSE_Sqrt(float)
 _SSE_VectorNormalizeFast(Vector&)
 _SinCosTable
 _SpewOutputFunc
+_ThreadGetCurrentId
+_ThreadInterlockedAssignIf
+_ThreadInterlockedExchange
 _VectorNormalize(Vector&)
 _VectorNormalizeFast(Vector&)
 _Warning
@@ -963,6 +998,7 @@ __CreateCVTexILaunchableDLL_interface()
 __CreateCVTexIVTex_interface()
 __DATA
 __DefaultRuneLocale
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_cmdlib.stdout.rel_tf_osx_builder.4757.l9qzFR.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
@@ -1127,18 +1163,6 @@ clampt
 clampu
 compressedSize
 config file %s
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 depth
 detail
 distancespread
@@ -1163,6 +1187,7 @@ g_FileSystemError
 g_FileSystemErrorMode
 g_ForcedOutputDir
 g_ImageFormatInfo
+g_KVMutex
 g_Mathlib_GammaToLinear
 g_Mathlib_LinearToGamma
 g_NoPause
@@ -1184,12 +1209,12 @@ game_write
 gamebin
 gameinfo.txt
 green
-guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+guard variable for DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 headerSize
 height
 image not found
@@ -1390,21 +1415,7 @@ void ImageLoader::ConvertFromDXT5<RGBA8888_t>(unsigned char const*, RGBA8888_t*,
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR565_t>(unsigned char const*, BGR565_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR888_t>(unsigned char const*, BGR888_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<RGB888_t>(unsigned char const*, RGB888_t*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
 void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 volumetexture
 vtable for CDefaultAccessor
 vtable for CEmptyConVar

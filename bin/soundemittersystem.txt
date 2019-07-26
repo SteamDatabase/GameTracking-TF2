@@ -4,15 +4,16 @@
  B InterfaceReg::s_pInterfaceRegs
  B ZERO_FLOAT16
  B cvar
+ B g_KeyValuesErrorStack
  B g_SoundEmitterSystemBase
  B g_pCVar
  B s_NoEscConversion
  B s_StringCharConversion
  COM_TimestampedLog
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CThreadSyncObject::~CThreadSyncObject()
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
- D g_KeyValuesErrorStack
  D randomStream
  D typeinfo for CEmptyConVar
  D typeinfo for CSoundEmitterSystemBase
@@ -288,6 +289,9 @@
  T unsigned int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoLookup<CSoundEntry*>(CSoundEntry*, unsigned int, unsigned int*) const
  T unsigned int CUtlHashtable<CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::IndirectIndex, empty_t, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::HashProxy, CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::EqualProxy, char const*>::DoLookup<char const*>(char const*, unsigned int, unsigned int*) const
  T unsigned int CUtlStableHashtable<CSoundEntry*, empty_t, CSoundEntryHashFunctor, CSoundEntryEqualFunctor, unsigned short, char const*>::DoInsert<CSoundEntry*>(CSoundEntry*)
+ ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedExchange
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
@@ -321,6 +325,7 @@
  b __g_CreateCSoundEmitterSystemBaseISoundEmitterSystemBase_reg
  b filesystem
  b g_CleanupSymbolTable
+ b g_KVMutex
  b guard variable for CSoundEmitterSystemBase::GetParametersForSound(char const*, CSoundParameters&, gender_t, bool)::soundWarnings
  b guard variable for CSoundEmitterSystemBase::GetParametersForSoundEx(char const*, short&, CSoundParameters&, gender_t, bool)::soundWarnings
  b s_EmptyConVar
@@ -355,6 +360,7 @@
  strtok
  strtol
  strtoul
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
  t _GLOBAL__sub_I_soundemitt.stdout.rel_tf_osx_builder.41186.xCA8HW.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii

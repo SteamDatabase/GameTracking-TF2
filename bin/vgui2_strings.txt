@@ -216,6 +216,7 @@ $X360
 @(^_]
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CThreadRWLock::LockForWrite()
 @CThreadRWLock::UnlockWrite()
 @CThreadRWLock::WaitForRead()
@@ -245,6 +246,8 @@ $X360
 @_Plat_GetCommandLine
 @_Plat_MSTime
 @_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
+@_ThreadInterlockedExchange
 @_Warning
 @__DefaultRuneLocale
 @__Unwind_Resume
@@ -323,7 +326,7 @@ $X360
 AL;\8
 ARB]ARB`
 ARB`2Bp
-AVBSAR0
+AVBSASA
 A]BRBRB`)ARB`
 BaseBorder
 BaseSettings
@@ -564,6 +567,7 @@ CSystem::Shutdown()
 CSystem::~CSystem()
 CThreadEvent::CThreadEvent(bool)
 CThreadEvent::Set()
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CThreadRWLock::LockForWrite()
 CThreadRWLock::UnlockWrite()
 CThreadRWLock::WaitForRead()
@@ -1297,6 +1301,8 @@ _Plat_FloatTime
 _Plat_GetCommandLine
 _Plat_MSTime
 _ThreadGetCurrentId
+_ThreadInterlockedAssignIf
+_ThreadInterlockedExchange
 _V_UCS2ToUTF8(unsigned short const*, char*, int)
 _Warning
 __CreateCInputSystemIInputInternal_interface()
@@ -1309,6 +1315,7 @@ __CreateVPanelWrapperIPanel_interface()
 __DATA
 __DefaultRuneLocale
 __GLOBAL__sub_I_InputWin32.stdout.rel_tf_osx_builder.4827.3Ns0Kz.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_LocalizedS.stdout.rel_tf_osx_builder.4828.v7gAzR.ii
 __GLOBAL__sub_I_Scheme.stdout.rel_tf_osx_builder.46940.YnPF7f.ii
 __GLOBAL__sub_I_VPanelWrap.stdout.rel_tf_osx_builder.46979.jbzeBV.ii
@@ -1450,7 +1457,7 @@ _wcscpy
 _wcslen
 _wcsncpy
 _wcstol
-`gD^BRB]ARB]ARB`ZBRB`
+`kD^BRB]ARB]ARB`ZBRB`
 `~KEY_BACKQUOTE
 aAKEY_A
 additive
@@ -1484,6 +1491,7 @@ fffff.
 ffffff.
 gGKEY_G
 g_CleanupSymbolTable
+g_KVMutex
 guard variable for CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
 hHKEY_H
 iIKEY_I

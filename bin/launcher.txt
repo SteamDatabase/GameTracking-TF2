@@ -9,6 +9,7 @@
  B colorcorrection
  B cvar
  B gGL
+ B g_KeyValuesErrorStack
  B g_LeakDump
  B g_VBAllocTracker
  B g_bTextMode
@@ -91,12 +92,12 @@
  CGMainDisplayID
  CGOpenGLDisplayMaskToDisplayID
  COM_TimestampedLog
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CommandLine_Tier0
  ConMsg(char const*, ...)
  D CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
- D g_KeyValuesErrorStack
  D g_lockfd
  D reslistgenerator
  D typeinfo for CAppSystemGroup
@@ -560,6 +561,9 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
+ ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedExchange
  ThreadSleep
  VStdLib_GetICVarFactory
  Warning
@@ -591,6 +595,7 @@
  b CSDLMgr::CreateHiddenGameWindow(char const*, int, int)::glGetString
  b ConVarRef::Init(char const*, bool)::bFirst
  b g_FileSystemError
+ b g_KVMutex
  b g_LogFiles
  b g_ResListGenerator
  b g_bSDLDisplayindexSet
@@ -699,6 +704,7 @@
  t DebugPrintf(char const*, ...)
  t ReslistLogLessFunc(CUtlString const&, CUtlString const&)
  t TryLocateGameInfoFile(char*, int, bool)
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
  t _GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.13995.YuBp6J.ii
  t _GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.4682.XvjdIJ.ii

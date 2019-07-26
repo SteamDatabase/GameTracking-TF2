@@ -10,6 +10,7 @@
  B gGL
  B gGL_GetProcAddressCallback
  B g_D3DRS_INFO_unpacked
+ B g_KeyValuesErrorStack
  B g_VBAllocTracker
  B g_bNullD3DDevice
  B g_bUsePseudoBufs
@@ -66,13 +67,13 @@
  B sg_pPIXName
  CGLEnable
  COM_TimestampedLog
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CommandLine_Tier0
  ConMsg(char const*, ...)
  D GLMContext::SetMaxUsedVertexShaderConstantsHint(unsigned int)::bUseMaxVertexShadeConstantHints
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
  D g_D3DRS_INFO_packed
- D g_KeyValuesErrorStack
  D g_bDebugOutputBreakpoints
  D g_bDisableStaticBuffer
  D g_formatDescTableCount
@@ -716,6 +717,7 @@
  T operator new[](unsigned long)
  T toglGetClientRect
  ThreadGetCurrentId
+ ThreadInterlockedAssignIf
  ThreadInterlockedAssignIf64
  ThreadInterlockedCompareExchangePointer
  ThreadInterlockedDecrement
@@ -758,6 +760,7 @@
  b gShaderLinkQueryTime
  b gShaderLinkTime
  b g_D3DToOpenGLTranslatorGLSL
+ b g_KVMutex
  b g_Mathlib_GammaToLinear
  b g_Mathlib_LinearToGamma
  b g_pD3D_Device
@@ -863,6 +866,7 @@
  t FillD3DCaps9(GLMRendererInfoFields const&, _D3DCAPS9*)
  t GetOpenGLVersion(int*, int*, int*)
  t PrintDoubleInt(char*, unsigned int, double, unsigned int)
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_cglmbuffer.stdout.rel_tf_osx_builder.4593.ryeQ3q.ii
  t _GLOBAL__sub_I_cglmprogra.stdout.rel_tf_osx_builder.4595.7QBJCD.ii
  t _GLOBAL__sub_I_cglmquery.stdout.rel_tf_osx_builder.4596.krZWez.ii

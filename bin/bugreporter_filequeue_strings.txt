@@ -76,12 +76,16 @@ $X360
 <^_[]
 @(^_]
 @@@@ p
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CThreadSyncObject::~CThreadSyncObject()
 @DevMsg(char const*, ...)
 @_COM_TimestampedLog
 @_Error
 @_KeyValuesSystem
 @_RandomInt
+@_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
+@_ThreadInterlockedExchange
 @_ThreadSleep
 @_Warning
 @__DefaultRuneLocale
@@ -133,7 +137,7 @@ $X360
 @vtable for __cxxabiv1::__class_type_info
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
-AVBRAR0
+AVBRASA
 Bffffff.
 BugReporter004
 Build
@@ -210,6 +214,7 @@ CEmptyConVar::SetValue(float)
 CEmptyConVar::SetValue(int)
 CEmptyConVar::~CEmptyConVar()
 CKeyValuesErrorStack::ReportError(char const*)
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CThreadSyncObject::~CThreadSyncObject()
 CUtlBuffer::AddNullTermination()
 CUtlBuffer::AssumeMemory(void*, int, int, int)
@@ -370,11 +375,15 @@ _CreateInterface
 _Error
 _KeyValuesSystem
 _RandomInt
+_ThreadGetCurrentId
+_ThreadInterlockedAssignIf
+_ThreadInterlockedExchange
 _ThreadSleep
 _Warning
 __CreateCBugReporterIBugReporter_interface()
 __DATA
 __DefaultRuneLocale
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.84060.cKqVCe.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
 __GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
@@ -442,13 +451,14 @@ _strtoul
 _system$UNIX2003
 _vsnprintf
 _wcslen
-`0C`BBRC`
+`5B`BBRC`
 bug_directory_osx
 dyld_stub_binder
 ffff.
 fffff.
 ffffff.
 g_CleanupSymbolTable
+g_KVMutex
 mount_smbfs //guest:@bugbait.valvesoftware.com/bugsub /Volumes/bugsub
 non-virtual thunk to CEmptyConVar::GetName() const
 non-virtual thunk to CEmptyConVar::IsFlagSet(int) const

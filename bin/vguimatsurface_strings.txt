@@ -89,6 +89,7 @@ $vertexcolor
 &Exit
 &Reload Localization
 &Save
+'@@@@ 
 (*%s*), 
 (anonymous namespace)::CaptionGripPanel::CaptionGripPanel(vgui::Frame*, char const*)
 (anonymous namespace)::CaptionGripPanel::moved(int, int)
@@ -113,7 +114,6 @@ $vertexcolor
 (fff.
 (no name)
 )ffff.
-+@@@@ 
 +ffff.
 ,^_[]
 ,ffff.
@@ -489,6 +489,7 @@ $vertexcolor
 @@PP@p
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CThreadRWLock::LockForWrite()
 @CThreadRWLock::UnlockWrite()
 @CThreadRWLock::WaitForRead()
@@ -548,6 +549,8 @@ $vertexcolor
 @_SDL_GetMouseState
 @_SDL_GetWindowSize
 @_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
+@_ThreadInterlockedExchange
 @_Warning
 @__DefaultRuneLocale
 @__Unwind_Resume
@@ -648,7 +651,7 @@ ATI2N
 ATI_DST16
 ATI_DST24
 AUBRA`*ARC`
-AVBSAR0
+AVBSASA
 ActivateCurrentCursor()
 ActivateItem
 Affffff.
@@ -1160,6 +1163,7 @@ CTextureReference::Shutdown(bool)
 CTextureReference::~CTextureReference()
 CThreadEvent::CThreadEvent(bool)
 CThreadEvent::Set()
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CThreadRWLock::LockForWrite()
 CThreadRWLock::UnlockWrite()
 CThreadRWLock::WaitForRead()
@@ -1573,6 +1577,10 @@ CvarToggleCheckButton
 DXT1_ONEBITALPHA
 DXT1_RUNTIME
 DXT5_RUNTIME
+DataMapInit<BitmapFont_s>(BitmapFont_s*)::dataDesc
+DataMapInit<BitmapFont_s>(BitmapFont_s*)::nameHolder
+DataMapInit<BitmapGlyph_s>(BitmapGlyph_s*)::dataDesc
+DataMapInit<BitmapGlyph_s>(BitmapGlyph_s*)::nameHolder
 DebugTextureInfo001
 Default
 DefaultButtonSet
@@ -1737,6 +1745,20 @@ ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA16161616(float16*, unsigned
 ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA323232F(float16*, float*, int, int, unsigned long)
 ImageLoader::ConvertImageFormat_RGBA16161616_To_RGBA16161616F(unsigned short*, float*, int, int)
 ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 ImageLoader::GetColorBlockColorsBGRA8888(ImageLoader::DXTColBlock*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, unsigned short&)
 ImageLoader::GetMemRequired(int, int, int, ImageFormat, bool)
 ImageLoader::I8ToRGBA8888(unsigned char const*, unsigned char*, int)
@@ -2394,6 +2416,8 @@ _SDL_CreateSystemCursor
 _SDL_GetMouseState
 _SDL_GetWindowSize
 _ThreadGetCurrentId
+_ThreadInterlockedAssignIf
+_ThreadInterlockedExchange
 _Warning
 __CreateCMatSystemSurfaceISurface_interface()
 __DATA
@@ -2416,6 +2440,7 @@ __GLOBAL__sub_I_FontManage.stdout.rel_tf_osx_builder.46827.cBtDlK.ii
 __GLOBAL__sub_I_FontTextur.stdout.rel_tf_osx_builder.4870.MYsV9M.ii
 __GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
 __GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
 __GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
 __GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
@@ -2818,10 +2843,6 @@ corner
 custom_mod
 cvar_name
 cvar_value
-datamap_t* DataMapInit<BitmapFont_s>(BitmapFont_s*)::dataDesc
-datamap_t* DataMapInit<BitmapFont_s>(BitmapFont_s*)::nameHolder
-datamap_t* DataMapInit<BitmapGlyph_s>(BitmapGlyph_s*)::dataDesc
-datamap_t* DataMapInit<BitmapGlyph_s>(BitmapGlyph_s*)::nameHolder
 default
 defaultBgColor_override
 defaultFgColor_override
@@ -2900,6 +2921,7 @@ g_GraphPanel_Helper
 g_ImageFormatInfo
 g_ImagePanel_Helper
 g_KBMgr
+g_KVMutex
 g_Label_Helper
 g_ListPanel_Helper
 g_ListViewPanel_Helper
@@ -2934,10 +2956,10 @@ guard variable for CDragDropHelperPanel::GetMessageMap()::s_pMap
 guard variable for CSmallTextEntry::GetKBMap()::s_pMap
 guard variable for CSmallTextEntry::GetMessageMap()::s_pMap
 guard variable for ClipPolygon(int, vgui::Vertex_t*, int, int, vgui::Vertex_t***)::clip
+guard variable for DataMapInit<BitmapFont_s>(BitmapFont_s*)::nameHolder
+guard variable for DataMapInit<BitmapGlyph_s>(BitmapGlyph_s*)::nameHolder
 guard variable for GetPanelAnimationDictionary()::dictionary
 guard variable for GetPanelMessageMapDictionary()::dictionary
-guard variable for datamap_t* DataMapInit<BitmapFont_s>(BitmapFont_s*)::nameHolder
-guard variable for datamap_t* DataMapInit<BitmapGlyph_s>(BitmapGlyph_s*)::nameHolder
 guard variable for vgui::AnimatingImagePanel::GetKBMap()::s_pMap
 guard variable for vgui::AnimatingImagePanel::GetMessageMap()::s_pMap
 guard variable for vgui::AnimationController::GetKBMap()::s_pMap
@@ -5787,21 +5809,7 @@ void ImageLoader::ConvertFromDXT5<RGBA8888_t>(unsigned char const*, RGBA8888_t*,
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR565_t>(unsigned char const*, BGR565_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR888_t>(unsigned char const*, BGR888_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<RGB888_t>(unsigned char const*, RGB888_t*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
 void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 vtable for (anonymous namespace)::CaptionGripPanel
 vtable for (anonymous namespace)::ScrollBarButton
 vtable for CBitmapFont

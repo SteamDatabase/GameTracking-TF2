@@ -12,6 +12,7 @@
  B cvar
  B g_CleanupFunctions
  B g_ExtraSpewHooks
+ B g_KeyValuesErrorStack
  B g_VBAllocTracker
  B g_VTex
  B g_pCVar
@@ -36,6 +37,7 @@
  B s_StringCharConversion
  B s_bMathlibInitialized
  COM_TimestampedLog
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CommandLine_Tier0
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
@@ -46,7 +48,6 @@
  D VTFFileHeaderX360_t::m_DataMap
  D VTFFileHeader_t::m_DataMap
  D g_FaceVerts
- D g_KeyValuesErrorStack
  D g_backFaceVerts
  D g_downFaceVerts
  D g_frontFaceVerts
@@ -509,6 +510,9 @@
  T void ImageLoader::CompressSTB<BGRX8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGB888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGBA8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
+ ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedExchange
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
@@ -551,6 +555,7 @@
  b g_CreateDir
  b g_FileSystemError
  b g_ForcedOutputDir
+ b g_KVMutex
  b g_Mathlib_GammaToLinear
  b g_Mathlib_LinearToGamma
  b g_NoPause
@@ -741,6 +746,7 @@
  t VTexError(char const*, ...)
  t VTexOutputFunc(SpewType_t, char const*)
  t VTexWarning(char const*, ...)
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_cmdlib.stdout.rel_tf_osx_builder.4757.l9qzFR.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
  t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii

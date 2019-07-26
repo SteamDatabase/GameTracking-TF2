@@ -734,6 +734,7 @@ $terlace_handling
 @@PPP
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CThreadSyncObject::~CThreadSyncObject()
 @CVProfNode::EnterScope()
 @CVProfNode::ExitScope()
@@ -757,7 +758,9 @@ $terlace_handling
 @_Plat_IsInDebugSession
 @_ShouldUseNewAssertDialog
 @_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
 @_ThreadInterlockedDecrement
+@_ThreadInterlockedExchange
 @_ThreadInterlockedIncrement
 @_ThreadSleep
 @_Warning
@@ -878,7 +881,7 @@ A 'changelevel' or 'map' is required - recording will
 ASCII conversion buffer too small
 ATARB`
 ATAWAp
-AVBSAR0
+AVBSASA
 AVDYAp
 AXARB`"AWBRB`
 AXARD`#AWATDp
@@ -1721,6 +1724,7 @@ CThinkManager::Think()
 CThinkManager::~CThinkManager()
 CThreadEvent::CThreadEvent(bool)
 CThreadEvent::Set()
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CThreadSyncObject::~CThreadSyncObject()
 CTraceFilterWorldAndPropsOnly::GetTraceType() const
 CTraceFilterWorldAndPropsOnly::ShouldHitEntity(IHandleEntity*, int)
@@ -1887,6 +1891,18 @@ DEFAULT_WRITE_PATH
 DNS lookup failed!
 Data error in compressed datastream in %s chunk
 Data validation failed.
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 DebugTextureInfo001
 Decompressed to a different size (%u) than specified by header (%u)
 Decompression Error
@@ -2563,7 +2579,9 @@ _Plat_FloatTime
 _Plat_IsInDebugSession
 _ShouldUseNewAssertDialog
 _ThreadGetCurrentId
+_ThreadInterlockedAssignIf
 _ThreadInterlockedDecrement
+_ThreadInterlockedExchange
 _ThreadInterlockedIncrement
 _ThreadSleep
 _Warning
@@ -2571,6 +2589,7 @@ __CreateCReplaySystemIReplaySystem_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.40378.YalEcN.ii
 __GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.36209.gRlziZ.ii
 __GLOBAL__sub_I_cl_cvars.stdout.rel_tf_osx_builder.36211.ZlhKlL.ii
@@ -3298,18 +3317,6 @@ covariant return thunk to CServerReplayContext::GetRecordingSessionBlockManager(
 culate_crc
 currently recording?
 data_invalid
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 default
 default_bzalloc(void*, int, int)
 default_bzfree(void*, void*)
@@ -3357,6 +3364,7 @@ fps.upf
 fps.ups
 from_
 g_BitWriteMasksInit
+g_KVMutex
 g_pDebugOverlay
 g_pDownloadSystem
 g_pEngine
@@ -3376,12 +3384,12 @@ guard variable for CPerformanceController::PlaybackThink()::aAngles
 guard variable for CPerformanceController::PlaybackThink()::aOrigin
 guard variable for CReplayMovieManager::GetRawExportDir() const::s_fmtExportDir
 guard variable for CServerReplayContext::ReportErrorsToUser(wchar_t*)::s_clrRed
-guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+guard variable for DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 gx=%d, gy=%d, bx=%d, by=%d
 handle
 handle_

@@ -1505,6 +1505,7 @@ $terlace_handling
 @@`````P@```@
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CThreadRWLock::LockForWrite()
 @CThreadRWLock::UnlockWrite()
 @CThreadRWLock::WaitForRead()
@@ -1541,7 +1542,9 @@ $terlace_handling
 @_SteamInternal_CreateInterface
 @_SteamInternal_FindOrCreateUserInterface
 @_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
 @_ThreadInterlockedAssignIf64
+@_ThreadInterlockedExchange
 @_ThreadSleep
 @_Warning
 @__DefaultRuneLocale
@@ -1746,7 +1749,7 @@ ATI_DST24
 AUASARD]Cp
 AUBRA`*ARC`
 AUBRB`
-AVBSAR0
+AVBSASA
 A\DYAZAp
 Accel
 AcceptVocalsLanguageChange
@@ -3938,6 +3941,7 @@ CTextureIdProperty::InitFromDefault(vgui::Panel*, PanelAnimationMapEntry*)
 CTextureIdProperty::SetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
 CThreadEvent::CThreadEvent(bool)
 CThreadEvent::Set()
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CThreadRWLock::LockForWrite()
 CThreadRWLock::UnlockWrite()
 CThreadRWLock::WaitForRead()
@@ -4825,6 +4829,18 @@ DXT5_RUNTIME
 Da\">c]$8c^
 Danish
 Data error in compressed datastream in %s chunk
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 Deaccel
 DebugTextureInfo001
 Decompression Error
@@ -5181,6 +5197,20 @@ ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA16161616(float16*, unsigned
 ImageLoader::ConvertImageFormat_RGBA16161616F_To_RGBA323232F(float16*, float*, int, int, unsigned long)
 ImageLoader::ConvertImageFormat_RGBA16161616_To_RGBA16161616F(unsigned short*, float*, int, int)
 ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 ImageLoader::GetColorBlockColorsBGRA8888(ImageLoader::DXTColBlock*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, unsigned short&)
 ImageLoader::GetMemRequired(int, int, int, ImageFormat, bool)
 ImageLoader::I8ToRGBA8888(unsigned char const*, unsigned char*, int)
@@ -6994,7 +7024,9 @@ _SteamInternal_ContextInit
 _SteamInternal_CreateInterface
 _SteamInternal_FindOrCreateUserInterface
 _ThreadGetCurrentId
+_ThreadInterlockedAssignIf
 _ThreadInterlockedAssignIf64
+_ThreadInterlockedExchange
 _ThreadSleep
 _Warning
 __CreateCGameConsoleIGameConsole_interface()
@@ -7029,6 +7061,7 @@ __GLOBAL__sub_I_GameConsol.stdout.rel_tf_osx_builder.26348.j2cczf.ii
 __GLOBAL__sub_I_GameUI_Int.stdout.rel_tf_osx_builder.26350.BeEu37.ii
 __GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
 __GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
 __GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
 __GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
@@ -8518,18 +8551,6 @@ dCreateInterface
 da_DK
 dangerous
 danish
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 de_DE
 deactivate
 deathmatch 0
@@ -8726,6 +8747,7 @@ g_GraphPanel_Helper
 g_ImageFormatInfo
 g_ImagePanel_Helper
 g_KBMgr
+g_KVMutex
 g_Label_Helper
 g_ListPanel_Helper
 g_ListViewPanel_Helper
@@ -8967,16 +8989,16 @@ guard variable for CrosshairImagePanelCS::GetMessageMap()::s_pMap
 guard variable for CrosshairImagePanelSimple::GetKBMap()::s_pMap
 guard variable for CrosshairImagePanelSimple::GetMessageMap()::s_pMap
 guard variable for CryptoPP::TheBitBucket()::bitBucket
+guard variable for DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 guard variable for GetPanelAnimationDictionary()::dictionary
 guard variable for GetPanelMessageMapDictionary()::dictionary
 guard variable for ModInfo()::s_ModInfo
 guard variable for bench_showstatsdialog(CCommand const&)::g_BenchmarkResultsDialog
-guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
 guard variable for getSDLDisplayIndex()::sdl_displayindex
 guard variable for getSDLDisplayIndexFullscreen()::sdl_displayindex_fullscreen
 guard variable for vgui::AnalogBar::GetKBMap()::s_pMap
@@ -13527,21 +13549,7 @@ void ImageLoader::ConvertFromDXT5<RGBA8888_t>(unsigned char const*, RGBA8888_t*,
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR565_t>(unsigned char const*, BGR565_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR888_t>(unsigned char const*, BGR888_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<RGB888_t>(unsigned char const*, RGB888_t*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
 void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 volume
 vtable for (anonymous namespace)::CaptionGripPanel
 vtable for (anonymous namespace)::ScrollBarButton

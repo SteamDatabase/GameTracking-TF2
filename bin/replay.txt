@@ -14,6 +14,7 @@
  B entitylist
  B g_BitWriteMasks
  B g_ExtraMasks
+ B g_KeyValuesErrorStack
  B g_LittleBits
  B g_VBAllocTracker
  B g_nGenericErrorCounter
@@ -88,6 +89,7 @@
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CThreadSyncObject::~CThreadSyncObject()
  CVProfNode::EnterScope()
  CVProfNode::ExitScope()
@@ -112,7 +114,6 @@
  D VTFFileHeaderV7_3_t::m_DataMap
  D VTFFileHeaderX360_t::m_DataMap
  D VTFFileHeader_t::m_DataMap
- D g_KeyValuesErrorStack
  D g_pAcceptableFileserverProtocols
  D g_pBlockSpewer
  D g_pCompressorTypes
@@ -1956,7 +1957,9 @@
  T void ConstructStringVArgsInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, int, char*)
  T void ILocalize::ConstructString<wchar_t>(wchar_t*, int, wchar_t const*, int, ...)
  ThreadGetCurrentId
+ ThreadInterlockedAssignIf
  ThreadInterlockedDecrement
+ ThreadInterlockedExchange
  ThreadInterlockedIncrement
  ThreadSleep
  Warning
@@ -2015,6 +2018,7 @@
  b f05
  b f3
  b g_BitWriteMasksInit
+ b g_KVMutex
  b gs_szGameDir
  b guard variable for CPerformanceController::PlaybackThink()::aAngles
  b guard variable for CPerformanceController::PlaybackThink()::aOrigin
@@ -2216,6 +2220,7 @@
  strtol
  strtoul
  swprintf
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.40378.YalEcN.ii
  t _GLOBAL__sub_I_cl_command.stdout.rel_tf_osx_builder.36209.gRlziZ.ii
  t _GLOBAL__sub_I_cl_cvars.stdout.rel_tf_osx_builder.36211.ZlhKlL.ii

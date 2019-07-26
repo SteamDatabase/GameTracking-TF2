@@ -7,6 +7,7 @@
  B colorcorrection
  B cvar
  B g_Input
+ B g_KeyValuesErrorStack
  B g_Scheme
  B g_StringTable
  B g_System
@@ -54,6 +55,7 @@
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CThreadRWLock::LockForWrite()
  CThreadRWLock::UnlockWrite()
  CThreadRWLock::WaitForRead()
@@ -65,7 +67,6 @@
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
  D PinDeltas
- D g_KeyValuesErrorStack
  D g_SchemeTranslation
  D typeinfo for CBaseAppSystem<vgui::IVGui>
  D typeinfo for CDefaultAccessor
@@ -827,6 +828,8 @@
  T vgui::VPanel::~VPanel()
  T void ConstructStringKeyValuesInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, KeyValues*)
  ThreadGetCurrentId
+ ThreadInterlockedAssignIf
+ ThreadInterlockedExchange
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
@@ -863,6 +866,7 @@
  b __g_CreateVPanelWrapperIPanel_reg
  b __g_VPanelWrapper_singleton
  b g_CleanupSymbolTable
+ b g_KVMutex
  b guard variable for CLocalizedStringTable::AddFile(char const*, char const*, bool)::cl_language
  b s_EmptyConVar
  b s_bConnected
@@ -919,6 +923,7 @@
  strtoul
  swprintf
  t _GLOBAL__sub_I_InputWin32.stdout.rel_tf_osx_builder.4827.3Ns0Kz.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_LocalizedS.stdout.rel_tf_osx_builder.4828.v7gAzR.ii
  t _GLOBAL__sub_I_Scheme.stdout.rel_tf_osx_builder.46940.YnPF7f.ii
  t _GLOBAL__sub_I_VPanelWrap.stdout.rel_tf_osx_builder.46979.jbzeBV.ii

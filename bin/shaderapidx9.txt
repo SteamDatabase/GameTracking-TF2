@@ -12,6 +12,7 @@
  B colorcorrection
  B cvar
  B gGL
+ B g_KeyValuesErrorStack
  B g_VBAllocTracker
  B g_bShaderAccessDisallowed
  B g_bUseShaderMutex
@@ -55,6 +56,7 @@
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
+ CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
  CThreadRWLock::LockForWrite()
  CThreadRWLock::UnlockWrite()
  CThreadRWLock::WaitForRead()
@@ -72,7 +74,6 @@
  D ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
  D KeyValues::s_pfGetStringForSymbol
  D KeyValues::s_pfGetSymbolForString
- D g_KeyValuesErrorStack
  D g_VBAllocTrackerShaderAPI
  D g_pHardwareConfig
  D g_pShaderAPIDX8
@@ -1887,7 +1888,9 @@
  T void SafeRelease<CIndexBuffer>(CIndexBuffer**)
  ThreadGetCurrentId
  ThreadInMainThread
+ ThreadInterlockedAssignIf
  ThreadInterlockedDecrement
+ ThreadInterlockedExchange
  ThreadInterlockedIncrement
  ThreadSleep
  ToGLConnectLibraries
@@ -1945,6 +1948,7 @@
  b g_DeviceFormat
  b g_DeviceType
  b g_DisplayAdapter
+ b g_KVMutex
  b g_LastVertexFormat
  b g_Mathlib_GammaToLinear
  b g_Mathlib_LinearToGamma
@@ -2078,6 +2082,7 @@
  t SzFree(void*, void*)
  t TestTextureFormat(_D3DFORMAT, bool, bool, bool)
  t VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
  t _GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.83312.2Srrgj.ii
  t _GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.5326.Ne9hR4.ii

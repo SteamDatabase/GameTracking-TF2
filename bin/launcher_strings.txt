@@ -215,6 +215,7 @@ $X360
 9F t 
 <^_[]
 @(^_]
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @ConMsg(char const*, ...)
 @DevMsg(char const*, ...)
 @DevWarning(char const*, ...)
@@ -316,6 +317,9 @@ $X360
 @_SetAssertDialogParent
 @_ShouldUseNewAssertDialog
 @_SpewOutputFunc
+@_ThreadGetCurrentId
+@_ThreadInterlockedAssignIf
+@_ThreadInterlockedExchange
 @_ThreadSleep
 @_VStdLib_GetICVarFactory
 @_Warning
@@ -433,7 +437,7 @@ $X360
 @vtable for __cxxabiv1::__vmi_class_type_info
 ARB_occlusion_query
 ARB_uniform_buffer
-AVBSAR0
+AVBSASA
 AYARBWARC`
 AllLogLessFunc(CUtlString const&, CUtlString const&)
 AppFramework : Unable to create system %s!
@@ -561,6 +565,7 @@ CSteamApplication::PostShutdown()
 CSteamApplication::PreInit()
 CSteamApplication::Shutdown()
 CSteamApplication::Startup()
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CUtlBuffer::AddNullTermination()
 CUtlBuffer::AssumeMemory(void*, int, int, int)
 CUtlBuffer::CUtlBuffer(int, int, int)
@@ -1012,11 +1017,15 @@ _SDL_WasInit
 _SetAssertDialogParent
 _ShouldUseNewAssertDialog
 _SpewOutputFunc
+_ThreadGetCurrentId
+_ThreadInterlockedAssignIf
+_ThreadInterlockedExchange
 _ThreadSleep
 _VStdLib_GetICVarFactory
 _Warning
 __DATA
 __DefaultRuneLocale
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
 __GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.13995.YuBp6J.ii
 __GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.4682.XvjdIJ.ii
@@ -1220,6 +1229,7 @@ ffffff.
 finaldir
 g_FileSystemError
 g_FileSystemErrorMode
+g_KVMutex
 g_LogFiles
 g_ResListGenerator
 g_VCRHelpers

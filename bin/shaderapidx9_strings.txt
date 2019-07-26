@@ -297,6 +297,7 @@ $X360
 @@PPPPPP
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
+@CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 @CThreadRWLock::LockForWrite()
 @CThreadRWLock::UnlockWrite()
 @CThreadRWLock::WaitForRead()
@@ -442,7 +443,9 @@ $X360
 @_ShouldUseNewAssertDialog
 @_ThreadGetCurrentId
 @_ThreadInMainThread
+@_ThreadInterlockedAssignIf
 @_ThreadInterlockedDecrement
+@_ThreadInterlockedExchange
 @_ThreadInterlockedIncrement
 @_ThreadSleep
 @_ToGLConnectLibraries
@@ -523,7 +526,7 @@ ATI2N
 ATI2u
 ATI_DST16
 ATI_DST24
-AVBSAR0
+AVBSAUA
 A]A`7A`
 A`#ARBRBRBRBRBRBRBRBp
 A`+CRBRB`;ARBSAp
@@ -1476,6 +1479,7 @@ CTempMeshDX8::s_NumIndices
 CTempMeshDX8::~CTempMeshDX8()
 CThreadEvent::CThreadEvent(bool)
 CThreadEvent::Set()
+CThreadFastMutex::Lock(unsigned int, unsigned int) volatile
 CThreadRWLock::LockForWrite()
 CThreadRWLock::UnlockWrite()
 CThreadRWLock::WaitForRead()
@@ -2233,7 +2237,9 @@ _ShouldUseNewAssertDialog
 _SinCosTable
 _ThreadGetCurrentId
 _ThreadInMainThread
+_ThreadInterlockedAssignIf
 _ThreadInterlockedDecrement
+_ThreadInterlockedExchange
 _ThreadInterlockedIncrement
 _ThreadSleep
 _ToGLConnectLibraries
@@ -2251,6 +2257,7 @@ __CreateCVBAllocTrackerIVBAllocTracker_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
 __GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.83312.2Srrgj.ii
 __GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.5326.Ne9hR4.ii
@@ -2431,6 +2438,7 @@ g_DeviceFormat
 g_DeviceType
 g_DisplayAdapter
 g_ImageFormatInfo
+g_KVMutex
 g_LastVertexFormat
 g_LastVertexIdx
 g_Mathlib_GammaToLinear

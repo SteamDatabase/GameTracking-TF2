@@ -3654,7 +3654,7 @@ AUBRA`*ARC`
 AVARA`
 AVATBp
 AVBRBRA`
-AVBSAR0
+AVBSAUA
 AVI is no longer supported!  Make sure QuickTime is installed and use "h264" - if you install QuickTime, you will need to reboot before using startmovie.
 AVI is no longer supported.
 AXBRDp
@@ -6117,15 +6117,17 @@ CDispUtilsHelper::VertIndexToInt(CVertIndex const&) const
 CDmxAttribute::AllocateDataMemory(DmAttributeType_t)
 CDmxAttribute::CDmxAttribute(char const*)
 CDmxAttribute::FreeDataMemory()
+CDmxAttribute::GetArray<CDmxElement*>() const::defaultArray
 CDmxAttribute::GetArrayCount() const
 CDmxAttribute::GetName() const
+CDmxAttribute::GetValue<CDmxElement*>() const::defaultValue
+CDmxAttribute::GetValue<CUtlString>() const::defaultValue
 CDmxAttribute::Serialize(CUtlBuffer&) const
 CDmxAttribute::SerializeElement(int, CUtlBuffer&) const
 CDmxAttribute::SerializesOnMultipleLines() const
 CDmxAttribute::SetValue(char const*)
 CDmxAttribute::s_AttributeNameSymbols
 CDmxAttribute::~CDmxAttribute()
-CDmxElement* const& CDmxAttribute::GetValue<CDmxElement*>() const::defaultValue
 CDmxElement::AddAttribute(char const*)
 CDmxElement::AddElementsToDelete(CUtlVector<CDmxElement*, CUtlMemory<CDmxElement*, int> >&)
 CDmxElement::AttributeCount() const
@@ -6135,6 +6137,7 @@ CDmxElement::GetAttribute(int)
 CDmxElement::GetId() const
 CDmxElement::GetName() const
 CDmxElement::GetTypeString() const
+CDmxElement::GetValue<CUtlString>(char const*) const::defaultValue
 CDmxElement::LockForChanges(bool)
 CDmxElement::RemoveAllElementsRecursive()
 CDmxElement::Resort() const
@@ -10540,8 +10543,6 @@ CUtlStreamBuffer::ReadBytesFromFile(int, int)
 CUtlStreamBuffer::StreamGetOverflow(int)
 CUtlStreamBuffer::StreamPutOverflow(int)
 CUtlStreamBuffer::~CUtlStreamBuffer()
-CUtlString const& CDmxAttribute::GetValue<CUtlString>() const::defaultValue
-CUtlString const& CDmxElement::GetValue<CUtlString>(char const*) const::defaultValue
 CUtlString::Append(char const*)
 CUtlString::FixSlashes(char)
 CUtlString::Format(char const*, ...)
@@ -10611,7 +10612,6 @@ CUtlVector<CDispGroup*, CUtlMemory<CDispGroup*, int> >::~CUtlVector()
 CUtlVector<CDispInfo*, CUtlMemory<CDispInfo*, int> >::InsertMultipleBefore(int, int)
 CUtlVector<CDispInfo*, CUtlMemory<CDispInfo*, int> >::~CUtlVector()
 CUtlVector<CDmxAttribute*, CUtlMemory<CDmxAttribute*, int> >::~CUtlVector()
-CUtlVector<CDmxElement*, CUtlMemory<CDmxElement*, int> > const& CDmxAttribute::GetArray<CDmxElement*>() const::defaultArray
 CUtlVector<CDmxElement*, CUtlMemory<CDmxElement*, int> >::~CUtlVector()
 CUtlVector<CDmxElementDictionary::AttributeInfo_t, CUtlMemory<CDmxElementDictionary::AttributeInfo_t, int> >::~CUtlVector()
 CUtlVector<CDmxElementDictionary::DictInfo_t, CUtlMemory<CDmxElementDictionary::DictInfo_t, int> >::~CUtlVector()
@@ -12300,6 +12300,36 @@ DXT5_RUNTIME
 D^_[]
 Da\">c]$8c^
 Data manager 'used' memory incorrect
+DataMapInit<GAME_HEADER>(GAME_HEADER*)::dataDesc
+DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
+DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::dataDesc
+DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
+DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::dataDesc
+DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
+DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
+DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
+DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
+DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+DataMapInit<decallist_t>(decallist_t*)::dataDesc
+DataMapInit<decallist_t>(decallist_t*)::nameHolder
+DataMapInit<dheader_t>(dheader_t*)::dataDesc
+DataMapInit<dheader_t>(dheader_t*)::nameHolder
+DataMapInit<levellist_t>(levellist_t*)::dataDesc
+DataMapInit<levellist_t>(levellist_t*)::nameHolder
+DataMapInit<lump_t>(lump_t*)::dataDesc
+DataMapInit<lump_t>(lump_t*)::nameHolder
+DataMapInit<musicsave_t>(musicsave_t*)::dataDesc
+DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
+DataMapInit<player_info_s>(player_info_s*)::dataDesc
+DataMapInit<player_info_s>(player_info_s*)::nameHolder
 DataTable
 DataTable warning: %s
 DataTable_ClearWriteFlags(ServerClass*)
@@ -13699,6 +13729,20 @@ ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUV88(unsigned char const*, int, in
 ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVLX8888(unsigned char const*, int, int, unsigned char*)
 ImageLoader::ConvertNormalMapRGBA8888ToDUDVMapUVWQ8888(unsigned char const*, int, int, unsigned char*)
 ImageLoader::ConvertToDXTRuntime(unsigned char const*, ImageFormat, unsigned char*, ImageFormat, int, int, int, int)
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
+ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
+ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 ImageLoader::FlipImageHorizontally(void*, void*, int, int, ImageFormat, int)
 ImageLoader::FlipImageVertically(void*, void*, int, int, ImageFormat, int)
 ImageLoader::GammaCorrectRGBA8888(unsigned char*, unsigned char*, int, int, int, float, float)
@@ -18615,6 +18659,7 @@ __GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.13243.4ZwcEb.ii
 __GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.44922.QX5oKb.ii
 __GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
 __GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
 __GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
 __GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
 __GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
@@ -21237,36 +21282,6 @@ d1_trainstation_03
 dB drop: %1.4f 
 dB_To_Gain(float)
 datagram
-datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::dataDesc
-datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
-datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::dataDesc
-datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
-datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::dataDesc
-datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::dataDesc
-datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
-datamap_t* DataMapInit<decallist_t>(decallist_t*)::dataDesc
-datamap_t* DataMapInit<decallist_t>(decallist_t*)::nameHolder
-datamap_t* DataMapInit<dheader_t>(dheader_t*)::dataDesc
-datamap_t* DataMapInit<dheader_t>(dheader_t*)::nameHolder
-datamap_t* DataMapInit<levellist_t>(levellist_t*)::dataDesc
-datamap_t* DataMapInit<levellist_t>(levellist_t*)::nameHolder
-datamap_t* DataMapInit<lump_t>(lump_t*)::dataDesc
-datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
-datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::dataDesc
-datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
-datamap_t* DataMapInit<player_info_s>(player_info_s*)::dataDesc
-datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
 datau
 datau'
 dbg_demofile
@@ -21850,6 +21865,7 @@ g_ImageFormatInfo
 g_ImagePanel_Helper
 g_InitTracker
 g_KBMgr
+g_KVMutex
 g_KeyValues2ErrorStack
 g_Label_Helper
 g_LastMixTime
@@ -22156,6 +22172,9 @@ guard variable for CDemoUIPanel2::GetMessageMap()::s_pMap
 guard variable for CDemoUIPanel::GetKBMap()::s_pMap
 guard variable for CDemoUIPanel::GetMessageMap()::s_pMap
 guard variable for CDispInfo::SetupDecalNodeIntersect(CVertIndex const&, int, CDispDecalBase*, ShadowInfo_t const*)::cache
+guard variable for CDmxAttribute::GetArray<CDmxElement*>() const::defaultArray
+guard variable for CDmxAttribute::GetValue<CUtlString>() const::defaultValue
+guard variable for CDmxElement::GetValue<CUtlString>(char const*) const::defaultValue
 guard variable for CDragDropHelperPanel::GetKBMap()::s_pMap
 guard variable for CDragDropHelperPanel::GetMessageMap()::s_pMap
 guard variable for CDrawTreeFrame::GetKBMap()::s_pMap
@@ -22231,9 +22250,6 @@ guard variable for CTextureListPanel::GetKBMap()::s_pMap
 guard variable for CTextureListPanel::GetMessageMap()::s_pMap
 guard variable for CUncorrectedImagePanel::GetKBMap()::s_pMap
 guard variable for CUncorrectedImagePanel::GetMessageMap()::s_pMap
-guard variable for CUtlString const& CDmxAttribute::GetValue<CUtlString>() const::defaultValue
-guard variable for CUtlString const& CDmxElement::GetValue<CUtlString>(char const*) const::defaultValue
-guard variable for CUtlVector<CDmxElement*, CUtlMemory<CDmxElement*, int> > const& CDmxAttribute::GetArray<CDmxElement*>() const::defaultArray
 guard variable for CVProfLabel::GetKBMap()::s_pMap
 guard variable for CVProfLabel::GetMessageMap()::s_pMap
 guard variable for CVProfPanel::GetKBMap()::s_pMap
@@ -22250,6 +22266,21 @@ guard variable for ComputeStaticLightingForCacheEntry(CBaseLightCache*, Vector c
 guard variable for ComputeViewMatrix(VMatrix*, Vector const&, QAngle const&)::baseRotation
 guard variable for CreateDirectoryDialog::GetKBMap()::s_pMap
 guard variable for CreateDirectoryDialog::GetMessageMap()::s_pMap
+guard variable for DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
+guard variable for DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
+guard variable for DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
+guard variable for DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
+guard variable for DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
+guard variable for DataMapInit<decallist_t>(decallist_t*)::nameHolder
+guard variable for DataMapInit<dheader_t>(dheader_t*)::nameHolder
+guard variable for DataMapInit<levellist_t>(levellist_t*)::nameHolder
+guard variable for DataMapInit<lump_t>(lump_t*)::nameHolder
+guard variable for DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
+guard variable for DataMapInit<player_info_s>(player_info_s*)::nameHolder
 guard variable for DecalSurfaceDraw(IMatRenderContext*, int, float)::DrawDecals
 guard variable for EngineBitBufErrorHandler(BitBufErrorType, char const*)::errorNames
 guard variable for Filter_StringToUserID(char const*)::id
@@ -22272,21 +22303,6 @@ guard variable for TxViewPanel::GetMessageMap()::s_pMap
 guard variable for VisCache_Build(VisCacheEntry&, worldbrushdata_t const&)::_counter
 guard variable for Voice_ForceInit()::sv_voicecodec
 guard variable for _Host_RunFrame_Server(bool)::_counter
-guard variable for datamap_t* DataMapInit<GAME_HEADER>(GAME_HEADER*)::nameHolder
-guard variable for datamap_t* DataMapInit<SAVELIGHTSTYLE>(SAVELIGHTSTYLE*)::nameHolder
-guard variable for datamap_t* DataMapInit<SAVE_HEADER>(SAVE_HEADER*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileBaseHeader_t>(VTFFileBaseHeader_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_1_t>(VTFFileHeaderV7_1_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_2_t>(VTFFileHeaderV7_2_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderV7_3_t>(VTFFileHeaderV7_3_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeaderX360_t>(VTFFileHeaderX360_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<decallist_t>(decallist_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<dheader_t>(dheader_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<levellist_t>(levellist_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<lump_t>(lump_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<musicsave_t>(musicsave_t*)::nameHolder
-guard variable for datamap_t* DataMapInit<player_info_s>(player_info_s*)::nameHolder
 guard variable for g_benchframe_CompletionFunc(char const*, char (*) [64])::benchframeComplete
 guard variable for g_exec_CompletionFunc(char const*, char (*) [64])::execComplete
 guard variable for g_listdemo_CompletionFunc(char const*, char (*) [64])::listdemoComplete
@@ -29559,21 +29575,7 @@ void ImageLoader::ConvertFromDXT5<RGBA8888_t>(unsigned char const*, RGBA8888_t*,
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR565_t>(unsigned char const*, BGR565_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<BGR888_t>(unsigned char const*, BGR888_t*, int, int)
 void ImageLoader::ConvertFromDXT5IgnoreAlpha<RGB888_t>(unsigned char const*, RGB888_t*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA5551_t>(BGRA5551_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
 void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<BGRA8888_t>(BGRA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gACol
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gAlphas
-void ImageLoader::DecodeAlpha3BitLinear<RGBA8888_t>(RGBA8888_t*, ImageLoader::DXTAlphaBlock3BitLinear*, int, int)::gBits
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::masks
-void ImageLoader::DecodeColorBlock<BGRA4444_t>(BGRA4444_t*, ImageLoader::DXTColBlock*, int, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*, BGRA8888_t*)::shift
 void SetupArrayProps_R<RecvTable, RecvProp>(RecvTable*)
 void SetupArrayProps_R<SendTable, SendProp>(SendTable*)
 void TesselateDisplacement_R<CEngineTesselateHelper>(CEngineTesselateHelper*, CVertIndex const&, int, int)
