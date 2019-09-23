@@ -76,10 +76,8 @@ $^_[]
 ---FS%s:  write %s %i %p
 -allowdebug
 -ffffff.
--fs_log
 -fs_logbins
 -fs_nopreloaddata
--fs_target
 -log_opened_files
 -noasync
 -unbuffered_io
@@ -372,9 +370,9 @@ $^_[]
 9LZMA
 9LZMAt
 9LZMAu
-9Wp}d
 9^ }I
 9ffffff.
+9{p}[
 : Missing required parameter '
 : this object doesn't support multiple channels
 : this object doesn't support resynchronization
@@ -393,6 +391,7 @@ $^_[]
 ;|$(s<
 ;|$<t
 <^_[]
+>>> %s - Open for write.
 ?)T$$+|$$
 ?LZMA
 ?fff.
@@ -570,8 +569,6 @@ $^_[]
 @_wcslen
 @dkL$ 
 @dyld_stub_binder
-@echo off
-@echo on
 @ffff.
 @loader_path/filesystem_stdio.dylib
 @loader_path/libtier0.dylib
@@ -631,7 +628,7 @@ BDaHFC
 BER decode error
 BRBRBRBRBRDRBRDp
 BRBTD`7AUC`7AUC`0AUBRB`1AUARB`
-BRBVB`1E`FHp$p
+BRBVB`1E`HHp$p
 BRDp,TDRBYAZCp
 B]M]A\BXAR0<SCWESBSMSCWMSCWD`
 Bad or missing zip file, failed to open '%s'
@@ -755,6 +752,7 @@ CBaseFileSystem::GetSearchPath(char const*, bool, char*, int)
 CBaseFileSystem::GetUnverifiedFileHashes(CUnverifiedFileHash*, int)
 CBaseFileSystem::GetWhitelistSpewFlags()
 CBaseFileSystem::GetWritePath(char const*, char const*)
+CBaseFileSystem::GetWriteProtectionEnable() const
 CBaseFileSystem::HandleOpenRegularFile(CFileOpenInfo&, bool)
 CBaseFileSystem::Init()
 CBaseFileSystem::InitAsync()
@@ -762,6 +760,7 @@ CBaseFileSystem::InstallDirtyDiskReportFunc(void (*)())
 CBaseFileSystem::IsDirectory(char const*, char const*)
 CBaseFileSystem::IsFileCacheFileLoaded(void*, char const*)
 CBaseFileSystem::IsFileCacheLoaded(void*)
+CBaseFileSystem::IsFileInWritableLocation(char const*) const
 CBaseFileSystem::IsFileWritable(char const*, char const*)
 CBaseFileSystem::IsOk(void*)
 CBaseFileSystem::LoadCompiledKeyValues(IFileSystem::KeyValuesPreloadType_t, char const*)
@@ -811,6 +810,7 @@ CBaseFileSystem::SetSearchPathIsTrustedSource(CBaseFileSystem::CSearchPath*)
 CBaseFileSystem::SetWarningFunc(void (*)(char const*, ...))
 CBaseFileSystem::SetWarningLevel(FileWarningLevel_t)
 CBaseFileSystem::SetWhitelistSpewFlags(int)
+CBaseFileSystem::SetWriteProtectionEnable(bool)
 CBaseFileSystem::SetupPreloadData()
 CBaseFileSystem::Shutdown()
 CBaseFileSystem::ShutdownAsync()
@@ -830,7 +830,7 @@ CBaseFileSystem::UnloadCompiledKeyValues()
 CBaseFileSystem::UnloadModule(CSysModule*)
 CBaseFileSystem::UnregisterMemoryFile(CMemoryFileBacking*)
 CBaseFileSystem::UnzipFile(char const*, char const*, char const*)
-CBaseFileSystem::Warning(FileWarningLevel_t, char const*, ...)
+CBaseFileSystem::Warning(FileWarningLevel_t, char const*, ...) const
 CBaseFileSystem::Write
 CBaseFileSystem::Write(void const*, int, void*)
 CBaseFileSystem::WriteFile(char const*, char const*, CUtlBuffer&)
@@ -2138,6 +2138,7 @@ Exceeded limit of number of vpk files supported (%d)!
 F,ff.
 F;w0|
 FDMerF
+FDaHFC
 FS:  Tried to Close NULL file handle!
 FS:  Tried to EndOfFile NULL file handle!
 FS:  Tried to FPrintf NULL file handle!
@@ -2264,6 +2265,7 @@ MD5Final(unsigned char*, MD5Context_t*)
 MD5Init(MD5Context_t*)
 MD5Transform(unsigned int*, unsigned int const*)
 MD5Update(MD5Context_t*, unsigned char const*, unsigned int)
+MSG_FILEWRITE - Filesystem was asked to write to '%s', but we don't own that location. Allowing.
 MaterialSystemHardwareConfig012
 Materials
 Models
@@ -2482,6 +2484,7 @@ Size of per file buffers. 0 for none
 Sounds
 SplitFileComponents(char const*, char*, char*, char*)
 StrLess(char const* const&, char const* const&)
+StringAfterPrefixCaseSensitive(char const*, char const*)
 StringStore: missing InputBuffer argument
 Submit:%5dms AsyncDuration:%5dms Tag:%d Thread:%8.8x Size:%7d %s%s
 Sys_LoadLibrary(char const*, Sys_Flags)
@@ -2579,6 +2582,7 @@ V_vsnprintf(char*, int, char const*, char*)
 ValueNames
 Verify integrity of your game files, perform memory and disk diagnostics on your system.
 Version
+WARN_FILEWRITE - Asked to write to '%s', but we don't own that location. Disallowing.
 WATATAWARATA\ATARA\ATBRA\ATBRA\ATBRATAp
 Wrote ZIP buffer, estimated size %i, actual size %i
 X917RNG: Continuous random number generator test failed.
@@ -2670,17 +2674,17 @@ __CreateCQueuedLoaderIQueuedLoader_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
-__GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.4719.91LnHu.ii
-__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.4717.rz8rVK.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.48880.OTU5do.ii
+__GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.51767.yJej2d.ii
+__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.51762.kuB6D1.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.48879.dxRFDX.ii
 __GLOBAL__sub_I_cryptlib.cpp
 __GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.14045.l0M2fG.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.46561.1mRxWl.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.4718.QWt0gv.ii
-__GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.46562.PQHpeG.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.51763.zDM1WM.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.51764.o1oZcl.ii
+__GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.51765.ugaOHs.ii
 __GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.40460.ZcOO71.ii
-__GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.22449.4H6ItE.ii
+__GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.51766.4AoDnP.ii
 __GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
 __GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
 __GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.22448.Fn49lA.ii
@@ -2980,7 +2984,6 @@ guard variable for UseOptimalBufferAllocation()::bUseOptimalBufferAllocation
 hex.cpp
 hfff.
 https://support.steampowered.com/kb_article.php?ref=2037-QEUH-3335
-if "%%fs_target%%" == "" goto error
 image not found
 ineIuO
 int CUtlHashtable<char const*, CMemoryFileBacking*, DefaultHashFunctor<char const*>, DefaultEqualFunctor<char const*>, undefined_t>::DoRemove<char const*>(char const*, unsigned int)
@@ -3147,8 +3150,6 @@ s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 s_pTokenBuf
 set binsrc="%s"
-set fs_target="%s"
-setlocal
 sha.cpp
 signature
 sound\

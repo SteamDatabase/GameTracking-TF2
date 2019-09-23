@@ -658,7 +658,6 @@ $vertexcolor
 %s.bz2
 %s.cfg
 %s.dem
-%s.log
 %s.vprof
 %s.ztmp
 %s/%i
@@ -678,13 +677,11 @@ $vertexcolor
 %s/bin/%s
 %s/c%d_%d_%d
 %s/c%d_%d_%d%s.vtf
-%s/console%04d.log
 %s/maps
 %s/maps/%s.bsp
 %s/overflow
 %s/pl%02d_slot%d-time%d.wav
 %s/save/%s.sav
-%s/screenshot%04d.jpg
 %s/screenshots/%s.jpg
 %s/sound
 %s/sound/%s%s.wav
@@ -698,6 +695,7 @@ $vertexcolor
 %s: %d
 %s: %i "%s" (len:%i)
 %s: %i bytes
+%s: %i cvars
 %s: %i cvars, "%s"="%s"
 %s: %s
 %s: %s %.1f %.1f %.1f 
@@ -809,7 +807,7 @@ $vertexcolor
 (%u): %s
 (*%s*), 
 (3DNow) 
-(;{$|
+(;Z$|
 (Demo)
 (If sv_mincmdrate is > 0), this sets the maximum value for cl_cmdrate.
 (MMX) 
@@ -1074,7 +1072,6 @@ $vertexcolor
 -sv_pure_verify_hashes
 -swapcores
 -tempcontent
--testscript
 -textmessagedebug
 -textmode
 -timedemo_comment
@@ -1330,7 +1327,6 @@ $vertexcolor
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/Session.o
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/SourceAppInfo.o
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/VBRHeader.o
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/XUnzip.o
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/XZip.o
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/baseautocompletefilelist.o
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/engine.build/Objects-normal/i386/baseclient.o
@@ -1901,7 +1897,6 @@ $vertexcolor
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/../engine/zone.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/Color.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/UtlCachedFileData.h
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/XUnzip.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/XZip.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/appframework/IAppSystem.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/appframework/IAppSystemGroup.h
@@ -2261,7 +2256,6 @@ $vertexcolor
 /usr/lib/libz.1.dylib
 0    0
 0  0 0 0 0             
-0  00 
 0  00  
 0  @@0@P
 0  @@P@P@@p@P
@@ -2306,6 +2300,7 @@ $vertexcolor
 0=Off, 1=Normal, 2=Wireframe
 0=Off, 1=On, 2=Show Errors
 0@@0@@@@@@@@@@@@@@@@@@@
+0@@PP 
 0@@p p@P@@0p
 0@PPPPP`P
 0A5CGame
@@ -2323,7 +2318,7 @@ $vertexcolor
 0ffff.
 0p p@P `
 0p0PP0p p 
-0p@ 0@@    @000  0000 00000 PP`
+0p@ 0@@    @000  0000 00000 PP
 0pPpP
 0x%016llX
 0x%x,
@@ -2389,6 +2384,7 @@ $vertexcolor
 11TxViewPanel
 1234567890123
 127.0.0.1
+12:52:21
 12CAudioSource
 12CClientFrame
 12CClientState
@@ -2503,7 +2499,6 @@ $vertexcolor
 14IVEngineClient
 14IVEngineServer
 14SVC_ServerInfo
-15:34:22
 15CAppSystemGroup
 15CAudioMixerWave
 15CAudioSourceMP3
@@ -2861,7 +2856,6 @@ $vertexcolor
 3DNow code is %s
 3IOZuC
 3fff.
-3ffff.
 3ffffff.
 40CProportionalIntWithScreenspacePropertyX
 40CProportionalIntWithScreenspacePropertyY
@@ -3419,7 +3413,6 @@ $vertexcolor
 @_dlerror
 @_dlopen
 @_dlsym
-@_dup
 @_exit
 @_exp
 @_expf
@@ -3441,9 +3434,7 @@ $vertexcolor
 @_fread
 @_free
 @_fseek
-@_fstat$INODE64
 @_ftell
-@_futimes
 @_fwrite$UNIX2003
 @_g_ClockSpeed
 @_g_ClockSpeedMillisecondsMultiplier
@@ -3482,7 +3473,6 @@ $vertexcolor
 @_log
 @_log10
 @_longjmp
-@_lseek
 @_malloc
 @_memcmp
 @_memcpy
@@ -3492,7 +3482,6 @@ $vertexcolor
 @_mkdir
 @_mstats
 @_objc_msgSend
-@_open$UNIX2003
 @_pclose
 @_popen$UNIX2003
 @_pow
@@ -3508,7 +3497,6 @@ $vertexcolor
 @_puts
 @_qsort
 @_raise
-@_read$UNIX2003
 @_recv$UNIX2003
 @_roundf
 @_sel_registerName
@@ -3569,7 +3557,6 @@ $vertexcolor
 @_wcsstr
 @_wcstol
 @_wcstoll
-@_write$UNIX2003
 @dyld_stub_binder
 @ffffff
 @ffffff.
@@ -3778,7 +3765,6 @@ ApplyChanges
 ApplyDataToControls
 ApplySchemeSettings
 Approach(float, float, float)
-Apr 30 2019
 Area Portal Tool
 Area not set!
 AreaPortalUIPanel
@@ -7539,7 +7525,6 @@ CL_ShouldLoadBackgroundLevel(CCommand const&)
 CL_Shutdown()
 CL_SoundMessageLessFunc(SoundInfo_t const&, SoundInfo_t const&)
 CL_StartMovie(char const*, int, int, int, float, int, VideoSystem::EVideoSystem_t)
-CL_TakeJpeg(char const*, int)
 CL_TakeScreenshot(char const*)
 CL_TakeSnapshotAndSwap()
 CL_TimeDemoQuit_f(CCommand const&)
@@ -7709,6 +7694,7 @@ CMapListManager::BuildList()
 CMapListManager::RefreshList()
 CMapListManager::~CMapListManager()
 CMapLoadHelper::CMapLoadHelper(int)
+CMapLoadHelper::GetLoadName()
 CMapLoadHelper::GetMap()
 CMapLoadHelper::GetMapName()
 CMapLoadHelper::Init(model_t*, char const*)
@@ -7939,7 +7925,6 @@ CMod_LoadDispInfo: bad texinfo lump size!
 CMod_LoadDispInfo: bad vertex lump size!
 CMod_LoadLeafBrushes: funny lump size
 CMod_LoadSubmodels: funny lump size
-CMod_LoadTextures: bogus texture string reference
 CMod_LoadTextures: funny lump size
 CModelInfo::AddRefDynamicModel(int)
 CModelInfo::ComputeLevelScreenFade(Vector const&, float, float) const
@@ -8473,8 +8458,6 @@ COverlayMgr::Surf_PostClipFragment(moverlay_t*, moverlayfragment_t&, msurface2_t
 COverlayMgr::Surf_PreClipFragment(moverlay_t*, moverlayfragment_t&, msurface2_t*, moverlayfragment_t&)
 COverlayMgr::UnloadOverlays()
 COverlayMgr::~COverlayMgr()
-CP)s\
-CP){\)
 CP4AutoEditAddFile::~CP4AutoEditAddFile()
 CP4Factory::AccessFile(char const*) const
 CP4File::Add()
@@ -8812,8 +8795,6 @@ CRConClient::OnSocketAccepted(int, netadr_s const&, void**)
 CRConClient::OnSocketClosed(int, netadr_s const&, void*)
 CRConClient::ParseReceivedData()
 CRConClient::RunFrame()
-CRConClient::SaveRemoteConsoleLog(void const*, int)
-CRConClient::SaveRemoteScreenshot(void const*, int)
 CRConClient::SendCmd(char const*)
 CRConClient::SendQueuedData()
 CRConClient::SendResponse(CUtlBuffer&, bool)
@@ -9303,8 +9284,6 @@ CServerRemoteAccess::RespondString(unsigned int, int, char const*)
 CServerRemoteAccess::SendMessageToAdminUI(unsigned int, char const*)
 CServerRemoteAccess::SendResponseToClient(unsigned int, ServerDataResponseType_t, void*, int)
 CServerRemoteAccess::SendVProfData(unsigned int, bool, void*, int)
-CServerRemoteAccess::SetValue(char const*, char const*)
-CServerRemoteAccess::UploadScreenshot(char const*)
 CServerRemoteAccess::WriteDataRequest(CRConServer*, unsigned int, void const*, int)
 CServerRemoteAccess::WriteDataRequest(unsigned int, void const*, int)
 CServerRemoteAccess::~CServerRemoteAccess()
@@ -9700,7 +9679,6 @@ CTestScriptMgr::CTestScriptMgr()
 CTestScriptMgr::CheckPoint(char const*)
 CTestScriptMgr::RunCommands()
 CTestScriptMgr::SetWaitCheckPoint(char const*, bool)
-CTestScriptMgr::StartTestScript(char const*)
 CTestScriptMgr::~CTestScriptMgr()
 CTextureBudgetPanel::CTextureBudgetPanel(vgui::Panel*, char const*)
 CTextureBudgetPanel::DumpGlobalTextureStats(CCommand const&)
@@ -11452,7 +11430,6 @@ CWorldRenderList::Purge()
 CWorldRenderList::Reset()
 CWorldRenderList::g_Pool
 CWorldRenderList::~CWorldRenderList()
-CX9CDv?
 CXNF9
 CXboxSystem::AwardAchievement(unsigned int, unsigned int)
 CXboxSystem::CancelOverlappedOperation(void*)
@@ -11578,6 +11555,7 @@ Cannot create a new long tick watcher while waiting for an old one to terminate.
 Cannot figure out which search path %s came from.  Absolute path is %s
 Cannot find required model
 Cannot force simple material on %s; file not found
+Cannot load corrupted map.
 Cannot quantize more than %d color components
 Cannot quantize to fewer than %d colors
 Cannot quantize to more than %d colors
@@ -11735,7 +11713,6 @@ Close
 CloseBtn
 CloseFrameButtonPressed
 CloseModal
-CloseZipU(HZIP__*)
 CloseZipZ(HZIP__*)
 Closed demo file, %i bytes.
 Closed temporary file %s
@@ -12042,6 +12019,7 @@ Couldn't get factory '%s'
 Couldn't get interface '%s' from '%s'
 Couldn't load %s
 Couldn't load '%s'
+Couldn't load corrupted map %s
 Couldn't open %s
 Couldn't open '%s' for writing!
 Couldn't open kb_def.lst
@@ -12053,7 +12031,6 @@ Couldn't spawn server %s
 Couldn't write bitmap data snapshot to file %s.
 Couldn't write movie snapshot to file %s, file already exists
 Couldn't write movie snapshot to file %s.
-Couldn't write to read-only file %s, using file _temp_mapcycle.txt instead.
 Count
 Count Classname
 Counter-Strike: Source
@@ -12868,7 +12845,6 @@ EngineVGui()->Init()
 EngineVGui()->Shutdown()
 Engine_WorldLightAngle(dworldlight_t const*, Vector const&, Vector const&, Vector const&)
 Engine_WorldLightDistanceFalloff(dworldlight_t const*, Vector const&, bool)
-EnsureDirectory(char const*, char const*)
 Ent %3d: %s class %s
 Ent changes: %3d, prop changes: %3d
 Entity %d (class '%s') reported ENTITY_CHANGE_NONE but '%s' changed.
@@ -13007,9 +12983,7 @@ Failed to load plugin "%s"
 Failed to load server binary
 Failed to load sound "%s", file probably missing from disk/repository
 Failed to open client state file %s
-Failed to read console log!
 Failed to read demo header.
-Failed to read screenshot!
 Failed to remove local players
 Failed to remove remote players
 Failed to resolve absolute path of map: %s
@@ -13093,7 +13067,6 @@ FindOrAddMesh(IMaterial*, int)
 FindOrAddPanelAnimationMap(char const*)
 FindPlayerByName(CClientInfo*, char const*)
 FindRecvTable(char const*)
-FindZipItemA(HZIP__*, char const*, bool, int*, ZIPENTRY*)
 Finding .mp3 files...
 Finding .wav files...
 Finish recording demo.
@@ -13337,7 +13310,6 @@ GetCStringCharConversion()
 GetClientConVarValue: player invalid index %i
 GetColumHeaderText( %d ) failed
 GetCommand
-GetConsoleLogFileData(CUtlBuffer&)
 GetConsoleLogManager()::object
 GetDynamicBaseline: FindStringIndex(%s-%s) failed.
 GetDynamicBaseline: NULL baseline table
@@ -13913,6 +13885,7 @@ Invalid menu type (%i)
 Invalid occlusion lump version!
 Invalid or corrupt background texture %s
 Invalid physics data in map
+Invalid physics model in map
 Invalid progressive parameters Ss=%d Se=%d Ah=%d Al=%d
 Invalid progressive parameters at scan script entry %d
 Invalid property: %s/%s (array of datatables) [on prop %d of %d (%s)].
@@ -13958,7 +13931,6 @@ IterateRIFF::ChunkReadPartial(void*, int)
 IterateRIFF::ChunkSize()
 IterateRIFF::IterateRIFF(InFileRIFF&, int)
 J.ffff.
-J49J0
 JFIF APP0 marker: version %d.%02d, density %dx%d  %d
 JFIF extension marker: JPEG-compressed thumbnail image, length %u
 JFIF extension marker: RGB thumbnail image, length %u
@@ -13967,7 +13939,7 @@ JFIF extension marker: type 0x%02x, length %u
 JPEG datastream contains no image
 JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
 JPEGMEM
-JRA`NATASA`[Bp
+JRA`NATASA`\Bp
 Jfffff.
 Jingle sound file.
 Jitter fakelag packet time
@@ -14372,6 +14344,7 @@ MakeSkyVec(float, float, int, float, Vector&, Vector2D&)
 Malformed fragment ofs %i len %d, buffer size %d from %s
 Malformed message in CBaseClientState::ProcessCreateStringTable
 Map "%s" does not have cubemaps!
+Map %s is corrupted and cannot be loaded.
 Map '%s'
 Map '%s' missing or invalid
 Map Error:  Static prop with bogus solid type %d! (%s)
@@ -15038,7 +15011,6 @@ OpenContextMenu
 OpenInExplorer
 OpenInExplorerButton
 OpenSocketInternal(int, int, int, char const*, int, bool, int)
-OpenZipU(void*, unsigned int, unsigned int)
 Opened temporary file %s
 Opens initial menu screen and loads the background bsp, but only if no other level is being loaded, and we're not in developer mode.
 OperationList
@@ -15616,6 +15588,7 @@ Received connection rejection that didn't match my challenge, ignoring.
 Received delta packet entities while spawing!
 Received fragment chunk out of bounds: %i+%i>%i from %s
 Received fragments: start %i, num %i
+Received malformed data on RCON connection, disconnecting
 Received packet entities while connecting!
 Received response.
 Received signon %i when at %i
@@ -16481,6 +16454,7 @@ SentenceGroupPickSequential with NULL name
 SentenceIndexFromName with NULL pSentenceName
 SentenceMode
 SentenceModeMenu
+Sep 23 2019
 Serialize(CUtlBuffer&, CUtlBinaryBlock const&)
 Serialize(CUtlBuffer&, CUtlString const&)
 Serialize(CUtlBuffer&, Color const&)
@@ -16897,7 +16871,6 @@ StartRecording: couldn't open demo file %s.
 StartRelay: not connected.
 StartSound
 StartStaticSound
-StartTestScript( %s ) failed.
 Started map "%s" (CRC "%s")
 Started recording movie, frames will record after console is cleared...
 Starts SourceTV demo recording.
@@ -17133,10 +17106,6 @@ TODO demo file name
 TODO: Refusing to discard %u bytes
 TODO: SV_User_f.
 TUNNEL Detected 
-TUnzip::Close()
-TUnzip::Find(char const*, bool, int*, ZIPENTRY*)
-TUnzip::Get(int, ZIPENTRY*)
-TUnzip::Unzip(int, void*, unsigned int, unsigned int)
 TZip::Add(char const*, void*, unsigned int, unsigned int)
 TZip::AddCentral()
 TZip::ideflate(zlist*)
@@ -17334,6 +17303,7 @@ Tried to enforce simple material on %s
 Tried to read a demo message with no demo file
 Tried to write movie buffer with no filename set!
 Trilinear
+Truncated physics data in map
 Trusted key list has unexpected block '%s'; expected only 'public_key' blocks
 Trusted key type '%s' not supported.
 Trying non HDR '%s'
@@ -17408,6 +17378,9 @@ Unable to init wavedatacache system
 Unable to initialize sound capture. You won't be able to speak to other players.
 Unable to launch game
 Unable to load %s maplist file: %s
+Unable to load corrupt BSP %s
+Unable to load corrupted map %s
+Unable to load corrupted map %s.
 Unable to load deletions.bat file %s
 Unable to load interface %s from %s
 Unable to load plugin "%s"
@@ -17468,7 +17441,6 @@ Unsupported JPEG data precision %d
 Unsupported JPEG process: SOF type 0x%02x
 Unsupported color conversion request
 Unsupported marker type 0x%02x
-UnzipItem(HZIP__*, int, void*, unsigned int, unsigned int)
 UokOP
 UpButton
 Update delta not found.
@@ -18253,7 +18225,6 @@ XDRBp
 XSessionCreate failed with error %d
 XboxSystemInterface001
 Xcvar
-Xfff.
 Xffffff.
 Xxfffff.
 Y\+Ax
@@ -18334,6 +18305,7 @@ Zpm"U
 ]ATATATATAVAVATATATATATAUAUB
 ]ffff.
 ^BRBRB`#ARB`#ARBRBp
+^fff.
 _%i%s
 _.memset_pattern
 _.memset_pattern19
@@ -18439,7 +18411,6 @@ _Host_RunFrame_Client
 _Host_RunFrame_Client(bool)
 _Host_RunFrame_Input
 _Host_RunFrame_Input(float, bool)
-_Host_RunFrame_Input(float, bool)::bFirstFrame
 _Host_RunFrame_Render
 _Host_RunFrame_Render - CL_DecayLights
 _Host_RunFrame_Render - UpdateScreen
@@ -18638,46 +18609,46 @@ __DepthWrite10
 __DepthWrite11
 __ExitOnFatalAssert
 __GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.43007.eYiwWd.ii
-__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.43008.ovnUBy.ii
+__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.50096.lAU7ls.ii
 __GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.43009.klBBMl.ii
-__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.3772.fZ8RsH.ii
+__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.50097.g2KZlI.ii
 __GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.21759.hZrfvR.ii
 __GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.12701.wLKW0q.ii
 __GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.21760.lKob9E.ii
 __GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.21762.CYRhKi.ii
 __GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.21763.S5fTgZ.ii
 __GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.21766.ap4Rtx.ii
-__GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.13103.hnMS8i.ii
+__GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.50782.diRyEC.ii
 __GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.43112.0bLKil.ii
-__GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.13144.lFualh.ii
-__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.21806.cz1fLz.ii
-__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.13192.HC9amm.ii
-__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.13199.5ZVxsJ.ii
+__GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.50822.mvZJJy.ii
+__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.50102.KPHIjN.ii
+__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.50876.7aIyAl.ii
+__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.50882.oNTtjl.ii
 __GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.21808.6bXa3M.ii
-__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.21812.W6sazA.ii
-__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.13243.4ZwcEb.ii
+__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.50104.qkbQiB.ii
 __GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.44922.QX5oKb.ii
+__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.50932.L5bgSs.ii
 __GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.43158.ckdczs.ii
 __GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.43182.Mf3mor.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.94430.JwYnNp.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.48880.OTU5do.ii
 __GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.21852.Oi4uYo.ii
 __GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.97641.YPxrPY.ii
 __GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.21866.S79292.ii
-__GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.43867.1hFoNV.ii
-__GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.13414.ueBpo6.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.12706.fi991S.ii
+__GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.50355.opnPQp.ii
+__GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.51135.X5P8yo.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.50153.BCVLbM.ii
 __GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.43236.dRZvh7.ii
 __GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.21876.rKeAaD.ii
 __GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.21884.uPLoxr.ii
 __GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.43254.0xQJy2.ii
-__GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.13479.d6qBR2.ii
-__GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.13543.nool2L.ii
-__GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.13544.JKBuMJ.ii
-__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.3776.cfsOcQ.ii
+__GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.51175.2AJUnF.ii
+__GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.51234.m0a1vd.ii
+__GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.51235.lv3Ac4.ii
+__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.50154.7GRWxS.ii
 __GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.43268.9Irv2u.ii
 __GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.21902.BnMMxf.ii
 __GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.21924.KuLzlB.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.12712.nZxaKB.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.50181.w2Uhsp.ii
 __GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.43349.ai3IHx.ii
 __GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.43363.FWejpu.ii
 __GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.21947.ZqZxrf.ii
@@ -18687,173 +18658,173 @@ __GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.43426.yWwuwn.ii
 __GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.21968.LjXC4x.ii
 __GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.21969.yTrVmA.ii
 __GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.21980.XTaOs1.ii
-__GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.43851.LKVbr8.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.12826.kKEPiN.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.12834.3pHNZW.ii
-__GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.12840.t2tpvZ.ii
+__GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.50327.m2uKic.ii
+__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.50500.juNXlD.ii
+__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.50504.Rnw3PN.ii
+__GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.50510.zRAws4.ii
 __GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.40378.YalEcN.ii
-__GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.12846.HVXx5x.ii
-__GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.12850.ivTz0B.ii
-__GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.12858.F6KuqH.ii
-__GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.12869.v1CZfk.ii
-__GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.12874.5d780R.ii
-__GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.12898.QFG3le.ii
-__GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.12908.MxJcWP.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.12924.6DQdqQ.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.12928.AWn4Cy.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.12932.NWAaNz.ii
-__GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.12952.j3UDVF.ii
-__GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.12960.0VoHoj.ii
-__GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.12964.v2DyMq.ii
-__GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.12972.SlG7rO.ii
-__GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.12976.cqzLB5.ii
-__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.12980.2SeEwm.ii
-__GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.12988.Y9OEIX.ii
-__GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.12996.FP0UEv.ii
-__GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.13004.h83CKt.ii
-__GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.13012.pyIg6z.ii
-__GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.13020.tbkVQg.ii
-__GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.12888.bLA0vZ.ii
-__GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.12896.HhG6V2.ii
-__GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.13030.Sx4dd5.ii
-__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.13038.FWG4UJ.ii
-__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.34021.SnvNIg.ii
-__GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.13050.vKa9LP.ii
-__GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.13058.f7JEK5.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.40387.HBQiNE.ii
-__GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.13068.apOQFN.ii
-__GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.13078.wjCfGt.ii
-__GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.13072.GqdMUk.ii
-__GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.13091.XfqRd0.ii
-__GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.13086.uX4bzs.ii
-__GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.13098.gOF67c.ii
-__GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.13106.DnSd7R.ii
-__GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.13115.p4zRb4.ii
-__GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.13119.9U9mT1.ii
+__GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.50516.b480ot.ii
+__GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.50520.jjr0mr.ii
+__GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.50523.RUSHSW.ii
+__GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.50542.EWKbzD.ii
+__GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.50546.LDv5rd.ii
+__GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.50572.XflEzz.ii
+__GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.50574.TC5ypT.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.50596.ql5oGd.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.50600.OayAzO.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.50602.25NNwK.ii
+__GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.50626.uqdRa7.ii
+__GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.50630.bYDn7o.ii
+__GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.50634.HXTD9l.ii
+__GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.50644.UOiKay.ii
+__GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.50648.imQSoQ.ii
+__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.50656.105gof.ii
+__GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.50660.AdI63G.ii
+__GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.50668.T3HcPQ.ii
+__GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.50674.7PAt4T.ii
+__GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.50682.LPUy9t.ii
+__GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.50686.E1pn1C.ii
+__GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.50559.dUetFo.ii
+__GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.50568.EVNxOl.ii
+__GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.50704.aaMzqz.ii
+__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.50710.UkYsET.ii
+__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.50719.LalnTK.ii
+__GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.50724.qyD9wD.ii
+__GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.50740.6Cib4S.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.48879.dxRFDX.ii
+__GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.50746.7ykBKI.ii
+__GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.50756.HPDCpb.ii
+__GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.50750.61v70o.ii
+__GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.50768.LTuROk.ii
+__GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.50762.fdxpB4.ii
+__GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.50776.A5aOZH.ii
+__GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.50786.72FR1b.ii
+__GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.50791.ttGyF6.ii
+__GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.50799.B0kob9.ii
 __GLOBAL__sub_I_disp_power.stdout.rel_tf_osx_builder.43761.heDhnP.ii
 __GLOBAL__sub_I_dispcoll_c.stdout.rel_tf_osx_builder.43751.YH03iI.ii
 __GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.41059.t5JaVF.ii
 __GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.41060.1fVoP8.ii
-__GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.41061.jX3gDE.ii
+__GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.49096.TpijiI.ii
 __GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.41062.6ZpHZE.ii
-__GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.13140.ng5koZ.ii
+__GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.50815.v2jnrg.ii
 __GLOBAL__sub_I_downloadth.stdout.rel_tf_osx_builder.44669.PfTjce.ii
 __GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.44672.vQ1wHl.ii
-__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.13164.XAxuVK.ii
-__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.44699.x7hgFU.ii
-__GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.13168.rZ09h2.ii
+__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.50842.j3rE9Q.ii
+__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.50843.4WXHpQ.ii
+__GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.50850.MFrSvl.ii
 __GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.4242.yp7s9h.ii
-__GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.13170.uisVsQ.ii
-__GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.13218.GxAOKa.ii
-__GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.13206.TYhKta.ii
-__GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.13209.L6u6Zx.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.13233.2g4FMl.ii
-__GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.13266.nEEq4C.ii
-__GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.13269.UaPqUz.ii
-__GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.13271.Yc03BW.ii
-__GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.13278.MWspPv.ii
-__GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.13288.x5cbfl.ii
-__GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.13294.g01qKF.ii
-__GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.13300.mgSW7J.ii
-__GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.13318.DiDR7M.ii
-__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.13324.02ZX3g.ii
-__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.13327.Wum4cE.ii
-__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.13344.0LYyXo.ii
-__GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.13354.V4JmWf.ii
-__GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.13362.35kBOa.ii
-__GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.13368.6xuv8d.ii
-__GLOBAL__sub_I_host_phone.stdout.rel_tf_osx_builder.13370.vnYVg3.ii
-__GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.13380.tNeDrm.ii
+__GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.50857.B3fWTV.ii
+__GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.50905.PBDncG.ii
+__GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.50895.X8xnFo.ii
+__GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.50900.sSKuTq.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.50915.5o0YWI.ii
+__GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.50961.dy94Zx.ii
+__GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.50972.j7KZ9f.ii
+__GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.50976.gwpuW5.ii
+__GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.50984.h5m7Nn.ii
+__GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.50990.2JXpJt.ii
+__GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.51003.FbzikH.ii
+__GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.51007.8y2dR9.ii
+__GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.51031.c9Y9L2.ii
+__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.51035.BxX2Mm.ii
+__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.51037.dJ1G1w.ii
+__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.51059.Aq76VB.ii
+__GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.51071.nSipXz.ii
+__GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.51083.acgZ1M.ii
+__GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.51089.hxZ1co.ii
+__GLOBAL__sub_I_host_phone.stdout.rel_tf_osx_builder.51093.0kfY98.ii
+__GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.51096.6Es40S.ii
 __GLOBAL__sub_I_initmathli.stdout.rel_tf_osx_builder.45285.t9JLok.ii
-__GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.13392.BARBFK.ii
-__GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.13410.fsX8xs.ii
-__GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.13398.YiSbRc.ii
+__GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.51113.77TewM.ii
+__GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.51131.AM7K0d.ii
+__GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.51117.BuzYLA.ii
 __GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.40460.ZcOO71.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.13416.my0dAm.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.13428.0ZB20o.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.13456.Bp7OmU.ii
-__GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.13466.rN7Suv.ii
-__GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.13481.FL4Pnt.ii
-__GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.13480.UvxAoL.ii
-__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.13525.7EwCft.ii
-__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.13537.FfyttA.ii
-__GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.13541.hoYf2K.ii
-__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.12780.6k6V62.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.13493.O6ccLC.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.13505.q0xfn6.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.13519.iUBfmD.ii
-__GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.13573.iJXKJt.ii
-__GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.13585.qY3Yrb.ii
-__GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.13590.rrhjV1.ii
-__GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.13635.jPQFq2.ii
-__GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.13647.3vP6ui.ii
-__GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.13651.eKMHI2.ii
-__GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.13659.UrWBIx.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.51143.TqJUSU.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.51146.fOxzWI.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.51161.CWTooj.ii
+__GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.51169.42cn5K.ii
+__GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.51181.igdJ8F.ii
+__GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.51177.uN1Bbx.ii
+__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.51221.6BSsEH.ii
+__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.51225.oGswdp.ii
+__GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.51233.ASINfl.ii
+__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.50320.hmRywI.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.51197.ImiVgq.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.51203.SubDhx.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.51212.Tj4FFN.ii
+__GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.51257.baRj5i.ii
+__GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.51269.5JgEiJ.ii
+__GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.51273.bnUUvH.ii
+__GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.51321.1iqxUP.ii
+__GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.51324.zWCKRB.ii
+__GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.51335.26XmOy.ii
+__GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.51339.8rqIP6.ii
 __GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.45657.6m9FmB.ii
-__GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.13627.8bEPPk.ii
-__GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.13613.bg5emM.ii
-__GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.13663.1yvZBJ.ii
-__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.13670.PVMgqz.ii
-__GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.13687.aIgTDx.ii
-__GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.12785.An8dUt.ii
-__GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.12787.FDFV8l.ii
-__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.12788.NORQzG.ii
-__GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.3916.dpCbsE.ii
-__GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.3946.UjYSZE.ii
-__GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.12791.EsW7vS.ii
-__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.3976.UkvH0H.ii
-__GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.3984.Jeaij4.ii
+__GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.51307.uxP34w.ii
+__GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.51298.f0ZOKR.ii
+__GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.51345.6tUTDt.ii
+__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.51353.EOuFfp.ii
+__GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.51368.ViB7U4.ii
+__GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.50388.vVQ0nW.ii
+__GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.50390.IRoaU5.ii
+__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.50400.TAkFcv.ii
+__GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.50406.45yv0Q.ii
+__GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.50427.FSxYYI.ii
+__GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.50450.ZmlsNs.ii
+__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.50458.6orMi1.ii
+__GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.50464.FJzlId.ii
 __GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.45836.i5XPTp.ii
-__GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.45844.woAgrc.ii
+__GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.51387.nAjPEG.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
-__GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.13701.MdjTg1.ii
-__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.21627.ETE0X8.ii
-__GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.13705.ksKp2q.ii
-__GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.13711.z01y68.ii
-__GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.13715.85wHJ2.ii
-__GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.13725.ll0xSg.ii
-__GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.45880.A4gt02.ii
-__GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.13729.UztY3F.ii
-__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.13737.Yg4y7M.ii
-__GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.13743.Uh2yIP.ii
-__GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.13744.eewyfr.ii
-__GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.13751.U44e65.ii
-__GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.13755.bPT8HL.ii
-__GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.13760.TF3ZXX.ii
-__GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.13765.vdH37X.ii
-__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.13779.jqX8v9.ii
-__GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.13787.0D829U.ii
-__GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.13791.PWkQ9O.ii
-__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.13801.mEtmJl.ii
-__GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.13805.MRvPEo.ii
-__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.13811.aOYlQX.ii
-__GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.45986.9D1ykY.ii
-__GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.13831.mZVmuj.ii
-__GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.13837.Cllls4.ii
-__GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.13842.R3r3SU.ii
+__GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.51395.1vnWdy.ii
+__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.49425.eNrASV.ii
+__GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.51398.yHbq6G.ii
+__GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.51403.pwDbQM.ii
+__GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.51413.dp3qbq.ii
+__GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.51417.CoCfuT.ii
+__GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.51425.2aHHW4.ii
+__GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.51431.69SE3q.ii
+__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.51435.UgcFra.ii
+__GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.51439.udQMtF.ii
+__GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.51442.NGZsfj.ii
+__GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.51453.C16cBv.ii
+__GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.51457.QNXCPl.ii
+__GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.51458.95aPcw.ii
+__GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.51473.HZ9FGQ.ii
+__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.51477.OEcNtE.ii
+__GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.51489.0A8jD0.ii
+__GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.51491.UFTxOd.ii
+__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.51501.dthb7K.ii
+__GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.51505.ryT9l8.ii
+__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.51513.QbvJ6Z.ii
+__GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.51531.56m9Wk.ii
+__GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.51535.t1lL13.ii
+__GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.51542.0iIGFo.ii
+__GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.51551.D9tqXQ.ii
 __GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
 __GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
-__GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.13846.vI9Xoi.ii
-__GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.13857.WS2GdA.ii
-__GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.13861.bPxIAL.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.13865.OAnRgW.ii
+__GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.51557.9BadLk.ii
+__GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.51560.VcOvnd.ii
+__GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.51561.BFbZqL.ii
 __GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.22101.YS8vky.ii
 __GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.43673.CCS2yv.ii
 __GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.43674.mJuj0a.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.51569.4W7OUs.ii
 __GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.12784.VI9gIF.ii
-__GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.13873.I6LvBh.ii
-__GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.13893.9bkBN4.ii
-__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.13899.xLvKed.ii
-__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.13903.atNYWO.ii
-__GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.13909.stuW3x.ii
-__GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.12794.sAaZiH.ii
+__GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.51581.EJbnmp.ii
+__GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.51591.T0wT3r.ii
+__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.51605.zdbgxn.ii
+__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.51609.Eh70h4.ii
+__GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.51615.dPjIpi.ii
+__GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.50471.IAIRZG.ii
 __GLOBAL__sub_I_voice_reco.stdout.rel_tf_osx_builder.44005.g4z2HG.ii
-__GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.4006.pdljhX.ii
-__GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.13915.GFKumP.ii
-__GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.4014.qpY4aZ.ii
-__GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.13921.q1W2BG.ii
-__GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.13927.S3NRXE.ii
-__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.41227.qLgrGV.ii
+__GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.50487.yXmhyh.ii
+__GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.51621.mhSS9T.ii
+__GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.50492.XQ8PrI.ii
+__GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.51624.E6IX1E.ii
+__GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.51625.yfcILB.ii
+__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.49212.17mzOZ.ii
 __GLOBAL__sub_I_xboxsystem.stdout.rel_tf_osx_builder.13941.JTHgHK.ii
 __GLOBAL__sub_I_zone.stdout.rel_tf_osx_builder.13946.Z1QztA.ii
 __LINKEDIT
@@ -19224,9 +19195,7 @@ _framesnapshotmanager
 _fread
 _free
 _fseek
-_fstat$INODE64
 _ftell
-_futimes
 _fwrite$UNIX2003
 _gDemoMessageBuffer
 _gHostSpawnCount
@@ -19816,7 +19785,6 @@ _kCFProxyTypeHTTP
 _kCFProxyTypeKey
 _kCFProxyTypeNone
 _kCFProxyUsernameKey
-_lasterrorU
 _lfo_rng
 _lfos
 _lfowavs
@@ -19832,7 +19800,6 @@ _loadsize
 _localtime
 _log10
 _longjmp
-_lseek
 _lzma_persistent_buffer
 _m_szErrors
 _malloc
@@ -19900,7 +19867,6 @@ _networkStringTableContainerClient
 _networkStringTableContainerServer
 _nuls
 _objc_msgSend
-_open$UNIX2003
 _pSortMapRenderContext
 _panel_test_title_safe
 _password
@@ -20003,7 +19969,6 @@ _r_worldlightmin
 _r_worldlights
 _raise
 _rcon_password
-_read$UNIX2003
 _realtime
 _recv$UNIX2003
 _registry
@@ -20221,7 +20186,6 @@ _swprintf
 _sysctl
 _system$UNIX2003
 _tanf
-_temp_mapcycle.txt
 _testscript_debug
 _texture_budget_background_alpha
 _texture_budget_panel_bottom_of_history_fraction
@@ -20294,7 +20258,6 @@ _wcsstr
 _wcstol
 _wcstoll
 _whitelist.txt
-_write$UNIX2003
 `     `P
 ` 00 
 ` 000
@@ -21232,10 +21195,6 @@ copy_block(TState&, char*, unsigned int, int)
 copymap
 corner
 couldn't open %s
-cpdext
-cpdist
-cplens
-cplext
 cpu_speed
 crc32(unsigned long, unsigned char const*, unsigned long)
 crc_table
@@ -21556,7 +21515,6 @@ emit_restart_e(huff_entropy_encoder*, int)
 emit_restart_s(working_state*, int)
 emit_sof(jpeg_compress_struct*, JPEG_MARKER)
 emit_sos(jpeg_compress_struct*)
-empty distance tree with lengths
 empty_output_buffer(jpeg_compress_struct*)
 enable vtune for a particular vprof group ("disable" to disable)
 enable/disable averages in the budget panel
@@ -21680,8 +21638,6 @@ finish_pass_huff(jpeg_compress_struct*)
 finish_pass_master(jpeg_compress_struct*)
 firecommand
 first_pool_slop
-fixed_td
-fixed_tl
 flags
 flashlight shadows,
 float
@@ -22512,7 +22468,6 @@ https://
 https://support.steampowered.com/kb_article.php?ref=2117-ILZV-2837
 hud_classautokill
 hud_combattext
-huft_build(unsigned int*, unsigned int, unsigned int, unsigned int const*, unsigned int const*, inflate_huft_s**, unsigned int*, inflate_huft_s*, unsigned int*, unsigned int*)
 hxs?z7
 ice_keyrot
 ice_pbox
@@ -22534,12 +22489,7 @@ in use on this server
 inDataHeader
 in_jlook
 inactive
-incomplete distance tree
-incomplete dynamic bit lengths tree
-incomplete literal/length tree
 inconsistent bit counts
-incorrect data check
-incorrect header check
 increased_maxplayers
 increment
 incremental
@@ -22549,17 +22499,6 @@ incrementvar(CCommand const&)
 incrementvar_command
 incs
 index
-inflate(z_stream_s*, int)
-inflateInit2(z_stream_s*)
-inflateReset(z_stream_s*)
-inflate_blocks(inflate_blocks_state*, z_stream_s*, int)
-inflate_blocks_free(inflate_blocks_state*, z_stream_s*)
-inflate_blocks_new(z_stream_s*, unsigned long (*)(unsigned long, unsigned char const*, unsigned int), unsigned int)
-inflate_codes(inflate_blocks_state*, z_stream_s*, int)
-inflate_fast(unsigned int, unsigned int, inflate_huft_s const*, inflate_huft_s const*, inflate_blocks_state*, z_stream_s*)
-inflate_flush(inflate_blocks_state*, z_stream_s*, int)
-inflate_mask
-inflate_trees_dynamic(unsigned int, unsigned int, unsigned int*, unsigned int*, unsigned int*, inflate_huft_s**, inflate_huft_s**, inflate_huft_s*, z_stream_s*)
 info.txt
 infocus_bgcolor_override
 init_block(TState&)
@@ -22589,14 +22528,7 @@ int_array
 int_downsample(jpeg_compress_struct*, jpeg_component_info*, unsigned char**, unsigned char**)
 intconverter
 internal
-invalid bit length repeat
-invalid block type
-invalid distance code
 invalid length
-invalid literal/length code
-invalid log filename
-invalid stored block lengths
-invalid window size
 io
 ioctlsocket
 ipaddress
@@ -22796,7 +22728,6 @@ lowResImageFormat
 lowResImageHeight
 lowResImageSample
 lowResImageWidth
-lufopen(void*, unsigned int, unsigned int, unsigned int*)
 lump_t
 lump_t::m_DataMap
 lump_t_DataDescInit::g_DataMapHolder
@@ -23180,7 +23111,6 @@ navToRelay
 navUp
 nav_edit 1;nav_analyze_scripted
 nav_edit 1;nav_analyze_scripted force
-need dictionary
 net_SetConVar
 net_SignonState
 net_StringCmd
@@ -23271,7 +23201,6 @@ nextframe
 nextkey
 nexttarget
 nfff.
-nffff.
 nfffff.
 nffffff.
 no destinations! (file, console, or udp)
@@ -23786,9 +23715,6 @@ outputjpg
 outputtga
 outputwav
 override_if
-oversubscribed distance tree
-oversubscribed dynamic bit lengths tree
-oversubscribed literal/length tree
 overview_alpha
 overview_health
 overview_locked
@@ -24013,15 +23939,12 @@ r "%i"
 r"ffffff.
 r)=/ 
 r-ffff.
-r/fffff.
 r1 "%i"
-r1fffff.
 r2 "%i"
 r2fff.
 r:fff.
 r=ffff.
 rBffff.
-rFffff.
 rHffffff.
 rLfff.
 r[ff.
@@ -24324,7 +24247,6 @@ retry_command
 revert
 revert point
 revertpoint
-rfff.
 rfffff.
 rgb_gray_convert(jpeg_compress_struct*, unsigned char**, unsigned char***, unsigned int, int)
 rgb_ycc_convert(jpeg_compress_struct*, unsigned char**, unsigned char***, unsigned int, int)
@@ -24348,9 +24270,6 @@ run with -p4 to get p4 operations upon mat_crosshair_edit
 runevent
 runeventchild
 running
-s+fff.
-s-fff.
-s.ffff.
 sAmTb
 s\;T>
 s_AudioState
@@ -24486,7 +24405,9 @@ s_nCVarFlag
 s_nDLLIdentifier
 s_nDesiredFPSMax
 s_nLastSortColumn
+s_nMapEdgesLoaded
 s_nMapLoadRecursion
+s_nMapSurfacesLoaded
 s_nMaxVisibleDLightCount
 s_nSoundGuid
 s_nTempVertCount
@@ -24575,7 +24496,6 @@ scan_tree(TState&, ct_data*, int)
 screenshot
 screenshot screenshots/%s.jpg
 screenshot(CCommand const&)
-screenshot.jpg
 screenshot_command
 screenshot_internal(CCommand const&)
 screenshots
@@ -25152,7 +25072,6 @@ sys_minidumpspewlines
 systemlinkport
 szSvNetSpikeUsageText
 t	;K0
-t @;G
 t ff.
 t!G9J
 t"=` 
@@ -25238,7 +25157,6 @@ testchmb_a_05
 testchmb_a_06
 testchmb_a_07
 testscript_debug
-testscripts\%s
 texelslighting_%d.ppl
 texinfo
 textAlignment
@@ -25301,7 +25219,6 @@ tlffffff.
 tmpstr512()
 tmpstr512()::curstring
 tmpstr512()::string
-toff.
 toggle
 toggle keyframe
 toggle look target
@@ -25316,7 +25233,6 @@ togglepause
 togglescores
 token
 too many codes
-too many length or distance symbols
 tooltip
 tooltiptext
 total preset slots used: %d 
@@ -26692,7 +26608,6 @@ typeinfo name for vgui::TreeView
 typeinfo name for vgui::TreeViewSubPanel
 typeinfo name for vgui::URLLabel
 t{9|0
-u2B;U
 uHH+G 
 uIH+G 
 uKH+C 
@@ -26732,7 +26647,6 @@ uaH+G
 ubH+G 
 ubfffff.
 ucH+G 
-ucrc32(unsigned long, unsigned char const*, unsigned int)
 udp/ip  : %s:%i%s
 ueH+F 
 ufH+F 
@@ -26755,7 +26669,6 @@ unicode
 uniqueid
 uniqueid "%s" not found
 unknown
-unknown compression method
 unknown model
 unknown reason
 unlitgeneric
@@ -26774,16 +26687,6 @@ unsigned int CUtlHashtable<unsigned long, int, DefaultHashFunctor<unsigned long>
 unsigned int CUtlStableHashtable<CUtlConstStringBase<char>, CNetworkStringTableItem, CaselessStringHashFunctor, UTLConstStringCaselessStringEqualFunctor<char>, unsigned short, char const*>::DoInsert<char const*>(char const*)
 unsigned int CUtlStableHashtable<model_t*, empty_t, CModelInfo::ModelFileHandleHash, CModelInfo::ModelFileHandleEq, short, void*>::DoInsert<model_t*>(model_t*)
 unsupported proxy type
-unzCloseCurrentFile(unz_s*)
-unzLocateFile(unz_s*, char const*, int)
-unzOpenCurrentFile(unz_s*)
-unzOpenInternal(LUFILE*)
-unzReadCurrentFile(unz_s*, void*, unsigned int)
-unzlocal_CheckCurrentFileCoherencyHeader(unz_s*, unsigned int*, unsigned long*, unsigned int*)
-unzlocal_GetCurrentFileInfoInternal(unz_s*, unz_file_info_s*, unz_file_info_internal_s*, char*, unsigned long, void*, unsigned long, char*, unsigned long)
-unzlocal_SearchCentralDir(LUFILE*)
-unzlocal_getLong(LUFILE*, unsigned long*)
-unzlocal_getShort(LUFILE*, unsigned long*)
 updatepositions
 uptime
 url_dl
@@ -26803,7 +26706,6 @@ users(CCommand const&)
 users_command
 usetitlesafe
 uyAB9
-u~fff.
 v*ffff.
 v/fff.
 v0@9Yhu
@@ -30208,7 +30110,6 @@ vtune "pause" | "resume" : Suspend or resume VTune's sampling.
 vtune(CCommand const&)
 vtune_command
 w/ffffff.
-w4@;E
 w@+w8
 warning: Vis decompression overrun
 was banned
@@ -30263,17 +30164,13 @@ y?wwwwww
 yD+y<
 yE>21CUtlCStringConversion
 yoffset
-z(AH1
-z49z0tq
-zcalloc(void*, unsigned int, unsigned int)
-zcfree(void*, void*)
-{<){X
 {}()'
 {}()':
 |>ff.
 |Off.
 |^_[]
 |all_source_engine_paths|
+|fff.
 |gameinfo_path|
 }5ff.
 ~	9H$~
