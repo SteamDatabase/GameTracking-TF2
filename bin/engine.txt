@@ -7680,7 +7680,7 @@
  T CLZSS::Compress(unsigned char const*, int, unsigned int*)
  T CLZSS::CompressNoAlloc(unsigned char const*, int, unsigned char*, unsigned int*)
  T CLZSS::GetActualSize(unsigned char const*)
- T CLZSS::SafeUncompress(unsigned char const*, unsigned char*, unsigned int)
+ T CLZSS::SafeUncompress(unsigned char const*, unsigned int, unsigned char*, unsigned int)
  T CLZSS::Uncompress(unsigned char const*, unsigned char*)
  T CL_AddSound(SoundInfo_t const&)
  T CL_AllocDlight(int)
@@ -8373,6 +8373,7 @@
  T CNetChan::Shutdown(char const*)
  T CNetChan::StartStreaming(unsigned int)
  T CNetChan::Transmit(bool)
+ T CNetChan::UncompressFragments(CNetChan::dataFragments_s*)
  T CNetChan::UpdateMessageStats(int, int)
  T CNetChan::UpdateSubChannels()
  T CNetChan::~CNetChan()
@@ -16471,6 +16472,7 @@
  b Map_VisCurrentCluster()::visclusterwarningcount
  b MaybeReportMissingWav(char const*)::wavErrors
  b NET_AdjustLag()::s_LastTime
+ b NET_GetLong(int, netpacket_s*)::s_numLogged
  b NET_LagPacket(bool, netpacket_s*)::losscount
  b NET_OpenSocket(char const*, int&, int)::bFirst
  b NET_SetTime(double)::s_last_realtime
@@ -17194,6 +17196,7 @@
  b net_start_command
  b net_status_command
  b net_udp_rcvbuf
+ b net_warningthrottle
  b netadr_s::ToString(bool) const::s
  b netadr_s::ToString(bool) const::slot
  b nextdemo_command
@@ -17748,6 +17751,7 @@
  d ImageLoader::g_KernelFunc
  d ImageLoader::g_KernelFuncNice
  d LeafVisBuild(Vector const&)::last_leaf
+ d NET_GetLong(int, netpacket_s*)::s_dblLastLogLine
  d S_PlayVol(CCommand const&)::hash
  d S_Say(CCommand const&)::hash
  d ShowEncodeDeltaWatchInfo(SendTable const*, SendProp const*, bf_read&, int, int)::lastframe
@@ -18392,7 +18396,7 @@
  t _GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.50542.EWKbzD.ii
  t _GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.50546.LDv5rd.ii
  t _GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.50572.XflEzz.ii
- t _GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.50574.TC5ypT.ii
+ t _GLOBAL__sub_I_cl_demo.cpp
  t _GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.50596.ql5oGd.ii
  t _GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.50600.OayAzO.ii
  t _GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.50602.25NNwK.ii
@@ -18404,7 +18408,7 @@
  t _GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.50656.105gof.ii
  t _GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.50660.AdI63G.ii
  t _GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.50668.T3HcPQ.ii
- t _GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.50674.7PAt4T.ii
+ t _GLOBAL__sub_I_cl_rcon.cpp
  t _GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.50682.LPUy9t.ii
  t _GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.50686.E1pn1C.ii
  t _GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.50559.dUetFo.ii
@@ -18430,7 +18434,7 @@
  t _GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.41060.1fVoP8.ii
  t _GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.49096.TpijiI.ii
  t _GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.41062.6ZpHZE.ii
- t _GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.50815.v2jnrg.ii
+ t _GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.75213.R45rqA.ii
  t _GLOBAL__sub_I_downloadth.stdout.rel_tf_osx_builder.44669.PfTjce.ii
  t _GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.44672.vQ1wHl.ii
  t _GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.50842.j3rE9Q.ii
@@ -18438,7 +18442,7 @@
  t _GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.50850.MFrSvl.ii
  t _GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.4242.yp7s9h.ii
  t _GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.50857.B3fWTV.ii
- t _GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.50905.PBDncG.ii
+ t _GLOBAL__sub_I_engine_replay_int.cpp
  t _GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.50895.X8xnFo.ii
  t _GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.80238.5hPxnf.ii
  t _GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.50915.5o0YWI.ii
@@ -18469,10 +18473,10 @@
  t _GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.51169.42cn5K.ii
  t _GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.51181.igdJ8F.ii
  t _GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.51177.uN1Bbx.ii
- t _GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.51221.6BSsEH.ii
- t _GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.51225.oGswdp.ii
- t _GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.51233.ASINfl.ii
- t _GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.50320.hmRywI.ii
+ t _GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.75332.EfVzp5.ii
+ t _GLOBAL__sub_I_net_ws.cpp
+ t _GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.75333.oimbsS.ii
+ t _GLOBAL__sub_I_netmessages.cpp
  t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.51197.ImiVgq.ii
  t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.51203.SubDhx.ii
  t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.51212.Tj4FFN.ii
@@ -18486,7 +18490,7 @@
  t _GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.45657.6m9FmB.ii
  t _GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.51307.uxP34w.ii
  t _GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.51298.f0ZOKR.ii
- t _GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.51345.6tUTDt.ii
+ t _GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.75336.1WfQxb.ii
  t _GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.51353.EOuFfp.ii
  t _GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.51368.ViB7U4.ii
  t _GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.50388.vVQ0nW.ii
