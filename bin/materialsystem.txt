@@ -1433,6 +1433,7 @@
  T CDummyMorph::AddMorph(MorphVertexInfo_t const&)
  T CDummyMorph::Lock(float)
  T CDummyMorph::Unlock()
+ T CDummyTexture::BDownload(Rect_t*, int)
  T CDummyTexture::CopyToStagingTexture(ITexture*)
  T CDummyTexture::DecrementReferenceCount()
  T CDummyTexture::DeleteIfUnreferenced()
@@ -3057,6 +3058,7 @@
  T CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::Release()
  T CReferenceToHandleTexture::AsyncCancelReadTexture()
  T CReferenceToHandleTexture::AsyncReadTextureFromFile(IVTFTexture*, unsigned int)
+ T CReferenceToHandleTexture::BDownload(Rect_t*, int)
  T CReferenceToHandleTexture::Bind(Sampler_t)
  T CReferenceToHandleTexture::Bind(Sampler_t, int, Sampler_t)
  T CReferenceToHandleTexture::BindVertexTexture(VertexTextureSampler_t, int)
@@ -3259,6 +3261,7 @@
  T CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)
  T CTexture::AsyncCancelReadTexture()
  T CTexture::AsyncReadTextureFromFile(IVTFTexture*, unsigned int)
+ T CTexture::BDownload(Rect_t*, int)
  T CTexture::Bind(Sampler_t)
  T CTexture::Bind(Sampler_t, int, Sampler_t)
  T CTexture::BindVertexTexture(VertexTextureSampler_t, int)
@@ -4970,25 +4973,25 @@
  t MatProxyCallback(IConVar*, char const*, float)
  t MySpewOutputFunc(SpewType_t, char const*)
  t SLoadTextureBitsFromFile(IVTFTexture**, void*, unsigned int, TextureLODControlSettings_t*, int, unsigned short*, char const*, char const*, TexDimensions_t*, TexDimensions_t*, TexDimensions_t*, unsigned int*)
- t _GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.49850.ibB9JU.ii
- t _GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.49853.UUv2tA.ii
+ t _GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.18495.CaLwT0.ii
+ t _GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.18497.lg0ftW.ii
  t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.48880.OTU5do.ii
  t _GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.42635.zMMTeD.ii
- t _GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.49851.rO3aNN.ii
- t _GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.49854.z0VK7g.ii
- t _GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.49855.q857Im.ii
+ t _GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.18496.FiYA5G.ii
+ t _GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.18498.yaglGC.ii
+ t _GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.18499.l3Z3LV.ii
  t _GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.49881.rXiEwy.ii
- t _GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.49905.X3B3nx.ii
- t _GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.49908.EXDyNR.ii
+ t _GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.18501.Layahw.ii
+ t _GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.18502.5kNnAj.ii
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.48879.dxRFDX.ii
- t _GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.49913.ctjAHT.ii
- t _GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.49923.lg8vFk.ii
- t _GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.49937.Lb3Jew.ii
- t _GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.49941.N03l4R.ii
+ t _GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.18543.TwPjps.ii
+ t _GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.18547.ZlDzH9.ii
+ t _GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.18549.omvHy4.ii
+ t _GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.18561.rg6umY.ii
  t _GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.49949.d6x3Om.ii
- t _GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.49961.WfK9KO.ii
+ t _GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.18563.wG6Dwh.ii
  t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
- t _GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.49965.0pIN5K.ii
+ t _GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.18573.lgdHVz.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
  t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
  t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.49212.17mzOZ.ii

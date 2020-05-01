@@ -17,7 +17,6 @@
  ##### CTexture::LoadTextureBitsFromFile couldn't find %s
  0 000p
  0@0@
- @@@@ 
  Bad convar found in dxsupport - %s
  ECO_LastPrecacheMaterial
  ECO_Legacy_Lerp_FirstPass
@@ -601,7 +600,7 @@ $znearer
 9{8tJ
 :ffff.
 ;;t)9
-;GDsd
+;CDsc
 ;H4u*
 ;y$t>
 << NULL >>
@@ -627,6 +626,7 @@ $znearer
 @00000 00p0@0`p
 @@0@0
 @@@0@@0@000000000@0@0@@@P00@0 0
+@@@@ 
 @@P@P
 @CThreadEvent::CThreadEvent(bool)
 @CThreadEvent::Set()
@@ -777,7 +777,7 @@ ABGR8888
 ARARAp
 ARASBRDp
 ARGB8888
-ATARBRB`@A`@AZBRBRBRBZAZERARARARARARARARARARARARARDRARARDRARARARARARARARERBTARARARARARARARARARDTAYATAp
+ATARBRB`AA`AAZBRBRBRBZAZERARARARARARARARARARARARARDRARARDRARARARARARARARERBTARARARARARARARARARFTAYATAp
 ATBRBSCSARG`
 ATBRD`'A`
 ATI1N
@@ -821,7 +821,7 @@ BGRX5551
 BGRX8888
 BRASBp
 BRB`fBRB`fBRB`
-BRD`"A`PA`:DRBp
+BRD`#A`PA`:CRBp
 BRGBA
 Bad VTF data for %s, expected file size:%d actual file size:%d 
 Bffffff.
@@ -1455,6 +1455,7 @@ CDummyMorph::AccumulateMorph(int, MorphWeight_t const*)
 CDummyMorph::AddMorph(MorphVertexInfo_t const&)
 CDummyMorph::Lock(float)
 CDummyMorph::Unlock()
+CDummyTexture::BDownload(Rect_t*, int)
 CDummyTexture::CopyToStagingTexture(ITexture*)
 CDummyTexture::DecrementReferenceCount()
 CDummyTexture::DeleteIfUnreferenced()
@@ -3166,6 +3167,7 @@ CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<IRefCounted, CRefCountServiceBase<true, CRefMT> >::Release()
 CReferenceToHandleTexture::AsyncCancelReadTexture()
 CReferenceToHandleTexture::AsyncReadTextureFromFile(IVTFTexture*, unsigned int)
+CReferenceToHandleTexture::BDownload(Rect_t*, int)
 CReferenceToHandleTexture::Bind(Sampler_t)
 CReferenceToHandleTexture::Bind(Sampler_t, int, Sampler_t)
 CReferenceToHandleTexture::BindVertexTexture(VertexTextureSampler_t, int)
@@ -3378,6 +3380,7 @@ CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)::replay_screenshotr
 CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)::s_flInvAspectRatios
 CTexture::AsyncCancelReadTexture()
 CTexture::AsyncReadTextureFromFile(IVTFTexture*, unsigned int)
+CTexture::BDownload(Rect_t*, int)
 CTexture::Bind(Sampler_t)
 CTexture::Bind(Sampler_t, int, Sampler_t)
 CTexture::Bind(Sampler_t, int, Sampler_t)::__executeCount
@@ -4099,6 +4102,8 @@ F;s<|
 F;w0|
 FL@9FD}C
 Failed to ParseRangeFromKV: key name [%s], key val [%s]
+Failed to create texture '%s', will replace with error texture at usage time.
+Failed to download a texture (%s) that we thought couldn't fail
 Failed to load $include VMT file (%s)
 Failed to load texture %s, this is non-recoverable.
 Failed to load texture '%s', this is non-recoverable.
@@ -4654,6 +4659,7 @@ WarmTextureCache() - Begin
 WarmTextureCache() - End
 WarmTextureCache() - End (No files loaded)
 WarmTextureCache(): LoadTexture( %s ): Complete
+WarmTextureCache(): LoadTexture( %s ): Failed to download
 Warning in .VMT file (%s): no ']' or '}' found in vector key "%s".
 Warning! Encountered old format VTF file; please rebuild it!
 Wireframe
@@ -4741,25 +4747,25 @@ __CreateMaterialSystem_Config_tMaterialSystem_Config_t_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.49850.ibB9JU.ii
-__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.49853.UUv2tA.ii
+__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.18495.CaLwT0.ii
+__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.18497.lg0ftW.ii
 __GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.48880.OTU5do.ii
 __GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.42635.zMMTeD.ii
-__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.49851.rO3aNN.ii
-__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.49854.z0VK7g.ii
-__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.49855.q857Im.ii
+__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.18496.FiYA5G.ii
+__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.18498.yaglGC.ii
+__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.18499.l3Z3LV.ii
 __GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.49881.rXiEwy.ii
-__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.49905.X3B3nx.ii
-__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.49908.EXDyNR.ii
+__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.18501.Layahw.ii
+__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.18502.5kNnAj.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.48879.dxRFDX.ii
-__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.49913.ctjAHT.ii
-__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.49923.lg8vFk.ii
-__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.49937.Lb3Jew.ii
-__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.49941.N03l4R.ii
+__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.18543.TwPjps.ii
+__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.18547.ZlDzH9.ii
+__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.18549.omvHy4.ii
+__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.18561.rg6umY.ii
 __GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.49949.d6x3Om.ii
-__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.49961.WfK9KO.ii
+__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.18563.wG6Dwh.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.40965.eImkAW.ii
-__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.49965.0pIN5K.ii
+__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.18573.lgdHVz.ii
 __GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.40581.kbC5D2.ii
 __GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.40597.chg39q.ii
 __GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.49212.17mzOZ.ii
