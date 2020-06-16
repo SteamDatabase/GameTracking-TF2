@@ -4,16 +4,21 @@
 	{
 		"ControlName"		"CReportPlayerDialog"
 		"fieldName"		"ReportPlayerDialog"
-		"xpos"		"168"
-		"ypos"		"55"
+		"xpos"		"cs-0.5"
+		"ypos"		"cs-0.5"
 		"wide"		"467"
-		"tall"		"420"
+		"tall"		"380"
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"1"
 		"enabled"		"1"
 		"tabPosition"		"0"
 		"settitlebarvisible"		"1"
+		"medal_width"			"20"
+		"avatar_width"			"65"
+		"name_width"			"118"
+		"score_width"			"50"
+		"time_width"			"100"
 	}
 	"PlayerList"
 	{
@@ -53,7 +58,6 @@
 	{
 		"ControlName"		"ComboBox"
 		"fieldName"			"ReasonBox"
-		"Font"				"HudFontSmallestBold"
 		"xpos"				"35"
 		"ypos"				"340"
 		"zpos"				"1"
