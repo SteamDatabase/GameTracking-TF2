@@ -18,12 +18,11 @@
  D SteamFriends()::s_CallbackCounterAndContext
  D SteamGameSearch()::s_CallbackCounterAndContext
  D SteamGameServer()::s_CallbackCounterAndContext
- D SteamGameServerApps()::s_CallbackCounterAndContext
  D SteamGameServerHTTP()::s_CallbackCounterAndContext
  D SteamGameServerInventory()::s_CallbackCounterAndContext
  D SteamGameServerNetworking()::s_CallbackCounterAndContext
- D SteamGameServerNetworkingMessages()::s_CallbackCounterAndContext
- D SteamGameServerNetworkingSockets()::s_CallbackCounterAndContext
+ D SteamGameServerNetworkingMessages_SteamAPI()::s_CallbackCounterAndContext
+ D SteamGameServerNetworkingSockets_SteamAPI()::s_CallbackCounterAndContext
  D SteamGameServerStats()::s_CallbackCounterAndContext
  D SteamGameServerUGC()::s_CallbackCounterAndContext
  D SteamGameServerUtils()::s_CallbackCounterAndContext
@@ -36,9 +35,9 @@
  D SteamMusic()::s_CallbackCounterAndContext
  D SteamMusicRemote()::s_CallbackCounterAndContext
  D SteamNetworking()::s_CallbackCounterAndContext
- D SteamNetworkingMessages()::s_CallbackCounterAndContext
- D SteamNetworkingSockets()::s_CallbackCounterAndContext
- D SteamNetworkingUtils()::s_CallbackCounterAndContext
+ D SteamNetworkingMessages_SteamAPI()::s_CallbackCounterAndContext
+ D SteamNetworkingSockets_SteamAPI()::s_CallbackCounterAndContext
+ D SteamNetworkingUtils_SteamAPI()::s_CallbackCounterAndContext
  D SteamParentalSettings()::s_CallbackCounterAndContext
  D SteamParties()::s_CallbackCounterAndContext
  D SteamRemotePlay()::s_CallbackCounterAndContext
@@ -225,6 +224,7 @@
  T SteamAPI_ISteamController_TriggerVibration
  T SteamAPI_ISteamFriends_ActivateGameOverlay
  T SteamAPI_ISteamFriends_ActivateGameOverlayInviteDialog
+ T SteamAPI_ISteamFriends_ActivateGameOverlayInviteDialogConnectString
  T SteamAPI_ISteamFriends_ActivateGameOverlayRemotePlayTogetherInviteDialog
  T SteamAPI_ISteamFriends_ActivateGameOverlayToStore
  T SteamAPI_ISteamFriends_ActivateGameOverlayToUser
@@ -462,6 +462,7 @@
  T SteamAPI_ISteamInput_TriggerHapticPulse
  T SteamAPI_ISteamInput_TriggerRepeatedHapticPulse
  T SteamAPI_ISteamInput_TriggerVibration
+ T SteamAPI_ISteamInput_TriggerVibrationExtended
  T SteamAPI_ISteamInventory_AddPromoItem
  T SteamAPI_ISteamInventory_AddPromoItems
  T SteamAPI_ISteamInventory_CheckResultSteamID
@@ -831,9 +832,12 @@
  T SteamAPI_ISteamUGC_GetQueryUGCMetadata
  T SteamAPI_ISteamUGC_GetQueryUGCNumAdditionalPreviews
  T SteamAPI_ISteamUGC_GetQueryUGCNumKeyValueTags
+ T SteamAPI_ISteamUGC_GetQueryUGCNumTags
  T SteamAPI_ISteamUGC_GetQueryUGCPreviewURL
  T SteamAPI_ISteamUGC_GetQueryUGCResult
  T SteamAPI_ISteamUGC_GetQueryUGCStatistic
+ T SteamAPI_ISteamUGC_GetQueryUGCTag
+ T SteamAPI_ISteamUGC_GetQueryUGCTagDisplayName
  T SteamAPI_ISteamUGC_GetSubscribedItems
  T SteamAPI_ISteamUGC_GetUserItemVote
  T SteamAPI_ISteamUGC_ReleaseQueryUGCRequest
@@ -962,7 +966,6 @@
  T SteamAPI_ISteamUtils_GetAPICallFailureReason
  T SteamAPI_ISteamUtils_GetAPICallResult
  T SteamAPI_ISteamUtils_GetAppID
- T SteamAPI_ISteamUtils_GetCSERIPPort
  T SteamAPI_ISteamUtils_GetConnectedUniverse
  T SteamAPI_ISteamUtils_GetCurrentBatteryPower
  T SteamAPI_ISteamUtils_GetEnteredGamepadTextInput
@@ -1014,26 +1017,25 @@
  T SteamAPI_Shutdown
  T SteamAPI_SteamAppList_v001
  T SteamAPI_SteamApps_v008
- T SteamAPI_SteamController_v007
+ T SteamAPI_SteamController_v008
  T SteamAPI_SteamDatagramHostedAddress_Clear
  T SteamAPI_SteamDatagramHostedAddress_GetPopID
  T SteamAPI_SteamDatagramHostedAddress_SetDevAddress
  T SteamAPI_SteamFriends_v017
  T SteamAPI_SteamGameSearch_v001
- T SteamAPI_SteamGameServerApps_v008
  T SteamAPI_SteamGameServerHTTP_v003
  T SteamAPI_SteamGameServerInventory_v003
- T SteamAPI_SteamGameServerNetworkingMessages_v002
- T SteamAPI_SteamGameServerNetworkingSockets_v009
+ T SteamAPI_SteamGameServerNetworkingMessages_SteamAPI_v002
+ T SteamAPI_SteamGameServerNetworkingSockets_SteamAPI_v009
  T SteamAPI_SteamGameServerNetworking_v006
  T SteamAPI_SteamGameServerStats_v001
- T SteamAPI_SteamGameServerUGC_v014
+ T SteamAPI_SteamGameServerUGC_v015
  T SteamAPI_SteamGameServerUtils_v010
  T SteamAPI_SteamGameServer_v013
  T SteamAPI_SteamHTMLSurface_v005
  T SteamAPI_SteamHTTP_v003
  T SteamAPI_SteamIPAddress_t_IsSet
- T SteamAPI_SteamInput_v001
+ T SteamAPI_SteamInput_v003
  T SteamAPI_SteamInventory_v003
  T SteamAPI_SteamMatchmakingServers_v002
  T SteamAPI_SteamMatchmaking_v009
@@ -1061,6 +1063,8 @@
  T SteamAPI_SteamNetworkingIdentity_GetGenericBytes
  T SteamAPI_SteamNetworkingIdentity_GetGenericString
  T SteamAPI_SteamNetworkingIdentity_GetIPAddr
+ T SteamAPI_SteamNetworkingIdentity_GetPSNID
+ T SteamAPI_SteamNetworkingIdentity_GetStadiaID
  T SteamAPI_SteamNetworkingIdentity_GetSteamID
  T SteamAPI_SteamNetworkingIdentity_GetSteamID64
  T SteamAPI_SteamNetworkingIdentity_GetXboxPairwiseID
@@ -1072,22 +1076,24 @@
  T SteamAPI_SteamNetworkingIdentity_SetGenericString
  T SteamAPI_SteamNetworkingIdentity_SetIPAddr
  T SteamAPI_SteamNetworkingIdentity_SetLocalHost
+ T SteamAPI_SteamNetworkingIdentity_SetPSNID
+ T SteamAPI_SteamNetworkingIdentity_SetStadiaID
  T SteamAPI_SteamNetworkingIdentity_SetSteamID
  T SteamAPI_SteamNetworkingIdentity_SetSteamID64
  T SteamAPI_SteamNetworkingIdentity_SetXboxPairwiseID
  T SteamAPI_SteamNetworkingIdentity_ToString
  T SteamAPI_SteamNetworkingMessage_t_Release
- T SteamAPI_SteamNetworkingMessages_v002
+ T SteamAPI_SteamNetworkingMessages_SteamAPI_v002
  T SteamAPI_SteamNetworkingPOPIDRender_c_str
- T SteamAPI_SteamNetworkingSockets_v009
- T SteamAPI_SteamNetworkingUtils_v003
+ T SteamAPI_SteamNetworkingSockets_SteamAPI_v009
+ T SteamAPI_SteamNetworkingUtils_SteamAPI_v003
  T SteamAPI_SteamNetworking_v006
  T SteamAPI_SteamParentalSettings_v001
  T SteamAPI_SteamParties_v002
  T SteamAPI_SteamRemotePlay_v001
  T SteamAPI_SteamRemoteStorage_v014
  T SteamAPI_SteamScreenshots_v003
- T SteamAPI_SteamUGC_v014
+ T SteamAPI_SteamUGC_v015
  T SteamAPI_SteamUserStats_v012
  T SteamAPI_SteamUser_v021
  T SteamAPI_SteamUtils_v010
@@ -1133,12 +1139,11 @@
  T SteamInternal_Init_SteamFriends(ISteamFriends**)
  T SteamInternal_Init_SteamGameSearch(ISteamGameSearch**)
  T SteamInternal_Init_SteamGameServer(ISteamGameServer**)
- T SteamInternal_Init_SteamGameServerApps(ISteamApps**)
  T SteamInternal_Init_SteamGameServerHTTP(ISteamHTTP**)
  T SteamInternal_Init_SteamGameServerInventory(ISteamInventory**)
  T SteamInternal_Init_SteamGameServerNetworking(ISteamNetworking**)
- T SteamInternal_Init_SteamGameServerNetworkingMessages(ISteamNetworkingMessages**)
- T SteamInternal_Init_SteamGameServerNetworkingSockets(ISteamNetworkingSockets**)
+ T SteamInternal_Init_SteamGameServerNetworkingMessages_SteamAPI(ISteamNetworkingMessages**)
+ T SteamInternal_Init_SteamGameServerNetworkingSockets_SteamAPI(ISteamNetworkingSockets**)
  T SteamInternal_Init_SteamGameServerStats(ISteamGameServerStats**)
  T SteamInternal_Init_SteamGameServerUGC(ISteamUGC**)
  T SteamInternal_Init_SteamGameServerUtils(ISteamUtils**)
@@ -1151,9 +1156,9 @@
  T SteamInternal_Init_SteamMusic(ISteamMusic**)
  T SteamInternal_Init_SteamMusicRemote(ISteamMusicRemote**)
  T SteamInternal_Init_SteamNetworking(ISteamNetworking**)
- T SteamInternal_Init_SteamNetworkingMessages(ISteamNetworkingMessages**)
- T SteamInternal_Init_SteamNetworkingSockets(ISteamNetworkingSockets**)
- T SteamInternal_Init_SteamNetworkingUtils(ISteamNetworkingUtils**)
+ T SteamInternal_Init_SteamNetworkingMessages_SteamAPI(ISteamNetworkingMessages**)
+ T SteamInternal_Init_SteamNetworkingSockets_SteamAPI(ISteamNetworkingSockets**)
+ T SteamInternal_Init_SteamNetworkingUtils_SteamAPI(ISteamNetworkingUtils**)
  T SteamInternal_Init_SteamParentalSettings(ISteamParentalSettings**)
  T SteamInternal_Init_SteamParties(ISteamParties**)
  T SteamInternal_Init_SteamRemotePlay(ISteamRemotePlay**)
@@ -1261,6 +1266,8 @@
  mach_msg
  mach_port_allocate
  mach_port_deallocate
+ mach_port_mod_refs
+ mach_port_type
  mach_task_self_
  malloc
  memcmp
