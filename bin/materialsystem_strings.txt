@@ -2559,6 +2559,7 @@ CMaterialSystem::CreateNamedTextureFromBitsEx(char const*, char const*, int, int
 CMaterialSystem::CreateProceduralTexture(char const*, char const*, int, int, ImageFormat, int)
 CMaterialSystem::CreateRenderContext(MaterialContextType_t)
 CMaterialSystem::CreateRenderTargetTexture(int, int, RenderTargetSizeMode_t, ImageFormat, MaterialRenderTargetDepth_t)
+CMaterialSystem::CreateShaderAPI(char const*)
 CMaterialSystem::CreateTextureFromBits(int, int, int, ImageFormat, int, unsigned char*)
 CMaterialSystem::DebugPrintUsedMaterials(CCommand const&)
 CMaterialSystem::DebugPrintUsedMaterials(char const*, bool)
@@ -4104,7 +4105,9 @@ FL@9FD}C
 Failed to ParseRangeFromKV: key name [%s], key val [%s]
 Failed to create texture '%s', will replace with error texture at usage time.
 Failed to download a texture (%s) that we thought couldn't fail
+Failed to get interface factory from DLL '%s'
 Failed to load $include VMT file (%s)
+Failed to load DLL '%s'
 Failed to load texture %s, this is non-recoverable.
 Failed to load texture '%s', this is non-recoverable.
 Failed to load texture_blue '%s', this is non-recoverable.
@@ -4384,6 +4387,7 @@ Mat_ThreadedEndframe
 Material "%s":
 Material %s has bad reference count %d when being bound
 MaterialNameCompareFunc(void const*, void const*)
+MaterialSystem cannot load: No ShaderAPIFactory!
 MaterialSystem: Out of memory in render data!
 MaterialSystemHardwareConfig012
 MaterialSystem_Interface_t::AllocateLightmap: lightmap (%dx%d) too big to fit in page (%dx%d)
@@ -4747,28 +4751,28 @@ __CreateMaterialSystem_Config_tMaterialSystem_Config_t_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.74388.PMpjj3.ii
-__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.74391.ILtplr.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.72100.nZldO1.ii
-__GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.74321.JN47xU.ii
-__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.74389.zFykuo.ii
-__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.74392.TQij2H.ii
-__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.74393.jLsjRs.ii
-__GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.74426.OSc909.ii
-__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.74446.bC6s3V.ii
-__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.74450.HduchX.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.72037.pL9quK.ii
-__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.74462.5Y8TWo.ii
-__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.74468.sHbKED.ii
-__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.74486.qkBObg.ii
-__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.74496.a0VWTd.ii
-__GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.74500.auMP8I.ii
-__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.74514.UtYVlg.ii
+__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.39339.optfY7.ii
+__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.39342.TFOBRX.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.38178.drvYy8.ii
+__GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.39277.kg49Ey.ii
+__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.39340.RWPgVC.ii
+__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.39343.yvcT3v.ii
+__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.39344.FUlnhl.ii
+__GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.39370.2m1p2Z.ii
+__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.39396.AYYtop.ii
+__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.39398.Qd51sO.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.38134.M7iDUT.ii
+__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.39412.THPnix.ii
+__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.39416.vK6eeC.ii
+__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.39430.GBGCcv.ii
+__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.39444.IHGvyv.ii
+__GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.39448.uCKL8d.ii
+__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.39462.9wIOPE.ii
 __GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.72618.xnzs0w.ii
-__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.74516.5lwb26.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.72229.PxgNsm.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.72247.zsWrrA.ii
-__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.72880.jo9d55.ii
+__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.39466.oEPJvh.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.38279.064CuM.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.38306.MLbKkr.ii
+__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.38795.SxdktN.ii
 __LINKEDIT
 __SpewInfo
 __SpewMessage

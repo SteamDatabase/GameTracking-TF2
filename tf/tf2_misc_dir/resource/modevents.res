@@ -1731,6 +1731,16 @@
 		"player"	"short"		// userid of the player that killed the skeleton
 	}
 
+	"skeleton_killed_quest"
+	{
+		"player"		"short"		// userid of the player that killed the skeleton
+	}
+	
+	"skeleton_king_killed_quest"
+	{
+		"player"		"short"		// userid of the player that killed the skeleton
+	}
+
 	"escape_hell"
 	{
 		"player"	"short"		// userid of the player that escaped
