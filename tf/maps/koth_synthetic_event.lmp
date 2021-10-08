@@ -6,8 +6,16 @@
 "detailvbsp" "detail_doomsday.vbsp"
 "detailmaterial" "detail/detailsprites_viaduct_event"
 "classname" "worldspawn"
-"mapversion" "22688"
+"mapversion" "22749"
 "hammerid" "1"
+}
+{
+"model" "*1"
+"TeamNum" "3"
+"StartDisabled" "0"
+"associatedmodel" "prop_locker_blu_2"
+"classname" "func_regenerate"
+"hammerid" "190641"
 }
 {
 "origin" "-64 -3038.44 106.16"
@@ -37,14 +45,6 @@
 "angles" "0 270 0"
 "classname" "prop_dynamic"
 "hammerid" "190637"
-}
-{
-"model" "*1"
-"TeamNum" "3"
-"StartDisabled" "0"
-"associatedmodel" "prop_locker_blu_2"
-"classname" "func_regenerate"
-"hammerid" "190641"
 }
 {
 "origin" "63 3210.44 106.16"
@@ -7111,7 +7111,7 @@
 "origin" "-472.707 263.226 -148"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -8153,7 +8153,7 @@
 "origin" "-1291 359.031 -69.8105"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "1"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -12289,7 +12289,7 @@
 "hammerid" "2351797"
 }
 {
-"origin" "1055 -2147 110"
+"origin" "1054.69 -2146.58 110"
 "StartDisabled" "0"
 "spawnflags" "0"
 "solid" "0"
@@ -12303,7 +12303,7 @@
 "pressuredelay" "0"
 "PerformanceMode" "0"
 "modelscale" "1.0"
-"model" "models/weapons/c_models/c_bonesaw/c_bonesaw.mdl"
+"model" "models/weapons/w_models/w_bonesaw.mdl"
 "MinAnimTime" "5"
 "MaxAnimTime" "10"
 "fadescale" "1"
@@ -13905,7 +13905,7 @@
 "origin" "-805 -109 -111"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -14422,14 +14422,14 @@
 "OnTimer" "cp_koth,SetOwner,0,0,-1"
 "OnTimer" "zz_blue_koth_timer,Pause,,0,-1"
 "OnTimer" "zz_red_koth_timer,Pause,,0,-1"
-"OnTimer" "announcer,PickRandomShuffle,,30,-1"
+"OnTimer" "koth_gamerules,PlayVO,Announcer.AM_CapEnabledRandom,30,-1"
 "OnTimer" "cp_koth_prop,skin,0,0,-1"
 "OnTimer" "tf_zombie,AddOutput,Health 5000,0.02,-1"
 "OnTimer" "tf_zombie,AddOutput,MaxHealth 3500,0.02,-1"
 "OnTimer" "boss_timer,Disable,,1,-1"
 "OnTimer" "boss_timer,Enable,,30,-1"
 "OnTimer" "tm_case,PickRandomShuffle,,0,-1"
-"OnTimer" "tf_zombie,AddOutput,modelindex 207,0.02,-1"
+"OnTimer" "tf_zombie,AddOutput,modelindex 210,0.02,-1"
 }
 {
 "origin" "-83 225 3"
@@ -15134,58 +15134,6 @@
 "hammerid" "3421097"
 }
 {
-"origin" "-83 161 3"
-"targetname" "a1"
-"spawnflags" "49"
-"radius" "1250"
-"pitchstart" "100"
-"pitch" "100"
-"message" "vo/announcer_am_capenabled01.mp3"
-"health" "10"
-"angles" "0 0 0"
-"classname" "ambient_generic"
-"hammerid" "3421522"
-}
-{
-"origin" "-99 161 3"
-"targetname" "a2"
-"spawnflags" "49"
-"radius" "1250"
-"pitchstart" "100"
-"pitch" "100"
-"message" "vo/announcer_am_capenabled02.mp3"
-"health" "10"
-"angles" "0 0 0"
-"classname" "ambient_generic"
-"hammerid" "3421531"
-}
-{
-"origin" "-99 145 3"
-"targetname" "a3"
-"spawnflags" "49"
-"radius" "1250"
-"pitchstart" "100"
-"pitch" "100"
-"message" "vo/announcer_am_capenabled03.mp3"
-"health" "10"
-"angles" "0 0 0"
-"classname" "ambient_generic"
-"hammerid" "3421534"
-}
-{
-"origin" "-83 145 3"
-"targetname" "a4"
-"spawnflags" "49"
-"radius" "1250"
-"pitchstart" "100"
-"pitch" "100"
-"message" "vo/announcer_am_capenabled04.mp3"
-"health" "10"
-"angles" "0 0 0"
-"classname" "ambient_generic"
-"hammerid" "3421537"
-}
-{
 "origin" "437 2062 77"
 "StartDisabled" "0"
 "spawnflags" "0"
@@ -15338,7 +15286,7 @@
 "origin" "-90 -1344 -30"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -15366,7 +15314,7 @@
 "origin" "-122.932 -1338 -19"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -15739,7 +15687,7 @@
 "origin" "10440 414 78"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -15784,7 +15732,7 @@
 "origin" "1078 -2197 115"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "2"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -16150,7 +16098,7 @@
 "origin" "-63.175 -4017 107"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -16650,26 +16598,10 @@
 "hammerid" "4909311"
 }
 {
-"model" "*163"
-"vrad_brush_cast_shadows" "0"
-"StartDisabled" "0"
-"spawnflags" "2"
-"Solidity" "0"
-"solidbsp" "0"
-"rendermode" "0"
-"renderfx" "0"
-"rendercolor" "255 255 255"
-"renderamt" "255"
-"origin" "-203.5 3951 684"
-"invert_exclusion" "0"
-"classname" "func_brush"
-"hammerid" "4975309"
-}
-{
 "origin" "256 -2078 188"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "0"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -16778,7 +16710,7 @@
 "hammerid" "5086537"
 }
 {
-"model" "*164"
+"model" "*163"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16794,7 +16726,7 @@
 "hammerid" "5129476"
 }
 {
-"model" "*165"
+"model" "*164"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16810,7 +16742,7 @@
 "hammerid" "5129552"
 }
 {
-"model" "*166"
+"model" "*165"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16840,7 +16772,7 @@
 "hammerid" "5132079"
 }
 {
-"model" "*167"
+"model" "*166"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16856,7 +16788,7 @@
 "hammerid" "5133645"
 }
 {
-"model" "*168"
+"model" "*167"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16872,7 +16804,7 @@
 "hammerid" "5133760"
 }
 {
-"model" "*169"
+"model" "*168"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16888,7 +16820,7 @@
 "hammerid" "5133783"
 }
 {
-"model" "*170"
+"model" "*169"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16904,7 +16836,7 @@
 "hammerid" "5133824"
 }
 {
-"model" "*171"
+"model" "*170"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16920,7 +16852,7 @@
 "hammerid" "5133850"
 }
 {
-"model" "*172"
+"model" "*171"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16936,14 +16868,14 @@
 "hammerid" "5133882"
 }
 {
-"model" "*173"
+"model" "*172"
 "solid" "0"
 "DisappearDist" "2500"
 "classname" "func_lod"
 "hammerid" "5134206"
 }
 {
-"model" "*174"
+"model" "*173"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16959,7 +16891,7 @@
 "hammerid" "5155489"
 }
 {
-"model" "*175"
+"model" "*174"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -16975,7 +16907,7 @@
 "hammerid" "5155543"
 }
 {
-"model" "*176"
+"model" "*175"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -18179,7 +18111,7 @@
 "hammerid" "5224535"
 }
 {
-"model" "*177"
+"model" "*176"
 "vrad_brush_cast_shadows" "0"
 "targetname" "blu_side_portal11"
 "StartDisabled" "0"
@@ -18199,7 +18131,7 @@
 "hammerid" "5224544"
 }
 {
-"model" "*178"
+"model" "*177"
 "vrad_brush_cast_shadows" "0"
 "targetname" "blu_side_portal12"
 "StartDisabled" "0"
@@ -18219,7 +18151,7 @@
 "hammerid" "5224580"
 }
 {
-"model" "*179"
+"model" "*178"
 "vrad_brush_cast_shadows" "0"
 "targetname" "blu_side_portal13"
 "StartDisabled" "0"
@@ -18239,7 +18171,7 @@
 "hammerid" "5224605"
 }
 {
-"model" "*180"
+"model" "*179"
 "vrad_brush_cast_shadows" "0"
 "targetname" "blu_side_portal14"
 "StartDisabled" "0"
@@ -18269,7 +18201,7 @@
 "hammerid" "5224680"
 }
 {
-"model" "*181"
+"model" "*180"
 "vrad_brush_cast_shadows" "0"
 "targetname" "red_side_portal14"
 "StartDisabled" "0"
@@ -18289,7 +18221,7 @@
 "hammerid" "5224682"
 }
 {
-"model" "*182"
+"model" "*181"
 "vrad_brush_cast_shadows" "0"
 "targetname" "red_side_portal13"
 "StartDisabled" "0"
@@ -18319,7 +18251,7 @@
 "hammerid" "5224688"
 }
 {
-"model" "*183"
+"model" "*182"
 "vrad_brush_cast_shadows" "0"
 "targetname" "red_side_portal12"
 "StartDisabled" "0"
@@ -18339,7 +18271,7 @@
 "hammerid" "5224690"
 }
 {
-"model" "*184"
+"model" "*183"
 "vrad_brush_cast_shadows" "0"
 "targetname" "red_side_portal11"
 "StartDisabled" "0"
@@ -18978,5 +18910,57 @@
 "angles" "0 0 0"
 "classname" "prop_dynamic"
 "hammerid" "5374118"
+}
+{
+"model" "*184"
+"vrad_brush_cast_shadows" "0"
+"StartDisabled" "0"
+"spawnflags" "2"
+"Solidity" "0"
+"solidbsp" "0"
+"rendermode" "0"
+"renderfx" "0"
+"rendercolor" "255 255 255"
+"renderamt" "255"
+"origin" "-215.5 4011 758"
+"invert_exclusion" "0"
+"InputFilter" "0"
+"disableshadows" "0"
+"disablereceiveshadows" "0"
+"classname" "func_brush"
+"hammerid" "5417024"
+}
+{
+"model" "*185"
+"vrad_brush_cast_shadows" "0"
+"StartDisabled" "0"
+"spawnflags" "2"
+"Solidity" "1"
+"solidbsp" "0"
+"rendermode" "0"
+"renderfx" "0"
+"rendercolor" "255 255 255"
+"renderamt" "255"
+"origin" "625.5 3828.5 703"
+"invert_exclusion" "0"
+"InputFilter" "0"
+"disableshadows" "0"
+"disablereceiveshadows" "0"
+"classname" "func_brush"
+"hammerid" "5417237"
+}
+{
+"model" "*186"
+"team" "-2"
+"start_disabled" "0"
+"classname" "func_nav_avoid"
+"hammerid" "5459839"
+}
+{
+"model" "*187"
+"team" "-2"
+"start_disabled" "0"
+"classname" "func_nav_avoid"
+"hammerid" "5459846"
 }
 

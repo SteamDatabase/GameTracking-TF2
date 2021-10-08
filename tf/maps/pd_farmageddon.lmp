@@ -6,7 +6,7 @@
 "detailvbsp" "detail_trainyard.vbsp"
 "detailmaterial" "detail/detailsprites_harvest"
 "classname" "worldspawn"
-"mapversion" "11565"
+"mapversion" "11582"
 "hammerid" "1"
 }
 {
@@ -773,6 +773,7 @@
 "OnTimer" "game_rules,PlayVO,Farmer.Close,0,-1"
 "OnTimer" "crunch_hurt,Enable,,0,-1"
 "OnTimer" "crunch_hurt,Disable,,0.1,-1"
+"OnTimer" "crush_trigger,Enable,,0,-1"
 }
 {
 "origin" "-170 2098 262"
@@ -7179,7 +7180,7 @@
 "classname" "tf_zombie"
 "hammerid" "2123990"
 "OnUser1" "!self,AddOutput,solid 0,0,1"
-"OnUser1" "!self,AddOutput,modelindex 280,0,1"
+"OnUser1" "!self,AddOutput,modelindex 281,0,1"
 }
 {
 "origin" "862 1575 86"
@@ -7256,7 +7257,7 @@
 "classname" "tf_zombie"
 "hammerid" "2124001"
 "OnUser1" "!self,AddOutput,solid 0,0,1"
-"OnUser1" "!self,AddOutput,modelindex 280,0,1"
+"OnUser1" "!self,AddOutput,modelindex 281,0,1"
 }
 {
 "origin" "644 2419 -114"
@@ -7333,7 +7334,7 @@
 "classname" "tf_zombie"
 "hammerid" "2124016"
 "OnUser1" "!self,AddOutput,solid 0,0,1"
-"OnUser1" "!self,AddOutput,modelindex 280,0,1"
+"OnUser1" "!self,AddOutput,modelindex 281,0,1"
 }
 {
 "origin" "862 2533 86"
@@ -7410,7 +7411,7 @@
 "classname" "tf_zombie"
 "hammerid" "2124033"
 "OnUser1" "!self,AddOutput,solid 0,0,1"
-"OnUser1" "!self,AddOutput,modelindex 280,0,1"
+"OnUser1" "!self,AddOutput,modelindex 281,0,1"
 }
 {
 "origin" "-194 153 440"
@@ -16375,6 +16376,7 @@
 "OnFullyClosed" "sawmovelinear02,SetSpeed,300,0,-1"
 "OnFullyClosed" "crane_shake,StartShake,,0,-1"
 "OnFullyClosed" "crunch_hurt,Disable,,0,-1"
+"OnFullyClosed" "crush_trigger,Disable,,0,-1"
 }
 {
 "model" "*220"
@@ -17359,13 +17361,6 @@
 "model" ""
 "StartActive" "1"
 "classname" "func_occluder"
-"hammerid" "2145683"
-}
-{
-"occludernumber" "8"
-"model" ""
-"StartActive" "1"
-"classname" "func_occluder"
 "hammerid" "2145687"
 }
 {
@@ -18205,6 +18200,56 @@
 "angles" "0 301 0"
 "classname" "env_wind"
 "hammerid" "2321870"
+}
+{
+"model" "*258"
+"targetname" "crush_trigger"
+"StartDisabled" "1"
+"spawnflags" "1"
+"parentname" "sawmovelinear02"
+"origin" "479.5 2080 -107"
+"nodmgforce" "1"
+"damagetype" "1"
+"damagemodel" "0"
+"damagecap" "20"
+"damage" "9999"
+"classname" "trigger_hurt"
+"hammerid" "2343671"
+}
+{
+"occludernumber" "8"
+"model" ""
+"StartActive" "1"
+"classname" "func_occluder"
+"hammerid" "2145683"
+}
+{
+"occludernumber" "9"
+"model" ""
+"StartActive" "1"
+"classname" "func_occluder"
+"hammerid" "2343719"
+}
+{
+"occludernumber" "10"
+"model" ""
+"StartActive" "1"
+"classname" "func_occluder"
+"hammerid" "2343747"
+}
+{
+"occludernumber" "11"
+"model" ""
+"StartActive" "1"
+"classname" "func_occluder"
+"hammerid" "2354388"
+}
+{
+"occludernumber" "12"
+"model" ""
+"StartActive" "1"
+"classname" "func_occluder"
+"hammerid" "2354405"
 }
 {
 "cheapwaterenddistance" "2000"
