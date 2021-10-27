@@ -244,6 +244,7 @@
  @00 `
  @16CHLTVClientState
  @@@@ 
+ @@@@@@@00
  @@P0
  @P000p p
  @PP`P`
@@ -286,6 +287,7 @@
  done.
  failed to dlopen %s error=%s
  fff.
+ ffff.
  ffffff.
  game
  h264 = H.264-encoded audio and video (must have QuickTime installed!)
@@ -603,6 +605,7 @@ $vertexcolor
 %s %i
 %s %s
 %s %s %s
+%s %s = %s
 %s %s the game
 %s '%f' '%f'
 %s '%s' '%s'
@@ -3098,7 +3101,6 @@ $vertexcolor
 @ 0  0@ 00
 @ 0P` 
 @ 0pP
-@ @@@@@@@00
 @ @P 
 @(^_]
 @(knN
@@ -3840,6 +3842,7 @@ Autosave on the PC behaves like it does on the consoles.
 Available %.2f MB, Used: %.2f MB, #mallocs = %lu
 Available flags to search for: 
 Available memory less than 128MB!!! %i
+Available settings:
 Average framerate: %.2f
 Average the next N frames.
 Avg Calls   + Time + NoChild
@@ -7562,6 +7565,7 @@ CLog::Close()
 CLog::FireGameEvent(IGameEvent*)
 CLog::Flush()
 CLog::Init()
+CLog::IsActive()
 CLog::ListLogAddress()
 CLog::Open()
 CLog::Print(char const*)
@@ -10523,6 +10527,7 @@ CUtlString::Purge()
 CUtlString::Replace(char const*, char const*) const
 CUtlString::Set(char const*)
 CUtlString::StripExtension() const
+CUtlString::TrimRight(char const*)
 CUtlString::operator+(int) const
 CUtlString::operator+=(char const*)
 CUtlString::operator+=(int)
@@ -12688,6 +12693,7 @@ DynamicModels
 DynamicSound %s : src %d : channel %d : %d dB : vol %.2f : time %.3f
 DynamicSound : Speaker ignored looping sound: %s
 Dynamic_Light_Rendering
+E		 E	
 EDICT_NUM(int)
 EDICT_NUM: bad number %i
 ED_Alloc( %d ) - invalid edict index specified.
@@ -12734,7 +12740,7 @@ ERROR: couldn't open.
 ERROR: demo file protocol %i outdated, engine vnoteersion is %i 
 ERROR: demo network protocol %i outdated, engine version is %i 
 EXECUTABLE_PATH
-E`9JRA`NATASA`[Bp
+E`9JRA`NATASA`WCUB`
 Ease_Both(float)
 Ease_In(float)
 Ease_Out(float)
@@ -12957,6 +12963,7 @@ Failed to remove local players
 Failed to remove remote players
 Failed to resolve absolute path of map: %s
 Failed to save data for transition
+Failed to set SteamNetSockets option '%s'
 Failed to set video mode - falling back to safe mode settings.
 Failed to set video mode - resetting to defaults.
 Failed to set video mode.
@@ -14025,7 +14032,7 @@ KilobytesSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelI
 L %02i/%02i/%04i - %02i:%02i:%02i: %s
 L%02i%02i
 L2Miss
-L=	I>
+L=*W>
 L?fff?
 L@11CEngineTool
 LB;PH|
@@ -14581,7 +14588,6 @@ MoveScrollBarDirect
 Moving to next demo...
 Msg from %s: %s
 Msg from %s: %s msg rejected (%d bytes)
-MsgAndLog(char const*, ...)
 MsgData::MsgData()
 MsgData::~MsgData()
 Multiplayer
@@ -14844,6 +14850,7 @@ Nfff.
 Nfffff.
 No # necessary
 No File Loaded
+No ISteamNetworkingUtils
 No KeyValues
 No SourceTV relay available
 No Steam interfaces - attempting to initialize SteamNetworkingSockets without steam support
@@ -15784,6 +15791,7 @@ SCR_Init()
 SCR_Shutdown()
 SCR_UpdateScreen()
 SDLMgrInterface001
+SDRCommandsAutocomplete(char const*, char (*) [64])
 SERVER
 SERVER_CAN_EXECUTE
 SIM: (%s) Total Files Packed: %d [Size: %.02f KB]
@@ -17391,6 +17399,7 @@ UpdateVProfTreeEntry:Modify
 Upload attachments asynchronously
 Uploading %s to %s
 Uptime( %f )
+UqBaf:
 Usage r_cleardecals <permanent>.
 Usage:  addip < minutes > < ipaddress >
 Usage:  banid < minutes > < userid | uniqueid > { kick }
@@ -17423,6 +17432,7 @@ Usage: dsp_parms PRESET# PROC# param0 param1 ...up to param15
 Usage: incrementvar varName minValue maxValue delta
 Usage: movie_fixwave wavname
 Usage: multvar varName minValue maxValue factor
+Usage: sdr <setting> [<value>]
 Usage: sv_setsteamaccount <login_token>
 Usage: user <username / userid>
 Use 0 minutes for permanent
@@ -17861,6 +17871,7 @@ V_pretifymem(float, int, bool)::current
 V_pretifymem(float, int, bool)::output
 V_snprintf(char*, int, char const*, ...)
 V_stricmp(char const*, char const*)
+V_stricmp_fast(char const*, char const*)
 V_stristr(char const*, char const*)
 V_stristr(char*, char const*)
 V_strlower(char*)
@@ -17932,6 +17943,7 @@ View Panel
 View entity set to %i
 View occluders
 View textures thumbnails
+View/edit SteamNetworkingSockets configuration variables
 ViewDrawFade
 ViewThumbnails
 Viewer area: %d
@@ -18071,7 +18083,6 @@ Warning: sv_steamgroup is not applicable in LAN mode.
 Warning: thumbnail image size does not match data length %u
 Warning: unknown JFIF revision number %d.%02d
 Warning: using WorldTwoTextureBlend on a non-displacement surface.
-WarningAndLog(char const*, ...)
 Warns
 Watch all fields encoded with this table.
 Watch the named variable.
@@ -18209,6 +18220,9 @@ Zpm"U
 [P:%u:%u]
 [SteamAPI] %s
 [SteamNetworkingSockets] %s
+[SteamNetworkingSockets] BUG: %s
+[SteamNetworkingSockets] ERROR: %s
+[SteamNetworkingSockets] WARNING: %s
 [T:%u:%u]
 [U:%u:%u:%u]
 [U:%u:%u]
@@ -18682,8 +18696,8 @@ __GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.70426.G5Ddx9.ii
 __GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.70430.PQim5v.ii
 __GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.41275.G6sNIi.ii
 __GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.70440.RRlaXA.ii
-__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.70462.90hmOl.ii
-__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.70468.AAAJEK.ii
+__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.3536.7knOZZ.ii
+__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.92878.7IGrZY.ii
 __GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.70473.VTAGiX.ii
 __GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.70022.mYe8iO.ii
 __GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.41285.avrey7.ii
@@ -18728,7 +18742,7 @@ __GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.70610.yZKnQp.ii
 __GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.70611.YRstrK.ii
 __GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.70614.Yg7V9T.ii
 __GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.70621.6oyxRK.ii
-__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.70627.XmIhlH.ii
+__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.51006.nHiHiA.ii
 __GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.41589.WuIJFB.ii
 __GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.70642.wVNkT9.ii
 __GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.70646.6ZqPLp.ii
@@ -24375,7 +24389,6 @@ s_raddir
 s_static_p4_factory
 s_szLoadName
 s_szMapName
-s_szTempMsgBuf
 s_text
 s_timeForceShutdown
 sample_lighting usage: lightprobe <base file name> [cubemap dimension]
@@ -24450,6 +24463,9 @@ sdkenginetools.txt
 sdkhooks.ext.2.ep2v.so
 sdkhooks.ext.2.tf2.so
 sdl_displayindex
+sdr config option not found
+sdr(CCommand const&)
+sdr_command
 sdr_spew_level
 sdr_spew_level_changed(IConVar*, char const*, float)
 secure

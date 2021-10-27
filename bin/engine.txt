@@ -7811,6 +7811,7 @@
  T CLog::FireGameEvent(IGameEvent*)
  T CLog::Flush()
  T CLog::Init()
+ T CLog::IsActive()
  T CLog::ListLogAddress()
  T CLog::Open()
  T CLog::Print(char const*)
@@ -10420,6 +10421,7 @@
  T CUtlString::Replace(char const*, char const*) const
  T CUtlString::Set(char const*)
  T CUtlString::StripExtension() const
+ T CUtlString::TrimRight(char const*)
  T CUtlString::operator+(int) const
  T CUtlString::operator+=(char const*)
  T CUtlString::operator+=(int)
@@ -13245,6 +13247,7 @@
  T V_pretifymem(float, int, bool)
  T V_snprintf(char*, int, char const*, ...)
  T V_stricmp(char const*, char const*)
+ T V_stricmp_fast(char const*, char const*)
  T V_stristr(char const*, char const*)
  T V_stristr(char*, char const*)
  T V_strlower(char*)
@@ -17431,7 +17434,6 @@
  b s_static_p4_factory
  b s_szLoadName
  b s_szMapName
- b s_szTempMsgBuf
  b s_text
  b s_timeForceShutdown
  b save_asyncdelay
@@ -17440,6 +17442,7 @@
  b save_finish_async_command
  b save_huddelayframes
  b screenshot_command
+ b sdr_command
  b setinfo_command
  b setpause_command
  b showconsole
@@ -18227,7 +18230,6 @@
  t MapList_CountMaps(char const*, bool, int&)
  t MarkSmallNode(mnode_t*)
  t MatchRecvPropsToSendProps_R(CUtlRBTree<MatchingProp_t, unsigned short, bool (*)(MatchingProp_t const&, MatchingProp_t const&), CUtlMemory<UtlRBTreeNode_t<MatchingProp_t, unsigned short>, unsigned short> >&, char const*, SendTable*, RecvTable*, bool, bool*)
- t MsgAndLog(char const*, ...)
  t Net_InternalOpenOrCloseFakeUDPPorts(bool, bool)
  t OpenSocketInternal(int, int, int, char const*, int, bool, int)
  t PerfMark(CCommand const&)
@@ -18250,6 +18252,7 @@
  t RecvTable_Term(bool)::CPropVisitor::Visit_R(RecvTable*)
  t RenderTexturedRect(vgui::Panel*, IMaterial*, int, int, int, int, int, int)
  t ReslistLogLessFunc(CUtlString const&, CUtlString const&)
+ t SDRCommandsAutocomplete(char const*, char (*) [64])
  t SV_CheatsChanged_f(IConVar*, char const*, float)
  t SV_PackEntity(int, edict_t*, ServerClass*, CFrameSnapshot*)
  t SV_ParallelSendSnapshot(CGameClient*&)
@@ -18291,7 +18294,6 @@
  t VOX_Reload()
  t VideoModeCompare(void const*, void const*)
  t VideoMode_AdjustForModeChange()
- t WarningAndLog(char const*, ...)
  t WatchDogHandler()
  t WorldLightFromDynamicLight(dlight_t const&, dworldlight_t&)
  t WriteMaterialSystemConfigToRegistry(MaterialSystem_Config_t const&)
@@ -18433,8 +18435,8 @@
  t _GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.70430.PQim5v.ii
  t _GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.41275.G6sNIi.ii
  t _GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.70440.RRlaXA.ii
- t _GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.70462.90hmOl.ii
- t _GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.70468.AAAJEK.ii
+ t _GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.3536.7knOZZ.ii
+ t _GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.92878.7IGrZY.ii
  t _GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.70473.VTAGiX.ii
  t _GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.70022.mYe8iO.ii
  t _GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.41285.avrey7.ii
@@ -18479,7 +18481,7 @@
  t _GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.70611.YRstrK.ii
  t _GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.70614.Yg7V9T.ii
  t _GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.70621.6oyxRK.ii
- t _GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.70627.XmIhlH.ii
+ t _GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.51006.nHiHiA.ii
  t _GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.41589.WuIJFB.ii
  t _GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.70642.wVNkT9.ii
  t _GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.70646.6ZqPLp.ii
@@ -18824,6 +18826,7 @@
  t save_finish_async(CCommand const&)
  t screenshot(CCommand const&)
  t screenshot_internal(CCommand const&)
+ t sdr(CCommand const&)
  t sdr_spew_level_changed(IConVar*, char const*, float)
  t select_scan_parameters(jpeg_compress_struct*)
  t self_destruct(jpeg_common_struct*)
