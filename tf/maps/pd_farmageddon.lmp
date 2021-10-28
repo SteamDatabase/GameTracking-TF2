@@ -6,7 +6,7 @@
 "detailvbsp" "detail_trainyard.vbsp"
 "detailmaterial" "detail/detailsprites_harvest"
 "classname" "worldspawn"
-"mapversion" "11664"
+"mapversion" "11666"
 "hammerid" "1"
 }
 {
@@ -746,6 +746,7 @@
 "OnTimer" "z3_zombie_neutral_maker,ForceSpawn,,0,-1"
 "OnTimer" "pd_logic,SetCountdownImage,../hud/pumpkin_icon_open,0,-1"
 "OnTimer" "game_rules,PlayVO,Farmer.Open,3,-1"
+"OnTimer" "underworld_pain,Disable,,0,-1"
 }
 {
 "origin" "-160 2024 263"
@@ -774,6 +775,7 @@
 "OnTimer" "crunch_hurt,Enable,,0,-1"
 "OnTimer" "crunch_hurt,Disable,,0.1,-1"
 "OnTimer" "crush_trigger,Enable,,0,-1"
+"OnTimer" "underworld_pain,Enable,,0,-1"
 }
 {
 "origin" "-170 2098 262"
@@ -16839,40 +16841,6 @@
 "hammerid" "2047649"
 }
 {
-"model" "*240"
-"StartDisabled" "0"
-"spawnflags" "1"
-"origin" "-45 0 -5883.5"
-"nodmgforce" "0"
-"damagetype" "4"
-"damagemodel" "0"
-"damagecap" "20"
-"damage" "6"
-"classname" "trigger_hurt"
-"hammerid" "1772539"
-}
-{
-"model" "*241"
-"TeamNum" "0"
-"StartDisabled" "0"
-"AllowTeleporters" "0"
-"AllowSentry" "0"
-"AllowDispenser" "0"
-"classname" "func_nobuild"
-"hammerid" "1772537"
-"OnStartTouch" "!activator,SetFogController,fog_underworld,0,-1"
-}
-{
-"model" "*242"
-"targetname" "end_tele_trigger"
-"target" "end_tele"
-"StartDisabled" "1"
-"spawnflags" "1"
-"origin" "-56 12 -5677"
-"classname" "trigger_teleport"
-"hammerid" "2047661"
-}
-{
 "origin" "480 2080 -152"
 "targetname" "end_push"
 "spawnflags" "24"
@@ -16884,7 +16852,7 @@
 "hammerid" "2047688"
 }
 {
-"model" "*243"
+"model" "*240"
 "targetname" "end_jarate"
 "StartDisabled" "1"
 "spawnflags" "1"
@@ -17340,7 +17308,7 @@
 "OnKilled" "item_currencypack_*,Kill,,0,-1"
 }
 {
-"model" "*244"
+"model" "*241"
 "wait" "1"
 "targetname" "cap_teleport_trigger_red"
 "StartDisabled" "1"
@@ -17352,7 +17320,7 @@
 "OnTrigger" "pump_entrance_red_relay,Trigger,,0,-1"
 }
 {
-"model" "*245"
+"model" "*242"
 "wait" "1"
 "targetname" "cap_teleport_trigger_blu"
 "StartDisabled" "1"
@@ -17364,7 +17332,7 @@
 "OnTrigger" "pump_entrance_blu_relay,Trigger,,0,-1"
 }
 {
-"model" "*246"
+"model" "*243"
 "targetname" "cap_teleport"
 "target" "teleport_underworld_enter_blu"
 "StartDisabled" "1"
@@ -17375,14 +17343,14 @@
 "hammerid" "138960"
 }
 {
-"model" "*247"
+"model" "*244"
 "team" "-2"
 "start_disabled" "0"
 "classname" "func_nav_avoid"
 "hammerid" "2220581"
 }
 {
-"model" "*248"
+"model" "*245"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17401,7 +17369,7 @@
 "hammerid" "2231397"
 }
 {
-"model" "*249"
+"model" "*246"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17420,7 +17388,7 @@
 "hammerid" "2231411"
 }
 {
-"model" "*250"
+"model" "*247"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17439,7 +17407,7 @@
 "hammerid" "2244581"
 }
 {
-"model" "*251"
+"model" "*248"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17458,7 +17426,7 @@
 "hammerid" "2245543"
 }
 {
-"model" "*252"
+"model" "*249"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17477,7 +17445,7 @@
 "hammerid" "2245691"
 }
 {
-"model" "*253"
+"model" "*250"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17496,7 +17464,7 @@
 "hammerid" "2245724"
 }
 {
-"model" "*254"
+"model" "*251"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -17526,13 +17494,13 @@
 "hammerid" "2245821"
 }
 {
-"model" "*255"
+"model" "*252"
 "StartDisabled" "0"
 "classname" "func_respawnflag"
 "hammerid" "236884"
 }
 {
-"model" "*256"
+"model" "*253"
 "TeamNum" "0"
 "StartDisabled" "0"
 "AllowTeleporters" "0"
@@ -17867,7 +17835,7 @@
 "OnKilled" "item_currencypack_*,Kill,,0,-1"
 }
 {
-"model" "*257"
+"model" "*254"
 "vrad_brush_cast_shadows" "0"
 "StartDisabled" "0"
 "spawnflags" "2"
@@ -18128,7 +18096,7 @@
 "hammerid" "2321870"
 }
 {
-"model" "*258"
+"model" "*255"
 "targetname" "crush_trigger"
 "StartDisabled" "1"
 "spawnflags" "1"
@@ -18304,6 +18272,41 @@
 "_constant_attn" "0"
 "classname" "light"
 "hammerid" "2430138"
+}
+{
+"model" "*256"
+"targetname" "end_tele_trigger"
+"target" "end_tele"
+"StartDisabled" "1"
+"spawnflags" "1"
+"origin" "-56 12 -5677"
+"classname" "trigger_teleport"
+"hammerid" "2047661"
+}
+{
+"model" "*257"
+"TeamNum" "0"
+"StartDisabled" "0"
+"AllowTeleporters" "0"
+"AllowSentry" "0"
+"AllowDispenser" "0"
+"classname" "func_nobuild"
+"hammerid" "1772537"
+"OnStartTouch" "!activator,SetFogController,fog_underworld,0,-1"
+}
+{
+"model" "*258"
+"targetname" "underworld_pain"
+"StartDisabled" "1"
+"spawnflags" "1"
+"origin" "-45 0 -5883.5"
+"nodmgforce" "0"
+"damagetype" "2"
+"damagemodel" "0"
+"damagecap" "20"
+"damage" "6"
+"classname" "trigger_hurt"
+"hammerid" "1772539"
 }
 {
 "cheapwaterenddistance" "2000"
