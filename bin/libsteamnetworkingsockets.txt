@@ -28,13 +28,11 @@
  B CMsgSteamDatagramConnectionStatsServerToRouter::default_instance_
  B CMsgSteamDatagramDiagnostic::default_instance_
  B CMsgSteamDatagramGameCoordinatorServerLogin::default_instance_
- B CMsgSteamDatagramGameserverPingReply::default_instance_
- B CMsgSteamDatagramGameserverPingReply_SignedData::default_instance_
+ B CMsgSteamDatagramGameserverPingReplyData::default_instance_
  B CMsgSteamDatagramGameserverPingRequest::default_instance_
  B CMsgSteamDatagramGameserverSessionEstablished::default_instance_
  B CMsgSteamDatagramGameserverSessionRequest::default_instance_
  B CMsgSteamDatagramHostedServerAddressPlaintext::default_instance_
- B CMsgSteamDatagramLegacyGameserverPingReply::default_instance_
  B CMsgSteamDatagramLinkInstantaneousStats::default_instance_
  B CMsgSteamDatagramLinkLifetimeStats::default_instance_
  B CMsgSteamDatagramNoConnection::default_instance_
@@ -58,6 +56,7 @@
  B CMsgSteamDatagramSetSecondaryAddressRequest::default_instance_
  B CMsgSteamDatagramSetSecondaryAddressResult::default_instance_
  B CMsgSteamDatagramSignedGameCoordinatorServerLogin::default_instance_
+ B CMsgSteamDatagramSignedMessageGeneric::default_instance_
  B CMsgSteamDatagramSignedRelayAuthTicket::default_instance_
  B CMsgSteamNetworkingICESessionSummary::default_instance_
  B CMsgSteamNetworkingIdentityLegacyBinary::default_instance_
@@ -197,11 +196,11 @@
  D RSA_PSS_PARAMS_it
  D SteamNetworkingSocketsLib::LinkStatsTrackerEndToEnd::GetSendReasonOrUpdateNextThinkTime(long long, SteamNetworkingSocketsLib::EStatsReplyRequest&, long long&)::arpszReasons
  D SteamNetworkingSocketsLib::LinkStatsTrackerRelayBase::RelayBaseGetSendReasonOrUpdateNextThinkTime(long long, SteamNetworkingSocketsLib::EStatsReplyRequest&, long long&)::arpszReasons
+ D SteamNetworkingSocketsLib::g_cbUDPSocketBufferSize
  D SteamNetworkingSocketsLib::g_eAppSpewLevel
  D SteamNetworkingSocketsLib::g_eAvailAnyRelay
  D SteamNetworkingSocketsLib::g_eAvailNetworkConfig
  D SteamNetworkingSocketsLib::g_eDefaultGroupSpewLevel
- D SteamNetworkingSocketsLib::g_nSteamDatagramSocketBufferSize
  D SteamNetworkingSocketsLib::g_pfnPreFormatSpewHandler
  D SteamNetworkingSocketsLib::g_szAvailAnyRelayMsg
  D SteamNetworkingSocketsLib::g_szAvailNetworkConfigMsg
@@ -230,6 +229,9 @@
  D rand_ssleay_meth
  D rsa_asn1_meths
  D rsa_pkey_meth
+ D typeinfo for AES_GCM_CipherContext
+ D typeinfo for AES_GCM_DecryptContext
+ D typeinfo for AES_GCM_EncryptContext
  D typeinfo for CCallbackBase
  D typeinfo for CCryptoKeyBase
  D typeinfo for CCryptoKeyBase_RawBuffer
@@ -269,13 +271,11 @@
  D typeinfo for CMsgSteamDatagramConnectionStatsServerToRouter
  D typeinfo for CMsgSteamDatagramDiagnostic
  D typeinfo for CMsgSteamDatagramGameCoordinatorServerLogin
- D typeinfo for CMsgSteamDatagramGameserverPingReply
- D typeinfo for CMsgSteamDatagramGameserverPingReply_SignedData
+ D typeinfo for CMsgSteamDatagramGameserverPingReplyData
  D typeinfo for CMsgSteamDatagramGameserverPingRequest
  D typeinfo for CMsgSteamDatagramGameserverSessionEstablished
  D typeinfo for CMsgSteamDatagramGameserverSessionRequest
  D typeinfo for CMsgSteamDatagramHostedServerAddressPlaintext
- D typeinfo for CMsgSteamDatagramLegacyGameserverPingReply
  D typeinfo for CMsgSteamDatagramLinkInstantaneousStats
  D typeinfo for CMsgSteamDatagramLinkLifetimeStats
  D typeinfo for CMsgSteamDatagramNoConnection
@@ -299,6 +299,7 @@
  D typeinfo for CMsgSteamDatagramSetSecondaryAddressRequest
  D typeinfo for CMsgSteamDatagramSetSecondaryAddressResult
  D typeinfo for CMsgSteamDatagramSignedGameCoordinatorServerLogin
+ D typeinfo for CMsgSteamDatagramSignedMessageGeneric
  D typeinfo for CMsgSteamDatagramSignedRelayAuthTicket
  D typeinfo for CMsgSteamNetworkingICESessionSummary
  D typeinfo for CMsgSteamNetworkingIdentityLegacyBinary
@@ -326,6 +327,8 @@
  D typeinfo for ISteamNetworkingSignalingRecvContext
  D typeinfo for ISteamNetworkingSockets
  D typeinfo for ISteamNetworkingUtils
+ D typeinfo for ISymmetricDecryptContext
+ D typeinfo for ISymmetricEncryptContext
  D typeinfo for SteamNetworkingSocketsLib::CConnectionTransport
  D typeinfo for SteamNetworkingSocketsLib::CConnectionTransportP2PBase
  D typeinfo for SteamNetworkingSocketsLib::CConnectionTransportP2PICE
@@ -400,8 +403,11 @@
  D typeinfo for SteamNetworkingSocketsLib::SendP2PRendezvousTask
  D typeinfo for SteamNetworkingSocketsLib::SteamDatagramClientThinker
  D typeinfo for SteamNetworkingSocketsLib::SteamNetworkingMessagesSession
+ D typeinfo for SymmetricCryptContextBase
  D typeinfo for std::__1::__function::__base<void (SteamNetworkingSocketsLib::HTTPResponse_t*)>
  D typeinfo for std::__1::bad_function_call
+ D vtable for AES_GCM_DecryptContext
+ D vtable for AES_GCM_EncryptContext
  D vtable for CCryptoKeyBase_RawBuffer
  D vtable for CEC25519KeyBase
  D vtable for CEC25519PrivateKeyBase
@@ -438,13 +444,11 @@
  D vtable for CMsgSteamDatagramConnectionStatsServerToRouter
  D vtable for CMsgSteamDatagramDiagnostic
  D vtable for CMsgSteamDatagramGameCoordinatorServerLogin
- D vtable for CMsgSteamDatagramGameserverPingReply
- D vtable for CMsgSteamDatagramGameserverPingReply_SignedData
+ D vtable for CMsgSteamDatagramGameserverPingReplyData
  D vtable for CMsgSteamDatagramGameserverPingRequest
  D vtable for CMsgSteamDatagramGameserverSessionEstablished
  D vtable for CMsgSteamDatagramGameserverSessionRequest
  D vtable for CMsgSteamDatagramHostedServerAddressPlaintext
- D vtable for CMsgSteamDatagramLegacyGameserverPingReply
  D vtable for CMsgSteamDatagramLinkInstantaneousStats
  D vtable for CMsgSteamDatagramLinkLifetimeStats
  D vtable for CMsgSteamDatagramNoConnection
@@ -468,6 +472,7 @@
  D vtable for CMsgSteamDatagramSetSecondaryAddressRequest
  D vtable for CMsgSteamDatagramSetSecondaryAddressResult
  D vtable for CMsgSteamDatagramSignedGameCoordinatorServerLogin
+ D vtable for CMsgSteamDatagramSignedMessageGeneric
  D vtable for CMsgSteamDatagramSignedRelayAuthTicket
  D vtable for CMsgSteamNetworkingICESessionSummary
  D vtable for CMsgSteamNetworkingIdentityLegacyBinary
@@ -545,6 +550,9 @@
  OSAtomicCompareAndSwap64Barrier
  OSMemoryBarrier
  R SteamNetworkingSocketsLib::CRawUDPSocketImpl::TracePkt(bool, netadr_t const&, int, iovec const*) const::hexdigit
+ R typeinfo name for AES_GCM_CipherContext
+ R typeinfo name for AES_GCM_DecryptContext
+ R typeinfo name for AES_GCM_EncryptContext
  R typeinfo name for CCallbackBase
  R typeinfo name for CCryptoKeyBase
  R typeinfo name for CCryptoKeyBase_RawBuffer
@@ -584,13 +592,11 @@
  R typeinfo name for CMsgSteamDatagramConnectionStatsServerToRouter
  R typeinfo name for CMsgSteamDatagramDiagnostic
  R typeinfo name for CMsgSteamDatagramGameCoordinatorServerLogin
- R typeinfo name for CMsgSteamDatagramGameserverPingReply
- R typeinfo name for CMsgSteamDatagramGameserverPingReply_SignedData
+ R typeinfo name for CMsgSteamDatagramGameserverPingReplyData
  R typeinfo name for CMsgSteamDatagramGameserverPingRequest
  R typeinfo name for CMsgSteamDatagramGameserverSessionEstablished
  R typeinfo name for CMsgSteamDatagramGameserverSessionRequest
  R typeinfo name for CMsgSteamDatagramHostedServerAddressPlaintext
- R typeinfo name for CMsgSteamDatagramLegacyGameserverPingReply
  R typeinfo name for CMsgSteamDatagramLinkInstantaneousStats
  R typeinfo name for CMsgSteamDatagramLinkLifetimeStats
  R typeinfo name for CMsgSteamDatagramNoConnection
@@ -614,6 +620,7 @@
  R typeinfo name for CMsgSteamDatagramSetSecondaryAddressRequest
  R typeinfo name for CMsgSteamDatagramSetSecondaryAddressResult
  R typeinfo name for CMsgSteamDatagramSignedGameCoordinatorServerLogin
+ R typeinfo name for CMsgSteamDatagramSignedMessageGeneric
  R typeinfo name for CMsgSteamDatagramSignedRelayAuthTicket
  R typeinfo name for CMsgSteamNetworkingICESessionSummary
  R typeinfo name for CMsgSteamNetworkingIdentityLegacyBinary
@@ -641,6 +648,8 @@
  R typeinfo name for ISteamNetworkingSignalingRecvContext
  R typeinfo name for ISteamNetworkingSockets
  R typeinfo name for ISteamNetworkingUtils
+ R typeinfo name for ISymmetricDecryptContext
+ R typeinfo name for ISymmetricEncryptContext
  R typeinfo name for SteamNetworkingSocketsLib::CConnectionTransport
  R typeinfo name for SteamNetworkingSocketsLib::CConnectionTransportP2PBase
  R typeinfo name for SteamNetworkingSocketsLib::CConnectionTransportP2PICE
@@ -715,11 +724,14 @@
  R typeinfo name for SteamNetworkingSocketsLib::SendP2PRendezvousTask
  R typeinfo name for SteamNetworkingSocketsLib::SteamDatagramClientThinker
  R typeinfo name for SteamNetworkingSocketsLib::SteamNetworkingMessagesSession
+ R typeinfo name for SymmetricCryptContextBase
  R typeinfo name for std::__1::__function::__base<void (SteamNetworkingSocketsLib::HTTPResponse_t*)>
  R typeinfo name for std::__1::bad_function_call
  T AES_GCM_CipherContext::InitCipher(void const*, unsigned long, unsigned long, unsigned long, bool)
  T AES_GCM_DecryptContext::Decrypt(void const*, unsigned long, void const*, void*, unsigned int*, void const*, unsigned long)
+ T AES_GCM_DecryptContext::~AES_GCM_DecryptContext()
  T AES_GCM_EncryptContext::Encrypt(void const*, unsigned long, void const*, void*, unsigned int*, void const*, unsigned long)
+ T AES_GCM_EncryptContext::~AES_GCM_EncryptContext()
  T AES_cbc_encrypt
  T AES_decrypt
  T AES_encrypt
@@ -930,6 +942,7 @@
  T CEC25519PrivateKeyBase::~CEC25519PrivateKeyBase()
  T CEC25519PublicKeyBase::~CEC25519PublicKeyBase()
  T CECKeyExchangePrivateKey::~CECKeyExchangePrivateKey()
+ T CECKeyExchangePublicKey::CECKeyExchangePublicKey(CECKeyExchangePublicKey const&)
  T CECKeyExchangePublicKey::~CECKeyExchangePublicKey()
  T CECSigningPrivateKey::GenerateSignature(void const*, unsigned long, unsigned char (*) [64]) const
  T CECSigningPrivateKey::LoadFromAndWipeBuffer(void*, unsigned long)
@@ -1319,30 +1332,17 @@
  T CMsgSteamDatagramGameCoordinatorServerLogin::SharedCtor()
  T CMsgSteamDatagramGameCoordinatorServerLogin::SharedDtor()
  T CMsgSteamDatagramGameCoordinatorServerLogin::~CMsgSteamDatagramGameCoordinatorServerLogin()
- T CMsgSteamDatagramGameserverPingReply::ByteSize() const
- T CMsgSteamDatagramGameserverPingReply::CMsgSteamDatagramGameserverPingReply()
- T CMsgSteamDatagramGameserverPingReply::Clear()
- T CMsgSteamDatagramGameserverPingReply::GetCachedSize() const
- T CMsgSteamDatagramGameserverPingReply::GetMetadata() const
- T CMsgSteamDatagramGameserverPingReply::IsInitialized() const
- T CMsgSteamDatagramGameserverPingReply::MergeFrom(CMsgSteamDatagramGameserverPingReply const&)
- T CMsgSteamDatagramGameserverPingReply::New() const
- T CMsgSteamDatagramGameserverPingReply::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgSteamDatagramGameserverPingReply::SetCachedSize(int) const
- T CMsgSteamDatagramGameserverPingReply::SharedCtor()
- T CMsgSteamDatagramGameserverPingReply::SharedDtor()
- T CMsgSteamDatagramGameserverPingReply::~CMsgSteamDatagramGameserverPingReply()
- T CMsgSteamDatagramGameserverPingReply_SignedData::ByteSize() const
- T CMsgSteamDatagramGameserverPingReply_SignedData::CMsgSteamDatagramGameserverPingReply_SignedData()
- T CMsgSteamDatagramGameserverPingReply_SignedData::Clear()
- T CMsgSteamDatagramGameserverPingReply_SignedData::GetCachedSize() const
- T CMsgSteamDatagramGameserverPingReply_SignedData::GetMetadata() const
- T CMsgSteamDatagramGameserverPingReply_SignedData::IsInitialized() const
- T CMsgSteamDatagramGameserverPingReply_SignedData::MergeFrom(CMsgSteamDatagramGameserverPingReply_SignedData const&)
- T CMsgSteamDatagramGameserverPingReply_SignedData::New() const
- T CMsgSteamDatagramGameserverPingReply_SignedData::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgSteamDatagramGameserverPingReply_SignedData::SetCachedSize(int) const
- T CMsgSteamDatagramGameserverPingReply_SignedData::~CMsgSteamDatagramGameserverPingReply_SignedData()
+ T CMsgSteamDatagramGameserverPingReplyData::ByteSize() const
+ T CMsgSteamDatagramGameserverPingReplyData::CMsgSteamDatagramGameserverPingReplyData()
+ T CMsgSteamDatagramGameserverPingReplyData::Clear()
+ T CMsgSteamDatagramGameserverPingReplyData::GetCachedSize() const
+ T CMsgSteamDatagramGameserverPingReplyData::GetMetadata() const
+ T CMsgSteamDatagramGameserverPingReplyData::IsInitialized() const
+ T CMsgSteamDatagramGameserverPingReplyData::MergeFrom(CMsgSteamDatagramGameserverPingReplyData const&)
+ T CMsgSteamDatagramGameserverPingReplyData::New() const
+ T CMsgSteamDatagramGameserverPingReplyData::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgSteamDatagramGameserverPingReplyData::SetCachedSize(int) const
+ T CMsgSteamDatagramGameserverPingReplyData::~CMsgSteamDatagramGameserverPingReplyData()
  T CMsgSteamDatagramGameserverPingRequest::ByteSize() const
  T CMsgSteamDatagramGameserverPingRequest::CMsgSteamDatagramGameserverPingRequest()
  T CMsgSteamDatagramGameserverPingRequest::Clear()
@@ -1393,17 +1393,6 @@
  T CMsgSteamDatagramHostedServerAddressPlaintext::SharedCtor()
  T CMsgSteamDatagramHostedServerAddressPlaintext::SharedDtor()
  T CMsgSteamDatagramHostedServerAddressPlaintext::~CMsgSteamDatagramHostedServerAddressPlaintext()
- T CMsgSteamDatagramLegacyGameserverPingReply::ByteSize() const
- T CMsgSteamDatagramLegacyGameserverPingReply::CMsgSteamDatagramLegacyGameserverPingReply()
- T CMsgSteamDatagramLegacyGameserverPingReply::Clear()
- T CMsgSteamDatagramLegacyGameserverPingReply::GetCachedSize() const
- T CMsgSteamDatagramLegacyGameserverPingReply::GetMetadata() const
- T CMsgSteamDatagramLegacyGameserverPingReply::IsInitialized() const
- T CMsgSteamDatagramLegacyGameserverPingReply::MergeFrom(CMsgSteamDatagramLegacyGameserverPingReply const&)
- T CMsgSteamDatagramLegacyGameserverPingReply::New() const
- T CMsgSteamDatagramLegacyGameserverPingReply::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgSteamDatagramLegacyGameserverPingReply::SetCachedSize(int) const
- T CMsgSteamDatagramLegacyGameserverPingReply::~CMsgSteamDatagramLegacyGameserverPingReply()
  T CMsgSteamDatagramLinkInstantaneousStats::ByteSize() const
  T CMsgSteamDatagramLinkInstantaneousStats::CMsgSteamDatagramLinkInstantaneousStats()
  T CMsgSteamDatagramLinkInstantaneousStats::Clear()
@@ -1691,6 +1680,19 @@
  T CMsgSteamDatagramSignedGameCoordinatorServerLogin::SharedCtor()
  T CMsgSteamDatagramSignedGameCoordinatorServerLogin::SharedDtor()
  T CMsgSteamDatagramSignedGameCoordinatorServerLogin::~CMsgSteamDatagramSignedGameCoordinatorServerLogin()
+ T CMsgSteamDatagramSignedMessageGeneric::ByteSize() const
+ T CMsgSteamDatagramSignedMessageGeneric::CMsgSteamDatagramSignedMessageGeneric()
+ T CMsgSteamDatagramSignedMessageGeneric::Clear()
+ T CMsgSteamDatagramSignedMessageGeneric::GetCachedSize() const
+ T CMsgSteamDatagramSignedMessageGeneric::GetMetadata() const
+ T CMsgSteamDatagramSignedMessageGeneric::IsInitialized() const
+ T CMsgSteamDatagramSignedMessageGeneric::MergeFrom(CMsgSteamDatagramSignedMessageGeneric const&)
+ T CMsgSteamDatagramSignedMessageGeneric::New() const
+ T CMsgSteamDatagramSignedMessageGeneric::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgSteamDatagramSignedMessageGeneric::SetCachedSize(int) const
+ T CMsgSteamDatagramSignedMessageGeneric::SharedCtor()
+ T CMsgSteamDatagramSignedMessageGeneric::SharedDtor()
+ T CMsgSteamDatagramSignedMessageGeneric::~CMsgSteamDatagramSignedMessageGeneric()
  T CMsgSteamDatagramSignedRelayAuthTicket::ByteSize() const
  T CMsgSteamDatagramSignedRelayAuthTicket::CMsgSteamDatagramSignedRelayAuthTicket()
  T CMsgSteamDatagramSignedRelayAuthTicket::Clear()
@@ -2622,7 +2624,7 @@
  T SteamDatagram_GetNetworkConfigURL
  T SteamDatagram_SetNetworkConfig
  T SteamGameServerNetworkingMessages_LibV2
- T SteamGameServerNetworkingSockets_LibV11
+ T SteamGameServerNetworkingSockets_LibV12
  T SteamNetworkingIPAddr_GetFakeIPType
  T SteamNetworkingIPAddr_ParseString
  T SteamNetworkingIPAddr_ToString
@@ -2632,8 +2634,9 @@
  T SteamNetworkingSocketsLib::BCheckGlobalSpamReplyRateLimit(long long)
  T SteamNetworkingSocketsLib::BCheckRateLimitReportBadPacket(long long)
  T SteamNetworkingSocketsLib::BCheckSignature(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, CMsgSteamDatagramCertificate_EKeyType, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, char (&) [1024])
- T SteamNetworkingSocketsLib::BParseRelayAuthTicketBytes(void const*, int, SteamDatagramRelayAuthTicket&, int, char (&) [1024])
- T SteamNetworkingSocketsLib::BParseRelayAuthTicketMsg(CMsgSteamDatagramSignedRelayAuthTicket const&, SteamDatagramRelayAuthTicket&, int, char (&) [1024])
+ T SteamNetworkingSocketsLib::BParseRelayAuthTicketBytes(void const*, int, SteamDatagramRelayAuthTicket&, char (&) [1024])
+ T SteamNetworkingSocketsLib::BParseRelayAuthTicketBytesToMsg(void const*, int, CMsgSteamDatagramSignedRelayAuthTicket&, char (&) [1024])
+ T SteamNetworkingSocketsLib::BParseRelayAuthTicketMsg(CMsgSteamDatagramSignedRelayAuthTicket const&, CMsgSteamDatagramRelayAuthTicket&, SteamDatagramRelayAuthTicket&, int, unsigned long long*, char (&) [1024])
  T SteamNetworkingSocketsLib::BSteamNetworkingIdentityFromLegacyBinaryProtobuf(SteamNetworkingIdentity&, CMsgSteamNetworkingIdentityLegacyBinary const&, char (&) [1024])
  T SteamNetworkingSocketsLib::BSteamNetworkingIdentityFromLegacyBinaryProtobuf(SteamNetworkingIdentity&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, char (&) [1024])
  T SteamNetworkingSocketsLib::BSteamNetworkingIdentityFromLegacySteamID(SteamNetworkingIdentity&, unsigned long long, char (&) [1024])
@@ -2818,7 +2821,7 @@
  T SteamNetworkingSocketsLib::CFakeUDPPort::CFakeUDPPort(SteamNetworkingSocketsLib::CSteamNetworkingSocketsSteamBase&, int)
  T SteamNetworkingSocketsLib::CFakeUDPPort::CreateSession(SteamNetworkingIPAddr const&)
  T SteamNetworkingSocketsLib::CFakeUDPPort::DestroyFakeUDPPort()
- T SteamNetworkingSocketsLib::CFakeUDPPort::DestroySession(SteamNetworkingSocketsLib::FakeUDPSession*)
+ T SteamNetworkingSocketsLib::CFakeUDPPort::DestroySession(SteamNetworkingSocketsLib::FakeUDPSession*, int, char const*)
  T SteamNetworkingSocketsLib::CFakeUDPPort::FreeResources()
  T SteamNetworkingSocketsLib::CFakeUDPPort::ReceiveMessages(SteamNetworkingMessage_t**, int)
  T SteamNetworkingSocketsLib::CFakeUDPPort::ScheduleCleanup(SteamNetworkingIPAddr const&)
@@ -2904,7 +2907,7 @@
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APICloseConnection(int, char const*, bool)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APIFlushMessageOnConnection()
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APIGetDetailedConnectionStatus(SteamNetworkingSocketsLib::SteamNetworkingDetailedConnectionStatus&, long long)
- T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APIGetQuickConnectionStatus(SteamNetworkingQuickConnectionStatus&)
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APIGetRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APIReceiveMessages(SteamNetworkingMessage_t**, int)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APISendMessageToConnection(SteamNetworkingSocketsLib::CSteamNetworkingMessage*, long long, bool*)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::APISendMessageToConnection(void const*, unsigned int, int, long long*)
@@ -2962,7 +2965,8 @@
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_GetNextThinkTime(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_InitializeConnection(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateDetailedStats(SteamNetworkingSocketsLib::SteamDatagramLinkStats&)
- T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateQuickStats(SteamNetworkingQuickConnectionStatus&, long long)
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_QueueReliableSegmentsForRetry(SteamNetworkingSocketsLib::SNPInFlightPacket_t&, long long, char const*)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ReceiveReliableSegment(long long, long long, unsigned char const*, int, int, long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ReceiveUnreliableSegment(long long, int, void const*, int, bool, int, long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_RecordReceivedPktNum(long long, long long, bool)
@@ -3013,7 +3017,8 @@
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::EnsureICEFailureReasonSet(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::FindDuplicateConnection(SteamNetworkingSocketsLib::CSteamNetworkingSockets*, int, SteamNetworkingIdentity const&, int, bool, SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P*)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::FreeResources()
- T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::GetConnectionTypeDescription(char (&) [64]) const
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::GetConnectionTypeDescription(char (&) [80]) const
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::GetConnectionTypeDescription_GetP2PType(char (&) [80]) const
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::GuessICEFailureReason(ESteamNetConnectionEnd&, char (&) [128], long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::ICEFailed(int, char const*)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionP2P::InternalCreateTransportToSDRServer(SteamNetworkingSocketsLib::CachedRelayAuthTicket const&)
@@ -3054,7 +3059,7 @@
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::DestroyTransport()
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::FakeRecvStats(long long, int, unsigned short)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::FakeSendStatsAndRecv(long long, int)
- T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::GetConnectionTypeDescription(char (&) [64]) const
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::GetConnectionTypeDescription(char (&) [80]) const
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::InitConnectionCrypto(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::SendDataPacket(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionPipe::SendEncryptedDataChunk(void const*, int, SteamNetworkingSocketsLib::SendPacketContext_t&)
@@ -3069,7 +3074,7 @@
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::BBeginAccept(SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP*, netadr_t const&, SteamNetworkingSocketsLib::CSharedSocket*, SteamNetworkingIdentity const&, unsigned int, CMsgSteamDatagramCertificateSigned const&, CMsgSteamDatagramSessionCryptInfoSigned const&, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::BInitConnect(SteamNetworkingIPAddr const&, int, SteamNetworkingConfigValue_t const*, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::CSteamNetworkConnectionUDP(SteamNetworkingSocketsLib::CSteamNetworkingSockets*, SteamNetworkingSocketsLib::ConnectionScopeLock&)
- T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::GetConnectionTypeDescription(char (&) [64]) const
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::GetConnectionTypeDescription(char (&) [80]) const
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::~CSteamNetworkConnectionUDP()
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionlocalhostLoopback::APICreateSocketPair(SteamNetworkingSocketsLib::CSteamNetworkingSockets*, SteamNetworkingSocketsLib::CSteamNetworkConnectionlocalhostLoopback**, SteamNetworkingIdentity const*)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionlocalhostLoopback::AllowLocalUnsignedCert()
@@ -3115,7 +3120,7 @@
  T SteamNetworkingSocketsLib::CSteamNetworkingMessages::FindOrCreateSession(SteamNetworkingIdentity const&, SteamNetworkingSocketsLib::ConnectionScopeLock&)
  T SteamNetworkingSocketsLib::CSteamNetworkingMessages::FindSession(SteamNetworkingIdentity const&, SteamNetworkingSocketsLib::ConnectionScopeLock&)
  T SteamNetworkingSocketsLib::CSteamNetworkingMessages::FreeResources()
- T SteamNetworkingSocketsLib::CSteamNetworkingMessages::GetSessionConnectionInfo(SteamNetworkingIdentity const&, SteamNetConnectionInfo_t*, SteamNetworkingQuickConnectionStatus*)
+ T SteamNetworkingSocketsLib::CSteamNetworkingMessages::GetSessionConnectionInfo(SteamNetworkingIdentity const&, SteamNetConnectionInfo_t*, SteamNetConnectionRealTimeStatus_t*)
  T SteamNetworkingSocketsLib::CSteamNetworkingMessages::ReceiveMessagesOnChannel(int, SteamNetworkingMessage_t**, int)
  T SteamNetworkingSocketsLib::CSteamNetworkingMessages::SendMessageToUser(SteamNetworkingIdentity const&, void const*, unsigned int, int, int)
  T SteamNetworkingSocketsLib::CSteamNetworkingMessages::~CSteamNetworkingMessages()
@@ -3129,6 +3134,7 @@
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::CheckAuthenticationPrerequisites(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::CloseConnection(unsigned int, int, char const*, bool)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::CloseListenSocket(unsigned int)
+ T SteamNetworkingSocketsLib::CSteamNetworkingSockets::ConfigureConnectionLanes(unsigned int, int, int const*, unsigned short const*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::ConnectByIPAddress(SteamNetworkingIPAddr const&, int, SteamNetworkingConfigValue_t const*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::ConnectP2P(SteamNetworkingIdentity const&, int, int, SteamNetworkingConfigValue_t const*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::ConnectP2PCustomSignaling(ISteamNetworkingConnectionSignaling*, SteamNetworkingIdentity const*, int, int, SteamNetworkingConfigValue_t const*)
@@ -3146,12 +3152,12 @@
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetCertificateRequest(int*, void*, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetConnectionInfo(unsigned int, SteamNetConnectionInfo_t*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetConnectionName(unsigned int, char*, int)
+ T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetConnectionRealTimeStatus(unsigned int, SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetConnectionUserData(unsigned int)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetDetailedConnectionStatus(unsigned int, char*, int)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetIdentity(SteamNetworkingIdentity*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetListenSocketAddress(unsigned int, SteamNetworkingIPAddr*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetP2P_Transport_ICE_Enable(SteamNetworkingIdentity const&, int*)
- T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetQuickConnectionStatus(unsigned int, SteamNetworkingQuickConnectionStatus*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetRemoteFakeIPForConnection(unsigned int, SteamNetworkingIPAddr*)
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetSecondsUntilCertExpiry() const
  T SteamNetworkingSocketsLib::CSteamNetworkingSockets::GetSteamNetworkingMessages()
@@ -3444,11 +3450,11 @@
  T SteamNetworkingSocketsLib::PingTracker::ReceivedPing(int, long long)
  T SteamNetworkingSocketsLib::PingTracker::Reset()
  T SteamNetworkingSocketsLib::PingTracker::WorstPingInRecentSample() const
+ T SteamNetworkingSocketsLib::PingTrackerBuckets<17, 1000000ll>::GetPingRangeFromRecentBuckets(int&, int&, long long) const
+ T SteamNetworkingSocketsLib::PingTrackerBuckets<17, 1000000ll>::ReceivedPing(int, long long)
+ T SteamNetworkingSocketsLib::PingTrackerBuckets<17, 1000000ll>::SetPingOverride(int)
  T SteamNetworkingSocketsLib::PingTrackerDetailed::GetLifetimeStats(SteamNetworkingSocketsLib::SteamDatagramLinkLifetimeStats&) const
  T SteamNetworkingSocketsLib::PingTrackerDetailed::ReceivedPing(int, long long)
- T SteamNetworkingSocketsLib::PingTrackerForRouteSelection::GetPingRangeFromRecentBuckets(int&, int&, long long) const
- T SteamNetworkingSocketsLib::PingTrackerForRouteSelection::ReceivedPing(int, long long)
- T SteamNetworkingSocketsLib::PingTrackerForRouteSelection::SetPingOverride(int)
  T SteamNetworkingSocketsLib::PollGroupLock::PollGroupLock()
  T SteamNetworkingSocketsLib::ProcessPendingDestroyClosedRawUDPSockets()
  T SteamNetworkingSocketsLib::PublicKey::CalculateKeyID() const
@@ -3477,18 +3483,18 @@
  T SteamNetworkingSocketsLib::RemoveRelayServerByHandle(int, char const*, long long)
  T SteamNetworkingSocketsLib::RouteQualityMetrics::Init(SteamNetworkingSocketsLib::SharedClusterData const*, long long)
  T SteamNetworkingSocketsLib::SNPAckSerializerHelper::EncodeTimeSince(long long, long long)
+ T SteamNetworkingSocketsLib::SNPEncodedSegment::SetupReliable(SteamNetworkingSocketsLib::CSteamNetworkingMessage*, long long, long long, long long)
  T SteamNetworkingSocketsLib::SNPSegmentCollector<false, false>::UndoLast(SteamNetworkingSocketsLib::SNPSegmentCollectorLane<false>*)
  T SteamNetworkingSocketsLib::SNPSegmentCollector<true, false>::UndoLast(SteamNetworkingSocketsLib::SNPSegmentCollectorLane<true>*)
  T SteamNetworkingSocketsLib::SNPSegmentCollectorLane<false>::AddReliable(SteamNetworkingSocketsLib::CSteamNetworkingMessage*, long long, long long)
  T SteamNetworkingSocketsLib::SNPSegmentCollectorLane<false>::AddReliableRetry(unsigned short, SteamNetworkingSocketsLib::SNPSendReliableSegment_t const&)
  T SteamNetworkingSocketsLib::SNPSegmentCollectorLaneBase::AddUnreliable(SteamNetworkingSocketsLib::CSteamNetworkingMessage*, int)
+ T SteamNetworkingSocketsLib::SNPSendReliableSegment_t::begin() const
  T SteamNetworkingSocketsLib::SSNPReceiverState::DebugCheckPackGapMap() const
  T SteamNetworkingSocketsLib::SSNPReceiverState::QueueFlushAllAcks(long long)
  T SteamNetworkingSocketsLib::SSNPReceiverState::SSNPReceiverState()
  T SteamNetworkingSocketsLib::SSNPReceiverState::Shutdown()
  T SteamNetworkingSocketsLib::SSNPReceiverState::~SSNPReceiverState()
- T SteamNetworkingSocketsLib::SSNPSenderState::AdvanceVirtualTime(SteamNetworkingSocketsLib::SSNPSenderState::Lane&, int)
- T SteamNetworkingSocketsLib::SSNPSenderState::CalculateLaneEstimatedVirtualFinishTime(SteamNetworkingSocketsLib::SSNPSenderState::Lane&)
  T SteamNetworkingSocketsLib::SSNPSenderState::DebugCheckInFlightPacketMap() const
  T SteamNetworkingSocketsLib::SSNPSenderState::DebugCheckReliable() const
  T SteamNetworkingSocketsLib::SSNPSenderState::RemoveRefCountReliableSegment(unsigned short)
@@ -3585,10 +3591,11 @@
  T SteamNetworkingSocketsLib::TableLock::~TableLock()
  T SteamNetworkingSocketsLib::UDPSendPacketContext_t::Populate(unsigned long, SteamNetworkingSocketsLib::EStatsReplyRequest, SteamNetworkingSocketsLib::CConnectionTransportUDPBase*)
  T SteamNetworkingSocketsLib::UDPSendPacketContext_t::Trim(int)
+ T SteamNetworkingSocketsLib::VirtualPortRender::VirtualPortRender(int)
  T SteamNetworkingSocketsLib::WakeSteamDatagramThread()
  T SteamNetworkingSockets_DefaultPreFormatDebugOutputHandler
  T SteamNetworkingSockets_GetEnvVar(char const*)
- T SteamNetworkingSockets_LibV11
+ T SteamNetworkingSockets_LibV12
  T SteamNetworkingSockets_Poll
  T SteamNetworkingSockets_SetLockAcquiredCallback
  T SteamNetworkingSockets_SetLockHeldCallback
@@ -3943,6 +3950,7 @@
  T int V_sprintf_safe<256ul>(char (&) [256ul], char const*, ...)
  T int V_sprintf_safe<32ul>(char (&) [32ul], char const*, ...)
  T int V_sprintf_safe<64ul>(char (&) [64ul], char const*, ...)
+ T int V_sprintf_safe<80ul>(char (&) [80ul], char const*, ...)
  T int V_sprintf_safe<88ul>(char (&) [88ul], char const*, ...)
  T int_rsa_verify
  T lh_delete
@@ -3996,7 +4004,7 @@
  T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::AcceptSessionWithUser(SteamNetworkingIdentity const&)
  T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::CloseChannelWithUser(SteamNetworkingIdentity const&, int)
  T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::CloseSessionWithUser(SteamNetworkingIdentity const&)
- T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::GetSessionConnectionInfo(SteamNetworkingIdentity const&, SteamNetConnectionInfo_t*, SteamNetworkingQuickConnectionStatus*)
+ T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::GetSessionConnectionInfo(SteamNetworkingIdentity const&, SteamNetConnectionInfo_t*, SteamNetConnectionRealTimeStatus_t*)
  T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::ReceiveMessagesOnChannel(int, SteamNetworkingMessage_t**, int)
  T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingMessages::SendMessageToUser(SteamNetworkingIdentity const&, void const*, unsigned int, int, int)
  T non-virtual thunk to SteamNetworkingSocketsLib::CSteamNetworkingSocketsSteamBase::OnCallResult(SteamNetworkingSerializedFakeIP_t*, bool)
@@ -4393,8 +4401,8 @@
  T std::__1::vector<void*, std::__1::allocator<void*> >::__append(unsigned long)
  T std::__1::vector<void*, std::__1::allocator<void*> >::resize(unsigned long)
  T string_to_hex
- T unsigned char* SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_SerializeSegmentArray<false>(unsigned char*, SteamNetworkingSocketsLib::SNPPacketSerializeHelper&, SteamNetworkingSocketsLib::SNPEncodedSegment*, SteamNetworkingSocketsLib::SNPEncodedSegment*)
- T unsigned char* SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_SerializeSegmentArray<true>(unsigned char*, SteamNetworkingSocketsLib::SNPPacketSerializeHelper&, SteamNetworkingSocketsLib::SNPEncodedSegment*, SteamNetworkingSocketsLib::SNPEncodedSegment*)
+ T unsigned char* SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_SerializeSegmentArray<false>(unsigned char*, SteamNetworkingSocketsLib::SNPPacketSerializeHelper&, SteamNetworkingSocketsLib::SNPEncodedSegment*, SteamNetworkingSocketsLib::SNPEncodedSegment*, bool)
+ T unsigned char* SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_SerializeSegmentArray<true>(unsigned char*, SteamNetworkingSocketsLib::SNPPacketSerializeHelper&, SteamNetworkingSocketsLib::SNPEncodedSegment*, SteamNetworkingSocketsLib::SNPEncodedSegment*, bool)
  T unsigned char* SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_SerializeSegments_MultiLane<false>(unsigned char*, SteamNetworkingSocketsLib::SNPPacketSerializeHelper&, SteamNetworkingSocketsLib::SNPSegmentCollector<false, false>&)
  T unsigned char* SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_SerializeSegments_MultiLane<true>(unsigned char*, SteamNetworkingSocketsLib::SNPPacketSerializeHelper&, SteamNetworkingSocketsLib::SNPSegmentCollector<true, false>&)
  T unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress, SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress>&, SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress*>(SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress*, SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress*, SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress*, std::__1::__less<SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress, SteamNetworkingSocketsLib::SteamDatagramNetwork::RelayAddress>&)
@@ -4486,6 +4494,9 @@
  T vstd::small_vector<SteamNetworkingSocketsLib::SSNPSenderState::PriorityClass, 4>::clear()
  T vstd::small_vector<SteamNetworkingSocketsLib::SSNPSenderState::PriorityClass, 4>::reserve(unsigned long)
  T vstd::small_vector<SteamNetworkingSocketsLib::SSNPSenderState::PriorityClass, 4>::resize(unsigned long)
+ T vstd::small_vector<int, 4>::clear()
+ T vstd::small_vector<int, 4>::push_back(int const&)
+ T vstd::small_vector<int, 4>::reserve(unsigned long)
  T vstd::small_vector<unsigned int, 8>::assign(unsigned int const*, unsigned int const*)
  T vstd::small_vector<unsigned int, 8>::clear()
  T vstd::small_vector<unsigned int, 8>::operator=(vstd::small_vector<unsigned int, 8>&&)
@@ -4597,10 +4608,8 @@
  b (anonymous namespace)::CMsgSteamDatagramDiagnostic_reflection_
  b (anonymous namespace)::CMsgSteamDatagramGameCoordinatorServerLogin_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramGameCoordinatorServerLogin_reflection_
- b (anonymous namespace)::CMsgSteamDatagramGameserverPingReply_SignedData_descriptor_
- b (anonymous namespace)::CMsgSteamDatagramGameserverPingReply_SignedData_reflection_
- b (anonymous namespace)::CMsgSteamDatagramGameserverPingReply_descriptor_
- b (anonymous namespace)::CMsgSteamDatagramGameserverPingReply_reflection_
+ b (anonymous namespace)::CMsgSteamDatagramGameserverPingReplyData_descriptor_
+ b (anonymous namespace)::CMsgSteamDatagramGameserverPingReplyData_reflection_
  b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequest_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequest_reflection_
  b (anonymous namespace)::CMsgSteamDatagramGameserverSessionEstablished_descriptor_
@@ -4609,8 +4618,6 @@
  b (anonymous namespace)::CMsgSteamDatagramGameserverSessionRequest_reflection_
  b (anonymous namespace)::CMsgSteamDatagramHostedServerAddressPlaintext_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramHostedServerAddressPlaintext_reflection_
- b (anonymous namespace)::CMsgSteamDatagramLegacyGameserverPingReply_descriptor_
- b (anonymous namespace)::CMsgSteamDatagramLegacyGameserverPingReply_reflection_
  b (anonymous namespace)::CMsgSteamDatagramLinkInstantaneousStats_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramLinkInstantaneousStats_reflection_
  b (anonymous namespace)::CMsgSteamDatagramLinkLifetimeStats_descriptor_
@@ -4660,6 +4667,8 @@
  b (anonymous namespace)::CMsgSteamDatagramSetSecondaryAddressResult_reflection_
  b (anonymous namespace)::CMsgSteamDatagramSignedGameCoordinatorServerLogin_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramSignedGameCoordinatorServerLogin_reflection_
+ b (anonymous namespace)::CMsgSteamDatagramSignedMessageGeneric_descriptor_
+ b (anonymous namespace)::CMsgSteamDatagramSignedMessageGeneric_reflection_
  b (anonymous namespace)::CMsgSteamDatagramSignedRelayAuthTicket_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramSignedRelayAuthTicket_reflection_
  b (anonymous namespace)::CMsgSteamNetworkingICESessionSummary_descriptor_
@@ -4714,7 +4723,6 @@
  b SteamDatagram_GetNetworkConfigURL::szURL
  b SteamNetworkingSocketsLib::BCheckGlobalSpamReplyRateLimit(long long)::s_usecLastSpamReplySent
  b SteamNetworkingSocketsLib::BCheckRateLimitReportBadPacket(long long)::s_usecLastReport
- b SteamNetworkingSocketsLib::BParseRelayAuthTicketMsg(CMsgSteamDatagramSignedRelayAuthTicket const&, SteamDatagramRelayAuthTicket&, int, char (&) [1024])::bOnce
  b SteamNetworkingSocketsLib::BShouldShareMoreIPInfoForBetterConnection(SteamNetworkingSocketsLib::CSteamNetworkingUtils*, long long)::bLastResult
  b SteamNetworkingSocketsLib::BShouldShareMoreIPInfoForBetterConnection(SteamNetworkingSocketsLib::CSteamNetworkingUtils*, long long)::usecLastResultTime
  b SteamNetworkingSocketsLib::BSteamNetworkingSocketsLowLevelAddRef(char (&) [1024])::s_bInstalledAtExitHandler
@@ -5158,12 +5166,10 @@
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramConnectionStatsRouterToClient_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramConnectionStatsRouterToServer_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramConnectionStatsServerToRouter_offsets_
- r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingReply_SignedData_offsets_
- r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingReply_offsets_
+ r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingReplyData_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingRequest_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverSessionEstablished_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverSessionRequest_offsets_
- r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramLegacyGameserverPingReply_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramNoConnection_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramNoSessionRelayToClient_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramNoSessionRelayToPeer_offsets_
@@ -5180,6 +5186,7 @@
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramRouterPingReply_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramSetSecondaryAddressRequest_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramSetSecondaryAddressResult_offsets_
+ r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramSignedMessageGeneric_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamNetworkingP2PSDRRoutingSummary_offsets_
  r protobuf_AssignDesc_steammessages_5fgamenetworkingui_2eproto()::CGameNetworkingUI_ConnectionState_offsets_
  r protobuf_AssignDesc_steammessages_5fgamenetworkingui_2eproto()::CGameNetworkingUI_GlobalState_offsets_
@@ -5559,6 +5566,7 @@
  t bool std::__1::__insertion_sort_incomplete<SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&, SteamNetworkingSocketsLib::PingLocationMarker_t*>(SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&)
  t bool std::__1::__insertion_sort_incomplete<std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*>(SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&)
  t bool std::__1::__insertion_sort_incomplete<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&)
+ t bool std::__1::__insertion_sort_incomplete<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&)
  t bool std::__1::__insertion_sort_incomplete<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*>(SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&)
  t bool std::__1::__insertion_sort_incomplete<std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*>(SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&)
  t bool std::__1::__insertion_sort_incomplete<std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*>(SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&)
@@ -5906,6 +5914,7 @@
  t unsigned int std::__1::__sort3<SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&, SteamNetworkingSocketsLib::PingLocationMarker_t*>(SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&)
  t unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*>(SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&)
  t unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&)
+ t unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&)
  t unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*>(SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&)
  t unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*>(SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&)
  t unsigned int std::__1::__sort3<std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*>(SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&)
@@ -5933,6 +5942,7 @@
  t unsigned int std::__1::__sort4<SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&, SteamNetworkingSocketsLib::PingLocationMarker_t*>(SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&)
  t unsigned int std::__1::__sort4<std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*>(SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&)
  t unsigned int std::__1::__sort4<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&)
+ t unsigned int std::__1::__sort4<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&)
  t unsigned int std::__1::__sort4<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*>(SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&)
  t unsigned int std::__1::__sort4<std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*>(SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&)
  t unsigned int std::__1::__sort4<std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*>(SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&)
@@ -5960,6 +5970,7 @@
  t unsigned int std::__1::__sort5<SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&, SteamNetworkingSocketsLib::PingLocationMarker_t*>(SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&)
  t unsigned int std::__1::__sort5<std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*>(SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&)
  t unsigned int std::__1::__sort5<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&)
+ t unsigned int std::__1::__sort5<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&)
  t unsigned int std::__1::__sort5<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*>(SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&)
  t unsigned int std::__1::__sort5<std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*>(SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&)
  t unsigned int std::__1::__sort5<std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*>(SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&)
@@ -5989,6 +6000,7 @@
  t void std::__1::__sort<SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&, SteamNetworkingSocketsLib::PingLocationMarker_t*>(SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::PingLocationMarker_t*, SteamNetworkingSocketsLib::SteamNetworkPingLocationInternal_t::ToString(char*, int) const::$_4&)
  t void std::__1::__sort<std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*>(SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession*, std::__1::__less<SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession, SteamNetworkingSocketsLib::CConnectionTransportP2PSDR::CheckRebuildRoutingMessage(long long)::SortSession>&)
  t void std::__1::__sort<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_ConfigureLanes(int, int const*, unsigned short const*)::TempPriorityClass>&)
+ t void std::__1::__sort<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*>(SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase::SNP_PopulateRealTimeStatus(SteamNetConnectionRealTimeStatus_t*, int, SteamNetConnectionRealTimeLaneStatus_t*, long long)::LaneSort_t>&)
  t void std::__1::__sort<std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*>(SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t*, std::__1::__less<SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t, SteamNetworkingSocketsLib::CSteamNetworkingSockets::SendMessages(int, SteamNetworkingMessage_t* const*, long long*)::SortMsg_t>&)
  t void std::__1::__sort<std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*>(SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort*, std::__1::__less<SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort, SteamNetworkingSocketsLib::StartAlternateRoutePingCollectionOnClosestClusters()::RelayServerSort>&)
  t void std::__1::__sort<std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*>(SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort*, std::__1::__less<SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort, SteamNetworkingSocketsLib::ThinkPingProbes(long long)::ProbeSort>&)
