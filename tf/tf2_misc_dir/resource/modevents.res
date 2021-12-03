@@ -248,6 +248,7 @@
 		"team"				"byte"		// which team should hear the broadcast. 0 will make everyone hear it.
 		"sound"				"string"	// sound to play
 		"additional_flags"	"short"		// additional sound flags to pass through to sound system
+		"player"			"short"		// entindex of the player source or -1
 	}
 
 	"teamplay_timer_flash"

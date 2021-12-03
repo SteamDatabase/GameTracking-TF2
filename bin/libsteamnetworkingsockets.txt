@@ -29,7 +29,8 @@
  B CMsgSteamDatagramDiagnostic::default_instance_
  B CMsgSteamDatagramGameCoordinatorServerLogin::default_instance_
  B CMsgSteamDatagramGameserverPingReplyData::default_instance_
- B CMsgSteamDatagramGameserverPingRequest::default_instance_
+ B CMsgSteamDatagramGameserverPingRequestBody::default_instance_
+ B CMsgSteamDatagramGameserverPingRequestEnvelope::default_instance_
  B CMsgSteamDatagramGameserverSessionEstablished::default_instance_
  B CMsgSteamDatagramGameserverSessionRequest::default_instance_
  B CMsgSteamDatagramHostedServerAddressPlaintext::default_instance_
@@ -59,6 +60,7 @@
  B CMsgSteamDatagramSignedMessageGeneric::default_instance_
  B CMsgSteamDatagramSignedRelayAuthTicket::default_instance_
  B CMsgSteamNetworkingICESessionSummary::default_instance_
+ B CMsgSteamNetworkingIPAddress::default_instance_
  B CMsgSteamNetworkingIdentityLegacyBinary::default_instance_
  B CMsgSteamNetworkingP2PRendezvous::default_instance_
  B CMsgSteamNetworkingP2PRendezvous_ApplicationMessage::default_instance_
@@ -272,7 +274,8 @@
  D typeinfo for CMsgSteamDatagramDiagnostic
  D typeinfo for CMsgSteamDatagramGameCoordinatorServerLogin
  D typeinfo for CMsgSteamDatagramGameserverPingReplyData
- D typeinfo for CMsgSteamDatagramGameserverPingRequest
+ D typeinfo for CMsgSteamDatagramGameserverPingRequestBody
+ D typeinfo for CMsgSteamDatagramGameserverPingRequestEnvelope
  D typeinfo for CMsgSteamDatagramGameserverSessionEstablished
  D typeinfo for CMsgSteamDatagramGameserverSessionRequest
  D typeinfo for CMsgSteamDatagramHostedServerAddressPlaintext
@@ -302,6 +305,7 @@
  D typeinfo for CMsgSteamDatagramSignedMessageGeneric
  D typeinfo for CMsgSteamDatagramSignedRelayAuthTicket
  D typeinfo for CMsgSteamNetworkingICESessionSummary
+ D typeinfo for CMsgSteamNetworkingIPAddress
  D typeinfo for CMsgSteamNetworkingIdentityLegacyBinary
  D typeinfo for CMsgSteamNetworkingP2PRendezvous
  D typeinfo for CMsgSteamNetworkingP2PRendezvous_ApplicationMessage
@@ -445,7 +449,8 @@
  D vtable for CMsgSteamDatagramDiagnostic
  D vtable for CMsgSteamDatagramGameCoordinatorServerLogin
  D vtable for CMsgSteamDatagramGameserverPingReplyData
- D vtable for CMsgSteamDatagramGameserverPingRequest
+ D vtable for CMsgSteamDatagramGameserverPingRequestBody
+ D vtable for CMsgSteamDatagramGameserverPingRequestEnvelope
  D vtable for CMsgSteamDatagramGameserverSessionEstablished
  D vtable for CMsgSteamDatagramGameserverSessionRequest
  D vtable for CMsgSteamDatagramHostedServerAddressPlaintext
@@ -475,6 +480,7 @@
  D vtable for CMsgSteamDatagramSignedMessageGeneric
  D vtable for CMsgSteamDatagramSignedRelayAuthTicket
  D vtable for CMsgSteamNetworkingICESessionSummary
+ D vtable for CMsgSteamNetworkingIPAddress
  D vtable for CMsgSteamNetworkingIdentityLegacyBinary
  D vtable for CMsgSteamNetworkingP2PRendezvous
  D vtable for CMsgSteamNetworkingP2PRendezvous_ApplicationMessage
@@ -549,7 +555,7 @@
  OSAtomicCompareAndSwap32Barrier
  OSAtomicCompareAndSwap64Barrier
  OSMemoryBarrier
- R SteamNetworkingSocketsLib::CRawUDPSocketImpl::TracePkt(bool, netadr_t const&, int, iovec const*) const::hexdigit
+ R SteamNetworkingSocketsLib::CRawUDPSocketImpl::TracePkt(bool, CIPAndPort const&, int, iovec const*) const::hexdigit
  R typeinfo name for AES_GCM_CipherContext
  R typeinfo name for AES_GCM_DecryptContext
  R typeinfo name for AES_GCM_EncryptContext
@@ -593,7 +599,8 @@
  R typeinfo name for CMsgSteamDatagramDiagnostic
  R typeinfo name for CMsgSteamDatagramGameCoordinatorServerLogin
  R typeinfo name for CMsgSteamDatagramGameserverPingReplyData
- R typeinfo name for CMsgSteamDatagramGameserverPingRequest
+ R typeinfo name for CMsgSteamDatagramGameserverPingRequestBody
+ R typeinfo name for CMsgSteamDatagramGameserverPingRequestEnvelope
  R typeinfo name for CMsgSteamDatagramGameserverSessionEstablished
  R typeinfo name for CMsgSteamDatagramGameserverSessionRequest
  R typeinfo name for CMsgSteamDatagramHostedServerAddressPlaintext
@@ -623,6 +630,7 @@
  R typeinfo name for CMsgSteamDatagramSignedMessageGeneric
  R typeinfo name for CMsgSteamDatagramSignedRelayAuthTicket
  R typeinfo name for CMsgSteamNetworkingICESessionSummary
+ R typeinfo name for CMsgSteamNetworkingIPAddress
  R typeinfo name for CMsgSteamNetworkingIdentityLegacyBinary
  R typeinfo name for CMsgSteamNetworkingP2PRendezvous
  R typeinfo name for CMsgSteamNetworkingP2PRendezvous_ApplicationMessage
@@ -988,6 +996,23 @@
  T CGameNetworkingUI_Message::SerializeWithCachedSizesToArray(unsigned char*) const
  T CGameNetworkingUI_Message::SetCachedSize(int) const
  T CGameNetworkingUI_Message::~CGameNetworkingUI_Message()
+ T CIPAddress::BConvertMappedToIPv4()
+ T CIPAddress::GetHashKey(CIPAddress const&)
+ T CIPAddress::GetIPV6(unsigned char*) const
+ T CIPAddress::HasIP() const
+ T CIPAddress::IsLoopback() const
+ T CIPAddress::IsMappedIPv4() const
+ T CIPAddress::IsReservedAdr() const
+ T CIPAddress::SetFromSockadr(void const*, unsigned long, unsigned short*)
+ T CIPAddress::SetFromString(char const*, unsigned short*)
+ T CIPAddress::ToString(char*, unsigned int, unsigned short const*) const
+ T CIPAddress::operator==(CIPAddress const&) const
+ T CIPAndPort::CompareAdr(CIPAndPort const&, bool) const
+ T CIPAndPort::GetHashKey(CIPAndPort const&)
+ T CIPAndPort::IsValid() const
+ T CIPAndPort::ToSockadr(void*, unsigned long) const
+ T CIPAndPort::ToSockadrIPV6(void*, unsigned long) const
+ T CIPAndPort::ToString(char*, unsigned int, bool) const
  T CMAC_CTX_copy
  T CMAC_CTX_free
  T CMAC_CTX_new
@@ -1342,18 +1367,35 @@
  T CMsgSteamDatagramGameserverPingReplyData::New() const
  T CMsgSteamDatagramGameserverPingReplyData::SerializeWithCachedSizesToArray(unsigned char*) const
  T CMsgSteamDatagramGameserverPingReplyData::SetCachedSize(int) const
+ T CMsgSteamDatagramGameserverPingReplyData::SharedCtor()
+ T CMsgSteamDatagramGameserverPingReplyData::SharedDtor()
  T CMsgSteamDatagramGameserverPingReplyData::~CMsgSteamDatagramGameserverPingReplyData()
- T CMsgSteamDatagramGameserverPingRequest::ByteSize() const
- T CMsgSteamDatagramGameserverPingRequest::CMsgSteamDatagramGameserverPingRequest()
- T CMsgSteamDatagramGameserverPingRequest::Clear()
- T CMsgSteamDatagramGameserverPingRequest::GetCachedSize() const
- T CMsgSteamDatagramGameserverPingRequest::GetMetadata() const
- T CMsgSteamDatagramGameserverPingRequest::IsInitialized() const
- T CMsgSteamDatagramGameserverPingRequest::MergeFrom(CMsgSteamDatagramGameserverPingRequest const&)
- T CMsgSteamDatagramGameserverPingRequest::New() const
- T CMsgSteamDatagramGameserverPingRequest::SerializeWithCachedSizesToArray(unsigned char*) const
- T CMsgSteamDatagramGameserverPingRequest::SetCachedSize(int) const
- T CMsgSteamDatagramGameserverPingRequest::~CMsgSteamDatagramGameserverPingRequest()
+ T CMsgSteamDatagramGameserverPingRequestBody::ByteSize() const
+ T CMsgSteamDatagramGameserverPingRequestBody::CMsgSteamDatagramGameserverPingRequestBody()
+ T CMsgSteamDatagramGameserverPingRequestBody::Clear()
+ T CMsgSteamDatagramGameserverPingRequestBody::GetCachedSize() const
+ T CMsgSteamDatagramGameserverPingRequestBody::GetMetadata() const
+ T CMsgSteamDatagramGameserverPingRequestBody::IsInitialized() const
+ T CMsgSteamDatagramGameserverPingRequestBody::MergeFrom(CMsgSteamDatagramGameserverPingRequestBody const&)
+ T CMsgSteamDatagramGameserverPingRequestBody::New() const
+ T CMsgSteamDatagramGameserverPingRequestBody::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgSteamDatagramGameserverPingRequestBody::SetCachedSize(int) const
+ T CMsgSteamDatagramGameserverPingRequestBody::SharedCtor()
+ T CMsgSteamDatagramGameserverPingRequestBody::SharedDtor()
+ T CMsgSteamDatagramGameserverPingRequestBody::~CMsgSteamDatagramGameserverPingRequestBody()
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::ByteSize() const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::CMsgSteamDatagramGameserverPingRequestEnvelope()
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::Clear()
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::GetCachedSize() const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::GetMetadata() const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::IsInitialized() const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::MergeFrom(CMsgSteamDatagramGameserverPingRequestEnvelope const&)
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::New() const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::SetCachedSize(int) const
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::SharedCtor()
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::SharedDtor()
+ T CMsgSteamDatagramGameserverPingRequestEnvelope::~CMsgSteamDatagramGameserverPingRequestEnvelope()
  T CMsgSteamDatagramGameserverSessionEstablished::ByteSize() const
  T CMsgSteamDatagramGameserverSessionEstablished::CMsgSteamDatagramGameserverSessionEstablished()
  T CMsgSteamDatagramGameserverSessionEstablished::Clear()
@@ -1719,6 +1761,19 @@
  T CMsgSteamNetworkingICESessionSummary::SetCachedSize(int) const
  T CMsgSteamNetworkingICESessionSummary::default_instance()
  T CMsgSteamNetworkingICESessionSummary::~CMsgSteamNetworkingICESessionSummary()
+ T CMsgSteamNetworkingIPAddress::ByteSize() const
+ T CMsgSteamNetworkingIPAddress::CMsgSteamNetworkingIPAddress()
+ T CMsgSteamNetworkingIPAddress::Clear()
+ T CMsgSteamNetworkingIPAddress::GetCachedSize() const
+ T CMsgSteamNetworkingIPAddress::GetMetadata() const
+ T CMsgSteamNetworkingIPAddress::IsInitialized() const
+ T CMsgSteamNetworkingIPAddress::MergeFrom(CMsgSteamNetworkingIPAddress const&)
+ T CMsgSteamNetworkingIPAddress::New() const
+ T CMsgSteamNetworkingIPAddress::SerializeWithCachedSizesToArray(unsigned char*) const
+ T CMsgSteamNetworkingIPAddress::SetCachedSize(int) const
+ T CMsgSteamNetworkingIPAddress::SharedCtor()
+ T CMsgSteamNetworkingIPAddress::SharedDtor()
+ T CMsgSteamNetworkingIPAddress::~CMsgSteamNetworkingIPAddress()
  T CMsgSteamNetworkingIdentityLegacyBinary::ByteSize() const
  T CMsgSteamNetworkingIdentityLegacyBinary::CMsgSteamNetworkingIdentityLegacyBinary()
  T CMsgSteamNetworkingIdentityLegacyBinary::Clear()
@@ -1972,6 +2027,27 @@
  T CUtlCStringConversion::FindConversion(char const*, int*)
  T CUtlCharConversion::CUtlCharConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
  T CUtlCharConversion::FindConversion(char const*, int*)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::AllocNode()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::CUtlHashMap()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::EnsureCapacity(int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::Find(CIPAndPort const&) const
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::FindInBucket(int, CIPAndPort const&) const
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::IncrementalRehash()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::RehashNodesInBucket(int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::RemoveAt(int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::RemoveNodeFromBucket(int, int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::~CUtlHashMap()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::AllocNode()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::CUtlHashMap()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::EnsureCapacity(int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::Find(CIPAndPort const&) const
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::FindInBucket(int, CIPAndPort const&) const
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::IncrementalRehash()
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::Range<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::MutableValueIterator>::begin() const
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::RehashNodesInBucket(int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::RemoveAt(int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::RemoveNodeFromBucket(int, int)
+ T CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::~CUtlHashMap()
  T CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::AllocNode()
  T CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::CUtlHashMap()
  T CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::EnsureCapacity(int)
@@ -2073,27 +2149,6 @@
  T CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::RemoveAt(int)
  T CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::RemoveNodeFromBucket(int, int)
  T CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::~CUtlHashMap()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::AllocNode()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::CUtlHashMap()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::EnsureCapacity(int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::Find(netadr_t const&) const
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::FindInBucket(int, netadr_t const&) const
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::IncrementalRehash()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::RehashNodesInBucket(int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::RemoveAt(int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::RemoveNodeFromBucket(int, int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::~CUtlHashMap()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::AllocNode()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::CUtlHashMap()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::EnsureCapacity(int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::Find(netadr_t const&) const
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::FindInBucket(int, netadr_t const&) const
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::IncrementalRehash()
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::Range<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::MutableValueIterator>::begin() const
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::RehashNodesInBucket(int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::RemoveAt(int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::RemoveNodeFromBucket(int, int)
- T CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::~CUtlHashMap()
  T CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::AllocNode()
  T CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::CUtlHashMap()
  T CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::EnsureCapacity(int)
@@ -2142,6 +2197,7 @@
  T CUtlHashMap<unsigned short, SteamNetworkingSocketsLib::CSteamNetworkConnectionBase*, std::__1::equal_to<unsigned short>, SteamNetworkingSocketsLib::Identity<unsigned short> >::~CUtlHashMap()
  T CUtlLinkedList<SteamNetworkingSocketsLib::CPacketLagger::LaggedPacket, int>::AllocInternal(bool)
  T CUtlLinkedList<SteamNetworkingSocketsLib::CPacketLagger::LaggedPacket, int>::Free(int)
+ T CUtlLinkedList<SteamNetworkingSocketsLib::CPacketLagger::LaggedPacket, int>::InsertAfter(int)
  T CUtlLinkedList<SteamNetworkingSocketsLib::CPacketLagger::LaggedPacket, int>::LinkAfter(int, int)
  T CUtlLinkedList<SteamNetworkingSocketsLib::CPacketLagger::LaggedPacket, int>::RemoveAll()
  T CUtlLinkedList<SteamNetworkingSocketsLib::CPacketLagger::LaggedPacket, int>::Unlink(int)
@@ -2179,6 +2235,12 @@
  T CUtlPriorityQueue<SteamNetworkingSocketsLib::IThinker*, SteamNetworkingSocketsLib::ThinkerLess, SteamNetworkingSocketsLib::ThinkerSetIndex>::RemoveAt(int)
  T CUtlPriorityQueue<SteamNetworkingSocketsLib::IThinker*, SteamNetworkingSocketsLib::ThinkerLess, SteamNetworkingSocketsLib::ThinkerSetIndex>::RevaluateElement(int)
  T CUtlPriorityQueue<SteamNetworkingSocketsLib::IThinker*, SteamNetworkingSocketsLib::ThinkerLess, SteamNetworkingSocketsLib::ThinkerSetIndex>::~CUtlPriorityQueue()
+ T CUtlVector<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t> >::GrowVector(int)
+ T CUtlVector<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t const*)
+ T CUtlVector<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t> >::~CUtlVector()
+ T CUtlVector<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t> >::GrowVector(int)
+ T CUtlVector<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t const*)
+ T CUtlVector<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::HashBucket_t> >::~CUtlVector()
  T CUtlVector<CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t, CUtlMemory<CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t> >::GrowVector(int)
  T CUtlVector<CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t, CUtlMemory<CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t const*)
  T CUtlVector<CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t, CUtlMemory<CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::HashBucket_t> >::~CUtlVector()
@@ -2212,12 +2274,6 @@
  T CUtlVector<CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t, CUtlMemory<CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t> >::GrowVector(int)
  T CUtlVector<CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t, CUtlMemory<CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t const*)
  T CUtlVector<CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t, CUtlMemory<CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::HashBucket_t> >::~CUtlVector()
- T CUtlVector<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t> >::GrowVector(int)
- T CUtlVector<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t const*)
- T CUtlVector<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t> >::~CUtlVector()
- T CUtlVector<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t> >::GrowVector(int)
- T CUtlVector<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t const*)
- T CUtlVector<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t, CUtlMemory<CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::HashBucket_t> >::~CUtlVector()
  T CUtlVector<CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t, CUtlMemory<CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t> >::GrowVector(int)
  T CUtlVector<CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t, CUtlMemory<CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t> >::InsertMultipleBefore(int, int, CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t const*)
  T CUtlVector<CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t, CUtlMemory<CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::HashBucket_t> >::~CUtlVector()
@@ -2783,10 +2839,10 @@
  T SteamNetworkingSocketsLib::CConnectionTransportToSDRServer::TransportPopulateConnectionInfo(SteamNetConnectionInfo_t&) const
  T SteamNetworkingSocketsLib::CConnectionTransportToSDRServer::TransportPopulateDiagnostics(CGameNetworkingUI_ConnectionState&, long long)
  T SteamNetworkingSocketsLib::CConnectionTransportToSDRServer::~CConnectionTransportToSDRServer()
- T SteamNetworkingSocketsLib::CConnectionTransportUDP::BAccept(SteamNetworkingSocketsLib::CSharedSocket*, netadr_t const&, char (&) [1024])
+ T SteamNetworkingSocketsLib::CConnectionTransportUDP::BAccept(SteamNetworkingSocketsLib::CSharedSocket*, CIPAndPort const&, char (&) [1024])
  T SteamNetworkingSocketsLib::CConnectionTransportUDP::BCanSendEndToEndConnectRequest() const
  T SteamNetworkingSocketsLib::CConnectionTransportUDP::BCanSendEndToEndData() const
- T SteamNetworkingSocketsLib::CConnectionTransportUDP::BConnect(netadr_t const&, char (&) [1024])
+ T SteamNetworkingSocketsLib::CConnectionTransportUDP::BConnect(CIPAndPort const&, char (&) [1024])
  T SteamNetworkingSocketsLib::CConnectionTransportUDP::CreateLoopbackPair(SteamNetworkingSocketsLib::CConnectionTransportUDP**)
  T SteamNetworkingSocketsLib::CConnectionTransportUDP::PacketReceived(SteamNetworkingSocketsLib::RecvPktInfo_t const&, SteamNetworkingSocketsLib::CConnectionTransportUDP*)
  T SteamNetworkingSocketsLib::CConnectionTransportUDP::Received_ChallengeOrConnectRequest(char const*, unsigned int, long long)
@@ -2862,7 +2918,7 @@
  T SteamNetworkingSocketsLib::CP2PRouteSelector::MarkRemoteRelaysAndRoutes(CMsgSteamDatagramP2PRoutes const&)
  T SteamNetworkingSocketsLib::CP2PRouteSelector::MessageToPeerBuilder::TruncateLists()
  T SteamNetworkingSocketsLib::CP2PRouteSelector::Route::InteriorScore() const
- T SteamNetworkingSocketsLib::CPacketLagger::LagPacket(SteamNetworkingSocketsLib::CRawUDPSocketImpl*, netadr_t const&, int, int, iovec const*)
+ T SteamNetworkingSocketsLib::CPacketLagger::LagPacket(SteamNetworkingSocketsLib::CRawUDPSocketImpl*, CIPAndPort const&, int, int, iovec const*)
  T SteamNetworkingSocketsLib::CPacketLagger::Schedule()
  T SteamNetworkingSocketsLib::CPacketLagger::Think(long long)
  T SteamNetworkingSocketsLib::CPacketLagger::~CPacketLagger()
@@ -2882,10 +2938,10 @@
  T SteamNetworkingSocketsLib::CQueuedTask::RunWithGlobalLockOrQueue(char const*)
  T SteamNetworkingSocketsLib::CQueuedTask::SetTarget(SteamNetworkingSocketsLib::CTaskTarget*)
  T SteamNetworkingSocketsLib::CQueuedTask::~CQueuedTask()
- T SteamNetworkingSocketsLib::CRawUDPSocketImpl::BSendRawPacketGather(int, iovec const*, netadr_t const&) const
+ T SteamNetworkingSocketsLib::CRawUDPSocketImpl::BSendRawPacketGather(int, iovec const*, CIPAndPort const&) const
  T SteamNetworkingSocketsLib::CRawUDPSocketImpl::Close()
  T SteamNetworkingSocketsLib::CRawUDPSocketImpl::InternalAddToCleanupQueue()
- T SteamNetworkingSocketsLib::CRawUDPSocketImpl::TracePkt(bool, netadr_t const&, int, iovec const*) const
+ T SteamNetworkingSocketsLib::CRawUDPSocketImpl::TracePkt(bool, CIPAndPort const&, int, iovec const*) const
  T SteamNetworkingSocketsLib::CRawUDPSocketImpl::~CRawUDPSocketImpl()
  T SteamNetworkingSocketsLib::CSDRHTTPRequest::CSDRHTTPRequest(char const*)
  T SteamNetworkingSocketsLib::CSDRHTTPRequest::Cancel()
@@ -2894,7 +2950,7 @@
  T SteamNetworkingSocketsLib::CSDRHTTPRequest::SetRequestHeader(char const*, char const*)
  T SteamNetworkingSocketsLib::CSDRHTTPRequest::Think(long long)
  T SteamNetworkingSocketsLib::CSDRHTTPRequest::~CSDRHTTPRequest()
- T SteamNetworkingSocketsLib::CSharedSocket::AddRemoteHost(netadr_t const&, SteamNetworkingSocketsLib::CRecvPacketCallback)
+ T SteamNetworkingSocketsLib::CSharedSocket::AddRemoteHost(CIPAndPort const&, SteamNetworkingSocketsLib::CRecvPacketCallback)
  T SteamNetworkingSocketsLib::CSharedSocket::BInit(SteamNetworkingIPAddr const&, SteamNetworkingSocketsLib::CRecvPacketCallback, char (&) [1024])
  T SteamNetworkingSocketsLib::CSharedSocket::CSharedSocket()
  T SteamNetworkingSocketsLib::CSharedSocket::CallbackRecvPacket(SteamNetworkingSocketsLib::RecvPktInfo_t const&, SteamNetworkingSocketsLib::CSharedSocket*)
@@ -3071,7 +3127,7 @@
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::AcceptConnection(long long)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::AllowLocalUnsignedCert()
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::AllowRemoteUnsignedCert()
- T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::BBeginAccept(SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP*, netadr_t const&, SteamNetworkingSocketsLib::CSharedSocket*, SteamNetworkingIdentity const&, unsigned int, CMsgSteamDatagramCertificateSigned const&, CMsgSteamDatagramSessionCryptInfoSigned const&, char (&) [1024])
+ T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::BBeginAccept(SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP*, CIPAndPort const&, SteamNetworkingSocketsLib::CSharedSocket*, SteamNetworkingIdentity const&, unsigned int, CMsgSteamDatagramCertificateSigned const&, CMsgSteamDatagramSessionCryptInfoSigned const&, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::BInitConnect(SteamNetworkingIPAddr const&, int, SteamNetworkingConfigValue_t const*, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::CSteamNetworkConnectionUDP(SteamNetworkingSocketsLib::CSteamNetworkingSockets*, SteamNetworkingSocketsLib::ConnectionScopeLock&)
  T SteamNetworkingSocketsLib::CSteamNetworkConnectionUDP::GetConnectionTypeDescription(char (&) [80]) const
@@ -3092,9 +3148,9 @@
  T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::BInit(SteamNetworkingIPAddr const&, int, SteamNetworkingConfigValue_t const*, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::CSteamNetworkListenSocketDirectUDP(SteamNetworkingSocketsLib::CSteamNetworkingSockets*)
  T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::ReceivedFromUnknownHost(SteamNetworkingSocketsLib::RecvPktInfo_t const&, SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP*)
- T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::Received_ChallengeRequest(CMsgSteamSockets_UDP_ChallengeRequest const&, netadr_t const&, long long)
- T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::Received_ConnectRequest(CMsgSteamSockets_UDP_ConnectRequest const&, netadr_t const&, int, long long)
- T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::Received_ConnectionClosed(CMsgSteamSockets_UDP_ConnectionClosed const&, netadr_t const&, long long)
+ T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::Received_ChallengeRequest(CMsgSteamSockets_UDP_ChallengeRequest const&, CIPAndPort const&, long long)
+ T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::Received_ConnectRequest(CMsgSteamSockets_UDP_ConnectRequest const&, CIPAndPort const&, int, long long)
+ T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::Received_ConnectionClosed(CMsgSteamSockets_UDP_ConnectionClosed const&, CIPAndPort const&, long long)
  T SteamNetworkingSocketsLib::CSteamNetworkListenSocketDirectUDP::~CSteamNetworkListenSocketDirectUDP()
  T SteamNetworkingSocketsLib::CSteamNetworkListenSocketP2P::BInit(int, int, SteamNetworkingConfigValue_t const*, char (&) [1024])
  T SteamNetworkingSocketsLib::CSteamNetworkListenSocketP2P::BSupportsSymmetricMode()
@@ -3395,7 +3451,7 @@
  T SteamNetworkingSocketsLib::IThinker::TryLock() const
  T SteamNetworkingSocketsLib::IThinker::~IThinker()
  T SteamNetworkingSocketsLib::Indent(char const*)
- T SteamNetworkingSocketsLib::IsRouteToAddressProbablyLocal(netadr_t)
+ T SteamNetworkingSocketsLib::IsRouteToAddressProbablyLocal(CIPAndPort)
  T SteamNetworkingSocketsLib::JitterHistogram::AddSample(long long)
  T SteamNetworkingSocketsLib::LinkStatsInstantaneousMsgToStruct(CMsgSteamDatagramLinkInstantaneousStats const&, SteamNetworkingSocketsLib::SteamDatagramLinkInstantaneousStats&)
  T SteamNetworkingSocketsLib::LinkStatsInstantaneousStructToMsg(SteamNetworkingSocketsLib::SteamDatagramLinkInstantaneousStats const&, CMsgSteamDatagramLinkInstantaneousStats&)
@@ -3441,7 +3497,7 @@
  T SteamNetworkingSocketsLib::LockDebugInfo::~LockDebugInfo()
  T SteamNetworkingSocketsLib::Murmorhash32(void const*, unsigned long)
  T SteamNetworkingSocketsLib::NumberPrettyPrinter::Print(long long)
- T SteamNetworkingSocketsLib::OpenUDPSocketBoundToHost(netadr_t const&, SteamNetworkingSocketsLib::CRecvPacketCallback, char (&) [1024])
+ T SteamNetworkingSocketsLib::OpenUDPSocketBoundToHost(CIPAndPort const&, SteamNetworkingSocketsLib::CRecvPacketCallback, char (&) [1024])
  T SteamNetworkingSocketsLib::PacketAck::MicrosecondsAge(long long) const
  T SteamNetworkingSocketsLib::ParseCertFromBase64(char const*, unsigned long, CMsgSteamDatagramCertificateSigned&, char (&) [1024])
  T SteamNetworkingSocketsLib::ParseCertFromPEM(void const*, unsigned long, CMsgSteamDatagramCertificateSigned&, char (&) [1024])
@@ -3465,15 +3521,15 @@
  T SteamNetworkingSocketsLib::RelayServer::BSendPacketGather(int, iovec const*, int, SteamNetworkingSocketsLib::RelaySession*)
  T SteamNetworkingSocketsLib::RelayServer::CalculatePingMSFromWireSendTime(unsigned int, long long, char const*) const
  T SteamNetworkingSocketsLib::RelayServer::CheckCreatedAltTransportByIndex(int, long long)
- T SteamNetworkingSocketsLib::RelayServer::FindAltTransport(netadr_t const&) const
- T SteamNetworkingSocketsLib::RelayServer::New(CMsgSteamDatagramRouterPingReply_AltAddress_Protocol, netadr_t const&, SteamNetworkingSocketsLib::SharedClusterData*, SteamNetworkingSocketsLib::RelayServer*, SteamNetworkingSocketsLib::RelayServer::AltTransport*)
+ T SteamNetworkingSocketsLib::RelayServer::FindAltTransport(CIPAndPort const&) const
+ T SteamNetworkingSocketsLib::RelayServer::New(CMsgSteamDatagramRouterPingReply_AltAddress_Protocol, CIPAndPort const&, SteamNetworkingSocketsLib::SharedClusterData*, SteamNetworkingSocketsLib::RelayServer*, SteamNetworkingSocketsLib::RelayServer::AltTransport*)
  T SteamNetworkingSocketsLib::RelayServer::ProcessMessage_RouterPingReply(CMsgSteamDatagramRouterPingReply const&, int, long long)
  T SteamNetworkingSocketsLib::RelayServer::ReceivedPacket(int, long long)
  T SteamNetworkingSocketsLib::RelayServer::RecvAltTransports(CMsgSteamDatagramRouterPingReply const&, long long)
  T SteamNetworkingSocketsLib::RelayServer::RecvClusterScoringPenalty(int)
  T SteamNetworkingSocketsLib::RelayServer::RecvDowntimeWarning(int, long long)
  T SteamNetworkingSocketsLib::RelayServer::RecvPingReply(int, long long)
- T SteamNetworkingSocketsLib::RelayServer::RelayServer(int, CMsgSteamDatagramRouterPingReply_AltAddress_Protocol, netadr_t const&, SteamNetworkingSocketsLib::SharedClusterData*, SteamNetworkingSocketsLib::RelayServer*)
+ T SteamNetworkingSocketsLib::RelayServer::RelayServer(int, CMsgSteamDatagramRouterPingReply_AltAddress_Protocol, CIPAndPort const&, SteamNetworkingSocketsLib::SharedClusterData*, SteamNetworkingSocketsLib::RelayServer*)
  T SteamNetworkingSocketsLib::RelayServer::SendNoConnection(unsigned int, unsigned int, bool, SteamNetworkingSocketsLib::RelaySession*)
  T SteamNetworkingSocketsLib::RelayServer::SendPingRequest(long long, char const*, SteamNetworkingSocketsLib::EStatsReplyRequest)
  T SteamNetworkingSocketsLib::RelayServer::TrackSentPingRequest(long long, long long)
@@ -3534,7 +3590,7 @@
  T SteamNetworkingSocketsLib::SendPacketContext<CMsgSteamSockets_UDP_Stats>::SlamFlagsAndCalcSize()
  T SteamNetworkingSocketsLib::SessionSelectQualityMetrics::DebugInfo() const
  T SteamNetworkingSocketsLib::SharedClusterData::FindDataCenterPing(unsigned int) const
- T SteamNetworkingSocketsLib::SharedClusterData::FindRecentFailedAddress(netadr_t const&) const
+ T SteamNetworkingSocketsLib::SharedClusterData::FindRecentFailedAddress(CIPAndPort const&) const
  T SteamNetworkingSocketsLib::SharedClusterData::GetPingToDataCenter(unsigned int, SteamNetworkingSocketsLib::EPingQuality&, int&, SteamNetworkingSocketsLib::EDataCenterPingType) const
  T SteamNetworkingSocketsLib::SharedClusterData::RecvDataCenterLatencies(SteamNetworkingSocketsLib::RelayServer&, CMsgSteamDatagramRouterPingReply const&, long long)
  T SteamNetworkingSocketsLib::SharedClusterData::SelectRandomAddress() const
@@ -3548,7 +3604,7 @@
  T SteamNetworkingSocketsLib::SteamDatagramNetwork::FindPOPByCode(char const*) const
  T SteamNetworkingSocketsLib::SteamDatagramNetwork::FindPOPByCodeNoLookup(char const*) const
  T SteamNetworkingSocketsLib::SteamDatagramNetwork::FindPOPByID(unsigned int) const
- T SteamNetworkingSocketsLib::SteamDatagramNetwork::FindRelayPOPByAddress(netadr_t const&, int*) const
+ T SteamNetworkingSocketsLib::SteamDatagramNetwork::FindRelayPOPByAddress(CIPAndPort const&, int*) const
  T SteamNetworkingSocketsLib::SteamDatagramNetwork::GetCanonicalPOPID(unsigned int) const
  T SteamNetworkingSocketsLib::SteamDatagramNetwork::MapToCanonicalPOPID(unsigned int) const
  T SteamNetworkingSocketsLib::SteamDatagramNetwork::POP::GetRelayAddressAtIndex(int) const
@@ -3902,6 +3958,10 @@
  T i2d_X509_ALGOR
  T i2d_X509_SIG
  T i2o_ECPublicKey
+ T int CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::FindOrInsert_Internal<CIPAndPort const&, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost* const&>(CIPAndPort const&, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost* const&, CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::ReplaceExisting)
+ T int CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::InsertUnconstructed<CIPAndPort const&>(CIPAndPort const&, int*, bool)
+ T int CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::FindOrInsert_Internal<CIPAndPort const&, SteamNetworkingSocketsLib::RelayServer*>(CIPAndPort const&, SteamNetworkingSocketsLib::RelayServer*&&, CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::ReplaceExisting)
+ T int CUtlHashMap<CIPAndPort, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<CIPAndPort>, CIPAndPort::Hash>::InsertUnconstructed<CIPAndPort const&>(CIPAndPort const&, int*, bool)
  T int CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::FindOrInsert_Internal<SteamNetworkingIPAddr const&, SteamNetworkingSocketsLib::FakeUDPSession* const&>(SteamNetworkingIPAddr const&, SteamNetworkingSocketsLib::FakeUDPSession* const&, CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::ReplaceExisting)
  T int CUtlHashMap<SteamNetworkingIPAddr, SteamNetworkingSocketsLib::FakeUDPSession*, std::__1::equal_to<SteamNetworkingIPAddr>, SteamNetworkingSocketsLib::SteamNetworkingIPAddrHash>::InsertUnconstructed<SteamNetworkingIPAddr const&>(SteamNetworkingIPAddr const&, int*, bool)
  T int CUtlHashMap<SteamNetworkingIdentity, SteamNetworkingSocketsLib::SteamNetworkingMessagesSession*, std::__1::equal_to<SteamNetworkingIdentity>, SteamNetworkingSocketsLib::SteamNetworkingIdentityHash>::FindOrInsert_Internal<SteamNetworkingIdentity const&, SteamNetworkingSocketsLib::SteamNetworkingMessagesSession* const&>(SteamNetworkingIdentity const&, SteamNetworkingSocketsLib::SteamNetworkingMessagesSession* const&, CUtlHashMap<SteamNetworkingIdentity, SteamNetworkingSocketsLib::SteamNetworkingMessagesSession*, std::__1::equal_to<SteamNetworkingIdentity>, SteamNetworkingSocketsLib::SteamNetworkingIdentityHash>::ReplaceExisting)
@@ -3924,10 +3984,6 @@
  T int CUtlHashMap<int, SteamNetworkingSocketsLib::CSteamNetworkingMessages::Channel*, std::__1::equal_to<int>, std::__1::hash<int> >::InsertUnconstructed<int const&>(int const&, int*, bool)
  T int CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::FindOrInsert_Internal<int const&, bool>(int const&, bool&&, CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::ReplaceExisting)
  T int CUtlHashMap<int, bool, std::__1::equal_to<int>, std::__1::hash<int> >::InsertUnconstructed<int const&>(int const&, int*, bool)
- T int CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::FindOrInsert_Internal<netadr_t const&, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost* const&>(netadr_t const&, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost* const&, CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::ReplaceExisting)
- T int CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::CSharedSocket::RemoteHost*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::InsertUnconstructed<netadr_t const&>(netadr_t const&, int*, bool)
- T int CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::FindOrInsert_Internal<netadr_t const&, SteamNetworkingSocketsLib::RelayServer*>(netadr_t const&, SteamNetworkingSocketsLib::RelayServer*&&, CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::ReplaceExisting)
- T int CUtlHashMap<netadr_t, SteamNetworkingSocketsLib::RelayServer*, std::__1::equal_to<netadr_t>, netadr_t::Hash>::InsertUnconstructed<netadr_t const&>(netadr_t const&, int*, bool)
  T int CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::FindOrInsert_Internal<unsigned int const&, SteamNetworkingSocketsLib::CMessagesEndPointSession*>(unsigned int const&, SteamNetworkingSocketsLib::CMessagesEndPointSession*&&, CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::ReplaceExisting)
  T int CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::CMessagesEndPointSession*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::InsertUnconstructed<unsigned int const&>(unsigned int const&, int*, bool)
  T int CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::SharedClusterData*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::FindOrInsert_Internal<unsigned int const&, SteamNetworkingSocketsLib::SharedClusterData*>(unsigned int const&, SteamNetworkingSocketsLib::SharedClusterData*&&, CUtlHashMap<unsigned int, SteamNetworkingSocketsLib::SharedClusterData*, std::__1::equal_to<unsigned int>, std::__1::hash<unsigned int> >::ReplaceExisting)
@@ -3962,20 +4018,6 @@
  T lh_retrieve
  T lh_strhash
  T md5_block_asm_data_order
- T netadr_t::BConvertMappedToIPv4()
- T netadr_t::CompareAdr(netadr_t const&, bool) const
- T netadr_t::GetHashKey(netadr_t const&)
- T netadr_t::GetIPV6(unsigned char*) const
- T netadr_t::HasIP() const
- T netadr_t::IsLoopback() const
- T netadr_t::IsMappedIPv4() const
- T netadr_t::IsReservedAdr() const
- T netadr_t::IsValid() const
- T netadr_t::SetFromSockadr(void const*, unsigned long)
- T netadr_t::SetFromString(char const*)
- T netadr_t::ToSockadr(void*, unsigned long) const
- T netadr_t::ToSockadrIPV6(void*, unsigned long) const
- T netadr_t::ToString(char*, unsigned int, bool) const
  T non-virtual thunk to SteamNetworkingSocketsLib::CConnectionTransportP2PICE::Log(IICESessionDelegate::ELogPriority, char const*, ...)
  T non-virtual thunk to SteamNetworkingSocketsLib::CConnectionTransportP2PICE::OnData(void const*, unsigned long)
  T non-virtual thunk to SteamNetworkingSocketsLib::CConnectionTransportP2PICE::OnLocalCandidateGathered(EICECandidateType, char const*)
@@ -4610,8 +4652,10 @@
  b (anonymous namespace)::CMsgSteamDatagramGameCoordinatorServerLogin_reflection_
  b (anonymous namespace)::CMsgSteamDatagramGameserverPingReplyData_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramGameserverPingReplyData_reflection_
- b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequest_descriptor_
- b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequest_reflection_
+ b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequestBody_descriptor_
+ b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequestBody_reflection_
+ b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequestEnvelope_descriptor_
+ b (anonymous namespace)::CMsgSteamDatagramGameserverPingRequestEnvelope_reflection_
  b (anonymous namespace)::CMsgSteamDatagramGameserverSessionEstablished_descriptor_
  b (anonymous namespace)::CMsgSteamDatagramGameserverSessionEstablished_reflection_
  b (anonymous namespace)::CMsgSteamDatagramGameserverSessionRequest_descriptor_
@@ -4673,6 +4717,8 @@
  b (anonymous namespace)::CMsgSteamDatagramSignedRelayAuthTicket_reflection_
  b (anonymous namespace)::CMsgSteamNetworkingICESessionSummary_descriptor_
  b (anonymous namespace)::CMsgSteamNetworkingICESessionSummary_reflection_
+ b (anonymous namespace)::CMsgSteamNetworkingIPAddress_descriptor_
+ b (anonymous namespace)::CMsgSteamNetworkingIPAddress_reflection_
  b (anonymous namespace)::CMsgSteamNetworkingIdentityLegacyBinary_descriptor_
  b (anonymous namespace)::CMsgSteamNetworkingIdentityLegacyBinary_reflection_
  b (anonymous namespace)::CMsgSteamNetworkingP2PRendezvous_ApplicationMessage_descriptor_
@@ -5167,7 +5213,8 @@
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramConnectionStatsRouterToServer_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramConnectionStatsServerToRouter_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingReplyData_offsets_
- r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingRequest_offsets_
+ r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingRequestBody_offsets_
+ r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverPingRequestEnvelope_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverSessionEstablished_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramGameserverSessionRequest_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramNoConnection_offsets_
@@ -5187,6 +5234,7 @@
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramSetSecondaryAddressRequest_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramSetSecondaryAddressResult_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamDatagramSignedMessageGeneric_offsets_
+ r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamNetworkingIPAddress_offsets_
  r protobuf_AssignDesc_steamdatagram_5fmessages_5fsdr_2eproto()::CMsgSteamNetworkingP2PSDRRoutingSummary_offsets_
  r protobuf_AssignDesc_steammessages_5fgamenetworkingui_2eproto()::CGameNetworkingUI_ConnectionState_offsets_
  r protobuf_AssignDesc_steammessages_5fgamenetworkingui_2eproto()::CGameNetworkingUI_GlobalState_offsets_
@@ -5382,10 +5430,10 @@
  t SteamNetworkingSocketsLib::ConfigValue<void*>* SteamNetworkingSocketsLib::EvaluateScopeConfigValue<void*>(SteamNetworkingSocketsLib::GlobalConfigValueEntry*, ESteamNetworkingConfigScope, long, SteamNetworkingSocketsLib::ConnectionScopeLock&)
  t SteamNetworkingSocketsLib::DedicatedBoundSocketCallback(SteamNetworkingSocketsLib::RecvPktInfo_t const&, SteamNetworkingSocketsLib::CDedicatedBoundSocket*)
  t SteamNetworkingSocketsLib::FindConfigValueEntry(ESteamNetworkingConfigValue)
- t SteamNetworkingSocketsLib::FindOrCreateServerDataForAddress(netadr_t const&, int)
+ t SteamNetworkingSocketsLib::FindOrCreateServerDataForAddress(CIPAndPort const&, int)
  t SteamNetworkingSocketsLib::FindPublicKey(unsigned long long)
  t SteamNetworkingSocketsLib::FindSDRClientByConnectionID(unsigned int)
- t SteamNetworkingSocketsLib::FindServerDowntimeWarnig(netadr_t const&)
+ t SteamNetworkingSocketsLib::FindServerDowntimeWarnig(CIPAndPort const&)
  t SteamNetworkingSocketsLib::FindSessionForMessage(SteamNetworkingSocketsLib::RelayServer&, int, unsigned int, int, char const*, long long, SteamNetworkingSocketsLib::ConnectionScopeLock&)
  t SteamNetworkingSocketsLib::FlushSystemSpewLocked()
  t SteamNetworkingSocketsLib::FreeMessageDataWithP2PMessageHeader(SteamNetworkingMessage_t*)
