@@ -1,0 +1,92 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"		"#TF_Weapon_FlameThrower"
+	"BuiltRightHanded"	"0"
+	"weight"		"3"
+	"WeaponType"		"primary"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+	
+	// Attributes TF.
+	"Damage"		"170"	// per second
+	"Range"			"0"
+	"BulletsPerShot"	"1"
+	"Spread"		"0.0"
+	"TimeFireDelay"	"0.04"
+	"UseRapidFireCrits"	"1"
+	"HasTeamSkins_Viewmodel"			"1"
+
+
+	// Ammo & Clip.
+	"primary_ammo"		"TF_AMMO_PRIMARY"
+	"secondary_ammo"	"None"
+	clip_size		-1
+
+	// Buckets.
+	"bucket"		"0"
+	"bucket_position"	"0"
+
+	// Animation.
+	"viewmodel"		"models/weapons/c_models/c_flamethrower/c_flamethrower.mdl"
+	"playermodel"		"models/weapons/c_models/c_flamethrower/c_flamethrower.mdl"
+	"anim_prefix"		"gl"
+
+	"HasTeamSkins_Worldmodel"	"1"
+
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"single_shot"		"Weapon_FlameThrower.Fire"			// Starting fire, 3.5 seconds long
+		"special1"		"Weapon_FlameThrower.FireLoop"			// Looping fire sound, ramps up 3.5 seconds after start
+		"double_shot"		"Weapon_FlameThrower.AirBurstAttack"		// Secondary fire
+		"special2"		"Weapon_FlameThrower.PilotLoop"			// Looping pilot light sound, always on while weapon is deployed
+		"special3"		"Weapon_FlameThrower.WindDown"			// End of fire sound
+		"burst"			"Weapon_FlameThrower.FireLoopCrit"		// Looping crit fire sound
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_flamethrower_red"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_flamethrower_blue"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"		"55"
+				"y"		"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"32"
+				"y"		"32"
+				"width"		"32"
+				"height"	"32"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"0"
+				"y"		"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

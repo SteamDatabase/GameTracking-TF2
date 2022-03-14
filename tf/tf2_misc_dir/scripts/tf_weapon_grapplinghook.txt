@@ -1,0 +1,97 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"		"#TF_Weapon_GrapplingHook"
+	"BuiltRightHanded"	"0"
+	"weight"		"3"
+	"WeaponType"		"item1"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+	"AutoSwitchTo"			"0"
+	
+	// Primary Attributes.
+	"Damage"		"10"
+	"Range"			"0"
+	"Spread"		"0.0"
+	"PunchAngle"		"0.0"
+	"TimeFireDelay"		"0.0"
+	"TimeIdle"		"0.0"
+	"TimeIdleEmpty"		"0.0"
+	"TimeReloadStart"	"0.0"
+	"TimeReload"		"0.0"
+	"ProjectileType"	"tf_projectile_grapplinghook"
+	"HasTeamSkins_Viewmodel"	"1"
+
+	// Ammo & Clip
+	"primary_ammo"		"None"
+	"secondary_ammo"	"None"
+	"AmmoPerShot"		"0"
+
+	// Buckets.
+	"bucket"		"5"
+	"bucket_position"	"0"	
+
+	"ExplosionEffect"		"ExplosionCore_wall"
+	"ExplosionPlayerEffect"		"ExplosionCore_MidAir"
+	"ExplosionWaterEffect"		"ExplosionCore_MidAir_underwater"
+
+	"ExplosionSound"	"BaseExplosionEffect.Sound"
+
+	// Animation.
+	//"viewmodel"     -viewmodel is now defined in _items_main.txt
+	//"playermodel"   -playermodel is now defined in _items_main.txt
+	"anim_prefix"		"gl"
+
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"single_shot"		"WeaponGrapplingHook.Shoot"
+		"burst"			"Weapon_CompoundBow.SingleCrit"	
+		"reload"		"Weapon_CompoundBow.WorldReload"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_rl"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_rl"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"		"55"
+				"y"		"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"0"
+				"width"		"32"
+				"height"	"32"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"0"
+				"y"		"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

@@ -1,0 +1,90 @@
+	WeaponData
+{
+	// Attributes Base.
+	"printname"			"#TF_Weapon_Cleaver"
+	"BuiltRightHanded"		"0"
+	"MeleeWeapon"			"1"
+	"weight"			"5"
+	"WeaponType"			"item1"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+	
+	// Attributes TF.
+	"Damage"			"5"
+	"DamageRadius"			"200"
+	"TimeFireDelay"			"0.8"
+	"TimeIdle"			"5.0"
+	"HasTeamSkins_Viewmodel"			"1"
+	"ProjectileType"		"projectile_cleaver"
+
+	// Ammo & Clip
+	"primary_ammo"			"TF_AMMO_GRENADES2"
+	"secondary_ammo"		"None"
+	clip_size			"-1"
+	default_clip			"1"
+
+	// Buckets.	
+	"bucket"			"1"
+	"bucket_position"		"0"
+
+	// Model & Animation
+	"viewmodel"			"models/workshop_partner/weapons/c_models/c_sd_cleaver/v_sd_cleaver.mdl"
+	"playermodel"		"models/workshop_partner/weapons/c_models/c_sd_cleaver/c_sd_cleaver.mdl"
+	"anim_prefix"		"ed"
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+		"melee_miss"		"Weapon_Machete.Miss"
+		"melee_hit"		"Weapon_Machete.HitFlesh"
+		"melee_hit_world"	"Weapon_Machete.HitWorld"
+		"burst"			"Weapon_Machete.MissCrit"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_machete"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_machete"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"		"55"
+				"y"		"60"
+				"width"		"73"
+				"height"	"15"
+		}
+
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"32"
+				"y"		"32"
+				"width"		"32"
+				"height"	"32"
+		}
+
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"0"
+				"y"		"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

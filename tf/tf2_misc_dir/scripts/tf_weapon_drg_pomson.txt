@@ -1,0 +1,95 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"				"#TF_Weapon_DRG_Pomson"
+	"BuiltRightHanded"			"0"
+	"weight"				"2"
+	"WeaponType"				"primary"
+	"ITEM_FLAG_NOITEMPICKUP" 		"1"
+	
+	// Primary Attributes
+	"Damage"				"6"
+	"Range"					"8192"
+	"BulletsPerShot"			"10"
+	"Spread"				"0.0675"
+	"PunchAngle"				"2.0"
+	"TimeFireDelay"				"0.8"
+	"TimeIdle"				"5.0"
+	"TimeIdleEmpty"				"0.25"
+	"TimeReloadStart"			"0.1"
+	"TimeReload"				"0.5"
+	"primary_ammo"				"TF_AMMO_PRIMARY"
+	"clip_size"				"6"
+	"default_clip"				"6"
+	"ProjectileType"			"projectile_energy_ring"
+	"AmmoPerShot"				"1"
+	"HasTeamSkins_Viewmodel"		"1"
+	
+	// Buckets.
+	"bucket"			"0"
+	"bucket_position"		"0"
+
+	// Animation.
+	//"viewmodel"     -viewmodel is now defined in _items_main.txt
+	//"playermodel"   -playermodel is now defined in _items_main.txt
+	"anim_prefix"   		"shotgun"
+
+	// Muzzleflash
+	"MuzzleFlashParticleEffect" "muzzle_shotgun"
+	
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"single_shot"		"Weapon_Shotgun.Single"
+		"empty"			"Weapon_Shotgun.Empty"
+		"reload"		"Weapon_Shotgun.WorldReload"
+		"special1"		"Weapon_Shotgun.Pump"
+		"burst"			"Weapon_Shotgun.SingleCrit"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_shotgun"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_shotgun"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"		"55"
+				"y"		"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"0"
+				"y"		"0"
+				"width"		"32"
+				"height"	"32"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"		"0"
+				"y"		"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

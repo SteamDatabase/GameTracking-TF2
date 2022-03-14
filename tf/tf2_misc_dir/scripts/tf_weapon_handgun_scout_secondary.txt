@@ -1,0 +1,94 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"		"#TF_Weapon_Pistol"
+	"BuiltRightHanded"	"0"
+	"weight"		"2"
+	"WeaponType"		"secondary"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+		
+	// Attributes TF.
+	"Damage"		"15"
+	"Range"			"4096"
+	"BulletsPerShot"	"1"
+	"Spread"		"0.04"
+	"TimeFireDelay"		"0.15"
+	"TimeIdle"		"5.0"
+	"TimeIdleEmpty"		"0.25"
+	"TimeReload"		"0.5"
+	"ProjectileType"	"projectile_bullet"
+	"BrassModel"		"models/weapons/shells/shell_pistol.mdl"
+	"UseRapidFireCrits"	"1"
+	"TracerEffect"		"bullet_pistol_tracer01"
+
+	// Ammo & Clip.
+	"primary_ammo"		"TF_AMMO_SECONDARY"
+	"secondary_ammo"	"None"
+	clip_size		12
+	default_clip		12
+
+	// Buckets.
+	"bucket"		"1"
+	"bucket_position"	"0"
+
+	// Animation.
+	"anim_prefix"		"ac"
+
+	// Muzzleflash
+	"MuzzleFlashParticleEffect" "muzzle_pistol"
+
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"reload"			"Weapon_Pistol.WorldReload"
+		"empty"			"Weapon_Pistol.ClipEmpty"	
+		"single_shot"		"Weapon_Pistol.Single"
+		"burst"			"Weapon_Pistol.SingleCrit"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_pistol"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_pistol"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"			"55"
+				"y"			"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"0"
+				"width"		"32"
+				"height"	"32"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

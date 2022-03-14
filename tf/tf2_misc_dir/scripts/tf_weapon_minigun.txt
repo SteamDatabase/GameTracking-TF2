@@ -1,0 +1,97 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"		"#TF_Weapon_Minigun"
+	"BuiltRightHanded"	"0"
+	"weight"		"3"
+	"WeaponType"		"primary"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+	"HasTeamSkins_Viewmodel"			"1"	
+		
+	// Attributes TF.
+	"Damage"		"9"
+	"Range"			"8192"
+	"BulletsPerShot"	"4"
+	"Spread"		"0.08"
+	"TimeFireDelay"	"0.1"
+	"ProjectileType"	"projectile_bullet"
+	"BrassModel"		"models/weapons/shells/shell_minigun.mdl"
+	"UseRapidFireCrits"	"1"
+	"TracerEffect"		"bullet_tracer01"
+
+	// Ammo & Clip.
+	"primary_ammo"		"TF_AMMO_PRIMARY"
+	"secondary_ammo"	"TF_AMMO_PRIMARY"
+	clip_size		-1
+
+	// Buckets.
+	"bucket"		"0"
+	"bucket_position"	"0"
+
+	// Animation.
+	//"viewmodel"     -viewmodel is now defined in _items_main.txt
+	//"playermodel"   -playermodel is now defined in _items_main.txt
+	"anim_prefix"		"ac"
+
+	// Muzzleflash
+	"MuzzleFlashParticleEffect" "muzzle_minigun"
+
+	
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"reload"		"Weapon_Minigun.Reload"
+		"empty"			"Weapon_Minigun.ClipEmpty"	
+		"double_shot"	"Weapon_Minigun.Fire"
+		"special1"		"Weapon_Minigun.WindUp"
+		"special2"		"Weapon_Minigun.WindDown"
+		"special3"		"Weapon_Minigun.Spin"
+		"burst"			"Weapon_Minigun.FireCrit"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_minigun"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_minigun"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"			"55"
+				"y"			"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"64"
+				"y"			"64"
+				"width"		"64"
+				"height"	"64"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

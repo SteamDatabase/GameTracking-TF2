@@ -1,0 +1,97 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"		"#TF_Weapon_Laser_Pointer"
+	"BuiltRightHanded"	"0"
+	"weight"		"3"
+	"WeaponType"		"item1"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+	"MeleeWeapon"			"1"
+	
+	// Attributes TF.
+	"Damage"		"4"
+	"Range"			"8192"
+	"BulletsPerShot"	"1"
+	"Spread"		"0.0"
+	"TimeFireDelay"		"1.5"
+	"ProjectileType"	"projectile_bullet"
+	
+	"DoInstantEjectBrass"	"0"
+	"BrassModel"		"models/weapons/shells/shell_sniperrifle.mdl"
+
+	// Ammo & Clip.
+	"primary_ammo"		"None"
+	"secondary_ammo"	"None"
+	"clip_size"		"-1"
+	"default_clip"		"75"
+
+	// Buckets.
+	"bucket"		"1"
+	"bucket_position"	"0"
+
+
+	// Muzzleflash
+	"MuzzleFlashParticleEffect" "muzzle_sniperrifle"
+
+	// Animation.
+	//"viewmodel"     -viewmodel is now defined in _items_main.txt
+	//"playermodel"   -playermodel is now defined in _items_main.txt
+	"anim_prefix"		"shotgun"
+	"HasTeamSkins"			"1"
+	"HasTeamSkins_Viewmodel"	"1"
+
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"single_shot"		"Weapon_SniperRifle.Single"
+		"reload"		"Weapon_SniperRifle.WorldReload"
+		"empty"			"Weapon_SniperRifle.ClipEmpty"	
+		"burst"			"Weapon_SniperRifle.SingleCrit"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_sniper"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_sniper"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"		"55"
+				"y"		"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"64"
+				"y"			"0"
+				"width"		"32"
+				"height"	"32"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}

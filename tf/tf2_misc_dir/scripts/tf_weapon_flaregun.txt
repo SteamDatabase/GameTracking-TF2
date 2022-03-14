@@ -1,0 +1,100 @@
+WeaponData
+{
+	// Attributes Base.
+	"printname"			"#TF_Weapon_FlareGun"
+	"BuiltRightHanded"		"0"
+	"weight"			"4"
+	"WeaponType"			"item1"
+	"ITEM_FLAG_NOITEMPICKUP" 	"1"
+		
+	// Attributes TF.
+	"Damage"			"30"
+	"Range"				"8192"
+	"BulletsPerShot"		"1"
+	"PunchAngle"			"2.0"
+	"Spread"			"0.0"
+	"TimeFireDelay"			"2.0"
+	"ProjectileType"		"projectile_flare"
+	"HasTeamSkins_Viewmodel"	"1"
+	"UseRapidFireCrits"		"1"
+	"HasTeamSkins_Worldmodel"	"1"
+
+	// Ammo & Clip.
+	"primary_ammo"			"TF_AMMO_SECONDARY"
+	"secondary_ammo"		"None"
+	clip_size			"-1"
+	default_clip			"12"
+
+	// Buckets.
+	"bucket"			"1"
+	"bucket_position"		"0"
+
+
+	// Muzzleflash
+	"MuzzleFlashParticleEffect" 	"muzzle_shotgun"
+
+	"ExplosionSound"		"Default.FlareImpact"
+	"ExplosionEffect"		"flaregun_destroyed"
+	"ExplosionWaterEffect"		"flaregun_destroyed"
+	"ExplosionPlayerEffect"		"flaregun_destroyed"		// this is also in air expolosion - not player
+
+
+	// Animation.
+	"anim_prefix"			"ac"
+
+	// Sounds.
+	// Max of 16 per category (ie. max 16 "single_shot" sounds).
+	SoundData
+	{
+		"single_shot"		"Weapon_FlareGun.Single"
+		"reload"		"Weapon_FlareGun.WorldReload"
+		"empty"			"Weapon_FlareGun.ClipEmpty"	
+		"burst"			"Weapon_FlareGun.SingleCrit"
+		"special2"		"Player.UseDeny"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"file"		"sprites/bucket_pistol"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"weapon_s"
+		{	
+				"file"		"sprites/bucket_pistol"
+				"x"		"0"
+				"y"		"0"
+				"width"		"200"
+				"height"		"128"
+		}
+		"ammo"
+		{
+				"file"		"sprites/a_icons1"
+				"x"			"55"
+				"y"			"60"
+				"width"		"73"
+				"height"	"15"
+		}
+		"crosshair"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"0"
+				"width"		"32"
+				"height"	"32"
+		}
+		"autoaim"
+		{
+				"file"		"sprites/crosshairs"
+				"x"			"0"
+				"y"			"48"
+				"width"		"24"
+				"height"	"24"
+		}
+	}
+}
