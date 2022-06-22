@@ -44,7 +44,7 @@
 "TF_Class_Name_Engineer" 		"エンジニア"
 
 "game_player_joined_game"	"プレイヤー %s1 がゲームに参加しました"
-"game_player_left_game"		"プレイヤー %s1 がゲームを退出しました"
+"game_player_left_game"		"プレイヤー %s1 がゲームを退出しました（%s2）"
 "game_player_joined_team"	"プレイヤー %s1 が %s2 チームに入りました"
 "game_player_joined_team_party_leader"	"プレイヤー %s1 が %s2 に参加しました"
 "game_player_joined_autoteam" "プレイヤー %s1 は自動的に %s2 チームに割り当てられました"
@@ -134,19 +134,23 @@
 "TF_FeignArmed"				"-着用中-"
 
 // Class Selection Screen tips
+// Scout
 "ClassTips_1_Count"			"8"
 "ClassTips_1_1"				"他のクラスよりも速くポイントを奪えるぞ！"
 "ClassTips_1_2"				"空中でダブルジャンプだ！"
 "ClassTips_1_3_MvM"			"== Mann vs. Machine では=="
 "ClassTips_1_6_MvM"			"瞬時に復活！"
+// Sniper
 "ClassTips_2_Count"			"7"
 "ClassTips_2_1"				"ズームイン中は、スナイパーライフルのパワーが上がってより多くのダメージを与えることが可能！"
 "ClassTips_2_2"				"クリティカルヒットにするには頭を狙え！"
 "ClassTips_2_3_MvM"			"== Mann vs. Machine では=="
+// Soldier
 "ClassTips_3_Count"			"7"
 "ClassTips_3_1"				"ロケットランチャーで敵の脚を撃て！"
 "ClassTips_3_2"				"ロケットランチャーを使ってロケットジャンプだ！"
 "ClassTips_3_3_MvM"			"== Mann vs. Machine では=="
+// Demo
 "ClassTips_4_Count"			"7"
 "ClassTips_4_1"				"敵が近づいたら遠隔操作で粘着爆弾を爆発させろ！"
 "ClassTips_4_2"				"粘着爆弾の上に立ち、起爆と同時にジャンプすれば粘着爆弾ジャンプだ！"
@@ -156,6 +160,7 @@
 "ClassTips_5_1"				"チームメイトを回復させてユーバーチャージをいっぱいにしろ！"
 "ClassTips_5_2"				"たまったユーバーチャージを使用し、自分とメディガンの対象を不死身にしろ！"
 "ClassTips_5_3_MvM"			"== Mann vs. Machine では=="
+// Heavy
 "ClassTips_6_Count"			"7"
 "ClassTips_6_1"				"ミニガンを発射せずに銃身を回転させて、接近する敵に備えろ！"
 "ClassTips_6_2_MvM"			"== Mann vs. Machine では=="
@@ -164,6 +169,7 @@
 "ClassTips_7_1"				"コーナーで敵を待ち伏せて襲え！"
 "ClassTips_7_2"				"火炎放射器は相手に近づくほど効果的だ！"
 "ClassTips_7_3_MvM"			"== Mann vs. Machine では=="
+// Spy
 "ClassTips_8_Count"			"8"
 "ClassTips_8_1"				"敵に変装して敵陣に潜入しろ！"
 "ClassTips_8_2"				"透明マントを着て姿を隠せ！"
@@ -1239,10 +1245,7 @@
 "TF_Duel_Desc_Lost"		"勝利数：%wins%\n前回の決闘：%last_target% に敗北\n対戦日：%last_date%"
 "TF_Duel_Desc_Tied"		"勝利数：%wins%\n前回の決闘：%last_target% と引き分け\n対戦日：%last_date%"
 "TF_DuelDialog_Title"	"決闘"
-//------------------------------------------------------------------------------------------------------------------------------
-// WEB STORE
 //
-// Store dropdown labels
 //
 "Store_SortBy"				"並べ替え - 条件:"
 
@@ -2375,7 +2378,8 @@
 
 // Soldier specific
 "Hint_Soldier_rpg_reload"			"'%reload%' を押すと、ロケットランチャーをリロードできます。\n戦闘を離れるたびにリロードしましょう！"
-specific
+
+// Engineer specific
 "Hint_Engineer_use_wrench_onown"	"作成中の装置をレンチでたたくと\n完成を早めることができます！"
 "Hint_Engineer_use_wrench_onother"	"チームメイトが作成中の装置をレンチでたたくと\n完成を早めることができます！"
 "Hint_Engineer_build_sentrygun"		"自陣を守るには、セントリーガンを作ります。\n武器選択の 4 番目のスロットには装置が入ります。"
@@ -4463,6 +4467,7 @@ specific
 
 "ItemTypeDescKillEaterAlt"		"(%s2%s3: %s1)" // maps to s3/s4/s5 above. Example: "(Critical Kills)(): (8129)"
 "ItemTypeDescKillEaterAltv2"	"   %s2%s3: %s1" // maps to s3/s4/s5 above. Example: "(Critical Kills)(): (8129)"
+// s1 is the level number, s2 is the item type. Example: "Tour No. 3 Rocket Launcher"
 "ItemTypeDescCustomLevelString_MapStamp"	"貢献: %s1 - プレイ時間: %s2 時間"	// s1 is the item type, s2 is the number of contributions
 
 "KillEaterEventType_Kills"		"キル数"
@@ -5251,13 +5256,7 @@ specific
 "Attrib_ProjectileSpeed_Increased_shortdesc"	"投射速度 +%s1%"
 "Attrib_Penetration_shortdesc"					"貫通弾"
 "Attrib_HealOnKill_shortdesc"					"キル時にヘルスが +%s1 回復"
-// Heavy
 "Attrib_Penetration_Heavy_shortdesc"			"貫通弾"
-
-// Sniper
-// Spy
-// Soldier
-// Engineer
 "Attrib_SentryFireRate_Increased_shortdesc"		"セントリーガンの発射速度 +%s1%"
 // Medic
 "Attrib_HealRate_Positive_shortdesc"			"回復レート +%s1%"
@@ -5269,9 +5268,6 @@ specific
 "Attrib_WpnBurnDmg_Increased_shortdesc"			"炎上ダメージ +%s1%"
 "Attrib_WpnBurnTime_Increased_shortdesc"		"炎の継続時間 +%s1%"
 "Attrib_AirBlastPushScale_shortdesc"			"エアブラストの抵抗 +%s1%"
-
-// Demo
-// Scout
 "Attrib_MvMChallengesCompletedSummary"			"完了済みチャレンジ: %s1"
 "Attrib_MvMChallengeCompletedDetail"			"完了済み: %s1 %s2"
 
@@ -5905,6 +5901,7 @@ specific
 "Store_Promotion_SpendForGift"		"P.S. ご購入金額（税金は含みません）%s1 ドルごとに、無料のプロモーションアイテムをプレゼント！（期間限定）"
 "Store_Promotion_SpendForGift_Sub"	"*一回の購入で"
 "Store_Promotion_FirstPurchaseGift"	"P.P.S. さらに、商品を問わず、初回ご購入時には %s1 を無料でプレゼント！"
+// "Plus!" here must be the same as "Store_Free_Trial_Plus"
 "Store_Promotion_FirstPurchaseGift_Sub"	"期間限定！"
 "Store_CEOMannCo"			"CEO, Mann Co."
 

@@ -260,6 +260,7 @@
 		"param1"		"string"
 		"team"			"byte"
 		"initiator"		"long" // entity id of the player who initiated the vote
+		"voteidx"		"long"
 	}
 	"vote_changed"
 	{
@@ -269,22 +270,26 @@
 		"vote_option4"		"byte"
 		"vote_option5"		"byte"
 		"potentialVotes"	"byte"
+		"voteidx"		"long"
 	}
 	"vote_passed"
 	{
 		"details"		"string"
 		"param1"		"string"
 		"team"			"byte"
+		"voteidx"		"long"
 	}
 	"vote_failed"
 	{
 		"team"			"byte"
+		"voteidx"		"long"
 	}
 	"vote_cast"
 	{
 		"vote_option"	"byte"  // which option the player voted on
 		"team"			"short"
 		"entityid"		"long"	// entity id of the voter
+		"voteidx"		"long"
 	}
 	"vote_options"
 	{
@@ -294,6 +299,7 @@
 		"option3"		"string"
 		"option4"		"string"
 		"option5"		"string"
+		"voteidx"		"long"
 	}
 
 //////////////////////////////////////////////////////////////////////

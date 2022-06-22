@@ -25,7 +25,6 @@
  B VTFFileHeader_t_DataDescInit::g_DataMapHolder
  B achievementmgr
  B bSteamCommunityFriendsVersion
- B binds_per_command
  B colorcorrection
  B commentary_firstrun
  B cvar
@@ -168,11 +167,6 @@
  B vgui::g_pStudioRender
  B vgui_cache_res_files
  B vgui_message_dialog_modal
- B x360_audio_english
- B x360_resolution_height
- B x360_resolution_interlaced
- B x360_resolution_widescreen_mode
- B x360_resolution_width
  B xboxsystem
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
@@ -274,11 +268,6 @@
  D CCommentaryItemPanel::GetMessageMap()::s_pMap
  D CCommentaryItemPanel::KB_ChainToMap()::chained
  D CCommentaryItemPanel::PanelMessageFunc_OnPanelSelected::InitVar()::bAdded
- D CControllerDialog::ChainToAnimationMap()::chained
- D CControllerDialog::ChainToMap()::chained
- D CControllerDialog::GetKBMap()::s_pMap
- D CControllerDialog::GetMessageMap()::s_pMap
- D CControllerDialog::KB_ChainToMap()::chained
  D CControllerMap::ChainToAnimationMap()::chained
  D CControllerMap::ChainToMap()::chained
  D CControllerMap::GetKBMap()::s_pMap
@@ -461,11 +450,6 @@
  D COptionsDialog::GetMessageMap()::s_pMap
  D COptionsDialog::KB_ChainToMap()::chained
  D COptionsDialog::PanelMessageFunc_OnGameUIHidden::InitVar()::bAdded
- D COptionsDialogXbox::ChainToAnimationMap()::chained
- D COptionsDialogXbox::ChainToMap()::chained
- D COptionsDialogXbox::GetKBMap()::s_pMap
- D COptionsDialogXbox::GetMessageMap()::s_pMap
- D COptionsDialogXbox::KB_ChainToMap()::chained
  D COptionsItem::ChainToAnimationMap()::chained
  D COptionsItem::ChainToMap()::chained
  D COptionsItem::GetKBMap()::s_pMap
@@ -747,7 +731,6 @@
  D VTT for CCommentaryDialog
  D VTT for CCommentaryExplanationDialog
  D VTT for CCommentaryItemPanel
- D VTT for CControllerDialog
  D VTT for CControllerMap
  D VTT for CCreateMultiplayerGameBotPage
  D VTT for CCreateMultiplayerGameDialog
@@ -782,7 +765,6 @@
  D VTT for CNewGamePlayButton
  D VTT for CNonFocusableMenu
  D VTT for COptionsDialog
- D VTT for COptionsDialogXbox
  D VTT for COptionsItem
  D VTT for COptionsSubAudio
  D VTT for COptionsSubAudioThirdPartyCreditsDlg
@@ -828,7 +810,6 @@
  D VTT for VControlsListPanel
  D VTT for VScrollBarReversedButtons
  D VTT for mpcontrol_t
- D VTT for vgui::AnalogBar
  D VTT for vgui::AnimatingImagePanel
  D VTT for vgui::AnimationController
  D VTT for vgui::BaseInputDialog
@@ -845,9 +826,8 @@
  D VTT for vgui::ComboBox
  D VTT for vgui::ComboBoxButton
  D VTT for vgui::ContextLabel
- D VTT for vgui::ContinuousAnalogBar
  D VTT for vgui::ContinuousProgressBar
- D VTT for vgui::CvarToggleCheckButton<ConVarRef>
+ D VTT for vgui::CvarToggleCheckButton<UIConVarRef>
  D VTT for vgui::Divider
  D VTT for vgui::EditablePanel
  D VTT for vgui::ExpandButton
@@ -911,13 +891,11 @@
  D construction vtable for CMenuItem-in-COptionsItem
  D construction vtable for CMenuItem-in-CPlayerItem
  D construction vtable for CMenuItem-in-CSectionedItem
- D construction vtable for COptionsDialogXbox-in-CControllerDialog
  D construction vtable for CSaveGameBrowserDialog-in-CLoadGameDialogXbox
  D construction vtable for CSaveGameBrowserDialog-in-CSaveGameDialogXbox
  D construction vtable for CrosshairImagePanelBase-in-CrosshairImagePanelAdvanced
  D construction vtable for CrosshairImagePanelBase-in-CrosshairImagePanelCS
  D construction vtable for CrosshairImagePanelBase-in-CrosshairImagePanelSimple
- D construction vtable for vgui::AnalogBar-in-vgui::ContinuousAnalogBar
  D construction vtable for vgui::BaseInputDialog-in-vgui::InputDialog
  D construction vtable for vgui::Button-in-CBackgroundMenuButton
  D construction vtable for vgui::Button-in-CCvarNegateCheckButton
@@ -927,7 +905,7 @@
  D construction vtable for vgui::Button-in-ColumnButton
  D construction vtable for vgui::Button-in-vgui::CheckButton
  D construction vtable for vgui::Button-in-vgui::ComboBoxButton
- D construction vtable for vgui::Button-in-vgui::CvarToggleCheckButton<ConVarRef>
+ D construction vtable for vgui::Button-in-vgui::CvarToggleCheckButton<UIConVarRef>
  D construction vtable for vgui::Button-in-vgui::ExpandButton
  D construction vtable for vgui::Button-in-vgui::FrameButton
  D construction vtable for vgui::Button-in-vgui::FrameSystemButton
@@ -939,7 +917,7 @@
  D construction vtable for vgui::CConsoleDialog-in-CGameConsoleDialog
  D construction vtable for vgui::CheckButton-in-CCvarNegateCheckButton
  D construction vtable for vgui::CheckButton-in-CCvarToggleCheckButton
- D construction vtable for vgui::CheckButton-in-vgui::CvarToggleCheckButton<ConVarRef>
+ D construction vtable for vgui::CheckButton-in-vgui::CvarToggleCheckButton<UIConVarRef>
  D construction vtable for vgui::ComboBox-in-CBuildModeNavCombo
  D construction vtable for vgui::ComboBox-in-CLabeledCommandComboBox
  D construction vtable for vgui::EditablePanel-in-CAchievementDialogItemPanel
@@ -954,7 +932,6 @@
  D construction vtable for vgui::EditablePanel-in-CCommentaryDialog
  D construction vtable for vgui::EditablePanel-in-CCommentaryExplanationDialog
  D construction vtable for vgui::EditablePanel-in-CCommentaryItemPanel
- D construction vtable for vgui::EditablePanel-in-CControllerDialog
  D construction vtable for vgui::EditablePanel-in-CCreateMultiplayerGameBotPage
  D construction vtable for vgui::EditablePanel-in-CCreateMultiplayerGameDialog
  D construction vtable for vgui::EditablePanel-in-CCreateMultiplayerGameGameplayPage
@@ -976,7 +953,6 @@
  D construction vtable for vgui::EditablePanel-in-CMultiplayerAdvancedDialog
  D construction vtable for vgui::EditablePanel-in-CNewGameDialog
  D construction vtable for vgui::EditablePanel-in-COptionsDialog
- D construction vtable for vgui::EditablePanel-in-COptionsDialogXbox
  D construction vtable for vgui::EditablePanel-in-COptionsItem
  D construction vtable for vgui::EditablePanel-in-COptionsSubAudio
  D construction vtable for vgui::EditablePanel-in-COptionsSubAudioThirdPartyCreditsDlg
@@ -1028,7 +1004,6 @@
  D construction vtable for vgui::Frame-in-CBonusMapsDialog
  D construction vtable for vgui::Frame-in-CCommentaryDialog
  D construction vtable for vgui::Frame-in-CCommentaryExplanationDialog
- D construction vtable for vgui::Frame-in-CControllerDialog
  D construction vtable for vgui::Frame-in-CCreateMultiplayerGameDialog
  D construction vtable for vgui::Frame-in-CGameConsoleDialog
  D construction vtable for vgui::Frame-in-CGammaDialog
@@ -1042,7 +1017,6 @@
  D construction vtable for vgui::Frame-in-CMultiplayerAdvancedDialog
  D construction vtable for vgui::Frame-in-CNewGameDialog
  D construction vtable for vgui::Frame-in-COptionsDialog
- D construction vtable for vgui::Frame-in-COptionsDialogXbox
  D construction vtable for vgui::Frame-in-COptionsSubAudioThirdPartyCreditsDlg
  D construction vtable for vgui::Frame-in-COptionsSubKeyboardAdvancedDlg
  D construction vtable for vgui::Frame-in-COptionsSubVideoAdvancedDlg
@@ -1084,7 +1058,7 @@
  D construction vtable for vgui::Label-in-vgui::CheckButton
  D construction vtable for vgui::Label-in-vgui::ComboBoxButton
  D construction vtable for vgui::Label-in-vgui::ContextLabel
- D construction vtable for vgui::Label-in-vgui::CvarToggleCheckButton<ConVarRef>
+ D construction vtable for vgui::Label-in-vgui::CvarToggleCheckButton<UIConVarRef>
  D construction vtable for vgui::Label-in-vgui::ExpandButton
  D construction vtable for vgui::Label-in-vgui::FrameButton
  D construction vtable for vgui::Label-in-vgui::FrameSystemButton
@@ -1120,7 +1094,6 @@
  D construction vtable for vgui::Panel-in-CCommentaryDialog
  D construction vtable for vgui::Panel-in-CCommentaryExplanationDialog
  D construction vtable for vgui::Panel-in-CCommentaryItemPanel
- D construction vtable for vgui::Panel-in-CControllerDialog
  D construction vtable for vgui::Panel-in-CControllerMap
  D construction vtable for vgui::Panel-in-CCreateMultiplayerGameBotPage
  D construction vtable for vgui::Panel-in-CCreateMultiplayerGameDialog
@@ -1155,7 +1128,6 @@
  D construction vtable for vgui::Panel-in-CNewGamePlayButton
  D construction vtable for vgui::Panel-in-CNonFocusableMenu
  D construction vtable for vgui::Panel-in-COptionsDialog
- D construction vtable for vgui::Panel-in-COptionsDialogXbox
  D construction vtable for vgui::Panel-in-COptionsItem
  D construction vtable for vgui::Panel-in-COptionsSubAudio
  D construction vtable for vgui::Panel-in-COptionsSubAudioThirdPartyCreditsDlg
@@ -1201,7 +1173,6 @@
  D construction vtable for vgui::Panel-in-VControlsListPanel
  D construction vtable for vgui::Panel-in-VScrollBarReversedButtons
  D construction vtable for vgui::Panel-in-mpcontrol_t
- D construction vtable for vgui::Panel-in-vgui::AnalogBar
  D construction vtable for vgui::Panel-in-vgui::AnimatingImagePanel
  D construction vtable for vgui::Panel-in-vgui::AnimationController
  D construction vtable for vgui::Panel-in-vgui::BaseInputDialog
@@ -1218,9 +1189,8 @@
  D construction vtable for vgui::Panel-in-vgui::ComboBox
  D construction vtable for vgui::Panel-in-vgui::ComboBoxButton
  D construction vtable for vgui::Panel-in-vgui::ContextLabel
- D construction vtable for vgui::Panel-in-vgui::ContinuousAnalogBar
  D construction vtable for vgui::Panel-in-vgui::ContinuousProgressBar
- D construction vtable for vgui::Panel-in-vgui::CvarToggleCheckButton<ConVarRef>
+ D construction vtable for vgui::Panel-in-vgui::CvarToggleCheckButton<UIConVarRef>
  D construction vtable for vgui::Panel-in-vgui::Divider
  D construction vtable for vgui::Panel-in-vgui::EditablePanel
  D construction vtable for vgui::Panel-in-vgui::ExpandButton
@@ -1297,7 +1267,7 @@
  D construction vtable for vgui::ToggleButton-in-CCvarNegateCheckButton
  D construction vtable for vgui::ToggleButton-in-CCvarToggleCheckButton
  D construction vtable for vgui::ToggleButton-in-vgui::CheckButton
- D construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<ConVarRef>
+ D construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<UIConVarRef>
  D construction vtable for vgui::ToggleButton-in-vgui::ExpandButton
  D construction vtable for vgui::ToggleButton-in-vgui::RadioButton
  D g_DirectXLevels
@@ -1331,8 +1301,6 @@
  D guard variable for CCommentaryExplanationDialog::GetMessageMap()::s_pMap
  D guard variable for CCommentaryItemPanel::GetKBMap()::s_pMap
  D guard variable for CCommentaryItemPanel::GetMessageMap()::s_pMap
- D guard variable for CControllerDialog::GetKBMap()::s_pMap
- D guard variable for CControllerDialog::GetMessageMap()::s_pMap
  D guard variable for CControllerMap::GetKBMap()::s_pMap
  D guard variable for CControllerMap::GetMessageMap()::s_pMap
  D guard variable for CCreateMultiplayerGameBotPage::GetKBMap()::s_pMap
@@ -1397,8 +1365,6 @@
  D guard variable for CNonFocusableMenu::GetMessageMap()::s_pMap
  D guard variable for COptionsDialog::GetKBMap()::s_pMap
  D guard variable for COptionsDialog::GetMessageMap()::s_pMap
- D guard variable for COptionsDialogXbox::GetKBMap()::s_pMap
- D guard variable for COptionsDialogXbox::GetMessageMap()::s_pMap
  D guard variable for COptionsItem::GetKBMap()::s_pMap
  D guard variable for COptionsItem::GetMessageMap()::s_pMap
  D guard variable for COptionsSubAudio::GetKBMap()::s_pMap
@@ -1475,8 +1441,6 @@
  D guard variable for CrosshairImagePanelCS::GetMessageMap()::s_pMap
  D guard variable for CrosshairImagePanelSimple::GetKBMap()::s_pMap
  D guard variable for CrosshairImagePanelSimple::GetMessageMap()::s_pMap
- D guard variable for vgui::AnalogBar::GetKBMap()::s_pMap
- D guard variable for vgui::AnalogBar::GetMessageMap()::s_pMap
  D guard variable for vgui::AnimatingImagePanel::GetKBMap()::s_pMap
  D guard variable for vgui::AnimatingImagePanel::GetMessageMap()::s_pMap
  D guard variable for vgui::AnimationController::GetKBMap()::s_pMap
@@ -1505,12 +1469,10 @@
  D guard variable for vgui::ComboBox::GetMessageMap()::s_pMap
  D guard variable for vgui::ContextLabel::GetKBMap()::s_pMap
  D guard variable for vgui::ContextLabel::GetMessageMap()::s_pMap
- D guard variable for vgui::ContinuousAnalogBar::GetKBMap()::s_pMap
- D guard variable for vgui::ContinuousAnalogBar::GetMessageMap()::s_pMap
  D guard variable for vgui::ContinuousProgressBar::GetKBMap()::s_pMap
  D guard variable for vgui::ContinuousProgressBar::GetMessageMap()::s_pMap
- D guard variable for vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()::s_pMap
- D guard variable for vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()::s_pMap
+ D guard variable for vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()::s_pMap
+ D guard variable for vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()::s_pMap
  D guard variable for vgui::Divider::GetKBMap()::s_pMap
  D guard variable for vgui::Divider::GetMessageMap()::s_pMap
  D guard variable for vgui::EditablePanel::GetKBMap()::s_pMap
@@ -1623,7 +1585,6 @@
  D typeinfo for CCommentaryDialog
  D typeinfo for CCommentaryExplanationDialog
  D typeinfo for CCommentaryItemPanel
- D typeinfo for CControllerDialog
  D typeinfo for CControllerMap
  D typeinfo for CCreateMultiplayerGameBotPage
  D typeinfo for CCreateMultiplayerGameDialog
@@ -1668,7 +1629,6 @@
  D typeinfo for CNewGamePlayButton
  D typeinfo for CNonFocusableMenu
  D typeinfo for COptionsDialog
- D typeinfo for COptionsDialogXbox
  D typeinfo for COptionsItem
  D typeinfo for COptionsSubAudio
  D typeinfo for COptionsSubAudioThirdPartyCreditsDlg
@@ -1791,7 +1751,6 @@
  D typeinfo for std::__1::__basic_string_common<true>
  D typeinfo for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >
  D typeinfo for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*
- D typeinfo for vgui::AnalogBar
  D typeinfo for vgui::AnimatingImagePanel
  D typeinfo for vgui::AnimationController
  D typeinfo for vgui::BaseInputDialog
@@ -1811,9 +1770,8 @@
  D typeinfo for vgui::ComboBox
  D typeinfo for vgui::ComboBoxButton
  D typeinfo for vgui::ContextLabel
- D typeinfo for vgui::ContinuousAnalogBar
  D typeinfo for vgui::ContinuousProgressBar
- D typeinfo for vgui::CvarToggleCheckButton<ConVarRef>
+ D typeinfo for vgui::CvarToggleCheckButton<UIConVarRef>
  D typeinfo for vgui::Divider
  D typeinfo for vgui::EditablePanel
  D typeinfo for vgui::ExpandButton
@@ -1872,13 +1830,6 @@
  D typeinfo for vgui::TreeViewSubPanel
  D typeinfo for vgui::URLButton
  D typeinfo for vgui::URLLabel
- D vgui::AnalogBar::ChainToAnimationMap()::chained
- D vgui::AnalogBar::ChainToMap()::chained
- D vgui::AnalogBar::GetKBMap()::s_pMap
- D vgui::AnalogBar::GetMessageMap()::s_pMap
- D vgui::AnalogBar::KB_ChainToMap()::chained
- D vgui::AnalogBar::PanelMessageFunc_OnDialogVariablesChanged::InitVar()::bAdded
- D vgui::AnalogBar::PanelMessageFunc_SetAnalogValue::InitVar()::bAdded
  D vgui::AnimatingImagePanel::ChainToAnimationMap()::chained
  D vgui::AnimatingImagePanel::ChainToMap()::chained
  D vgui::AnimatingImagePanel::GetKBMap()::s_pMap
@@ -1983,24 +1934,19 @@
  D vgui::ContextLabel::GetKBMap()::s_pMap
  D vgui::ContextLabel::GetMessageMap()::s_pMap
  D vgui::ContextLabel::KB_ChainToMap()::chained
- D vgui::ContinuousAnalogBar::ChainToAnimationMap()::chained
- D vgui::ContinuousAnalogBar::ChainToMap()::chained
- D vgui::ContinuousAnalogBar::GetKBMap()::s_pMap
- D vgui::ContinuousAnalogBar::GetMessageMap()::s_pMap
- D vgui::ContinuousAnalogBar::KB_ChainToMap()::chained
  D vgui::ContinuousProgressBar::ChainToAnimationMap()::chained
  D vgui::ContinuousProgressBar::ChainToMap()::chained
  D vgui::ContinuousProgressBar::GetKBMap()::s_pMap
  D vgui::ContinuousProgressBar::GetMessageMap()::s_pMap
  D vgui::ContinuousProgressBar::KB_ChainToMap()::chained
  D vgui::ContinuousProgressBar::PanelMessageFunc_SetPrevProgress::InitVar()::bAdded
- D vgui::CvarToggleCheckButton<ConVarRef>::ChainToAnimationMap()::chained
- D vgui::CvarToggleCheckButton<ConVarRef>::ChainToMap()::chained
- D vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()::s_pMap
- D vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()::s_pMap
- D vgui::CvarToggleCheckButton<ConVarRef>::KB_ChainToMap()::chained
- D vgui::CvarToggleCheckButton<ConVarRef>::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
- D vgui::CvarToggleCheckButton<ConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
+ D vgui::CvarToggleCheckButton<UIConVarRef>::ChainToAnimationMap()::chained
+ D vgui::CvarToggleCheckButton<UIConVarRef>::ChainToMap()::chained
+ D vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()::s_pMap
+ D vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()::s_pMap
+ D vgui::CvarToggleCheckButton<UIConVarRef>::KB_ChainToMap()::chained
+ D vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
+ D vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
  D vgui::Divider::ChainToAnimationMap()::chained
  D vgui::Divider::ChainToMap()::chained
  D vgui::Divider::GetKBMap()::s_pMap
@@ -2386,7 +2332,6 @@
  D vtable for CCommentaryDialog
  D vtable for CCommentaryExplanationDialog
  D vtable for CCommentaryItemPanel
- D vtable for CControllerDialog
  D vtable for CControllerMap
  D vtable for CCreateMultiplayerGameBotPage
  D vtable for CCreateMultiplayerGameDialog
@@ -2431,7 +2376,6 @@
  D vtable for CNewGamePlayButton
  D vtable for CNonFocusableMenu
  D vtable for COptionsDialog
- D vtable for COptionsDialogXbox
  D vtable for COptionsItem
  D vtable for COptionsSubAudio
  D vtable for COptionsSubAudioThirdPartyCreditsDlg
@@ -2518,7 +2462,6 @@
  D vtable for VControlsListPanel
  D vtable for VScrollBarReversedButtons
  D vtable for mpcontrol_t
- D vtable for vgui::AnalogBar
  D vtable for vgui::AnimatingImagePanel
  D vtable for vgui::AnimationController
  D vtable for vgui::BaseInputDialog
@@ -2538,9 +2481,8 @@
  D vtable for vgui::ComboBox
  D vtable for vgui::ComboBoxButton
  D vtable for vgui::ContextLabel
- D vtable for vgui::ContinuousAnalogBar
  D vtable for vgui::ContinuousProgressBar
- D vtable for vgui::CvarToggleCheckButton<ConVarRef>
+ D vtable for vgui::CvarToggleCheckButton<UIConVarRef>
  D vtable for vgui::Divider
  D vtable for vgui::EditablePanel
  D vtable for vgui::ExpandButton
@@ -2642,7 +2584,6 @@
  R typeinfo name for CCommentaryDialog
  R typeinfo name for CCommentaryExplanationDialog
  R typeinfo name for CCommentaryItemPanel
- R typeinfo name for CControllerDialog
  R typeinfo name for CControllerMap
  R typeinfo name for CCreateMultiplayerGameBotPage
  R typeinfo name for CCreateMultiplayerGameDialog
@@ -2687,7 +2628,6 @@
  R typeinfo name for CNewGamePlayButton
  R typeinfo name for CNonFocusableMenu
  R typeinfo name for COptionsDialog
- R typeinfo name for COptionsDialogXbox
  R typeinfo name for COptionsItem
  R typeinfo name for COptionsSubAudio
  R typeinfo name for COptionsSubAudioThirdPartyCreditsDlg
@@ -2810,7 +2750,6 @@
  R typeinfo name for std::__1::__basic_string_common<true>
  R typeinfo name for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >
  R typeinfo name for std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >*
- R typeinfo name for vgui::AnalogBar
  R typeinfo name for vgui::AnimatingImagePanel
  R typeinfo name for vgui::AnimationController
  R typeinfo name for vgui::BaseInputDialog
@@ -2830,9 +2769,8 @@
  R typeinfo name for vgui::ComboBox
  R typeinfo name for vgui::ComboBoxButton
  R typeinfo name for vgui::ContextLabel
- R typeinfo name for vgui::ContinuousAnalogBar
  R typeinfo name for vgui::ContinuousProgressBar
- R typeinfo name for vgui::CvarToggleCheckButton<ConVarRef>
+ R typeinfo name for vgui::CvarToggleCheckButton<UIConVarRef>
  R typeinfo name for vgui::Divider
  R typeinfo name for vgui::EditablePanel
  R typeinfo name for vgui::ExpandButton
@@ -2900,7 +2838,6 @@
  SteamInternal_ContextInit
  SteamInternal_CreateInterface
  SteamInternal_FindOrCreateUserInterface
- T ActionsAreTheSame(char const*, char const*)
  T BasePanel()
  T Bias(float, float)
  T BlankImage::Evict()
@@ -2989,7 +2926,6 @@
  T CBasePanel::GetAnimMap()
  T CBasePanel::GetConsoleControlSettings()
  T CBasePanel::GetKBMap()
- T CBasePanel::GetMatchmakingBasePanel()
  T CBasePanel::GetMenuAlpha()
  T CBasePanel::GetMessageMap()
  T CBasePanel::GetPanelClassName()
@@ -3009,7 +2945,6 @@
  T CBasePanel::OnOpenBenchmarkDialog()
  T CBasePanel::OnOpenBonusMapsDialog()
  T CBasePanel::OnOpenCSAchievementsDialog()
- T CBasePanel::OnOpenControllerDialog()
  T CBasePanel::OnOpenCreateMultiplayerGameDialog()
  T CBasePanel::OnOpenLoadCommentaryDialog()
  T CBasePanel::OnOpenLoadGameDialog()
@@ -3017,7 +2952,6 @@
  T CBasePanel::OnOpenMatchmakingBasePanel()
  T CBasePanel::OnOpenNewGameDialog(char const*)
  T CBasePanel::OnOpenOptionsDialog()
- T CBasePanel::OnOpenOptionsDialog_Xbox()
  T CBasePanel::OnOpenPlayerListDialog()
  T CBasePanel::OnOpenQuitConfirmationDialog()
  T CBasePanel::OnOpenSaveGameDialog()
@@ -3205,13 +3139,6 @@
  T CCommentaryItemPanel::OnMousePressed(ButtonCode_t)
  T CCommentaryItemPanel::OnPanelSelected(int)
  T CCommentaryItemPanel::~CCommentaryItemPanel()
- T CControllerDialog::ApplySchemeSettings(vgui::IScheme*)
- T CControllerDialog::CControllerDialog(vgui::Panel*)
- T CControllerDialog::GetAnimMap()
- T CControllerDialog::GetKBMap()
- T CControllerDialog::GetMessageMap()
- T CControllerDialog::GetPanelClassName()
- T CControllerDialog::~CControllerDialog()
  T CControllerMap::ApplySettings(KeyValues*)
  T CControllerMap::CControllerMap(vgui::Panel*, char const*)
  T CControllerMap::GetAnimMap()
@@ -3669,7 +3596,6 @@
  T CMatchmakingBasePanel::SessionSearchResult(int, void*, _XSESSION_SEARCHRESULT*, int)
  T CMatchmakingBasePanel::SetFooterButtonVisible(char const*, bool)
  T CMatchmakingBasePanel::SetFooterButtons(CBaseDialog*, KeyValues*, int)
- T CMatchmakingBasePanel::ShowFooter(bool)
  T CMatchmakingBasePanel::SystemNotification(int)
  T CMatchmakingBasePanel::UpdatePlayerInfo(unsigned long long, char const*, int, unsigned char, int, bool)
  T CMatchmakingBasePanel::~CMatchmakingBasePanel()
@@ -3798,33 +3724,6 @@
  T COptionsDialog::OnGameUIHidden()
  T COptionsDialog::OnKeyCodePressed(ButtonCode_t)
  T COptionsDialog::~COptionsDialog()
- T COptionsDialogXbox::ActivateSelection()
- T COptionsDialogXbox::ApplySchemeSettings(vgui::IScheme*)
- T COptionsDialogXbox::ApplySettings(KeyValues*)
- T COptionsDialogXbox::COptionsDialogXbox(vgui::Panel*, bool)
- T COptionsDialogXbox::ChangeSelection(int)
- T COptionsDialogXbox::ChangeValue(float)
- T COptionsDialogXbox::FillInDefaultBindings()
- T COptionsDialogXbox::GetAnimMap()
- T COptionsDialogXbox::GetChoiceFromConvar(OptionData_t*)
- T COptionsDialogXbox::GetKBMap()
- T COptionsDialogXbox::GetMessageMap()
- T COptionsDialogXbox::GetPanelClassName()
- T COptionsDialogXbox::HandleBindKeyCodePressed(ButtonCode_t)
- T COptionsDialogXbox::HandleInactiveKeyCodePressed(ButtonCode_t)
- T COptionsDialogXbox::OnClose()
- T COptionsDialogXbox::OnCommand(char const*)
- T COptionsDialogXbox::OnKeyCodePressed(ButtonCode_t)
- T COptionsDialogXbox::OnKeyCodeReleased(ButtonCode_t)
- T COptionsDialogXbox::OnThink()
- T COptionsDialogXbox::ReadOptionsFromFile(char const*)
- T COptionsDialogXbox::ShouldSkipOption(KeyValues*)
- T COptionsDialogXbox::UnbindOption(OptionData_t*, int)
- T COptionsDialogXbox::UpdateBind(OptionData_t*, int, ButtonCode_t, ButtonCode_t)
- T COptionsDialogXbox::UpdateFooter()
- T COptionsDialogXbox::UpdateScroll()
- T COptionsDialogXbox::UpdateValue(OptionData_t*, int)
- T COptionsDialogXbox::~COptionsDialogXbox()
  T COptionsItem::AddOption(char const*, sessionProperty_t const&)
  T COptionsItem::ApplySchemeSettings(vgui::IScheme*)
  T COptionsItem::ApplySettings(KeyValues*)
@@ -4521,9 +4420,6 @@
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::AddToTail(KeyValues* const&)
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
- T CUtlVector<OptionChoiceData_t, CUtlMemory<OptionChoiceData_t, int> >::AddToTail()
- T CUtlVector<OptionChoiceData_t, CUtlMemory<OptionChoiceData_t, int> >::~CUtlVector()
- T CUtlVector<OptionData_t*, CUtlMemory<OptionData_t*, int> >::~CUtlVector()
  T CUtlVector<PanelAnimationMapEntry, CUtlMemory<PanelAnimationMapEntry, int> >::~CUtlVector()
  T CUtlVector<SaveGameDescription_t, CUtlMemory<SaveGameDescription_t, int> >::~CUtlVector()
  T CUtlVector<char const*, CUtlMemory<char const*, int> >::~CUtlVector()
@@ -4664,7 +4560,6 @@
  T ConVar::~ConVar()
  T ConVarRef::ConVarRef(char const*)
  T ConVarRef::ConVarRef(char const*, bool)
- T ConVarRef::Init(char const*, bool)
  T ConVarRef::IsValid() const
  T ConVar_Register(int, IConCommandBaseAccessor*)
  T ConVar_Unregister()
@@ -4951,7 +4846,6 @@
  T KeyValues::GetBool(char const*, bool, bool*)
  T KeyValues::GetColor(char const*)
  T KeyValues::GetDataType(char const*)
- T KeyValues::GetFirstTrueSubKey()
  T KeyValues::GetFloat(char const*, float)
  T KeyValues::GetInt(char const*, int)
  T KeyValues::GetName() const
@@ -5004,7 +4898,6 @@
  T ModInfo()
  T OpenCommentaryDialog()
  T OpenLoadCommentaryDialog()
- T OptionsDataContainer::~OptionsDataContainer()
  T ParseFileInternal(char const*, char*, bool*, characterset_t*, unsigned long)
  T ParseTokenFromString(char const**)
  T PchLanguageToELanguage(char const*, ELanguage)
@@ -5017,7 +4910,6 @@
  T ScrollBar_Horizontal_Factory()
  T ScrollBar_Vertical_Factory()
  T SetBooleanStatus(KeyValues*, char const*, char const*, char const*, bool)
- T SortByPriority(OptionData_t* const*, OptionData_t* const*)
  T SteamInternal_Init_SteamAppList(ISteamAppList**)
  T SteamInternal_Init_SteamApps(ISteamApps**)
  T SteamInternal_Init_SteamClient(ISteamClient**)
@@ -5063,8 +4955,11 @@
  T TabCatchingTextEntry::OnKeyCodeTyped(ButtonCode_t)
  T TabCatchingTextEntry::OnKillFocus()
  T TabCatchingTextEntry::~TabCatchingTextEntry()
+ T UIConVarRef::Init(IVEngineClient*, char const*, bool)
+ T UIConVarRef::SetValue(bool)
+ T UIConVarRef::SetValue(float)
+ T UIConVarRef::UIConVarRef(IVEngineClient*, char const*, bool)
  T URLLabel_Factory()
- T UTIL_Parse(char const*, char*, int)
  T UTIL_StripInvalidCharacters(char*, int)
  T UTIL_va(char*, ...)
  T UpdateChallengeBest(KeyValues*, BonusMapChallenge_t const&)
@@ -5124,6 +5019,7 @@
  T float16::ConvertFloatTo16bits(float)
  T int CUtlSortVector<IAchievement*, CAchievementsLess, CUtlVector<IAchievement*, CUtlMemory<IAchievement*, int> > >::FindLessOrEqual<IAchievement*>(IAchievement* const&, bool*) const
  T int CUtlSortVector<vgui::SortedPanel_t, vgui::CSortedPanelYLess, CUtlVector<vgui::SortedPanel_t, CUtlMemory<vgui::SortedPanel_t, int> > >::FindLessOrEqual<vgui::SortedPanel_t>(vgui::SortedPanel_t const&, bool*) const
+ T int V_sprintf_safe<256ul>(char (&) [256ul], char const*, ...)
  T int V_sprintf_safe<64ul>(char (&) [64ul], char const*, ...)
  T int V_swprintf_safe<256ul>(wchar_t (&) [256ul], wchar_t const*, ...)
  T int V_swprintf_safe<64ul>(wchar_t (&) [64ul], wchar_t const*, ...)
@@ -5582,24 +5478,6 @@
  T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > CryptoPP::IntToString<unsigned long>(unsigned long, unsigned int)
  T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > std::__1::operator+<char, std::__1::char_traits<char>, std::__1::allocator<char> >(char const*, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
  T std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > std::__1::operator+<char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, char const*)
- T vgui::AnalogBar::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
- T vgui::AnalogBar::AnalogBar(vgui::Panel*, char const*)
- T vgui::AnalogBar::ApplySchemeSettings(vgui::IScheme*)
- T vgui::AnalogBar::ApplySettings(KeyValues*)
- T vgui::AnalogBar::GetAnimMap()
- T vgui::AnalogBar::GetDescription()
- T vgui::AnalogBar::GetKBMap()
- T vgui::AnalogBar::GetMessageMap()
- T vgui::AnalogBar::GetPanelClassName()
- T vgui::AnalogBar::GetSettings(KeyValues*)
- T vgui::AnalogBar::GetTotalSegmentCount()
- T vgui::AnalogBar::OnDialogVariablesChanged(KeyValues*)
- T vgui::AnalogBar::Paint()
- T vgui::AnalogBar::PaintBackground()
- T vgui::AnalogBar::PaintSegment(int&, int&, int, int, Color, bool)
- T vgui::AnalogBar::SetAnalogValue(float)
- T vgui::AnalogBar::SetSegmentInfo(int, int)
- T vgui::AnalogBar::~AnalogBar()
  T vgui::AnimatingImagePanel::AddImage(vgui::IImage*)
  T vgui::AnimatingImagePanel::AnimatingImagePanel(vgui::Panel*, char const*)
  T vgui::AnimatingImagePanel::ApplySettings(KeyValues*)
@@ -6026,13 +5904,6 @@
  T vgui::ContextLabel::OnMousePressed(ButtonCode_t)
  T vgui::ContextLabel::OnMouseReleased(ButtonCode_t)
  T vgui::ContextLabel::~ContextLabel()
- T vgui::ContinuousAnalogBar::ContinuousAnalogBar(vgui::Panel*, char const*)
- T vgui::ContinuousAnalogBar::GetAnimMap()
- T vgui::ContinuousAnalogBar::GetKBMap()
- T vgui::ContinuousAnalogBar::GetMessageMap()
- T vgui::ContinuousAnalogBar::GetPanelClassName()
- T vgui::ContinuousAnalogBar::Paint()
- T vgui::ContinuousAnalogBar::~ContinuousAnalogBar()
  T vgui::ContinuousProgressBar::ContinuousProgressBar(vgui::Panel*, char const*)
  T vgui::ContinuousProgressBar::GetAnimMap()
  T vgui::ContinuousProgressBar::GetKBMap()
@@ -6041,18 +5912,18 @@
  T vgui::ContinuousProgressBar::Paint()
  T vgui::ContinuousProgressBar::SetPrevProgress(float)
  T vgui::ContinuousProgressBar::~ContinuousProgressBar()
- T vgui::CvarToggleCheckButton<ConVarRef>::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
- T vgui::CvarToggleCheckButton<ConVarRef>::ApplySettings(KeyValues*)
- T vgui::CvarToggleCheckButton<ConVarRef>::CvarToggleCheckButton(vgui::Panel*, char const*, char const*, char const*, bool)
- T vgui::CvarToggleCheckButton<ConVarRef>::GetAnimMap()
- T vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()
- T vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()
- T vgui::CvarToggleCheckButton<ConVarRef>::GetPanelClassName()
- T vgui::CvarToggleCheckButton<ConVarRef>::OnApplyChanges()
- T vgui::CvarToggleCheckButton<ConVarRef>::OnButtonChecked()
- T vgui::CvarToggleCheckButton<ConVarRef>::Paint()
- T vgui::CvarToggleCheckButton<ConVarRef>::SetSelected(bool)
- T vgui::CvarToggleCheckButton<ConVarRef>::~CvarToggleCheckButton()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
+ T vgui::CvarToggleCheckButton<UIConVarRef>::ApplySettings(KeyValues*)
+ T vgui::CvarToggleCheckButton<UIConVarRef>::CvarToggleCheckButton(vgui::Panel*, char const*, char const*, char const*, bool)
+ T vgui::CvarToggleCheckButton<UIConVarRef>::GetAnimMap()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::GetPanelClassName()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::OnApplyChanges()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::OnButtonChecked()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::Paint()
+ T vgui::CvarToggleCheckButton<UIConVarRef>::SetSelected(bool)
+ T vgui::CvarToggleCheckButton<UIConVarRef>::~CvarToggleCheckButton()
  T vgui::Dar<unsigned long>::AddElement(unsigned long)
  T vgui::Divider::ApplySchemeSettings(vgui::IScheme*)
  T vgui::Divider::Divider(vgui::Panel*, char const*)
@@ -8019,7 +7890,6 @@
  b datamap_t* DataMapInit<VTFFileHeader_t>(VTFFileHeader_t*)::nameHolder
  b f05
  b f3
- b g_AnalogBar_Helper
  b g_AnimatingImagePanel_Helper
  b g_AnimationPropertyConverters
  b g_BreakSet
@@ -8037,7 +7907,6 @@
  b g_CircularProgressBar_Helper
  b g_CleanupSymbolTable
  b g_ComboBox_Helper
- b g_ContinuousAnalogBar_Helper
  b g_ContinuousProgressBar_Helper
  b g_CvarToggleCheckButton_Helper
  b g_Divider_Helper
@@ -8110,9 +7979,7 @@
  b mm_add_item_command
  b mm_add_player_command
  b refresh_options_dialog
- b s_DisabledOptions
  b s_EmptyConVar
- b s_OptionsDataContainer
  b s_StartDirContexts
  b s_StaticCryptoConstructor
  b s_bConnected
@@ -8143,7 +8010,6 @@
  b vec2_origin
  b vec4_invalid
  b vec4_origin
- b vgui::AnalogBar::GetDescription()::buf
  b vgui::AnimatingImagePanel::GetDescription()::buf
  b vgui::Button::DoClick()::vgui_nav_lock
  b vgui::Button::GetDescription()::buf
@@ -8460,7 +8326,6 @@
  t CC_GameUIHideDialog(CCommand const&)
  t CC_GameUIShowDialog(CCommand const&)
  t ChapterSortFunc(void const*, void const*)
- t Create_AnalogBar()
  t Create_AnimatingImagePanel()
  t Create_Button()
  t Create_CBitmapImagePanel()
@@ -8471,7 +8336,6 @@
  t Create_CTreeViewListControl()
  t Create_CheckButton()
  t Create_CircularProgressBar()
- t Create_ContinuousAnalogBar()
  t Create_ContinuousProgressBar()
  t Create_Divider()
  t Create_EditablePanel()
@@ -8551,73 +8415,71 @@
  t TGALoader::ReadFile(char const*, CUtlMemory<unsigned char, int>&, int)
  t TGALoader::ReadSourceImage(CUtlBuffer&, TGALoader::TGAHeader_t&, CUtlMemory<unsigned char, int>&)
  t ValveJpegErrorHandler(jpeg_common_struct*)
- t _GLOBAL__sub_I_AnalogBar.stdout.rel_tf_osx_builder.39640.ttlm5I.ii
- t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.39641.rwcRfi.ii
- t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.39642.HwXlI3.ii
- t _GLOBAL__sub_I_BasePanel.stdout.rel_tf_osx_builder.47874.lFRyZi.ii
- t _GLOBAL__sub_I_BenchmarkD.stdout.rel_tf_osx_builder.55337.D07tcb.ii
- t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.39643.NdTfhs.ii
- t _GLOBAL__sub_I_BonusMapsD.stdout.rel_tf_osx_builder.55340.JP5g0H.ii
- t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.39645.zlzHkq.ii
- t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.39684.YyEqFI.ii
- t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.39690.1yWb20.ii
- t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.39692.fbete6.ii
- t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.39703.ZLZvzp.ii
- t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.39708.1dESkV.ii
- t _GLOBAL__sub_I_Commentary.stdout.rel_tf_osx_builder.55373.HgFTaj.ii
- t _GLOBAL__sub_I_Controller.stdout.rel_tf_osx_builder.39724.sMseIy.ii
- t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.39735.CkqMYk.ii
- t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.55442.SOM61z.ii
- t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.39737.1X0rJX.ii
- t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.39748.D4Askc.ii
- t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.39752.M0c9l5.ii
- t _GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.39768.wMQT76.ii
- t _GLOBAL__sub_I_GameConsol.stdout.rel_tf_osx_builder.47877.Bk318m.ii
- t _GLOBAL__sub_I_GameUI_Int.stdout.rel_tf_osx_builder.47879.SqvKJR.ii
- t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.39787.6KeCPs.ii
- t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.39814.YaDQ7P.ii
- t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.38178.drvYy8.ii
- t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.64214.tLzdjP.ii
- t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.39848.e4PSEM.ii
- t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.39858.fqmTVx.ii
- t _GLOBAL__sub_I_LoadCommen.stdout.rel_tf_osx_builder.55488.3j22aC.ii
- t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.36572.B39HT3.ii
- t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.39868.elcKvM.ii
- t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.39874.HuQpPM.ii
- t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.39875.BMy03x.ii
- t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.39888.zmfBa1.ii
- t _GLOBAL__sub_I_OptionsDia.stdout.rel_tf_osx_builder.55599.gbVlyb.ii
- t _GLOBAL__sub_I_OptionsSub.stdout.rel_tf_osx_builder.47888.VAFQEO.ii
- t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.39894.XDnO4e.ii
- t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.39896.v6gcEw.ii
- t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.39930.V5HA6f.ii
- t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.39965.p1JCC2.ii
- t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.36576.sHwSMQ.ii
- t _GLOBAL__sub_I_RunGameEng.stdout.rel_tf_osx_builder.55670.ewfWWO.ii
- t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.39990.k3Pj3I.ii
- t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.40000.d7ImDk.ii
- t _GLOBAL__sub_I_SectionedL.stdout.rel_tf_osx_builder.40012.0ZD35S.ii
- t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.40018.YVilQT.ii
- t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.40038.TTJ4FB.ii
- t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.40050.u93MTf.ii
- t _GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.40058.KwLJVM.ii
- t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.40068.ldvFXY.ii
- t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.40072.4mylQJ.ii
- t _GLOBAL__sub_I_URLButton.stdout.rel_tf_osx_builder.55718.g3VcKR.ii
- t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.40078.qvutZv.ii
- t _GLOBAL__sub_I_VGuiSystem.stdout.rel_tf_osx_builder.55725.G3EWKU.ii
- t _GLOBAL__sub_I_basedialog.stdout.rel_tf_osx_builder.55516.XsvOjx.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.38134.M7iDUT.ii
+ t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.54449.tSqmU1.ii
+ t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.54450.dexzEk.ii
+ t _GLOBAL__sub_I_BasePanel.stdout.rel_tf_osx_builder.68512.0rhPRX.ii
+ t _GLOBAL__sub_I_BenchmarkD.stdout.rel_tf_osx_builder.68514.TZqLUA.ii
+ t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.54451.uMZum4.ii
+ t _GLOBAL__sub_I_BonusMapsD.stdout.rel_tf_osx_builder.68548.dnnGHV.ii
+ t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.54453.eMUp3n.ii
+ t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.54454.GUKL6b.ii
+ t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.54492.cMaQfF.ii
+ t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.54493.zTeTAu.ii
+ t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.54525.Q4FG7Y.ii
+ t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.54509.SscRl6.ii
+ t _GLOBAL__sub_I_Commentary.stdout.rel_tf_osx_builder.68557.4txKc4.ii
+ t _GLOBAL__sub_I_Controller.stdout.rel_tf_osx_builder.54531.Tpvkym.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.54535.8lntft.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.68630.urSxmN.ii
+ t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.54553.YBigPM.ii
+ t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.54557.nlPmgW.ii
+ t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.54564.qJ19n7.ii
+ t _GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.54565.uU1xV0.ii
+ t _GLOBAL__sub_I_GameConsol.stdout.rel_tf_osx_builder.68633.ZqTCJ5.ii
+ t _GLOBAL__sub_I_GameUI_Int.stdout.rel_tf_osx_builder.68648.7o7lPV.ii
+ t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.54595.kh2he1.ii
+ t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.54611.16Fi6A.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.53345.z6Hzoa.ii
+ t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.54642.9RRxpA.ii
+ t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.54643.4YDVFH.ii
+ t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.54653.Ii1Rhc.ii
+ t _GLOBAL__sub_I_LoadCommen.stdout.rel_tf_osx_builder.68670.4pVIvA.ii
+ t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.54657.oOjPZb.ii
+ t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.54669.qCySqf.ii
+ t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.54675.fUO0fO.ii
+ t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.54679.MTroc0.ii
+ t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.54683.skdUpR.ii
+ t _GLOBAL__sub_I_OptionsSub.stdout.rel_tf_osx_builder.68779.eRhtjP.ii
+ t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.54691.zHZNSx.ii
+ t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.54689.PXitSm.ii
+ t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.54729.72gGc1.ii
+ t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.54758.gl8akB.ii
+ t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.54766.VouqGm.ii
+ t _GLOBAL__sub_I_RunGameEng.stdout.rel_tf_osx_builder.68843.yVP6Xr.ii
+ t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.54783.FaKRLx.ii
+ t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.54795.iuI1lG.ii
+ t _GLOBAL__sub_I_SectionedL.stdout.rel_tf_osx_builder.54808.tcC5rx.ii
+ t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.54819.nDuqNO.ii
+ t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.54837.zr316E.ii
+ t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.54849.jXRilD.ii
+ t _GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.54857.OAwE7q.ii
+ t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.54867.tDZzGT.ii
+ t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.54873.ZLmO6v.ii
+ t _GLOBAL__sub_I_URLButton.stdout.rel_tf_osx_builder.68878.elmdmE.ii
+ t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.54877.ntHv5N.ii
+ t _GLOBAL__sub_I_VGuiSystem.stdout.rel_tf_osx_builder.68889.PhX2Ix.ii
+ t _GLOBAL__sub_I_basedialog.stdout.rel_tf_osx_builder.68700.zqy2OK.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.53344.c3Wj3a.ii
  t _GLOBAL__sub_I_cryptlib.cpp
- t _GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.41937.qCNaRJ.ii
- t _GLOBAL__sub_I_cvarslider.stdout.rel_tf_osx_builder.47796.Db8aCY.ii
- t _GLOBAL__sub_I_leaderboar.stdout.rel_tf_osx_builder.55530.Yel6cE.ii
- t _GLOBAL__sub_I_sessionlob.stdout.rel_tf_osx_builder.55556.r0EwPZ.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.72618.xnzs0w.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.38279.064CuM.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.38306.MLbKkr.ii
- t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.36874.RIGw7w.ii
- t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.38795.SxdktN.ii
+ t _GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.95529.unzNHg.ii
+ t _GLOBAL__sub_I_cvarslider.stdout.rel_tf_osx_builder.62103.5WoNMZ.ii
+ t _GLOBAL__sub_I_leaderboar.stdout.rel_tf_osx_builder.68714.jQHckr.ii
+ t _GLOBAL__sub_I_sessionlob.stdout.rel_tf_osx_builder.68738.TWMZRJ.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.90768.DcbOud.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.90365.1luepP.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.90388.2ggVTf.ii
+ t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.56757.7OS89I.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.91030.5Gy4xh.ii
  t __CreateCGameConsoleIGameConsole_interface()
  t __CreateCGameUIIGameUI_interface()
  t __CreateCRunGameEngineIRunGameEngine_interface()

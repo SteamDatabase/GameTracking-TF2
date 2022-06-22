@@ -23,6 +23,7 @@
  p p00
  p p00 P
  p p00` 
+"@@@@ 
 "CreateInterface
 "fffff.
 #Frame_Untitled
@@ -69,6 +70,7 @@ $vertexcolor
 %d_hidden
 %d_width
 %f %f %f %f
+%s %d
 %s moved to front
 %s string image, int src_corner_height, int src_corner_width, int draw_corner_height, int draw_corner_width
 %s, bool textHidden, bool editable, bool unicode, bool NumericInputOnly, int maxchars
@@ -89,7 +91,6 @@ $vertexcolor
 &Exit
 &Reload Localization
 &Save
-'@@@@ 
 (*%s*), 
 (anonymous namespace)::CaptionGripPanel::CaptionGripPanel(vgui::Frame*, char const*)
 (anonymous namespace)::CaptionGripPanel::moved(int, int)
@@ -1509,7 +1510,6 @@ ConVar::~ConVar()
 ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(char const*)
 ConVarRef::ConVarRef(char const*, bool)
-ConVarRef::Init(char const*, bool)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVarRef::IsValid() const
 ConVar_Register(int, IConCommandBaseAccessor*)
@@ -2000,7 +2000,7 @@ N4vgui19AnimationControllerE
 N4vgui19CircularProgressBarE
 N4vgui20CTreeViewListControlE
 N4vgui21ContinuousProgressBarE
-N4vgui21CvarToggleCheckButtonI9ConVarRefEE
+N4vgui21CvarToggleCheckButtonI11UIConVarRefEE
 N4vgui29IForceVirtualInheritancePanelE
 N4vgui32IPanelAnimationPropertyConverterE
 N4vgui4MenuE
@@ -2238,6 +2238,9 @@ TreeViewItemSelected
 TreeViewItemSelectionCleared
 Typing Enter in any text field applies changes.
 UI/menu_focus.wav
+UIConVarRef::Init(IVEngineClient*, char const*, bool)
+UIConVarRef::SetValue(bool)
+UIConVarRef::UIConVarRef(IVEngineClient*, char const*, bool)
 UNKNOWN
 URLClicked
 URLLabel
@@ -2300,7 +2303,7 @@ VTT for vgui::ClickPanel
 VTT for vgui::ComboBox
 VTT for vgui::ComboBoxButton
 VTT for vgui::ContinuousProgressBar
-VTT for vgui::CvarToggleCheckButton<ConVarRef>
+VTT for vgui::CvarToggleCheckButton<UIConVarRef>
 VTT for vgui::Divider
 VTT for vgui::EditablePanel
 VTT for vgui::ExpandButton
@@ -2422,53 +2425,53 @@ _Warning
 __CreateCMatSystemSurfaceISurface_interface()
 __DATA
 __DefaultRuneLocale
-__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.39641.rwcRfi.ii
-__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.39642.HwXlI3.ii
-__GLOBAL__sub_I_BitmapFont.stdout.rel_tf_osx_builder.42171.o4fdNO.ii
-__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.39643.NdTfhs.ii
-__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.39645.zlzHkq.ii
-__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.39684.YyEqFI.ii
-__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.39690.1yWb20.ii
-__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.39692.fbete6.ii
-__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.39703.ZLZvzp.ii
-__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.39708.1dESkV.ii
-__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.39735.CkqMYk.ii
-__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.39737.1X0rJX.ii
-__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.39748.D4Askc.ii
-__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.39752.M0c9l5.ii
-__GLOBAL__sub_I_FontManage.stdout.rel_tf_osx_builder.42173.2Ia0oO.ii
-__GLOBAL__sub_I_FontTextur.stdout.rel_tf_osx_builder.42346.gfNHTg.ii
-__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.39787.6KeCPs.ii
-__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.39814.YaDQ7P.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.38178.drvYy8.ii
-__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.64214.tLzdjP.ii
-__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.39848.e4PSEM.ii
-__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.39858.fqmTVx.ii
-__GLOBAL__sub_I_MatSystemS.stdout.rel_tf_osx_builder.42348.bOIQCo.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.36572.B39HT3.ii
-__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.39868.elcKvM.ii
-__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.39874.HuQpPM.ii
-__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.39875.BMy03x.ii
-__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.39888.zmfBa1.ii
-__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.39894.XDnO4e.ii
-__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.39896.v6gcEw.ii
-__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.39930.V5HA6f.ii
-__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.39965.p1JCC2.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.36576.sHwSMQ.ii
-__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.39990.k3Pj3I.ii
-__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.40000.d7ImDk.ii
-__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.40018.YVilQT.ii
-__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.40038.TTJ4FB.ii
-__GLOBAL__sub_I_TextureDic.stdout.rel_tf_osx_builder.42379.0Q6Uem.ii
-__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.40050.u93MTf.ii
-__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.40068.ldvFXY.ii
-__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.40072.4mylQJ.ii
-__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.40078.qvutZv.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.38134.M7iDUT.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.72618.xnzs0w.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.38279.064CuM.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.38306.MLbKkr.ii
-__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.36874.RIGw7w.ii
+__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.54449.tSqmU1.ii
+__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.54450.dexzEk.ii
+__GLOBAL__sub_I_BitmapFont.stdout.rel_tf_osx_builder.96109.rNb7YW.ii
+__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.54451.uMZum4.ii
+__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.54453.eMUp3n.ii
+__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.54454.GUKL6b.ii
+__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.54492.cMaQfF.ii
+__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.54493.zTeTAu.ii
+__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.54525.Q4FG7Y.ii
+__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.54509.SscRl6.ii
+__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.54535.8lntft.ii
+__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.54553.YBigPM.ii
+__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.54557.nlPmgW.ii
+__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.54564.qJ19n7.ii
+__GLOBAL__sub_I_FontManage.stdout.rel_tf_osx_builder.96112.yw8qg5.ii
+__GLOBAL__sub_I_FontTextur.stdout.rel_tf_osx_builder.56760.he74J7.ii
+__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.54595.kh2he1.ii
+__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.54611.16Fi6A.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.53345.z6Hzoa.ii
+__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.54642.9RRxpA.ii
+__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.54643.4YDVFH.ii
+__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.54653.Ii1Rhc.ii
+__GLOBAL__sub_I_MatSystemS.stdout.rel_tf_osx_builder.56762.ib5A8Z.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.54657.oOjPZb.ii
+__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.54669.qCySqf.ii
+__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.54675.fUO0fO.ii
+__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.54679.MTroc0.ii
+__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.54683.skdUpR.ii
+__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.54691.zHZNSx.ii
+__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.54689.PXitSm.ii
+__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.54729.72gGc1.ii
+__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.54758.gl8akB.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.54766.VouqGm.ii
+__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.54783.FaKRLx.ii
+__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.54795.iuI1lG.ii
+__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.54819.nDuqNO.ii
+__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.54837.zr316E.ii
+__GLOBAL__sub_I_TextureDic.stdout.rel_tf_osx_builder.56763.D6Dcz7.ii
+__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.54849.jXRilD.ii
+__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.54867.tDZzGT.ii
+__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.54873.ZLmO6v.ii
+__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.54877.ntHv5N.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.53344.c3Wj3a.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.90768.DcbOud.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.90365.1luepP.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.90388.2ggVTf.ii
+__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.56757.7OS89I.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -2741,7 +2744,7 @@ construction vtable for vgui::Button-in-(anonymous namespace)::ScrollBarButton
 construction vtable for vgui::Button-in-ColumnButton
 construction vtable for vgui::Button-in-vgui::CheckButton
 construction vtable for vgui::Button-in-vgui::ComboBoxButton
-construction vtable for vgui::Button-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::Button-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::Button-in-vgui::ExpandButton
 construction vtable for vgui::Button-in-vgui::FrameButton
 construction vtable for vgui::Button-in-vgui::FrameSystemButton
@@ -2749,7 +2752,7 @@ construction vtable for vgui::Button-in-vgui::MenuButton
 construction vtable for vgui::Button-in-vgui::MenuItem
 construction vtable for vgui::Button-in-vgui::RadioButton
 construction vtable for vgui::Button-in-vgui::ToggleButton
-construction vtable for vgui::CheckButton-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::CheckButton-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::ComboBox-in-CBuildModeNavCombo
 construction vtable for vgui::EditablePanel-in-vgui::BuildModeDialog
 construction vtable for vgui::EditablePanel-in-vgui::Frame
@@ -2764,7 +2767,7 @@ construction vtable for vgui::Label-in-ColumnButton
 construction vtable for vgui::Label-in-vgui::Button
 construction vtable for vgui::Label-in-vgui::CheckButton
 construction vtable for vgui::Label-in-vgui::ComboBoxButton
-construction vtable for vgui::Label-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::Label-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::Label-in-vgui::ExpandButton
 construction vtable for vgui::Label-in-vgui::FrameButton
 construction vtable for vgui::Label-in-vgui::FrameSystemButton
@@ -2793,7 +2796,7 @@ construction vtable for vgui::Panel-in-vgui::ClickPanel
 construction vtable for vgui::Panel-in-vgui::ComboBox
 construction vtable for vgui::Panel-in-vgui::ComboBoxButton
 construction vtable for vgui::Panel-in-vgui::ContinuousProgressBar
-construction vtable for vgui::Panel-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::Panel-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::Panel-in-vgui::Divider
 construction vtable for vgui::Panel-in-vgui::EditablePanel
 construction vtable for vgui::Panel-in-vgui::ExpandButton
@@ -2836,7 +2839,7 @@ construction vtable for vgui::TextEntry-in-CSmallTextEntry
 construction vtable for vgui::TextEntry-in-vgui::ComboBox
 construction vtable for vgui::TextEntry-in-vgui::TreeNodeText
 construction vtable for vgui::ToggleButton-in-vgui::CheckButton
-construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::ToggleButton-in-vgui::ExpandButton
 construction vtable for vgui::ToggleButton-in-vgui::RadioButton
 corner
@@ -2981,8 +2984,8 @@ guard variable for vgui::ComboBox::GetKBMap()::s_pMap
 guard variable for vgui::ComboBox::GetMessageMap()::s_pMap
 guard variable for vgui::ContinuousProgressBar::GetKBMap()::s_pMap
 guard variable for vgui::ContinuousProgressBar::GetMessageMap()::s_pMap
-guard variable for vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()::s_pMap
-guard variable for vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()::s_pMap
+guard variable for vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()::s_pMap
+guard variable for vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()::s_pMap
 guard variable for vgui::Divider::GetKBMap()::s_pMap
 guard variable for vgui::Divider::GetMessageMap()::s_pMap
 guard variable for vgui::EditablePanel::GetKBMap()::s_pMap
@@ -3063,6 +3066,7 @@ imageSelected
 imagecolor
 index
 infocus_bgcolor_override
+int V_sprintf_safe<256ul>(char (&) [256ul], char const*, ...)
 int V_swprintf_safe<64ul>(wchar_t (&) [64ul], wchar_t const*, ...)
 intconverter
 ipanel()->PaintTraverse
@@ -3367,7 +3371,7 @@ typeinfo for vgui::ClickPanel
 typeinfo for vgui::ComboBox
 typeinfo for vgui::ComboBoxButton
 typeinfo for vgui::ContinuousProgressBar
-typeinfo for vgui::CvarToggleCheckButton<ConVarRef>
+typeinfo for vgui::CvarToggleCheckButton<UIConVarRef>
 typeinfo for vgui::Divider
 typeinfo for vgui::EditablePanel
 typeinfo for vgui::ExpandButton
@@ -3480,7 +3484,7 @@ typeinfo name for vgui::ClickPanel
 typeinfo name for vgui::ComboBox
 typeinfo name for vgui::ComboBoxButton
 typeinfo name for vgui::ContinuousProgressBar
-typeinfo name for vgui::CvarToggleCheckButton<ConVarRef>
+typeinfo name for vgui::CvarToggleCheckButton<UIConVarRef>
 typeinfo name for vgui::Divider
 typeinfo name for vgui::EditablePanel
 typeinfo name for vgui::ExpandButton
@@ -3964,25 +3968,25 @@ vgui::ContinuousProgressBar::Paint()
 vgui::ContinuousProgressBar::PanelMessageFunc_SetPrevProgress::InitVar()::bAdded
 vgui::ContinuousProgressBar::SetPrevProgress(float)
 vgui::ContinuousProgressBar::~ContinuousProgressBar()
-vgui::CvarToggleCheckButton<ConVarRef>::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
-vgui::CvarToggleCheckButton<ConVarRef>::ApplySettings(KeyValues*)
-vgui::CvarToggleCheckButton<ConVarRef>::ChainToAnimationMap()::chained
-vgui::CvarToggleCheckButton<ConVarRef>::ChainToMap()::chained
-vgui::CvarToggleCheckButton<ConVarRef>::CvarToggleCheckButton(vgui::Panel*, char const*, char const*, char const*, bool)
-vgui::CvarToggleCheckButton<ConVarRef>::GetAnimMap()
-vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()
-vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()::s_pMap
-vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()
-vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()::s_pMap
-vgui::CvarToggleCheckButton<ConVarRef>::GetPanelClassName()
-vgui::CvarToggleCheckButton<ConVarRef>::KB_ChainToMap()::chained
-vgui::CvarToggleCheckButton<ConVarRef>::OnApplyChanges()
-vgui::CvarToggleCheckButton<ConVarRef>::OnButtonChecked()
-vgui::CvarToggleCheckButton<ConVarRef>::Paint()
-vgui::CvarToggleCheckButton<ConVarRef>::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
-vgui::CvarToggleCheckButton<ConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
-vgui::CvarToggleCheckButton<ConVarRef>::SetSelected(bool)
-vgui::CvarToggleCheckButton<ConVarRef>::~CvarToggleCheckButton()
+vgui::CvarToggleCheckButton<UIConVarRef>::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
+vgui::CvarToggleCheckButton<UIConVarRef>::ApplySettings(KeyValues*)
+vgui::CvarToggleCheckButton<UIConVarRef>::ChainToAnimationMap()::chained
+vgui::CvarToggleCheckButton<UIConVarRef>::ChainToMap()::chained
+vgui::CvarToggleCheckButton<UIConVarRef>::CvarToggleCheckButton(vgui::Panel*, char const*, char const*, char const*, bool)
+vgui::CvarToggleCheckButton<UIConVarRef>::GetAnimMap()
+vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()
+vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()::s_pMap
+vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()
+vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()::s_pMap
+vgui::CvarToggleCheckButton<UIConVarRef>::GetPanelClassName()
+vgui::CvarToggleCheckButton<UIConVarRef>::KB_ChainToMap()::chained
+vgui::CvarToggleCheckButton<UIConVarRef>::OnApplyChanges()
+vgui::CvarToggleCheckButton<UIConVarRef>::OnButtonChecked()
+vgui::CvarToggleCheckButton<UIConVarRef>::Paint()
+vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
+vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
+vgui::CvarToggleCheckButton<UIConVarRef>::SetSelected(bool)
+vgui::CvarToggleCheckButton<UIConVarRef>::~CvarToggleCheckButton()
 vgui::Dar<unsigned long>::AddElement(unsigned long)
 vgui::Divider::ApplySchemeSettings(vgui::IScheme*)
 vgui::Divider::ChainToAnimationMap()::chained
@@ -5864,7 +5868,7 @@ vtable for vgui::ClickPanel
 vtable for vgui::ComboBox
 vtable for vgui::ComboBoxButton
 vtable for vgui::ContinuousProgressBar
-vtable for vgui::CvarToggleCheckButton<ConVarRef>
+vtable for vgui::CvarToggleCheckButton<UIConVarRef>
 vtable for vgui::Divider
 vtable for vgui::EditablePanel
 vtable for vgui::ExpandButton

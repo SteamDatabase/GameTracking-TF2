@@ -2290,7 +2290,6 @@ $vertexcolor
 00` 00
 00p p00 
 00p0 p 
-09:40:08
 0: no radiosity
 0: off
 0=Off, 1=Normal, 2=Wireframe
@@ -2340,6 +2339,7 @@ $vertexcolor
 10IVideoMode
 10MM_Migrate
 10SVC_Sounds
+11:46:21
 11CAudioMixer
 11CBaseClient
 11CBugUIPanel
@@ -4653,6 +4653,7 @@ CBaseClient::IsConnected() const
 CBaseClient::IsFakeClient() const
 CBaseClient::IsHLTV() const
 CBaseClient::IsHearingClient(int) const
+CBaseClient::IsNameChangeAllowed()
 CBaseClient::IsNameChangeOnCooldown(bool)
 CBaseClient::IsProximityHearingClient(int) const
 CBaseClient::IsReplay() const
@@ -11869,7 +11870,6 @@ ConVarRef %s doesn't point to an existing ConVar
 ConVarRef::ConVarRef(IConVar*)
 ConVarRef::ConVarRef(char const*)
 ConVarRef::ConVarRef(char const*, bool)
-ConVarRef::Init(char const*, bool)
 ConVarRef::Init(char const*, bool)::bFirst
 ConVarRef::IsValid() const
 ConVar_PrintDescription(ConCommandBase const*)
@@ -12980,7 +12980,6 @@ Fast Fwd
 FastSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelItem const&)
 Fatal Error:  Unable to create game window!
 Fatal Error: Unable to get window info from SDL.
-Feb 14 2022
 Ffff.
 Ffffff.
 Fffffff.
@@ -13923,6 +13922,7 @@ Join request denied
 Joining team: %s
 Jump To
 Jumping to %s
+Jun 15 2022
 K ^_[]
 K,;K(}
 KNffff.
@@ -14033,7 +14033,7 @@ KilobytesSortFunc(vgui::ListPanel*, vgui::ListPanelItem const&, vgui::ListPanelI
 L %02i/%02i/%04i - %02i:%02i:%02i: %s
 L%02i%02i
 L2Miss
-L=ZV>
+L=be>
 L?fff?
 L@11CEngineTool
 LB;PH|
@@ -14652,7 +14652,7 @@ N4vgui19AnimatingImagePanelE
 N4vgui19AnimationControllerE
 N4vgui20CTreeViewListControlE
 N4vgui21ContinuousProgressBarE
-N4vgui21CvarToggleCheckButtonI9ConVarRefEE
+N4vgui21CvarToggleCheckButtonI11UIConVarRefEE
 N4vgui21DirectorySelectDialogE
 N4vgui29IForceVirtualInheritancePanelE
 N4vgui32IPanelAnimationPropertyConverterE
@@ -16626,6 +16626,7 @@ Show alien gib entities
 Show all convars which are not at their default values.
 Show all files currently opened by the engine.
 Show async memory stats
+Show client disconnect reason.
 Show console messages about ignored connectionless packets on the client.
 Show debugging info about the clock drift. 
 Show dropped packets in console
@@ -17287,6 +17288,9 @@ UDP <- %s: sz=%i seq=%i ack=%i rel=%i ch=%d, tm=%f rt=%f wire=%i
 UDP socket SO_RCVBUF size %d bytes, changing to %d
 UDP:  discarding %d bytes from %s due to decompression error [%d decomp, actual %d] at tm=%f rt=%f
 UI/menu_focus.wav
+UIConVarRef::Init(IVEngineClient*, char const*, bool)
+UIConVarRef::SetValue(bool)
+UIConVarRef::UIConVarRef(IVEngineClient*, char const*, bool)
 UNKNOWN
 UNLOGGED
 URLClicked
@@ -17400,7 +17404,6 @@ UpdateVProfTreeEntry:Modify
 Upload attachments asynchronously
 Uploading %s to %s
 Uptime( %f )
-UqBax:
 Usage r_cleardecals <permanent>.
 Usage:  addip < minutes > < ipaddress >
 Usage:  banid < minutes > < userid | uniqueid > { kick }
@@ -17756,7 +17759,7 @@ VTT for vgui::ComboBox
 VTT for vgui::ComboBoxButton
 VTT for vgui::ContextLabel
 VTT for vgui::ContinuousProgressBar
-VTT for vgui::CvarToggleCheckButton<ConVarRef>
+VTT for vgui::CvarToggleCheckButton<UIConVarRef>
 VTT for vgui::DirectorySelectDialog
 VTT for vgui::DirectoryTreeView
 VTT for vgui::Divider
@@ -18560,224 +18563,224 @@ __DepthWrite01
 __DepthWrite10
 __DepthWrite11
 __ExitOnFatalAssert
-__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.39641.rwcRfi.ii
-__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.39642.HwXlI3.ii
-__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.39643.NdTfhs.ii
-__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.39645.zlzHkq.ii
-__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.39684.YyEqFI.ii
-__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.39690.1yWb20.ii
-__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.39692.fbete6.ii
-__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.39703.ZLZvzp.ii
-__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.39708.1dESkV.ii
-__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.39735.CkqMYk.ii
-__GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.40854.g3K4JI.ii
-__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.39737.1X0rJX.ii
-__GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.40897.olN6Bo.ii
-__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.39748.D4Askc.ii
-__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.40977.FU4mxJ.ii
-__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.70278.jZjmaA.ii
-__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.39752.M0c9l5.ii
-__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.39768.wMQT76.ii
-__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.41041.VQBXXr.ii
-__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.70312.70nmwL.ii
-__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.39787.6KeCPs.ii
-__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.39814.YaDQ7P.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.38178.drvYy8.ii
-__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.64214.tLzdjP.ii
-__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.39848.e4PSEM.ii
-__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.39858.fqmTVx.ii
-__GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.40405.WLP2PN.ii
-__GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.41213.DNytrs.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.36572.B39HT3.ii
-__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.39868.elcKvM.ii
-__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.39874.HuQpPM.ii
-__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.39875.BMy03x.ii
-__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.39888.zmfBa1.ii
-__GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.70434.3bEUpg.ii
-__GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.41324.VaalFS.ii
-__GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.41331.4gJA8Q.ii
-__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.39894.XDnO4e.ii
-__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.39896.v6gcEw.ii
-__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.39930.V5HA6f.ii
-__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.39965.p1JCC2.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.36576.sHwSMQ.ii
-__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.39990.k3Pj3I.ii
-__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.40000.d7ImDk.ii
-__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.40018.YVilQT.ii
-__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.40038.TTJ4FB.ii
-__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.40050.u93MTf.ii
-__GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.40058.KwLJVM.ii
-__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.40068.ldvFXY.ii
-__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.40072.4mylQJ.ii
-__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.40078.qvutZv.ii
-__GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.75556.bJkoFi.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.36616.UFyuWs.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.36617.jE1UDc.ii
-__GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.36618.ML6J84.ii
-__GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.38130.C9JjaX.ii
-__GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.36619.jWUHIr.ii
-__GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.70033.gPyRlo.ii
-__GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.36620.9MS6i9.ii
-__GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.36624.bxzVsS.ii
-__GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.40617.Q6ALZe.ii
-__GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.70102.D9qASX.ii
-__GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.70105.tYaB0a.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.70118.PgXbEF.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.70126.fjKNym.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.70130.Gxnxfg.ii
-__GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.70148.Abwl3O.ii
-__GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.70154.IoBZBj.ii
-__GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.70162.IfqaAB.ii
-__GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.70164.HINPWj.ii
-__GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.70170.5aFuTj.ii
-__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.36667.9IBRNJ.ii
-__GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.70176.PiQv42.ii
-__GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.70192.IUUsoF.ii
-__GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.70197.VBlk9P.ii
-__GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.36670.cPkXgr.ii
-__GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.70204.Bp07bY.ii
-__GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.34606.Mme1wb.ii
-__GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.70084.iMKEj9.ii
-__GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.70218.My3OYL.ii
-__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.40785.RZZfP2.ii
-__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.40797.cwGIlJ.ii
-__GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.70222.hS5cq1.ii
-__GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.70234.xrwBeA.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.38134.M7iDUT.ii
-__GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.70238.CkhnBa.ii
-__GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.40833.snJNgt.ii
-__GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.70239.uCgU7n.ii
-__GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.40843.JrIPeD.ii
-__GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.40837.0kec6P.ii
-__GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.70252.lEhRGt.ii
-__GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.40859.kaMjGl.ii
-__GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.40867.dRhCQu.ii
-__GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.40876.14cGU9.ii
-__GLOBAL__sub_I_disp_power.stdout.rel_tf_osx_builder.40319.w8eZot.ii
-__GLOBAL__sub_I_dispcoll_c.stdout.rel_tf_osx_builder.40311.2lhJ8o.ii
-__GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.38631.0wRl5W.ii
-__GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.38632.YuAAZd.ii
-__GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.38633.MkejBi.ii
-__GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.38634.25UFBa.ii
-__GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.70257.DpTYac.ii
-__GLOBAL__sub_I_downloadth.stdout.rel_tf_osx_builder.40905.wVoR2C.ii
-__GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.40907.8TwlXo.ii
-__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.40929.odpVqW.ii
-__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.40933.RAh5wm.ii
-__GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.70270.MQjFIM.ii
-__GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.40944.AtbyyW.ii
-__GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.40959.dIwSUH.ii
-__GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.36683.BSAWy0.ii
-__GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.70279.TxtCec.ii
-__GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.70282.mGdpuX.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.41021.aSjVAg.ii
-__GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.41057.XHR3Dk.ii
-__GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.41065.aREIDd.ii
-__GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.41070.JSeMJj.ii
-__GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.41074.e1BGdS.ii
-__GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.70324.XN9w9j.ii
-__GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.70330.kXr9W6.ii
-__GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.41090.K6jySc.ii
-__GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.41115.FL0vdg.ii
-__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.70337.xtDufs.ii
-__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.70347.jBu6Kw.ii
-__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.36688.IaJk4W.ii
-__GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.36699.jsqEni.ii
-__GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.36707.AWpmX0.ii
-__GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.70378.wfZJjr.ii
-__GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.70384.Pregi8.ii
-__GLOBAL__sub_I_initmathli.stdout.rel_tf_osx_builder.41177.yv2p7o.ii
-__GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.41187.eE4afH.ii
-__GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.41209.YXPnlS.ii
-__GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.41190.mSHdJF.ii
-__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.38194.YyFi5Z.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.70404.At0knK.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.70414.4Tghom.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.70426.G5Ddx9.ii
-__GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.70430.PQim5v.ii
-__GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.41275.G6sNIi.ii
-__GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.70440.RRlaXA.ii
-__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.3536.7knOZZ.ii
-__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.36719.xx8AO7.ii
-__GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.70473.VTAGiX.ii
-__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.70022.mYe8iO.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.41285.avrey7.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.70442.vcssPE.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.70452.PGvHgM.ii
-__GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.70478.9RB1V8.ii
-__GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.70484.ydGoJh.ii
-__GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.70486.5JYAAm.ii
-__GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.41421.TV49xK.ii
-__GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.41423.Ih3YCQ.ii
-__GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.41433.V63ygT.ii
-__GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.70526.sZZZRK.ii
-__GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.41374.5dpmfZ.ii
-__GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.64174.3FHnEF.ii
-__GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.70504.hR75OU.ii
-__GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.41441.DFvBR7.ii
-__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.70528.agEnIv.ii
-__GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.41467.nLF5qa.ii
-__GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.70024.eIuvmi.ii
-__GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.40445.XLZLlo.ii
-__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.70025.3UqkNq.ii
-__GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.40449.VFDfJE.ii
-__GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.40475.7CZsBx.ii
-__GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.40501.5sMwLJ.ii
-__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.40506.3xyp1s.ii
-__GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.40511.2dMel1.ii
-__GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.41485.7Y9sCd.ii
-__GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.41493.4pw0RW.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.72618.xnzs0w.ii
-__GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.70555.ijH82J.ii
-__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.39056.iMs45r.ii
-__GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.70559.Jrimhu.ii
-__GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.70570.vGRbZv.ii
-__GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.36739.lTdKMg.ii
-__GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.70575.lkEJOD.ii
-__GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.41529.6nXHk5.ii
-__GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.70582.QAfPJ7.ii
-__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.36745.U17iAO.ii
-__GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.70598.HPktig.ii
-__GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.70606.brvc2Q.ii
-__GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.34610.FtYF8q.ii
-__GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.70611.YRstrK.ii
-__GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.70614.Yg7V9T.ii
-__GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.70621.6oyxRK.ii
-__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.36749.iirLiD.ii
-__GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.41589.WuIJFB.ii
-__GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.36751.v1CiiU.ii
-__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.53702.no8Y6K.ii
-__GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.70650.KeoKds.ii
-__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.36765.Cqs2T6.ii
-__GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.41627.12paGY.ii
-__GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.41632.ZtSFAx.ii
-__GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.41640.u4iHCO.ii
-__GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.41646.Mgp49i.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.38279.064CuM.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.38306.MLbKkr.ii
-__GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.36767.1zE2LE.ii
-__GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.70672.nri1HK.ii
-__GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.51465.qiDVhD.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.40255.dsmq1i.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.40256.NuM3i6.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.40257.tPCUmK.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.70682.f5sdFz.ii
-__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.36613.QO3aXl.ii
-__GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.70698.le66lm.ii
-__GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.70712.8ruNum.ii
-__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.70718.yHvsCG.ii
-__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.70724.XXmwrQ.ii
-__GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.70731.BlwSnF.ii
-__GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.36615.ZoBNt6.ii
-__GLOBAL__sub_I_voice_reco.stdout.rel_tf_osx_builder.75707.3P3A0f.ii
-__GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.40534.hsfkJs.ii
-__GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.70735.t6C6h5.ii
-__GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.40536.3HEa8c.ii
-__GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.41733.wwfF89.ii
-__GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.41737.7KWHMW.ii
-__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.38795.SxdktN.ii
-__GLOBAL__sub_I_xboxsystem.stdout.rel_tf_osx_builder.41749.AcnWSd.ii
-__GLOBAL__sub_I_zone.stdout.rel_tf_osx_builder.41752.hGCXrq.ii
+__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.54449.tSqmU1.ii
+__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.54450.dexzEk.ii
+__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.54451.uMZum4.ii
+__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.54453.eMUp3n.ii
+__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.54454.GUKL6b.ii
+__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.54492.cMaQfF.ii
+__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.54493.zTeTAu.ii
+__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.54525.Q4FG7Y.ii
+__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.54509.SscRl6.ii
+__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.54535.8lntft.ii
+__GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.55465.FNj1pY.ii
+__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.54553.YBigPM.ii
+__GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.85315.qyO2Ma.ii
+__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.54557.nlPmgW.ii
+__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.55559.VC2vVs.ii
+__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.85323.cvSfKS.ii
+__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.54564.qJ19n7.ii
+__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.54565.uU1xV0.ii
+__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.55609.bH3H7U.ii
+__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.94601.ACGERl.ii
+__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.54595.kh2he1.ii
+__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.54611.16Fi6A.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.53345.z6Hzoa.ii
+__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.54642.9RRxpA.ii
+__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.54643.4YDVFH.ii
+__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.54653.Ii1Rhc.ii
+__GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.93926.0K6csW.ii
+__GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.85388.4OlPnJ.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.54657.oOjPZb.ii
+__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.54669.qCySqf.ii
+__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.54675.fUO0fO.ii
+__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.54679.MTroc0.ii
+__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.54683.skdUpR.ii
+__GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.55815.8llkZU.ii
+__GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.55881.vB5suo.ii
+__GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.55887.Cz4BVx.ii
+__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.54691.zHZNSx.ii
+__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.54689.PXitSm.ii
+__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.54729.72gGc1.ii
+__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.54758.gl8akB.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.54766.VouqGm.ii
+__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.54783.FaKRLx.ii
+__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.54795.iuI1lG.ii
+__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.54819.nDuqNO.ii
+__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.54837.zr316E.ii
+__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.54849.jXRilD.ii
+__GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.54857.OAwE7q.ii
+__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.54867.tDZzGT.ii
+__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.54873.ZLmO6v.ii
+__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.54877.ntHv5N.ii
+__GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.93921.vcVN8E.ii
+__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.85265.KhG72y.ii
+__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.85266.mvRVJw.ii
+__GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.85267.zM7KMl.ii
+__GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.90146.tkZqdA.ii
+__GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.85268.3ldrot.ii
+__GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.55207.AMLy7O.ii
+__GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.55210.CdAtq5.ii
+__GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.85269.1DBoNh.ii
+__GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.55239.HtbIQe.ii
+__GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.55267.QVZc6T.ii
+__GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.85279.2BkQfW.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.55289.ypPUPJ.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.55290.JSgTxg.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.55293.CKmaRF.ii
+__GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.55315.X3TvYd.ii
+__GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.55323.8ttk3w.ii
+__GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.55331.7ihaVr.ii
+__GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.55335.NSQzbo.ii
+__GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.55337.uCdEHN.ii
+__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.55345.Z9ZIWa.ii
+__GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.55355.XYaHWm.ii
+__GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.55359.rBpq8R.ii
+__GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.55373.Uq10wt.ii
+__GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.55375.C1N29c.ii
+__GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.55381.h90ZWT.ii
+__GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.85274.z84G65.ii
+__GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.55263.MdkLam.ii
+__GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.85283.Okss5B.ii
+__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.55392.JvonMO.ii
+__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.94352.EgUvvC.ii
+__GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.55403.vQZdMJ.ii
+__GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.55420.OBRUxW.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.53344.c3Wj3a.ii
+__GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.55433.zeTQB3.ii
+__GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.55437.fUIcxy.ii
+__GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.55434.Cv9qPh.ii
+__GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.55451.m524a0.ii
+__GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.55440.aze4no.ii
+__GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.55463.99Lnlh.ii
+__GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.55466.LxyNEv.ii
+__GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.55470.HEnaUK.ii
+__GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.55491.ZtI8pP.ii
+__GLOBAL__sub_I_disp_power.stdout.rel_tf_osx_builder.93821.gfTUFU.ii
+__GLOBAL__sub_I_dispcoll_c.stdout.rel_tf_osx_builder.93800.gCCSCc.ii
+__GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.90862.c0jAgE.ii
+__GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.90863.nXYF3z.ii
+__GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.53628.ppUFWf.ii
+__GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.90865.SYaUaz.ii
+__GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.55499.ME4SOo.ii
+__GLOBAL__sub_I_downloadth.stdout.rel_tf_osx_builder.94465.Oo2fJA.ii
+__GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.55511.rrOPEK.ii
+__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.55530.xAAz8X.ii
+__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.94493.6r1xND.ii
+__GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.55537.35DVXp.ii
+__GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.94511.kqjsuy.ii
+__GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.94512.8J0epi.ii
+__GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.55578.0PTe6Q.ii
+__GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.85333.1rrqJJ.ii
+__GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.55577.aVGZnj.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.55582.lJnXNj.ii
+__GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.55618.6dUYPB.ii
+__GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.55637.DWTcVd.ii
+__GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.55638.07oLR6.ii
+__GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.55641.uCDpVH.ii
+__GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.55643.8EhzoG.ii
+__GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.55645.JyvEp2.ii
+__GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.55657.itVOTE.ii
+__GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.55674.uJRATb.ii
+__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.55679.XQWsPt.ii
+__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.85336.HjGHel.ii
+__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.85340.Wg5WB0.ii
+__GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.85363.bekEN5.ii
+__GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.85365.WCEtmt.ii
+__GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.55722.GaFTry.ii
+__GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.85366.ek6fYG.ii
+__GLOBAL__sub_I_initmathli.stdout.rel_tf_osx_builder.55751.jKfEQT.ii
+__GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.55753.RdGd9k.ii
+__GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.55776.2flyGZ.ii
+__GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.55763.Wfpn0R.ii
+__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.53346.E9e3sE.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.55791.oXYOx3.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.55797.Tfg1VE.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.55803.VTenzS.ii
+__GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.55811.T2qt61.ii
+__GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.55817.fYNAAX.ii
+__GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.85392.FDBjuB.ii
+__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.55859.bw51nl.ii
+__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.55871.ylLNmd.ii
+__GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.55877.Wc36Kv.ii
+__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.55015.dz1qyM.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.55821.jmv75y.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.55835.aq4ZvR.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.85405.NBQn22.ii
+__GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.55891.JCM7JI.ii
+__GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.85411.39t94o.ii
+__GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.55908.bJMYuL.ii
+__GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.55957.Yp49EB.ii
+__GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.55965.27voLD.ii
+__GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.55971.AOti2H.ii
+__GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.55978.RUTmUE.ii
+__GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.94951.OsXEBs.ii
+__GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.55944.k4WkKQ.ii
+__GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.55929.uSVedi.ii
+__GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.55981.FH9AX3.ii
+__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.85435.nJdf63.ii
+__GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.55997.MKxaMP.ii
+__GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.55063.IA5m4f.ii
+__GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.55064.W62RTG.ii
+__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.55066.zP9Uhy.ii
+__GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.55097.5t8TY7.ii
+__GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.55109.YMciYs.ii
+__GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.55136.nbx1xG.ii
+__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.55141.ckaNiu.ii
+__GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.55147.INIfA9.ii
+__GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.56002.LkrE2c.ii
+__GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.56015.Ub72NO.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.90768.DcbOud.ii
+__GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.56016.ZBI3Fd.ii
+__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.53949.VgBUbA.ii
+__GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.85443.e9q2oQ.ii
+__GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.85442.2t81V9.ii
+__GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.85444.JC9Xhj.ii
+__GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.85449.goIqkG.ii
+__GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.56045.yPMewB.ii
+__GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.85461.XeIoWV.ii
+__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.85475.K2M97i.ii
+__GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.85483.NFopeb.ii
+__GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.85485.15u95Z.ii
+__GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.85495.46KDvC.ii
+__GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.56085.dcmF3z.ii
+__GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.85499.zLAdkt.ii
+__GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.85501.6tPMyX.ii
+__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.85502.QVFiIi.ii
+__GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.85506.lZHJpX.ii
+__GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.85525.kY2Hq5.ii
+__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.85527.lnAjua.ii
+__GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.56129.yqIysR.ii
+__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.56132.i26Tsd.ii
+__GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.56155.4zlKUs.ii
+__GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.56163.wkqeW7.ii
+__GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.56164.td8EfH.ii
+__GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.95218.29hsW3.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.90365.1luepP.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.90388.2ggVTf.ii
+__GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.85533.O7mDEc.ii
+__GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.56186.4xM1ym.ii
+__GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.56193.ygqXHV.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.55017.P57ffC.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.55018.yPyreY.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.55019.z4tiHV.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.56199.lj3Npo.ii
+__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.55026.ZOdYdG.ii
+__GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.56204.sjitU5.ii
+__GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.56205.qTJqt5.ii
+__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.56208.SPuCVw.ii
+__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.56237.gWHNZl.ii
+__GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.56243.H3EhXR.ii
+__GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.55159.KizaWI.ii
+__GLOBAL__sub_I_voice_reco.stdout.rel_tf_osx_builder.94073.kFAAj7.ii
+__GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.55171.0jzVHO.ii
+__GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.56249.90f9TH.ii
+__GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.55179.4apjHH.ii
+__GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.56251.j6BUZR.ii
+__GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.56257.o4ktXU.ii
+__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.91030.5Gy4xh.ii
+__GLOBAL__sub_I_xboxsystem.stdout.rel_tf_osx_builder.56266.o3uUYx.ii
+__GLOBAL__sub_I_zone.stdout.rel_tf_osx_builder.56272.yHWVLw.ii
 __LINKEDIT
 __NETMESSAGE__1
 __NETMESSAGE__2
@@ -20104,6 +20107,7 @@ _sv_namechange_cooldown_seconds
 _sv_netspike_on_reliable_snapshot_overflow
 _sv_netspike_output
 _sv_netspike_sendtime_ms
+_sv_no_name_changes
 _sv_noclipduringpause
 _sv_pure_consensus
 _sv_pure_kick_clients
@@ -20799,7 +20803,7 @@ construction vtable for vgui::Button-in-CSmoothingTypeButton
 construction vtable for vgui::Button-in-ColumnButton
 construction vtable for vgui::Button-in-vgui::CheckButton
 construction vtable for vgui::Button-in-vgui::ComboBoxButton
-construction vtable for vgui::Button-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::Button-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::Button-in-vgui::ExpandButton
 construction vtable for vgui::Button-in-vgui::FrameButton
 construction vtable for vgui::Button-in-vgui::FrameSystemButton
@@ -20811,7 +20815,7 @@ construction vtable for vgui::Button-in-vgui::ToggleButton
 construction vtable for vgui::CTreeViewListControl-in-CProfileHierarchyPanel
 construction vtable for vgui::CheckButton-in-CConVarCheckButton
 construction vtable for vgui::CheckButton-in-CDebugCommandCheckbox
-construction vtable for vgui::CheckButton-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::CheckButton-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::ComboBox-in-CBuildModeNavCombo
 construction vtable for vgui::EditablePanel-in-CAreaPortalsUIPanel
 construction vtable for vgui::EditablePanel-in-CAskConnectPanel
@@ -20939,7 +20943,7 @@ construction vtable for vgui::Label-in-vgui::Button
 construction vtable for vgui::Label-in-vgui::CheckButton
 construction vtable for vgui::Label-in-vgui::ComboBoxButton
 construction vtable for vgui::Label-in-vgui::ContextLabel
-construction vtable for vgui::Label-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::Label-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::Label-in-vgui::ExpandButton
 construction vtable for vgui::Label-in-vgui::FrameButton
 construction vtable for vgui::Label-in-vgui::FrameSystemButton
@@ -21063,7 +21067,7 @@ construction vtable for vgui::Panel-in-vgui::ComboBox
 construction vtable for vgui::Panel-in-vgui::ComboBoxButton
 construction vtable for vgui::Panel-in-vgui::ContextLabel
 construction vtable for vgui::Panel-in-vgui::ContinuousProgressBar
-construction vtable for vgui::Panel-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::Panel-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::Panel-in-vgui::DirectorySelectDialog
 construction vtable for vgui::Panel-in-vgui::DirectoryTreeView
 construction vtable for vgui::Panel-in-vgui::Divider
@@ -21125,7 +21129,7 @@ construction vtable for vgui::TileViewPanelEx-in-CRenderTexturesListViewPanel
 construction vtable for vgui::ToggleButton-in-CConVarCheckButton
 construction vtable for vgui::ToggleButton-in-CDebugCommandCheckbox
 construction vtable for vgui::ToggleButton-in-vgui::CheckButton
-construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<ConVarRef>
+construction vtable for vgui::ToggleButton-in-vgui::CvarToggleCheckButton<UIConVarRef>
 construction vtable for vgui::ToggleButton-in-vgui::ExpandButton
 construction vtable for vgui::ToggleButton-in-vgui::RadioButton
 construction vtable for vgui::TreeView-in-CProfileTree
@@ -22235,8 +22239,8 @@ guard variable for vgui::ContextLabel::GetKBMap()::s_pMap
 guard variable for vgui::ContextLabel::GetMessageMap()::s_pMap
 guard variable for vgui::ContinuousProgressBar::GetKBMap()::s_pMap
 guard variable for vgui::ContinuousProgressBar::GetMessageMap()::s_pMap
-guard variable for vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()::s_pMap
-guard variable for vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()::s_pMap
+guard variable for vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()::s_pMap
+guard variable for vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()::s_pMap
 guard variable for vgui::DirectorySelectDialog::GetKBMap()::s_pMap
 guard variable for vgui::DirectorySelectDialog::GetMessageMap()::s_pMap
 guard variable for vgui::Divider::GetKBMap()::s_pMap
@@ -22457,6 +22461,7 @@ int CUtlSortVector<unsigned short, CEdgeList::EdgeLess, CUtlVector<unsigned shor
 int V_sprintf_safe<1024ul>(char (&) [1024ul], char const*, ...)
 int V_sprintf_safe<1100ul>(char (&) [1100ul], char const*, ...)
 int V_sprintf_safe<16ul>(char (&) [16ul], char const*, ...)
+int V_sprintf_safe<256ul>(char (&) [256ul], char const*, ...)
 int V_sprintf_safe<260ul>(char (&) [260ul], char const*, ...)
 int V_sprintf_safe<32ul>(char (&) [32ul], char const*, ...)
 int V_sprintf_safe<512ul>(char (&) [512ul], char const*, ...)
@@ -23066,6 +23071,7 @@ net_compresspackets
 net_compresspackets_minsize
 net_compressvoice
 net_dedicated
+net_disconnect_reason
 net_drawslider
 net_droppackets
 net_error
@@ -23863,7 +23869,6 @@ pure_server_whitelist.txt not present; pure server using only base file rules
 pvsinfopool
 pvsrow
 q89r8|
-qBa`D
 qangle
 qangle_array
 qffff.
@@ -24926,6 +24931,7 @@ sv_netspike_f(CCommand const&)
 sv_netspike_on_reliable_snapshot_overflow
 sv_netspike_output
 sv_netspike_sendtime_ms
+sv_no_name_changes
 sv_noclipduringpause
 sv_parallel_packentities
 sv_parallel_sendsnapshot
@@ -25839,7 +25845,7 @@ typeinfo for vgui::ComboBox
 typeinfo for vgui::ComboBoxButton
 typeinfo for vgui::ContextLabel
 typeinfo for vgui::ContinuousProgressBar
-typeinfo for vgui::CvarToggleCheckButton<ConVarRef>
+typeinfo for vgui::CvarToggleCheckButton<UIConVarRef>
 typeinfo for vgui::DirectorySelectDialog
 typeinfo for vgui::DirectoryTreeView
 typeinfo for vgui::Divider
@@ -26490,7 +26496,7 @@ typeinfo name for vgui::ComboBox
 typeinfo name for vgui::ComboBoxButton
 typeinfo name for vgui::ContextLabel
 typeinfo name for vgui::ContinuousProgressBar
-typeinfo name for vgui::CvarToggleCheckButton<ConVarRef>
+typeinfo name for vgui::CvarToggleCheckButton<UIConVarRef>
 typeinfo name for vgui::DirectorySelectDialog
 typeinfo name for vgui::DirectoryTreeView
 typeinfo name for vgui::Divider
@@ -27163,25 +27169,25 @@ vgui::ContinuousProgressBar::Paint()
 vgui::ContinuousProgressBar::PanelMessageFunc_SetPrevProgress::InitVar()::bAdded
 vgui::ContinuousProgressBar::SetPrevProgress(float)
 vgui::ContinuousProgressBar::~ContinuousProgressBar()
-vgui::CvarToggleCheckButton<ConVarRef>::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
-vgui::CvarToggleCheckButton<ConVarRef>::ApplySettings(KeyValues*)
-vgui::CvarToggleCheckButton<ConVarRef>::ChainToAnimationMap()::chained
-vgui::CvarToggleCheckButton<ConVarRef>::ChainToMap()::chained
-vgui::CvarToggleCheckButton<ConVarRef>::CvarToggleCheckButton(vgui::Panel*, char const*, char const*, char const*, bool)
-vgui::CvarToggleCheckButton<ConVarRef>::GetAnimMap()
-vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()
-vgui::CvarToggleCheckButton<ConVarRef>::GetKBMap()::s_pMap
-vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()
-vgui::CvarToggleCheckButton<ConVarRef>::GetMessageMap()::s_pMap
-vgui::CvarToggleCheckButton<ConVarRef>::GetPanelClassName()
-vgui::CvarToggleCheckButton<ConVarRef>::KB_ChainToMap()::chained
-vgui::CvarToggleCheckButton<ConVarRef>::OnApplyChanges()
-vgui::CvarToggleCheckButton<ConVarRef>::OnButtonChecked()
-vgui::CvarToggleCheckButton<ConVarRef>::Paint()
-vgui::CvarToggleCheckButton<ConVarRef>::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
-vgui::CvarToggleCheckButton<ConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
-vgui::CvarToggleCheckButton<ConVarRef>::SetSelected(bool)
-vgui::CvarToggleCheckButton<ConVarRef>::~CvarToggleCheckButton()
+vgui::CvarToggleCheckButton<UIConVarRef>::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
+vgui::CvarToggleCheckButton<UIConVarRef>::ApplySettings(KeyValues*)
+vgui::CvarToggleCheckButton<UIConVarRef>::ChainToAnimationMap()::chained
+vgui::CvarToggleCheckButton<UIConVarRef>::ChainToMap()::chained
+vgui::CvarToggleCheckButton<UIConVarRef>::CvarToggleCheckButton(vgui::Panel*, char const*, char const*, char const*, bool)
+vgui::CvarToggleCheckButton<UIConVarRef>::GetAnimMap()
+vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()
+vgui::CvarToggleCheckButton<UIConVarRef>::GetKBMap()::s_pMap
+vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()
+vgui::CvarToggleCheckButton<UIConVarRef>::GetMessageMap()::s_pMap
+vgui::CvarToggleCheckButton<UIConVarRef>::GetPanelClassName()
+vgui::CvarToggleCheckButton<UIConVarRef>::KB_ChainToMap()::chained
+vgui::CvarToggleCheckButton<UIConVarRef>::OnApplyChanges()
+vgui::CvarToggleCheckButton<UIConVarRef>::OnButtonChecked()
+vgui::CvarToggleCheckButton<UIConVarRef>::Paint()
+vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnApplyChanges::InitVar()::bAdded
+vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
+vgui::CvarToggleCheckButton<UIConVarRef>::SetSelected(bool)
+vgui::CvarToggleCheckButton<UIConVarRef>::~CvarToggleCheckButton()
 vgui::Dar<unsigned long>::AddElement(unsigned long)
 vgui::DirectorySelectDialog::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
 vgui::DirectorySelectDialog::ApplySchemeSettings(vgui::IScheme*)
@@ -29987,7 +29993,7 @@ vtable for vgui::ComboBox
 vtable for vgui::ComboBoxButton
 vtable for vgui::ContextLabel
 vtable for vgui::ContinuousProgressBar
-vtable for vgui::CvarToggleCheckButton<ConVarRef>
+vtable for vgui::CvarToggleCheckButton<UIConVarRef>
 vtable for vgui::DirectorySelectDialog
 vtable for vgui::DirectoryTreeView
 vtable for vgui::Divider
@@ -30128,10 +30134,10 @@ yoffset
 ~.fffff.
 ~/ff.
 ~:ff.
-~:fff.
 ~<Ff.
 ~=Cff.
 ~>Ffff.
+~>fff.
 ~?Gffff.
 ~@Fff.
 ~@ffffff.
