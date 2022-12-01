@@ -1,0 +1,2493 @@
+					
+						
+							
+																
+								break;
+								depthSuccess++;
+								exception += "."
+								exception += entry;
+								result = result[identifier];
+							Log( key + " = " + lookupTable[value] + " <-- " + value );
+							Log( key + " = " + result + " <-- " + value );
+							Log( key + " = \"" + "~" + value + "\" (unresolved)" );
+							else
+							exception += unresolvedId;
+							foreach ( entry in m_bindNamesStack )
+							iLast = iNext + 1;
+							identifiers.push( value.slice( iLast, iNext ) );
+							if ( identifier in result )
+							local exception = "Unresolved symbol: " + bind + " in ";
+							subTableOrArray[key] = "~" + value.slice( 1 );
+							subTableOrArray[key] = "~" + value;
+							subTableOrArray[key] = lookupTable[value];
+							subTableOrArray[key] = result;
+							throw exception; 
+							unresolvedId = value;
+							{
+							}
+						//::print( "Added " + value + " to call chain " + key + "\n" );
+						//::print( "Added " + value + " to call chain.\n" );
+						//::print( "Creating new call chain " + key + "\n");
+						//::print( "Creating new call simple chain\n");
+						args.push( vargv[i] );
+						chain <- [];
+						chain.push( value );
+						chains[key] <- [];
+						else
+						foreach( identifier in identifiers )
+						found = true;
+						identifiers.push( value.slice( iLast ) );
+						if ( depthSuccess == identifiers.len() )
+						if ( throwException )
+						if ( value in lookupTable )
+						key = key.slice( prefix.len() );
+						local depthSuccess = 0;
+						local iLast = 1;
+						local iNext;
+						local identifiers = [];
+						local result = lookupTable;
+						result = func();
+						result = func.acall( args ); 
+						return false;
+						value = value.slice( 1 );
+						while ( ( iNext = value.find( ".", iLast ) ) != null )
+						{
+						}
+					RecursiveSearch( val )
+					ScriptDebugIterateKeysRecursive( matchFunc, keyPath, value, visits, callback )
+					args.push( scope );
+					args.push( vargv[i] );
+					callback( keyPath, key, value );
+					colon = description.len();
+					continue;
+					else
+					else if ( controlChar == '@' )
+					for ( i = 0; i < vargv.len(); i++ )
+					found = false;
+					found = true;
+					foundMatch = ( key.find( prefix ) == 0 )
+					foundMatch = ( prefix == key );
+					if ( !(chain) )
+					if ( !(key in chains) )
+					if ( !args.len() )
+					if ( !chain.len() || chain != value )
+					if ( !chain.len() || chain.top() != value )
+					if ( !exactMatch )
+					if ( controlChar == '^' )
+					if ( result != null && !result )
+					if ( unresolvedId != null )
+					key = key.slice( prefix.len() );
+					local chain = chains[key];
+					local controlChar = value[0]
+					local func = chain[i];
+					local result;
+					local unresolvedId = null;
+					result = func.pacall( scope, args ); 
+					result = func.pcall( scope );
+					return false;
+					{
+					}
+				::_PublishedHelp[helpstr] <- true
+				Assert( typeof(symbol) == "string" )
+				Document( symbol, itemDescription[0], itemDescription[1] );
+				EstablishDelegation( childTable, value );
+				Log( "{" );
+				Log( "}" );
+				Log( isTable ? "{" : "[" );
+				Log( isTable ? "}" : "]" );
+				Log( key + " =" );
+				Log( subTablePair[0] + " = " );
+				RegisterFunctionDocumentation( val, idx, GetFunctionSignature( val, idx ), scopeTable[helpstr] )
+				RemoveDelegation( value );
+				args.push( scope );
+				description = description.slice( colon + 1 );
+				else
+				for ( i = 0; i < vargv.len(); i++ )
+				for ( i = chain.len() - 1; i >= 0; i -= 1 )
+				if ( !IsWeakref( target, key ) )
+				if ( !Resolve( subTablePair[1], subTablePair[1], false ) )
+				if ( !args.len() )
+				if ( Resolve( ( isTable ) ? value : lookupTable, value, throwException ) )
+				if ( colon == null )
+				if ( exactMatch )
+				if ( foundMatch )
+				if ( key.find( prefix ) == 0 )
+				if ( matchFunc(keyPath) )
+				if ( result != null && !result )
+				if ( string != "*" && name.tolower().find( string.tolower() ) == null )
+				if ( typeof(value) == "table" )
+				if ( value.len() )
+				if ( vargv.len() > 0 )
+				local alias = description.slice( 1, colon );
+				local args = [];
+				local colon = description.find( ":" );
+				local foundMatch = false;
+				local func = chain[i];
+				local i;
+				local keyPath = ( path ) ? path + "." + key : key
+				local result;
+				m_bindNamesStack.pop();
+				m_bindNamesStack.push( key );
+				matches.append( name ); 
+				matches.append( string )
+				name = alias;
+				print( "    Circular reference to " + target.tostring() + " in key " + key.tostring() + " slot " + val.tostring() + " of object " + current.tostring() + "\n" )
+				print( "  " );
+				printl( "Description: " + documentation[1] );
+				printl("Registered " + helpstr + " for " + val.tostring)
+				result = true
+				signature = "#";
+				signature = GetFunctionSignature( this[name], name );
+				signature = documentation[0];
+				{
+				}
+			EstablishDelegation( m_targetTable, subTablePair[1] );
+			RemoveDelegation( subTablePair[1] );
+			delete roottable[name];
+			else
+			else if ( typeof( val ) == "table" || typeof( val ) == "array" || typeof( val ) == "instance" )
+			for ( i = chain.len() - 1; i >= 0; i -= 1 )
+			for ( local i = 0; i < m_logIndent; i++ )
+			foreach( name, documentation in Documentation.functions )
+			foreach( subTablePair in m_fixupSet )
+			foreach( symbol, itemDescription in symbolOrTable )
+			if ( ( helpstr in scopeTable ) && ( ! (helpstr in ::_PublishedHelp) ) )
+			if ( chain.len() )
+			if ( description[0] == '#' )
+			if ( documentation[0] != "#" )
+			if ( documentation[1].len() )
+			if ( isTable || isArray )
+			if ( string in Documentation.functions )
+			if ( type == "string" )
+			if ( type == "table" )
+			if ( typeof( value ) == "function" ) 
+			if ( typeof(key) == "string" )
+			if ( val == target && !IsWeakref( target, key ) )
+			if ( vargv.len() > 0 )
+			local args = [];
+			local b = ( description[0] == '#' );
+			local chain = chains[event];
+			local documentation = Documentation.functions[name];
+			local helpstr = "scripthelp_" + idx
+			local i;
+			local isArray = ( type == "array" )
+			local isTable = ( type == "table" );
+			local result = name;
+			local signature;
+			local type = typeof value;
+			print( "\n" ); 
+			printl( "Function:    " + name );
+			printl( "Signature:   " + signature );
+			printl( "Symbol " + string + " not found" );
+			printl( string );
+			printl( symbolOrTable + ":" + itemIfSymbol.tostring() + "/" + descriptionIfSymbol );
+			return NativeFunctionSignatures[nativeFunction]
+			return;
+			roottable[name] = saved;
+			saved = roottable[name];
+			scope = ::getroottable();
+			scope = scopeForThis;
+		// Expose a bound global function to dispatch to this object
+		Documentation.functions[name] <- [ signature, description ]
+		FindCircularReference( val )
+		HookRootMetamethod( "_get", function( key ) { return "^" + key; } );
+		HookRootMetamethod( "_newslot", function( key, value ) { if ( typeof value == "table" ) { m_fixupSet.push( [ key, value ] ); this.rawset( key, value ); };  }.bindenv(this) );
+		Log( "...end resolution" );
+		Log( "Begin late bind on table " + m_targetTable );
+		Log( "Begin resolution... " )
+		Log( "End late bind on table " + m_targetTable );
+		RecursiveSearch( target );
+		UnhookRootMetamethod( "_get" );
+		UnhookRootMetamethod( "_newslot" );
+		chain = [];
+		chains = {};
+		childTable.setdelegate( null );
+		childTable.setdelegate( parentTable );
+		classes = {}
+		delete roottable[saveSlot];
+		delete scope.getdelegate()[scope.__vname];
+		else
+		else if ( exact )
+		exactMatch = exactNameMatch
+		foreach( key, val in current )
+		foreach( key, value in childTable )
+		foreach( key, value in current )
+		foreach( key, value in scope )
+		foreach( key, value in subTableOrArray )
+		foreach( name in matches )
+		foreach( subTablePair in m_fixupSet )
+		functions = {}
+		if ( chain.len() )
+		if ( current in visits )
+		if ( description.len() )
+		if ( event in chains )
+		if ( m_log )
+		if ( matches.len() == 0 )
+		if ( name in roottable )
+		if ( nativeFunction in NativeFunctionSignatures )
+		if ( saved != null )
+		if ( scopeForThis != null )
+		if ( string == "*" || !exact )
+		if ( typeof( symbolOrTable ) == "table" )
+		if (typeof(val) == "function")
+		instances = {}
+		local found = false;
+		local found = true;
+		local matches = []
+		local roottable = getroottable();
+		local saveSlot = "__saved" + name;
+		local saved = null;
+		local saved = roottable[saveSlot];
+		m_log = log;
+		m_logIndent++;
+		m_logIndent--;
+		m_targetTable = target;
+		matchFunc = MatchAll
+		matchFunc = MatchRegexp
+		matchFunc = MatchSubstring
+		matches.sort();
+		pattern = regexp( "^" + name + "$" )
+		pattern = regexp( name.slice( 1 ) )
+		prefix = prefixString;
+		printl( "    " + keyPath + " = " + value ); 
+		printl( "    None");
+		printl( "Find \"" + name + "\"\n{" );
+		printl( "You must have started the script VM in developer mode to use this. Start a map/the app with '-dev'" );
+		printl( table.tostring() + "\n{" );
+		realPrint( "  " )
+		result = outer[name] <- { __vname=name, __vrefs = 1 };
+		result = outer[name];
+		result.__vrefs += 1;
+		result.setdelegate( outer );
+		return
+		return "<unnamed>"
+		return found;
+		return keyPath.find( name ) != null;
+		return pattern.match( keyPath );
+		return true;
+		return;
+		roottable["__saved" + name] <- saved;
+		roottable[name] <- value;
+		scope.__vname = null;
+		scope.setdelegate( null );
+		scope[ "Dispatch" + prefixString ] <- Call.bindenv( this );
+		table = getroottable()
+		throw "Assertion failed";
+		throw "Assertion failed: " + msg;
+		throw "Bad input to FindCircularReference"
+		throw "Bad reference counting on scope " + scope.__vname;
+		visits[current] <- true
+		visits[current] <- true;
+		while ( found )
+	// private:
+	// public:
+	Client debugger initialized, waiting for connection from Visual Studio...
+	Connected!
+	Documentation <-
+	DumpObject( resurrecteds );
+	P@`@
+	ScriptDebugIterateKeys( name, PrintKey, table );
+	ScriptDebugIterateKeysRecursive( matchFunc, null, table, visits, callback );
+	chain = null;
+	chains = null;
+	constructor( prefixString, scopeForThis = null )
+	constructor( prefixString, scopeForThis = null, exactNameMatch = false )
+	else
+	else // general
+	else if ( name[0] == '#' ) // exact
+	else if ( name[0] == '@' ) // regexp
+	else if ( scope.__vrefs == 0 )
+	exactMatch = false
+	failed to connect.
+	for ( local i = print_indent; i > 0; --i )
+	foreach (idx, val in scopeTable )
+	foreach( val in resurrecteds )
+	function Begin( target, log = false )
+	function Call( ... )
+	function Call( event, ... )
+	function Document( symbolOrTable, itemIfSymbol = null, descriptionIfSymbol = null )
+	function Document( symbolOrTable, itemIfSymbol = null, descriptionIfSymbol = null ) {}
+	function End()
+	function EstablishDelegation( parentTable, childTable )
+	function HookRootMetamethod( name, value )
+	function Log( string )
+	function PostScriptExecute() 
+	function PrintHelp( string = "*", exact = false )
+	function RecursiveSearch( current )
+	function RegisterFunctionDocumentation( func, name, signature, description )
+	function RegisterFunctionDocumentation( func, name, signature, description ) {}
+	function RemoveDelegation( childTable )
+	function Resolve( lookupTable, subTableOrArray, throwException = false )
+	function RetrieveNativeSignature( nativeFunction )
+	function RetrieveNativeSignature( nativeFunction ) { return "<unnamed>"; }
+	function UnhookRootMetamethod( name )
+	if ( ! ( current in visits ) )
+	if ( !(name in outer) )
+	if ( b )
+	if ( msg != null )
+	if ( name == "" )
+	if ( resurrecteds == null )
+	if ( scope.__vrefs < 0 )
+	if ( table == null )
+	if ( typeof( resurrecteds ) != "array" )
+	if ( typeof( target ) == "table" || typeof( target ) == "array" || typeof( target ) == "instance" )
+	local function MatchAll( keyPath )
+	local function MatchRegexp( keyPath )
+	local function MatchSubstring( keyPath )
+	local function PrintKey( keyPath, key, value )
+	local matchFunc;
+	local pattern;
+	local result = false
+	local result;
+	local visits = {}
+	m_bindNamesStack = [];
+	m_fixupSet = [];
+	m_log = false;
+	m_logIndent = 0;
+	m_targetTable = null;
+	prefix = null;
+	print("Resurrected objects: ")
+	printl( "Circular references:" )
+	printl( "}" );
+	realPrint( text )
+	return print( text );
+	return print( text + "\n" );
+	return result
+	return result;
+	scope = null;
+	scope.__vrefs -= 1;
+	w4A1
+  00  
+ %s="%s"
+ 2008, Valve Corporation, All rights reserved. ========
+ `000PPp
+ `P  
+ s n  n
+!ffffff.
+"CreateInterface
+%.14g
+%f %f
+%f %f %f
+%f %f %f %f
+%ffffff.
+%s [%d]
+%s line = (%d) column = (%d) : error %s
+&#%d;
+&amp;
+&apos;
+&quot;
+&quot;n
+&quot;r
+'break' has to be in a loop block
+'continue' has to be in a loop block
+(%s : 0x%p)
+(instance : 0x%p)
+(qangle : (%f, %f, %f)
+(quaternion : (%f, %f, %f, %f)
+(vector : (%f, %f, %f)
+(vector2D : (%f, %f)
+(vector4D : (%f, %f, %f, %f)
+(weakref : 0x%p [%s] )
+)@@@@ p
+*FUNCTION [%s()] %s line [%d]
+*FUNCTION [%s] %s line [%d]
+*fff.
+, or } expected
+,;^l|
+,^_[]
+-+ #0
+-> %s
+-sqdbg_superverbose
+.CTt7
+.fffff.
+//				RegisterFunctionDocumentation( val, idx, "#", scopeTable[helpstr] )
+// 	   BarBar="@Test1.Foo"
+// 	   Foo=1
+// 	   FooFoo = "I'm foo foo"
+// 	   SubTable = { boo=[bah, "@Test2.FooFoo", "@Test1.Foo"], booboo2={one=bah, two="@Test2.FooFoo", three="@Test1.Foo"} }
+// 	   bah=wha
+// 	   booboo2={one=bah, two="@Test2.FooFoo", three="@Test1.Foo"}
+// 	   booboo=[bah, "@Test2.FooFoo", "@Test1.Foo"]
+//    
+//    Test1 <-
+//    Test2 <-
+//    delete lateBinder;
+//    lateBinder <- LateBinder();
+//    lateBinder.Begin( this );
+//    lateBinder.End();
+//    {   
+//    }   
+// Documentation table
+// General
+// Late binding: allows a table to refer to parts of itself, it's children,
+// Purpose: Script initially run after squirrel VM is initialized
+// Usage:
+// VSquirrel support functions
+// When End() is called, all of the unresolved symbols in the tables and arrays will be resolved,
+// any left unresolved will become a string prepended with '~', which later code can deal with
+// it's owner, and then have the references fixed up after it's fully parsed
+// support function to assemble help strings for script calls - call once all your stuff is in the VM
+//-----------------------------------------------------------------------------
+//===	======= Copyright 
+//=============================================================================
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/libkern/i386/_OSByteOrder.h
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/sys/_types/_fd_def.h
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__tree
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/memory
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/new
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/set
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector
+/Users/buildbot/buildslave/../.ccache/tmp/
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(mathlib_base.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(sse.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(convar.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(interface.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(strtools.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(tier1.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(utlbuffer.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libtier1.a(utlsymbol.o)
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/memoverride.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqapi.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqbaselib.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqclass.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqcompiler.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqdbgserver.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqdebug.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqfuncstate.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqlexer.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqobject.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqqangle.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqquaternion.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqrdbg.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstate.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstdaux.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstdblob.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstdmath.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstdrex.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstdstream.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqstdstring.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqtable.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqvector.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqvector2d.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqvector4d.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/sqvm.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/vscript.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/vscript.build/Objects-normal/i386/vsquirrel3.o
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/mathlib/mathlib_base.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/mathlib/sse.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/Color.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/appframework/IAppSystem.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/mathlib.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector4d.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/fasttimer.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/memoverride.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/platform.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/threadtools.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier0/vprof.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/convar.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/fmtstr.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/generichash.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/strtools.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/tier1.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlfixedmemory.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlhash.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utllinkedlist.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlmap.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlmemory.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlrbtree.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlsymbol.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlvector.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/vscript/ivscript.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/vscript/variant.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/vscript/vscript_templates.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/convar.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/interface.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/strtools.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/tier1.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/utlbuffer.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/tier1/utlsymbol.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/include/sqdbgserver.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqdbg/sqdbgserver.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqdbg/sqrdbg.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdaux.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdblob.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdblobimpl.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdmath.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdrex.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdstream.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/sqstdlib/sqstdstring.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqapi.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqarray.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqbaselib.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqclass.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqclass.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqclosure.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqcompiler.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqdebug.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqfuncproto.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqfuncstate.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqfuncstate.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqlexer.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqobject.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqobject.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqopcodes.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqstate.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqstring.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqtable.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqtable.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/squserdata.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/squtils.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqvm.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/squirrel/sqvm.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/../squirrel/sqarray.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/../squirrel/sqobject.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/../squirrel/sqtable.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/../squirrel/squtils.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/../squirrel/sqvm.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/sqplushelpers.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/sqqangle.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/sqquaternion.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/sqvector.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/sqvector2d.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/sqvector4d.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/vsquirrel3.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/languages/squirrel3/vsquirrel3/vsquirrelvm.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/vscript/vscript.cpp
+/usr/lib/libSystem.B.dylib
+/usr/lib/libc++.1.dylib
+/usr/lib/libiconv.2.dylib
+0 0P00 @0
+00  @@0
+0E4SQVM
+10IAppSystem
+10SQInstance
+10SQUserData
+11CSquirrelVM
+11SQDelegable
+11SQGenerator
+12CEmptyConVar
+12SQRefCounted
+13SQCollectable
+14CBaseAppSystemI14IScriptManagerE
+14CScriptManager
+14ConCommandBase
+14IScriptManager
+15CScopedIterator
+15CTier0AppSystemI14IScriptManagerE
+15CTier1AppSystemI14IScriptManagerLi0EE
+15SQFunctionProto
+15SQNativeClosure
+16CDefaultAccessor
+16CSQStateIterator
+18CUtlCharConversion
+19CUtlNoEscConversion
+23IConCommandBaseAccessor
+4fffff.
+6ConVar
+6SQBlob
+7IConVar
+7SQArray
+7SQOuter
+7SQTable
+7fffff.
+8CFmtStrNILi256ELb0EE
+8SQStream
+8SQString
+8ffffff.
+9IScriptVM
+9SQClosure
+9SQWeakRef
+::_PublishedHelp <- {}
+;C$v;
+;p,|eF
+;y$t>
+</%s>
+<^_[]
+<ffffff.
+<lambda or free run script>
+<null>
+<unknown>
+<unnamed>
+>fffff.
+?7SQClass
+@(^_]
+@@  0
+@@@P@@Pp
+@CThreadEvent::CThreadEvent(bool)
+@CThreadEvent::Set()
+@CThreadRWLock::LockForWrite()
+@CThreadRWLock::UnlockWrite()
+@CThreadRWLock::WaitForRead()
+@CThreadSyncObject::~CThreadSyncObject()
+@CVProfNode::EnterScope()
+@CVProfNode::ExitScope()
+@CVProfNode::GetSubNode(char const*, int, char const*, int)
+@DevMsg(char const*, ...)
+@DevWarning(char const*, ...)
+@INDEX@
+@ITERATOR@
+@_CommandLine_Tier0
+@_Error
+@_HushAsserts
+@_Log
+@_Msg
+@_Plat_FloatTime
+@_RandomFloat
+@_RandomInt
+@_ThreadGetCurrentId
+@_ThreadSleep
+@_Warning
+@__DefaultRuneLocale
+@__Unwind_Resume
+@___bzero
+@___cxa_atexit
+@___cxa_begin_catch
+@___cxa_call_unexpected
+@___cxa_guard_abort
+@___cxa_guard_acquire
+@___cxa_guard_release
+@___cxa_pure_virtual
+@___gxx_personality_v0
+@___maskrune
+@___stack_chk_fail
+@___stack_chk_guard
+@___tolower
+@___toupper
+@_acosf
+@_asin
+@_asinf
+@_atan2
+@_atan2f
+@_atanf
+@_atof
+@_atoi
+@_bind$UNIX2003
+@_ceilf
+@_close$UNIX2003
+@_cosf
+@_expf
+@_floorf
+@_fmod
+@_free
+@_g_ClockSpeedMillisecondsMultiplier
+@_g_VProfCurrentProfile
+@_g_pMemAlloc
+@_log10f
+@_logf
+@_longjmp
+@_malloc
+@_memchr
+@_memcmp
+@_memcpy
+@_memmove
+@_pow
+@_pthread_mutex_destroy
+@_pthread_mutex_init
+@_pthread_mutex_lock
+@_pthread_mutex_unlock
+@_pthread_mutexattr_init
+@_pthread_mutexattr_settype
+@_rand
+@_recv$UNIX2003
+@_select$DARWIN_EXTSN
+@_send$UNIX2003
+@_setjmp
+@_sin
+@_sinf
+@_socket
+@_sprintf
+@_srand
+@_strcasecmp
+@_strcmp
+@_strcpy
+@_strlen
+@_strstr
+@_strtod$UNIX2003
+@_strtok
+@_strtol
+@_strtoul
+@_tanf
+@_vsnprintf
+@_vsprintf
+@dyld_stub_binder
+@ffffff.
+@loader_path/libtier0.dylib
+@loader_path/libvstdlib.dylib
+@loader_path/vscript.dylib
+@std::__1::__vector_base_common<true>::__throw_length_error() const
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*)
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*, unsigned long)
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(unsigned long, char)
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::assign(char const*)
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::operator=(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::push_back(char)
+@std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+@std::terminate()
+@typeinfo for std::bad_alloc
+@vtable for __cxxabiv1::__class_type_info
+@vtable for __cxxabiv1::__si_class_type_info
+@vtable for __cxxabiv1::__vmi_class_type_info
+A,+A0]
+AN ERROR HAS OCCURED [%s]
+AN ERROR HAS OCCURED [unknown]
+AVBSB
+Accessed null instance
+AngleQuaternion(QAngle const&, Quaternion&)
+AngleVectors(QAngle const&, Vector*)
+AngleVectors(QAngle const&, Vector*, Vector*, Vector*)
+BSBRASASBRBRBRBRBRBRBRBRBRBRBRBRBRCRBSBRASASBRBRBRBRBRBRBRBRBRBRASBRBRASASBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRBRASASBRBRBRBRBRBRBRBRBRBRBRBRASASBRBRBRBRBRBRBRBRBRBR0
+BTB`gBRASASASASASASASASASASASASASASASBRASAp
+B`5ARA`
+Bad key string passed to a ISquirrelMetamethodDelegate _get()
+Bad user pointer passed to a ISquirrelMetamethodDelegate _get()
+C;_L|
+C;_\|
+C;_d|
+CALLSTACK
+CBaseAppSystem<IScriptManager>::QueryInterface(char const*)
+CCleanupUtlSymbolTable::~CCleanupUtlSymbolTable()
+CDefOps<void*>::LessFunc(void* const&, void* const&)
+CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
+CEmptyConVar::GetName() const
+CEmptyConVar::IsFlagSet(int) const
+CEmptyConVar::SetValue(char const*)
+CEmptyConVar::SetValue(float)
+CEmptyConVar::SetValue(int)
+CEmptyConVar::~CEmptyConVar()
+CFmtStrN<256, false>::CFmtStrN(char const*, ...)
+CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
+CFmtStrN<256, false>::InitQuietTruncation()
+CNonMemberScriptBinding2<float (*)(float, float), float, float, float>::Call(ScriptFunctionBindingStorageType_t, void*, CVariantBase<CVariantDefaultAllocator>*, int, CVariantBase<CVariantDefaultAllocator>*)
+CNonMemberScriptBinding2<int (*)(int, int), int, int, int>::Call(ScriptFunctionBindingStorageType_t, void*, CVariantBase<CVariantDefaultAllocator>*, int, CVariantBase<CVariantDefaultAllocator>*)
+CScopedIterator::BeginContained()
+CScopedIterator::EndContained()
+CScopedIterator::Key(SQObjectPtr const&)
+CScopedIterator::PsuedoKey(char const*)
+CScopedIterator::Value(SQObjectPtr const&)
+CScriptManager::CreateVM(ScriptLanguage_t)
+CScriptManager::CreateVM(ScriptLanguage_t)::binding
+CScriptManager::DestroyVM(IScriptVM*)
+CSquirrelMetamethodDelegateImpl::SqGetMetamethodThunk(SQVM*)
+CSquirrelMetamethodDelegateImpl::~CSquirrelMetamethodDelegateImpl()
+CSquirrelVM::AddSearchPath(char const*)
+CSquirrelVM::ArrayAddToTail(HSCRIPT__*, CVariantBase<CVariantDefaultAllocator> const&)
+CSquirrelVM::CSquirrelVM(SQVM*)
+CSquirrelVM::CallConstructor(SQVM*)
+CSquirrelVM::ClearValue(HSCRIPT__*, char const*)
+CSquirrelVM::CollectGarbage(char const*, bool)
+CSquirrelVM::CompileScript(char const*, char const*)
+CSquirrelVM::ConnectDebugger()
+CSquirrelVM::ConvertToVariant(SQVM*, tagSQObject, CVariantBase<CVariantDefaultAllocator>*)
+CSquirrelVM::CopyHandle(HSCRIPT__*)
+CSquirrelVM::CreateClass(ScriptClassDesc_t*)
+CSquirrelVM::CreateNativeInstance(ScriptClassDesc_t*, void*, int (*)(void*, int))
+CSquirrelVM::CreateScope(char const*, HSCRIPT__*)
+CSquirrelVM::CreateTable(CVariantBase<CVariantDefaultAllocator>&)
+CSquirrelVM::DestroySquirrelMetamethod_Get(CSquirrelMetamethodDelegateImpl*)
+CSquirrelVM::DisconnectDebugger()
+CSquirrelVM::DumpObject(SQVM*)
+CSquirrelVM::DumpState()
+CSquirrelVM::ErrorFunc(SQVM*, char const*, ...)
+CSquirrelVM::ExecuteFunction
+CSquirrelVM::ExecuteFunction sq_throwerror
+CSquirrelVM::ExecuteFunction(HSCRIPT__*, CVariantBase<CVariantDefaultAllocator>*, int, CVariantBase<CVariantDefaultAllocator>*, HSCRIPT__*, bool)
+CSquirrelVM::ExternalInstanceReleaseHook(void*, int)
+CSquirrelVM::Frame(float)
+CSquirrelVM::GenerateUniqueKey(char const*, char*, int)
+CSquirrelVM::GetDeveloper(SQVM*)
+CSquirrelVM::GetFunctionSignature(SQVM*)
+CSquirrelVM::GetIdentity(HSCRIPT__*)
+CSquirrelVM::GetInstanceValue(HSCRIPT__*, ScriptClassDesc_t*)
+CSquirrelVM::GetInternalVM()
+CSquirrelVM::GetKeyValue(HSCRIPT__*, int, CVariantBase<CVariantDefaultAllocator>*, CVariantBase<CVariantDefaultAllocator>*)
+CSquirrelVM::GetKeyValue2(HSCRIPT__*, int, CVariantBase<CVariantDefaultAllocator>*, CVariantBase<CVariantDefaultAllocator>*)
+CSquirrelVM::GetLanguage()
+CSquirrelVM::GetLanguageName()
+CSquirrelVM::GetNumTableEntries(HSCRIPT__*)
+CSquirrelVM::GetRootTable()
+CSquirrelVM::GetScalarValue(HSCRIPT__*, CVariantBase<CVariantDefaultAllocator>*)
+CSquirrelVM::GetValue(HSCRIPT__*, char const*, CVariantBase<CVariantDefaultAllocator>*)
+CSquirrelVM::Init()
+CSquirrelVM::InstanceIsValid(SQVM*)
+CSquirrelVM::InstanceToString(SQVM*)
+CSquirrelVM::IsWeakref(SQVM*)
+CSquirrelVM::LookupFunction(char const*, HSCRIPT__*, bool)
+CSquirrelVM::LookupObject(char const*, HSCRIPT__*, bool, bool)
+CSquirrelVM::MakeNamespace(SQVM*)
+CSquirrelVM::MakeSquirrelMetamethod_Get(HSCRIPT__*&, char const*, IScriptVM::ISquirrelMetamethodDelegate*, bool)
+CSquirrelVM::PrintFunc(SQVM*, char const*, ...)
+CSquirrelVM::PushVariant(CVariantBase<CVariantDefaultAllocator> const&, bool)
+CSquirrelVM::QueryBreak(SQVM*)
+CSquirrelVM::RaiseException(char const*)
+CSquirrelVM::ReadState(CUtlBuffer*)
+CSquirrelVM::ReferenceScope(HSCRIPT__*)
+CSquirrelVM::RegisterClass(ScriptClassDesc_t*)
+CSquirrelVM::RegisterFunction(ScriptFunctionBinding_t*)
+CSquirrelVM::RegisterFunctionGuts(ScriptFunctionBinding_t*, ScriptClassDesc_t*)
+CSquirrelVM::RegisterInstance(ScriptClassDesc_t*, void*)
+CSquirrelVM::ReleaseFunction(HSCRIPT__*)
+CSquirrelVM::ReleaseHook(void*, int)
+CSquirrelVM::ReleaseScope(HSCRIPT__*)
+CSquirrelVM::ReleaseScript(HSCRIPT__*)
+CSquirrelVM::ReleaseValue(CVariantBase<CVariantDefaultAllocator>&)
+CSquirrelVM::RemoveInstance(HSCRIPT__*)
+CSquirrelVM::RemoveOrphanInstances()
+CSquirrelVM::Run(HSCRIPT__*, HSCRIPT__*, bool)
+CSquirrelVM::Run(HSCRIPT__*, bool)
+CSquirrelVM::Run(char const*, bool)
+CSquirrelVM::SetErrorCallback(bool (*)(ScriptErrorLevel_t, char const*))
+CSquirrelVM::SetInstanceUniqeId(HSCRIPT__*, char const*)
+CSquirrelVM::SetOutputCallback(void (*)(char const*))
+CSquirrelVM::SetValue(HSCRIPT__*, char const*, CVariantBase<CVariantDefaultAllocator> const&)
+CSquirrelVM::SetValue(HSCRIPT__*, char const*, char const*)
+CSquirrelVM::Shutdown()
+CSquirrelVM::TranslateCall(SQVM*)
+CSquirrelVM::ValueExists(HSCRIPT__*, char const*)
+CSquirrelVM::WriteState(CUtlBuffer*)
+CThreadEvent::CThreadEvent(bool)
+CThreadEvent::Set()
+CThreadRWLock::LockForWrite()
+CThreadRWLock::UnlockWrite()
+CThreadRWLock::WaitForRead()
+CThreadSyncObject::~CThreadSyncObject()
+CTier1AppSystem<IScriptManager, 0>::Connect(void* (*)(char const*, int*))
+CTier1AppSystem<IScriptManager, 0>::Disconnect()
+CTier1AppSystem<IScriptManager, 0>::Init()
+CTier1AppSystem<IScriptManager, 0>::Shutdown()
+CUtlCStringConversion::CUtlCStringConversion(char, char const*, int, CUtlCharConversion::ConversionArray_t*)
+CUtlCStringConversion::FindConversion(char const*, int*)
+CUtlCharConversion::FindConversion(char const*, int*)
+CUtlFixedMemory overflow!
+CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::CUtlHashFast()
+CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::FastInsert(unsigned int, SQClass* const&)
+CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::~CUtlHashFast()
+CUtlLinkedList overflow! (exhausted index range)
+CUtlLinkedList overflow! (exhausted memory allocator)
+CUtlLinkedList<CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::HashFastData_t_<SQClass*>, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::HashFastData_t_<SQClass*>, int> > >::AllocInternal(bool)
+CUtlLinkedList<CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::HashFastData_t_<SQClass*>, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::HashFastData_t_<SQClass*>, int> > >::RemoveAll()
+CUtlLinkedList<CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::HashFastData_t_<SQClass*>, int, true, int, CUtlFixedMemory<UtlLinkedListElem_t<CUtlHashFast<SQClass*, CUtlHashFastGenericHash>::HashFastData_t_<SQClass*>, int> > >::Unlink(int)
+CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
+CUtlNoEscConversion::FindConversion(char const*, int*)
+CUtlRBTree overflow!
+CUtlRBTree<CUtlMap<void*, void*, unsigned short, bool (*)(void* const&, void* const&)>::Node_t, unsigned short, CUtlMap<void*, void*, unsigned short, bool (*)(void* const&, void* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<void*, void*, unsigned short, bool (*)(void* const&, void* const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
+CUtlRBTree<CUtlMap<void*, void*, unsigned short, bool (*)(void* const&, void* const&)>::Node_t, unsigned short, CUtlMap<void*, void*, unsigned short, bool (*)(void* const&, void* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<void*, void*, unsigned short, bool (*)(void* const&, void* const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Purge()
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::~CUtlRBTree()
+CUtlSymbol::CUtlSymbol(char const*)
+CUtlSymbol::Initialize()
+CUtlSymbol::Initialize()::symbolsInitialized
+CUtlSymbol::String() const
+CUtlSymbol::s_pSymbolTable
+CUtlSymbolTable::AddString(char const*)
+CUtlSymbolTable::CLess::operator()(CUtlSymbolTable::CStringPoolIndex const&, CUtlSymbolTable::CStringPoolIndex const&) const
+CUtlSymbolTable::~CUtlSymbolTable()
+CUtlSymbolTableMT::String(CUtlSymbol) const
+CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
+CUtlVector<int, CUtlMemory<int, int> >::AddToTail(int const&)
+CUtlVector<int, CUtlMemory<int, int> >::InsertMultipleBefore(int, int)
+CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
+CVProfNode::EnterScope()
+CVProfNode::ExitScope()
+CVProfNode::GetSubNode(char const*, int, char const*, int)
+Compile(SQVM*, int (*)(void*), void*, char const*, SQObjectPtr&, bool, bool)
+CompileTypemask(sqvector<int>&, char const*)
+ConCommandBase::CreateBase(char const*, char const*, int)
+ConCommandBase::GetDLLIdentifier() const
+ConCommandBase::s_pAccessor
+ConCommandBase::s_pConCommandBases
+ConVar::AddFlags(int)
+ConVar::ChangeStringValue(char const*, float)
+ConVar::ClampValue(float&)
+ConVar::ConVar(char const*, char const*, int)
+ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
+ConVar::GetHelpText() const
+ConVar::GetName() const
+ConVar::Init()
+ConVar::InternalSetFloatValue(float, bool)
+ConVar::InternalSetIntValue(int)
+ConVar::InternalSetValue(char const*)
+ConVar::IsCommand() const
+ConVar::IsFlagSet(int) const
+ConVar::IsRegistered() const
+ConVar::SetValue(char const*)
+ConVar::SetValue(float)
+ConVar::SetValue(int)
+ConVar::~ConVar()
+ConVarRef %s doesn't point to an existing ConVar
+ConVarRef::ConVarRef(char const*, bool)
+ConVarRef::Init(char const*, bool)::bFirst
+ConVar_Register(int, IConCommandBaseAccessor*)
+ConVar_Unregister()
+ConnectTier1Libraries(void* (**)(char const*, int*), int)
+CreateDefaultDelegate(SQSharedState*, tagSQRegFunction*)
+Cross
+DevMsg(char const*, ...)
+DevWarning(char const*, ...)
+DisconnectTier1Libraries()
+DumpObject
+Efff.
+F ;G$v:
+F;w0|
+FLOAT
+Fffff.
+FindCircularReferences( %s )
+FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!
+Forward
+G,+G0
+G,;G0~_
+G;y r
+G;~,|
+G;~D|
+G;~L|
+G;~d|
+G<Ht5
+GFff.
+GFffff.
+G\C;_@
+Generate a random floating point number within a range, inclusive
+Generate a random integer within a range, inclusive
+GetFunctionSignature
+GetMetamethodIdentifier(SQMetaMethod)::pIdentifiers
+GetTypeName(SQObjectPtr const&)
+H09H,~[
+H__ZdaPv
+H__ZdlPv
+H__Znam
+H__Znwm
+IDENTIFIER
+INTEGER
+INVALID_HSQOBJECT
+IdType2Name(tagSQObjectType)
+Initializing script debugger.
+IntToString(int)::temp
+InterfaceReg::InterfaceReg(void* (*)(), char const*)
+InterfaceReg::s_pInterfaceRegs
+Internal error
+Invalid attempt to create a slot
+Invalid character
+Invalid scope handed to script VM
+Invalid type specified for SetValue
+Invert
+IsValid
+IsWeakref
+K@9KDv
+KX9K\v
+LOCALS
+L^_[]
+Length
+Length2D
+Length2DSqr
+LengthSqr
+MakeNamespace
+MatrixAngles(matrix3x4_t const&, float*)
+N(9N,
+N49N8
+N<9N@v
+NATIVE
+NL9NPv
+Namespace table '%s' continuation must be a table
+Native stack overflow
+O$9O(vz
+O,+O0
+O09O4v`
+O<9O@v
+P  ``
+P,;P0
+PP   
+PPPPPPPPP
+PPP`0PP
+PPP`pPP
+Pitch
+PrintTabs(int)::pTabs
+QAngle
+QAngle argument expected
+QAngleAdd(SQVM*)
+QAngleConstruct(SQVM*)
+QAngleForward(SQVM*)
+QAngleGet(SQVM*)
+QAngleIterate(SQVM*)
+QAngleIterate(SQVM*)::results
+QAngleLeft(SQVM*)
+QAnglePitch(SQVM*)
+QAngleRelease(void*, int)
+QAngleRoll(SQVM*)
+QAngleScale(SQVM*)
+QAngleSet(SQVM*)
+QAngleSubtract(SQVM*)
+QAngleToKeyValueString(SQVM*)
+QAngleToQuat(SQVM*)
+QAngleToString(SQVM*)
+QAngleTypeOf(SQVM*)
+QAngleUp(SQVM*)
+QAngleYaw(SQVM*)
+QuatAdd(SQVM*)
+QuatConstruct(SQVM*)
+QuatDot(SQVM*)
+QuatGet(SQVM*)
+QuatInvert(SQVM*)
+QuatIterate(SQVM*)
+QuatIterate(SQVM*)::results
+QuatNorm(SQVM*)
+QuatRelease(void*, int)
+QuatScale(SQVM*)
+QuatSet(SQVM*)
+QuatSetPitchYawRoll(SQVM*)
+QuatSubtract(SQVM*)
+QuatToKeyValueString(SQVM*)
+QuatToQAngle(SQVM*)
+QuatToString(SQVM*)
+QuatTypeOf(SQVM*)
+Quaternion
+Quaternion argument expected
+QuaternionAdd(Quaternion const&, Quaternion const&, Quaternion&)
+QuaternionAlign(Quaternion const&, Quaternion const&, Quaternion&)
+QuaternionAngles(Quaternion const&, QAngle&)
+QuaternionConjugate(Quaternion const&, Quaternion&)
+QuaternionDotProduct(Quaternion const&, Quaternion const&)
+QuaternionInvert(Quaternion const&, Quaternion&)
+QuaternionMatrix(Quaternion const&, matrix3x4_t&)
+QuaternionNormalize(Quaternion&)
+QuaternionScale(Quaternion const&, float, Quaternion&)
+RAND_MAX
+RARAp
+RASASASASASASASASASASASASBRASASASASASASAp
+RASASASASASASASASASFRASASASASASAp
+RASASASASASASASASAp
+RASASASASASASASASFRASASASASFRAp
+RASASASASASBRASASASASAp
+RASASASASAp
+RASASASASBRASASAp
+RASASASASBRAp
+RASASASBRASAp
+RASBRAp
+RBRBRBRASBRBRBRBRBRBRBRASASBRASBRBRBRBRGXAYBRBVBTBXAXAp
+RBRBRBRBR0
+RandomFloat
+RandomInt
+RefTable::AddRef(tagSQObject&)
+RefTable::Get(tagSQObject&, unsigned int&, RefTable::RefNode**, bool)
+RefTable::Release(tagSQObject&)
+RefTable::Resize(unsigned int)
+RegisterFunctionDocumentation
+RegisterQAngle(SQVM*)
+RegisterQuat(SQVM*)
+RegisterVector(SQVM*)
+RegisterVector2D(SQVM*)
+RegisterVector4D(SQVM*)
+SCRIPT PERF WARNING --- "%s" ran long at %fms
+SQArray::Append(tagSQObject const&)
+SQArray::Create(SQSharedState*, int)
+SQArray::Extend(SQArray const*)
+SQArray::Finalize()
+SQArray::GetType()
+SQArray::Insert(int, tagSQObject const&)
+SQArray::Iterate(CSQStateIterator*)
+SQArray::Mark(SQCollectable**)
+SQArray::Next(SQObjectPtr const&, SQObjectPtr&, SQObjectPtr&)
+SQArray::Pop()
+SQArray::Release()
+SQArray::SQArray(SQSharedState*, int)
+SQArray::~SQArray()
+SQBlob::EOS()
+SQBlob::Flush()
+SQBlob::IsValid()
+SQBlob::Len()
+SQBlob::Read(void*, int)
+SQBlob::Resize(int)
+SQBlob::Seek(int, int)
+SQBlob::Tell()
+SQBlob::Write(void*, int)
+SQBlob::s_total_blob_size
+SQBlob::~SQBlob()
+SQClass::CreateInstance()
+SQClass::Finalize()
+SQClass::Get(SQObjectPtr const&, SQObjectPtr&)
+SQClass::GetAttributes(SQObjectPtr const&, SQObjectPtr&)
+SQClass::GetType()
+SQClass::Iterate(CSQStateIterator*)
+SQClass::Mark(SQCollectable**)
+SQClass::NewSlot(SQSharedState*, SQObjectPtr const&, SQObjectPtr const&, bool)
+SQClass::Next(SQObjectPtr const&, SQObjectPtr&, SQObjectPtr&)
+SQClass::Release()
+SQClass::SQClass(SQSharedState*, SQClass*)
+SQClass::Set(SQObjectPtr const&, SQObjectPtr const&)
+SQClass::SetAttributes(SQObjectPtr const&, SQObjectPtr const&)
+SQClass::~SQClass()
+SQClosure::Clone()
+SQClosure::Create(SQSharedState*, SQFunctionProto*)
+SQClosure::Finalize()
+SQClosure::GetType()
+SQClosure::GetVprofNodeName()
+SQClosure::Iterate(CSQStateIterator*)
+SQClosure::Mark(SQCollectable**)
+SQClosure::Release()
+SQClosure::~SQClosure()
+SQCollectable::AddToChain(SQCollectable**, SQCollectable*)
+SQCollectable::RemoveFromChain(SQCollectable**, SQCollectable*)
+SQCollectable::UnMark()
+SQCompiler::BitwiseAndExp()
+SQCompiler::BitwiseOrExp()
+SQCompiler::BitwiseXorExp()
+SQCompiler::ClassExp()
+SQCompiler::ClassStatement()
+SQCompiler::CommaExpr()
+SQCompiler::CompExp()
+SQCompiler::Compile(SQObjectPtr&)
+SQCompiler::CreateFunction(tagSQObject&, bool)
+SQCompiler::DeleteExpr()
+SQCompiler::DoWhileStatement()
+SQCompiler::EmitCompoundArith(int, int, int)
+SQCompiler::EnumStatement()
+SQCompiler::EqExp()
+SQCompiler::Error(char const*, ...)
+SQCompiler::Error(char const*, ...)::temp
+SQCompiler::Expect(int)
+SQCompiler::ExpectScalar()
+SQCompiler::Expression()
+SQCompiler::Factor()
+SQCompiler::ForEachStatement()
+SQCompiler::ForStatement()
+SQCompiler::FunctionCallArgs()
+SQCompiler::FunctionExp(int, bool)
+SQCompiler::FunctionStatement()
+SQCompiler::IfStatement()
+SQCompiler::LocalDeclStatement()
+SQCompiler::LogicalAndExp()
+SQCompiler::LogicalOrExp()
+SQCompiler::MoveIfCurrentTargetIsLocal()
+SQCompiler::MultExp()
+SQCompiler::ParseTableOrClass(int, int)
+SQCompiler::PlusExp()
+SQCompiler::PrefixIncDec(int)
+SQCompiler::PrefixedExpr()
+SQCompiler::SQCompiler(SQVM*, int (*)(void*), void*, char const*, bool, bool)
+SQCompiler::ShiftExp()
+SQCompiler::Statement(bool)
+SQCompiler::SwitchStatement()
+SQCompiler::ThrowError(void*, char const*)
+SQCompiler::TryCatchStatement()
+SQCompiler::WhileStatement()
+SQDbgServer::AddBreakpoint(BreakPoint&)
+SQDbgServer::Attribute(char const*, char const*)
+SQDbgServer::BeginElement(char const*)
+SQDbgServer::Break(int, char const*, char const*, char const*)
+SQDbgServer::BreakExecution()
+SQDbgServer::EndElement(char const*)
+SQDbgServer::FindBreakpoint(int, char const*)
+SQDbgServer::Hook(int, int, char const*, char const*)
+SQDbgServer::Init()
+SQDbgServer::IsConnected()
+SQDbgServer::ParseBreakpoint(char const*, BreakPoint&)::stemp
+SQDbgServer::ParseMsg(char const*)
+SQDbgServer::RemoveBreakpoint(BreakPoint&)
+SQDbgServer::RemoveWatch(int)
+SQDbgServer::SQDbgServer(SQVM*)
+SQDbgServer::SendChunk(char const*)
+SQDbgServer::SerializeState()
+SQDbgServer::SetErrorHandlers()
+SQDbgServer::SuperVerbose()::s_bVerbose
+SQDbgServer::escape_xml(char const*)
+SQDbgServer::~SQDbgServer()
+SQDelegable::GetMetaMethod(SQVM*, SQMetaMethod, SQObjectPtr&)
+SQDelegable::SetDelegate(SQTable*)
+SQFuncState::AddInstruction(SQInstruction&)
+SQFuncState::AddLineInfos(int, bool, bool)
+SQFuncState::AddParameter(tagSQObject const&)
+SQFuncState::BuildProto()
+SQFuncState::CountOuters(int)
+SQFuncState::CreateString(char const*, int)
+SQFuncState::CreateTable()
+SQFuncState::DiscardTarget()
+SQFuncState::GetConstant(tagSQObject const&)
+SQFuncState::GetLocalVariable(tagSQObject const&)
+SQFuncState::GetOuterVariable(tagSQObject const&)
+SQFuncState::GetStackSize()
+SQFuncState::IsConstant(tagSQObject const&, tagSQObject&)
+SQFuncState::IsLocal(unsigned int)
+SQFuncState::PopChildState()
+SQFuncState::PopTarget()
+SQFuncState::PushChildState(SQSharedState*)
+SQFuncState::PushLocalVariable(tagSQObject const&)
+SQFuncState::PushTarget(int)
+SQFuncState::SQFuncState(SQSharedState*, SQFuncState*, void (*)(void*, char const*), void*)
+SQFuncState::SetIntructionParam(int, int, int)
+SQFuncState::SetIntructionParams(int, int, int, int, int)
+SQFuncState::SetStackSize(int)
+SQFuncState::TopTarget()
+SQFuncState::~SQFuncState()
+SQFunctionProto::Create(SQSharedState*, int, int, int, int, int, int, int, int)
+SQFunctionProto::Finalize()
+SQFunctionProto::GetLine(SQInstruction*)
+SQFunctionProto::GetLocal(SQVM*, unsigned int, unsigned int, unsigned int)
+SQFunctionProto::GetType()
+SQFunctionProto::Mark(SQCollectable**)
+SQFunctionProto::Release()
+SQFunctionProto::SQFunctionProto(SQSharedState*)
+SQFunctionProto::~SQFunctionProto()
+SQGenerator::Finalize()
+SQGenerator::GetType()
+SQGenerator::Iterate(CSQStateIterator*)
+SQGenerator::Mark(SQCollectable**)
+SQGenerator::Release()
+SQGenerator::Resume(SQVM*, SQObjectPtr&)
+SQGenerator::SQGenerator(SQSharedState*, SQClosure*)
+SQGenerator::Yield(SQVM*, int)
+SQGenerator::~SQGenerator()
+SQInstance::Finalize()
+SQInstance::Get(SQObjectPtr const&, SQObjectPtr&)
+SQInstance::GetMetaMethod(SQVM*, SQMetaMethod, SQObjectPtr&)
+SQInstance::GetType()
+SQInstance::InstanceOf(SQClass*)
+SQInstance::Iterate(CSQStateIterator*)
+SQInstance::Mark(SQCollectable**)
+SQInstance::Release()
+SQInstance::SQInstance(SQSharedState*, SQClass*, int)
+SQInstance::SQInstance(SQSharedState*, SQInstance*, int)
+SQInstance::Set(SQObjectPtr const&, SQObjectPtr const&)
+SQInstance::~SQInstance()
+SQLexer::GetIDType(char*)
+SQLexer::Init(SQSharedState*, int (*)(void*), void*, void (*)(void*, char const*), void*)
+SQLexer::Lex()
+SQLexer::LexBlockComment()
+SQLexer::ReadID()
+SQLexer::ReadNumber()
+SQLexer::ReadString(int, bool)
+SQLexer::SQLexer()
+SQLexer::Tok2Str(int)
+SQLexer::~SQLexer()
+SQNativeClosure::Clone()
+SQNativeClosure::Finalize()
+SQNativeClosure::GetType()
+SQNativeClosure::Iterate(CSQStateIterator*)
+SQNativeClosure::Mark(SQCollectable**)
+SQNativeClosure::Release()
+SQNativeClosure::SQNativeClosure(SQSharedState*, int (*)(SQVM*))
+SQNativeClosure::~SQNativeClosure()
+SQObjectPtr::~SQObjectPtr()
+SQOuter::Finalize()
+SQOuter::GetType()
+SQOuter::Mark(SQCollectable**)
+SQOuter::Release()
+SQOuter::SQOuter(SQSharedState*, SQObjectPtr*)
+SQOuter::~SQOuter()
+SQRefCounted::GetWeakRef(tagSQObjectType)
+SQRefCounted::Iterate(CSQStateIterator*)
+SQRefCounted::~SQRefCounted()
+SQSharedState::CollectGarbage(SQVM*)
+SQSharedState::GetMetaMethodIdxByName(SQObjectPtr const&)
+SQSharedState::GetScratchPad(int)
+SQSharedState::Init()
+SQSharedState::Iterate(SQVM*, CSQStateIterator*)
+SQSharedState::IterateObject(CSQStateIterator*, SQObjectPtr&, char const*)
+SQSharedState::MarkObject(SQObjectPtr&, SQCollectable**)
+SQSharedState::ResurrectUnreachable(SQVM*)
+SQSharedState::RunMark(SQVM*, SQCollectable**)
+SQSharedState::SQSharedState()
+SQSharedState::_array_default_delegate_funcz
+SQSharedState::_class_default_delegate_funcz
+SQSharedState::_closure_default_delegate_funcz
+SQSharedState::_generator_default_delegate_funcz
+SQSharedState::_handle_default_delegate_funcz
+SQSharedState::_instance_default_delegate_funcz
+SQSharedState::_number_default_delegate_funcz
+SQSharedState::_string_default_delegate_funcz
+SQSharedState::_table_default_delegate_funcz
+SQSharedState::_thread_default_delegate_funcz
+SQSharedState::_utlstringtoken_default_delegate_funcz
+SQSharedState::_weakref_default_delegate_funcz
+SQSharedState::~SQSharedState()
+SQString::Create(SQSharedState*, char const*, int)
+SQString::Next(SQObjectPtr const&, SQObjectPtr&, SQObjectPtr&)
+SQString::Release()
+SQString::~SQString()
+SQStringTable::Add(char const*, int)
+SQStringTable::Remove(SQString*)
+SQTable::Append(SQTable*)
+SQTable::Clear()
+SQTable::Clone()
+SQTable::Finalize()
+SQTable::Get(SQObjectPtr const&, SQObjectPtr&)
+SQTable::GetIncludingWeakref(SQObjectPtr const&, SQObjectPtr&)
+SQTable::GetType()
+SQTable::Iterate(CSQStateIterator*)
+SQTable::Mark(SQCollectable**)
+SQTable::NewSlot(SQObjectPtr const&, SQObjectPtr const&)
+SQTable::Next(bool, SQObjectPtr const&, SQObjectPtr&, SQObjectPtr&)
+SQTable::Rehash(bool)
+SQTable::Release()
+SQTable::Remove(SQObjectPtr const&)
+SQTable::SQTable(SQSharedState*, int)
+SQTable::Set(SQObjectPtr const&, SQObjectPtr const&)
+SQTable::~SQTable()
+SQUserData::Finalize()
+SQUserData::GetType()
+SQUserData::Iterate(CSQStateIterator*)
+SQUserData::Mark(SQCollectable**)
+SQUserData::Release()
+SQUserData::~SQUserData()
+SQVM::ARITH_OP(unsigned int, SQObjectPtr&, SQObjectPtr const&, SQObjectPtr const&)
+SQVM::ArithMetaMethod(int, SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
+SQVM::BW_OP(unsigned int, SQObjectPtr&, SQObjectPtr const&, SQObjectPtr const&)
+SQVM::CLASS_OP(SQObjectPtr&, int, int)
+SQVM::CLOSURE_OP(SQObjectPtr&, SQFunctionProto*)
+SQVM::CMP_OP(CmpOP, SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
+SQVM::Call %s
+SQVM::Call(SQObjectPtr&, int, int, SQObjectPtr&, unsigned int)
+SQVM::CallDebugHook(int, int)
+SQVM::CallErrorHandler(SQObjectPtr&)
+SQVM::CallNative
+SQVM::CallNative(SQNativeClosure*, int, int, SQObjectPtr&, bool&)
+SQVM::Clone(SQObjectPtr const&, SQObjectPtr&)
+SQVM::CreateClassInstance(SQClass*, SQObjectPtr&, SQObjectPtr&)
+SQVM::DeleteSlot(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
+SQVM::DerefInc(int, SQObjectPtr&, SQObjectPtr&, SQObjectPtr&, SQObjectPtr&, bool, int)
+SQVM::EnterFrame(int, int, bool)
+SQVM::Execute(SQObjectPtr&, int, int, SQObjectPtr&, unsigned int, SQVM::ExecutionType)
+SQVM::FOREACH_OP(SQObjectPtr&, SQObjectPtr&, SQObjectPtr&, SQObjectPtr&, int, int, int&)
+SQVM::FallBackGet(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
+SQVM::FallBackSet(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr const&)
+SQVM::Finalize()
+SQVM::FindOuter(SQObjectPtr&, SQObjectPtr*)
+SQVM::Get(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&, bool, int)
+SQVM::GetAt(int)
+SQVM::GetType()
+SQVM::GetUp(int)
+SQVM::Init(SQVM*, int)
+SQVM::IsEqual(SQObjectPtr const&, SQObjectPtr const&, bool&)
+SQVM::IsFalse(SQObjectPtr&)
+SQVM::Iterate(CSQStateIterator*)
+SQVM::LeaveFrame()
+SQVM::Mark(SQCollectable**)
+SQVM::NEG_OP(SQObjectPtr&, SQObjectPtr const&)
+SQVM::NewSlot(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr const&, bool)
+SQVM::NewSlotA(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr const&, bool, bool)
+SQVM::ObjCmp(SQObjectPtr const&, SQObjectPtr const&, int&)
+SQVM::PLOCAL_INC(int, SQObjectPtr&, SQObjectPtr&, SQObjectPtr&)
+SQVM::Pop()
+SQVM::Pop(int)
+SQVM::PrintObjVal(SQObjectPtr const&)
+SQVM::Push(SQObjectPtr const&)
+SQVM::PushNull()
+SQVM::Raise_CompareError(tagSQObject const&, tagSQObject const&)
+SQVM::Raise_Error(SQObjectPtr const&)
+SQVM::Raise_Error(char const*, ...)
+SQVM::Raise_IdxError(SQObjectPtr const&)
+SQVM::Raise_ParamTypeError(int, int, int)
+SQVM::Release()
+SQVM::Remove(int)
+SQVM::Return(int, int, SQObjectPtr&)
+SQVM::SQVM(SQSharedState*)
+SQVM::Set(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr const&, int)
+SQVM::StartCall(SQClosure*, int, int, int, bool)
+SQVM::StringCat(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
+SQVM::Suspend()
+SQVM::ToString(SQObjectPtr const&, SQObjectPtr&)
+SQVM::Top()
+SQVM::TypeOf(SQObjectPtr const&, SQObjectPtr&)
+SQVM::~SQVM()
+SQWeakRef::Release()
+SQWeakRef::~SQWeakRef()
+STRING_LITERAL
+Scale
+Script
+Script debugger disconnected
+Script running too long, terminating
+Script terminated by SQQuerySuspend
+ScriptCreateSquirrelVM()
+ScriptDestroySquirrelVM(IScriptVM*)
+ScriptFunctionBinding_t::~ScriptFunctionBinding_t()
+ScriptMsgColor
+SetPitchYawRoll
+Squirrel
+Squirrel 3.0.4 stable
+Squirrel debugging only supported on Windows for now.
+TASASASASASBRASASASAp
+Tcvar
+ToKVString
+ToQAngle
+ToQuat
+TranslateIndex(SQObjectPtr const&)
+UARAXARBRAYBRBRAXARAXARAXARAUBRBRBYARBXB`
+Unaccounted
+V,+V0
+V09^@v
+VBRDXBp
+VEngineCvar004
+VProcessUtils001
+VScriptManager010
+VSquirrel_OnCreateScope
+VSquirrel_OnReleaseScope
+V_UnqualifiedFileName(char const*)
+V_atof(char const*)
+V_snprintf(char*, int, char const*, ...)
+V_stricmp(char const*, char const*)
+V_vsnprintf(char*, int, char const*, char*)
+V_vsnprintfRet(char*, int, char const*, char*, bool*)
+Vector
+Vector argument expected
+Vector2D
+Vector2D argument expected
+Vector2DAdd(SQVM*)
+Vector2DConstruct(SQVM*)
+Vector2DDot(SQVM*)
+Vector2DGet(SQVM*)
+Vector2DIterate(SQVM*)
+Vector2DIterate(SQVM*)::results
+Vector2DLength(SQVM*)
+Vector2DLengthSqr(SQVM*)
+Vector2DNorm(SQVM*)
+Vector2DRelease(void*, int)
+Vector2DScale(SQVM*)
+Vector2DSet(SQVM*)
+Vector2DSubtract(SQVM*)
+Vector2DToKeyValueString(SQVM*)
+Vector2DToString(SQVM*)
+Vector2DTypeOf(SQVM*)
+Vector4D
+Vector4DAdd(SQVM*)
+Vector4DConstruct(SQVM*)
+Vector4DDot(SQVM*)
+Vector4DGet(SQVM*)
+Vector4DIterate(SQVM*)
+Vector4DIterate(SQVM*)::results
+Vector4DLength(SQVM*)
+Vector4DLengthSqr(SQVM*)
+Vector4DNorm(SQVM*)
+Vector4DRelease(void*, int)
+Vector4DScale(SQVM*)
+Vector4DSet(SQVM*)
+Vector4DSubtract(SQVM*)
+Vector4DToKeyValueString(SQVM*)
+Vector4DToString(SQVM*)
+Vector4DTypeOf(SQVM*)
+VectorAdd(SQVM*)
+VectorConstruct(SQVM*)
+VectorCross(SQVM*)
+VectorDot(SQVM*)
+VectorGet(SQVM*)
+VectorIterate(SQVM*)
+VectorIterate(SQVM*)::results
+VectorLength(SQVM*)
+VectorLength2D(SQVM*)
+VectorLength2DSqr(SQVM*)
+VectorLengthSqr(SQVM*)
+VectorNorm(SQVM*)
+VectorRelease(void*, int)
+VectorScale(SQVM*)
+VectorSet(SQVM*)
+VectorSubtract(SQVM*)
+VectorToKeyValueString(SQVM*)
+VectorToString(SQVM*)
+VectorTypeOf(SQVM*)
+Z\9Z`v
+[%s] "%s"
+[%s] %.14g
+[%s] %d
+[%s] %s
+[%s] ARRAY
+[%s] CLASS
+[%s] CLOSURE
+[%s] GENERATOR
+[%s] INSTANCE
+[%s] NATIVECLOSURE
+[%s] NULL
+[%s] TABLE
+[%s] THREAD
+[%s] USERDATA
+[%s] USERPOINTER
+[%s] WEAKREF
+\^_[]
+_%x%llx_%s
+_CommandLine_Tier0
+_CreateInterface
+_Error
+_HushAsserts
+_Plat_FloatTime
+_RandomFloat
+_RandomInt
+_SQ_NULL
+_ThreadGetCurrentId
+_ThreadSleep
+_Warning
+__CreateCScriptManagerIScriptManager_interface()
+__DATA
+__DefaultRuneLocale
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.8790.oihyfd.ii
+__GLOBAL__sub_I_sqvm.stdout.rel_tf_osx_builder.21748.wAXOXr.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.8990.irHFju.ii
+__GLOBAL__sub_I_vscript.stdout.rel_tf_osx_builder.93158.XhHomO.ii
+__GLOBAL__sub_I_vsquirrel3.stdout.rel_tf_osx_builder.21751.O67DWg.ii
+__LINKEDIT
+__TEXT
+__Unwind_Resume
+___bzero
+___clang_call_terminate
+___cxa_atexit
+___cxa_begin_catch
+___cxa_call_unexpected
+___cxa_guard_abort
+___cxa_guard_acquire
+___cxa_guard_release
+___cxa_pure_virtual
+___gxx_personality_v0
+___maskrune
+___stack_chk_fail
+___stack_chk_guard
+___tolower
+___toupper
+__bss
+__common
+__const
+__cstring
+__data
+__eh_frame
+__g_CreateCScriptManagerIScriptManager_reg
+__gcc_except_tab__TEXT
+__getcallstackinfos(SQVM*, int)
+__la_symbol_ptr
+__map_array(SQArray*, SQArray*, SQVM*)
+__mod_init_func
+__nl_symbol_ptr
+__stub_helper
+__symbol_stub
+__text
+__unwind_info
+__vrefs
+_acosf
+_array_default_delegate
+_asin
+_asinf
+_atan2
+_atan2f
+_atanf
+_atof
+_atoi
+_attributes
+_base 
+_bind$UNIX2003
+_blob__cloned(SQVM*)
+_blob__get(SQVM*)
+_blob__nexti(SQVM*)
+_blob__set(SQVM*)
+_blob__typeof(SQVM*)
+_blob_constructor(SQVM*)
+_blob_methods
+_blob_releasehook(void*, int)
+_blob_resize(SQVM*)
+_blob_swap2(SQVM*)
+_blob_swap4(SQVM*)
+_call
+_ceilf
+_charsize_
+_class 
+_class_default_delegate
+_cloned
+_close$UNIX2003
+_closure_acall(SQVM*, unsigned int)
+_closure_default_delegate
+_cmp must return an integer
+_consts
+_cosf
+_cvar
+_delegate 
+_delslot
+_errorhandler
+_expf
+_ffff.
+_floatsize_
+_floorf
+_fmod
+_free
+_g_ClockSpeedMillisecondsMultiplier
+_g_QAngleFuncs
+_g_QuatFuncs
+_g_VProfCurrentProfile
+_g_Vector2DFuncs
+_g_Vector4DFuncs
+_g_VectorFuncs
+_g_bSqDbgTerminateScript
+_g_blob_castf2i(SQVM*)
+_g_blob_casti2f(SQVM*)
+_g_blob_swap2(SQVM*)
+_g_blob_swap4(SQVM*)
+_g_blob_swapfloat(SQVM*)
+_g_escapes
+_g_pCVar
+_g_pMemAlloc
+_g_pProcessUtils
+_generator_default_delegate
+_handle_default_delegate
+_hsort_sift_down(SQVM*, SQArray*, int, int, int)
+_inherited
+_instance_default_delegate
+_intsize_
+_lasterror
+_log10f
+_logf
+_longjmp
+_malloc
+_members
+_memchr
+_memcmp
+_memcpy
+_memmove
+_metamethods
+_metamethodsmap
+_modulo
+_newmember
+_newslot
+_nexti
+_nexti failed
+_nexti returned an invalid idx
+_number_default_delegate
+_pthread_mutex_destroy
+_pthread_mutex_init
+_pthread_mutex_lock
+_pthread_mutex_unlock
+_pthread_mutexattr_init
+_pthread_mutexattr_settype
+_rand
+_recv$UNIX2003
+_regexp__typeof(SQVM*)
+_regexp_capture(SQVM*)
+_regexp_constructor(SQVM*)
+_regexp_match(SQVM*)
+_regexp_search(SQVM*)
+_regexp_subexpcount(SQVM*)
+_registry
+_rexobj_releasehook(void*, int)
+_roottable
+_s_NoEscConversion
+_s_StringCharConversion
+_select$DARWIN_EXTSN
+_send$UNIX2003
+_setjmp
+_sinf
+_socket
+_sort_compare(SQVM*, SQObjectPtr&, SQObjectPtr&, int, int&)
+_sprintf
+_sq_addref
+_sq_arrayappend
+_sq_arraypop
+_sq_arrayreverse
+_sq_bindenv
+_sq_call
+_sq_clear
+_sq_close
+_sq_collectgarbage
+_sq_compile
+_sq_compilebuffer
+_sq_createinstance
+_sq_deleteslot
+_sq_enabledebuginfo
+_sq_get
+_sq_getattributes
+_sq_getbase
+_sq_getbool
+_sq_getclass
+_sq_getdelegate
+_sq_getehandle
+_sq_geterrorfunc
+_sq_getfloat
+_sq_getinstanceup
+_sq_getinteger
+_sq_getlocal
+_sq_getscratchpad
+_sq_getsize
+_sq_getstackobj
+_sq_getstring
+_sq_gettop
+_sq_gettype
+_sq_getuserdata
+_sq_getuserpointer
+_sq_getutlstringtoken
+_sq_getvmstate
+_sq_getweakrefval
+_sq_move
+_sq_newarray
+_sq_newclass
+_sq_newclosure
+_sq_newmember
+_sq_newslot
+_sq_newtable
+_sq_newthread
+_sq_newuserdata
+_sq_next
+_sq_objtobool
+_sq_open
+_sq_pop
+_sq_poptop
+_sq_push
+_sq_pushbool
+_sq_pushehandle
+_sq_pushfloat
+_sq_pushinteger
+_sq_pushnull
+_sq_pushobject
+_sq_pushregistrytable
+_sq_pushroottable
+_sq_pushstring
+_sq_pushuserpointer
+_sq_rawdeleteslot
+_sq_rawget
+_sq_rawnewmember
+_sq_rawset
+_sq_rdbg_init
+_sq_rdbg_shutdown
+_sq_rdbg_update
+_sq_rdbg_waitforconnections
+_sq_release
+_sq_remove
+_sq_reseterror
+_sq_resetobject
+_sq_resurrectunreachable
+_sq_set
+_sq_setattributes
+_sq_setcompilererrorhandler
+_sq_setconsttable
+_sq_setdebughook
+_sq_setdelegate
+_sq_seterrorhandler
+_sq_setinstanceup
+_sq_setnativeclosurename
+_sq_setparamscheck
+_sq_setprintfunc
+_sq_setreleasehook
+_sq_setroottable
+_sq_settop
+_sq_settypetag
+_sq_stackinfos
+_sq_suspendvm
+_sq_throwerror
+_sq_tobool
+_sq_tostring
+_sq_wakeupvm
+_sq_weakref
+_sqdbg_debug_hook_
+_sqdbg_error_handler_
+_sqstd_aux_printerror(SQVM*)
+_sqstd_compiler_error(SQVM*, char const*, char const*, int, int)
+_sqstd_createblob
+_sqstd_format
+_sqstd_getblob
+_sqstd_getblobsize
+_sqstd_printcallstack
+_sqstd_register_bloblib
+_sqstd_register_mathlib
+_sqstd_register_stringlib
+_sqstd_rex_compile
+_sqstd_rex_free
+_sqstd_rex_getsubexp
+_sqstd_rex_getsubexpcount
+_sqstd_rex_match
+_sqstd_rex_search
+_sqstd_seterrorhandlers
+_srand
+_stack
+_strcasecmp
+_strcmp
+_strcpy
+_stream__cloned(SQVM*)
+_stream_eos(SQVM*)
+_stream_flush(SQVM*)
+_stream_len(SQVM*)
+_stream_methods
+_stream_readblob(SQVM*)
+_stream_readn(SQVM*)
+_stream_seek(SQVM*)
+_stream_tell(SQVM*)
+_stream_writeblob(SQVM*)
+_stream_writen(SQVM*)
+_string_default_delegate
+_string_format(SQVM*)
+_string_lstrip(SQVM*)
+_string_rstrip(SQVM*)
+_string_split(SQVM*)
+_string_strip(SQVM*)
+_strlen
+_strstr
+_strtod$UNIX2003
+_strtok
+_strtol
+_strtoul
+_table_default_delegate
+_tanf
+_thread_default_delegate
+_tostring
+_typeof
+_utlstringtoken_default_delegate
+_version_
+_versionnumber_
+_vscript_perf_warning_spew_ms
+_vsnprintf
+_vsprintf
+_weakref_default_delegate
+acall
+addbreakpoint
+added bp %d %s
+added watch %d %s
+append
+apply
+arith op %c on between '%s' and '%s'
+array
+array_append(SQVM*)
+array_apply(SQVM*)
+array_extend(SQVM*)
+array_filter(SQVM*)
+array_find(SQVM*)
+array_insert(SQVM*)
+array_map(SQVM*)
+array_pop(SQVM*)
+array_reduce(SQVM*)
+array_remove(SQVM*)
+array_resize(SQVM*)
+array_reverse(SQVM*)
+array_slice(SQVM*)
+array_sort(SQVM*)
+array_top(SQVM*)
+assert
+assertion failed
+atan2
+attempt to call '%s'
+attempt to delete a slot from a %s
+attempt to negate a %s
+attempt to perform a bitwise op on a %s
+attribute
+attribute(SQVM*)
+base_array(SQVM*)
+base_assert(SQVM*)
+base_callee(SQVM*)
+base_collectgarbage(SQVM*)
+base_compilestring(SQVM*)
+base_dummy(SQVM*)
+base_enabledebuginfo(SQVM*)
+base_error(SQVM*)
+base_funcs
+base_getconsttable(SQVM*)
+base_getroottable(SQVM*)
+base_getstackinfos(SQVM*)
+base_newthread(SQVM*)
+base_print(SQVM*)
+base_resurectureachable(SQVM*)
+base_setconsttable(SQVM*)
+base_setdebughook(SQVM*)
+base_seterrorhandler(SQVM*)
+base_setroottable(SQVM*)
+base_suspend(SQVM*)
+base_type(SQVM*)
+begin
+beginelement
+beginelement(SQVM*)
+bindenv
+bitwise op between '%s' and '%s'
+blob would reach over total blob size limit
+bloblib_funcs
+bool CVariantBase<CVariantDefaultAllocator>::AssignTo<CVariantDefaultAllocator>(CVariantBase<CVariantDefaultAllocator>*) const
+break
+breakpoint
+buf_lexfeed(void*)
+c x|y|t
+callee
+can't '++' or '--' an expression
+can't 'create' a local slot
+can't assign expression
+can't delete an expression
+cannot apply instanceof between a %s and a %s
+cannot brake deref/or comma needed after [exp]=exp slot declaration
+cannot clone blob
+cannot clone blob this large
+cannot convert the string
+cannot create a class in a local with the syntax(class <local>)
+cannot create blob
+cannot create blob this large
+cannot create blob with negative size
+cannot delete a slot from %s
+cannot delete an (outer) local
+cannot iterate %s
+cannot iterate a generator
+cannot resume a vm that is not running any code
+cannot suspend an already suspended vm
+cannot suspend through native calls/metamethods
+cannot use character classes in ranges
+cannot wakeup a idle thread
+cannot wakeup a running thread
+capture
+castf2i
+casti2f
+catch
+class
+class CCallChainer
+class CSimpleCallChainer
+class LateBinder
+class instances do not support the new slot operator
+class_getattributes(SQVM*)
+class_getbase(SQVM*)
+class_instance(SQVM*)
+class_newmember(SQVM*)
+class_rawnewmember(SQVM*)
+class_setattributes(SQVM*)
+clear
+clear only works on table and array
+clone
+cloning a %s
+closure
+closure_acall(SQVM*)
+closure_bindenv(SQVM*)
+closure_call(SQVM*)
+closure_getinfos(SQVM*)
+closure_pacall(SQVM*)
+closure_pcall(SQVM*)
+collectgarbage
+compare func failed
+comparison between '%.50s' and '%.50s'
+compilestring
+const
+constant too long
+constructor
+container_rawexists(SQVM*)
+container_rawget(SQVM*)
+container_rawset(SQVM*)
+continue
+cppdelegate
+debug_hook(SQVM*)
+declare_stream(SQVM*, char const*, void*, char const*, tagSQRegFunction*, tagSQRegFunction*)
+default
+default_delegate_len(SQVM*)
+default_delegate_tofloat(SQVM*)
+default_delegate_tointeger(SQVM*)
+default_delegate_tostring(SQVM*)
+defparams
+delagate cycle
+delete
+developer
+disabled
+disconnected
+division by zero
+dummy
+dyld_stub_binder
+ehandle
+empty array
+empty class
+empty constant
+empty separators string
+enabledebuginfo
+end of statement expected (; or lf)
+endelement
+endelement(SQVM*)
+entity handle
+error
+error parsing add breakpoint
+error parsing add watch
+error parsing remove breakpoint
+error parsing remove watch
+error parsing the string
+error_handler(SQVM*)
+expected '%c'
+expected '%s'
+expected ')'
+expected ')' or ','
+expected '='
+expected paren
+exponent expected
+expression expected
+expression expected, found ')'
+extend
+extends
+f05
+f3
+failed to bind the socket
+failed to initialize the debugger
+false
+ffff.
+fffff.
+ffffff.
+filter
+float
+float expected for the specified format
+floor
+flush
+foreach
+format
+format too long
+function
+function 
+function AddToScriptHelp( scopeTable )
+function Assert( b, msg = null )
+function FindCircularReference( target )
+function FindCircularReferences( resurrecteds )
+function Msg( text )
+function ScriptDebugDumpKeys( name, table = null )
+function ScriptDebugIterateKeys( name, callback, table = null )
+function ScriptDebugIterateKeysRecursive( matchFunc, path, current, visits, callback )
+function VSquirrel_OnCreateScope( name, outer )
+function VSquirrel_OnReleaseScope( scope )
+function print( text )
+function printl( text )
+function with default parameters cannot have variable number of parameters
+g_CleanupSymbolTable
+g_Script_init
+generator
+generator_getstatus(SQVM*)
+get_slice_params(SQVM*, int&, int&, SQObjectPtr&)
+getattributes
+getbase
+getclass
+getconsttable
+getdelegate
+getinfos
+getroottable
+getstackinfos
+getstatus
+go (execution resumed)
+guard variable for CScriptManager::CreateVM(ScriptLanguage_t)::binding
+guard variable for SQDbgServer::SuperVerbose()::s_bVerbose
+handle
+hexadecimal number expected
+idx out of range
+if ( developer() > 0 )
+inconsistent compare function
+index out of range
+indexing %s with %s
+init_streamclass(SQVM*)
+insert
+instance
+instance_getclass(SQVM*)
+instanceof
+integer
+integer expected for the specified format
+internal VM error
+internal compiler error: too many locals
+internal error (_nexti) wrong argument type
+internal vm error bitwise op failed
+internal vm error, yielding a dead generator
+internal vm error, yielding dead generator
+invalid base type
+invalid class name
+invalid constant [%s.%s]
+invalid environment
+invalid format
+invalid index type for an array
+invalid numeric format
+invalid object type
+invalid octal number
+invalid origin
+invalid param
+invalid parameter
+invalid range
+invalid token '..'
+invalid type tag
+invalid typemask
+io error
+ivalid type
+ivalid type, expected table
+key not found in _get()
+l^_[]
+letter expected
+local
+locals
+log10
+lstrip
+match
+math_abs(SQVM*)
+math_acos(SQVM*)
+math_asin(SQVM*)
+math_atan(SQVM*)
+math_atan2(SQVM*)
+math_ceil(SQVM*)
+math_cos(SQVM*)
+math_exp(SQVM*)
+math_fabs(SQVM*)
+math_floor(SQVM*)
+math_log(SQVM*)
+math_log10(SQVM*)
+math_pow(SQVM*)
+math_rand(SQVM*)
+math_sin(SQVM*)
+math_sqrt(SQVM*)
+math_srand(SQVM*)
+math_tan(SQVM*)
+mathlib_funcs
+missing "*/" in comment
+modulo by zero
+native
+native closure expected
+native function
+new member only works with classes
+newline in a constant
+newmember
+newthread
+no closure in the calls stack
+no data left to read
+non-string key
+non-virtual thunk to CEmptyConVar::GetName() const
+non-virtual thunk to CEmptyConVar::IsFlagSet(int) const
+non-virtual thunk to CEmptyConVar::SetValue(char const*)
+non-virtual thunk to CEmptyConVar::SetValue(float)
+non-virtual thunk to CEmptyConVar::SetValue(int)
+non-virtual thunk to ConVar::GetName() const
+non-virtual thunk to ConVar::IsFlagSet(int) const
+non-virtual thunk to ConVar::SetValue(char const*)
+non-virtual thunk to ConVar::SetValue(float)
+non-virtual thunk to ConVar::SetValue(int)
+not enough params in the stack
+not enough paramters for the given format string
+null cannot be used as index
+null is not a valid key
+null key
+null qangle
+null quaternion
+null vector
+null vector2D
+null vector4D
+number expected
+number_delegate_tochar(SQVM*)
+numeric value expected as return value of the compare function
+obj_clear(SQVM*)
+obj_delegate_weakref(SQVM*)
+object must be a class
+operator delete(void*)
+operator delete[](void*)
+operator new(unsigned long)
+operator new[](unsigned long)
+outer
+overflow in numeric constant
+pacall
+parameter %d has an invalid type '%s' ; expected: '%s'
+parameters
+paramscheck
+pcall
+precision format too long
+print
+print_indent <- 0
+r2ffff.
+rawdelete
+rawget
+rawget works only on array/table/instance and class
+rawin
+rawnewmember
+rawset
+rawset works only on array/table/class and instance
+readblob
+readn
+ready
+realPrint <- print
+reduce
+regexp
+remove
+removebreakpoint
+removed bp %d %s
+removed watch %d %s
+resize
+resize failed
+resume
+resumed
+resuming active generator
+resuming dead generator
+resurrectunreachable
+return
+reverse
+rexobj_funcs
+rstrip
+running
+s s n 
+s_DefaultAccessor
+s_EmptyConVar
+s_ScriptManager
+s_bConnected
+s_bRegistered
+s_nCVarFlag
+s_nDLLIdentifier
+s_pConversionArrays_NoEscConversion
+s_pConversionArrays_StringCharConversion
+scalar expected : integer,float
+scalar expected : integer,float or string
+search
+setattributes
+setconsttable
+setdebughook
+setdelegate
+seterrorhandler
+setroottable
+size must be a number
+slice
+slice out of range
+socket error
+socket failed
+split
+sq_aux_gettypedarg(SQVM*, int, tagSQObjectType, SQObjectPtr**)
+sq_aux_invalidtype(SQVM*, tagSQObjectType)
+sq_base_register(SQVM*)
+sqstd_rex_charnode(SQRex*, unsigned int)
+sqstd_rex_element(SQRex*)
+sqstd_rex_error(SQRex*, char const*)
+sqstd_rex_list(SQRex*)
+sqstd_rex_matchcclass(int, char)
+sqstd_rex_matchnode(SQRex*, tagSQRexNode*, char const*, tagSQRexNode*)
+sqvector<SQClassMember>::copy(sqvector<SQClassMember> const&)
+sqvector<SQClassMember>::resize(unsigned int, SQClassMember const&)
+sqvector<SQClassMember>::~sqvector()
+sqvector<SQLocalVarInfo>::~sqvector()
+sqvector<SQObjectPtr>::copy(sqvector<SQObjectPtr> const&)
+sqvector<SQObjectPtr>::insert(unsigned int, SQObjectPtr const&)
+sqvector<SQObjectPtr>::resize(unsigned int, SQObjectPtr const&)
+sqvector<SQObjectPtr>::~sqvector()
+sqvector<SQOuterVar>::~sqvector()
+sqvector<SQVM::CallInfo>::resize(unsigned int, SQVM::CallInfo const&)
+sqvector<SQVM::CallInfo>::~sqvector()
+srand
+stack overflow, cannot resize stack while in  a metamethod
+static
+std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::__insert_unique(BreakPoint const&)
+std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::destroy(std::__1::__tree_node<BreakPoint, void*>*)
+std::__1::__tree<Watch, std::__1::less<Watch>, std::__1::allocator<Watch> >::__insert_unique(Watch const&)
+std::__1::__tree<Watch, std::__1::less<Watch>, std::__1::allocator<Watch> >::destroy(std::__1::__tree_node<Watch, void*>*)
+std::__1::__tree_iterator<BreakPoint, std::__1::__tree_node<BreakPoint, void*>*, int> std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::__lower_bound<BreakPoint>(BreakPoint const&, std::__1::__tree_node<BreakPoint, void*>*, std::__1::__tree_node<BreakPoint, void*>*)
+std::__1::__tree_iterator<BreakPoint, std::__1::__tree_node<BreakPoint, void*>*, int> std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::find<BreakPoint>(BreakPoint const&)
+std::__1::__tree_node_base<void*>*& std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::__find_equal<BreakPoint>(std::__1::__tree_node_base<void*>*&, BreakPoint const&)
+std::__1::__vector_base_common<true>::__throw_length_error() const
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*)
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*, unsigned long)
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(unsigned long, char)
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::assign(char const*)
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::operator=(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::push_back(char)
+std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::~basic_string()
+std::__1::unique_ptr<std::__1::__tree_node<BreakPoint, void*>, std::__1::__tree_node_destructor<std::__1::allocator<std::__1::__tree_node<BreakPoint, void*> > > > std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::__construct_node<BreakPoint const&>(BreakPoint const&)
+std::__1::unique_ptr<std::__1::__tree_node<Watch, void*>, std::__1::__tree_node_destructor<std::__1::allocator<std::__1::__tree_node<Watch, void*> > > > std::__1::__tree<Watch, std::__1::less<Watch>, std::__1::allocator<Watch> >::__construct_node<Watch const&>(Watch const&)
+std::__1::vector<char, std::__1::allocator<char> >::__append(unsigned long)
+std::terminate()
+std_blob
+std_stream
+step into
+step return
+str2num(char const*, SQObjectPtr&)
+stream
+string
+string expected for the specified format
+string_find(SQVM*)
+string_slice(SQVM*)
+string_tolower(SQVM*)
+string_toupper(SQVM*)
+stringlib_funcs
+strip
+subexpcount
+suspend
+suspended
+swap2
+swap4
+swapfloat
+switch
+t1ff.
+t8ff.
+table
+table expected
+table_getdelegate(SQVM*)
+table_rawdelete(SQVM*)
+table_setdelegate(SQVM*)
+temp_reg
+terminate from user
+terminated by debugger
+the blob is invalid
+the breakpoint doesn't exists
+the index '%.50s' does not exist
+the index doesn't exist
+the object is not a class instance
+the object is not a nativeclosure
+the object must be a weakref
+the property '%s' already exists
+the stream is invalid
+the target is not a closure
+the watch does not exists
+this object cannot be cloned
+thread
+thread_call(SQVM*)
+thread_getstackinfos(SQVM*)
+thread_getstatus(SQVM*)
+thread_wakeup(SQVM*)
+throw
+ti;G u
+tochar
+tofloat
+tointeger
+tolower
+too many digits for an Hex number
+top() on a empty array
+tostring
+toupper
+trying to inherit from a %s
+trying to modify a class that has already been instantiated
+trying to resume a '%s',only genenerator can be resumed
+trying to set '%s'
+trying to yield a '%s',only genenerator can be yielded
+typecheck
+typeinfo for CBaseAppSystem<IScriptManager>
+typeinfo for CDefaultAccessor
+typeinfo for CEmptyConVar
+typeinfo for CFmtStrN<256, false>
+typeinfo for CSQStateIterator
+typeinfo for CScopedIterator
+typeinfo for CScriptManager
+typeinfo for CSquirrelVM
+typeinfo for CTier0AppSystem<IScriptManager>
+typeinfo for CTier1AppSystem<IScriptManager, 0>
+typeinfo for CUtlCStringConversion
+typeinfo for CUtlCharConversion
+typeinfo for CUtlNoEscConversion
+typeinfo for ConCommandBase
+typeinfo for ConVar
+typeinfo for IAppSystem
+typeinfo for IConCommandBaseAccessor
+typeinfo for IConVar
+typeinfo for IScriptManager
+typeinfo for IScriptVM
+typeinfo for SQArray
+typeinfo for SQBlob
+typeinfo for SQClass
+typeinfo for SQClosure
+typeinfo for SQCollectable
+typeinfo for SQDelegable
+typeinfo for SQFunctionProto
+typeinfo for SQGenerator
+typeinfo for SQInstance
+typeinfo for SQNativeClosure
+typeinfo for SQOuter
+typeinfo for SQRefCounted
+typeinfo for SQStream
+typeinfo for SQString
+typeinfo for SQTable
+typeinfo for SQUserData
+typeinfo for SQVM
+typeinfo for SQWeakRef
+typeinfo for std::bad_alloc
+typeinfo name for CBaseAppSystem<IScriptManager>
+typeinfo name for CDefaultAccessor
+typeinfo name for CEmptyConVar
+typeinfo name for CFmtStrN<256, false>
+typeinfo name for CSQStateIterator
+typeinfo name for CScopedIterator
+typeinfo name for CScriptManager
+typeinfo name for CSquirrelVM
+typeinfo name for CTier0AppSystem<IScriptManager>
+typeinfo name for CTier1AppSystem<IScriptManager, 0>
+typeinfo name for CUtlCStringConversion
+typeinfo name for CUtlCharConversion
+typeinfo name for CUtlNoEscConversion
+typeinfo name for ConCommandBase
+typeinfo name for ConVar
+typeinfo name for IAppSystem
+typeinfo name for IConCommandBaseAccessor
+typeinfo name for IConVar
+typeinfo name for IScriptManager
+typeinfo name for IScriptVM
+typeinfo name for SQArray
+typeinfo name for SQBlob
+typeinfo name for SQClass
+typeinfo name for SQClosure
+typeinfo name for SQCollectable
+typeinfo name for SQDelegable
+typeinfo name for SQFunctionProto
+typeinfo name for SQGenerator
+typeinfo name for SQInstance
+typeinfo name for SQNativeClosure
+typeinfo name for SQOuter
+typeinfo name for SQRefCounted
+typeinfo name for SQStream
+typeinfo name for SQString
+typeinfo name for SQTable
+typeinfo name for SQUserData
+typeinfo name for SQVM
+typeinfo name for SQWeakRef
+typeof
+t~ffffff.
+u>fffff.
+unexpected character
+unexpected character(control)
+unexpected type %s
+unfinished range
+unfinished string
+unknown
+unknown error
+unknown packet
+unnamed
+unnamedbuffer
+unrecognised escaper char
+update
+userdata
+userpointer
+utlstringtoken
+vaffffff.
+varargs
+vargv
+vec2_invalid
+vec2_origin
+void SQCompiler::BIN_EXP<void (SQCompiler::*)()>(SQOpcode, void (SQCompiler::*)(), int)
+void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+void std::__1::__tree_remove<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+vscript_perf_warning_spew_ms
+vtable for CDefaultAccessor
+vtable for CEmptyConVar
+vtable for CFmtStrN<256, false>
+vtable for CScopedIterator
+vtable for CScriptManager
+vtable for CSquirrelVM
+vtable for CUtlCStringConversion
+vtable for CUtlCharConversion
+vtable for CUtlNoEscConversion
+vtable for ConVar
+vtable for SQArray
+vtable for SQBlob
+vtable for SQClass
+vtable for SQClosure
+vtable for SQFunctionProto
+vtable for SQGenerator
+vtable for SQInstance
+vtable for SQNativeClosure
+vtable for SQOuter
+vtable for SQRefCounted
+vtable for SQString
+vtable for SQTable
+vtable for SQUserData
+vtable for SQVM
+vtable for SQWeakRef
+vtable for __cxxabiv1::__class_type_info
+vtable for __cxxabiv1::__si_class_type_info
+vtable for __cxxabiv1::__vmi_class_type_info
+w ffffff.
+w<9w@
+w<9w@v
+w<9w@v1
+w<9w@vH
+wakeup
+watches
+weakref
+weakref_ref(SQVM*)
+while
+width format too long
+writeblob
+writen
+wrong argument type, expected '%s' got '%.50s'
+wrong index
+wrong indexes
+wrong number of parameters
+wrong parameter
+wrong type
+yE>21CUtlCStringConversion
+yield
+|Nffff.
+|^_[]
+~l;~puW
+~p9~tv
