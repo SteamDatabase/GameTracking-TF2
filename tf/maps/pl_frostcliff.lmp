@@ -6,7 +6,7 @@
 "detailvbsp" "detail_trainyard.vbsp"
 "detailmaterial" "detail/detailsprites_viaduct_event"
 "classname" "worldspawn"
-"mapversion" "7580"
+"mapversion" "7647"
 "hammerid" "1"
 }
 {
@@ -19,8 +19,8 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "14875"
-"OnPass" "cart_sound3,PlaySound,,0,-1"
-"OnPass" "main_minecart_1,TeleportToPathTrack,cart_path_x,0,-1"
+"OnPass" "cart_sound3PlaySound0-1"
+"OnPass" "main_minecart_1TeleportToPathTrackcart_path_x0-1"
 }
 {
 "origin" "-512.305 -3680.32 1183"
@@ -129,7 +129,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "14911"
-"OnTeleport" "main_minecart_1,StartForward,,0,-1"
+"OnTeleport" "main_minecart_1StartForward0-1"
 }
 {
 "model" "*1"
@@ -1002,8 +1002,8 @@
 "filtername" "red_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "25027"
-"OnStartTouchAll" "portti_x*,Open,,0,-1"
-"OnEndTouchAll" "portti_x*,Close,,0,-1"
+"OnStartTouchAll" "portti_x*Open0-1"
+"OnEndTouchAll" "portti_x*Close0-1"
 }
 {
 "origin" "-2309.78 -2253.35 500.31"
@@ -1113,7 +1113,7 @@
 "angles" "0 180 0"
 "classname" "team_control_point"
 "hammerid" "31579"
-"OnCapTeam2" "Bomb_CapArea,SetControlPoint,CP_1,0,1"
+"OnCapTeam2" "Bomb_CapAreaSetControlPointCP_101"
 }
 {
 "origin" "-1183 67 449"
@@ -1126,14 +1126,14 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "31581"
-"OnPass" "CP_0,SetOwner,3,0.1,1"
-"OnPass" "relay_cp1,Trigger,,0,-1"
-"OnPass" "Bomb_Sparks,StopSpark,,0,1"
-"OnPass" "track_nocturne_24,DisablePath,,0,1"
-"OnPass" "Round_timer,AddTeamTime,3 210,0,1"
-"OnPass" "Bomb_CapArea,CaptureCurrentCP,,0,1"
-"OnPass" "cap1_platform_model,Skin,1,0,1"
-"OnPass" "relay_cp1,Disable,,30,-1"
+"OnPass" "CP_0SetOwner30.11"
+"OnPass" "relay_cp1Trigger0-1"
+"OnPass" "Bomb_SparksStopSpark01"
+"OnPass" "track_nocturne_24DisablePath01"
+"OnPass" "Round_timerAddTeamTime3 21001"
+"OnPass" "Bomb_CapAreaCaptureCurrentCP01"
+"OnPass" "cap1_platform_modelSkin101"
+"OnPass" "relay_cp1Disable30-1"
 }
 {
 "origin" "-1245 81 391.248"
@@ -1141,22 +1141,22 @@
 "spawnflags" "0"
 "classname" "logic_relay"
 "hammerid" "31585"
-"OnTrigger" "force_respawn_red,ForceTeamRespawn,2,0,1"
-"OnTrigger" "gamerules,SetBlueTeamRespawnWaveTime,6,0,-1"
-"OnTrigger" "gamerules,SetRedTeamRespawnWaveTime,4,0,-1"
-"OnTrigger" "jingle,PlaySound,,0,-1"
-"OnTrigger" "redspawn_1,Disable,,0,-1"
-"OnTrigger" "redspawn_2,Enable,,0,-1"
-"OnTrigger" "kameramies_1,Disable,,0,-1"
-"OnTrigger" "jingle,PlaySound,,0,-1"
-"OnTrigger" "red_kyltti_init,Open,,0,-1"
-"OnTrigger" "red_respa1_closedoor,Close,,0,-1"
-"OnTrigger" "teleport_redbase_1,Enable,,10,-1"
-"OnTrigger" "redbase_2_teleexit,Enable,,0,-1"
-"OnTrigger" "redbase1_portal,Close,,11,-1"
-"OnTrigger" "relay_blinkkeri,Trigger,,0,-1"
-"OnTrigger" "red_respa1_trigger,Disable,,0,-1"
-"OnTrigger" "a_portti,Disable,,0,-1"
+"OnTrigger" "force_respawn_redForceTeamRespawn201"
+"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime60-1"
+"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime40-1"
+"OnTrigger" "jinglePlaySound0-1"
+"OnTrigger" "redspawn_1Disable0-1"
+"OnTrigger" "redspawn_2Enable0-1"
+"OnTrigger" "kameramies_1Disable0-1"
+"OnTrigger" "jinglePlaySound0-1"
+"OnTrigger" "red_kyltti_initOpen0-1"
+"OnTrigger" "red_respa1_closedoorClose4-1"
+"OnTrigger" "teleport_redbase_1Enable5-1"
+"OnTrigger" "redbase_2_teleexitEnable0-1"
+"OnTrigger" "redbase1_portalClose11-1"
+"OnTrigger" "relay_blinkkeriTrigger0-1"
+"OnTrigger" "red_respa1_triggerDisable4-1"
+"OnTrigger" "a_porttiDisable4-1"
 }
 {
 "origin" "-1183 126 449"
@@ -1289,14 +1289,14 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "39721"
-"OnPass" "CP_1,SetOwner,3,0.1,1"
-"OnPass" "cappi_2,Trigger,,0,-1"
-"OnPass" "cap2_platform_model,Skin,1,0,1"
-"OnPass" "Bomb_CapArea,CaptureCurrentCP,,0,1"
-"OnPass" "Round_timer,AddTeamTime,3 210,0,1"
-"OnPass" "Bomb_Sparks,StopSpark,,0,1"
-"OnPass" "track_nocturne_47,DisablePath,,0,1"
-"OnPass" "cappi_2,Disable,,6,-1"
+"OnPass" "CP_1SetOwner30.11"
+"OnPass" "cappi_2Trigger0-1"
+"OnPass" "cap2_platform_modelSkin101"
+"OnPass" "Bomb_CapAreaCaptureCurrentCP01"
+"OnPass" "Round_timerAddTeamTime3 21001"
+"OnPass" "Bomb_SparksStopSpark01"
+"OnPass" "track_nocturne_47DisablePath01"
+"OnPass" "cappi_2Disable6-1"
 }
 {
 "origin" "-1803 -1434.25 244.079"
@@ -1325,7 +1325,7 @@
 "angles" "0 0 0"
 "classname" "team_control_point"
 "hammerid" "39725"
-"OnCapTeam2" "Bomb_CapArea,SetControlPoint,CP_2,0,1"
+"OnCapTeam2" "Bomb_CapAreaSetControlPointCP_201"
 }
 {
 "origin" "-1802.86 -1503 253.998"
@@ -1333,22 +1333,22 @@
 "spawnflags" "0"
 "classname" "logic_relay"
 "hammerid" "39727"
-"OnTrigger" "kameramies_2,Disable,,0,-1"
-"OnTrigger" "portti_x_*,Close,,0,-1"
-"OnTrigger" "gamerules,SetRedTeamRespawnWaveTime,4,0,-1"
-"OnTrigger" "gamerules,SetBlueTeamRespawnWaveTime,8,0,-1"
-"OnTrigger" "jingle2,PlaySound,,0,-1"
-"OnTrigger" "force_respawn_red,ForceTeamRespawn,2,1,1"
-"OnTrigger" "bluspawn_1,Enable,,0,-1"
-"OnTrigger" "bluspawn_0,Disable,,0,-1"
-"OnTrigger" "blu_kyltti_init,Close,,0,-1"
-"OnTrigger" "blubase_2_blockdoor,Open,,0,-1"
-"OnTrigger" "keissi,PickRandomShuffle,,5,-1"
-"OnTrigger" "cart_timer_haha,Enable,,0,-1"
-"OnTrigger" "blu_respawn1_trigger,Enable,,0,-1"
-"OnTrigger" "blubase2_portal,Open,,0,-1"
-"OnTrigger" "relay_blinkkeri,Trigger,,0,-1"
-"OnTrigger" "red_kyltti_dinit,Open,,0,-1"
+"OnTrigger" "kameramies_2Disable0-1"
+"OnTrigger" "portti_x_*Close0-1"
+"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime60-1"
+"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime80-1"
+"OnTrigger" "jingle2PlaySound0-1"
+"OnTrigger" "force_respawn_redForceTeamRespawn211"
+"OnTrigger" "bluspawn_1Enable0-1"
+"OnTrigger" "bluspawn_0Disable0-1"
+"OnTrigger" "blu_kyltti_initClose0-1"
+"OnTrigger" "blubase_2_blockdoorOpen0-1"
+"OnTrigger" "keissiPickRandomShuffle5-1"
+"OnTrigger" "cart_timer_hahaEnable0-1"
+"OnTrigger" "blu_respawn1_triggerEnable0-1"
+"OnTrigger" "blubase2_portalOpen0-1"
+"OnTrigger" "relay_blinkkeriTrigger0-1"
+"OnTrigger" "red_kyltti_dinitOpen0-1"
 }
 {
 "model" "*9"
@@ -1360,8 +1360,8 @@
 "filtername" "red_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "53581"
-"OnStartTouchAll" "red_respa1_door,Open,,0,-1"
-"OnEndTouchAll" "red_respa1_door,Close,,0,-1"
+"OnStartTouchAll" "red_respa1_doorOpen0-1"
+"OnEndTouchAll" "red_respa1_doorClose0-1"
 }
 {
 "model" "*10"
@@ -1406,8 +1406,8 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "53587"
-"OnOpen" "red_respa1_model_door,SetAnimation,open,0,-1"
-"OnClose" "red_respa1_model_door,SetAnimation,close,0,-1"
+"OnOpen" "red_respa1_model_doorSetAnimationopen0-1"
+"OnClose" "red_respa1_model_doorSetAnimationclose0-1"
 }
 {
 "origin" "-2301 -2656 500"
@@ -1519,8 +1519,8 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "67236"
-"OnOpen" "bludoor_spawn,SetAnimation,open,0,-1"
-"OnClose" "bludoor_spawn,SetAnimation,close,0,-1"
+"OnOpen" "bludoor_spawnSetAnimationopen0-1"
+"OnClose" "bludoor_spawnSetAnimationclose0-1"
 }
 {
 "model" "*14"
@@ -1551,8 +1551,8 @@
 "filtername" "blu_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "67233"
-"OnStartTouchAll" "blu_respa1_door,Open,,0,-1"
-"OnEndTouchAll" "blu_respa1_door,Close,,0,-1"
+"OnStartTouchAll" "blu_respa1_doorOpen0-1"
+"OnEndTouchAll" "blu_respa1_doorClose0-1"
 }
 {
 "model" "*16"
@@ -1564,8 +1564,8 @@
 "filtername" "blu_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "67497"
-"OnStartTouchAll" "blu_respa1_door2,Open,,0,-1"
-"OnEndTouchAll" "blu_respa1_door2,Close,,0,-1"
+"OnStartTouchAll" "blu_respa1_door2Open0-1"
+"OnEndTouchAll" "blu_respa1_door2Close0-1"
 }
 {
 "model" "*17"
@@ -1610,8 +1610,8 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "67505"
-"OnOpen" "bludoor_spawn2,SetAnimation,open,0,-1"
-"OnClose" "bludoor_spawn2,SetAnimation,close,0,-1"
+"OnOpen" "bludoor_spawn2SetAnimationopen0-1"
+"OnClose" "bludoor_spawn2SetAnimationclose0-1"
 }
 {
 "model" "*19"
@@ -1874,7 +1874,7 @@
 "disablereceiveshadows" "0"
 "classname" "func_door"
 "hammerid" "86654"
-"OnFullyOpen" "ovi_blu_last,Kill,,0,-1"
+"OnFullyOpen" "ovi_blu_lastKill0-1"
 }
 {
 "model" "*22"
@@ -1919,8 +1919,8 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "86660"
-"OnOpen" "red_spawni2_modeldoor,SetAnimation,open,0,-1"
-"OnClose" "red_spawni2_modeldoor,SetAnimation,close,0,-1"
+"OnOpen" "red_spawni2_modeldoorSetAnimationopen0-1"
+"OnClose" "red_spawni2_modeldoorSetAnimationclose0-1"
 }
 {
 "model" "*24"
@@ -1932,8 +1932,8 @@
 "filtername" "blu_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "86663"
-"OnStartTouchAll" "red_spawni2_door,Open,,0,-1"
-"OnEndTouchAll" "red_spawni2_door,Close,,0,-1"
+"OnStartTouchAll" "red_spawni2_doorOpen0-1"
+"OnEndTouchAll" "red_spawni2_doorClose0-1"
 }
 {
 "origin" "1068 -1066 536"
@@ -2166,7 +2166,7 @@
 "angles" "0 90 0"
 "classname" "team_control_point"
 "hammerid" "102778"
-"OnCapTeam2" "Bomb_CapArea,SetControlPoint,CP_3,0,1"
+"OnCapTeam2" "Bomb_CapAreaSetControlPointCP_301"
 }
 {
 "origin" "-384 -2352 529"
@@ -2203,14 +2203,14 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "102790"
-"OnPass" "CP_2,SetOwner,3,0.1,1"
-"OnPass" "cappi_3,Trigger,,0,-1"
-"OnPass" "Bomb_Sparks,StopSpark,,0,1"
-"OnPass" "Round_timer,AddTeamTime,3 210,0,1"
-"OnPass" "Bomb_CapArea,CaptureCurrentCP,,0,1"
-"OnPass" "cap3_platform_model,Skin,1,0,1"
-"OnPass" "cappi_3,Disable,,6,-1"
-"OnPass" "track_nocturne_91,DisablePath,,0,-1"
+"OnPass" "CP_2SetOwner30.11"
+"OnPass" "cappi_3Trigger0-1"
+"OnPass" "Bomb_SparksStopSpark01"
+"OnPass" "Round_timerAddTeamTime3 21001"
+"OnPass" "Bomb_CapAreaCaptureCurrentCP01"
+"OnPass" "cap3_platform_modelSkin101"
+"OnPass" "cappi_3Disable6-1"
+"OnPass" "track_nocturne_91DisablePath0-1"
 }
 {
 "origin" "-454.908 -2280.43 471.434"
@@ -2218,18 +2218,18 @@
 "spawnflags" "0"
 "classname" "logic_relay"
 "hammerid" "102794"
-"OnTrigger" "gamerules,SetRedTeamRespawnWaveTime,6,0,-1"
-"OnTrigger" "gamerules,SetBlueTeamRespawnWaveTime,4,0,-1"
-"OnTrigger" "jingle3,PlaySound,,0,-1"
-"OnTrigger" "kameramies_3,Disable,,0,-1"
-"OnTrigger" "redspawn_2,Disable,,0,-1"
-"OnTrigger" "redspawn_3,Enable,,0,-1"
-"OnTrigger" "red_respa2_closedoor,Close,,0,-1"
-"OnTrigger" "redbase_3_teleexit,Enable,,0,-1"
-"OnTrigger" "teleport_base2_red,Enable,,10,-1"
-"OnTrigger" "redbase2_portal,Close,,11,-1"
-"OnTrigger" "relay_blinkkeri,Trigger,,0,-1"
-"OnTrigger" "redbase2_trigger,Disable,,0,-1"
+"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime60-1"
+"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime40-1"
+"OnTrigger" "jingle3PlaySound0-1"
+"OnTrigger" "kameramies_3Disable0-1"
+"OnTrigger" "redspawn_2Disable0-1"
+"OnTrigger" "redspawn_3Enable0-1"
+"OnTrigger" "red_respa2_closedoorClose5-1"
+"OnTrigger" "redbase_3_teleexitEnable0-1"
+"OnTrigger" "teleport_base2_redEnable4-1"
+"OnTrigger" "redbase2_portalClose11-1"
+"OnTrigger" "relay_blinkkeriTrigger0-1"
+"OnTrigger" "redbase2_triggerDisable3-1"
 }
 {
 "origin" "-384 -2278 463"
@@ -2364,7 +2364,7 @@
 "angles" "0 180 0"
 "classname" "team_control_point"
 "hammerid" "103039"
-"OnCapTeam2" "Bomb_CapArea,SetControlPoint,CP_4,0,1"
+"OnCapTeam2" "Bomb_CapAreaSetControlPointCP_401"
 }
 {
 "origin" "1716.64 -2021 334.95"
@@ -2377,13 +2377,13 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "103041"
-"OnPass" "CP_3,SetOwner,3,0.1,1"
-"OnPass" "Bomb_Sparks,StopSpark,,0,1"
-"OnPass" "track_nocturne_115,DisablePath,,0,1"
-"OnPass" "Round_timer,AddTeamTime,3 210,0,1"
-"OnPass" "Bomb_CapArea,CaptureCurrentCP,,0,1"
-"OnPass" "cap4_platform_model,Skin,1,0,1"
-"OnPass" "cappi_4,Trigger,,0,1"
+"OnPass" "CP_3SetOwner30.11"
+"OnPass" "Bomb_SparksStopSpark01"
+"OnPass" "track_nocturne_115DisablePath01"
+"OnPass" "Round_timerAddTeamTime3 21001"
+"OnPass" "Bomb_CapAreaCaptureCurrentCP01"
+"OnPass" "cap4_platform_modelSkin101"
+"OnPass" "cappi_4Trigger01"
 }
 {
 "origin" "1699.32 -2114.61 283.529"
@@ -2414,18 +2414,18 @@
 "spawnflags" "0"
 "classname" "logic_relay"
 "hammerid" "103048"
-"OnTrigger" "gamerules,SetRedTeamRespawnWaveTime,6,0,-1"
-"OnTrigger" "gamerules,SetBlueTeamRespawnWaveTime,6,0,-1"
-"OnTrigger" "kameramies_4,Disable,,0,-1"
-"OnTrigger" "cappi_4,Disable,,12,-1"
-"OnTrigger" "bluspawn_1,Disable,,0,-1"
-"OnTrigger" "bluspawn_2,Enable,,0,-1"
-"OnTrigger" "ovi_blu_last,Open,,0,-1"
-"OnTrigger" "telebase_2_blu,Enable,,0,-1"
-"OnTrigger" "teleport_base2_blu,Enable,,10,-1"
-"OnTrigger" "blurespa3_trigger,Enable,,0,-1"
-"OnTrigger" "jingle4,PlaySound,,0,-1"
-"OnTrigger" "relay_blinkkeri,Trigger,,0,-1"
+"OnTrigger" "gamerulesSetRedTeamRespawnWaveTime60-1"
+"OnTrigger" "gamerulesSetBlueTeamRespawnWaveTime60-1"
+"OnTrigger" "kameramies_4Disable0-1"
+"OnTrigger" "cappi_4Disable12-1"
+"OnTrigger" "bluspawn_1Disable0-1"
+"OnTrigger" "bluspawn_2Enable0-1"
+"OnTrigger" "ovi_blu_lastOpen0-1"
+"OnTrigger" "telebase_2_bluEnable0-1"
+"OnTrigger" "teleport_base2_bluEnable10-1"
+"OnTrigger" "blurespa3_triggerEnable0-1"
+"OnTrigger" "jingle4PlaySound0-1"
+"OnTrigger" "relay_blinkkeriTrigger0-1"
 }
 {
 "model" "*27"
@@ -2546,8 +2546,8 @@
 "origin" "1757.5 -1591 533.01"
 "classname" "trigger_multiple"
 "hammerid" "113876"
-"OnStartTouchAll" "seagate_*,Open,,0,-1"
-"OnEndTouchAll" "seagate_*,Close,,0,-1"
+"OnStartTouchAll" "seagate_*Open0-1"
+"OnEndTouchAll" "seagate_*Close0-1"
 }
 {
 "origin" "-32 -2056 773.074"
@@ -2602,8 +2602,8 @@
 "filtername" "red_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "137886"
-"OnStartTouchAll" "red_spawn_2,Open,,0,-1"
-"OnEndTouchAll" "red_spawn_2,Close,,0,-1"
+"OnStartTouchAll" "red_spawn_2Open0-1"
+"OnEndTouchAll" "red_spawn_2Close0-1"
 }
 {
 "model" "*31"
@@ -2648,8 +2648,8 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "137892"
-"OnOpen" "red_spawn_2_door,SetAnimation,open,0,-1"
-"OnClose" "red_spawn_2_door,SetAnimation,close,0,-1"
+"OnOpen" "red_spawn_2_doorSetAnimationopen0-1"
+"OnClose" "red_spawn_2_doorSetAnimationclose0-1"
 }
 {
 "origin" "4298.01 -255.03 676"
@@ -3470,8 +3470,8 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "177727"
-"OnOpen" "blu_respa1_model_door,SetAnimation,open,0,-1"
-"OnClose" "blu_respa1_model_door,SetAnimation,close,0,-1"
+"OnOpen" "blu_respa1_model_doorSetAnimationopen0-1"
+"OnClose" "blu_respa1_model_doorSetAnimationclose0-1"
 }
 {
 "model" "*39"
@@ -3502,8 +3502,8 @@
 "filtername" "red_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "177721"
-"OnStartTouchAll" "red_respax_door,Open,,0,-1"
-"OnEndTouchAll" "red_respax_door,Close,,0,-1"
+"OnStartTouchAll" "red_respax_doorOpen0-1"
+"OnEndTouchAll" "red_respax_doorClose0-1"
 }
 {
 "origin" "3850 429 522.146"
@@ -3588,7 +3588,7 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "180602"
-"OnFullyOpen" "stage1_gate_4_prop,Disable,,1,-1"
+"OnFullyOpen" "stage1_gate_4_propDisable1-1"
 }
 {
 "model" "*43"
@@ -3614,7 +3614,7 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "180605"
-"OnFullyOpen" "stage1_gate_3_prop,Disable,,1,-1"
+"OnFullyOpen" "stage1_gate_3_propDisable1-1"
 }
 {
 "model" "*44"
@@ -3709,7 +3709,7 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "180865"
-"OnFullyOpen" "stage1_gate_4_prop,Disable,,1,-1"
+"OnFullyOpen" "stage1_gate_4_propDisable1-1"
 }
 {
 "model" "*47"
@@ -3735,7 +3735,7 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "180872"
-"OnFullyOpen" "stage1_gate_3_prop,Disable,,1,-1"
+"OnFullyOpen" "stage1_gate_3_propDisable1-1"
 }
 {
 "origin" "808 -409 665"
@@ -4586,26 +4586,26 @@
 "spawnflags" "1"
 "classname" "logic_relay"
 "hammerid" "219566"
-"OnTrigger" "setuppi_1_up,Open,,0,-1"
-"OnTrigger" "setuppi_1_down,Open,,0,-1"
-"OnTrigger" "blu_bullettime,Disable,,0,-1"
-"OnTrigger" "setuppi_3_down,Open,,0,-1"
-"OnTrigger" "setuppi_3_up,Open,,0,-1"
-"OnTrigger" "init_red_guide_doors,Open,,0,-1"
+"OnTrigger" "setuppi_1_upOpen0-1"
+"OnTrigger" "setuppi_1_downOpen0-1"
+"OnTrigger" "blu_bullettimeDisable0-1"
+"OnTrigger" "setuppi_3_downOpen0-1"
+"OnTrigger" "setuppi_3_upOpen0-1"
+"OnTrigger" "init_red_guide_doorsOpen0-1"
 }
 {
 "origin" "1325.59 -295.499 922"
 "spawnflags" "1"
 "classname" "logic_auto"
 "hammerid" "219568"
-"OnMapSpawn" "gamerules,SetRedTeamRole,1,0,-1"
-"OnMapSpawn" "gamerules,SetBlueTeamRole,2,0,-1"
-"OnMultiNewRound" "gamerules,SetRedTeamRespawnWaveTime,4,0,-1"
-"OnMultiNewRound" "gamerules,SetBlueTeamRespawnWaveTime,6,0,-1"
-"OnMapSpawn" "gamerules,SetBlueTeamGoalString,Push the payload cart into RED teams frosted pit!,2,-1"
-"OnMapSpawn" "gamerules,SetRedTeamGoalString,Stop BLU from advancing at all costs!,2,-1"
-"OnMultiNewRound" "particle_snow_02,AddOutput,radius_max 192,0,-1"
-"OnMultiNewRound" "xmas_relay_redbase,Trigger,,0,-1"
+"OnMapSpawn" "gamerulesSetRedTeamRole10-1"
+"OnMapSpawn" "gamerulesSetBlueTeamRole20-1"
+"OnMultiNewRound" "gamerulesSetRedTeamRespawnWaveTime40-1"
+"OnMultiNewRound" "gamerulesSetBlueTeamRespawnWaveTime60-1"
+"OnMapSpawn" "gamerulesSetBlueTeamGoalStringPush the payload cart into RED teams frosted pit!2-1"
+"OnMapSpawn" "gamerulesSetRedTeamGoalStringStop BLU from advancing at all costs!2-1"
+"OnMultiNewRound" "particle_snow_02AddOutputradius_max 1920-1"
+"OnMultiNewRound" "xmas_relay_redbaseTrigger0-1"
 }
 {
 "origin" "1346.59 -295.499 922"
@@ -4695,9 +4695,9 @@
 "spawnflags" "1"
 "classname" "logic_auto"
 "hammerid" "219584"
-"OnMapSpawn" "tonemap_global,SetBloomScale,.6,0,-1"
-"OnMapSpawn" "tonemap_global,SetAutoExposureMax,1,0,-1"
-"OnMapSpawn" "tonemap_global,SetAutoExposureMin,.5,0,-1"
+"OnMapSpawn" "tonemap_globalSetBloomScale.60-1"
+"OnMapSpawn" "tonemap_globalSetAutoExposureMax10-1"
+"OnMapSpawn" "tonemap_globalSetAutoExposureMin.50-1"
 }
 {
 "origin" "1346.59 -252.499 922"
@@ -4755,8 +4755,8 @@
 "auto_countdown" "1"
 "classname" "team_round_timer"
 "hammerid" "219602"
-"OnFinished" "round_win,RoundWin,,0,-1"
-"OnSetupFinished" "blu_respadoor,Trigger,,0,-1"
+"OnFinished" "round_winRoundWin0-1"
+"OnSetupFinished" "blu_respadoorTrigger0-1"
 }
 {
 "origin" "1388.59 -213.779 922"
@@ -4804,7 +4804,7 @@
 "area_cap_point" "CP_0"
 "classname" "trigger_capture_area"
 "hammerid" "232129"
-"OnNumCappersChanged" "Watcher_A,SetNumTrainCappers,,0,-1"
+"OnNumCappersChanged" "Watcher_ASetNumTrainCappers0-1"
 }
 {
 "model" "*59"
@@ -5746,7 +5746,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "233557"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,1,0,-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier10-1"
 }
 {
 "origin" "-636 -1764 488"
@@ -5759,7 +5759,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "233565"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,0.4,0,-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier0.40-1"
 }
 {
 "origin" "-512 -1765 520"
@@ -5772,7 +5772,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "233590"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,1,0,-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier10-1"
 }
 {
 "origin" "-372 -1765 520"
@@ -6349,7 +6349,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "234554"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,1,0,-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier10-1"
 }
 {
 "origin" "3206 -609 431"
@@ -6362,7 +6362,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "234565"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,0.4,0,-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier0.40-1"
 }
 {
 "origin" "3330 -608 484"
@@ -6375,7 +6375,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "234593"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,1,0,-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier10-1"
 }
 {
 "origin" "3473 -608 484"
@@ -6388,14 +6388,14 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "234605"
-"OnPass" "Bomb_Model,Kill,,4,-1"
-"OnPass" "Bomb_Const,Break,,0.4,-1"
-"OnPass" "Bomb_Train,Kill,,0.4,-1"
-"OnPass" "Bomb_CapArea,CaptureCurrentCP,,0.2,-1"
-"OnPass" "Bomb_CapArea,ClearParent,,0.1,-1"
-"OnPass" "Bomb_Train,Stop,,0.1,-1"
-"OnPass" "Watcher_A,SetSpeedForwardModifier,1.0,0,-1"
-"OnPass" "gamerules,SetRequiredObserverTarget,kameramies_5,0,-1"
+"OnPass" "Bomb_ModelKill4-1"
+"OnPass" "Bomb_ConstBreak0.4-1"
+"OnPass" "Bomb_TrainKill0.4-1"
+"OnPass" "Bomb_CapAreaCaptureCurrentCP0.2-1"
+"OnPass" "Bomb_CapAreaClearParent0.1-1"
+"OnPass" "Bomb_TrainStop0.1-1"
+"OnPass" "Watcher_ASetSpeedForwardModifier1.00-1"
+"OnPass" "gamerulesSetRequiredObserverTargetkameramies_50-1"
 }
 {
 "origin" "3586 -609 432"
@@ -6444,9 +6444,9 @@
 "filtername" "filter_minecart"
 "classname" "trigger_once"
 "hammerid" "234750"
-"OnTrigger" "CP_4,SetOwner,3,0,-1"
-"OnTrigger" "final_animate,Trigger,,1,-1"
-"OnTrigger" "pre_kaboom,PlaySound,,0.2,-1"
+"OnTrigger" "CP_4SetOwner30-1"
+"OnTrigger" "final_animateTrigger1-1"
+"OnTrigger" "pre_kaboomPlaySound0.2-1"
 }
 {
 "model" "*63"
@@ -6467,22 +6467,22 @@
 "spawnflags" "0"
 "classname" "logic_relay"
 "hammerid" "234806"
-"OnTrigger" "boom_anim,Enable,,0,-1"
-"OnTrigger" "boom_anim,SetAnimation,anima,0,-1"
-"OnTrigger" "JYTKY,Enable,,0,-1"
-"OnTrigger" "Bomb_Model,Kill,,0,-1"
-"OnTrigger" "Bomb_CapArea,Kill,,0,-1"
-"OnTrigger" "kaboom_shake,StartShake,,0,-1"
-"OnTrigger" "gamerules,SetRequiredObserverTarget,,2,-1"
-"OnTrigger" "explo_contain,Enable,,0.4,-1"
-"OnTrigger" "explo_contain,Disable,,1,-1"
-"OnTrigger" "pommipum,PlaySound,,0,-1"
-"OnTrigger" "pommipum,PlaySound,,1,-1"
-"OnTrigger" "JYTKY,Disable,,0.1,-1"
-"OnTrigger" "JYTKY,Enable,,1,-1"
-"OnTrigger" "JYTKY,Disable,,1.1,-1"
-"OnTrigger" "jingle5,PlaySound,,0,-1"
-"OnTrigger" "relay_blinkkeri,Trigger,,0,-1"
+"OnTrigger" "boom_animEnable0-1"
+"OnTrigger" "boom_animSetAnimationanima0-1"
+"OnTrigger" "JYTKYEnable0-1"
+"OnTrigger" "Bomb_ModelKill0-1"
+"OnTrigger" "Bomb_CapAreaKill0-1"
+"OnTrigger" "kaboom_shakeStartShake0-1"
+"OnTrigger" "gamerulesSetRequiredObserverTarget2-1"
+"OnTrigger" "explo_containEnable0.4-1"
+"OnTrigger" "explo_containDisable1-1"
+"OnTrigger" "pommipumPlaySound0-1"
+"OnTrigger" "pommipumPlaySound1-1"
+"OnTrigger" "JYTKYDisable0.1-1"
+"OnTrigger" "JYTKYEnable1-1"
+"OnTrigger" "JYTKYDisable1.1-1"
+"OnTrigger" "jingle5PlaySound0-1"
+"OnTrigger" "relay_blinkkeriTrigger0-1"
 }
 {
 "model" "*64"
@@ -6493,7 +6493,7 @@
 "origin" "3767.24 -619 771.48"
 "classname" "trigger_multiple"
 "hammerid" "234810"
-"OnStartTouch" "!activator,SetHealth,-1000,0,-1"
+"OnStartTouch" "!activatorSetHealth-10000-1"
 }
 {
 "model" "*65"
@@ -6809,8 +6809,8 @@
 "filtername" "red_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "266871"
-"OnStartTouchAll" "redrespadoor_*,Open,,0,-1"
-"OnEndTouchAll" "redrespadoor_*,Close,,0,-1"
+"OnStartTouchAll" "redrespadoor_*Open0-1"
+"OnEndTouchAll" "redrespadoor_*Close0-1"
 }
 {
 "origin" "1029.78 584 351.31"
@@ -6921,7 +6921,7 @@
 "disablereceiveshadows" "1"
 "classname" "func_door"
 "hammerid" "180180"
-"OnFullyOpen" "setuppi_1_*,Kill,,0,-1"
+"OnFullyOpen" "setuppi_1_*Kill0-1"
 }
 {
 "model" "*83"
@@ -7565,8 +7565,8 @@
 "filtername" "blu_team_filter"
 "classname" "trigger_multiple"
 "hammerid" "270262"
-"OnStartTouch" "respa2_bludoor1,Open,,0,-1"
-"OnEndTouchAll" "respa2_bludoor1,Close,,0,-1"
+"OnStartTouch" "respa2_bludoor1Open0-1"
+"OnEndTouchAll" "respa2_bludoor1Close0-1"
 }
 {
 "portalnumber" "60"
@@ -13868,7 +13868,7 @@
 "disablereceiveshadows" "0"
 "classname" "func_door"
 "hammerid" "293020"
-"OnFullyOpen" "ovi_blu_last,Kill,,0,-1"
+"OnFullyOpen" "ovi_blu_lastKill0-1"
 }
 {
 "origin" "1561 -236 336.08"
@@ -14394,7 +14394,7 @@
 "disablereceiveshadows" "0"
 "classname" "func_door"
 "hammerid" "314742"
-"OnFullyOpen" "init_red_guide_doors,Kill,,0,-1"
+"OnFullyOpen" "init_red_guide_doorsKill0-1"
 }
 {
 "model" "*95"
@@ -16163,8 +16163,8 @@
 "targetname" "keissi"
 "classname" "logic_case"
 "hammerid" "402734"
-"OnCase01" "main_minecart_1,TeleportToPathTrack,cart_path_1,3,-1"
-"OnCase02" "main_minecart_1,TeleportToPathTrack,cart3_path_12,3,-1"
+"OnCase01" "main_minecart_1TeleportToPathTrackcart_path_13-1"
+"OnCase02" "main_minecart_1TeleportToPathTrackcart3_path_123-1"
 }
 {
 "origin" "-605.571 -3535.87 1228"
@@ -16480,7 +16480,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "429471"
-"OnTeleport" "main_minecart_1,StartForward,,0,-1"
+"OnTeleport" "main_minecart_1StartForward0-1"
 }
 {
 "origin" "179 -3403 912"
@@ -16612,8 +16612,8 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "429643"
-"OnPass" "main_minecart_1,TeleportToPathTrack,cart_path_x,0,-1"
-"OnPass" "cart_sound3,PlaySound,,0,-1"
+"OnPass" "main_minecart_1TeleportToPathTrackcart_path_x0-1"
+"OnPass" "cart_sound3PlaySound0-1"
 }
 {
 "origin" "-240.38 -3618.92 1031.71"
@@ -16625,8 +16625,8 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "429720"
-"OnPass" "main_minecart_1,TeleportToPathTrack,cart_path_x,0,-1"
-"OnPass" "cart_sound3,PlaySound,,0,-1"
+"OnPass" "main_minecart_1TeleportToPathTrackcart_path_x0-1"
+"OnPass" "cart_sound3PlaySound0-1"
 }
 {
 "origin" "-307 -3574 1012.71"
@@ -16759,7 +16759,7 @@
 "angles" "0 0 0"
 "classname" "path_track"
 "hammerid" "429840"
-"OnTeleport" "main_minecart_1,StartForward,,0,-1"
+"OnTeleport" "main_minecart_1StartForward0-1"
 }
 {
 "origin" "-2320.15 -2871.46 833.376"
@@ -16977,16 +16977,16 @@
 "RefireTime" "80"
 "classname" "logic_timer"
 "hammerid" "436434"
-"OnTimer" "track_picker,PickRandom,,0,-1"
+"OnTimer" "track_pickerPickRandom0-1"
 }
 {
 "origin" "-1440 -2476 589.251"
 "targetname" "track_picker"
 "classname" "logic_case"
 "hammerid" "436436"
-"OnCase01" "main_minecart_1,TeleportToPathTrack,cart2_path_1,3,-1"
-"OnCase02" "main_minecart_1,TeleportToPathTrack,cart3_path_12,3,-1"
-"OnCase03" "main_minecart_1,TeleportToPathTrack,cart_path_1,3,-1"
+"OnCase01" "main_minecart_1TeleportToPathTrackcart2_path_13-1"
+"OnCase02" "main_minecart_1TeleportToPathTrackcart3_path_123-1"
+"OnCase03" "main_minecart_1TeleportToPathTrackcart_path_13-1"
 }
 {
 "origin" "687 -1611 969"
@@ -18503,7 +18503,7 @@
 "targetname" "blinker_x"
 "StartDisabled" "0"
 "spawnflags" "0"
-"solid" "6"
+"solid" "0"
 "skin" "4"
 "SetBodyGroup" "0"
 "rendermode" "0"
@@ -18539,10 +18539,10 @@
 "spawnflags" "0"
 "classname" "logic_relay"
 "hammerid" "590268"
-"OnTrigger" "blinker_x,Skin,6,0,-1"
-"OnTrigger" "blinker_x,Skin,3,0.5,-1"
-"OnTrigger" "blinker_x,Skin,4,3,-1"
-"OnTrigger" "blinker_x,Skin,6,1,-1"
+"OnTrigger" "blinker_xSkin60-1"
+"OnTrigger" "blinker_xSkin30.5-1"
+"OnTrigger" "blinker_xSkin43-1"
+"OnTrigger" "blinker_xSkin61-1"
 }
 {
 "origin" "810 736 386"
@@ -19615,31 +19615,31 @@
 "spawnflags" "2"
 "classname" "logic_relay"
 "hammerid" "677435"
-"OnTrigger" "lamppu_1,Skin,3,4,-1"
-"OnTrigger" "lamppu_1,Skin,4,6,-1"
-"OnTrigger" "lamppu_1,Skin,5,8,-1"
-"OnTrigger" "lamppu_1,Skin,6,10,-1"
-"OnTrigger" "lamppu_1,Skin,2,2,-1"
-"OnTrigger" "lamppu_2,Skin,2,10,-1"
-"OnTrigger" "lamppu_2,Skin,6,8,-1"
-"OnTrigger" "lamppu_2,Skin,5,6,-1"
-"OnTrigger" "lamppu_2,Skin,4,4,-1"
-"OnTrigger" "lamppu_2,Skin,3,2,-1"
-"OnTrigger" "lamppu_3,Skin,3,10,-1"
-"OnTrigger" "lamppu_3,Skin,2,8,-1"
-"OnTrigger" "lamppu_3,Skin,6,6,-1"
-"OnTrigger" "lamppu_3,Skin,5,4,-1"
-"OnTrigger" "lamppu_3,Skin,4,2,-1"
-"OnTrigger" "lamppu_4,Skin,4,10,-1"
-"OnTrigger" "lamppu_4,Skin,3,8,-1"
-"OnTrigger" "lamppu_4,Skin,2,6,-1"
-"OnTrigger" "lamppu_4,Skin,6,4,-1"
-"OnTrigger" "lamppu_4,Skin,5,2,-1"
-"OnTrigger" "lamppu_5,Skin,5,10,-1"
-"OnTrigger" "lamppu_5,Skin,4,8,-1"
-"OnTrigger" "lamppu_5,Skin,3,6,-1"
-"OnTrigger" "lamppu_5,Skin,2,4,-1"
-"OnTrigger" "lamppu_5,Skin,6,2,-1"
+"OnTrigger" "lamppu_1Skin34-1"
+"OnTrigger" "lamppu_1Skin46-1"
+"OnTrigger" "lamppu_1Skin58-1"
+"OnTrigger" "lamppu_1Skin610-1"
+"OnTrigger" "lamppu_1Skin22-1"
+"OnTrigger" "lamppu_2Skin210-1"
+"OnTrigger" "lamppu_2Skin68-1"
+"OnTrigger" "lamppu_2Skin56-1"
+"OnTrigger" "lamppu_2Skin44-1"
+"OnTrigger" "lamppu_2Skin32-1"
+"OnTrigger" "lamppu_3Skin310-1"
+"OnTrigger" "lamppu_3Skin28-1"
+"OnTrigger" "lamppu_3Skin66-1"
+"OnTrigger" "lamppu_3Skin54-1"
+"OnTrigger" "lamppu_3Skin42-1"
+"OnTrigger" "lamppu_4Skin410-1"
+"OnTrigger" "lamppu_4Skin38-1"
+"OnTrigger" "lamppu_4Skin26-1"
+"OnTrigger" "lamppu_4Skin64-1"
+"OnTrigger" "lamppu_4Skin52-1"
+"OnTrigger" "lamppu_5Skin510-1"
+"OnTrigger" "lamppu_5Skin48-1"
+"OnTrigger" "lamppu_5Skin36-1"
+"OnTrigger" "lamppu_5Skin24-1"
+"OnTrigger" "lamppu_5Skin62-1"
 }
 {
 "origin" "-2597.54 -2487.66 564"
@@ -19650,7 +19650,7 @@
 "RefireTime" "10"
 "classname" "logic_timer"
 "hammerid" "677437"
-"OnTimer" "xmas_relay_redbase,Trigger,,0,-1"
+"OnTimer" "xmas_relay_redbaseTrigger0-1"
 }
 {
 "origin" "1820 -45 715"
@@ -22741,5 +22741,38 @@
 "angles" "0 90 0"
 "classname" "prop_dynamic"
 "hammerid" "766392"
+}
+{
+"origin" "1491.8 -2701.31 496"
+"style" "0"
+"spawnflags" "0"
+"pitch" "-90"
+"angles" "-90 180 0"
+"_quadratic_attn" "1"
+"_linear_attn" "0"
+"_lightscaleHDR" "1"
+"_lightHDR" "-1 -1 -1 1"
+"_light" "255 255 213 600"
+"_inner_cone" "40"
+"_exponent" "1"
+"_distance" "0"
+"_constant_attn" "0"
+"_cone" "80"
+"classname" "light_spot"
+"hammerid" "793570"
+}
+{
+"origin" "1491.8 -2701.9 503"
+"VerticalGlowSize" "30"
+"rendercolor" "255 255 213"
+"OuterMaxDist" "800"
+"MinDist" "16"
+"MaxDist" "256"
+"HorizontalGlowSize" "30"
+"HDRColorScale" "1.0"
+"GlowProxySize" "8"
+"angles" "0 180 0"
+"classname" "env_lightglow"
+"hammerid" "793579"
 }
 
