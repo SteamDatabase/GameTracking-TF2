@@ -10,12 +10,6 @@ ProcessVPK
 
 while IFS= read -r -d '' file
 do
-	# https://github.com/xPaw/EntityLumpDumper
-	../.support/EntityLumpDumper/EntityLumpDumper/bin/Release/linux-x64/publish/EntityLumpDumper "$file"
-done <   <(find "tf/maps/" -type f -name "*.bsp" -print0)
-
-while IFS= read -r -d '' file
-do
 	# https://github.com/foobarhl/vice_standalone
 	# build: g++ -o bin/vice src/*.cpp
 	../.support/vice_standalone/bin/vice -d -x .txt -k E2NcUkG2 "$file"
