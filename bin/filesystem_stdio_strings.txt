@@ -653,7 +653,6 @@ CBaseFileSystem::AddLoggingFunc(void (*)(char const*, char const*))
 CBaseFileSystem::AddMapPackFile(char const*, char const*, SearchPathAdd_t)
 CBaseFileSystem::AddPackFile(char const*, char const*)
 CBaseFileSystem::AddPackFileFromPath(char const*, char const*, bool, char const*)
-CBaseFileSystem::AddPackFiles(char const*, CUtlSymbol const&, SearchPathAdd_t)
 CBaseFileSystem::AddSearchPath(char const*, char const*, SearchPathAdd_t)
 CBaseFileSystem::AddSearchPathInternal(char const*, char const*, SearchPathAdd_t, bool)
 CBaseFileSystem::AddVPKFile(char const*, char const*, SearchPathAdd_t)
@@ -1345,10 +1344,8 @@ CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath
 CUtlVector<CFileAsyncReadJob*, CUtlMemory<CFileAsyncReadJob*, int> >::~CUtlVector()
 CUtlVector<CFunctor*, CUtlMemory<CFunctor*, int> >::AddToTail(CFunctor* const&)
 CUtlVector<CFunctor*, CUtlMemory<CFunctor*, int> >::~CUtlVector()
-CUtlVector<CPackFile*, CUtlMemory<CPackFile*, int> >::AddToTail(CPackFile* const&)
 CUtlVector<CPackFile*, CUtlMemory<CPackFile*, int> >::~CUtlVector()
 CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
-CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::~CUtlVector()
 CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
 CUtlVector<CZipPackFile::CPackFileEntry, CUtlMemory<CZipPackFile::CPackFileEntry, int> >::~CUtlVector()
 CUtlVector<ChunkHashFraction_t, CUtlMemory<ChunkHashFraction_t, int> >::GrowVector(int)
@@ -1366,7 +1363,6 @@ CUtlVector<char, CUtlMemory<char, int> >::InsertMultipleBefore(int, int)
 CUtlVector<char, CUtlMemory<char, int> >::~CUtlVector()
 CUtlVector<int, CUtlMemory<int, int> >::GrowVector(int)
 CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
-CUtlVector<long long, CUtlMemory<long long, int> >::~CUtlVector()
 CUtlVector<unsigned char, CUtlBlockMemory<unsigned char, int> >::InsertBefore(int, unsigned char const&)
 CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::GrowVector(int)
 CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
@@ -2687,7 +2683,7 @@ __DefaultRuneLocale
 __ExitOnFatalAssert
 __GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
 __GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.58679.zqjDp9.ii
-__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.58675.QtJqoh.ii
+__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.17830.WEkgPa.ii
 __GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
 __GLOBAL__sub_I_cryptlib.cpp
 __GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.13867.ry8O4a.ii
@@ -3767,7 +3763,6 @@ wd+w`
 wn>Jj
 yDaHFC
 yDaHFCu6
-zip%i.zip
 |$ +9
 |$ t0
 |$(+D

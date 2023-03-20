@@ -24,7 +24,6 @@
  D CFmtStrN<256, false>::CFmtStrN(char const*, ...)::scAsserted
  D CScriptManager::CreateVM(ScriptLanguage_t)::binding
  D GetMetamethodIdentifier(SQMetaMethod)::pIdentifiers
- D SQCompiler::Error(char const*, ...)::temp
  D SQSharedState::_array_default_delegate_funcz
  D SQSharedState::_class_default_delegate_funcz
  D SQSharedState::_closure_default_delegate_funcz
@@ -314,7 +313,7 @@
  T ConVar_Register(int, IConCommandBaseAccessor*)
  T ConVar_Unregister()
  T ConnectTier1Libraries(void* (**)(char const*, int*), int)
- T CreateDefaultDelegate(SQSharedState*, tagSQRegFunction*)
+ T CreateDefaultDelegate(SQSharedState*, tagSQRegFunction const*)
  T CreateInterface
  T DisconnectTier1Libraries()
  T GetTypeName(SQObjectPtr const&)
@@ -411,7 +410,7 @@
  T SQClass::SetAttributes(SQObjectPtr const&, SQObjectPtr const&)
  T SQClass::~SQClass()
  T SQClosure::Clone()
- T SQClosure::Create(SQSharedState*, SQFunctionProto*)
+ T SQClosure::Create(SQSharedState*, SQFunctionProto*, SQWeakRef*)
  T SQClosure::Finalize()
  T SQClosure::GetType()
  T SQClosure::GetVprofNodeName()
@@ -423,17 +422,17 @@
  T SQCollectable::RemoveFromChain(SQCollectable**, SQCollectable*)
  T SQCollectable::UnMark()
  T SQCompiler::BitwiseAndExp()
- T SQCompiler::BitwiseOrExp()
  T SQCompiler::BitwiseXorExp()
  T SQCompiler::ClassExp()
  T SQCompiler::ClassStatement()
  T SQCompiler::CommaExpr()
  T SQCompiler::CompExp()
  T SQCompiler::Compile(SQObjectPtr&)
- T SQCompiler::CreateFunction(tagSQObject&, bool)
+ T SQCompiler::CreateFunction(tagSQObject&, int, bool)
  T SQCompiler::DeleteExpr()
  T SQCompiler::DoWhileStatement()
  T SQCompiler::EmitCompoundArith(int, int, int)
+ T SQCompiler::EmitLoadConstInt(int, int)
  T SQCompiler::EnumStatement()
  T SQCompiler::EqExp()
  T SQCompiler::Error(char const*, ...)
@@ -443,9 +442,10 @@
  T SQCompiler::Factor()
  T SQCompiler::ForEachStatement()
  T SQCompiler::ForStatement()
- T SQCompiler::FunctionCallArgs()
- T SQCompiler::FunctionExp(int, bool)
+ T SQCompiler::FunctionCallArgs(bool)
+ T SQCompiler::FunctionExp(bool)
  T SQCompiler::FunctionStatement()
+ T SQCompiler::IfBlock()
  T SQCompiler::IfStatement()
  T SQCompiler::LocalDeclStatement()
  T SQCompiler::LogicalAndExp()
@@ -462,6 +462,7 @@
  T SQCompiler::SwitchStatement()
  T SQCompiler::ThrowError(void*, char const*)
  T SQCompiler::TryCatchStatement()
+ T SQCompiler::UnaryOP(SQOpcode)
  T SQCompiler::WhileStatement()
  T SQDbgServer::AddBreakpoint(BreakPoint&)
  T SQDbgServer::Attribute(char const*, char const*)
@@ -494,6 +495,7 @@
  T SQFuncState::DiscardTarget()
  T SQFuncState::GetConstant(tagSQObject const&)
  T SQFuncState::GetLocalVariable(tagSQObject const&)
+ T SQFuncState::GetNumericConstant(int)
  T SQFuncState::GetOuterVariable(tagSQObject const&)
  T SQFuncState::GetStackSize()
  T SQFuncState::IsConstant(tagSQObject const&, tagSQObject&)
@@ -504,8 +506,8 @@
  T SQFuncState::PushLocalVariable(tagSQObject const&)
  T SQFuncState::PushTarget(int)
  T SQFuncState::SQFuncState(SQSharedState*, SQFuncState*, void (*)(void*, char const*), void*)
- T SQFuncState::SetIntructionParam(int, int, int)
- T SQFuncState::SetIntructionParams(int, int, int, int, int)
+ T SQFuncState::SetInstructionParam(int, int, int)
+ T SQFuncState::SetInstructionParams(int, int, int, int, int)
  T SQFuncState::SetStackSize(int)
  T SQFuncState::TopTarget()
  T SQFuncState::~SQFuncState()
@@ -539,10 +541,12 @@
  T SQInstance::SQInstance(SQSharedState*, SQInstance*, int)
  T SQInstance::Set(SQObjectPtr const&, SQObjectPtr const&)
  T SQInstance::~SQInstance()
- T SQLexer::GetIDType(char*)
+ T SQLexer::AddUTF8(unsigned int)
+ T SQLexer::GetIDType(char const*, int)
  T SQLexer::Init(SQSharedState*, int (*)(void*), void*, void (*)(void*, char const*), void*)
  T SQLexer::Lex()
  T SQLexer::LexBlockComment()
+ T SQLexer::ProcessStringHexEscape(char*, int)
  T SQLexer::ReadID()
  T SQLexer::ReadNumber()
  T SQLexer::ReadString(int, bool)
@@ -611,12 +615,12 @@
  T SQVM::ArithMetaMethod(int, SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
  T SQVM::BW_OP(unsigned int, SQObjectPtr&, SQObjectPtr const&, SQObjectPtr const&)
  T SQVM::CLASS_OP(SQObjectPtr&, int, int)
- T SQVM::CLOSURE_OP(SQObjectPtr&, SQFunctionProto*)
+ T SQVM::CLOSURE_OP(SQObjectPtr&, SQFunctionProto*, int)
  T SQVM::CMP_OP(CmpOP, SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
  T SQVM::Call(SQObjectPtr&, int, int, SQObjectPtr&, unsigned int)
  T SQVM::CallDebugHook(int, int)
  T SQVM::CallErrorHandler(SQObjectPtr&)
- T SQVM::CallNative(SQNativeClosure*, int, int, SQObjectPtr&, bool&)
+ T SQVM::CallNative(SQNativeClosure*, int, int, SQObjectPtr&, int, bool&, bool&)
  T SQVM::Clone(SQObjectPtr const&, SQObjectPtr&)
  T SQVM::CreateClassInstance(SQClass*, SQObjectPtr&, SQObjectPtr&)
  T SQVM::DeleteSlot(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
@@ -628,7 +632,7 @@
  T SQVM::FallBackSet(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr const&)
  T SQVM::Finalize()
  T SQVM::FindOuter(SQObjectPtr&, SQObjectPtr*)
- T SQVM::Get(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&, bool, int)
+ T SQVM::Get(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&, unsigned int, int)
  T SQVM::GetAt(int)
  T SQVM::GetType()
  T SQVM::GetUp(int)
@@ -661,6 +665,7 @@
  T SQVM::StartCall(SQClosure*, int, int, int, bool)
  T SQVM::StringCat(SQObjectPtr const&, SQObjectPtr const&, SQObjectPtr&)
  T SQVM::Suspend()
+ T SQVM::TailCall(SQClosure*, int, int)
  T SQVM::ToString(SQObjectPtr const&, SQObjectPtr&)
  T SQVM::Top()
  T SQVM::TypeOf(SQObjectPtr const&, SQObjectPtr&)
@@ -726,8 +731,6 @@
  T VectorToString(SQVM*)
  T VectorTypeOf(SQVM*)
  T __clang_call_terminate
- T _hsort_sift_down(SQVM*, SQArray*, int, int, int)
- T _sort_compare(SQVM*, SQObjectPtr&, SQObjectPtr&, int, int&)
  T _sqstd_compiler_error(SQVM*, char const*, char const*, int, int)
  T _stream__cloned(SQVM*)
  T _stream_eos(SQVM*)
@@ -744,7 +747,7 @@
  T bool CVariantBase<CVariantDefaultAllocator>::AssignTo<CVariantDefaultAllocator>(CVariantBase<CVariantDefaultAllocator>*) const
  T buf_lexfeed(void*)
  T debug_hook(SQVM*)
- T declare_stream(SQVM*, char const*, void*, char const*, tagSQRegFunction*, tagSQRegFunction*)
+ T declare_stream(SQVM*, char const*, void*, char const*, tagSQRegFunction const*, tagSQRegFunction const*)
  T endelement(SQVM*)
  T error_handler(SQVM*)
  T init_streamclass(SQVM*)
@@ -766,7 +769,6 @@
  T sq_arrayappend
  T sq_arraypop
  T sq_arrayreverse
- T sq_aux_gettypedarg(SQVM*, int, tagSQObjectType, SQObjectPtr**)
  T sq_aux_invalidtype(SQVM*, tagSQObjectType)
  T sq_base_register(SQVM*)
  T sq_bindenv
@@ -784,6 +786,7 @@
  T sq_getbase
  T sq_getbool
  T sq_getclass
+ T sq_getclosureroot
  T sq_getdelegate
  T sq_getehandle
  T sq_geterrorfunc
@@ -791,10 +794,12 @@
  T sq_getinstanceup
  T sq_getinteger
  T sq_getlocal
+ T sq_getprintfunc
  T sq_getscratchpad
  T sq_getsize
  T sq_getstackobj
  T sq_getstring
+ T sq_getstringandsize
  T sq_gettop
  T sq_gettype
  T sq_getuserdata
@@ -837,11 +842,13 @@
  T sq_rdbg_waitforconnections
  T sq_release
  T sq_remove
+ T sq_reservestack
  T sq_reseterror
  T sq_resetobject
  T sq_resurrectunreachable
  T sq_set
  T sq_setattributes
+ T sq_setclosureroot
  T sq_setcompilererrorhandler
  T sq_setconsttable
  T sq_setdebughook
@@ -857,7 +864,9 @@
  T sq_settypetag
  T sq_stackinfos
  T sq_suspendvm
+ T sq_tailcall
  T sq_throwerror
+ T sq_throwobject
  T sq_tobool
  T sq_tostring
  T sq_wakeupvm
@@ -898,7 +907,6 @@
  T std::__1::unique_ptr<std::__1::__tree_node<BreakPoint, void*>, std::__1::__tree_node_destructor<std::__1::allocator<std::__1::__tree_node<BreakPoint, void*> > > > std::__1::__tree<BreakPoint, std::__1::less<BreakPoint>, std::__1::allocator<BreakPoint> >::__construct_node<BreakPoint const&>(BreakPoint const&)
  T std::__1::unique_ptr<std::__1::__tree_node<Watch, void*>, std::__1::__tree_node_destructor<std::__1::allocator<std::__1::__tree_node<Watch, void*> > > > std::__1::__tree<Watch, std::__1::less<Watch>, std::__1::allocator<Watch> >::__construct_node<Watch const&>(Watch const&)
  T std::__1::vector<char, std::__1::allocator<char> >::__append(unsigned long)
- T str2num(char const*, SQObjectPtr&)
  T void SQCompiler::BIN_EXP<void (SQCompiler::*)()>(SQOpcode, void (SQCompiler::*)(), int)
  T void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
  T void std::__1::__tree_remove<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
@@ -940,6 +948,7 @@
  b f3
  b g_CleanupSymbolTable
  b guard variable for SQDbgServer::SuperVerbose()::s_bVerbose
+ b rex_typetag
  b s_EmptyConVar
  b s_ScriptManager
  b s_bConnected
@@ -980,7 +989,6 @@
  logf
  longjmp
  malloc
- memchr
  memcmp
  memcpy
  memmove
@@ -1000,8 +1008,8 @@
  setjmp
  sin
  sinf
+ snprintf
  socket
- sprintf
  srand
  std::__1::__vector_base_common<true>::__throw_length_error() const
  std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::append(char const*)
@@ -1018,16 +1026,15 @@
  strlen
  strstr
  strtod$UNIX2003
- strtok
  strtol
  strtoul
  t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
- t _GLOBAL__sub_I_sqvm.stdout.rel_tf_osx_builder.71958.o4Txg0.ii
+ t _GLOBAL__sub_I_sqvm.stdout.rel_tf_osx_builder.18451.OFpcyy.ii
  t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
  t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
  t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
  t _GLOBAL__sub_I_vscript.stdout.rel_tf_osx_builder.72006.Gj4ca1.ii
- t _GLOBAL__sub_I_vsquirrel3.stdout.rel_tf_osx_builder.71964.X70580.ii
+ t _GLOBAL__sub_I_vsquirrel3.stdout.rel_tf_osx_builder.18481.08xReT.ii
  t __CreateCScriptManagerIScriptManager_interface()
  t __getcallstackinfos(SQVM*, int)
  t __map_array(SQArray*, SQArray*, SQVM*)
@@ -1047,6 +1054,7 @@
  t _g_blob_swap2(SQVM*)
  t _g_blob_swap4(SQVM*)
  t _g_blob_swapfloat(SQVM*)
+ t _hsort_sift_down(SQVM*, SQArray*, int, int, int)
  t _regexp__typeof(SQVM*)
  t _regexp_capture(SQVM*)
  t _regexp_constructor(SQVM*)
@@ -1054,11 +1062,16 @@
  t _regexp_search(SQVM*)
  t _regexp_subexpcount(SQVM*)
  t _rexobj_releasehook(void*, int)
+ t _sort_compare(SQVM*, SQArray*, SQObjectPtr&, SQObjectPtr&, int, int&)
  t _sqstd_aux_printerror(SQVM*)
+ t _string_endswith(SQVM*)
+ t _string_escape(SQVM*)
  t _string_format(SQVM*)
  t _string_lstrip(SQVM*)
+ t _string_printf(SQVM*)
  t _string_rstrip(SQVM*)
  t _string_split(SQVM*)
+ t _string_startswith(SQVM*)
  t _string_strip(SQVM*)
  t array_append(SQVM*)
  t array_apply(SQVM*)
@@ -1105,8 +1118,10 @@
  t closure_bindenv(SQVM*)
  t closure_call(SQVM*)
  t closure_getinfos(SQVM*)
+ t closure_getroot(SQVM*)
  t closure_pacall(SQVM*)
  t closure_pcall(SQVM*)
+ t closure_setroot(SQVM*)
  t container_rawexists(SQVM*)
  t container_rawget(SQVM*)
  t container_rawset(SQVM*)
@@ -1138,28 +1153,34 @@
  t number_delegate_tochar(SQVM*)
  t obj_clear(SQVM*)
  t obj_delegate_weakref(SQVM*)
+ t sq_aux_gettypedarg(SQVM*, int, tagSQObjectType, SQObjectPtr**)
  t sqstd_rex_charnode(SQRex*, unsigned int)
  t sqstd_rex_element(SQRex*)
  t sqstd_rex_error(SQRex*, char const*)
  t sqstd_rex_list(SQRex*)
  t sqstd_rex_matchcclass(int, char)
  t sqstd_rex_matchnode(SQRex*, tagSQRexNode*, char const*, tagSQRexNode*)
+ t str2num(char const*, SQObjectPtr&, int)
  t string_find(SQVM*)
  t string_slice(SQVM*)
  t string_tolower(SQVM*)
  t string_toupper(SQVM*)
+ t table_filter(SQVM*)
  t table_getdelegate(SQVM*)
+ t table_keys(SQVM*)
+ t table_map(SQVM*)
  t table_rawdelete(SQVM*)
  t table_setdelegate(SQVM*)
+ t table_values(SQVM*)
  t thread_call(SQVM*)
  t thread_getstackinfos(SQVM*)
  t thread_getstatus(SQVM*)
  t thread_wakeup(SQVM*)
+ t thread_wakeupthrow(SQVM*)
  t weakref_ref(SQVM*)
  tanf
  typeinfo for std::bad_alloc
  vsnprintf
- vsprintf
  vtable for __cxxabiv1::__class_type_info
  vtable for __cxxabiv1::__si_class_type_info
  vtable for __cxxabiv1::__vmi_class_type_info
