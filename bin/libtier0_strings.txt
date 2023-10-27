@@ -1044,7 +1044,6 @@ __Unwind_Resume
 __ZL6g_Info.0
 __ZL6g_Info.1
 __ZL6g_Info.2
-__ZNSt3__16vectorI10TimeSums_tNS_9allocatorIS1_EEE6assignIPS1_EENS_9enable_ifIXaasr21__is_forward_iteratorIT_EE5valuesr16is_constructibleIS1_NS_15iterator_traitsIS8_E9referenceEEE5valueEvE4typeES8_S8_
 ___bzero
 ___clang_call_terminate
 ___cxa_allocate_exception
@@ -1324,6 +1323,7 @@ std::__1::__tree<std::__1::__value_type<CVProfNode*, double>, std::__1::__map_va
 std::__1::__tree<std::__1::__value_type<char const*, unsigned long>, std::__1::__map_value_compare<char const*, std::__1::__value_type<char const*, unsigned long>, std::__1::less<char const*>, true>, std::__1::allocator<std::__1::__value_type<char const*, unsigned long> > >::__node_insert_unique(std::__1::__tree_node<std::__1::__value_type<char const*, unsigned long>, void*>*)
 std::__1::__tree<std::__1::__value_type<char const*, unsigned long>, std::__1::__map_value_compare<char const*, std::__1::__value_type<char const*, unsigned long>, std::__1::less<char const*>, true>, std::__1::allocator<std::__1::__value_type<char const*, unsigned long> > >::destroy(std::__1::__tree_node<std::__1::__value_type<char const*, unsigned long>, void*>*)
 std::__1::__vector_base_common<true>::__throw_length_error() const
+std::__1::enable_if<__is_forward_iterator<TimeSums_t*>::value&&is_constructible<TimeSums_t, std::__1::iterator_traits<TimeSums_t*>::reference>::value, void>::type std::__1::vector<TimeSums_t, std::__1::allocator<TimeSums_t> >::assign<TimeSums_t*>(TimeSums_t*, TimeSums_t*)
 std::__1::list<ThreadHandle_t__*, std::__1::allocator<ThreadHandle_t__*> >::~list()
 std::__1::map<CVProfNode*, double, std::__1::less<CVProfNode*>, std::__1::allocator<std::__1::pair<CVProfNode* const, double> > >::~map()
 std::__1::map<char const*, unsigned long, std::__1::less<char const*>, std::__1::allocator<std::__1::pair<char const* const, unsigned long> > >::~map()
