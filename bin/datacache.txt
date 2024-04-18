@@ -358,6 +358,7 @@
  T CDataCacheSectionFastFind::DoFind(unsigned int)
  T CDataCacheSectionFastFind::OnAdd(unsigned int, memhandle_t__*)
  T CDataCacheSectionFastFind::OnRemove(unsigned int)
+ T CDataCacheSectionFastFind::~CDataCacheSectionFastFind()
  T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::DestroyResourceStorage(void*)
  T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::GetRealSize(void*)
  T CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Lock()
@@ -613,6 +614,7 @@
  T ConnectTier3Libraries(void* (**)(char const*, int*), int)
  T CreateInterface
  T CreateInterfaceInternal(char const*, int*)
+ T DataCacheItem_t::DestroyResource()
  T DataCacheSize_f(IConVar*, char const*, float)
  T DisconnectTier1Libraries()
  T DisconnectTier2Libraries()
@@ -620,7 +622,6 @@
  T Hash4(void const*)
  T InterfaceReg::InterfaceReg(void* (*)(), char const*)
  T ModelParts_t::ModelParts_t()
- T SetAsyncInfoIndex(unsigned short, MDLCacheDataType_t, int, int)
  T Sys_GetFactoryThis()
  T V_ComposeFileName(char const*, char const*, char*, int)
  T V_FixSlashes(char*, char)
@@ -679,12 +680,6 @@
  T virtualmodel_t::UpdateAutoplaySequences(studiohdr_t const*)
  ThreadGetCurrentId
  ThreadInMainThread
- ThreadInterlockedAssignIf
- ThreadInterlockedAssignIf64
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedExchangeAdd
- ThreadInterlockedIncrement
  ThreadSleep
  Warning
  _Unwind_Resume
@@ -968,14 +963,14 @@
  strncpy
  t ReleaseMaterialSystemObjects()
  t RestoreMaterialSystemObjects(int)
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
- t _GLOBAL__sub_I_datacache.stdout.rel_tf_osx_builder.56130.Ca1KOW.ii
- t _GLOBAL__sub_I_mdlcache.stdout.rel_tf_osx_builder.31269.eCfWF3.ii
- t _GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.56128.pYpet3.ii
- t _GLOBAL__sub_I_studio_vir.stdout.rel_tf_osx_builder.56129.pu6EWh.ii
- t _GLOBAL__sub_I_studiobyte.stdout.rel_tf_osx_builder.9931.X6A9C0.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+ t _GLOBAL__sub_I_datacache.stdout.rel_tf_osx_builder.94528.v5Dbi2.ii
+ t _GLOBAL__sub_I_mdlcache.stdout.rel_tf_osx_builder.94529.fscx2Q.ii
+ t _GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.94525.awqF6I.ii
+ t _GLOBAL__sub_I_studio_vir.stdout.rel_tf_osx_builder.94526.JNbGoe.ii
+ t _GLOBAL__sub_I_studiobyte.stdout.rel_tf_osx_builder.94524.jBSS1j.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
  t __CreateCDataCacheIDataCache_interface()
  t __CreateCMDLCacheIMDLCache_interface()
  t __CreateCMDLCacheIStudioDataCache_interface()

@@ -10,14 +10,14 @@
   00  
   0@p
   0@p0 
-  p@ 
- @p0p`
  ERROR: failed to create vertex decl for vertex format 0x%08llX! You'll probably see messed-up mesh rendering - to diagnose, build shaderapidx9.dll in debug.
  ReadToken overflow
  unrecognized shader compression type = file corrupt?
 !!!!!Using invalid shader combo!!!!!  Consult a programmer and tell them to build debug materialsystem.dll and stdshader*.dll.  Run with "mat_bufferprimitives 0" and look for CMaterial in the call stack and see what m_pDebugName is.  You are likely using a shader combo that has been skipped.
+!@@@@ 
 "CreateInterface
 "ffffff.
+# @p0p`
 #base
 #base is NULL 
 #include
@@ -33,11 +33,13 @@ $X360
 %s ps-combo %d
 %s vs-combo %d
 (*%s*), 
+)ffff.
 **** WARNING: Transition table overflow. Grab Brian
 ,^_[]
 -1 = use hardware caps. 0 = use hardware srgb. 1 = use shader srgb(software lookup)
 -arbmode
 -debugdxsupport
+-disable_d3d9_hacks
 -disallowhwmorph
 -dxlevel
 -force_device_id
@@ -54,16 +56,27 @@ $X360
 -nouserclip
 -nulldevice
 -shader
-.ffffff.
+.objc_class_name_NSAutoreleasePool
+.objc_class_name_NSBundle
+.objc_class_name_NSOpenGLContext
+.objc_class_name_NSOpenGLPixelFormat
+.objc_class_name_NSString
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm
+/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
 /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
 /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
 /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
 /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
 /System/Library/Frameworks/Quartz.framework/Versions/A/Quartz
 /Users/buildbot/buildslave/../.ccache/tmp/
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/appframework/sdlmgr.cpp
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/bitmap/imageformat.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libappframework.a(sdlmgr.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libbitmap.a(imageformat.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(color_conversion.o)
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/Release/libmathlib.a(mathlib_base.o)
@@ -171,6 +184,8 @@ $X360
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlstring.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlsymbol.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/tier1/utlvector.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/togl/d3dx_impl.h
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/togl/dx_iunknown.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/togl/linuxwin/dxabstract.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/togl/linuxwin/glentrypoints.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/togl/linuxwin/glmgr.h
@@ -192,7 +207,9 @@ $X360
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 /usr/lib/libiconv.2.dylib
+/usr/lib/libobjc.A.dylib
 0  000Ppp@@@00
+0.0005
 00    
 00    ``
 000000
@@ -283,7 +300,6 @@ $X360
 ;zTt;
 <^_[]
 <rFGCu
-=BTI1u
 =CF24
 =DF16t
 =DF24
@@ -292,7 +308,6 @@ $X360
 @(^_]
 @00PP`
 @@@0000    
-@@@@ 
 @@@@@@    
 @@@@@PP
 @@PPPPPP
@@ -307,32 +322,8 @@ $X360
 @CVProfNode::ExitScope()
 @CVProfNode::GetSubNode(char const*, int, char const*, int)
 @CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
-@D3DXMATRIX::operator float*()
-@D3DXMATRIX::operator!=(D3DXMATRIX const&) const
-@D3DXMATRIX::operator()(int, int)
-@D3DXMATRIX::operator*(D3DXMATRIX const&) const
-@D3DXPLANE::operator float*()
-@D3DXPLANE::operator!=(D3DXPLANE const&)
-@D3DXPLANE::operator[](int)
-@D3DXVECTOR2::operator float*()
-@D3DXVECTOR3::D3DXVECTOR3(float, float, float)
-@D3DXVECTOR3::operator float*()
-@D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
 @DevMsg(char const*, ...)
 @DevWarning(char const*, ...)
-@ID3DXBuffer::GetBufferPointer()
-@ID3DXBuffer::GetBufferSize()
-@ID3DXMatrixStack::GetTop()
-@ID3DXMatrixStack::LoadIdentity()
-@ID3DXMatrixStack::LoadMatrix(D3DXMATRIX const*)
-@ID3DXMatrixStack::MultMatrix(D3DXMATRIX const*)
-@ID3DXMatrixStack::MultMatrixLocal(D3DXMATRIX const*)
-@ID3DXMatrixStack::Pop()
-@ID3DXMatrixStack::Push()
-@ID3DXMatrixStack::Release(int, char*)
-@ID3DXMatrixStack::RotateAxisLocal(D3DXVECTOR3 const*, float)
-@ID3DXMatrixStack::ScaleLocal(float, float, float)
-@ID3DXMatrixStack::TranslateLocal(float, float, float)
 @IDirect3D9::CheckDepthStencilMatch(unsigned int, _D3DDEVTYPE, _D3DFORMAT, _D3DFORMAT, _D3DFORMAT)
 @IDirect3D9::CheckDeviceFormat(unsigned int, _D3DDEVTYPE, _D3DFORMAT, unsigned int, _D3DRESOURCETYPE, _D3DFORMAT)
 @IDirect3D9::CheckDeviceMultiSampleType(unsigned int, _D3DDEVTYPE, _D3DFORMAT, int, _D3DMULTISAMPLE_TYPE, unsigned int*)
@@ -413,22 +404,6 @@ $X360
 @_COM_TimestampedLog
 @_CallAssertFailedNotifyFunc
 @_CommandLine_Tier0
-@_D3DPERF_SetOptions
-@_D3DXCompileShader
-@_D3DXCreateMatrixStack
-@_D3DXMatrixIdentity
-@_D3DXMatrixInverse
-@_D3DXMatrixMultiply
-@_D3DXMatrixOrthoOffCenterRH
-@_D3DXMatrixPerspectiveOffCenterRH
-@_D3DXMatrixPerspectiveRH
-@_D3DXMatrixTranslation
-@_D3DXMatrixTranspose
-@_D3DXPlaneNormalize
-@_D3DXPlaneTransform
-@_D3DXVec3TransformCoord
-@_D3DXVec4Normalize
-@_D3DXVec4Transform
 @_DWarning
 @_DevMsg
 @_Direct3DCreate9
@@ -441,13 +416,13 @@ $X360
 @_Plat_FloatTime
 @_Plat_GetPagedPoolInfo
 @_Plat_IsInDebugSession
+@_SDL_GetNumVideoDisplays
+@_SDL_GetWindowGrab
+@_SDL_RaiseWindow
+@_SDL_SetWindowGrab
 @_ShouldUseNewAssertDialog
 @_ThreadGetCurrentId
 @_ThreadInMainThread
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedDecrement
-@_ThreadInterlockedExchange
-@_ThreadInterlockedIncrement
 @_ThreadSleep
 @_ToGLConnectLibraries
 @_ToGLDisconnectLibraries
@@ -502,12 +477,11 @@ $X360
 @_strtol
 @_strtoul
 @_swprintf
-@_tan
-@_toglGetClientRect
 @_vsnprintf
 @_wcslen
 @_wcstol
 @dyld_stub_binder
+@loader_path/libSDL2-2.0.0.dylib
 @loader_path/libtier0.dylib
 @loader_path/libtogl.dylib
 @loader_path/libvstdlib.dylib
@@ -522,9 +496,9 @@ ABGR8888
 ALPHA %s CUBEMAP %s MIPCUBEMAP %s SQUAREONLY %s
 ARGB8888
 ATI1N
-ATI1uC
+ATI1uw
 ATI2N
-ATI2u
+ATI2uY
 ATI_DST16
 ATI_DST24
 AVBSAUA
@@ -577,10 +551,6 @@ BGRX5551
 BGRX8888
 BI %d %d %d %d 
 BLENDOP %s CLIPPLANESCALEDPOINTS %s CLIPTLVERTS %s
-BTI1	
-BTI1BTI1BTI1
-BTI1]
-BTI1t
 Bffffff.
 BindsFrame
 BindsMax
@@ -591,6 +561,7 @@ BlitVolumeBits: couldn't lock volume texture rect
 BlitVolumeBits: couldn't unlock volume texture rect
 BuildGammaTable(float, float, float, int)
 C b %3d g %3d r %3d a %3d 
+C9](u
 CANBLTSYSTONONLOCAL %s CANRENDERAFTERFLIP %s HWRASTERIZATION %s
 CBaseMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
 CBaseMeshDX8::BeginCastBuffer(unsigned long long)
@@ -670,6 +641,7 @@ CDynamicMeshDX8::LockMesh(int, int, MeshDesc_t&)
 CDynamicMeshDX8::MarkAsDrawn()
 CDynamicMeshDX8::NeedsVertexFormatReset(unsigned long long) const
 CDynamicMeshDX8::PreLock()
+CDynamicMeshDX8::Reset()
 CDynamicMeshDX8::SetVertexFormat(unsigned long long)
 CDynamicMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
 CDynamicMeshDX8::~CDynamicMeshDX8()
@@ -828,6 +800,7 @@ CMeshDX8::RenderPass()::_counter
 CMeshDX8::SetColorMesh(IMesh*, int)
 CMeshDX8::SetColorStreamState()
 CMeshDX8::SetFlexMesh(IMesh*, int)
+CMeshDX8::SetIndexStreamState(int)
 CMeshDX8::SetPrimitiveType(MaterialPrimitiveType_t)
 CMeshDX8::SetRenderState(int, int, unsigned long long)
 CMeshDX8::SetVertexIDStreamState()
@@ -837,6 +810,7 @@ CMeshDX8::Unlock(int, IndexDesc_t&)
 CMeshDX8::Unlock(int, VertexDesc_t&)
 CMeshDX8::UnlockMesh
 CMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
+CMeshDX8::UseIndexBuffer(CIndexBuffer*)
 CMeshDX8::VertexCount() const
 CMeshDX8::s_FirstVertex
 CMeshDX8::s_NumVertices
@@ -855,6 +829,8 @@ CMeshMgr::CreateIndexBuffer(ShaderBufferType_t, MaterialIndexFormat_t, int, char
 CMeshMgr::CreateStaticMesh(unsigned long long, char const*, IMaterial*)
 CMeshMgr::CreateVertexBuffer(ShaderBufferType_t, unsigned long long, int, char const*)
 CMeshMgr::CreateVertexIDBuffer()
+CMeshMgr::CreateZeroVertexBuffer()
+CMeshMgr::DestroyDynamicIndexBuffer()
 CMeshMgr::DestroyIndexBuffer(IIndexBuffer*)
 CMeshMgr::DestroyStaticMesh(IMesh*)
 CMeshMgr::DestroyVertexBuffer(IVertexBuffer*)
@@ -882,6 +858,7 @@ CMeshMgr::MarkUnusedVertexFields(unsigned int, int, bool*)
 CMeshMgr::ReleaseBuffers()
 CMeshMgr::RenderPassWithVertexAndIndexBuffers()
 CMeshMgr::RestoreBuffers()
+CMeshMgr::SetIndexStreamState(int)
 CMeshMgr::SetRenderState(int, int, unsigned long long, int)
 CMeshMgr::SetVertexStreamState(int, int)
 CMeshMgr::Shutdown()
@@ -968,6 +945,7 @@ CShaderAPIDx8::ComputeFillRate()
 CShaderAPIDx8::ComputeFillRate()::pBuf
 CShaderAPIDx8::ComputeGammaCorrectedFogColor(unsigned char, unsigned char, unsigned char, bool)
 CShaderAPIDx8::ComputeMorphFormat(int, short*) const
+CShaderAPIDx8::ComputePolyOffsetMatrix(D3DXMATRIX const&, D3DXMATRIX&)
 CShaderAPIDx8::ComputeStatsInfo(int, bool, bool)
 CShaderAPIDx8::ComputeVertexDescription(unsigned char*, unsigned long long, MeshDesc_t&) const
 CShaderAPIDx8::ComputeVertexFormat(int, short*) const
@@ -1456,6 +1434,7 @@ CShaderShadowDX8::TexGen(TextureStage_t, ShaderTexGenParam_t)
 CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)
 CShaderShadowDX8::VertexShaderVertexFormat(unsigned int, int, int*, int)::bComplained
 CShaderShadowDX8::~CShaderShadowDX8()
+CTBRB`PBRBSHRASJRAS0|p
 CTempMeshDX8::BeginPass()
 CTempMeshDX8::ClipTriangle(D3DXVECTOR3**, float, D3DXMATRIX&)
 CTempMeshDX8::CopyToMeshBuilder(int, int, int, int, int, CMeshBuilder&)
@@ -1613,6 +1592,8 @@ CUtlVector<CTransitionTable::TransitionOp_t, CUtlMemory<CTransitionTable::Transi
 CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
 CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
 CUtlVector<CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >, CUtlMemory<CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >, int> >::~CUtlVector()
+CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::GrowVector(int)
+CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::~CUtlVector()
 CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
 CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
 CUtlVector<ShadowState_t, CUtlMemory<ShadowState_t, int> >::~CUtlVector()
@@ -1690,6 +1671,7 @@ ConVar::ChangeStringValue(char const*, float)
 ConVar::ClampValue(float&)
 ConVar::ConVar(char const*, char const*, int)
 ConVar::ConVar(char const*, char const*, int, char const*)
+ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
 ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
 ConVar::GetHelpText() const
 ConVar::GetName() const
@@ -1731,25 +1713,15 @@ D3DERR_INVALIDCALL - Index Buffer Lock Failed in %s on line %d(offset %d, size %
 D3DERR_OUTOFVIDEOMEMORY - Index Buffer Lock Failed in %s on line %d (offset %d, size %d, flags 0x%x)
 D3DQUERYTYPE_EVENT not available on this driver
 D3DSupportsCompressedTextures()
-D3DXMATRIX::operator float*()
-D3DXMATRIX::operator!=(D3DXMATRIX const&) const
-D3DXMATRIX::operator()(int, int)
 D3DXMATRIX::operator*(D3DXMATRIX const&) const
-D3DXPLANE::operator float*()
-D3DXPLANE::operator!=(D3DXPLANE const&)
-D3DXPLANE::operator[](int)
-D3DXVECTOR2::operator float*()
-D3DXVECTOR3::D3DXVECTOR3(float, float, float)
-D3DXVECTOR3::operator float*()
-D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
+D3DXMatrixTranspose(D3DXMATRIX*, D3DXMATRIX const*)
 DEFAULT
 DEPTHBUFFER
 DF16t
-DF16u
+DF16ub
 DF24t
-DF24u,
-DTBRB`PBRBSHRASJRAS0|p
 DXLevel
+DXT1DXT3DXT5
 DXT1_ONEBITALPHA
 DXT1_RUNTIME
 DXT5_RUNTIME
@@ -1779,9 +1751,8 @@ EXECUTABLE_PATH
 Encountered a material with two passes that use different numbers of bones!
 Encountered a material with two passes that use different texture coord sizes!
 Encountered a material with two passes that use different user data sizes!
-Error 0x%lX.
+Error 0x%X.
 EvaluateConditional(char const*)
-F9u(u
 F;w0|
 FOGRANGE %s FOGTABLE %s FOGVERTEX %s ZFOG %s WFOG %s
 FRONTBUFFER
@@ -1807,7 +1778,7 @@ GetCStringCharConversion()
 GetImageFormat(IDirect3DBaseTexture9*)
 GetNearestD3DColorFormat(ImageFormat, bool, bool, bool)
 GetNoEscCharConversion()
-Gfff.
+Gffffff.
 GlobalMemoryStatus(_MEMORYSTATUS*)
 GlobalMemoryStatus: %llu
 HWTRANSFORMANDLIGHT %s NPATCHES %s PUREDEVICE %s
@@ -1817,19 +1788,6 @@ H__Znam
 H__Znwm
 HandleLateCreation
 Height
-ID3DXBuffer::GetBufferPointer()
-ID3DXBuffer::GetBufferSize()
-ID3DXMatrixStack::GetTop()
-ID3DXMatrixStack::LoadIdentity()
-ID3DXMatrixStack::LoadMatrix(D3DXMATRIX const*)
-ID3DXMatrixStack::MultMatrix(D3DXMATRIX const*)
-ID3DXMatrixStack::MultMatrixLocal(D3DXMATRIX const*)
-ID3DXMatrixStack::Pop()
-ID3DXMatrixStack::Push()
-ID3DXMatrixStack::Release(int, char*)
-ID3DXMatrixStack::RotateAxisLocal(D3DXVECTOR3 const*, float)
-ID3DXMatrixStack::ScaleLocal(float, float, float)
-ID3DXMatrixStack::TranslateLocal(float, float, float)
 IDirect3D9::CheckDepthStencilMatch(unsigned int, _D3DDEVTYPE, _D3DFORMAT, _D3DFORMAT, _D3DFORMAT)
 IDirect3D9::CheckDeviceFormat(unsigned int, _D3DDEVTYPE, _D3DFORMAT, unsigned int, _D3DRESOURCETYPE, _D3DFORMAT)
 IDirect3D9::CheckDeviceMultiSampleType(unsigned int, _D3DDEVTYPE, _D3DFORMAT, int, _D3DMULTISAMPLE_TYPE, unsigned int*)
@@ -1913,9 +1871,9 @@ IMAGE_FORMAT_RGB323232F
 IMAGE_FORMAT_RGBA32323232F
 IMAGE_FORMAT_UVLX8888
 IMaterialSystemHardwareConfig::SupportsNormalMapCompression() const
-INTZRAWZDF16DF24NULLATI2ATI1
+INTZRAWZDF16DF24NULLATI2ATI1DXT1DXT5
 INTZt
-INTZu
+INTZuY
 IShaderAPI::SupportsNormalMapCompression() const
 If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
 If this value is not -1, the material system will limit the amount of texture memory it uses in a frame. Useful for identifying performance cliffs. The value is in kilobytes.
@@ -2011,18 +1969,23 @@ MIPMAPLODBIAS %s WBUFFER %s ZBIAS %s ZTEST %s
 Material %s does not support vertex format used by the mesh (maybe missing fields or mismatched vertex compression?), mesh will not be rendered. Grab a programmer!
 MaterialSystemHardwareConfig012
 MathLib_Init(float, float, float, int, bool, bool, bool, bool)
+MatrixInverseGeneral(VMatrix const&, VMatrix&)
 MatrixTranspose(VMatrix const&, VMatrix&)
 Max Texture Aspect Ratio : *%d*
 Max Texture Dimensions : %d x %d
 Max Textures : %d Max Stages : %d
 MaxDXLevel
 MaxDeviceID
-MbP?9
 MeshMgr()
 MinDeviceID
 N %1.2f %1.2f %1.2f 
 NA333333
-NULLt
+NSAutoreleasePool
+NSBundle
+NSOpenGLContext
+NSOpenGLPixelFormat
+NSString
+NULLuy
 NV_DST16
 NV_DST24
 NV_INTZ
@@ -2052,7 +2015,6 @@ Q_UTF8ToUTF32(char const*, wchar_t*, int, EStringConvertErrorPolicy)
 Qkkbal
 QueuedLoaderVersion004
 R0<VATBp
-RAWZu%
 RAWZuP
 RBRARAp
 RBZBRBp
@@ -2080,21 +2042,23 @@ ReleaseResources called twice is a bug: use IsDeactivated to check for a valid d
 ReleaseResources has no effect, now at level %d.
 RenderTargets
 ResizeWindow
-ResizeWindow: Reset failed, hr = 0x%08lX.
+ResizeWindow: Reset failed, hr = 0x%08X.
 Rffffff.
 S %1.2f %1.2f %1.2f 
 S0\TARBRB`
+SDL fullscreen display index.
+SDLMgrInterface001
 SEPARATETEXTUREMEMORIES %s TEXTURENONLOCALVIDMEM %s TEXTURESYSTEMMEMORY %s
 SHADERAPI CAPS:
 SMRBRBRB`
 SetHardwareGammaRamp( %f )
 SetIdentityMatrix(matrix3x4_t&)
+SetWindowGrab( %s )
 Shader %s is the wrong version %d, expecting %d
 Shader '%s' - All dynamic combos skipped. This is bad!
 Shader '%s' - Couldn't load combo %d of shader (dyn=%d)
 Shader API Driver Info:
 Shader File Cache:
-Shader compilation failed! Reported the following errors:
 Shader specifying too-thin vertex format, should be at least %d bytes! (Suppressing furthur warnings)
 ShaderAPIDX8::CreateD3DTexture: D3DERR_INVALIDCALL
 ShaderAPIDX8::CreateD3DTexture: D3DERR_OUTOFVIDEOMEMORY
@@ -2146,6 +2110,7 @@ Total unique pixel shaders: %d
 Total unique vertex shaders: %d
 Total vertex shader sets: %d
 UNKNOWN
+UTF8String
 UVWQ8888
 Unaccounted
 Unaccounted textures
@@ -2181,6 +2146,7 @@ V_stristr(char*, char const*)
 V_strncat(char*, char const*, unsigned long, int)
 V_strncmp(char const*, char const*, int)
 V_strncpy(char*, char const*, int)
+Vector4DMultiplyTranspose(VMatrix const&, Vector4D const&, Vector4D&)
 VendorID
 Vertex Shader Version : %d.%d Pixel Shader Version : %d.%d
 VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
@@ -2196,22 +2162,6 @@ _COM_TimestampedLog
 _CallAssertFailedNotifyFunc
 _CommandLine_Tier0
 _CreateInterface
-_D3DPERF_SetOptions
-_D3DXCompileShader
-_D3DXCreateMatrixStack
-_D3DXMatrixIdentity
-_D3DXMatrixInverse
-_D3DXMatrixMultiply
-_D3DXMatrixOrthoOffCenterRH
-_D3DXMatrixPerspectiveOffCenterRH
-_D3DXMatrixPerspectiveRH
-_D3DXMatrixTranslation
-_D3DXMatrixTranspose
-_D3DXPlaneNormalize
-_D3DXPlaneTransform
-_D3DXVec3TransformCoord
-_D3DXVec4Normalize
-_D3DXVec4Transform
 _DWarning
 _DevMsg
 _Direct3DCreate9
@@ -2229,6 +2179,10 @@ _Plat_DebugString
 _Plat_FloatTime
 _Plat_GetPagedPoolInfo
 _Plat_IsInDebugSession
+_SDL_GetNumVideoDisplays
+_SDL_GetWindowGrab
+_SDL_RaiseWindow
+_SDL_SetWindowGrab
 _SSE_InvRSquared(float const*)
 _SSE_RSqrtAccurate(float)
 _SSE_RSqrtFast(float)
@@ -2238,10 +2192,6 @@ _ShouldUseNewAssertDialog
 _SinCosTable
 _ThreadGetCurrentId
 _ThreadInMainThread
-_ThreadInterlockedAssignIf
-_ThreadInterlockedDecrement
-_ThreadInterlockedExchange
-_ThreadInterlockedIncrement
 _ThreadSleep
 _ToGLConnectLibraries
 _ToGLDisconnectLibraries
@@ -2258,21 +2208,23 @@ __CreateCVBAllocTrackerIVBAllocTracker_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
-__GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.70175.cqBj1d.ii
-__GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.70177.LljJFN.ii
-__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.55433.LctBPo.ii
-__GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.70178.HJUhxa.ii
-__GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.70180.aKoeqI.ii
-__GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.70203.U2gti4.ii
-__GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.70211.YS34C9.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
-__GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.70241.9KRHZZ.ii
-__GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.70245.D8z1Nn.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+__GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.11115.LXeKsh.ii
+__GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.11112.o31jED.ii
+__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.93439.dm9yM8.ii
+__GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.11116.yf1Ov0.ii
+__GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.94021.7UPotp.ii
+__GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.11141.xlwtMA.ii
+__GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.11153.IOrzRp.ii
+__GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.11157.SyhhUJ.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+__GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.11185.ihnJ5g.ii
+__GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.11189.UEfFFL.ii
 __LINKEDIT
+__OBJC
 __SpewInfo
 __SpewMessage
 __TEXT
@@ -2293,6 +2245,7 @@ ___stack_chk_fail
 ___stack_chk_guard
 ___tolower
 __bss
+__cls_refs
 __common
 __const
 __cstring
@@ -2306,8 +2259,11 @@ __g_CreateCShaderDeviceMgrDx8IShaderDeviceMgr_reg
 __g_CreateCShaderShadowDX8IShaderShadow_reg
 __g_CreateCVBAllocTrackerIVBAllocTracker_reg
 __gcc_except_tab__TEXT
+__image_info
 __la_symbol_ptr
+__message_refs
 __mod_init_func
+__module_info
 __nl_symbol_ptr
 __stub_helper
 __symbol_stub
@@ -2329,6 +2285,7 @@ _g_pD3DDevice
 _g_pFullFileSystem
 _g_pHardwareConfig
 _g_pInputSystem
+_g_pLauncherMgr
 _g_pMaterialSystem
 _g_pMaterialSystemDebugTextureInfo
 _g_pMaterialSystemHardwareConfig
@@ -2348,6 +2305,15 @@ _g_pShaderShadowDx8
 _g_pShaderUtil
 _g_pTransitionTable
 _g_pUtlSortVectorQSortContext
+_gl_blit_halfx
+_gl_blit_halfy
+_gl_disable_forced_vsync
+_gl_finish
+_gl_swapdebug
+_gl_swapinterval
+_gl_swaplimit
+_gl_swaplimit_mt
+_gl_swaptear
 _k_pszShaderCacheRootKey
 _lineartolightmap
 _lineartovertex
@@ -2368,6 +2334,7 @@ _memcmp
 _memcpy
 _memmove
 _memset_pattern16
+_osx_rawinput_set_one_time
 _pfFastCos
 _pfFastSinCos
 _pfInvRSquared
@@ -2391,6 +2358,10 @@ _s_bMathlibInitialized
 _s_pIllegalMaterialPS
 _s_pRenderFunctionTable
 _s_pTextureFunctionTable
+_sdl_displayindex
+_sdl_displayindex_fullscreen
+_sdl_double_click_size
+_sdl_double_click_time
 _sprintf
 _sqrtf(float)
 _sscanf
@@ -2404,12 +2375,13 @@ _strtod$UNIX2003
 _strtol
 _strtoul
 _swprintf
-_toglGetClientRect
 _vsnprintf
 _wcslen
 _wcstol
 ``@@@@@@
+alloc
 bad vertex size for material %s
+bundleWithPath:
 ccs_create_convars_from_hwconfig
 ccs_create_convars_from_hwconfig(CCommand const&)
 ccs_create_convars_from_hwconfig_command
@@ -2426,6 +2398,7 @@ f3
 failed to create shader
 failed to lock index buffer in CMeshDX8::LockIndexBuffer
 failed to lock vertex buffer in CMeshDX8::LockVertexBuffer: nVertexCount=%d, nFirstVertex=%d
+false
 ffff.
 fffff.
 ffffff.
@@ -2449,6 +2422,7 @@ g_NumClipVerts
 g_ShaderAPIDX8
 g_ShaderDeviceMgrDx8
 g_ShaderShadow
+g_bSDLDisplayindexSet
 g_bSupportsD15S1
 g_bSupportsD16
 g_bSupportsD24S8
@@ -2467,9 +2441,22 @@ g_pLastVertexBuffer
 g_pStaticLZMABuf
 g_unStaticLZMABufRef
 g_unStaticLZMABufSize
+gl_blit_halfx
+gl_blit_halfy
+gl_disable_forced_vsync
+gl_finish
+gl_swapdebug
+gl_swapinterval
+gl_swaplimit
+gl_swaplimit_mt
+gl_swaptear
 glbaseshaders_osx.cfg
 glshadercachev002
 glshaders.cfg
+grab/ungrab window.
+grab_window
+grab_window(CCommand const&)
+grab_window_command
 guard variable for CIndexBuffer::CIndexBuffer(IDirect3DDevice9*, int, bool, bool)::_counter
 guard variable for CIndexBuffer::HandlePerFrameTextureStats(int)::_counter
 guard variable for CIndexBuffer::~CIndexBuffer()::_counter
@@ -2483,11 +2470,14 @@ guard variable for CTempMeshDX8::TestSelection()::transformedVert
 guard variable for ComputeVertexDesc(unsigned char*, unsigned long long, VertexDesc_t&)::temp
 http://support.steampowered.com/cgi-bin/steampowered.cfg/php/enduser/std_adp.php?p_faqid=150
 http://support.steampowered.com/cgi-bin/steampowered.cfg/php/enduser/std_adp.php?p_faqid=772
+infoDictionary
+initWithAttributes:
+initWithFormat:shareContext:
 int CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::ShadowStateDictEntry_t>(CTransitionTable::ShadowStateDictEntry_t const&, bool*) const
 int CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::SnapshotDictEntry_t>(CTransitionTable::SnapshotDictEntry_t const&, bool*) const
 int CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::FindLessOrEqual<CTransitionTable::TransitionList_t>(CTransitionTable::TransitionList_t const&, bool*) const
+kffff.
 l^_[]
-lfffff.
 lineartoscreen
 lineartotexture
 lzma_persistent_buffer
@@ -2622,6 +2612,7 @@ m_nVertexTextureCount
 m_pHardwareShaders was null
 m_pShaderDLL
 m_pShaderDLL: %s
+makeCurrentContext
 mat_alphacoverage
 mat_autoload_glshaders
 mat_autosave_glshaders
@@ -2651,6 +2642,7 @@ mat_slopescaledepthbias_shadowmap
 mat_spewvertexandpixelshaders
 mat_spewvertexandpixelshaders(CCommand const&)
 mat_spewvertexandpixelshaders_command
+mat_supports_d3d9ex
 mat_texture_limit
 max megabytes
 max megahertz
@@ -2660,6 +2652,7 @@ min megabytes
 min megahertz
 min megatexels
 nVertexShaderDynamicIndex or nPixelShaderDynamicIndex was negative
+nativeGetClientRect(void*, _RECT*)
 non-virtual thunk to CBaseMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
 non-virtual thunk to CBaseMeshDX8::EndCastBuffer()
 non-virtual thunk to CBaseMeshDX8::GetRoomRemaining() const
@@ -2994,11 +2987,13 @@ non-virtual thunk to ConVar::SetValue(char const*)
 non-virtual thunk to ConVar::SetValue(float)
 non-virtual thunk to ConVar::SetValue(int)
 numPrimitives
+objectForKey:
 offffff.
 operator delete(void*)
 operator delete[](void*)
 operator new(unsigned long)
 operator new[](unsigned long)
+osx_rawinput_set_one_time
 p4RHRD`
 p@@@`
 pVidMemKeyValues
@@ -3015,6 +3010,7 @@ r_pix_recordframes
 r_pix_start
 r_pixelfog
 r_shader_srgb
+release
 render/DrawIndexedPrimitive
 render/numPrimitives
 s_DefaultAccessor
@@ -3039,9 +3035,15 @@ s_nDLLIdentifier
 s_pConversionArrays_NoEscConversion
 s_pConversionArrays_StringCharConversion
 s_pTokenBuf
+sdl_displayindex
+sdl_displayindex_changed(IConVar*, char const*, float)
+sdl_displayindex_fullscreen
+sdl_double_click_size
+sdl_double_click_time
 shaders\%s\%s.vcs
 shaders\fxc\%s.vcs
 std::terminate()
+stringWithFormat:
 t+ff.
 t@ffff.
 tF9@`u
@@ -3172,8 +3174,6 @@ vec4_invalid
 vec4_origin
 vendor id: 0x%x
 vertex
-void SafeAssign<CIndexBuffer>(CIndexBuffer**, CIndexBuffer*)
-void SafeRelease<CIndexBuffer>(CIndexBuffer**)
 void ccs_create_convar_from_hwconfig<HDRType_t>(HDRType_t const&, char const*)
 void ccs_create_convar_from_hwconfig<ImageFormat>(ImageFormat const&, char const*)
 void ccs_create_convar_from_hwconfig<bool>(bool const&, char const*)

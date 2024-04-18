@@ -362,7 +362,7 @@ $^_[]
 6fffff.
 7IConVar
 8CFunctor
-8fff.
+8ffffff.
 9CFunctor4IPFvP9FileJob_tPFvPvS2_PKvi13LoaderError_tES2_S2_ES1_S7_S2_S2_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
 9CFunctor4IPFvP9FileJob_tPvi13LoaderError_tES1_S2_iS3_12CRefCounted1I8CFunctor20CRefCountServiceBaseILb1E6CRefMTEEE
 9CPackFile
@@ -381,7 +381,8 @@ $^_[]
 : this object doesn't support resynchronization
 :done
 :error
-:ffff.
+;0tE9
+;0tW9
 ;49t8
 ;D$ t
 ;D$hu
@@ -444,13 +445,6 @@ $^_[]
 @_ThreadGetCurrentId
 @_ThreadGetPriority
 @_ThreadInMainThread
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedAssignIf64
-@_ThreadInterlockedCompareExchangePointer
-@_ThreadInterlockedDecrement
-@_ThreadInterlockedExchange
-@_ThreadInterlockedExchangeAdd
-@_ThreadInterlockedIncrement
 @_ThreadJoin
 @_ThreadSetDebugName
 @_ThreadSetPriority
@@ -642,9 +636,7 @@ BufferedTransformation: this object can't be reinitialized
 BufferedTransformation: this object doesn't allow input
 BufferedTransformation: this object is not attachable
 BuiltDebug
-CAsyncOpenedFiles::AddRef(FSAsyncFile_t__*)
 CAsyncOpenedFiles::FindOrAdd(char const*)
-CAsyncOpenedFiles::Get(FSAsyncFile_t__*)
 CAsyncOpenedFiles::Release(FSAsyncFile_t__*)
 CAsyncOpenedFiles::~CAsyncOpenedFiles()
 CBaseAppSystem<IQueuedLoader>::QueryInterface(char const*)
@@ -684,7 +676,6 @@ CBaseFileSystem::CBaseFileSystem()
 CBaseFileSystem::CFileCacheObject::AddFiles(char const**, int)
 CBaseFileSystem::CFileCacheObject::IOCallback(FileAsyncRequest_t const&, int, FSAsyncStatus_t)
 CBaseFileSystem::CFileCacheObject::~CFileCacheObject()
-CBaseFileSystem::CSearchPath::~CSearchPath()
 CBaseFileSystem::CSearchPathsIterator::CSearchPathsIterator(CBaseFileSystem*, char const**, char const*, PathTypeFilter_t)
 CBaseFileSystem::CSearchPathsIterator::CSearchPathsIterator(CBaseFileSystem*, char const*, PathTypeFilter_t)
 CBaseFileSystem::CSearchPathsIterator::CopySearchPaths(CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> > const&)
@@ -1099,21 +1090,16 @@ CStringPoolBase<unsigned int>::FreeAll()
 CStringPoolBase<unsigned int>::~CStringPoolBase()
 CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::Purge()
 CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::~CTSList()
-CTSList<FileJob_t*>::PushItem(FileJob_t* const&)
 CTSList<FileJob_t*>::~CTSList()
 CTSListBase: Misaligned list
 CTSQueue: Misaligned queue
 CTSQueue<CachedVPKRead_t, false>::CTSQueue()
 CTSQueue<CachedVPKRead_t, false>::Pop()
 CTSQueue<CachedVPKRead_t, false>::Purge()
-CTSQueue<CachedVPKRead_t, false>::~CTSQueue()
 CTSQueue<StuffToMD5_t, false>::CTSQueue()
 CTSQueue<StuffToMD5_t, false>::Pop()
-CTSQueue<StuffToMD5_t, false>::PopItem(StuffToMD5_t*)
 CTSQueue<StuffToMD5_t, false>::Purge()
-CTSQueue<StuffToMD5_t, false>::Push(CTSQueue<StuffToMD5_t, false>::Node_t*)
 CTSQueue<StuffToMD5_t, false>::PushItem(StuffToMD5_t const&)
-CTSQueue<StuffToMD5_t, false>::~CTSQueue()
 CThreadEvent::CThreadEvent(bool)
 CThreadEvent::Set()
 CThreadEvent::Wait(unsigned int)
@@ -1340,6 +1326,8 @@ CUtlVector<CBaseFileSystem::CPathIDInfo*, CUtlMemory<CBaseFileSystem::CPathIDInf
 CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::GrowVector(int)
 CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::InsertBefore(int)
 CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::InsertMultipleBefore(int, int)
+CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::Purge()
+CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::Remove(int)
 CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::~CUtlVector()
 CUtlVector<CFileAsyncReadJob*, CUtlMemory<CFileAsyncReadJob*, int> >::~CUtlVector()
 CUtlVector<CFunctor*, CUtlMemory<CFunctor*, int> >::AddToTail(CFunctor* const&)
@@ -1539,6 +1527,7 @@ CryptoPP::AlgorithmParametersBase::~AlgorithmParametersBase()
 CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::AlgorithmParametersTemplate(char const*, CryptoPP::ConstByteArrayParameter const&, bool)
 CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::AssignValue(char const*, std::type_info const&, void*) const
 CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::~AlgorithmParametersTemplate()
+CryptoPP::AlignedDeallocate(void*)
 CryptoPP::AllocatorBase<unsigned int>::CheckSize(unsigned long)
 CryptoPP::AlmostInverse(unsigned int*, unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
 CryptoPP::ArraySink::CreatePutSpace(unsigned long&)
@@ -2136,7 +2125,7 @@ Encryption
 Errors occured loading files.
 EvaluateConditional(char const*)
 Exceeded limit of number of vpk files supported (%d)!
-F,ff.
+F,fffff.
 F;w0|
 FDMerF
 FDaHFC
@@ -2173,7 +2162,6 @@ FindNextFile(void*, FIND_DATA*)
 FinishAnonymousJob(FileJob_t*, void (*)(void*, void*, void const*, int, LoaderError_t), void*, void*)
 G;~0|
 GDMerF
-GDaHFC
 Genuuc
 GetCStringCharConversion()
 GetNoEscCharConversion()
@@ -2410,6 +2398,7 @@ Open( %s )
 Opening ZIP file with unsupported compression type
 Out of memory
 OutputBuffer
+P  0@
 PK_MessageAccumulator: DigestSize() should not be called
 PK_MessageAccumulator: TruncatedFinal() should not be called
 PK_MessageEncodingMethod: this signature scheme does not support message recovery
@@ -2435,7 +2424,7 @@ Qkkbal
 Queued Loader:
 QueuedLoader: %s Creating: %.2f seconds
 QueuedLoader: Anonymous Job '%s' not found
-QueuedLoader: Computation:%8.8x, Size:%7d %s%s
+QueuedLoader: Computation:%p, Size:%7d %s%s
 QueuedLoader: Failed to create resource %s
 QueuedLoader: Finished I/O of all queued jobs!
 QueuedLoader: High Priority Jobs: %d
@@ -2663,13 +2652,6 @@ _ShouldUseNewAssertDialog
 _ThreadGetCurrentId
 _ThreadGetPriority
 _ThreadInMainThread
-_ThreadInterlockedAssignIf
-_ThreadInterlockedAssignIf64
-_ThreadInterlockedCompareExchangePointer
-_ThreadInterlockedDecrement
-_ThreadInterlockedExchange
-_ThreadInterlockedExchangeAdd
-_ThreadInterlockedIncrement
 _ThreadJoin
 _ThreadSetDebugName
 _ThreadSetPriority
@@ -2681,20 +2663,20 @@ __CreateCQueuedLoaderIQueuedLoader_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
-__GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.58679.zqjDp9.ii
-__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.17830.WEkgPa.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+__GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.98789.6KJeLP.ii
+__GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.98737.c5a4DW.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
 __GLOBAL__sub_I_cryptlib.cpp
-__GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.13867.ry8O4a.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.58676.w0B84J.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.58677.l7G3sc.ii
-__GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.58678.3bAIvV.ii
-__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.55433.LctBPo.ii
-__GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.58680.7Djq2G.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
-__GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.58674.8tw6U9.ii
+__GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.98733.6W8XIk.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.98738.WeSLrM.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.98739.depXSG.ii
+__GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.98740.29mCTO.ii
+__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.93439.dm9yM8.ii
+__GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.98783.TPAyaY.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+__GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.98736.eyh4Hy.ii
 __LINKEDIT
 __SpewInfo
 __SpewMessage
@@ -2873,6 +2855,7 @@ _wcslen
 `0AUBRB`1AUARB`3Bp
 `P@@0`P`
 `p 00
+`p`00
 algparam.cpp
 asn.cpp
 async
@@ -3129,9 +3112,6 @@ r#Iff.
 r%Iffff.
 r&Ifffff.
 r1ffffff.
-r2Of.
-r6Nfffff.
-r6Offfff.
 r;ff.
 rBff.
 rdtables.cpp
@@ -3219,7 +3199,6 @@ std::exception::~exception()
 std::set_new_handler(void (*)())
 std::terminate()
 std::uncaught_exception()
-t"ff.
 t$$9\$
 t$$;T$<r
 t$$;\$4r

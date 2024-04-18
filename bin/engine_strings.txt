@@ -234,7 +234,6 @@
  -    FULL
  - %s
  - %s (%i)
- - OpenGL
  - PARTIAL
  0 000p
  00000PP
@@ -250,12 +249,10 @@
  ;_@|
  ;xp|
  ;yp|
- @ 0@
  @ 0P 0
  @00 `
  @16CHLTVClientState
  @@@@ 
- @@@@@@@00
  @@P0
  @P000p p
  @PP`P`
@@ -330,6 +327,7 @@
  |<C9
 !	@17CAudioSourceVoice
 !%s%d
+!fff.
 !ffff.
 !fffff.
 !xxtestxx
@@ -350,6 +348,7 @@
 "cheat"
 "clientcmd_can_execute"
 "demo"
+"ffff.
 "fffff.
 "ffffff.
 "fs_warning_level n" where n is one of:
@@ -930,7 +929,6 @@ $vertexcolor
 ,fff.
 ,ffff.
 ,fffff.
-,ffffff.
 -  %s
 - "%s" = "%.2f"
 - "%s" = "%i"
@@ -1135,8 +1133,8 @@ $vertexcolor
 .D1HuL
 .F<s(
 .G u/
-.G(u.9
-.GPu+9
+.G(u!9
+.GPu!9
 .L1<v,
 .P,rl
 .R(s7
@@ -2020,7 +2018,6 @@ $vertexcolor
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_api_internal.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steam_gameserver.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steamclientpublic.h
-/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steamnetworkingsockets.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/steam/steamnetworkingtypes.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/string_t.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/studio.cpp
@@ -2554,7 +2551,7 @@ $vertexcolor
 15NET_SignonState
 15SVC_UserMessage
 16.6666666667
-16:02:49
+16:28:24
 16CAskConnectPanel
 16CAudioDeviceBase
 16CAudioDeviceNull
@@ -2862,7 +2859,6 @@ $vertexcolor
 3DNow 
 3DNow code is %s
 3IOZuC
-3fff.
 3ffffff.
 40CProportionalIntWithScreenspacePropertyX
 40CProportionalIntWithScreenspacePropertyY
@@ -2903,6 +2899,7 @@ $vertexcolor
 80000
 8CFmtStrNILi1024ELb0EE
 8CFmtStrNILi128ELb0EE
+8CFmtStrNILi256ELb0EE
 8CFunctor
 8CLC_Move
 8CMessage
@@ -2918,9 +2915,10 @@ $vertexcolor
 8}6fff.
 9.0 (full-precision)
 9.0 (half-precision)
-91txB
 99tlF
+99t~B
 99u	9Q
+9:tDC
 9A$~#
 9CCallbackI13CSteam3Client17LowBatteryPower_tLb0EE
 9CCallbackI13CSteam3Client20PersonaStateChange_tLb0EE
@@ -2981,20 +2979,19 @@ $vertexcolor
 :LZSS
 :ffff.
 ;%s %c %d;
+;0t#9
 ;25CTraceFilterWorldAndProps
-;;t)9
 ;A0s)
 ;A0sJ
 ;A0u,
 ;A0u=
-;A0|?
+;A0|9
 ;F s!
 ;F s"
 ;F s#
 ;F s$
 ;F s&
 ;FL},
-;GHu+9
 ;H,|=
 ;H@ss
 ;N8uG
@@ -3009,7 +3006,12 @@ $vertexcolor
 ;V s 
 ;W sP
 ;W st
+;W,u!9
 ;W0tP
+;W4u!9
+;W8u!9
+;WHu!9
+;WLu!9
 ;X(~'
 ;Z,|T
 ;^ s%
@@ -3102,7 +3104,6 @@ $vertexcolor
 ?22ISpatialLeafEnumerator
 ?29CTraceFilterWorldAndPropsOnly
 ?333333
-?8CFmtStrNILi256ELb0EE
 ?N4vgui19CircularProgressBarE
 ?N4vgui8RichTextE
 ?UUUUUU
@@ -3116,6 +3117,7 @@ $vertexcolor
 @ 0  0@ 00
 @ 0P` 
 @ 0pP
+@ @@@@@@@00
 @ @P 
 @(^_]
 @(knN
@@ -3197,7 +3199,7 @@ $vertexcolor
 @CVProfile::~CVProfile()
 @ConColorMsg(Color const&, char const*, ...)
 @ConMsg(char const*, ...)
-@CreateSimpleThread(unsigned int (*)(void*), void*, unsigned long*, unsigned int)
+@CreateSimpleThread(unsigned int (*)(void*), void*, unsigned int*, unsigned int)
 @DevMsg(char const*, ...)
 @DevWarning(char const*, ...)
 @P@@P@
@@ -3305,25 +3307,21 @@ $vertexcolor
 @_SteamAPI_GetHSteamPipe
 @_SteamAPI_GetHSteamUser
 @_SteamAPI_InitSafe
-@_SteamAPI_RegisterCallResult
 @_SteamAPI_RegisterCallback
 @_SteamAPI_RunCallbacks
 @_SteamAPI_SetBreakpadAppID
 @_SteamAPI_SetMiniDumpComment
 @_SteamAPI_SetTryCatchCallbacks
 @_SteamAPI_Shutdown
-@_SteamAPI_UnregisterCallResult
 @_SteamAPI_UnregisterCallback
 @_SteamAPI_UseBreakpadCrashHandler
-@_SteamDatagramClient_Init_InternalV9
-@_SteamDatagramClient_Internal_SteamAPIKludge
+@_SteamDatagramClient_Init
 @_SteamDatagramClient_Kill
-@_SteamDatagramClient_SetAppID
-@_SteamDatagramClient_SetUniverse
-@_SteamDatagramServer_Init_InternalV2
+@_SteamDatagramServer_Init
 @_SteamDatagramServer_Kill
+@_SteamDatagram_SetAppID
+@_SteamDatagram_SetUniverse
 @_SteamGameServerNetworkingSockets_LibV12
-@_SteamGameServer_GetHSteamPipe
 @_SteamGameServer_GetHSteamUser
 @_SteamGameServer_GetIPCCallCount
 @_SteamGameServer_RunCallbacks
@@ -3340,14 +3338,6 @@ $vertexcolor
 @_ThreadDetach
 @_ThreadGetCurrentId
 @_ThreadInMainThread
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedAssignIf64
-@_ThreadInterlockedCompareExchangePointer
-@_ThreadInterlockedDecrement
-@_ThreadInterlockedExchange
-@_ThreadInterlockedExchangeAdd
-@_ThreadInterlockedExchangePointer
-@_ThreadInterlockedIncrement
 @_ThreadJoin
 @_ThreadSetDebugName
 @_ThreadSleep
@@ -5551,10 +5541,9 @@ CConPanel
 CConPanel::AddToNotify(Color const&, char const*)
 CConPanel::ApplySchemeSettings(vgui::IScheme*)
 CConPanel::CConPanel(vgui::Panel*)
-CConPanel::ClearNotify()
 CConPanel::DrawDebugAreas()
 CConPanel::DrawNotify()
-CConPanel::DrawText(unsigned long, int, int, wchar_t*)
+CConPanel::DrawText(unsigned int, int, int, wchar_t*)
 CConPanel::Paint
 CConPanel::Paint()
 CConPanel::PaintBackground()
@@ -7605,7 +7594,6 @@ CLog::Close()
 CLog::FireGameEvent(IGameEvent*)
 CLog::Flush()
 CLog::Init()
-CLog::IsActive()
 CLog::ListLogAddress()
 CLog::Open()
 CLog::Print(char const*)
@@ -7786,7 +7774,6 @@ CMatchmaking::AddSessionProperty(unsigned int, char const*, char const*, char co
 CMatchmaking::AddSessionPropertyInternal(KeyValues*)
 CMatchmaking::ApplySessionProperties(int, int, _XUSER_CONTEXT*, _XUSER_PROPERTY*)
 CMatchmaking::CMatchmaking()
-CMatchmaking::CancelCountdown()
 CMatchmaking::CancelCurrentOperation()
 CMatchmaking::CancelQosLookup()
 CMatchmaking::CancelSearch()
@@ -8268,7 +8255,9 @@ CNetMessage::SetRatePolicy()
 CNetMessage::SetReliable(bool)
 CNetMessage::~CNetMessage()
 CNetMessageRatelimitPolicy::BIncomingMessageForProcessing(double, int)
+CNetMessageRatelimitPolicy::~CNetMessageRatelimitPolicy()
 CNetMessageRatelimitPolicyNone::BIncomingMessageForProcessing(double, int)
+CNetMessageRatelimitPolicyNone::~CNetMessageRatelimitPolicyNone()
 CNetworkStringDict::Count()
 CNetworkStringDict::Element(int)
 CNetworkStringDict::Element(int) const
@@ -8388,12 +8377,12 @@ COM_GetIdealDestinationCompressionBufferSize_Snappy(unsigned int)
 COM_GetModDirectory()
 COM_GetModDirectory()::modDir
 COM_GetUncompressedSize(void const*, unsigned int)
-COM_IOReadBinary::close(int)
+COM_IOReadBinary::close(void*)
 COM_IOReadBinary::open(char const*)
-COM_IOReadBinary::read(void*, int, int)
-COM_IOReadBinary::seek(int, int)
-COM_IOReadBinary::size(int)
-COM_IOReadBinary::tell(int)
+COM_IOReadBinary::read(void*, int, void*)
+COM_IOReadBinary::seek(void*, int)
+COM_IOReadBinary::size(void*)
+COM_IOReadBinary::tell(void*)
 COM_Init()
 COM_InitFilesystem( info.m_pInitialMod )
 COM_InitFilesystem( m_StartupInfo.m_pInitialMod )
@@ -8425,8 +8414,7 @@ CONTEXT_GAME_TYPE
 CONTEXT_SCENARIO
 CObjectPool<CVarBitVec, 2, true>::CObjectPool()
 CObjectPool<CVarBitVec, 2, true>::Purge()
-CObjectPool<CVarBitVec, 2, true>::PutObject(CVarBitVec*)
-CObjectPool<CWorldRenderList, 0, true>::PutObject(CWorldRenderList*)
+CObjectPool<CWorldRenderList, 0, true>::GetObject(bool)
 CObjectPool<CWorldRenderList, 0, true>::~CObjectPool()
 COcclusionSystem::ActivateOccluder(int, bool)
 COcclusionSystem::AddPolygonToEdgeList(CEdgeList&, Vector**, int, int, bool)
@@ -8959,7 +8947,7 @@ CRenderTextureEditor::OnMousePressed(ButtonCode_t)
 CRenderTextureEditor::Paint()
 CRenderTextureEditor::PerformLayout()
 CRenderTextureEditor::SetDispInfo(KeyValues*, int)
-CRenderTextureEditor::SetFont(unsigned long)
+CRenderTextureEditor::SetFont(unsigned int)
 CRenderTextureEditor::~CRenderTextureEditor()
 CRenderTexturesListViewPanel
 CRenderTexturesListViewPanel::CRenderTexturesListViewPanel(vgui::Panel*, char const*)
@@ -9701,25 +9689,19 @@ CStringProperty::SetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
 CStudioConvexInfo::GetContents(int)
 CTSList<CVarBitVec*>::PopItem(CVarBitVec**)
 CTSList<CVarBitVec*>::~CTSList()
-CTSList<CWorldRenderList*>::PopItem(CWorldRenderList**)
 CTSList<CWorldRenderList*>::~CTSList()
-CTSList<TraceInfo_t*>::PopItem(TraceInfo_t**)
+CTSList<TraceInfo_t*>::~CTSList()
 CTSListBase: Misaligned list
 CTSQueue: Misaligned queue
 CTSQueue<CFunctor*, false>::CTSQueue()
 CTSQueue<CFunctor*, false>::Pop()
 CTSQueue<CFunctor*, false>::PopItem(CFunctor**)
 CTSQueue<CFunctor*, false>::Purge()
-CTSQueue<CFunctor*, false>::Push(CTSQueue<CFunctor*, false>::Node_t*)
 CTSQueue<CFunctor*, false>::PushItem(CFunctor* const&)
-CTSQueue<CFunctor*, false>::~CTSQueue()
 CTSQueue<loopback_t*, false>::CTSQueue()
 CTSQueue<loopback_t*, false>::Pop()
-CTSQueue<loopback_t*, false>::PopItem(loopback_t**)
 CTSQueue<loopback_t*, false>::Purge()
-CTSQueue<loopback_t*, false>::Push(CTSQueue<loopback_t*, false>::Node_t*)
 CTSQueue<loopback_t*, false>::PushItem(loopback_t* const&)
-CTSQueue<loopback_t*, false>::~CTSQueue()
 CTSSimpleList<NetScratchBuffer_t>::~CTSSimpleList()
 CTestScriptMgr::CTestScriptMgr()
 CTestScriptMgr::CheckPoint(char const*)
@@ -12110,7 +12092,7 @@ CreateLightmapsFromData(CColorMeshData*)
 CreateNewControl
 CreateSentenceMixer(voxword_t*)
 CreateSession called on existing session!
-CreateSimpleThread(unsigned int (*)(void*), void*, unsigned long*, unsigned int)
+CreateSimpleThread(unsigned int (*)(void*), void*, unsigned int*, unsigned int)
 CreateSpatialPartition(Vector const&, Vector const&)
 CreateStaticLightingCache(Vector const&, Vector const&, Vector const&)
 CreateTempFilename(TempFilename_t&, char const*, char const*, bool)
@@ -12195,6 +12177,7 @@ CyanRedSlider
 D$ ff&@
 D$8gf
 D0	p)
+D20@u9
 D>0@u
 DAS_CalcRoomProps(das_room_t*)
 DAS_CheckNewRoom(das_room_t*)
@@ -12539,6 +12522,7 @@ Dfffff.
 DialogVariables
 Didn't expect more than one scan
 DirTree
+Direct3D 9
 Directional
 Directory copy (%s)
 DirectoryCopy....
@@ -12690,7 +12674,7 @@ Draw the visible panels.
 Draw the vprof graph.
 Draw wireframe of current leaf
 DrawAxes(Vector const&, Vector*, int, Color, CMeshBuilder&)
-DrawColoredText(unsigned long, int, int, int, int, int, int, wchar_t const*)
+DrawColoredText(unsigned int, int, int, int, int, int, int, wchar_t const*)
 DrawDebugInformation(CUtlVector<msurface2_t*, CUtlMemory<msurface2_t*, int> > const&)
 DrawDebugPolygon(int, Vector*, bool, bool)
 DrawDecalsOnSingleSurface(IMatRenderContext*, msurface2_t*)
@@ -12713,7 +12697,7 @@ DrawStartupGraphic - Finish
 DrawStartupGraphic - Start
 DrawSurfaceID(msurface2_t*, Vector const&)
 DrawSurfaceIDAsInt(msurface2_t*, Vector const&)
-DrawTextLen(unsigned long, wchar_t const*)
+DrawTextLen(unsigned int, wchar_t const*)
 DrawTreeFrame
 Draw_DecalIndexFromName(char*, bool*)
 Draw_DecalMaterial(int)
@@ -12800,7 +12784,6 @@ ERROR: couldn't open.
 ERROR: demo file protocol %i outdated, engine vnoteersion is %i 
 ERROR: demo network protocol %i outdated, engine version is %i 
 EXECUTABLE_PATH
-E`9JRA`NATASA`XCTB`
 Ease_Both(float)
 Ease_In(float)
 Ease_Out(float)
@@ -13109,7 +13092,7 @@ Finding .mp3 files...
 Finding .wav files...
 Finish recording demo.
 FinishAsyncSave()
-FinishAsyncSave() (%d/%d)
+FinishAsyncSave() (%d/%p)
 FinishAsyncSave()::autoMutex__
 FinishDialog
 Finished [delta %s]
@@ -13218,7 +13201,6 @@ Force async reads to serialize for profiling
 Force client to ignore packets (for debugging).
 Force clock correction to match the server tick + this offset (-999 disables it).
 Force full sendtable sending path.
-Force heartbeat of master servers
 Force server side preloading.
 Force the host to sleep a certain number of milliseconds each frame.
 ForceExactFile no longer supported.  Use sv_pure instead.  (%s)
@@ -13462,7 +13444,6 @@ Heap Used:
 Heap is corrupt
 Heap: %5.2f Mb
 Heartbeat
-Heartbeat_f()
 Height
 Height and width must be equal for cubemaps!
 Help Text
@@ -13976,6 +13957,8 @@ JFIF extension marker: type 0x%02x, length %u
 JPEG datastream contains no image
 JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
 JPEGMEM
+JRA`NATASA`[Bp
+Jan 18 2024
 Jfffff.
 Jingle sound file.
 Jitter fakelag packet time
@@ -13983,11 +13966,9 @@ Join Remote Error
 Join request approved
 Join request denied
 Joining team: %s
-Jul 11 2023
 Jump To
 Jumping to %s
 K ^_[]
-K,;K(}
 KNffff.
 KXfff.
 Keep this many old copies in history of autosaves and quicksaves.
@@ -14664,6 +14645,7 @@ Moving to next demo...
 Msg from %s: %s
 Msg from %s: %s after processing time exceeded (%d bytes), aborting connection after %llu usec tick
 Msg from %s: %s msg rejected (%d bytes)
+MsgAndLog(char const*, ...)
 MsgData::MsgData()
 MsgData::~MsgData()
 Multiplayer
@@ -14673,6 +14655,7 @@ Music
 Music volume
 Must have smoothing selection active
 Mutelist
+N,;N(}
 N12_GLOBAL__N_115ScrollBarButtonE
 N12_GLOBAL__N_116CaptionGripPanelE
 N12_GLOBAL__N_19GripPanelE
@@ -14992,7 +14975,6 @@ Number of rounds player sprays are visible
 Number of seconds to track failed rcon authentications
 Number of times a user can fail rcon authentication in sv_rcon_minfailuretime before being banned
 NumericInputOnly
-O,;O(}
 O.fff.
 O89N8|
 OKButton
@@ -15061,6 +15043,7 @@ OpenAL
 OpenButton
 OpenColumnChoiceMenu
 OpenContextMenu
+OpenGL
 OpenInExplorer
 OpenInExplorerButton
 OpenSocketInternal(int, int, int, char const*, int, bool, int)
@@ -15418,21 +15401,20 @@ R$ff.
 RARARARARARASA`
 RARARBp
 RARAp
-RARBp
 RASBR0
 RASNVB
 RATAp
+RAVATBRAVATBRCVATDSCp
 RAVATBRFp
 RAVATDRDp
 RAWAp
 RAXARBXBRBYARBYARB`%ARB`>ATH`
 RA[BTBp
 RA^D`
-RBR0PSARDVATARAVATBRAVATBSAp
+RBR0PSARBVATARAVATBRAVATBSAp
 RBRASBp
 RBRAVARFp
 RBRAWARATAVATBRBSBpH
-RBRAZATBp
 RBRBRBRBRBRBRBRBRBRBRBRBRAp
 RBRBRD`
 RBRBTBp
@@ -15759,6 +15741,8 @@ ReplaySystem_Init(bool)
 ReplaySystem_Shutdown()
 Replay_GetFirstAvailableFilename(char*, int, char const*, char const*, char const*, int)
 Replay_IsSupportedModAndPlatform()
+Replay_IsSupportedModAndPlatform()::SReplayRequired
+Replay_IsSupportedModAndPlatform()::SReplayRequiredChecked
 Replay_SetGameDir(char const*)
 Replay_va(char const*, ...)
 Replay_va(char const*, ...)::curstring
@@ -15863,7 +15847,7 @@ S3: Duplicate client connection: UserID: %x SteamID %x
 SARA`
 SARCp
 SASEVB
-SAVATCp
+SAVATCSAp
 SAVELIGHTSTYLE
 SAVELIGHTSTYLE::m_DataMap
 SAVELIGHTSTYLE_DataDescInit::g_DataMapHolder
@@ -15930,11 +15914,11 @@ STEAMINVENTORY_INTERFACE_V003
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
 STEAMPARENTALSETTINGS_INTERFACE_VERSION001
-STEAMREMOTESTORAGE_INTERFACE_VERSION014
+STEAMREMOTESTORAGE_INTERFACE_VERSION016
 STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION015
+STEAMUGC_INTERFACE_VERSION017
 STEAMUSERSTATS_INTERFACE_VERSION012
-STEAMVIDEO_INTERFACE_V002
+STEAMVIDEO_INTERFACE_V004
 STEAM_
 STEAM_ID_LAN
 STEAM_ID_PENDING
@@ -16929,7 +16913,7 @@ Start profiling 10,000 calls to DSP
 Start profiling MIX_PaintChannels
 Start recording movie frames.
 Start recording vprof data for playback later.
-Start save... (%d/%d)
+Start save... (%d/%p)
 StartAudio(void*)
 StartDynamicSound
 StartMovie: File %s already exists
@@ -16985,7 +16969,7 @@ SteamFriends()::s_CallbackCounterAndContext
 SteamFriends017
 SteamGameSearch()::s_CallbackCounterAndContext
 SteamGameServer()::s_CallbackCounterAndContext
-SteamGameServer013
+SteamGameServer015
 SteamGameServerHTTP()::s_CallbackCounterAndContext
 SteamGameServerInventory()::s_CallbackCounterAndContext
 SteamGameServerNetworking()::s_CallbackCounterAndContext
@@ -16996,7 +16980,7 @@ SteamGameServerUtils()::s_CallbackCounterAndContext
 SteamHTMLSurface()::s_CallbackCounterAndContext
 SteamHTTP()::s_CallbackCounterAndContext
 SteamInput()::s_CallbackCounterAndContext
-SteamInput003
+SteamInput006
 SteamInternal_Init_SteamAppList(ISteamAppList**)
 SteamInternal_Init_SteamApps(ISteamApps**)
 SteamInternal_Init_SteamClient(ISteamClient**)
@@ -17043,7 +17027,7 @@ SteamRemoteStorage()::s_CallbackCounterAndContext
 SteamScreenshots()::s_CallbackCounterAndContext
 SteamUGC()::s_CallbackCounterAndContext
 SteamUser()::s_CallbackCounterAndContext
-SteamUser021
+SteamUser023
 SteamUserStats()::s_CallbackCounterAndContext
 SteamUtils()::s_CallbackCounterAndContext
 SteamUtils010
@@ -17149,6 +17133,7 @@ System (%s) failed during stage %s
 System Link port
 SzAlloc(void*, unsigned long)
 SzFree(void*, void*)
+TARATARBp
 TASBp
 TAYARA]BRA\ARB\BRA`#BRBRB`
 TA`$BRBZA`
@@ -17578,10 +17563,7 @@ Using Breakpad minidump system. Version: %s AppID: %u
 Using CELT High Quality
 Using OpenAL Interface
 UtlStringLessFunc(CUtlString const&, CUtlString const&)
-V,;W,u.9
 V0`VARBZBR0Hp
-V4;W4u+9
-V8;W8u+9
 VAC banned 
 VAC banned from secure server
 VAC secure mode disabled.
@@ -17590,7 +17572,6 @@ VALVs
 VARAVARAVARAVARAVAR0
 VARAVARAVARAVARAVARAVARAVARBXBp
 VATAp
-VATDRAVATBRAVATBSCp
 VAWAp
 VAudio002
 VBAllocTracker001
@@ -17659,7 +17640,6 @@ VGui_RecursivePrintTree(unsigned int, KeyValues*, int)
 VGui_UpdateDrawTreePanel()
 VGui_UpdateTextureListPanel()
 VID_ProcessMovieFrame(MovieInfo_t const&, bool, char const*, int, int, unsigned char*)
-VL;WLu19
 VMDLLIB001
 VMaterialSystem081
 VMatrix::SetupMatrixOrgAngles(Vector const&, QAngle const&)
@@ -17923,7 +17903,6 @@ VTT for vgui::TreeViewSubPanel
 VTT for vgui::URLLabel
 VTune sampling paused.
 VTune sampling resumed.
-VX;WXu"9
 V_AppendSlash(char*, int)
 V_AppendSlash: ran out of space on %s.
 V_CheckGamma()
@@ -18075,7 +18054,6 @@ Voice - %d incoming samples added to channel %d
 Voice - chan %d, ent %d, bufsize: %d
 Voice - compress: %7.2fu, decompress: %7.2fu, gain: %7.2fu, upsample: %7.2fu, total: %7.2fu
 Voice - mixed %d samples from channel %d
-VoiceRecord_AudioQueue::ClearInterfaces()
 VoiceRecord_AudioQueue::GetRecordedData(short*, int)
 VoiceRecord_AudioQueue::Idle()
 VoiceRecord_AudioQueue::Init(int)
@@ -18083,6 +18061,7 @@ VoiceRecord_AudioQueue::InitalizeInterfaces()
 VoiceRecord_AudioQueue::RecordStart()
 VoiceRecord_AudioQueue::RecordStop()
 VoiceRecord_AudioQueue::Release()
+VoiceRecord_AudioQueue::VoiceRecord_AudioQueue()
 VoiceRecord_AudioQueue::~VoiceRecord_AudioQueue()
 VoiceRecord_OpenAL::GetRecordedData(short*, int)
 VoiceRecord_OpenAL::Idle()
@@ -18140,6 +18119,7 @@ Voice_UserDesiresStop()
 Vox:  No caption for '%s'
 Vox: caption '%s'
 Vox: captionstream '%s'
+Vulkan
 W ffff.
 W fffff.
 WARBZBRC`
@@ -18202,6 +18182,7 @@ Warning: sv_steamgroup is not applicable in LAN mode.
 Warning: thumbnail image size does not match data length %u
 Warning: unknown JFIF revision number %d.%02d
 Warning: using WorldTwoTextureBlend on a non-displacement surface.
+WarningAndLog(char const*, ...)
 Warns
 Watch all fields encoded with this table.
 Watch the named variable.
@@ -18267,7 +18248,6 @@ Writing memory stats to file memstats.txt
 Wrong JPEG library version: library is %d, caller expects %d
 Wrote '%s':  %s (%dx%d) compresssed (quality %i) to %s
 Wrote partial config file "%s" out, to write full file use host_writeconfig "%s" full
-XBRAp
 XBRBRBRBRBRBRBRBRBRBRBRBRBp
 XDRBp
 XP9xL
@@ -18289,6 +18269,7 @@ Your server needs to be restarted in order to receive the latest update.
 Your server will be restarted on map change.
 YpU_Z
 Z@&LHA'
+ZATDp
 ZN8CNetChan13ProcessPacketEP11netpacket_sbE51CNetChannelPacketProcessingCallbackFinishProcessing
 ZPrefill
 ZipAdd(HZIP__*, char const*, void*, unsigned int, unsigned int)
@@ -18340,11 +18321,7 @@ Zpm"U
 [P:%u:%u]
 [SteamAPI] %s
 [SteamNetworkingSockets] %s
-[SteamNetworkingSockets] BUG: %s
-[SteamNetworkingSockets] ERROR: %s
-[SteamNetworkingSockets] WARNING: %s
 [T:%u:%u]
-[U:%u:%u:%u]
 [U:%u:%u]
 [a:%u:%u]
 [c:%u:%u]
@@ -18554,25 +18531,21 @@ _SpewOutputFunc
 _SteamAPI_GetHSteamPipe
 _SteamAPI_GetHSteamUser
 _SteamAPI_InitSafe
-_SteamAPI_RegisterCallResult
 _SteamAPI_RegisterCallback
 _SteamAPI_RunCallbacks
 _SteamAPI_SetBreakpadAppID
 _SteamAPI_SetMiniDumpComment
 _SteamAPI_SetTryCatchCallbacks
 _SteamAPI_Shutdown
-_SteamAPI_UnregisterCallResult
 _SteamAPI_UnregisterCallback
 _SteamAPI_UseBreakpadCrashHandler
-_SteamDatagramClient_Init_InternalV9
-_SteamDatagramClient_Internal_SteamAPIKludge
+_SteamDatagramClient_Init
 _SteamDatagramClient_Kill
-_SteamDatagramClient_SetAppID
-_SteamDatagramClient_SetUniverse
-_SteamDatagramServer_Init_InternalV2
+_SteamDatagramServer_Init
 _SteamDatagramServer_Kill
+_SteamDatagram_SetAppID
+_SteamDatagram_SetUniverse
 _SteamGameServerNetworkingSockets_LibV12
-_SteamGameServer_GetHSteamPipe
 _SteamGameServer_GetHSteamUser
 _SteamGameServer_GetIPCCallCount
 _SteamGameServer_RunCallbacks
@@ -18593,14 +18566,6 @@ _TextMessage_DemoMessageFull
 _ThreadDetach
 _ThreadGetCurrentId
 _ThreadInMainThread
-_ThreadInterlockedAssignIf
-_ThreadInterlockedAssignIf64
-_ThreadInterlockedCompareExchangePointer
-_ThreadInterlockedDecrement
-_ThreadInterlockedExchange
-_ThreadInterlockedExchangeAdd
-_ThreadInterlockedExchangePointer
-_ThreadInterlockedIncrement
 _ThreadJoin
 _ThreadSetDebugName
 _ThreadSleep
@@ -18680,224 +18645,224 @@ __DepthWrite01
 __DepthWrite10
 __DepthWrite11
 __ExitOnFatalAssert
-__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.19745.vun4Gs.ii
-__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.19746.obxAFg.ii
-__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.19747.9FbHlk.ii
-__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.19748.lUD9rK.ii
-__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.19749.v50qgP.ii
-__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.19750.vwa8YC.ii
-__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.19751.t3iqtH.ii
-__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.19794.fygRaU.ii
-__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.19795.GXBk9A.ii
-__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.19816.8YuSPP.ii
-__GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.57647.c5fG71.ii
-__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.19825.ipjJmB.ii
-__GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.89818.pcXpH1.ii
-__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.19835.HwCM6z.ii
-__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.89839.FtyeJs.ii
-__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.89850.iHImw7.ii
-__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.19836.ZMdMVV.ii
-__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.19840.g6LTiG.ii
-__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.12947.cMleAU.ii
-__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.89884.7XPfbR.ii
-__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.19865.DBGr69.ii
-__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.19869.gMqwMc.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
-__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.19909.E2h6D7.ii
-__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.19913.2E2vcN.ii
-__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.19921.7Y5YAa.ii
-__GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.57219.XQngH2.ii
-__GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.90020.Ef9M51.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.19924.9GH0nN.ii
-__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.19934.VUbte9.ii
-__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.19945.13Eb0j.ii
-__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.19949.zEjDAP.ii
-__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.19954.fPYa7S.ii
-__GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.90049.V3Z1nS.ii
-__GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.90104.Ixn1xI.ii
-__GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.58073.L2aSJG.ii
-__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.19960.2C7yns.ii
-__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.19973.tuLP9J.ii
-__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.19991.NTdi9k.ii
-__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.20031.BqloHq.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.20030.o3UFhL.ii
-__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.20059.WH5JaT.ii
-__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.20074.5nyzf3.ii
-__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.20089.QvCwkF.ii
-__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.20095.K6RoEP.ii
-__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.20104.BDQxup.ii
-__GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.20115.aGz5wr.ii
-__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.20117.Czb5eV.ii
-__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.20127.Plhszf.ii
-__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.20137.P44kdn.ii
-__GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.12263.5Sp9zd.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.20201.QwjJYj.ii
-__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.20202.HvDtBg.ii
-__GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.89586.WsxJtG.ii
-__GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.8784.aOnGh7.ii
-__GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.20203.S7SpMN.ii
-__GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.89592.Ul2Hwk.ii
-__GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.20233.8JzQUR.ii
-__GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.20235.zmXujH.ii
-__GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.57407.7OsYzK.ii
-__GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.89644.MRWlTR.ii
-__GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.20241.6rc14e.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.20263.gyuNH4.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.20292.Q8zLEB.ii
-__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.20295.hUrIck.ii
-__GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.20309.hsWrnp.ii
-__GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.20312.3kNLEZ.ii
-__GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.20332.cABvjd.ii
-__GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.20334.QaQrwU.ii
-__GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.20339.NHu62R.ii
-__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.31304.KdWK3O.ii
-__GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.20355.3Fmpxi.ii
-__GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.20356.6KF8qV.ii
-__GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.89748.0zDPwq.ii
-__GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.89752.ysLld1.ii
-__GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.20370.ZXJKCW.ii
-__GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.20236.ddcNAC.ii
-__GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.89634.FkC400.ii
-__GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.89761.kdMATn.ii
-__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.57569.Qh2sIz.ii
-__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.57581.h27FW9.ii
-__GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.20378.MPh223.ii
-__GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.20386.eTCHHx.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
-__GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.89786.ZqlzPw.ii
-__GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.57615.bqZczu.ii
-__GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.89796.GyP0Fh.ii
-__GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.57617.G6CJGE.ii
-__GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.57616.zYGvNo.ii
-__GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.57641.pDawcQ.ii
-__GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.57649.tgIbRz.ii
-__GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.57655.vn7lAO.ii
-__GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.89797.HCV9p0.ii
-__GLOBAL__sub_I_disp_power.stdout.rel_tf_osx_builder.12173.sx2c5O.ii
-__GLOBAL__sub_I_dispcoll_c.stdout.rel_tf_osx_builder.12153.QZrIq0.ii
-__GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.55746.1QrULA.ii
-__GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.55747.eLYsDB.ii
-__GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.55748.sNRPFw.ii
-__GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.55750.leM6Ab.ii
-__GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.89798.C5Vf4u.ii
-__GLOBAL__sub_I_downloadth.stdout.rel_tf_osx_builder.12796.gASo2N.ii
-__GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.57687.J5mt1y.ii
-__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.57717.YhXNh8.ii
-__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.89826.1Dujfu.ii
-__GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.89836.eDztPd.ii
-__GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.12857.PAOMv7.ii
-__GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.57724.TWrynK.ii
-__GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.89865.pkcfsL.ii
-__GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.89858.5XTsMx.ii
-__GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.89863.1cxufF.ii
-__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.57787.6Jgx4R.ii
-__GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.89892.BxQTjn.ii
-__GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.89904.02Gzpw.ii
-__GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.57826.15SRV8.ii
-__GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.89909.RyM0cG.ii
-__GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.89910.0F3sZJ.ii
-__GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.89914.MvCuIa.ii
-__GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.89916.C9jegA.ii
-__GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.57861.mVZkll.ii
-__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.89918.rOeCx6.ii
-__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.89923.cjT4fM.ii
-__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.89958.TA7zZ5.ii
-__GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.89962.D1wYo7.ii
-__GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.89963.WVCOw5.ii
-__GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.89972.bdv0p8.ii
-__GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.89973.WOlYNN.ii
-__GLOBAL__sub_I_initmathli.stdout.rel_tf_osx_builder.57932.v5Y3kG.ii
-__GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.89997.Mxz0yN.ii
-__GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.31306.1I6MaT.ii
-__GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.90004.FKi4vb.ii
-__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.55433.LctBPo.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.90021.kSNC1c.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.90025.v5CFVP.ii
-__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.90042.qWvu7y.ii
-__GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.90048.xhRSgd.ii
-__GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.58023.YicVNg.ii
-__GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.3922.kX042G.ii
-__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.91472.JVNpi1.ii
-__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.90094.13b08k.ii
-__GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.90095.QnWFma.ii
-__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.89442.oLmtIq.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.90061.Y3Mv48.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.90062.IgzgVk.ii
-__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.90067.I0Kjqh.ii
-__GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.20398.b8H4im.ii
-__GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.90116.iRBvsE.ii
-__GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.90124.TsMEGh.ii
-__GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.90153.gfAqHI.ii
-__GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.90157.hmbZkm.ii
-__GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.90170.8KOARF.ii
-__GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.90172.dVabJM.ii
-__GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.83516.v7EkAE.ii
-__GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.90142.WeCVd1.ii
-__GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.90132.GhBspy.ii
-__GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.58178.0lcc0w.ii
-__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.90173.J5G9iP.ii
-__GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.58207.wqhBGO.ii
-__GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.89448.4sbtrF.ii
-__GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.89449.W7thPG.ii
-__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.89450.a1mpMw.ii
-__GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.31298.Kk7PZg.ii
-__GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.89494.aRUycW.ii
-__GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.31300.r5GsN2.ii
-__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.89530.73G3py.ii
-__GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.89537.wkAQCG.ii
-__GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.58225.twwxCJ.ii
-__GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.58233.K5JefA.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
-__GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.90208.Whj7SR.ii
-__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.56128.pYpet3.ii
-__GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.90211.Y3gVmL.ii
-__GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.90210.KBioig.ii
-__GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.90222.kSM2II.ii
-__GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.90223.q8w7En.ii
-__GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.58267.93HsiS.ii
-__GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.90224.Rv1t1g.ii
-__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.20402.IC5SNC.ii
-__GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.90243.GXd801.ii
-__GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.90258.yccyRY.ii
-__GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.90260.7Q2wSE.ii
-__GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.90261.xfO3y6.ii
-__GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.90264.4CG4Y5.ii
-__GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.90273.OflyIn.ii
-__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.90288.hN7asZ.ii
-__GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.90292.y1PAwZ.ii
-__GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.90294.Xkp5Fs.ii
-__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.90301.xuuHrc.ii
-__GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.90304.tjSJjU.ii
-__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.90306.ql2IX4.ii
-__GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.58357.MSY5S6.ii
-__GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.58375.XeMeU8.ii
-__GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.58377.UN5fDy.ii
-__GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.58378.bIk5qf.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
-__GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.90323.fPVCeG.ii
-__GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.20424.0S1b32.ii
-__GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.20434.Gt8uGG.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.20192.G4OwCw.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.20193.6Hctu9.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.20194.Qn2qMi.ii
-__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.20436.59oYkn.ii
-__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.20199.ADzxWf.ii
-__GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.20441.YwODuF.ii
-__GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.20456.ah7PwM.ii
-__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.20468.CacIkL.ii
-__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.20469.CYWrSi.ii
-__GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.20470.RxQ2wy.ii
-__GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.89542.bgGVSR.ii
-__GLOBAL__sub_I_voice_reco.stdout.rel_tf_osx_builder.12406.BLb8IF.ii
-__GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.89562.EDsJfi.ii
-__GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.90399.ii0H60.ii
-__GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.89564.SZNt4c.ii
-__GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.20482.tGU5GN.ii
-__GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.90401.Dj2jav.ii
-__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.55898.EeKUFF.ii
-__GLOBAL__sub_I_xboxsystem.stdout.rel_tf_osx_builder.58491.qGOBU0.ii
-__GLOBAL__sub_I_zone.stdout.rel_tf_osx_builder.58498.5tl8eY.ii
+__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.96208.lrtgQy.ii
+__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.96209.bcVBr1.ii
+__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.96210.7az4SA.ii
+__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.96212.71yXqX.ii
+__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.96244.KvCeZu.ii
+__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.96255.uKTKM9.ii
+__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.96261.SWf36c.ii
+__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.96268.66eoVR.ii
+__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.96277.8PXYbJ.ii
+__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.96303.KC26hc.ii
+__GLOBAL__sub_I_DevShotGen.stdout.rel_tf_osx_builder.97617.6BDHbQ.ii
+__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.96311.yR5w3W.ii
+__GLOBAL__sub_I_DownloadLi.stdout.rel_tf_osx_builder.97658.m67F8G.ii
+__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.96316.TI9Qwz.ii
+__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.97743.m6MF0o.ii
+__GLOBAL__sub_I_EngineSoun.stdout.rel_tf_osx_builder.97744.1zOTvM.ii
+__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.96321.Lj7TVr.ii
+__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.96332.cJFzsF.ii
+__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.97805.lUZGwJ.ii
+__GLOBAL__sub_I_GameEventM.stdout.rel_tf_osx_builder.97807.lS0mXi.ii
+__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.96349.C8mTQl.ii
+__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.96376.6scsWC.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.96411.p55FLF.ii
+__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.96417.UuevlR.ii
+__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.96418.Sy0wEt.ii
+__GLOBAL__sub_I_MPAFile.stdout.rel_tf_osx_builder.97141.Xe6vsU.ii
+__GLOBAL__sub_I_MapReslist.stdout.rel_tf_osx_builder.97983.8d0rvW.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.22182.1DfQ6v.ii
+__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.96437.fGaypT.ii
+__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.96443.gWApzI.ii
+__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.96447.d4To5v.ii
+__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.96455.T8DTl5.ii
+__GLOBAL__sub_I_ModelInfo.stdout.rel_tf_osx_builder.98019.VgRFxq.ii
+__GLOBAL__sub_I_OcclusionS.stdout.rel_tf_osx_builder.98107.4gwCmu.ii
+__GLOBAL__sub_I_Overlay.stdout.rel_tf_osx_builder.98108.BUsuoh.ii
+__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.96461.xczuTY.ii
+__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.96463.H78JlL.ii
+__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.96490.JyzsWw.ii
+__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.96525.UZafB7.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.22186.vRXPMR.ii
+__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.96555.ASpokc.ii
+__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.96565.IYLizm.ii
+__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.96579.JIRMep.ii
+__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.96599.yPO438.ii
+__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.96617.t6OeiE.ii
+__GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.96629.M15Vlg.ii
+__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.96630.DDgXio.ii
+__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.96637.J8kETp.ii
+__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.96641.FNqzqY.ii
+__GLOBAL__sub_I_XZip.stdout.rel_tf_osx_builder.97126.lWFoan.ii
+__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.22226.nJXo3j.ii
+__GLOBAL__sub_I_baseclient.stdout.rel_tf_osx_builder.22227.UxmWHd.ii
+__GLOBAL__sub_I_baseserver.stdout.rel_tf_osx_builder.22228.kHZlzP.ii
+__GLOBAL__sub_I_bitbuf.stdout.rel_tf_osx_builder.93342.31CqbO.ii
+__GLOBAL__sub_I_bugreporte.stdout.rel_tf_osx_builder.22230.YfId8g.ii
+__GLOBAL__sub_I_buildcubem.stdout.rel_tf_osx_builder.97339.UKx2i3.ii
+__GLOBAL__sub_I_cbenchmark.stdout.rel_tf_osx_builder.22231.BxytQQ.ii
+__GLOBAL__sub_I_cdll_engin.stdout.rel_tf_osx_builder.22232.c4dzcB.ii
+__GLOBAL__sub_I_cheatcodes.stdout.rel_tf_osx_builder.97370.m7EyRZ.ii
+__GLOBAL__sub_I_cl_bounded.stdout.rel_tf_osx_builder.97407.P50PMg.ii
+__GLOBAL__sub_I_cl_demo.stdout.rel_tf_osx_builder.97410.pWAgWa.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.97431.IE3oKW.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.97435.QGexjX.ii
+__GLOBAL__sub_I_cl_demoact.stdout.rel_tf_osx_builder.97445.H1YDd7.ii
+__GLOBAL__sub_I_cl_demouip.stdout.rel_tf_osx_builder.97463.Tj5YDH.ii
+__GLOBAL__sub_I_cl_entityr.stdout.rel_tf_osx_builder.97467.71EdBV.ii
+__GLOBAL__sub_I_cl_ents_pa.stdout.rel_tf_osx_builder.97475.uikHpz.ii
+__GLOBAL__sub_I_cl_foguipa.stdout.rel_tf_osx_builder.97476.XdtctP.ii
+__GLOBAL__sub_I_cl_localne.stdout.rel_tf_osx_builder.97483.VhAX5J.ii
+__GLOBAL__sub_I_cl_main.stdout.rel_tf_osx_builder.22275.jbsm68.ii
+__GLOBAL__sub_I_cl_parse_e.stdout.rel_tf_osx_builder.97499.pMOdXx.ii
+__GLOBAL__sub_I_cl_pluginh.stdout.rel_tf_osx_builder.97507.PBOrMk.ii
+__GLOBAL__sub_I_cl_rcon.stdout.rel_tf_osx_builder.97514.iXsC0o.ii
+__GLOBAL__sub_I_cl_steamau.stdout.rel_tf_osx_builder.22277.RxljWK.ii
+__GLOBAL__sub_I_cl_texture.stdout.rel_tf_osx_builder.97518.MN4KXT.ii
+__GLOBAL__sub_I_client.stdout.rel_tf_osx_builder.22243.lOx8nv.ii
+__GLOBAL__sub_I_clockdrift.stdout.rel_tf_osx_builder.97391.o3KSLH.ii
+__GLOBAL__sub_I_cmd.stdout.rel_tf_osx_builder.97519.gqiVo9.ii
+__GLOBAL__sub_I_cmodel.stdout.rel_tf_osx_builder.97545.ixLNCQ.ii
+__GLOBAL__sub_I_cmodel_dis.stdout.rel_tf_osx_builder.97557.MHBysJ.ii
+__GLOBAL__sub_I_colorcorre.stdout.rel_tf_osx_builder.97558.zPnz13.ii
+__GLOBAL__sub_I_console.stdout.rel_tf_osx_builder.97571.rXcBOK.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+__GLOBAL__sub_I_cvar.stdout.rel_tf_osx_builder.97577.smOtwb.ii
+__GLOBAL__sub_I_debug_leaf.stdout.rel_tf_osx_builder.97592.hPb6tU.ii
+__GLOBAL__sub_I_debugoverl.stdout.rel_tf_osx_builder.97591.rlIDB1.ii
+__GLOBAL__sub_I_decal_clip.stdout.rel_tf_osx_builder.97607.Ee5AE4.ii
+__GLOBAL__sub_I_decals.stdout.rel_tf_osx_builder.97594.TW5uqD.ii
+__GLOBAL__sub_I_demofile.stdout.rel_tf_osx_builder.97613.YIqt1l.ii
+__GLOBAL__sub_I_disp.stdout.rel_tf_osx_builder.97624.jGQEBy.ii
+__GLOBAL__sub_I_disp_defs.stdout.rel_tf_osx_builder.97631.WSkXnj.ii
+__GLOBAL__sub_I_disp_inter.stdout.rel_tf_osx_builder.97643.vT4WUJ.ii
+__GLOBAL__sub_I_disp_power.stdout.rel_tf_osx_builder.97026.sZOTBK.ii
+__GLOBAL__sub_I_dispcoll_c.stdout.rel_tf_osx_builder.97013.FuVR9x.ii
+__GLOBAL__sub_I_dmxattribu.stdout.rel_tf_osx_builder.94064.2bqlfe.ii
+__GLOBAL__sub_I_dmxelement.stdout.rel_tf_osx_builder.94065.bT9GLh.ii
+__GLOBAL__sub_I_dmxloader.stdout.rel_tf_osx_builder.94066.t8HCRh.ii
+__GLOBAL__sub_I_dmxloadert.stdout.rel_tf_osx_builder.94067.9lCz46.ii
+__GLOBAL__sub_I_download.stdout.rel_tf_osx_builder.97657.oaGRGt.ii
+__GLOBAL__sub_I_downloadth.stdout.rel_tf_osx_builder.97661.l8DHLa.ii
+__GLOBAL__sub_I_dt.stdout.rel_tf_osx_builder.97666.lPhinT.ii
+__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.97691.eiZQSb.ii
+__GLOBAL__sub_I_dt_instrum.stdout.rel_tf_osx_builder.97695.ROXVHx.ii
+__GLOBAL__sub_I_dt_localtr.stdout.rel_tf_osx_builder.97697.oSC1Xw.ii
+__GLOBAL__sub_I_dt_recv_en.stdout.rel_tf_osx_builder.97705.tgnwSr.ii
+__GLOBAL__sub_I_dt_send_en.stdout.rel_tf_osx_builder.97713.EdIJ1v.ii
+__GLOBAL__sub_I_engine_rep.stdout.rel_tf_osx_builder.22289.2kdVgc.ii
+__GLOBAL__sub_I_enginetool.stdout.rel_tf_osx_builder.97771.nRSQAl.ii
+__GLOBAL__sub_I_enginetrac.stdout.rel_tf_osx_builder.97770.3DtvBU.ii
+__GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.97784.04o83p.ii
+__GLOBAL__sub_I_gl_drawlig.stdout.rel_tf_osx_builder.97829.Y7YmUp.ii
+__GLOBAL__sub_I_gl_lightma.stdout.rel_tf_osx_builder.97834.S2ptf7.ii
+__GLOBAL__sub_I_gl_matsysi.stdout.rel_tf_osx_builder.97837.ddVHmy.ii
+__GLOBAL__sub_I_gl_rlight.stdout.rel_tf_osx_builder.97842.Cuf8sq.ii
+__GLOBAL__sub_I_gl_rmain.stdout.rel_tf_osx_builder.97848.l9pNwA.ii
+__GLOBAL__sub_I_gl_rmisc.stdout.rel_tf_osx_builder.97849.pgi8Tb.ii
+__GLOBAL__sub_I_gl_rsurf.stdout.rel_tf_osx_builder.97859.kKyDgX.ii
+__GLOBAL__sub_I_gl_warp.stdout.rel_tf_osx_builder.97885.eYnCJY.ii
+__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.97887.Ww6j5T.ii
+__GLOBAL__sub_I_hltvclient.stdout.rel_tf_osx_builder.97888.9dEa8E.ii
+__GLOBAL__sub_I_hltvserver.stdout.rel_tf_osx_builder.22293.cFdmuN.ii
+__GLOBAL__sub_I_host.stdout.rel_tf_osx_builder.22305.2mLnPZ.ii
+__GLOBAL__sub_I_host_cmd.stdout.rel_tf_osx_builder.22307.cQ3yzF.ii
+__GLOBAL__sub_I_host_listm.stdout.rel_tf_osx_builder.97933.E8kKZN.ii
+__GLOBAL__sub_I_host_saver.stdout.rel_tf_osx_builder.97937.dAwcEK.ii
+__GLOBAL__sub_I_initmathli.stdout.rel_tf_osx_builder.97938.ZiFDp6.ii
+__GLOBAL__sub_I_keys.stdout.rel_tf_osx_builder.97951.psaCvB.ii
+__GLOBAL__sub_I_l_studio.stdout.rel_tf_osx_builder.97979.tSbjBJ.ii
+__GLOBAL__sub_I_lightcache.stdout.rel_tf_osx_builder.97963.jMRL3t.ii
+__GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.93439.dm9yM8.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.97988.hPf7Ss.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.97997.tPI3Iu.ii
+__GLOBAL__sub_I_matchmakin.stdout.rel_tf_osx_builder.98015.E1kXFC.ii
+__GLOBAL__sub_I_matsys_int.stdout.rel_tf_osx_builder.98018.VqZiRG.ii
+__GLOBAL__sub_I_mod_vis.stdout.rel_tf_osx_builder.98043.zYpHee.ii
+__GLOBAL__sub_I_modelloade.stdout.rel_tf_osx_builder.98030.NMyCTi.ii
+__GLOBAL__sub_I_net_chan.stdout.rel_tf_osx_builder.98082.2DVIQO.ii
+__GLOBAL__sub_I_net_ws.stdout.rel_tf_osx_builder.22331.tH9Ueg.ii
+__GLOBAL__sub_I_net_ws_que.stdout.rel_tf_osx_builder.98099.GRrsmM.ii
+__GLOBAL__sub_I_netmessage.stdout.rel_tf_osx_builder.96934.49Y983.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.98045.0Q9QUv.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.98064.jwxX8V.ii
+__GLOBAL__sub_I_networkstr.stdout.rel_tf_osx_builder.98077.RTIRb2.ii
+__GLOBAL__sub_I_perfuipane.stdout.rel_tf_osx_builder.98123.m3MdDN.ii
+__GLOBAL__sub_I_pr_edict.stdout.rel_tf_osx_builder.98137.bSaqhh.ii
+__GLOBAL__sub_I_pure_serve.stdout.rel_tf_osx_builder.98143.plIRGV.ii
+__GLOBAL__sub_I_r_areaport.stdout.rel_tf_osx_builder.98188.SU3q76.ii
+__GLOBAL__sub_I_r_decal.stdout.rel_tf_osx_builder.98193.EZecsP.ii
+__GLOBAL__sub_I_r_efx.stdout.rel_tf_osx_builder.98209.lr8V19.ii
+__GLOBAL__sub_I_r_linefile.stdout.rel_tf_osx_builder.98211.3kyURz.ii
+__GLOBAL__sub_I_randomstre.stdout.rel_tf_osx_builder.98155.L7DhSF.ii
+__GLOBAL__sub_I_replay_int.stdout.rel_tf_osx_builder.98179.LA5m88.ii
+__GLOBAL__sub_I_replaydemo.stdout.rel_tf_osx_builder.98170.YsxTwx.ii
+__GLOBAL__sub_I_saverestor.stdout.rel_tf_osx_builder.98213.wse1LP.ii
+__GLOBAL__sub_I_servermsgh.stdout.rel_tf_osx_builder.98214.wtffjx.ii
+__GLOBAL__sub_I_shadowmgr.stdout.rel_tf_osx_builder.98238.tVtAA3.ii
+__GLOBAL__sub_I_snd_dma.stdout.rel_tf_osx_builder.97169.hf1ZY9.ii
+__GLOBAL__sub_I_snd_dsp.stdout.rel_tf_osx_builder.97170.DVCOOa.ii
+__GLOBAL__sub_I_snd_mix.stdout.rel_tf_osx_builder.97182.GZVKIU.ii
+__GLOBAL__sub_I_snd_mp3_so.stdout.rel_tf_osx_builder.97187.Q1ozhN.ii
+__GLOBAL__sub_I_snd_wave_d.stdout.rel_tf_osx_builder.97205.ZX6EUL.ii
+__GLOBAL__sub_I_snd_wave_s.stdout.rel_tf_osx_builder.97229.C2qlxg.ii
+__GLOBAL__sub_I_snd_wave_t.stdout.rel_tf_osx_builder.97228.XKGTGa.ii
+__GLOBAL__sub_I_snd_win.stdout.rel_tf_osx_builder.97249.w6ZM1Q.ii
+__GLOBAL__sub_I_sound_shar.stdout.rel_tf_osx_builder.98259.iMYasy.ii
+__GLOBAL__sub_I_spatialpar.stdout.rel_tf_osx_builder.98267.AtYHhd.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+__GLOBAL__sub_I_staticprop.stdout.rel_tf_osx_builder.98272.G2dAue.ii
+__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.94525.awqF6I.ii
+__GLOBAL__sub_I_sv_client.stdout.rel_tf_osx_builder.98275.sIVQDl.ii
+__GLOBAL__sub_I_sv_ents_wr.stdout.rel_tf_osx_builder.98283.KUp0OB.ii
+__GLOBAL__sub_I_sv_filter.stdout.rel_tf_osx_builder.22341.HvE3G5.ii
+__GLOBAL__sub_I_sv_framesn.stdout.rel_tf_osx_builder.98291.ET3jXt.ii
+__GLOBAL__sub_I_sv_ipratel.stdout.rel_tf_osx_builder.98299.S1tMnF.ii
+__GLOBAL__sub_I_sv_log.stdout.rel_tf_osx_builder.98311.3SafxK.ii
+__GLOBAL__sub_I_sv_main.stdout.rel_tf_osx_builder.22342.NTWORi.ii
+__GLOBAL__sub_I_sv_packede.stdout.rel_tf_osx_builder.98316.hhCeRg.ii
+__GLOBAL__sub_I_sv_plugin.stdout.rel_tf_osx_builder.98321.U3f54b.ii
+__GLOBAL__sub_I_sv_precach.stdout.rel_tf_osx_builder.98325.vhiaHF.ii
+__GLOBAL__sub_I_sv_rcon.stdout.rel_tf_osx_builder.98328.pp8hPh.ii
+__GLOBAL__sub_I_sv_redirec.stdout.rel_tf_osx_builder.98343.eMKJJL.ii
+__GLOBAL__sub_I_sv_remotea.stdout.rel_tf_osx_builder.98351.cssNsO.ii
+__GLOBAL__sub_I_sv_steamau.stdout.rel_tf_osx_builder.22350.jQj6KE.ii
+__GLOBAL__sub_I_sv_uploadg.stdout.rel_tf_osx_builder.98365.xcCt8e.ii
+__GLOBAL__sub_I_sys_dll.stdout.rel_tf_osx_builder.22359.uwRxaY.ii
+__GLOBAL__sub_I_sys_dll2.stdout.rel_tf_osx_builder.22369.uITKo9.ii
+__GLOBAL__sub_I_sys_engine.stdout.rel_tf_osx_builder.98379.jjWMuF.ii
+__GLOBAL__sub_I_sys_getmod.stdout.rel_tf_osx_builder.22373.y7BZTd.ii
+__GLOBAL__sub_I_testscript.stdout.rel_tf_osx_builder.98396.gYWbOl.ii
+__GLOBAL__sub_I_tmessage.stdout.rel_tf_osx_builder.98399.01VwrB.ii
+__GLOBAL__sub_I_toolframew.stdout.rel_tf_osx_builder.98419.ujmPay.ii
+__GLOBAL__sub_I_traceinit.stdout.rel_tf_osx_builder.98423.aftNxN.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+__GLOBAL__sub_I_vengineser.stdout.rel_tf_osx_builder.22375.UZXBAI.ii
+__GLOBAL__sub_I_vgui_basep.stdout.rel_tf_osx_builder.98441.6pi0Cc.ii
+__GLOBAL__sub_I_vgui_baseu.stdout.rel_tf_osx_builder.22381.fWw04W.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.96939.BMH4Cx.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.96940.Wtrpmg.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.96979.Obwuyd.ii
+__GLOBAL__sub_I_vgui_budge.stdout.rel_tf_osx_builder.98443.9VTS2Q.ii
+__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.22223.E9ZnCD.ii
+__GLOBAL__sub_I_vgui_drawt.stdout.rel_tf_osx_builder.98464.ZTmCuW.ii
+__GLOBAL__sub_I_vgui_textu.stdout.rel_tf_osx_builder.98475.WOS0jr.ii
+__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.98483.grxUOB.ii
+__GLOBAL__sub_I_vgui_vprof.stdout.rel_tf_osx_builder.98488.M2Wlmc.ii
+__GLOBAL__sub_I_view.stdout.rel_tf_osx_builder.98493.JWQR4o.ii
+__GLOBAL__sub_I_voice.stdout.rel_tf_osx_builder.22225.lzDpBu.ii
+__GLOBAL__sub_I_voice_reco.stdout.rel_tf_osx_builder.97272.k9jvWa.ii
+__GLOBAL__sub_I_voice_soun.stdout.rel_tf_osx_builder.97284.Z5wl6r.ii
+__GLOBAL__sub_I_voiceserve.stdout.rel_tf_osx_builder.98501.VVk9Ss.ii
+__GLOBAL__sub_I_vox.stdout.rel_tf_osx_builder.97297.RelxPp.ii
+__GLOBAL__sub_I_vprof_engi.stdout.rel_tf_osx_builder.98509.nCEV04.ii
+__GLOBAL__sub_I_vprof_reco.stdout.rel_tf_osx_builder.98513.WaRFA2.ii
+__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.94232.Mq5QYc.ii
+__GLOBAL__sub_I_xboxsystem.stdout.rel_tf_osx_builder.98518.27I5TJ.ii
+__GLOBAL__sub_I_zone.stdout.rel_tf_osx_builder.98527.BqG6xe.ii
 __LINKEDIT
 __NETMESSAGE__1
 __NETMESSAGE__2
@@ -20326,7 +20291,7 @@ _wcstol
 _wcstoll
 _whitelist.txt
 `     `P
-` 00 
+` 00 pp0
 ` 000
 ` P@ 0 0
 `#ARJRBRAUBp
@@ -20542,7 +20507,7 @@ bf_write::WriteByte(int)
 bf_write::WriteBytes(void const*, int)
 bf_write::WriteChar(int)
 bf_write::WriteFloat(float)
-bf_write::WriteLong(long)
+bf_write::WriteLong(int)
 bf_write::WriteLongLong(long long)
 bf_write::WriteSBitLong(int, int)
 bf_write::WriteShort(int)
@@ -22461,7 +22426,6 @@ hardware bones: %d
 has invalid path or extension!
 has shadow lod: %s
 headerSize
-heartbeat
 height
 height in pixels of the budget panel
 height,
@@ -23825,6 +23789,7 @@ p ppp
 p,^_]
 p0SAUAp
 p@@0pp`
+p@@@ 
 p@@`0P0p
 p@`0@p
 p@`@  0
@@ -24523,6 +24488,7 @@ s_raddir
 s_static_p4_factory
 s_szLoadName
 s_szMapName
+s_szTempMsgBuf
 s_text
 s_timeForceShutdown
 sample_lighting usage: lightprobe <base file name> [cubemap dimension]
@@ -25187,8 +25153,7 @@ t>m;]?
 tAfffff.
 tB ^]
 tBfff.
-tCfff.
-tCffffff.
+tBfffff.
 tD9qh
 tDffff.
 tE~91
@@ -26728,7 +26693,6 @@ udp/ip  : %s%s
 ueH+F 
 ufH+F 
 ufH+G 
-uffff.
 unbind
 unbind <key> : remove commands from a key
 unbind(CCommand const&)
@@ -27146,7 +27110,7 @@ vgui::CTreeViewListControl::RecalculateRows_R(int)
 vgui::CTreeViewListControl::SetBorderColor(Color)
 vgui::CTreeViewListControl::SetColumnInfo(int, char const*, int, int)
 vgui::CTreeViewListControl::SetNumColumns(int)
-vgui::CTreeViewListControl::SetTitleBarInfo(unsigned long, int)
+vgui::CTreeViewListControl::SetTitleBarInfo(unsigned int, int)
 vgui::CTreeViewListControl::SetTreeView(vgui::TreeView*)
 vgui::CTreeViewListControl::~CTreeViewListControl()
 vgui::CheckButton::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
@@ -27252,13 +27216,13 @@ vgui::ComboBox::PanelMessageFunc_OnSetText::InitVar()::bAdded
 vgui::ComboBox::PerformLayout()
 vgui::ComboBox::RemoveAll()
 vgui::ComboBox::SetDropdownButtonVisible(bool)
-vgui::ComboBox::SetFont(unsigned long)
+vgui::ComboBox::SetFont(unsigned int)
 vgui::ComboBox::SetItemEnabled(char const*, bool)
 vgui::ComboBox::SetItemEnabled(int, bool)
 vgui::ComboBox::SetMenu(vgui::Menu*)
 vgui::ComboBox::SetNumberOfEditLines(int)
 vgui::ComboBox::SetOpenDirection(vgui::Menu::MenuDirection_e)
-vgui::ComboBox::SetUseFallbackFont(bool, unsigned long)
+vgui::ComboBox::SetUseFallbackFont(bool, unsigned int)
 vgui::ComboBox::ShowMenu()
 vgui::ComboBox::SortItems()
 vgui::ComboBox::UpdateItem(int, char const*, KeyValues const*)
@@ -27319,7 +27283,6 @@ vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnApplyChanges::InitV
 vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
 vgui::CvarToggleCheckButton<UIConVarRef>::SetSelected(bool)
 vgui::CvarToggleCheckButton<UIConVarRef>::~CvarToggleCheckButton()
-vgui::Dar<unsigned long>::AddElement(unsigned long)
 vgui::DirectorySelectDialog::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
 vgui::DirectorySelectDialog::ApplySchemeSettings(vgui::IScheme*)
 vgui::DirectorySelectDialog::BuildDirTree()
@@ -27677,7 +27640,7 @@ vgui::Image::DrawSetColor(Color)
 vgui::Image::DrawSetColor(int, int, int, int)
 vgui::Image::DrawSetTextColor(Color)
 vgui::Image::DrawSetTextColor(int, int, int, int)
-vgui::Image::DrawSetTextFont(unsigned long)
+vgui::Image::DrawSetTextFont(unsigned int)
 vgui::Image::DrawSetTextPos(int, int)
 vgui::Image::DrawSetTexture(int)
 vgui::Image::DrawTexturedRect(int, int, int, int)
@@ -27796,7 +27759,7 @@ vgui::Label::SetDisabledFgColor1(Color)
 vgui::Label::SetDisabledFgColor2(Color)
 vgui::Label::SetEnabled(bool)
 vgui::Label::SetFgColor(Color)
-vgui::Label::SetFont(unsigned long)
+vgui::Label::SetFont(unsigned int)
 vgui::Label::SetHotkey(wchar_t)
 vgui::Label::SetImageAtIndex(int, vgui::IImage*, int)
 vgui::Label::SetImageBounds(int, int, int)
@@ -27903,7 +27866,7 @@ vgui::ListPanel::SetColumnTextAlignment(int, int)
 vgui::ListPanel::SetColumnVisible(int, bool)
 vgui::ListPanel::SetEmptyListText(char const*)
 vgui::ListPanel::SetEmptyListText(wchar_t const*)
-vgui::ListPanel::SetFont(unsigned long)
+vgui::ListPanel::SetFont(unsigned int)
 vgui::ListPanel::SetImageList(vgui::ImageList*, bool)
 vgui::ListPanel::SetItemDisabled(int, bool)
 vgui::ListPanel::SetItemVisible(int, bool)
@@ -27975,7 +27938,7 @@ vgui::ListViewPanel::PanelMessageFunc_OnSliderMoved::InitVar()::bAdded
 vgui::ListViewPanel::PerformLayout()
 vgui::ListViewPanel::RemoveItem(int)
 vgui::ListViewPanel::ScrollToItem(int)
-vgui::ListViewPanel::SetFont(unsigned long)
+vgui::ListViewPanel::SetFont(unsigned int)
 vgui::ListViewPanel::SetImageList(vgui::ImageList*, bool)
 vgui::ListViewPanel::SetSingleSelectedItem(int)
 vgui::ListViewPanel::SetSortFunc(bool (*)(KeyValues*, KeyValues*))
@@ -28077,7 +28040,7 @@ vgui::Menu::SetCurrentlyHighlightedItem(int)
 vgui::Menu::SetCurrentlySelectedItem(int)
 vgui::Menu::SetFgColor(Color)
 vgui::Menu::SetFixedWidth(int)
-vgui::Menu::SetFont(unsigned long)
+vgui::Menu::SetFont(unsigned int)
 vgui::Menu::SetItemEnabled(char const*, bool)
 vgui::Menu::SetItemEnabled(int, bool)
 vgui::Menu::SetItemVisible(char const*, bool)
@@ -28086,7 +28049,7 @@ vgui::Menu::SetMenuItemChecked(int, bool)
 vgui::Menu::SetMenuItemHeight(int)
 vgui::Menu::SetNumberOfVisibleItems(int)
 vgui::Menu::SetTypeAheadMode(vgui::Menu::MenuTypeAheadMode)
-vgui::Menu::SetUseFallbackFont(bool, unsigned long)
+vgui::Menu::SetUseFallbackFont(bool, unsigned int)
 vgui::Menu::SetVisible(bool)
 vgui::Menu::SilentActivateItem(int)
 vgui::Menu::UpdateMenuItem(int, char const*, KeyValues*, KeyValues const*)
@@ -28558,7 +28521,7 @@ vgui::Panel::SetBounds(int, int, int, int)
 vgui::Panel::SetBuildGroup(vgui::BuildGroup*)
 vgui::Panel::SetBuildModeDeletable(bool)
 vgui::Panel::SetBuildModeEditable(bool)
-vgui::Panel::SetCursor(unsigned long)
+vgui::Panel::SetCursor(unsigned int)
 vgui::Panel::SetCursorAlwaysVisible(bool)
 vgui::Panel::SetDragEnabled(bool)
 vgui::Panel::SetDragSTartTolerance(int)
@@ -28583,7 +28546,7 @@ vgui::Panel::SetPos(int, int)
 vgui::Panel::SetPostChildPaintEnabled(bool)
 vgui::Panel::SetProportional(bool)
 vgui::Panel::SetScheme(char const*)
-vgui::Panel::SetScheme(unsigned long)
+vgui::Panel::SetScheme(unsigned int)
 vgui::Panel::SetShowDragHelper(bool)
 vgui::Panel::SetSilentMode(bool)
 vgui::Panel::SetSize(int, int)
@@ -28827,7 +28790,7 @@ vgui::RichText::CopySelected()
 vgui::RichText::CreateEditMenu()
 vgui::RichText::CursorToPixelSpace(int, int&, int&)
 vgui::RichText::CutSelected()
-vgui::RichText::DrawString(int, int, vgui::RichText::TRenderState&, unsigned long)
+vgui::RichText::DrawString(int, int, vgui::RichText::TRenderState&, unsigned int)
 vgui::RichText::FinishingURL(int, int)
 vgui::RichText::GetAnimMap()
 vgui::RichText::GetDescription()
@@ -29059,7 +29022,7 @@ vgui::TextEntry::CursorToPixelSpace(int, int&, int&)
 vgui::TextEntry::CutSelected()
 vgui::TextEntry::Delete()
 vgui::TextEntry::DeleteSelected()
-vgui::TextEntry::DrawChar(wchar_t, unsigned long, int, int, int)
+vgui::TextEntry::DrawChar(wchar_t, unsigned int, int, int, int)
 vgui::TextEntry::DrawCursor(int, int)
 vgui::TextEntry::FireActionSignal()
 vgui::TextEntry::GetAnimMap()
@@ -29109,7 +29072,7 @@ vgui::TextEntry::KB_ChainToMap()::chained
 vgui::TextEntry::LanguageChanged(int)
 vgui::TextEntry::LayoutVerticalScrollBarSlider()
 vgui::TextEntry::MoveCursor(int, int)
-vgui::TextEntry::NeedsEllipses(unsigned long, int*)
+vgui::TextEntry::NeedsEllipses(unsigned int, int*)
 vgui::TextEntry::OnCreateDragData(KeyValues*)
 vgui::TextEntry::OnCursorEntered()
 vgui::TextEntry::OnCursorExited()
@@ -29168,7 +29131,7 @@ vgui::TextEntry::SetDisabledBgColor(Color)
 vgui::TextEntry::SetDrawWidth(int)
 vgui::TextEntry::SetEditable(bool)
 vgui::TextEntry::SetEnabled(bool)
-vgui::TextEntry::SetFont(unsigned long)
+vgui::TextEntry::SetFont(unsigned int)
 vgui::TextEntry::SetHorizontalScrolling(bool)
 vgui::TextEntry::SetMaximumCharCount(int)
 vgui::TextEntry::SetMultiline(bool)
@@ -29180,7 +29143,7 @@ vgui::TextEntry::SetText(wchar_t const*)
 vgui::TextEntry::SetTextHidden(bool)
 vgui::TextEntry::SetToFullHeight()
 vgui::TextEntry::SetToFullWidth()
-vgui::TextEntry::SetUseFallbackFont(bool, unsigned long)
+vgui::TextEntry::SetUseFallbackFont(bool, unsigned int)
 vgui::TextEntry::SetVerticalScrollbar(bool)
 vgui::TextEntry::SetWrap(bool)
 vgui::TextEntry::ShowIMECandidates()
@@ -29203,11 +29166,11 @@ vgui::TextImage::ResizeImageToContent()
 vgui::TextImage::SetAllCaps(bool)
 vgui::TextImage::SetCenterWrap(bool)
 vgui::TextImage::SetDrawWidth(int)
-vgui::TextImage::SetFont(unsigned long)
+vgui::TextImage::SetFont(unsigned int)
 vgui::TextImage::SetSize(int, int)
 vgui::TextImage::SetText(char const*)
 vgui::TextImage::SetText(wchar_t const*, bool)
-vgui::TextImage::SetUseFallbackFont(bool, unsigned long)
+vgui::TextImage::SetUseFallbackFont(bool, unsigned int)
 vgui::TextImage::SetWrap(bool)
 vgui::TextImage::TextImage(char const*)
 vgui::TextImage::TextImage(wchar_t const*)
@@ -29240,7 +29203,7 @@ vgui::TileViewPanelEx::OnSliderMoved()
 vgui::TileViewPanelEx::Paint()
 vgui::TileViewPanelEx::PanelMessageFunc_OnSliderMoved::InitVar()::bAdded
 vgui::TileViewPanelEx::PerformLayout()
-vgui::TileViewPanelEx::SetFont(unsigned long)
+vgui::TileViewPanelEx::SetFont(unsigned int)
 vgui::TileViewPanelEx::TileViewPanelEx(vgui::Panel*, char const*)
 vgui::TileViewPanelEx::~TileViewPanelEx()
 vgui::ToggleButton::ApplySchemeSettings(vgui::IScheme*)
@@ -29304,7 +29267,7 @@ vgui::TreeNode::SelectNextChild(vgui::TreeNode*)
 vgui::TreeNode::SelectPrevChild(vgui::TreeNode*)
 vgui::TreeNode::SetBgColor(Color)
 vgui::TreeNode::SetFgColor(Color)
-vgui::TreeNode::SetFont(unsigned long)
+vgui::TreeNode::SetFont(unsigned int)
 vgui::TreeNode::SetKeyValues(KeyValues*)
 vgui::TreeNode::SetNodeExpanded(bool)
 vgui::TreeNode::SetVisible(bool)
@@ -29406,7 +29369,7 @@ vgui::TreeView::SelectAll()
 vgui::TreeView::SetAllowLabelEditing(bool)
 vgui::TreeView::SetBgColor(Color)
 vgui::TreeView::SetDragEnabledItems(bool)
-vgui::TreeView::SetFont(unsigned long)
+vgui::TreeView::SetFont(unsigned int)
 vgui::TreeView::SetImageList(vgui::ImageList*, bool)
 vgui::TreeView::SetItemBgColor(int, Color const&)
 vgui::TreeView::SetItemFgColor(int, Color const&)
@@ -30226,8 +30189,8 @@ wwwwww
 x "%f"
 xV42?downloadables
 x^_[]
+x`fff.
 x`fffff.
-xfffff.
 xffffff.
 xload
 xload <savename>
@@ -30250,6 +30213,7 @@ yoffset
 |^_[]
 |all_source_engine_paths|
 |fff.
+|ffff.
 |gameinfo_path|
 }5ff.
 ~	9H$~
@@ -30269,7 +30233,6 @@ yoffset
 ~.fffff.
 ~2Ffff.
 ~5fffff.
-~6Fff.
 ~:ff.
 ~;Ffff.
 ~<Ff.

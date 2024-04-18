@@ -13,7 +13,6 @@
   ---------- ------      ------
   ---------- ------      ---------- ------      ---------- ------   ------ ------
   ---------------------------------------------------- ----------- ----------- ----------- ------ ----------- ------ ----------- ----------- ----------- -----------
-  P0P 
   PP p
   Scope                                                      Calls Calls/Frame  Time+Child    Pct        Time    Pct   Avg/Frame    Avg/Call Avg-NoChild        Peak
  3SetEPv
@@ -21,25 +20,20 @@
  4WaitEj
  Avg Time/Frame (ms)
  CheckEv
+!0CVProfNode
+!2LockForWriteEv
 !3CWorkerThread12GetCallParamEPP8CFunctor
-!CompareExchange
-!Decrement
-!Exchange
-!ffff.
-"0CVProfNode
-"7CThread
-"Assign
-"Pointer
-"PointerIf
+!7CThread
+!WorkerThread
+"0UnlockReadEv
+"UnlockWriteEv
 "fffff.
-#2LockForWriteEv
-#UnlockWriteEv
-#WorkerThread
-$0UnlockReadEv
-$9CVProfile
-$UnlockWriteEv
+#9CVProfile
+$GetNameEv
 %.0f pct of time accounted for
+%1SetPriorityEi
 %8.4f / %8.4f:  %s
+%ResumeCooperativeEv
 %d frames sampled for %.2f seconds
 %ffffff.
 %s (%d) : 
@@ -54,35 +48,34 @@ $UnlockWriteEv
 %s"%s"
 %s:%i
 %zu %zu %zu %zu %zu %zu %zu
-&1SetPriorityEi
-&GetNameEv
-'21WaitForCreateCompleteEP12CThreadEvent
-'CleanupEv
-'JoinEj
-'ResumeCooperativeEv
-'uspendEv
-(32BWaitForThreadSuspendCooperativeEv
-(5IsThreadRunningEv
-(8SuspendCooperativeEv
-(9CVProfile
-(InitEv
-(TerminateEi
-(YieldEv
-(leepEj
-)0ThreadProcEPv
-)3GetThreadProcEv
-)OnExitEv
+&21WaitForCreateCompleteEP12CThreadEvent
+&32BWaitForThreadSuspendCooperativeEv
+&CleanupEv
+&InitEv
+&JoinEj
+&YieldEv
+&leepEj
+&uspendEv
+'0ThreadProcEPv
+'3GetThreadProcEv
+'5IsThreadRunningEv
+'8SuspendCooperativeEv
+'9CVProfile
+'OnExitEv
+'TerminateEi
+'fffff.
+(4CallEjjbPFjiPKP12CThreadEventijEP8CFunctor
+)2WaitForReplyEj
+)8PeekCallEPjPP8CFunctor
+)BoostPriorityEv
+)MasterEjj
 *** VCR ASSERT FAILED: %s ***
 ******** BEGIN VPROF REPORT ********
 ******** END VPROF REPORT ********
-*4CallEjjbPFjiPKP12CThreadEventijEP8CFunctor
-+1WaitForCallE
-+2WaitForReplyEj
-+8PeekCallEPjPP8CFunctor
-+BoostPriorityEv
-+MasterEjj
-,5ReplyEj
-,QueueTests
+*1WaitForCallE
+*5ReplyEj
+*QueueTests
+,5SetCurFrameTimeEm
 ,^_[]
 -- Hierarchical Call Graph --
 -- Profile scopes sorted by average time (including children) --
@@ -92,6 +85,12 @@ $UnlockWriteEv
 -- Profile scopes sorted by time (including children) --
 -- Profile scopes sorted by time (without children) --
 -- Summary --
+-22s_iCurrentUniqueNodeIDE
+-6ResumeEv
+-EnterScopeEv
+-MarkFrameEv
+-ResetEv
+-ResetPeakEv
 -debugbreak
 -etwprofile
 -mpi_worker
@@ -99,11 +98,9 @@ $UnlockWriteEv
 -nowatchdog
 -profile
 -raiseonassert
-.5SetCurFrameTimeEm
-.EnterScopeEv
-/22s_iCurrentUniqueNodeIDE
-/6ResumeEv
-/9DumpNodesEP10CVProfNodeib
+.9DumpNodesEP10CVProfNodeib
+.FindNodeEP10CVProfNodePKc
+/2OutputReportEiPKci
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr/include/ctype.h
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__functional_base
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/__split_buffer
@@ -117,10 +114,7 @@ $UnlockWriteEv
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/type_traits
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/utility
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector
-/FindNodeEP10CVProfNodePKc
-/MarkFrameEv
-/ResetEv
-/ResetPeakEv
+/HideBudgetGroupEib
 /Users/buildbot/buildslave/../.ccache/tmp/
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/tier0.build/Objects-normal/i386/assert_dialog.o
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/build/buildbot_osx.build/Release/tier0.build/Objects-normal/i386/commandline.o
@@ -191,69 +185,63 @@ $UnlockWriteEv
 /usr/lib/libSystem.B.dylib
 /usr/lib/libc++.1.dylib
 00@@`
+01FreeNodes_REP10CVProfNode
+04TermEv
+08RegisterNumBudgetGroupsChangedCallBackEPFvvE
 0@ 0 0
 0BudgetGroupNameToBudgetGroupIDEPKc
 0Call
 10CVProfNodei
-11FreeNodes_REP10CVProfNode
 12CCommandLine
 12ICommandLine
-12OutputReportEiPKci
 13AssertUseableEv
 13CWorkerThread
-14TermEv
 1ConColorMsgRK5ColorPKcz
 1EPFiPPviiEj
 1EPKPvi
-1HideBudgetGroupEib
+1Find
+1OrCreateCounterEPKc14CounterGroup_t
+23ResetCountersE14CounterGroup_t
 25CStackTop_CopyParentStack
-28RegisterNumBudgetGroupsChangedCallBackEPFvvE
 28ReleaseParentStackReferencesEv
 2CThread
 2EPFiPPviiEj
 2EPKPvi
-2Find
+2GetNumBudgetGroupsEv
 30CStackTop_ReferenceParentStack
-33ResetCountersE14CounterGroup_t
-3GetNumBudgetGroupsEv
-3OrCreateCounterEPKc14CounterGroup_t
-422GetCounterNameAndValueEiRi
-45GetCounter
-4CounterNameEi
+322GetCounterNameAndValueEiRi
+35GetCounter
+3CounterNameEi
+3GroupEi
+413CWorkerThread
+4V7CThread
 4WaitEj
 4fffff.
-513CWorkerThread
 5CClockSpeedInit4InitEv
-5GroupEi
-5V7CThread
-613CWorkerThread
+5ClockSpeed
+5SecondsMultiplier
+5VProf
+5dwClockSpeed
+5llisecondsMultiplier
 64BitOS
 6CThreadLocalBase
 6CThreadLocalBase3GetEv
-6ClockSpeed
+6CurrentProfile
 6SpinLockForWriteEj
-6dwClockSpeed
 7CThread
 7CThread11GetPriorityEv
 7CThreadSyncObjectntEv
-7CurrentProfile
-7SecondsMultiplier
-7VProf
-7llisecondsMultiplier
-8CreateSimpleThreadPFjPvES_Pmj
+8CreateSimpleThreadPFjPvES_Pjj
 9CVCRTrace
 9IMemAlloc
 9IVCRTrace
-:ffff.
-;;t)9
-;FDu[
+;FDu\
 <^_[]
 >7CThread
 ?12CStdMemAlloc
-@@      
+@@     
 @@@@     
 @P@pppppppppppppppppppp
-@_OSAtomicCompareAndSwap64
 @__DefaultRuneLocale
 @__Unwind_Resume
 @___bzero
@@ -346,13 +334,13 @@ $UnlockWriteEv
 @_pthread_self
 @_pthread_setschedparam
 @_pthread_setspecific
-@_pthread_yield_np
 @_raise
 @_rand
 @_read$UNIX2003
 @_realloc
 @_recv$UNIX2003
 @_recvfrom$UNIX2003
+@_sched_yield
 @_send$UNIX2003
 @_signal
 @_snprintf
@@ -365,6 +353,7 @@ $UnlockWriteEv
 @_strrchr
 @_strstr
 @_sysctl
+@_sysctlbyname
 @_thread_resume
 @_thread_suspend
 @_time
@@ -386,6 +375,7 @@ ASSERT: %s:%i: %s
 AbortOnAsserts
 Activate
 AddBudgetGroupNameEPKci
+Affffff.
 Affinity
 Alloc
 Always Ignore
@@ -489,7 +479,6 @@ CStdMemAlloc::SaveDebugInfo(void*)
 CStdMemAlloc::SetAllocFailHandler(unsigned long (*)(unsigned long))
 CStdMemAlloc::heapchk()
 CTSList
-CTSList<int>::PopItem(int*)
 CTSList<int>::~CTSList()
 CTSListBase: Misaligned list
 CTSListBase::~CTSListBase()
@@ -497,9 +486,7 @@ CTSQueue
 CTSQueue: Misaligned queue
 CTSQueue<int, true>::CTSQueue()
 CTSQueue<int, true>::Pop()
-CTSQueue<int, true>::PopItem(int*)
 CTSQueue<int, true>::Purge()
-CTSQueue<int, true>::Push(CTSQueue<int, true>::Node_t*)
 CTSQueue<int, true>::PushItem(int const&)
 CTSQueue<int, true>::~CTSQueue()
 CThread::BWaitForThreadSuspendCooperative()
@@ -609,6 +596,7 @@ CWorkerThread::WaitForReply(unsigned int)
 CWorkerThread::WaitForReply(unsigned int, unsigned int (*)(int, CThreadEvent* const*, int, unsigned int))
 CWorkerThread::~CWorkerThread()
 CalculateCPUFreq()
+CalculateClockSpeed()::freq
 CallStackStorageC
 Client_Animation
 ColorMsg
@@ -619,7 +607,7 @@ ConMsg(char const*, ...)
 ConWarning(char const*, ...)
 ConWarningPKcz
 Corefile
-CreateSimpleThread(unsigned int (*)(void*), void*, unsigned long*, unsigned int)
+CreateSimpleThread(unsigned int (*)(void*), void*, unsigned int*, unsigned int)
 CreateSimpleThread: pthread_create failed. Someone not calling pthread_detach() or pthread_join. Ret:%d
 Current
 DebugName
@@ -656,12 +644,10 @@ FileSystem
 FreeScratch
 FrequencyResults
 GenuineIntel
-Genuu
 GetBudgetGroupColorEiRiS0_S0_S0_
-GetCPUInformation::pi
 GetCallHandleEv
 GetCurrentCThreadEv
-GetProcessorVendorId()::VendorID
+GetProcessorBrand()
 GetResultEv
 GetSubNodeEPKciS1_
 Group
@@ -676,9 +662,10 @@ Ignore
 Ignore All Asserts
 Ignore This File
 Illegal termination of worker thread! Threads must negotiate an end to the thread before the CThread object is destroyed.
-Increment
+InMainThread
 Information
 Interpolation
+InterpretIntelCacheDescriptors(unsigned int)
 IsAliveEv
 IsDebugBreakEnabled()::bResult
 L^_[]
@@ -688,7 +675,6 @@ ListTests
 LockForReadEv
 LogPKcz
 MSTime
-MainThread
 MemAlloc
 MemAllocOOMError: %u bytes
 MemPageSize
@@ -727,7 +713,6 @@ Plat_FloatTime::sTimebaseInfo
 Plat_FloatTime::start_time
 Plat_IsInDebugSession::s_IsInDebugSession
 Player
-Pointer
 PopThread
 Prediction
 Priority
@@ -804,7 +789,7 @@ Tests done, purging test memory...
 Texture_Cache
 Thread failed to initialize
 Thread failed to respond, probably exited
-Thread(0x%x/0x%x)
+Thread(0x%p/0x%x)
 ThreadProcConvert(void*)
 ThreadRWLock1
 ThreadS
@@ -818,7 +803,7 @@ Unable to determine CPU Frequency
 Unaccounted
 Usage
 V16CThreadFastMutex4LockEjj
-VCR_CreateThread(void*, unsigned long, void*, void*, unsigned long, unsigned long*)
+VCR_CreateThread(void*, unsigned long, void*, void*, unsigned long, unsigned int*)
 VCR_End()
 VCR_EnterCriticalSection(void*)
 VCR_Error(char const*, ...)
@@ -948,7 +933,6 @@ _MsgV
 _NetLog
 _NetMsg
 _NetWarning
-_OSAtomicCompareAndSwap64
 _Plat_ApplyHardwareDataBreakpointsToNewThread
 _Plat_BeginWatchdogTimer
 _Plat_DebugString
@@ -999,18 +983,6 @@ _ThreadGetCurrentHandle
 _ThreadGetCurrentId
 _ThreadGetPriority
 _ThreadInMainThread
-_ThreadInterlockedAssignIf
-_ThreadInterlockedAssignIf64
-_ThreadInterlockedAssignPointerIf
-_ThreadInterlockedCompareExchange
-_ThreadInterlockedCompareExchange64
-_ThreadInterlockedCompareExchangePointer
-_ThreadInterlockedDecrement
-_ThreadInterlockedExchange
-_ThreadInterlockedExchange64
-_ThreadInterlockedExchangeAdd
-_ThreadInterlockedExchangePointer
-_ThreadInterlockedIncrement
 _ThreadJoin
 _ThreadSetAffinity
 _ThreadSetDebugName
@@ -1029,13 +1001,13 @@ __DATA
 __DSpewMessage
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_commandlin.stdout.rel_tf_osx_builder.8585.ghZfCh.ii
-__GLOBAL__sub_I_dbg.stdout.rel_tf_osx_builder.8590.AEGWC5.ii
-__GLOBAL__sub_I_fasttimer.stdout.rel_tf_osx_builder.8629.vGRrwR.ii
-__GLOBAL__sub_I_memstd.stdout.rel_tf_osx_builder.8642.s2QM9U.ii
-__GLOBAL__sub_I_threadtool.stdout.rel_tf_osx_builder.8720.MIYz7L.ii
-__GLOBAL__sub_I_tslist.stdout.rel_tf_osx_builder.8742.e1WvFv.ii
-__GLOBAL__sub_I_vprof.stdout.rel_tf_osx_builder.8751.oh2D6u.ii
+__GLOBAL__sub_I_commandlin.stdout.rel_tf_osx_builder.93131.fLIYrZ.ii
+__GLOBAL__sub_I_dbg.stdout.rel_tf_osx_builder.93137.QxXty8.ii
+__GLOBAL__sub_I_fasttimer.stdout.rel_tf_osx_builder.93184.RriMcf.ii
+__GLOBAL__sub_I_memstd.stdout.rel_tf_osx_builder.93204.w2zZNN.ii
+__GLOBAL__sub_I_threadtool.stdout.rel_tf_osx_builder.93282.LgOJKc.ii
+__GLOBAL__sub_I_tslist.stdout.rel_tf_osx_builder.93302.5I7Fuh.ii
+__GLOBAL__sub_I_vprof.stdout.rel_tf_osx_builder.93308.uI8xll.ii
 __LINKEDIT
 __SpewInfo
 __SpewMessage
@@ -1179,13 +1151,16 @@ _pthread_mutexattr_settype
 _pthread_self
 _pthread_setschedparam
 _pthread_setspecific
-_pthread_yield_np
 _raise
 _rand
 _read$UNIX2003
 _realloc
 _recv$UNIX2003
 _recvfrom$UNIX2003
+_s_CpuBrand
+_s_bCpuBrandInitialized
+_s_bCpuVendorIdInitialized
+_sched_yield
 _send$UNIX2003
 _signal
 _snprintf
@@ -1198,6 +1173,7 @@ _strncpy
 _strrchr
 _strstr
 _sysctl
+_sysctlbyname
 _thread_resume
 _thread_suspend
 _time
@@ -1246,14 +1222,15 @@ global constructors keyed to 000101
 gmtime
 guard variable for AreAssertsDisabled()::bResult
 guard variable for CSharedLibraryCache::GetCache()::Singleton
+guard variable for CalculateClockSpeed()::freq
 guard variable for DoNewAssertDialog::autoMutex__
-guard variable for GetCPUInformation::pi
 guard variable for IsDebugBreakEnabled()::bResult
 guard variable for SecureRandomBytes::s_dev_urandom_fd
 guard variable for ShouldUseNewAssertDialog::bMPIWorker
 hread
+hw.logicalcpu
+hw.physicalcpu
 impleLog
-ineIu%
 inidumpUserStreamInfo
 itPME
 l^_[]
@@ -1274,7 +1251,6 @@ ncodeBinaryToString
 ndWatchdogTimer
 network
 no affinity...
-ntelu'
 oNewAssertDialog
 odeBinaryFromString
 oduleNameFromAddress
@@ -1291,9 +1267,13 @@ ranslateStackInfo
 reAllAssertsDisabled
 riteMiniDump
 s_AssertFailedNotifyFunc
+s_CpuVendorID
 s_DefaultLevel
 s_DefaultOutputColor
 s_GroupCount
+s_IntelL1DataCacheDesc
+s_IntelL2DataCacheDesc
+s_IntelL3DataCacheDesc
 s_Line
 s_SpewOutputFunc
 s_SpewType
@@ -1301,6 +1281,7 @@ s_StdMemAlloc
 s_ThreadedLoadLibraryFunc
 s_WatchdogTime
 s_bInittedWD
+s_cpuInformation
 s_indentText
 s_nBufAllocSize
 s_nBufCurSize
@@ -1334,7 +1315,6 @@ t	9Zp
 tackToolsNotify_LoadedLibrary
 tartEj
 tchAndWriteMiniDump
-terlocked
 timegm
 timestamped.log
 typeinfo for CCommandLine

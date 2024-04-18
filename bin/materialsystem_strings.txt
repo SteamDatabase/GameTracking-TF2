@@ -149,6 +149,7 @@ $znearer
 *CMaterialSystem::Lock: %0.2fms
 *CMaterialSystem::Unlock: %0.2fms
 *fff.
+*ffff.
 ,^_[]
 ,fff.
 -1.000000
@@ -165,6 +166,7 @@ $znearer
 -noshaderapi
 -r_emulate_gl
 -threads
+-vulkan
 .@,s#
 .C(uO
 .K uS
@@ -597,8 +599,7 @@ $znearer
 9v u	9v$
 9v$uH
 9{8tJ
-:ffff.
-;;t)9
+;0t#9
 ;CDsc
 ;H4u*
 ;y$t>
@@ -673,12 +674,6 @@ $znearer
 @_SpewOutputFunc
 @_ThreadGetCurrentId
 @_ThreadInMainThread
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedAssignIf64
-@_ThreadInterlockedCompareExchangePointer
-@_ThreadInterlockedDecrement
-@_ThreadInterlockedExchange
-@_ThreadInterlockedIncrement
 @_ThreadJoin
 @_ThreadSetDebugName
 @_ThreadSleep
@@ -749,7 +744,6 @@ $znearer
 @_strlen
 @_strncasecmp
 @_strncat
-@_strncmp
 @_strncpy
 @_strspn
 @_strstr
@@ -786,7 +780,7 @@ ATI_DST24
 AVBSASA
 AYA\AUA`
 A`'BRB`7ARBXARAp
-A`kAWDp
+A`kAWCp
 AccumulatePatchKeyValues(KeyValues&, KeyValues&)
 AccumulateRecursiveVmtPatches(KeyValues&, KeyValues**, KeyValues const&, char const*, CUtlVector<void*, CUtlMemory<void*, int> >*)
 Affffff.
@@ -807,6 +801,7 @@ AsyncReader::ConvertTexelData(CUtlMemory<unsigned char, int>*, ImageFormat, CUtl
 AsyncReader::ReaderMain(void*)
 AsyncReader::ThreadMain_Update()
 AsyncReader::ThreadReader_ProcessRead(AsyncReadJob_t*)
+AsyncReader::~AsyncReader()
 Attempted to morph too many meshes in a single model!
 B ^_]
 B11IVTFTexture
@@ -831,7 +826,6 @@ BufferClearObeyStencil
 BuildGammaTable(float, float, float, int)
 BuiltDebug
 C 4uF
-C0+C@
 CAsyncCopyRequest::AddRef()
 CAsyncCopyRequest::GetRefCount() const
 CAsyncCopyRequest::OnAsyncCreateComplete(ITexture*, void*)
@@ -1191,6 +1185,7 @@ CDummyMaterialSystem::GetNumShaderParams(int) const
 CDummyMaterialSystem::GetNumShaders() const
 CDummyMaterialSystem::GetNumSortIDs()
 CDummyMaterialSystem::GetRecommendedConfigurationInfo(int, KeyValues*)
+CDummyMaterialSystem::GetRenderBackend() const
 CDummyMaterialSystem::GetRenderContext()
 CDummyMaterialSystem::GetRenderTarget()
 CDummyMaterialSystem::GetRenderTargetDimensions(int&, int&) const
@@ -2617,6 +2612,7 @@ CMaterialSystem::GetNullTextureFormat()
 CMaterialSystem::GetNumMaterials() const
 CMaterialSystem::GetNumSortIDs()
 CMaterialSystem::GetRecommendedConfigurationInfo(int, KeyValues*)
+CMaterialSystem::GetRenderBackend() const
 CMaterialSystem::GetRenderCallQueue()
 CMaterialSystem::GetRenderContext()
 CMaterialSystem::GetRenderTargetEx(int)
@@ -3153,7 +3149,6 @@ COcclusionQueryMgr::ResetOcclusionQueryObject(OcclusionQueryObjectHandle_t__*)
 COcclusionQueryMgr::~COcclusionQueryMgr()
 CPixelWriter::SetPixelMemory(ImageFormat, void*, int)::format_error_printed
 CPixelWriter::SetPixelMemory:  Unsupported image format %i
-CRDRBp
 CRefCountServiceBase<true, CRefMT>::OnFinalRelease()
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::AddRef()
 CRefCounted1<CFunctor, CRefCountServiceBase<true, CRefMT> >::Release()
@@ -3346,32 +3341,20 @@ CTSListBase: Misaligned list
 CTSQueue: Misaligned queue
 CTSQueue<AsyncLoadJob_t*, false>::CTSQueue()
 CTSQueue<AsyncLoadJob_t*, false>::Pop()
-CTSQueue<AsyncLoadJob_t*, false>::PopItem(AsyncLoadJob_t**)
 CTSQueue<AsyncLoadJob_t*, false>::Purge()
-CTSQueue<AsyncLoadJob_t*, false>::Push(CTSQueue<AsyncLoadJob_t*, false>::Node_t*)
 CTSQueue<AsyncLoadJob_t*, false>::PushItem(AsyncLoadJob_t* const&)
-CTSQueue<AsyncLoadJob_t*, false>::~CTSQueue()
 CTSQueue<AsyncReadJob_t*, false>::CTSQueue()
 CTSQueue<AsyncReadJob_t*, false>::Pop()
-CTSQueue<AsyncReadJob_t*, false>::PopItem(AsyncReadJob_t**)
 CTSQueue<AsyncReadJob_t*, false>::Purge()
-CTSQueue<AsyncReadJob_t*, false>::Push(CTSQueue<AsyncReadJob_t*, false>::Node_t*)
 CTSQueue<AsyncReadJob_t*, false>::PushItem(AsyncReadJob_t* const&)
-CTSQueue<AsyncReadJob_t*, false>::~CTSQueue()
 CTSQueue<ITextureInternal*, false>::CTSQueue()
 CTSQueue<ITextureInternal*, false>::Pop()
-CTSQueue<ITextureInternal*, false>::PopItem(ITextureInternal**)
 CTSQueue<ITextureInternal*, false>::Purge()
-CTSQueue<ITextureInternal*, false>::Push(CTSQueue<ITextureInternal*, false>::Node_t*)
 CTSQueue<ITextureInternal*, false>::PushItem(ITextureInternal* const&)
-CTSQueue<ITextureInternal*, false>::~CTSQueue()
 CTSQueue<IVTFTexture*, false>::CTSQueue()
 CTSQueue<IVTFTexture*, false>::Pop()
-CTSQueue<IVTFTexture*, false>::PopItem(IVTFTexture**)
 CTSQueue<IVTFTexture*, false>::Purge()
-CTSQueue<IVTFTexture*, false>::Push(CTSQueue<IVTFTexture*, false>::Node_t*)
 CTSQueue<IVTFTexture*, false>::PushItem(IVTFTexture* const&)
-CTSQueue<IVTFTexture*, false>::~CTSQueue()
 CTexture::AllocateShaderAPITextures()
 CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)
 CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)::bReplayInit
@@ -3385,7 +3368,6 @@ CTexture::Bind(Sampler_t)
 CTexture::Bind(Sampler_t, int, Sampler_t)
 CTexture::Bind(Sampler_t, int, Sampler_t)::__executeCount
 CTexture::BindVertexTexture(VertexTextureSampler_t, int)
-CTexture::CTexture()
 CTexture::ComputeActualFormat(ImageFormat)
 CTexture::ConvertToActualFormat(IVTFTexture*)
 CTexture::CopyFrameBufferToMe(int, Rect_t*, Rect_t*)
@@ -3952,7 +3934,7 @@ Cannot set the shader API twice!
 CaselessStringLessThan(char const* const&, char const* const&)
 CeilPow2(int)
 Cffffff.
-ColorCorrection - %d
+ColorCorrection - %llu
 ColorCorrectionLookup_t::~ColorCorrectionLookup_t()
 ColorSpace::LinearFloatToCorrectedShort(float)
 ColorSpace::SetGamma(float, float, float, bool, bool)
@@ -4025,6 +4007,7 @@ CreateVTFTexture()
 CubeMap textures
 D$ ff&@
 DHzff.
+DRBRDp
 DXT1_ONEBITALPHA
 DXT1_RUNTIME
 DXT5_RUNTIME
@@ -4100,6 +4083,7 @@ F$^_[]
 F21CMatRenderContextBase
 F;s<|
 F;w0|
+F<;F,
 FL@9FD}C
 Failed to ParseRangeFromKV: key name [%s], key val [%s]
 Failed to create texture '%s', will replace with error texture at usage time.
@@ -4126,8 +4110,8 @@ Force sync to vertical retrace
 Forcing queued mode off!
 Freeing optimal read buffer of %d bytes @ 0x%p for thread %d
 G  u,
+G0+G@
 G;~4|
-G<;G,
 GAMEBIN
 Game shader '%s' trying to override a base shader '%s'.
 GammaToLinear(float)
@@ -4162,7 +4146,6 @@ Handling alt-tab in queued mode!
 HasCycle(CTextureCompositorTemplate*)
 Height and width must be equal for cubemaps!
 Helper
-Hffff.
 IKeyValuesDumpContextAsText::KvEndKey(KeyValues*, int)
 IKeyValuesDumpContextAsText::KvWriteIndent(int)
 IKeyValuesDumpContextAsText::KvWriteValue(KeyValues*, int)
@@ -4315,7 +4298,6 @@ Invalid texture_lookup node, must specify at least texture (or texture_red and t
 Invalid vector component (%d) of variable %s referenced in material %s
 IsEmulatingGL()::bIsEmulatingGL
 JL9OD}F
-K0+K@
 KeyValues Error: %s in file %s
 KeyValues::AddSubKey(KeyValues*)
 KeyValues::ChainKeyValue(KeyValues*)
@@ -4431,6 +4413,7 @@ NetworkSystemVersion001
 Nfffff.
 No such file
 No such variable "%s" for material "%s"
+O0+O@
 OP#W\
 Offfff.
 Other textures
@@ -4441,14 +4424,13 @@ P p00
 P0 P0   
 P@PPP
 P@pppp
-PP    0    
+PP    0  
 PP0PPPP0PP
 PPP00
-PPP0p
 PPP@@@@@@@00p00@@@00pPPP@@@@@00P`0@0@
 PP`@@
 PP``pPPPPPPPP
-P`` @
+P`` 0
 P``PPP
 ParseBoolFromKV(KeyValues*, void*)
 ParseInverseRangeFromKV(KeyValues*, void*)
@@ -4480,12 +4462,12 @@ QueuedLoaderVersion004
 RAVASARARIp
 RAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARCVATDp
 RAVASAp
-RAVASCRAVASARAVASARKVASARGVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASAREVASARAVASARAVASARAVASARCVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARCVASARAVASARAVASARAVASARAVASAREVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARGVASAR0<VASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARBRDp
+RAVASCRAVASARAVASARKVASARGVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASAREVASARAVASARAVASARAVASARCVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARCVASARAVASARAVASARAVASARAVASAREVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARGVASAR0<VASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARAVASARBRBRDp
 RAVATBRAVATBRAVATBRAVATBRBVASBRB`
 RAZATBp
 RBRAVARBRARAp
 RBRAWARATAZATBRDSCRAZATBRAVATBRBp
-RBRBRBRBRBRBRBp
+RBRBRBRBRBRBp
 RBSEpHp4p4p8pH
 RCTEWATA`
 RDRA`'A`
@@ -4593,6 +4575,7 @@ Unknown
 Unknown material %s
 UnlitGeneric
 Usage: mat_reloadmaterial material_name_substring
+Using shader api: %s
 Using wireframe instead...
 V0`VBXBRBp
 VASDp
@@ -4728,12 +4711,6 @@ _SinCosTable
 _SpewOutputFunc
 _ThreadGetCurrentId
 _ThreadInMainThread
-_ThreadInterlockedAssignIf
-_ThreadInterlockedAssignIf64
-_ThreadInterlockedCompareExchangePointer
-_ThreadInterlockedDecrement
-_ThreadInterlockedExchange
-_ThreadInterlockedIncrement
 _ThreadJoin
 _ThreadSetDebugName
 _ThreadSleep
@@ -4750,28 +4727,28 @@ __CreateMaterialSystem_Config_tMaterialSystem_Config_t_interface()
 __DATA
 __DefaultRuneLocale
 __ExitOnFatalAssert
-__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.56269.Ynd5cJ.ii
-__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.56272.tjFdOY.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
-__GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.56207.UrAC90.ii
-__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.56270.twEBL5.ii
-__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.56273.q0U3DW.ii
-__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.56274.75ywU1.ii
-__GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.56300.LoAPaJ.ii
-__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.56316.riqdz7.ii
-__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.56326.3n8cqY.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
-__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.56338.LdGZP9.ii
-__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.56339.XlJ0Pi.ii
-__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.56368.pRXmqw.ii
-__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.56367.ZKzxRI.ii
-__GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.56380.0p1oFK.ii
-__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.56382.AfM4DP.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
-__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.56392.3ImEfG.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
-__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.55898.EeKUFF.ii
+__GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.95903.sQ5Nq4.ii
+__GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.95906.kmfCSj.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+__GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.95836.xxNEy7.ii
+__GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.95904.36jW9I.ii
+__GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.95907.EQxlc8.ii
+__GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.95908.zoluLN.ii
+__GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.95934.Hh72CT.ii
+__GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.95963.hwhQ0D.ii
+__GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.95967.N1x4Or.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+__GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.95979.SSBtBf.ii
+__GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.95982.SHaAnb.ii
+__GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.96001.xnYmpH.ii
+__GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.96011.AZodIE.ii
+__GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.96013.e5CUC6.ii
+__GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.96023.Xu3sWO.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+__GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.96024.xwjw0X.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+__GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.94232.Mq5QYc.ii
 __LINKEDIT
 __SpewInfo
 __SpewMessage
@@ -4989,7 +4966,6 @@ _strcpy
 _strlen
 _strncasecmp
 _strncat
-_strncmp
 _strncpy
 _strspn
 _strstr
@@ -5759,6 +5735,7 @@ scale_uv
 select
 shader_error
 shaderapidx9
+shaderapivk
 snd_cull_duplicates
 snd_spatialize_roundrobin
 startFrame
@@ -5779,9 +5756,9 @@ stdshader_dx%d%s
 sticker
 subrect
 sv_alternateticks
-t$;C`u
+t$;G`u
 t$fff.
-t';K`u
+t';O`u
 t*fffff.
 t+ff.
 t/ffffff.
@@ -5790,8 +5767,8 @@ t4fffff.
 t5G;}
 t8ff.
 tKff.
+tO;GLu
 tR9v u
-tX;CLu
 t\ff.
 teffffff.
 template
@@ -6246,9 +6223,10 @@ typeinfo name for ITextureRegenerator
 typeinfo name for IVTFTexture
 typeinfo name for IVertexBuffer
 typeinfo name for base_vector_t
+u!ffffff.
 u64( %lld = 0x%llX )
-uUH+C@
-uVH+C@
+uOH+G@
+uUH+G@
 unknown
 unnamed
 unrecognized conditional test %s in %s
@@ -6543,6 +6521,8 @@ vtable for ConVar
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
+w ffffff.
+w@fff.
 weight
 white
 width
@@ -6555,10 +6535,12 @@ zfff.
 |fff.
 }?ff.
 }fffff.
+~ fffff.
 ~.fffff.
 ~6fff.
-~>Gff.
-~?Gfff.
+~>Fff.
+~@fffff.
 ~@ffffff.
 ~Lfff.
 ~Rfff.
+~`fff.

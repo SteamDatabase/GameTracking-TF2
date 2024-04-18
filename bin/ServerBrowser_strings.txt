@@ -730,8 +730,6 @@ $ffff.
 @_SteamInternal_CreateInterface
 @_SteamInternal_FindOrCreateUserInterface
 @_ThreadGetCurrentId
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedExchange
 @_Warning
 @__DefaultRuneLocale
 @__Unwind_Resume
@@ -1819,8 +1817,8 @@ CUtlVector<serverqualitysort_t, CUtlMemory<serverqualitysort_t, int> >::~CUtlVec
 CUtlVector<tagentry_t, CUtlMemory<tagentry_t, int> >::~CUtlVector()
 CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::InsertBefore(int, unsigned char const&)
 CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
+CUtlVector<unsigned int, CUtlMemory<unsigned int, int> >::AddToTail(unsigned int const&)
 CUtlVector<unsigned int, CUtlMemory<unsigned int, int> >::~CUtlVector()
-CUtlVector<unsigned long, CUtlMemory<unsigned long, int> >::~CUtlVector()
 CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::AddToTail(unsigned short const&)
 CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
 CUtlVector<vgui::AnimationController::ActiveAnimation_t, CUtlMemory<vgui::AnimationController::ActiveAnimation_t, int> >::~CUtlVector()
@@ -2604,11 +2602,11 @@ STEAMINVENTORY_INTERFACE_V003
 STEAMMUSICREMOTE_INTERFACE_VERSION001
 STEAMMUSIC_INTERFACE_VERSION001
 STEAMPARENTALSETTINGS_INTERFACE_VERSION001
-STEAMREMOTESTORAGE_INTERFACE_VERSION014
+STEAMREMOTESTORAGE_INTERFACE_VERSION016
 STEAMSCREENSHOTS_INTERFACE_VERSION003
-STEAMUGC_INTERFACE_VERSION015
+STEAMUGC_INTERFACE_VERSION017
 STEAMUSERSTATS_INTERFACE_VERSION012
-STEAMVIDEO_INTERFACE_V002
+STEAMVIDEO_INTERFACE_V004
 Save button - saves all settings to file. 
 SaveButton
 ScalableImagePanel
@@ -2713,7 +2711,7 @@ SteamGameSearch()::s_CallbackCounterAndContext
 SteamHTMLSurface()::s_CallbackCounterAndContext
 SteamHTTP()::s_CallbackCounterAndContext
 SteamInput()::s_CallbackCounterAndContext
-SteamInput003
+SteamInput006
 SteamInternal_Init_SteamAppList(ISteamAppList**)
 SteamInternal_Init_SteamApps(ISteamApps**)
 SteamInternal_Init_SteamClient(ISteamClient**)
@@ -2752,7 +2750,7 @@ SteamRemoteStorage()::s_CallbackCounterAndContext
 SteamScreenshots()::s_CallbackCounterAndContext
 SteamUGC()::s_CallbackCounterAndContext
 SteamUser()::s_CallbackCounterAndContext
-SteamUser021
+SteamUser023
 SteamUserStats()::s_CallbackCounterAndContext
 SteamUtils()::s_CallbackCounterAndContext
 SteamUtils010
@@ -3036,62 +3034,60 @@ _SteamInternal_ContextInit
 _SteamInternal_CreateInterface
 _SteamInternal_FindOrCreateUserInterface
 _ThreadGetCurrentId
-_ThreadInterlockedAssignIf
-_ThreadInterlockedExchange
 _Warning
 __CreateCServerBrowserIServerBrowser_interface()
 __CreateCServerBrowserIVGuiModule_interface()
 __DATA
 __DefaultRuneLocale
-__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.19745.vun4Gs.ii
-__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.19746.obxAFg.ii
-__GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.29383.ohnJw2.ii
-__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.19747.9FbHlk.ii
-__GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.29384.Zex4iC.ii
-__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.19748.lUD9rK.ii
-__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.19749.v50qgP.ii
-__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.19750.vwa8YC.ii
-__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.19751.t3iqtH.ii
-__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.19794.fygRaU.ii
-__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.19795.GXBk9A.ii
-__GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.29385.E5lnDr.ii
-__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.19816.8YuSPP.ii
-__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.19825.ipjJmB.ii
-__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.19835.HwCM6z.ii
-__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.19836.ZMdMVV.ii
-__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.19840.g6LTiG.ii
-__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.19865.DBGr69.ii
-__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.19869.gMqwMc.ii
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
-__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.19909.E2h6D7.ii
-__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.19913.2E2vcN.ii
-__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.19921.7Y5YAa.ii
-__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.19924.9GH0nN.ii
-__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.19934.VUbte9.ii
-__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.19945.13Eb0j.ii
-__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.19949.zEjDAP.ii
-__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.19954.fPYa7S.ii
-__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.19960.2C7yns.ii
-__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.19973.tuLP9J.ii
-__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.19991.NTdi9k.ii
-__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.20031.BqloHq.ii
-__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.20030.o3UFhL.ii
-__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.20059.WH5JaT.ii
-__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.20074.5nyzf3.ii
-__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.29447.XSLp5R.ii
-__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.29468.QUCwht.ii
-__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.20089.QvCwkF.ii
-__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.20095.K6RoEP.ii
-__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.20104.BDQxup.ii
-__GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.20115.aGz5wr.ii
-__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.20117.Czb5eV.ii
-__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.20127.Plhszf.ii
-__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.20137.P44kdn.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
-__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
-__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.20575.0aXmE3.ii
+__GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.96208.lrtgQy.ii
+__GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.96209.bcVBr1.ii
+__GLOBAL__sub_I_BaseGamesP.stdout.rel_tf_osx_builder.33499.ArXy4q.ii
+__GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.96210.7az4SA.ii
+__GLOBAL__sub_I_Blackliste.stdout.rel_tf_osx_builder.33500.JTtUIk.ii
+__GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.96212.71yXqX.ii
+__GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.96244.KvCeZu.ii
+__GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.96255.uKTKM9.ii
+__GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.96261.SWf36c.ii
+__GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.96268.66eoVR.ii
+__GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.96277.8PXYbJ.ii
+__GLOBAL__sub_I_CustomGame.stdout.rel_tf_osx_builder.33501.RbNQL5.ii
+__GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.96303.KC26hc.ii
+__GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.96311.yR5w3W.ii
+__GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.96316.TI9Qwz.ii
+__GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.96321.Lj7TVr.ii
+__GLOBAL__sub_I_FileOpenDi.stdout.rel_tf_osx_builder.96332.cJFzsF.ii
+__GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.96349.C8mTQl.ii
+__GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.96376.6scsWC.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+__GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.96411.p55FLF.ii
+__GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.96417.UuevlR.ii
+__GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.96418.Sy0wEt.ii
+__GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.22182.1DfQ6v.ii
+__GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.96437.fGaypT.ii
+__GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.96443.gWApzI.ii
+__GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.96447.d4To5v.ii
+__GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.96455.T8DTl5.ii
+__GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.96461.xczuTY.ii
+__GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.96463.H78JlL.ii
+__GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.96490.JyzsWw.ii
+__GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.96525.UZafB7.ii
+__GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.22186.vRXPMR.ii
+__GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.96555.ASpokc.ii
+__GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.96565.IYLizm.ii
+__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.33570.E6cHSt.ii
+__GLOBAL__sub_I_ServerBrow.stdout.rel_tf_osx_builder.33576.9GNKNd.ii
+__GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.96579.JIRMep.ii
+__GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.96599.yPO438.ii
+__GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.96617.t6OeiE.ii
+__GLOBAL__sub_I_ToolWindow.stdout.rel_tf_osx_builder.96629.M15Vlg.ii
+__GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.96630.DDgXio.ii
+__GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.96637.J8kETp.ii
+__GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.96641.FNqzqY.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+__GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+__GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.22484.eSw19J.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -4863,7 +4859,7 @@ vgui::CTreeViewListControl::RecalculateRows_R(int)
 vgui::CTreeViewListControl::SetBorderColor(Color)
 vgui::CTreeViewListControl::SetColumnInfo(int, char const*, int, int)
 vgui::CTreeViewListControl::SetNumColumns(int)
-vgui::CTreeViewListControl::SetTitleBarInfo(unsigned long, int)
+vgui::CTreeViewListControl::SetTitleBarInfo(unsigned int, int)
 vgui::CTreeViewListControl::SetTreeView(vgui::TreeView*)
 vgui::CTreeViewListControl::~CTreeViewListControl()
 vgui::CheckButton
@@ -4969,13 +4965,13 @@ vgui::ComboBox::PanelMessageFunc_OnSetText::InitVar()::bAdded
 vgui::ComboBox::PerformLayout()
 vgui::ComboBox::RemoveAll()
 vgui::ComboBox::SetDropdownButtonVisible(bool)
-vgui::ComboBox::SetFont(unsigned long)
+vgui::ComboBox::SetFont(unsigned int)
 vgui::ComboBox::SetItemEnabled(char const*, bool)
 vgui::ComboBox::SetItemEnabled(int, bool)
 vgui::ComboBox::SetMenu(vgui::Menu*)
 vgui::ComboBox::SetNumberOfEditLines(int)
 vgui::ComboBox::SetOpenDirection(vgui::Menu::MenuDirection_e)
-vgui::ComboBox::SetUseFallbackFont(bool, unsigned long)
+vgui::ComboBox::SetUseFallbackFont(bool, unsigned int)
 vgui::ComboBox::ShowMenu()
 vgui::ComboBox::SortItems()
 vgui::ComboBox::UpdateItem(int, char const*, KeyValues const*)
@@ -5036,7 +5032,6 @@ vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnApplyChanges::InitV
 vgui::CvarToggleCheckButton<UIConVarRef>::PanelMessageFunc_OnButtonChecked::InitVar()::bAdded
 vgui::CvarToggleCheckButton<UIConVarRef>::SetSelected(bool)
 vgui::CvarToggleCheckButton<UIConVarRef>::~CvarToggleCheckButton()
-vgui::Dar<unsigned long>::AddElement(unsigned long)
 vgui::Divider::ApplySchemeSettings(vgui::IScheme*)
 vgui::Divider::ChainToAnimationMap()::chained
 vgui::Divider::ChainToMap()::chained
@@ -5362,7 +5357,7 @@ vgui::Image::DrawSetColor(Color)
 vgui::Image::DrawSetColor(int, int, int, int)
 vgui::Image::DrawSetTextColor(Color)
 vgui::Image::DrawSetTextColor(int, int, int, int)
-vgui::Image::DrawSetTextFont(unsigned long)
+vgui::Image::DrawSetTextFont(unsigned int)
 vgui::Image::DrawSetTextPos(int, int)
 vgui::Image::DrawSetTexture(int)
 vgui::Image::DrawTexturedRect(int, int, int, int)
@@ -5480,7 +5475,7 @@ vgui::Label::SetDisabledFgColor1(Color)
 vgui::Label::SetDisabledFgColor2(Color)
 vgui::Label::SetEnabled(bool)
 vgui::Label::SetFgColor(Color)
-vgui::Label::SetFont(unsigned long)
+vgui::Label::SetFont(unsigned int)
 vgui::Label::SetHotkey(wchar_t)
 vgui::Label::SetImageAtIndex(int, vgui::IImage*, int)
 vgui::Label::SetImageBounds(int, int, int)
@@ -5586,7 +5581,7 @@ vgui::ListPanel::SetColumnTextAlignment(int, int)
 vgui::ListPanel::SetColumnVisible(int, bool)
 vgui::ListPanel::SetEmptyListText(char const*)
 vgui::ListPanel::SetEmptyListText(wchar_t const*)
-vgui::ListPanel::SetFont(unsigned long)
+vgui::ListPanel::SetFont(unsigned int)
 vgui::ListPanel::SetImageList(vgui::ImageList*, bool)
 vgui::ListPanel::SetItemDisabled(int, bool)
 vgui::ListPanel::SetItemVisible(int, bool)
@@ -5658,7 +5653,7 @@ vgui::ListViewPanel::PanelMessageFunc_OnSliderMoved::InitVar()::bAdded
 vgui::ListViewPanel::PerformLayout()
 vgui::ListViewPanel::RemoveItem(int)
 vgui::ListViewPanel::ScrollToItem(int)
-vgui::ListViewPanel::SetFont(unsigned long)
+vgui::ListViewPanel::SetFont(unsigned int)
 vgui::ListViewPanel::SetImageList(vgui::ImageList*, bool)
 vgui::ListViewPanel::SetSingleSelectedItem(int)
 vgui::ListViewPanel::SetSortFunc(bool (*)(KeyValues*, KeyValues*))
@@ -5757,7 +5752,7 @@ vgui::Menu::SetCurrentlyHighlightedItem(int)
 vgui::Menu::SetCurrentlySelectedItem(int)
 vgui::Menu::SetFgColor(Color)
 vgui::Menu::SetFixedWidth(int)
-vgui::Menu::SetFont(unsigned long)
+vgui::Menu::SetFont(unsigned int)
 vgui::Menu::SetItemEnabled(char const*, bool)
 vgui::Menu::SetItemEnabled(int, bool)
 vgui::Menu::SetItemVisible(char const*, bool)
@@ -5766,7 +5761,7 @@ vgui::Menu::SetMenuItemChecked(int, bool)
 vgui::Menu::SetMenuItemHeight(int)
 vgui::Menu::SetNumberOfVisibleItems(int)
 vgui::Menu::SetTypeAheadMode(vgui::Menu::MenuTypeAheadMode)
-vgui::Menu::SetUseFallbackFont(bool, unsigned long)
+vgui::Menu::SetUseFallbackFont(bool, unsigned int)
 vgui::Menu::SetVisible(bool)
 vgui::Menu::SilentActivateItem(int)
 vgui::Menu::UpdateMenuItem(int, char const*, KeyValues*, KeyValues const*)
@@ -6239,7 +6234,7 @@ vgui::Panel::SetBounds(int, int, int, int)
 vgui::Panel::SetBuildGroup(vgui::BuildGroup*)
 vgui::Panel::SetBuildModeDeletable(bool)
 vgui::Panel::SetBuildModeEditable(bool)
-vgui::Panel::SetCursor(unsigned long)
+vgui::Panel::SetCursor(unsigned int)
 vgui::Panel::SetCursorAlwaysVisible(bool)
 vgui::Panel::SetDragEnabled(bool)
 vgui::Panel::SetDragSTartTolerance(int)
@@ -6264,7 +6259,7 @@ vgui::Panel::SetPos(int, int)
 vgui::Panel::SetPostChildPaintEnabled(bool)
 vgui::Panel::SetProportional(bool)
 vgui::Panel::SetScheme(char const*)
-vgui::Panel::SetScheme(unsigned long)
+vgui::Panel::SetScheme(unsigned int)
 vgui::Panel::SetShowDragHelper(bool)
 vgui::Panel::SetSilentMode(bool)
 vgui::Panel::SetSize(int, int)
@@ -6504,7 +6499,7 @@ vgui::RichText::CopySelected()
 vgui::RichText::CreateEditMenu()
 vgui::RichText::CursorToPixelSpace(int, int&, int&)
 vgui::RichText::CutSelected()
-vgui::RichText::DrawString(int, int, vgui::RichText::TRenderState&, unsigned long)
+vgui::RichText::DrawString(int, int, vgui::RichText::TRenderState&, unsigned int)
 vgui::RichText::FinishingURL(int, int)
 vgui::RichText::GetAnimMap()
 vgui::RichText::GetDescription()
@@ -6734,7 +6729,7 @@ vgui::TextEntry::CursorToPixelSpace(int, int&, int&)
 vgui::TextEntry::CutSelected()
 vgui::TextEntry::Delete()
 vgui::TextEntry::DeleteSelected()
-vgui::TextEntry::DrawChar(wchar_t, unsigned long, int, int, int)
+vgui::TextEntry::DrawChar(wchar_t, unsigned int, int, int, int)
 vgui::TextEntry::DrawCursor(int, int)
 vgui::TextEntry::FireActionSignal()
 vgui::TextEntry::GetAnimMap()
@@ -6783,7 +6778,7 @@ vgui::TextEntry::KB_ChainToMap()::chained
 vgui::TextEntry::LanguageChanged(int)
 vgui::TextEntry::LayoutVerticalScrollBarSlider()
 vgui::TextEntry::MoveCursor(int, int)
-vgui::TextEntry::NeedsEllipses(unsigned long, int*)
+vgui::TextEntry::NeedsEllipses(unsigned int, int*)
 vgui::TextEntry::OnCreateDragData(KeyValues*)
 vgui::TextEntry::OnCursorEntered()
 vgui::TextEntry::OnCursorExited()
@@ -6842,7 +6837,7 @@ vgui::TextEntry::SetDisabledBgColor(Color)
 vgui::TextEntry::SetDrawWidth(int)
 vgui::TextEntry::SetEditable(bool)
 vgui::TextEntry::SetEnabled(bool)
-vgui::TextEntry::SetFont(unsigned long)
+vgui::TextEntry::SetFont(unsigned int)
 vgui::TextEntry::SetHorizontalScrolling(bool)
 vgui::TextEntry::SetMaximumCharCount(int)
 vgui::TextEntry::SetMultiline(bool)
@@ -6854,7 +6849,7 @@ vgui::TextEntry::SetText(wchar_t const*)
 vgui::TextEntry::SetTextHidden(bool)
 vgui::TextEntry::SetToFullHeight()
 vgui::TextEntry::SetToFullWidth()
-vgui::TextEntry::SetUseFallbackFont(bool, unsigned long)
+vgui::TextEntry::SetUseFallbackFont(bool, unsigned int)
 vgui::TextEntry::SetVerticalScrollbar(bool)
 vgui::TextEntry::SetWrap(bool)
 vgui::TextEntry::ShowIMECandidates()
@@ -6877,11 +6872,11 @@ vgui::TextImage::ResizeImageToContent()
 vgui::TextImage::SetAllCaps(bool)
 vgui::TextImage::SetCenterWrap(bool)
 vgui::TextImage::SetDrawWidth(int)
-vgui::TextImage::SetFont(unsigned long)
+vgui::TextImage::SetFont(unsigned int)
 vgui::TextImage::SetSize(int, int)
 vgui::TextImage::SetText(char const*)
 vgui::TextImage::SetText(wchar_t const*, bool)
-vgui::TextImage::SetUseFallbackFont(bool, unsigned long)
+vgui::TextImage::SetUseFallbackFont(bool, unsigned int)
 vgui::TextImage::SetWrap(bool)
 vgui::TextImage::TextImage(char const*)
 vgui::TextImage::TextImage(wchar_t const*)
@@ -6954,7 +6949,7 @@ vgui::TreeNode::SelectNextChild(vgui::TreeNode*)
 vgui::TreeNode::SelectPrevChild(vgui::TreeNode*)
 vgui::TreeNode::SetBgColor(Color)
 vgui::TreeNode::SetFgColor(Color)
-vgui::TreeNode::SetFont(unsigned long)
+vgui::TreeNode::SetFont(unsigned int)
 vgui::TreeNode::SetKeyValues(KeyValues*)
 vgui::TreeNode::SetNodeExpanded(bool)
 vgui::TreeNode::SetVisible(bool)
@@ -7056,7 +7051,7 @@ vgui::TreeView::SelectAll()
 vgui::TreeView::SetAllowLabelEditing(bool)
 vgui::TreeView::SetBgColor(Color)
 vgui::TreeView::SetDragEnabledItems(bool)
-vgui::TreeView::SetFont(unsigned long)
+vgui::TreeView::SetFont(unsigned int)
 vgui::TreeView::SetImageList(vgui::ImageList*, bool)
 vgui::TreeView::SetItemBgColor(int, Color const&)
 vgui::TreeView::SetItemFgColor(int, Color const&)

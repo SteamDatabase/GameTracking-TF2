@@ -616,9 +616,7 @@
  T AdjustAsyncIOSpeed()
  T AsyncOpenedFile_t::~AsyncOpenedFile_t()
  T BaseFileSystem()
- T CAsyncOpenedFiles::AddRef(FSAsyncFile_t__*)
  T CAsyncOpenedFiles::FindOrAdd(char const*)
- T CAsyncOpenedFiles::Get(FSAsyncFile_t__*)
  T CAsyncOpenedFiles::Release(FSAsyncFile_t__*)
  T CAsyncOpenedFiles::~CAsyncOpenedFiles()
  T CBaseAppSystem<IQueuedLoader>::QueryInterface(char const*)
@@ -658,7 +656,6 @@
  T CBaseFileSystem::CFileCacheObject::AddFiles(char const**, int)
  T CBaseFileSystem::CFileCacheObject::IOCallback(FileAsyncRequest_t const&, int, FSAsyncStatus_t)
  T CBaseFileSystem::CFileCacheObject::~CFileCacheObject()
- T CBaseFileSystem::CSearchPath::~CSearchPath()
  T CBaseFileSystem::CSearchPathsIterator::CSearchPathsIterator(CBaseFileSystem*, char const**, char const*, PathTypeFilter_t)
  T CBaseFileSystem::CSearchPathsIterator::CSearchPathsIterator(CBaseFileSystem*, char const*, PathTypeFilter_t)
  T CBaseFileSystem::CSearchPathsIterator::CopySearchPaths(CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> > const&)
@@ -1039,19 +1036,14 @@
  T CStringPoolBase<unsigned int>::~CStringPoolBase()
  T CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::Purge()
  T CTSList<CryptoPP::AutoSeededX917RNG<CryptoPP::Rijndael> >::~CTSList()
- T CTSList<FileJob_t*>::PushItem(FileJob_t* const&)
  T CTSList<FileJob_t*>::~CTSList()
  T CTSQueue<CachedVPKRead_t, false>::CTSQueue()
  T CTSQueue<CachedVPKRead_t, false>::Pop()
  T CTSQueue<CachedVPKRead_t, false>::Purge()
- T CTSQueue<CachedVPKRead_t, false>::~CTSQueue()
  T CTSQueue<StuffToMD5_t, false>::CTSQueue()
  T CTSQueue<StuffToMD5_t, false>::Pop()
- T CTSQueue<StuffToMD5_t, false>::PopItem(StuffToMD5_t*)
  T CTSQueue<StuffToMD5_t, false>::Purge()
- T CTSQueue<StuffToMD5_t, false>::Push(CTSQueue<StuffToMD5_t, false>::Node_t*)
  T CTSQueue<StuffToMD5_t, false>::PushItem(StuffToMD5_t const&)
- T CTSQueue<StuffToMD5_t, false>::~CTSQueue()
  T CThreadLocal<char*>::~CThreadLocal()
  T CThreadMutex::~CThreadMutex()
  T CTier1AppSystem<IFileSystem, 0>::Connect(void* (*)(char const*, int*))
@@ -1256,6 +1248,8 @@
  T CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::GrowVector(int)
  T CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::InsertBefore(int)
  T CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::InsertMultipleBefore(int, int)
+ T CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::Purge()
+ T CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::Remove(int)
  T CUtlVector<CBaseFileSystem::CSearchPath, CUtlMemory<CBaseFileSystem::CSearchPath, int> >::~CUtlVector()
  T CUtlVector<CFileAsyncReadJob*, CUtlMemory<CFileAsyncReadJob*, int> >::~CUtlVector()
  T CUtlVector<CFunctor*, CUtlMemory<CFunctor*, int> >::AddToTail(CFunctor* const&)
@@ -1438,6 +1432,7 @@
  T CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::AlgorithmParametersTemplate(char const*, CryptoPP::ConstByteArrayParameter const&, bool)
  T CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::AssignValue(char const*, std::type_info const&, void*) const
  T CryptoPP::AlgorithmParametersTemplate<CryptoPP::ConstByteArrayParameter>::~AlgorithmParametersTemplate()
+ T CryptoPP::AlignedDeallocate(void*)
  T CryptoPP::AllocatorBase<unsigned int>::CheckSize(unsigned long)
  T CryptoPP::AlmostInverse(unsigned int*, unsigned int*, unsigned int const*, unsigned long, unsigned int const*, unsigned long)
  T CryptoPP::ArraySink::CreatePutSpace(unsigned long&)
@@ -2178,13 +2173,6 @@
  ThreadGetCurrentId
  ThreadGetPriority
  ThreadInMainThread
- ThreadInterlockedAssignIf
- ThreadInterlockedAssignIf64
- ThreadInterlockedCompareExchangePointer
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedExchangeAdd
- ThreadInterlockedIncrement
  ThreadJoin
  ThreadSetDebugName
  ThreadSetPriority
@@ -2414,20 +2402,20 @@
  t MD5Transform(unsigned int*, unsigned int const*)
  t SzAlloc(void*, unsigned long)
  t SzFree(void*, void*)
- t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
- t _GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.58679.zqjDp9.ii
- t _GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.17830.WEkgPa.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+ t _GLOBAL__sub_I_QueuedLoad.stdout.rel_tf_osx_builder.98789.6KJeLP.ii
+ t _GLOBAL__sub_I_basefilesy.stdout.rel_tf_osx_builder.98737.c5a4DW.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
  t _GLOBAL__sub_I_cryptlib.cpp
- t _GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.13867.ry8O4a.ii
- t _GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.58676.w0B84J.ii
- t _GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.58677.l7G3sc.ii
- t _GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.58678.3bAIvV.ii
- t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.55433.LctBPo.ii
- t _GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.58680.7Djq2G.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
- t _GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.58674.8tw6U9.ii
+ t _GLOBAL__sub_I_crypto.stdout.rel_tf_osx_builder.98733.6W8XIk.ii
+ t _GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.98738.WeSLrM.ii
+ t _GLOBAL__sub_I_filesystem.stdout.rel_tf_osx_builder.98739.depXSG.ii
+ t _GLOBAL__sub_I_filetracke.stdout.rel_tf_osx_builder.98740.29mCTO.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.93439.dm9yM8.ii
+ t _GLOBAL__sub_I_packfile.stdout.rel_tf_osx_builder.98783.TPAyaY.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+ t _GLOBAL__sub_I_zip_utils.stdout.rel_tf_osx_builder.98736.eyh4Hy.ii
  t __CreateCFileSystem_StdioIBaseFileSystem_interface()
  t __CreateCFileSystem_StdioIFileSystem_interface()
  t __CreateCQueuedLoaderIQueuedLoader_interface()

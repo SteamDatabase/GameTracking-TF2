@@ -38,6 +38,9 @@
  B g_pStartNode
  B g_pVCRFile
  B g_pszSumNode
+ B s_CpuBrand
+ B s_bCpuBrandInitialized
+ B s_bCpuVendorIdInitialized
  D CSharedLibraryCache::GetCache()::Singleton
  D TSListTests::MAX_THREADS
  D TSListTests::NUM_PROCESSORS
@@ -69,7 +72,6 @@
  D vtable for CWorkerThread
  D vtable for TSListTests::CListOps
  D vtable for TSListTests::CQueueOps
- OSAtomicCompareAndSwap64
  R typeinfo name for CCommandLine
  R typeinfo name for CStdMemAlloc
  R typeinfo name for CThread
@@ -157,14 +159,11 @@
  T CStdMemAlloc::SaveDebugInfo(void*)
  T CStdMemAlloc::SetAllocFailHandler(unsigned long (*)(unsigned long))
  T CStdMemAlloc::heapchk()
- T CTSList<int>::PopItem(int*)
  T CTSList<int>::~CTSList()
  T CTSListBase::~CTSListBase()
  T CTSQueue<int, true>::CTSQueue()
  T CTSQueue<int, true>::Pop()
- T CTSQueue<int, true>::PopItem(int*)
  T CTSQueue<int, true>::Purge()
- T CTSQueue<int, true>::Push(CTSQueue<int, true>::Node_t*)
  T CTSQueue<int, true>::PushItem(int const&)
  T CTSQueue<int, true>::~CTSQueue()
  T CThread::BWaitForThreadSuspendCooperative()
@@ -290,7 +289,7 @@
  T ConWarning(char const*, ...)
  T CrackSmokingCompiler
  T CreateSimpleThread
- T CreateSimpleThread(unsigned int (*)(void*), void*, unsigned long*, unsigned int)
+ T CreateSimpleThread(unsigned int (*)(void*), void*, unsigned int*, unsigned int)
  T DLog
  T DMsg
  T DWarning
@@ -318,6 +317,7 @@
  T GetFileAndLineFromAddress
  T GetMemoryInformation
  T GetModuleNameFromAddress
+ T GetProcessorBrand()
  T GetSpewOutputColor
  T GetSpewOutputFunc
  T GetSpewOutputGroup
@@ -412,25 +412,13 @@
  T ThreadGetCurrentId
  T ThreadGetPriority
  T ThreadInMainThread
- T ThreadInterlockedAssignIf
- T ThreadInterlockedAssignIf64
- T ThreadInterlockedAssignPointerIf
- T ThreadInterlockedCompareExchange
- T ThreadInterlockedCompareExchange64
- T ThreadInterlockedCompareExchangePointer
- T ThreadInterlockedDecrement
- T ThreadInterlockedExchange
- T ThreadInterlockedExchange64
- T ThreadInterlockedExchangeAdd
- T ThreadInterlockedExchangePointer
- T ThreadInterlockedIncrement
  T ThreadJoin
  T ThreadSetAffinity
  T ThreadSetDebugName
  T ThreadSetPriority
  T ThreadSleep
  T TranslateStackInfo
- T VCR_CreateThread(void*, unsigned long, void*, void*, unsigned long, unsigned long*)
+ T VCR_CreateThread(void*, unsigned long, void*, void*, unsigned long, unsigned int*)
  T VCR_EnterCriticalSection(void*)
  T VCR_GenericPlayback(char const*, void*, int, bool)
  T VCR_GenericRecord(char const*, void const*, int)
@@ -519,10 +507,9 @@
  b COM_TimestampedLog::s_bShouldLog
  b COM_TimestampedLog::s_bShouldLogToETW
  b CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)::dummy
+ b CalculateClockSpeed()::freq
  b DoNewAssertDialog::autoMutex__
  b DoNewAssertDialog::pfnSDLShowMessageBox
- b GetCPUInformation::pi
- b GetProcessorVendorId()::VendorID
  b IsDebugBreakEnabled()::bResult
  b Plat_FloatTime::conversion
  b Plat_FloatTime::sTimebaseInfo
@@ -541,8 +528,8 @@
  b g_bBreak
  b g_pAssertDisables
  b guard variable for AreAssertsDisabled()::bResult
+ b guard variable for CalculateClockSpeed()::freq
  b guard variable for DoNewAssertDialog::autoMutex__
- b guard variable for GetCPUInformation::pi
  b guard variable for IsDebugBreakEnabled()::bResult
  b guard variable for SecureRandomBytes::s_dev_urandom_fd
  b guard variable for ShouldUseNewAssertDialog::bMPIWorker
@@ -558,6 +545,7 @@
  b s_ThreadedLoadLibraryFunc
  b s_WatchdogTime
  b s_bInittedWD
+ b s_cpuInformation
  b s_nBufAllocSize
  b s_nBufCurSize
  b s_nWatchDogTimerTimeScale
@@ -574,6 +562,10 @@
  d Plat_IsInDebugSession::s_IsInDebugSession
  d g_VCRTrace
  d g_bAssertsEnabled
+ d s_CpuVendorID
+ d s_IntelL1DataCacheDesc
+ d s_IntelL2DataCacheDesc
+ d s_IntelL3DataCacheDesc
  d s_SpewOutputFunc
  d s_indentText
  d s_nBufDepth
@@ -638,7 +630,6 @@
  pthread_self
  pthread_setschedparam
  pthread_setspecific
- pthread_yield_np
  r g_ColorLookup
  raise
  rand
@@ -646,6 +637,7 @@
  realloc
  recv$UNIX2003
  recvfrom$UNIX2003
+ sched_yield
  send$UNIX2003
  signal
  snprintf
@@ -660,10 +652,12 @@
  strrchr
  strstr
  sysctl
+ sysctlbyname
  t AverageTimeCompare(TimeSums_t const&, TimeSums_t const&)
  t AverageTimeLessChildrenCompare(TimeSums_t const&, TimeSums_t const&)
  t DefaultWaitFunc(int, CThreadEvent* const*, int, unsigned int)
  t DumpSorted(void (*)(char const*, ...), char const*, double, bool (*)(TimeSums_t const&, TimeSums_t const&), int)
+ t InterpretIntelCacheDescriptors(unsigned int)
  t PeakCompare(TimeSums_t const&, TimeSums_t const&)
  t PeakOverAverageCompare(TimeSums_t const&, TimeSums_t const&)
  t ThreadProcConvert(void*)
@@ -692,13 +686,13 @@
  t VCR_Start(char const*, bool, IVCRHelpers*)
  t VCR_SyncToken(char const*)
  t WatchDogHandler(int)
- t _GLOBAL__sub_I_commandlin.stdout.rel_tf_osx_builder.8585.ghZfCh.ii
- t _GLOBAL__sub_I_dbg.stdout.rel_tf_osx_builder.8590.AEGWC5.ii
- t _GLOBAL__sub_I_fasttimer.stdout.rel_tf_osx_builder.8629.vGRrwR.ii
- t _GLOBAL__sub_I_memstd.stdout.rel_tf_osx_builder.8642.s2QM9U.ii
- t _GLOBAL__sub_I_threadtool.stdout.rel_tf_osx_builder.8720.MIYz7L.ii
- t _GLOBAL__sub_I_tslist.stdout.rel_tf_osx_builder.8742.e1WvFv.ii
- t _GLOBAL__sub_I_vprof.stdout.rel_tf_osx_builder.8751.oh2D6u.ii
+ t _GLOBAL__sub_I_commandlin.stdout.rel_tf_osx_builder.93131.fLIYrZ.ii
+ t _GLOBAL__sub_I_dbg.stdout.rel_tf_osx_builder.93137.QxXty8.ii
+ t _GLOBAL__sub_I_fasttimer.stdout.rel_tf_osx_builder.93184.RriMcf.ii
+ t _GLOBAL__sub_I_memstd.stdout.rel_tf_osx_builder.93204.w2zZNN.ii
+ t _GLOBAL__sub_I_threadtool.stdout.rel_tf_osx_builder.93282.LgOJKc.ii
+ t _GLOBAL__sub_I_tslist.stdout.rel_tf_osx_builder.93302.5I7Fuh.ii
+ t _GLOBAL__sub_I_vprof.stdout.rel_tf_osx_builder.93308.uI8xll.ii
  t _SpewMessage(SpewType_t, char const*, int, Color const*, char const*, char*)
  t global constructors keyed to 000101
  thread_resume

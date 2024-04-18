@@ -90,6 +90,7 @@ $X360
 -vcrrecord
 -vcrrecord: can't open '%s' for writing.
 -vproject
+-vulkan
 -width
 -window
 -windowed
@@ -140,6 +141,7 @@ $X360
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/appframework/IAppSystemGroup.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/filesystem.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/filesystem_init.cpp
+/Users/buildbot/buildslave/rel_hl2_osx/build/src/public/materialsystem/imaterialsystem.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/mathlib.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector2d.h
 /Users/buildbot/buildslave/rel_hl2_osx/build/src/public/mathlib/vector4d.h
@@ -318,8 +320,6 @@ $X360
 @_ShouldUseNewAssertDialog
 @_SpewOutputFunc
 @_ThreadGetCurrentId
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedExchange
 @_ThreadSleep
 @_VStdLib_GetICVarFactory
 @_Warning
@@ -413,7 +413,6 @@ $X360
 @_strcpy
 @_strlen
 @_strncat
-@_strncmp
 @_strncpy
 @_strstr
 @_strtod$UNIX2003
@@ -1019,19 +1018,17 @@ _SetAssertDialogParent
 _ShouldUseNewAssertDialog
 _SpewOutputFunc
 _ThreadGetCurrentId
-_ThreadInterlockedAssignIf
-_ThreadInterlockedExchange
 _ThreadSleep
 _VStdLib_GetICVarFactory
 _Warning
 __DATA
 __DefaultRuneLocale
-__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
-__GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.20515.fTTCpE.ii
-__GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.58615.eJxmYH.ii
-__GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.55703.pMFOv7.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
+__GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+__GLOBAL__sub_I_launcher.stdout.rel_tf_osx_builder.22418.Kcg9yZ.ii
+__GLOBAL__sub_I_reslistgen.stdout.rel_tf_osx_builder.98666.Z8tW2j.ii
+__GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.94021.7UPotp.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
 __LINKEDIT
 __OBJC
 __TEXT
@@ -1199,7 +1196,6 @@ _strcmp
 _strcpy
 _strlen
 _strncat
-_strncmp
 _strncpy
 _strstr
 _strtod$UNIX2003
@@ -1308,7 +1304,6 @@ sdl_displayindex_changed(IConVar*, char const*, float)
 sdl_displayindex_fullscreen
 sdl_double_click_size
 sdl_double_click_time
-shaderapidx9.dylib
 sourcevr.dylib
 std::terminate()
 stringWithFormat:

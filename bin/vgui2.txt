@@ -265,7 +265,7 @@
  T CInputSystem::SetAppModalSurface(unsigned int)
  T CInputSystem::SetCandidateListPageStart(int)
  T CInputSystem::SetCandidateWindowPos(int, int)
- T CInputSystem::SetCursorOveride(unsigned long)
+ T CInputSystem::SetCursorOveride(unsigned int)
  T CInputSystem::SetCursorPos(int, int)
  T CInputSystem::SetIMEWindow(void*)
  T CInputSystem::SetKeyCodeState(ButtonCode_t, bool)
@@ -293,22 +293,22 @@
  T CLocalizedStringTable::AddString(char const*, wchar_t*, char const*)
  T CLocalizedStringTable::BuildFastValueLookup()
  T CLocalizedStringTable::ConstructString(wchar_t*, int, char const*, KeyValues*)
- T CLocalizedStringTable::ConstructString(wchar_t*, int, unsigned long, KeyValues*)
+ T CLocalizedStringTable::ConstructString(wchar_t*, int, unsigned int, KeyValues*)
  T CLocalizedStringTable::FastValueLessFunc(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&)
  T CLocalizedStringTable::Find(char const*)
  T CLocalizedStringTable::FindAsUTF8(char const*)
  T CLocalizedStringTable::FindIndex(char const*)
- T CLocalizedStringTable::GetFileNameByIndex(unsigned long)
+ T CLocalizedStringTable::GetFileNameByIndex(unsigned int)
  T CLocalizedStringTable::GetFirstStringIndex()
  T CLocalizedStringTable::GetLocalizationFileCount()
  T CLocalizedStringTable::GetLocalizationFileName(int)
- T CLocalizedStringTable::GetNameByIndex(unsigned long)
- T CLocalizedStringTable::GetNextStringIndex(unsigned long)
- T CLocalizedStringTable::GetValueByIndex(unsigned long)
+ T CLocalizedStringTable::GetNameByIndex(unsigned int)
+ T CLocalizedStringTable::GetNextStringIndex(unsigned int)
+ T CLocalizedStringTable::GetValueByIndex(unsigned int)
  T CLocalizedStringTable::ReloadLocalizationFiles()
  T CLocalizedStringTable::RemoveAll()
  T CLocalizedStringTable::SaveToFile(char const*)
- T CLocalizedStringTable::SetValueByIndex(unsigned long, wchar_t*)
+ T CLocalizedStringTable::SetValueByIndex(unsigned int, wchar_t*)
  T CLocalizedStringTable::SymLess(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&)
  T CLocalizedStringTable::~CLocalizedStringTable()
  T CScheme::GetBorder(char const*)
@@ -319,7 +319,7 @@
  T CScheme::GetFont(char const*, bool)
  T CScheme::GetFontAtIndex(int)
  T CScheme::GetFontCount() const
- T CScheme::GetFontName(unsigned long const&)
+ T CScheme::GetFontName(unsigned int const&)
  T CScheme::GetMinimumFontHeightForCurrentLanguage()
  T CScheme::GetResourceString(char const*)
  T CScheme::LoadBorders()
@@ -334,13 +334,13 @@
  T CSchemeManager::CSchemeManager()
  T CSchemeManager::DeleteImage(char const*)
  T CSchemeManager::GetDefaultScheme()
- T CSchemeManager::GetIScheme(unsigned long)
+ T CSchemeManager::GetIScheme(unsigned int)
  T CSchemeManager::GetImage(char const*, bool)
  T CSchemeManager::GetImageID(char const*, bool)
  T CSchemeManager::GetProportionalNormalizedValue(int)
- T CSchemeManager::GetProportionalNormalizedValueEx(unsigned long, int)
+ T CSchemeManager::GetProportionalNormalizedValueEx(unsigned int, int)
  T CSchemeManager::GetProportionalScaledValue(int)
- T CSchemeManager::GetProportionalScaledValueEx(unsigned long, int)
+ T CSchemeManager::GetProportionalScaledValueEx(unsigned int, int)
  T CSchemeManager::GetScheme(char const*)
  T CSchemeManager::LoadSchemeFromFile(char const*, char const*)
  T CSchemeManager::LoadSchemeFromFileEx(unsigned int, char const*, char const*)
@@ -432,11 +432,11 @@
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::InsertRebalance(int)
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::NewNode()
  T CUtlRBTree<CLocalizedStringTable::fastvalue_t, int, bool (*)(CLocalizedStringTable::fastvalue_t const&, CLocalizedStringTable::fastvalue_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::fastvalue_t, int>, int> >::~CUtlRBTree()
- T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Insert(CLocalizedStringTable::localizedstring_t const&)
- T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::InsertRebalance(unsigned long)
- T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::NewNode()
- T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::Purge()
- T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned long, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned long>, unsigned long> >::~CUtlRBTree()
+ T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned int, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned int>, unsigned int> >::Insert(CLocalizedStringTable::localizedstring_t const&)
+ T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned int, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned int>, unsigned int> >::InsertRebalance(unsigned int)
+ T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned int, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned int>, unsigned int> >::NewNode()
+ T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned int, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned int>, unsigned int> >::Purge()
+ T CUtlRBTree<CLocalizedStringTable::localizedstring_t, unsigned int, bool (*)(CLocalizedStringTable::localizedstring_t const&, CLocalizedStringTable::localizedstring_t const&), CUtlMemory<UtlRBTreeNode_t<CLocalizedStringTable::localizedstring_t, unsigned int>, unsigned int> >::~CUtlRBTree()
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::Insert(CSchemeManager::CachedBitmapHandle_t const&)
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::InsertRebalance(int)
  T CUtlRBTree<CSchemeManager::CachedBitmapHandle_t, int, bool (*)(CSchemeManager::CachedBitmapHandle_t const&, CSchemeManager::CachedBitmapHandle_t const&), CUtlMemory<UtlRBTreeNode_t<CSchemeManager::CachedBitmapHandle_t, int>, int> >::NewNode()
@@ -492,11 +492,11 @@
  T CUtlVector<vgui::VPanel*, CUtlMemory<vgui::VPanel*, int> >::~CUtlVector()
  T CUtlVector<wchar_t, CUtlMemory<wchar_t, int> >::InsertMultipleBefore(int, int)
  T CUtlVector<wchar_t, CUtlMemory<wchar_t, int> >::~CUtlVector()
- T CVGui::ActivateContext(int)
+ T CVGui::ActivateContext(unsigned int)
  T CVGui::AddTickSignal(unsigned int, int)
  T CVGui::AddTickSignalToHead(unsigned int, int)
  T CVGui::AllocPanel()
- T CVGui::AssociatePanelWithContext(int, unsigned int)
+ T CVGui::AssociatePanelWithContext(unsigned int, unsigned int)
  T CVGui::CVGui()
  T CVGui::ClearMessageQueues()
  T CVGui::Connect(void* (*)(char const*, int*))
@@ -504,14 +504,14 @@
  T CVGui::CreateNewTick(unsigned int, int)
  T CVGui::DPrintf(char const*, ...)
  T CVGui::DPrintf2(char const*, ...)
- T CVGui::DestroyContext(int)
+ T CVGui::DestroyContext(unsigned int)
  T CVGui::Disconnect()
  T CVGui::DispatchMessages()
  T CVGui::FreePanel(unsigned int)
  T CVGui::GetShouldVGuiControlSleep()
  T CVGui::GetVGUIEngine()
  T CVGui::GetVRMode()
- T CVGui::HandleToPanel(unsigned long)
+ T CVGui::HandleToPanel(unsigned int)
  T CVGui::Init()
  T CVGui::IsRunning()
  T CVGui::MarkPanelForDeletion(unsigned int)
@@ -810,7 +810,7 @@
  T vgui::VPanel::Plat()
  T vgui::VPanel::SendMessage(KeyValues*, unsigned int)
  T vgui::VPanel::SetEnabled(bool)
- T vgui::VPanel::SetHPanel(unsigned long)
+ T vgui::VPanel::SetHPanel(unsigned int)
  T vgui::VPanel::SetInset(int, int, int, int)
  T vgui::VPanel::SetKeyBoardInputEnabled(bool)
  T vgui::VPanel::SetMinimumSize(int, int)
@@ -830,8 +830,6 @@
  T vgui::VPanel::~VPanel()
  T void ConstructStringKeyValuesInternal_Impl<wchar_t>(wchar_t*, int, wchar_t const*, KeyValues*)
  ThreadGetCurrentId
- ThreadInterlockedAssignIf
- ThreadInterlockedExchange
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
@@ -924,16 +922,16 @@
  strtol
  strtoul
  swprintf
- t _GLOBAL__sub_I_InputWin32.stdout.rel_tf_osx_builder.58932.7mT9X3.ii
- t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
- t _GLOBAL__sub_I_LocalizedS.stdout.rel_tf_osx_builder.58933.QCtyel.ii
- t _GLOBAL__sub_I_Scheme.stdout.rel_tf_osx_builder.58982.PrVFbq.ii
- t _GLOBAL__sub_I_VPanelWrap.stdout.rel_tf_osx_builder.59018.0nCMDF.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
- t _GLOBAL__sub_I_system_pos.stdout.rel_tf_osx_builder.58985.SdUipM.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
- t _GLOBAL__sub_I_vgui.stdout.rel_tf_osx_builder.58984.pxBHiM.ii
+ t _GLOBAL__sub_I_InputWin32.stdout.rel_tf_osx_builder.99393.1Ej3yT.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+ t _GLOBAL__sub_I_LocalizedS.stdout.rel_tf_osx_builder.99404.3qmqgE.ii
+ t _GLOBAL__sub_I_Scheme.stdout.rel_tf_osx_builder.99432.eXglqZ.ii
+ t _GLOBAL__sub_I_VPanelWrap.stdout.rel_tf_osx_builder.99470.UEHNMN.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+ t _GLOBAL__sub_I_system_pos.stdout.rel_tf_osx_builder.99431.iCDnzx.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+ t _GLOBAL__sub_I_vgui.stdout.rel_tf_osx_builder.99433.kaFtTc.ii
  t __CreateCInputSystemIInputInternal_interface()
  t __CreateCInputSystemIInput_interface()
  t __CreateCLocalizedStringTableILocalize_interface()

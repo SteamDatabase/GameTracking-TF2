@@ -817,6 +817,7 @@
  T AsyncReader::ReaderMain(void*)
  T AsyncReader::ThreadMain_Update()
  T AsyncReader::ThreadReader_ProcessRead(AsyncReadJob_t*)
+ T AsyncReader::~AsyncReader()
  T BuildGammaTable(float, float, float, int)
  T CAsyncCopyRequest::AddRef()
  T CAsyncCopyRequest::GetRefCount() const
@@ -1174,6 +1175,7 @@
  T CDummyMaterialSystem::GetNumShaders() const
  T CDummyMaterialSystem::GetNumSortIDs()
  T CDummyMaterialSystem::GetRecommendedConfigurationInfo(int, KeyValues*)
+ T CDummyMaterialSystem::GetRenderBackend() const
  T CDummyMaterialSystem::GetRenderContext()
  T CDummyMaterialSystem::GetRenderTarget()
  T CDummyMaterialSystem::GetRenderTargetDimensions(int&, int&) const
@@ -2533,6 +2535,7 @@
  T CMaterialSystem::GetNumMaterials() const
  T CMaterialSystem::GetNumSortIDs()
  T CMaterialSystem::GetRecommendedConfigurationInfo(int, KeyValues*)
+ T CMaterialSystem::GetRenderBackend() const
  T CMaterialSystem::GetRenderCallQueue()
  T CMaterialSystem::GetRenderContext()
  T CMaterialSystem::GetRenderTargetEx(int)
@@ -3232,32 +3235,20 @@
  T CTCTextureStage::~CTCTextureStage()
  T CTSQueue<AsyncLoadJob_t*, false>::CTSQueue()
  T CTSQueue<AsyncLoadJob_t*, false>::Pop()
- T CTSQueue<AsyncLoadJob_t*, false>::PopItem(AsyncLoadJob_t**)
  T CTSQueue<AsyncLoadJob_t*, false>::Purge()
- T CTSQueue<AsyncLoadJob_t*, false>::Push(CTSQueue<AsyncLoadJob_t*, false>::Node_t*)
  T CTSQueue<AsyncLoadJob_t*, false>::PushItem(AsyncLoadJob_t* const&)
- T CTSQueue<AsyncLoadJob_t*, false>::~CTSQueue()
  T CTSQueue<AsyncReadJob_t*, false>::CTSQueue()
  T CTSQueue<AsyncReadJob_t*, false>::Pop()
- T CTSQueue<AsyncReadJob_t*, false>::PopItem(AsyncReadJob_t**)
  T CTSQueue<AsyncReadJob_t*, false>::Purge()
- T CTSQueue<AsyncReadJob_t*, false>::Push(CTSQueue<AsyncReadJob_t*, false>::Node_t*)
  T CTSQueue<AsyncReadJob_t*, false>::PushItem(AsyncReadJob_t* const&)
- T CTSQueue<AsyncReadJob_t*, false>::~CTSQueue()
  T CTSQueue<ITextureInternal*, false>::CTSQueue()
  T CTSQueue<ITextureInternal*, false>::Pop()
- T CTSQueue<ITextureInternal*, false>::PopItem(ITextureInternal**)
  T CTSQueue<ITextureInternal*, false>::Purge()
- T CTSQueue<ITextureInternal*, false>::Push(CTSQueue<ITextureInternal*, false>::Node_t*)
  T CTSQueue<ITextureInternal*, false>::PushItem(ITextureInternal* const&)
- T CTSQueue<ITextureInternal*, false>::~CTSQueue()
  T CTSQueue<IVTFTexture*, false>::CTSQueue()
  T CTSQueue<IVTFTexture*, false>::Pop()
- T CTSQueue<IVTFTexture*, false>::PopItem(IVTFTexture**)
  T CTSQueue<IVTFTexture*, false>::Purge()
- T CTSQueue<IVTFTexture*, false>::Push(CTSQueue<IVTFTexture*, false>::Node_t*)
  T CTSQueue<IVTFTexture*, false>::PushItem(IVTFTexture* const&)
- T CTSQueue<IVTFTexture*, false>::~CTSQueue()
  T CTexture::AllocateShaderAPITextures()
  T CTexture::ApplyRenderTargetSizeMode(int&, int&, ImageFormat)
  T CTexture::AsyncCancelReadTexture()
@@ -3266,7 +3257,6 @@
  T CTexture::Bind(Sampler_t)
  T CTexture::Bind(Sampler_t, int, Sampler_t)
  T CTexture::BindVertexTexture(VertexTextureSampler_t, int)
- T CTexture::CTexture()
  T CTexture::ComputeActualFormat(ImageFormat)
  T CTexture::ConvertToActualFormat(IVTFTexture*)
  T CTexture::CopyFrameBufferToMe(int, Rect_t*, Rect_t*)
@@ -4606,12 +4596,6 @@
  T void ParseVectorFromKV<int, 16>(KeyValues*, void*)
  ThreadGetCurrentId
  ThreadInMainThread
- ThreadInterlockedAssignIf
- ThreadInterlockedAssignIf64
- ThreadInterlockedCompareExchangePointer
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedIncrement
  ThreadJoin
  ThreadSetDebugName
  ThreadSleep
@@ -4914,7 +4898,6 @@
  strlen
  strncasecmp
  strncat
- strncmp
  strncpy
  strspn
  strstr
@@ -4974,28 +4957,28 @@
  t MatProxyCallback(IConVar*, char const*, float)
  t MySpewOutputFunc(SpewType_t, char const*)
  t SLoadTextureBitsFromFile(IVTFTexture**, void*, unsigned int, TextureLODControlSettings_t*, int, unsigned short*, char const*, char const*, TexDimensions_t*, TexDimensions_t*, TexDimensions_t*, unsigned int*)
- t _GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.56269.Ynd5cJ.ii
- t _GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.56272.tjFdOY.ii
- t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
- t _GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.56207.UrAC90.ii
- t _GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.56270.twEBL5.ii
- t _GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.56273.q0U3DW.ii
- t _GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.56274.75ywU1.ii
- t _GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.56300.LoAPaJ.ii
- t _GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.56316.riqdz7.ii
- t _GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.56326.3n8cqY.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
- t _GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.56338.LdGZP9.ii
- t _GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.56339.XlJ0Pi.ii
- t _GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.56368.pRXmqw.ii
- t _GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.56367.ZKzxRI.ii
- t _GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.56380.0p1oFK.ii
- t _GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.56382.AfM4DP.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
- t _GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.56392.3ImEfG.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
- t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.55898.EeKUFF.ii
+ t _GLOBAL__sub_I_CColorCorr.stdout.rel_tf_osx_builder.95903.sQ5Nq4.ii
+ t _GLOBAL__sub_I_CMaterialS.stdout.rel_tf_osx_builder.95906.kmfCSj.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+ t _GLOBAL__sub_I_ShaderDLL.stdout.rel_tf_osx_builder.95836.xxNEy7.ii
+ t _GLOBAL__sub_I_cmaterial.stdout.rel_tf_osx_builder.95904.36jW9I.ii
+ t _GLOBAL__sub_I_cmaterials.stdout.rel_tf_osx_builder.95907.EQxlc8.ii
+ t _GLOBAL__sub_I_cmaterialv.stdout.rel_tf_osx_builder.95908.zoluLN.ii
+ t _GLOBAL__sub_I_cmatlightm.stdout.rel_tf_osx_builder.95934.Hh72CT.ii
+ t _GLOBAL__sub_I_cmatqueued.stdout.rel_tf_osx_builder.95963.hwhQ0D.ii
+ t _GLOBAL__sub_I_cmatrender.stdout.rel_tf_osx_builder.95967.N1x4Or.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+ t _GLOBAL__sub_I_ctexture.stdout.rel_tf_osx_builder.95979.SSBtBf.ii
+ t _GLOBAL__sub_I_ctextureco.stdout.rel_tf_osx_builder.95982.SHaAnb.ii
+ t _GLOBAL__sub_I_mat_stub.stdout.rel_tf_osx_builder.96001.xnYmpH.ii
+ t _GLOBAL__sub_I_morph.stdout.rel_tf_osx_builder.96011.AZodIE.ii
+ t _GLOBAL__sub_I_occlusionq.stdout.rel_tf_osx_builder.96013.e5CUC6.ii
+ t _GLOBAL__sub_I_shadersyst.stdout.rel_tf_osx_builder.96023.Xu3sWO.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+ t _GLOBAL__sub_I_textureman.stdout.rel_tf_osx_builder.96024.xwjw0X.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+ t _GLOBAL__sub_I_vtf.stdout.rel_tf_osx_builder.94232.Mq5QYc.ii
  t __CreateCColorCorrectionSystemIColorCorrectionSystem_interface()
  t __CreateCDummyMaterialSystemIMaterialSystemStub_interface()
  t __CreateCMaterialSystemIMaterialSystem_interface()

@@ -1,3 +1,8 @@
+ .objc_class_name_NSAutoreleasePool
+ .objc_class_name_NSBundle
+ .objc_class_name_NSOpenGLContext
+ .objc_class_name_NSOpenGLPixelFormat
+ .objc_class_name_NSString
  B CMeshDX8::s_FirstVertex
  B CMeshDX8::s_NumVertices
  B CMeshDX8::s_nPrims
@@ -20,6 +25,7 @@
  B g_pD3DDevice
  B g_pFullFileSystem
  B g_pInputSystem
+ B g_pLauncherMgr
  B g_pMaterialSystem
  B g_pMaterialSystemDebugTextureInfo
  B g_pMaterialSystemHardwareConfig
@@ -33,6 +39,15 @@
  B g_pShaderUtil
  B g_pTransitionTable
  B g_pUtlSortVectorQSortContext
+ B gl_blit_halfx
+ B gl_blit_halfy
+ B gl_disable_forced_vsync
+ B gl_finish
+ B gl_swapdebug
+ B gl_swapinterval
+ B gl_swaplimit
+ B gl_swaplimit_mt
+ B gl_swaptear
  B lineartolightmap
  B lineartovertex
  B lzma_persistent_buffer
@@ -48,11 +63,16 @@
  B mat_texture_limit
  B materials
  B mdllib
+ B osx_rawinput_set_one_time
  B p4
  B s_NoEscConversion
  B s_StringCharConversion
  B s_bMathlibInitialized
  B s_pIllegalMaterialPS
+ B sdl_displayindex
+ B sdl_displayindex_fullscreen
+ B sdl_double_click_size
+ B sdl_double_click_time
  COM_TimestampedLog
  CThreadEvent::CThreadEvent(bool)
  CThreadEvent::Set()
@@ -184,33 +204,6 @@
  D vtable for CVertexBufferDx8
  D vtable for ConCommand
  D vtable for ConVar
- D3DPERF_SetOptions
- D3DXCompileShader
- D3DXCreateMatrixStack
- D3DXMATRIX::operator float*()
- D3DXMATRIX::operator!=(D3DXMATRIX const&) const
- D3DXMATRIX::operator()(int, int)
- D3DXMATRIX::operator*(D3DXMATRIX const&) const
- D3DXMatrixIdentity
- D3DXMatrixInverse
- D3DXMatrixMultiply
- D3DXMatrixOrthoOffCenterRH
- D3DXMatrixPerspectiveOffCenterRH
- D3DXMatrixPerspectiveRH
- D3DXMatrixTranslation
- D3DXMatrixTranspose
- D3DXPLANE::operator float*()
- D3DXPLANE::operator!=(D3DXPLANE const&)
- D3DXPLANE::operator[](int)
- D3DXPlaneNormalize
- D3DXPlaneTransform
- D3DXVECTOR2::operator float*()
- D3DXVECTOR3::D3DXVECTOR3(float, float, float)
- D3DXVECTOR3::operator float*()
- D3DXVECTOR4::D3DXVECTOR4(float, float, float, float)
- D3DXVec3TransformCoord
- D3DXVec4Normalize
- D3DXVec4Transform
  DWarning
  DevMsg
  DevMsg(char const*, ...)
@@ -219,19 +212,6 @@
  DoNewAssertDialog
  Error
  GetCPUInformation
- ID3DXBuffer::GetBufferPointer()
- ID3DXBuffer::GetBufferSize()
- ID3DXMatrixStack::GetTop()
- ID3DXMatrixStack::LoadIdentity()
- ID3DXMatrixStack::LoadMatrix(D3DXMATRIX const*)
- ID3DXMatrixStack::MultMatrix(D3DXMATRIX const*)
- ID3DXMatrixStack::MultMatrixLocal(D3DXMATRIX const*)
- ID3DXMatrixStack::Pop()
- ID3DXMatrixStack::Push()
- ID3DXMatrixStack::Release(int, char*)
- ID3DXMatrixStack::RotateAxisLocal(D3DXVECTOR3 const*, float)
- ID3DXMatrixStack::ScaleLocal(float, float, float)
- ID3DXMatrixStack::TranslateLocal(float, float, float)
  IDirect3D9::CheckDepthStencilMatch(unsigned int, _D3DDEVTYPE, _D3DFORMAT, _D3DFORMAT, _D3DFORMAT)
  IDirect3D9::CheckDeviceFormat(unsigned int, _D3DDEVTYPE, _D3DFORMAT, unsigned int, _D3DRESOURCETYPE, _D3DFORMAT)
  IDirect3D9::CheckDeviceMultiSampleType(unsigned int, _D3DDEVTYPE, _D3DFORMAT, int, _D3DMULTISAMPLE_TYPE, unsigned int*)
@@ -372,6 +352,10 @@
  R typeinfo name for IShaderShadowDX8
  R typeinfo name for IVBAllocTracker
  R typeinfo name for IVertexBuffer
+ SDL_GetNumVideoDisplays
+ SDL_GetWindowGrab
+ SDL_RaiseWindow
+ SDL_SetWindowGrab
  ShouldUseNewAssertDialog
  T ApplyActivateFixedFunction(ShadowState_t const&, int)
  T ApplyAlphaBlend(ShadowState_t const&, int)
@@ -473,6 +457,7 @@
  T CDynamicMeshDX8::MarkAsDrawn()
  T CDynamicMeshDX8::NeedsVertexFormatReset(unsigned long long) const
  T CDynamicMeshDX8::PreLock()
+ T CDynamicMeshDX8::Reset()
  T CDynamicMeshDX8::SetVertexFormat(unsigned long long)
  T CDynamicMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
  T CDynamicMeshDX8::~CDynamicMeshDX8()
@@ -616,6 +601,7 @@
  T CMeshDX8::SetColorMesh(IMesh*, int)
  T CMeshDX8::SetColorStreamState()
  T CMeshDX8::SetFlexMesh(IMesh*, int)
+ T CMeshDX8::SetIndexStreamState(int)
  T CMeshDX8::SetPrimitiveType(MaterialPrimitiveType_t)
  T CMeshDX8::SetRenderState(int, int, unsigned long long)
  T CMeshDX8::SetVertexIDStreamState()
@@ -623,6 +609,7 @@
  T CMeshDX8::Unlock(int, IndexDesc_t&)
  T CMeshDX8::Unlock(int, VertexDesc_t&)
  T CMeshDX8::UnlockMesh(int, int, MeshDesc_t&)
+ T CMeshDX8::UseIndexBuffer(CIndexBuffer*)
  T CMeshDX8::VertexCount() const
  T CMeshDX8::~CMeshDX8()
  T CMeshMgr::BindIndexBuffer(IIndexBuffer*, int)
@@ -637,6 +624,8 @@
  T CMeshMgr::CreateStaticMesh(unsigned long long, char const*, IMaterial*)
  T CMeshMgr::CreateVertexBuffer(ShaderBufferType_t, unsigned long long, int, char const*)
  T CMeshMgr::CreateVertexIDBuffer()
+ T CMeshMgr::CreateZeroVertexBuffer()
+ T CMeshMgr::DestroyDynamicIndexBuffer()
  T CMeshMgr::DestroyIndexBuffer(IIndexBuffer*)
  T CMeshMgr::DestroyStaticMesh(IMesh*)
  T CMeshMgr::DestroyVertexBuffer(IVertexBuffer*)
@@ -662,6 +651,7 @@
  T CMeshMgr::ReleaseBuffers()
  T CMeshMgr::RenderPassWithVertexAndIndexBuffers()
  T CMeshMgr::RestoreBuffers()
+ T CMeshMgr::SetIndexStreamState(int)
  T CMeshMgr::SetRenderState(int, int, unsigned long long, int)
  T CMeshMgr::SetVertexStreamState(int, int)
  T CMeshMgr::Shutdown()
@@ -738,6 +728,7 @@
  T CShaderAPIDx8::ComputeFillRate()
  T CShaderAPIDx8::ComputeGammaCorrectedFogColor(unsigned char, unsigned char, unsigned char, bool)
  T CShaderAPIDx8::ComputeMorphFormat(int, short*) const
+ T CShaderAPIDx8::ComputePolyOffsetMatrix(D3DXMATRIX const&, D3DXMATRIX&)
  T CShaderAPIDx8::ComputeStatsInfo(int, bool, bool)
  T CShaderAPIDx8::ComputeVertexDescription(unsigned char*, unsigned long long, MeshDesc_t&) const
  T CShaderAPIDx8::ComputeVertexFormat(int, short*) const
@@ -1341,6 +1332,8 @@
  T CUtlVector<CUtlString, CUtlMemory<CUtlString, int> >::InsertBefore(int, CUtlString const&)
  T CUtlVector<CUtlSymbolTable::StringPool_t*, CUtlMemory<CUtlSymbolTable::StringPool_t*, int> >::~CUtlVector()
  T CUtlVector<CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >, CUtlMemory<CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> >, int> >::~CUtlVector()
+ T CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::GrowVector(int)
+ T CUtlVector<D3DMATRIX, CUtlMemory<D3DMATRIX, int> >::~CUtlVector()
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::GrowVector(int)
  T CUtlVector<KeyValues*, CUtlMemory<KeyValues*, int> >::~CUtlVector()
  T CUtlVector<ShadowState_t, CUtlMemory<ShadowState_t, int> >::~CUtlVector()
@@ -1399,6 +1392,7 @@
  T ConVar::ClampValue(float&)
  T ConVar::ConVar(char const*, char const*, int)
  T ConVar::ConVar(char const*, char const*, int, char const*)
+ T ConVar::ConVar(char const*, char const*, int, char const*, void (*)(IConVar*, char const*, float))
  T ConVar::Create(char const*, char const*, int, char const*, bool, float, bool, float, bool, float, bool, float, void (*)(IConVar*, char const*, float))
  T ConVar::GetHelpText() const
  T ConVar::GetName() const
@@ -1422,6 +1416,8 @@
  T CreateInterface
  T CreateInterfaceInternal(char const*, int*)
  T D3DSupportsCompressedTextures()
+ T D3DXMATRIX::operator*(D3DXMATRIX const&) const
+ T D3DXMatrixTranspose(D3DXMATRIX*, D3DXMATRIX const*)
  T DefaultCompletionFunc(char const*, char (*) [64])
  T DestroyD3DTexture(IDirect3DBaseTexture9*)
  T DisconnectTier1Libraries()
@@ -1506,6 +1502,7 @@
  T LzmaDec_Free
  T LzmaDecode
  T MathLib_Init(float, float, float, int, bool, bool, bool, bool)
+ T MatrixInverseGeneral(VMatrix const&, VMatrix&)
  T MatrixTranspose(VMatrix const&, VMatrix&)
  T MeshMgr()
  T Q_UTF32ToUTF8(wchar_t const*, char*, int, EStringConvertErrorPolicy)
@@ -1533,6 +1530,7 @@
  T V_strncat(char*, char const*, unsigned long, int)
  T V_strncmp(char const*, char const*, int)
  T V_strncpy(char*, char const*, int)
+ T Vector4DMultiplyTranspose(VMatrix const&, Vector4D const&, Vector4D&)
  T _InvRSquared(float const*)
  T _SSE_InvRSquared(float const*)
  T _SSE_RSqrtAccurate(float)
@@ -1547,6 +1545,7 @@
  T int CUtlSortVector<CTransitionTable::ShadowStateDictEntry_t, CTransitionTable::ShadowStateDictLessFunc, CUtlVector<CTransitionTable::ShadowStateDictEntry_t, CUtlMemory<CTransitionTable::ShadowStateDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::ShadowStateDictEntry_t>(CTransitionTable::ShadowStateDictEntry_t const&, bool*) const
  T int CUtlSortVector<CTransitionTable::SnapshotDictEntry_t, CTransitionTable::SnapshotDictLessFunc, CUtlVector<CTransitionTable::SnapshotDictEntry_t, CUtlMemory<CTransitionTable::SnapshotDictEntry_t, int> > >::FindLessOrEqual<CTransitionTable::SnapshotDictEntry_t>(CTransitionTable::SnapshotDictEntry_t const&, bool*) const
  T int CUtlSortVector<CTransitionTable::TransitionList_t, CTransitionTable::UniqueSnapshotLessFunc, CUtlVector<CTransitionTable::TransitionList_t, CUtlMemory<CTransitionTable::TransitionList_t, int> > >::FindLessOrEqual<CTransitionTable::TransitionList_t>(CTransitionTable::TransitionList_t const&, bool*) const
+ T nativeGetClientRect(void*, _RECT*)
  T non-virtual thunk to CBaseMeshDX8::BeginCastBuffer(MaterialIndexFormat_t)
  T non-virtual thunk to CBaseMeshDX8::EndCastBuffer()
  T non-virtual thunk to CBaseMeshDX8::GetRoomRemaining() const
@@ -1884,14 +1883,8 @@
  T operator delete[](void*)
  T operator new(unsigned long)
  T operator new[](unsigned long)
- T void SafeAssign<CIndexBuffer>(CIndexBuffer**, CIndexBuffer*)
- T void SafeRelease<CIndexBuffer>(CIndexBuffer**)
  ThreadGetCurrentId
  ThreadInMainThread
- ThreadInterlockedAssignIf
- ThreadInterlockedDecrement
- ThreadInterlockedExchange
- ThreadInterlockedIncrement
  ThreadSleep
  ToGLConnectLibraries
  ToGLDisconnectLibraries
@@ -1957,6 +1950,7 @@
  b g_ShaderAPIDX8
  b g_ShaderDeviceMgrDx8
  b g_ShaderShadow
+ b g_bSDLDisplayindexSet
  b g_bSupportsD15S1
  b g_bSupportsD16
  b g_bSupportsD24S8
@@ -1975,6 +1969,7 @@
  b g_pStaticLZMABuf
  b g_unStaticLZMABufRef
  b g_unStaticLZMABufSize
+ b grab_window_command
  b guard variable for CIndexBufferDx8::Allocate()::_counter
  b guard variable for CIndexBufferDx8::Free()::_counter
  b guard variable for CIndexBufferDx8::HandlePerFrameTextureStats(int)::_counter
@@ -1992,6 +1987,7 @@
  b mat_remoteshadercompile
  b mat_shadercount_command
  b mat_spewvertexandpixelshaders_command
+ b mat_supports_d3d9ex
  b mem_dumpvballocs
  b r_pix_recordframes
  b r_pix_start
@@ -2082,20 +2078,21 @@
  t SzFree(void*, void*)
  t TestTextureFormat(_D3DFORMAT, bool, bool, bool)
  t VertexDeclLessFunc(VertexDeclLookup_t const&, VertexDeclLookup_t const&)
- t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
- t _GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.70175.cqBj1d.ii
- t _GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.70177.LljJFN.ii
- t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.55433.LctBPo.ii
- t _GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.70178.HJUhxa.ii
- t _GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.70180.aKoeqI.ii
- t _GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.70203.U2gti4.ii
- t _GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.70211.YS34C9.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
- t _GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.70241.9KRHZZ.ii
- t _GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.70245.D8z1Nn.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+ t _GLOBAL__sub_I_cvballoctr.stdout.rel_tf_osx_builder.11115.LXeKsh.ii
+ t _GLOBAL__sub_I_hardwareco.stdout.rel_tf_osx_builder.11112.o31jED.ii
+ t _GLOBAL__sub_I_lzmaDecode.stdout.rel_tf_osx_builder.93439.dm9yM8.ii
+ t _GLOBAL__sub_I_meshdx8.stdout.rel_tf_osx_builder.11116.yf1Ov0.ii
+ t _GLOBAL__sub_I_sdlmgr.stdout.rel_tf_osx_builder.94021.7UPotp.ii
+ t _GLOBAL__sub_I_shaderapid.stdout.rel_tf_osx_builder.11141.xlwtMA.ii
+ t _GLOBAL__sub_I_shaderdevi.stdout.rel_tf_osx_builder.11153.IOrzRp.ii
+ t _GLOBAL__sub_I_shadershad.stdout.rel_tf_osx_builder.11157.SyhhUJ.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+ t _GLOBAL__sub_I_vertexdecl.stdout.rel_tf_osx_builder.11185.ihnJ5g.ii
+ t _GLOBAL__sub_I_vertexshad.stdout.rel_tf_osx_builder.11189.UEfFFL.ii
  t __CreateCHardwareConfigIMaterialSystemHardwareConfig_interface()
  t __CreateCShaderAPIDx8IDebugTextureInfo_interface()
  t __CreateCShaderAPIDx8IShaderAPI_interface()
@@ -2104,16 +2101,16 @@
  t __CreateCShaderShadowDX8IShaderShadow_interface()
  t __CreateCVBAllocTrackerIVBAllocTracker_interface()
  t ccs_create_convars_from_hwconfig(CCommand const&)
+ t grab_window(CCommand const&)
  t mat_shadercount(CCommand const&)
  t mat_spewvertexandpixelshaders(CCommand const&)
+ t sdl_displayindex_changed(IConVar*, char const*, float)
  t void ccs_create_convar_from_hwconfig<HDRType_t>(HDRType_t const&, char const*)
  t void ccs_create_convar_from_hwconfig<ImageFormat>(ImageFormat const&, char const*)
  t void ccs_create_convar_from_hwconfig<bool>(bool const&, char const*)
  t void ccs_create_convar_from_hwconfig<float>(float const&, char const*)
  t void ccs_create_convar_from_hwconfig<int>(int const&, char const*)
  t void ccs_create_convar_from_hwconfig<unsigned long>(unsigned long const&, char const*)
- tan
- toglGetClientRect
  typeinfo for std::bad_alloc
  vsnprintf
  vtable for __cxxabiv1::__class_type_info

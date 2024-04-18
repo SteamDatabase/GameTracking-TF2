@@ -1159,7 +1159,7 @@
  T CColorProperty::InitFromDefault(vgui::Panel*, PanelAnimationMapEntry*)
  T CColorProperty::SetData(vgui::Panel*, KeyValues*, PanelAnimationMapEntry*)
  T CDatadescGeneratedNameHolder::~CDatadescGeneratedNameHolder()
- T CDefOps<unsigned long>::LessFunc(unsigned long const&, unsigned long const&)
+ T CDefOps<unsigned int>::LessFunc(unsigned int const&, unsigned int const&)
  T CDefOps<void*>::LessFunc(void* const&, void* const&)
  T CDefaultAccessor::RegisterConCommandBase(ConCommandBase*)
  T CDragDropHelperPanel::AddPanel(vgui::Panel*)
@@ -1200,22 +1200,22 @@
  T CFontManager::CreateFont()
  T CFontManager::CreateOrFindBitmapFont(char const*, float, float, int)
  T CFontManager::CreateOrFindWin32Font(char const*, int, int, int, int, int)
- T CFontManager::GetCharABCwide(unsigned long, int, int&, int&, int&)
- T CFontManager::GetCharacterWidth(unsigned long, int)
- T CFontManager::GetFontAscent(unsigned long, wchar_t)
- T CFontManager::GetFontFamilyName(unsigned long)
- T CFontManager::GetFontForChar(unsigned long, wchar_t)
- T CFontManager::GetFontName(unsigned long)
- T CFontManager::GetFontTall(unsigned long)
- T CFontManager::GetFontTallRequested(unsigned long)
- T CFontManager::GetFontUnderlined(unsigned long)
- T CFontManager::GetKernedCharWidth(unsigned long, wchar_t, wchar_t, wchar_t, float&, float&, float&)
- T CFontManager::GetTextSize(unsigned long, wchar_t const*, int&, int&)
- T CFontManager::IsBitmapFont(unsigned long)
- T CFontManager::IsFontAdditive(unsigned long)
- T CFontManager::SetBitmapFontGlyphSet(unsigned long, char const*, float, float, int)
- T CFontManager::SetFontGlyphSet(unsigned long, char const*, int, int, int, int, int, int, int)
- T CFontManager::SetFontScale(unsigned long, float, float)
+ T CFontManager::GetCharABCwide(unsigned int, int, int&, int&, int&)
+ T CFontManager::GetCharacterWidth(unsigned int, int)
+ T CFontManager::GetFontAscent(unsigned int, wchar_t)
+ T CFontManager::GetFontFamilyName(unsigned int)
+ T CFontManager::GetFontForChar(unsigned int, wchar_t)
+ T CFontManager::GetFontName(unsigned int)
+ T CFontManager::GetFontTall(unsigned int)
+ T CFontManager::GetFontTallRequested(unsigned int)
+ T CFontManager::GetFontUnderlined(unsigned int)
+ T CFontManager::GetKernedCharWidth(unsigned int, wchar_t, wchar_t, wchar_t, float&, float&, float&)
+ T CFontManager::GetTextSize(unsigned int, wchar_t const*, int&, int&)
+ T CFontManager::IsBitmapFont(unsigned int)
+ T CFontManager::IsFontAdditive(unsigned int)
+ T CFontManager::SetBitmapFontGlyphSet(unsigned int, char const*, float, float, int)
+ T CFontManager::SetFontGlyphSet(unsigned int, char const*, int, int, int, int, int, int, int)
+ T CFontManager::SetFontScale(unsigned int, float, float)
  T CFontManager::SetLanguage(char const*)
  T CFontManager::~CFontManager()
  T CFontTextureCache::AllocatePageForChar(int, int, int&, int&, int&, int&, int&)
@@ -1223,8 +1223,8 @@
  T CFontTextureCache::CacheEntryLessFunc(CFontTextureCache::CacheEntry_t const&, CFontTextureCache::CacheEntry_t const&)
  T CFontTextureCache::Clear()
  T CFontTextureCache::CreateFontMaterials(CFontTextureCache::Page_t&, ITexture*, bool)
- T CFontTextureCache::GetTextureForChar(unsigned long, vgui::FontDrawType_t, wchar_t, int*, float**)
- T CFontTextureCache::GetTextureForChars(unsigned long, vgui::FontDrawType_t, wchar_t const*, int*, float**, int)
+ T CFontTextureCache::GetTextureForChar(unsigned int, vgui::FontDrawType_t, wchar_t, int*, float**)
+ T CFontTextureCache::GetTextureForChars(unsigned int, vgui::FontDrawType_t, wchar_t const*, int*, float**, int)
  T CFontTextureCache::~CFontTextureCache()
  T CFontTextureRegen::RegenerateTextureBits(ITexture*, IVTFTexture*, Rect_t*)
  T CFontTextureRegen::Release()
@@ -1269,8 +1269,8 @@
  T CMatSystemSurface::DisableClipping(bool)
  T CMatSystemSurface::Disconnect()
  T CMatSystemSurface::DrawColoredCircle(int, int, float, int, int, int, int)
- T CMatSystemSurface::DrawColoredText(unsigned long, int, int, int, int, int, int, char const*, ...)
- T CMatSystemSurface::DrawColoredTextRect(unsigned long, int, int, int, int, int, int, int, int, char const*, ...)
+ T CMatSystemSurface::DrawColoredText(unsigned int, int, int, int, int, int, int, char const*, ...)
+ T CMatSystemSurface::DrawColoredTextRect(unsigned int, int, int, int, int, int, int, int, int, char const*, ...)
  T CMatSystemSurface::DrawFilledRect(int, int, int, int)
  T CMatSystemSurface::DrawFilledRectArray(vgui::IntRect*, int)
  T CMatSystemSurface::DrawFilledRectFade(int, int, int, int, unsigned int, unsigned int, bool)
@@ -1301,7 +1301,7 @@
  T CMatSystemSurface::DrawSetSubTextureRGBA(int, int, int, unsigned char const*, int, int)
  T CMatSystemSurface::DrawSetTextColor(Color)
  T CMatSystemSurface::DrawSetTextColor(int, int, int, int)
- T CMatSystemSurface::DrawSetTextFont(unsigned long)
+ T CMatSystemSurface::DrawSetTextFont(unsigned int)
  T CMatSystemSurface::DrawSetTextPos(int, int)
  T CMatSystemSurface::DrawSetTextScale(float, float)
  T CMatSystemSurface::DrawSetTexture(int)
@@ -1310,8 +1310,8 @@
  T CMatSystemSurface::DrawSetTextureMaterial(int, IMaterial*)
  T CMatSystemSurface::DrawSetTextureRGBA(int, unsigned char const*, int, int, int, bool)
  T CMatSystemSurface::DrawSetTextureRGBAEx(int, unsigned char const*, int, int, ImageFormat)
- T CMatSystemSurface::DrawTextHeight(unsigned long, int, int&, char const*, ...)
- T CMatSystemSurface::DrawTextLen(unsigned long, char const*, ...)
+ T CMatSystemSurface::DrawTextHeight(unsigned int, int, int&, char const*, ...)
+ T CMatSystemSurface::DrawTextLen(unsigned int, char const*, ...)
  T CMatSystemSurface::DrawTexturedLine(vgui::Vertex_t const&, vgui::Vertex_t const&)
  T CMatSystemSurface::DrawTexturedLineInternal(vgui::Vertex_t const&, vgui::Vertex_t const&)
  T CMatSystemSurface::DrawTexturedPolyLine(vgui::Vertex_t const*, int)
@@ -1331,19 +1331,19 @@
  T CMatSystemSurface::ForceScreenSizeOverride(bool, int, int)
  T CMatSystemSurface::GetAbsoluteWindowBounds(int&, int&, int&, int&)
  T CMatSystemSurface::GetBitmapFontName(char const*)
- T CMatSystemSurface::GetCharABCwide(unsigned long, int, int&, int&, int&)
- T CMatSystemSurface::GetCharacterWidth(unsigned long, int)
+ T CMatSystemSurface::GetCharABCwide(unsigned int, int, int&, int&, int&)
+ T CMatSystemSurface::GetCharacterWidth(unsigned int, int)
  T CMatSystemSurface::GetClippingRect(int&, int&, int&, int&, bool&)
  T CMatSystemSurface::GetEmbeddedPanel()
- T CMatSystemSurface::GetFontAscent(unsigned long, wchar_t)
- T CMatSystemSurface::GetFontFamilyName(unsigned long)
- T CMatSystemSurface::GetFontName(unsigned long)
- T CMatSystemSurface::GetFontTall(unsigned long)
- T CMatSystemSurface::GetFontTallRequested(unsigned long)
+ T CMatSystemSurface::GetFontAscent(unsigned int, wchar_t)
+ T CMatSystemSurface::GetFontFamilyName(unsigned int)
+ T CMatSystemSurface::GetFontName(unsigned int)
+ T CMatSystemSurface::GetFontTall(unsigned int)
+ T CMatSystemSurface::GetFontTallRequested(unsigned int)
  T CMatSystemSurface::GetFullscreenViewport(int&, int&, int&, int&)
  T CMatSystemSurface::GetFullscreenViewportAndRenderTarget(int&, int&, int&, int&, ITexture**)
  T CMatSystemSurface::GetIconImageForFullPath(char const*)
- T CMatSystemSurface::GetKernedCharWidth(unsigned long, wchar_t, wchar_t, wchar_t, float&, float&)
+ T CMatSystemSurface::GetKernedCharWidth(unsigned int, wchar_t, wchar_t, wchar_t, float&, float&)
  T CMatSystemSurface::GetModalPanel()
  T CMatSystemSurface::GetNotifyPanel()
  T CMatSystemSurface::GetPopup(int)
@@ -1351,7 +1351,7 @@
  T CMatSystemSurface::GetProportionalBase(int&, int&)
  T CMatSystemSurface::GetResolutionKey() const
  T CMatSystemSurface::GetScreenSize(int&, int&)
- T CMatSystemSurface::GetTextSize(unsigned long, wchar_t const*, int&, int&)
+ T CMatSystemSurface::GetTextSize(unsigned int, wchar_t const*, int&, int&)
  T CMatSystemSurface::GetTextureNumFrames(int)
  T CMatSystemSurface::GetTitle(unsigned int)
  T CMatSystemSurface::GetTopmostPopup()
@@ -1372,7 +1372,7 @@
  T CMatSystemSurface::Invalidate(unsigned int)
  T CMatSystemSurface::IsCursorLocked() const
  T CMatSystemSurface::IsCursorVisible()
- T CMatSystemSurface::IsFontAdditive(unsigned long)
+ T CMatSystemSurface::IsFontAdditive(unsigned int)
  T CMatSystemSurface::IsInThink(unsigned int)
  T CMatSystemSurface::IsMinimized(unsigned int)
  T CMatSystemSurface::IsScreenPosOverrideActive()
@@ -1392,7 +1392,7 @@
  T CMatSystemSurface::PlaySound(char const*)
  T CMatSystemSurface::PopFullscreenViewport()
  T CMatSystemSurface::PopMakeCurrent(unsigned int)
- T CMatSystemSurface::PrecacheFontCharacters(unsigned long, wchar_t const*)
+ T CMatSystemSurface::PrecacheFontCharacters(unsigned int, wchar_t const*)
  T CMatSystemSurface::PushFullscreenViewport()
  T CMatSystemSurface::PushMakeCurrent(unsigned int, bool)
  T CMatSystemSurface::QueryInterface(char const*)
@@ -1403,25 +1403,25 @@
  T CMatSystemSurface::ResetFontCaches()
  T CMatSystemSurface::RestrictPaintToSinglePanel(unsigned int)
  T CMatSystemSurface::RunFrame()
- T CMatSystemSurface::SearchForWordBreak(unsigned long, char*, int&, int&)
+ T CMatSystemSurface::SearchForWordBreak(unsigned int, char*, int&, int&)
  T CMatSystemSurface::Set3DPaintTempRenderTarget(char const*)
  T CMatSystemSurface::SetAllowHTMLJavaScript(bool)
  T CMatSystemSurface::SetAsToolBar(unsigned int, bool)
  T CMatSystemSurface::SetAsTopMost(unsigned int, bool)
- T CMatSystemSurface::SetBitmapFontGlyphSet(unsigned long, char const*, float, float, int)
+ T CMatSystemSurface::SetBitmapFontGlyphSet(unsigned int, char const*, float, float, int)
  T CMatSystemSurface::SetBitmapFontName(char const*, char const*)
  T CMatSystemSurface::SetClippingRect(int, int, int, int)
- T CMatSystemSurface::SetCursor(unsigned long)
+ T CMatSystemSurface::SetCursor(unsigned int)
  T CMatSystemSurface::SetCursorAlwaysVisible(bool)
  T CMatSystemSurface::SetEmbeddedPanel(unsigned int)
- T CMatSystemSurface::SetFontGlyphSet(unsigned long, char const*, int, int, int, int, int, int, int)
+ T CMatSystemSurface::SetFontGlyphSet(unsigned int, char const*, int, int, int, int, int, int, int)
  T CMatSystemSurface::SetForegroundWindow(unsigned int)
  T CMatSystemSurface::SetFullscreenViewport(int, int, int, int)
  T CMatSystemSurface::SetFullscreenViewportAndRenderTarget(int, int, int, int, ITexture*)
  T CMatSystemSurface::SetMinimized(unsigned int, bool)
  T CMatSystemSurface::SetModalPanel(unsigned int)
  T CMatSystemSurface::SetMouseCallbacks(void (*)(int&, int&), void (*)(int, int))
- T CMatSystemSurface::SetNotifyIcon(unsigned int, unsigned long, unsigned int, char const*)
+ T CMatSystemSurface::SetNotifyIcon(unsigned int, unsigned int, unsigned int, char const*)
  T CMatSystemSurface::SetPanelForInput(unsigned int)
  T CMatSystemSurface::SetPanelVisible(unsigned int, bool)
  T CMatSystemSurface::SetSoftwareCursor(bool)
@@ -1591,7 +1591,7 @@
  T CUtlMemory<UtlRBTreeNode_t<CFontTextureCache::CacheEntry_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<COSXFont::abc_cache_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<COSXFont::kerned_abc_cache_t, unsigned short>, unsigned short>::Grow(int)
- T CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
+ T CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<UtlRBTreeNode_t<void*, unsigned short>, unsigned short>::Grow(int)
  T CUtlMemory<vgui::MessageMapItem_t, int>::Grow(int)
@@ -1659,13 +1659,13 @@
  T CUtlRBTree<CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::RemoveRebalance(int)
  T CUtlRBTree<CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::Unlink(int)
  T CUtlRBTree<CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::Node_t, int, CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<char const*, vgui::VPanelHandle, int, bool (*)(char const* const&, char const* const&)>::Node_t, int>, int> >::~CUtlRBTree()
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t const&)
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
- T CUtlRBTree<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short, CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned long, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned long const&, unsigned long const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::Insert(CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t const&)
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::NewNode()
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::Purge()
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::RotateLeft(unsigned short)
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::RotateRight(unsigned short)
+ T CUtlRBTree<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short, CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::CKeyLess, CUtlMemory<UtlRBTreeNode_t<CUtlMap<unsigned int, CFontTextureCache::Page_t, unsigned short, bool (*)(unsigned int const&, unsigned int const&)>::Node_t, unsigned short>, unsigned short> >::~CUtlRBTree()
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::Insert(CUtlSymbolTable::CStringPoolIndex const&)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::InsertRebalance(unsigned short)
  T CUtlRBTree<CUtlSymbolTable::CStringPoolIndex, unsigned short, CUtlSymbolTable::CLess, CUtlMemory<UtlRBTreeNode_t<CUtlSymbolTable::CStringPoolIndex, unsigned short>, unsigned short> >::NewNode()
@@ -1735,9 +1735,9 @@
  T CUtlVector<int, CUtlMemory<int, int> >::~CUtlVector()
  T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::InsertBefore(int, unsigned char const&)
  T CUtlVector<unsigned char, CUtlMemory<unsigned char, int> >::~CUtlVector()
+ T CUtlVector<unsigned int, CUtlMemory<unsigned int, int> >::AddToTail(unsigned int const&)
+ T CUtlVector<unsigned int, CUtlMemory<unsigned int, int> >::InsertBefore(int, unsigned int const&)
  T CUtlVector<unsigned int, CUtlMemory<unsigned int, int> >::~CUtlVector()
- T CUtlVector<unsigned long, CUtlMemory<unsigned long, int> >::InsertBefore(int, unsigned long const&)
- T CUtlVector<unsigned long, CUtlMemory<unsigned long, int> >::~CUtlVector()
  T CUtlVector<unsigned short, CUtlMemory<unsigned short, int> >::~CUtlVector()
  T CUtlVector<vgui::AnimationController::ActiveAnimation_t, CUtlMemory<vgui::AnimationController::ActiveAnimation_t, int> >::~CUtlVector()
  T CUtlVector<vgui::AnimationController::AnimCommand_t, CUtlMemory<vgui::AnimationController::AnimCommand_t, int> >::~CUtlVector()
@@ -1833,7 +1833,7 @@
  T CreateInterface
  T Create_CvarToggleCheckButton()
  T CursorGetPos(void*, int&, int&)
- T CursorSelect(unsigned long)
+ T CursorSelect(unsigned int)
  T CursorSetPos(void*, int, int)
  T Cursor_ClearUserCursors()
  T Cursor_CreateCursorFromFile(char const*, char const*)
@@ -2212,7 +2212,7 @@
  T vgui::CTreeViewListControl::SetBorderColor(Color)
  T vgui::CTreeViewListControl::SetColumnInfo(int, char const*, int, int)
  T vgui::CTreeViewListControl::SetNumColumns(int)
- T vgui::CTreeViewListControl::SetTitleBarInfo(unsigned long, int)
+ T vgui::CTreeViewListControl::SetTitleBarInfo(unsigned int, int)
  T vgui::CTreeViewListControl::SetTreeView(vgui::TreeView*)
  T vgui::CTreeViewListControl::~CTreeViewListControl()
  T vgui::CheckButton::AddToMap(char const*, void (vgui::Panel::*)(), int, int, char const*, int, char const*)
@@ -2289,13 +2289,13 @@
  T vgui::ComboBox::OnSizeChanged(int, int)
  T vgui::ComboBox::PerformLayout()
  T vgui::ComboBox::SetDropdownButtonVisible(bool)
- T vgui::ComboBox::SetFont(unsigned long)
+ T vgui::ComboBox::SetFont(unsigned int)
  T vgui::ComboBox::SetItemEnabled(char const*, bool)
  T vgui::ComboBox::SetItemEnabled(int, bool)
  T vgui::ComboBox::SetMenu(vgui::Menu*)
  T vgui::ComboBox::SetNumberOfEditLines(int)
  T vgui::ComboBox::SetOpenDirection(vgui::Menu::MenuDirection_e)
- T vgui::ComboBox::SetUseFallbackFont(bool, unsigned long)
+ T vgui::ComboBox::SetUseFallbackFont(bool, unsigned int)
  T vgui::ComboBox::ShowMenu()
  T vgui::ComboBox::SortItems()
  T vgui::ComboBox::UpdateItem(int, char const*, KeyValues const*)
@@ -2329,7 +2329,6 @@
  T vgui::CvarToggleCheckButton<UIConVarRef>::Paint()
  T vgui::CvarToggleCheckButton<UIConVarRef>::SetSelected(bool)
  T vgui::CvarToggleCheckButton<UIConVarRef>::~CvarToggleCheckButton()
- T vgui::Dar<unsigned long>::AddElement(unsigned long)
  T vgui::Divider::ApplySchemeSettings(vgui::IScheme*)
  T vgui::Divider::Divider(vgui::Panel*, char const*)
  T vgui::Divider::GetAnimMap()
@@ -2531,7 +2530,7 @@
  T vgui::Image::DrawSetColor(int, int, int, int)
  T vgui::Image::DrawSetTextColor(Color)
  T vgui::Image::DrawSetTextColor(int, int, int, int)
- T vgui::Image::DrawSetTextFont(unsigned long)
+ T vgui::Image::DrawSetTextFont(unsigned int)
  T vgui::Image::DrawSetTextPos(int, int)
  T vgui::Image::DrawSetTexture(int)
  T vgui::Image::DrawTexturedRect(int, int, int, int)
@@ -2618,7 +2617,7 @@
  T vgui::Label::SetDisabledFgColor2(Color)
  T vgui::Label::SetEnabled(bool)
  T vgui::Label::SetFgColor(Color)
- T vgui::Label::SetFont(unsigned long)
+ T vgui::Label::SetFont(unsigned int)
  T vgui::Label::SetHotkey(wchar_t)
  T vgui::Label::SetImageAtIndex(int, vgui::IImage*, int)
  T vgui::Label::SetImageBounds(int, int, int)
@@ -2711,7 +2710,7 @@
  T vgui::ListPanel::SetColumnVisible(int, bool)
  T vgui::ListPanel::SetEmptyListText(char const*)
  T vgui::ListPanel::SetEmptyListText(wchar_t const*)
- T vgui::ListPanel::SetFont(unsigned long)
+ T vgui::ListPanel::SetFont(unsigned int)
  T vgui::ListPanel::SetImageList(vgui::ImageList*, bool)
  T vgui::ListPanel::SetItemDisabled(int, bool)
  T vgui::ListPanel::SetItemVisible(int, bool)
@@ -2771,7 +2770,7 @@
  T vgui::ListViewPanel::PerformLayout()
  T vgui::ListViewPanel::RemoveItem(int)
  T vgui::ListViewPanel::ScrollToItem(int)
- T vgui::ListViewPanel::SetFont(unsigned long)
+ T vgui::ListViewPanel::SetFont(unsigned int)
  T vgui::ListViewPanel::SetImageList(vgui::ImageList*, bool)
  T vgui::ListViewPanel::SetSingleSelectedItem(int)
  T vgui::ListViewPanel::SetSortFunc(bool (*)(KeyValues*, KeyValues*))
@@ -2860,7 +2859,7 @@
  T vgui::Menu::SetCurrentlySelectedItem(int)
  T vgui::Menu::SetFgColor(Color)
  T vgui::Menu::SetFixedWidth(int)
- T vgui::Menu::SetFont(unsigned long)
+ T vgui::Menu::SetFont(unsigned int)
  T vgui::Menu::SetItemEnabled(char const*, bool)
  T vgui::Menu::SetItemEnabled(int, bool)
  T vgui::Menu::SetItemVisible(char const*, bool)
@@ -2869,7 +2868,7 @@
  T vgui::Menu::SetMenuItemHeight(int)
  T vgui::Menu::SetNumberOfVisibleItems(int)
  T vgui::Menu::SetTypeAheadMode(vgui::Menu::MenuTypeAheadMode)
- T vgui::Menu::SetUseFallbackFont(bool, unsigned long)
+ T vgui::Menu::SetUseFallbackFont(bool, unsigned int)
  T vgui::Menu::SetVisible(bool)
  T vgui::Menu::SilentActivateItem(int)
  T vgui::Menu::UpdateMenuItem(int, char const*, KeyValues*, KeyValues const*)
@@ -3231,7 +3230,7 @@
  T vgui::Panel::SetBuildGroup(vgui::BuildGroup*)
  T vgui::Panel::SetBuildModeDeletable(bool)
  T vgui::Panel::SetBuildModeEditable(bool)
- T vgui::Panel::SetCursor(unsigned long)
+ T vgui::Panel::SetCursor(unsigned int)
  T vgui::Panel::SetCursorAlwaysVisible(bool)
  T vgui::Panel::SetDragEnabled(bool)
  T vgui::Panel::SetDragSTartTolerance(int)
@@ -3255,7 +3254,7 @@
  T vgui::Panel::SetPostChildPaintEnabled(bool)
  T vgui::Panel::SetProportional(bool)
  T vgui::Panel::SetScheme(char const*)
- T vgui::Panel::SetScheme(unsigned long)
+ T vgui::Panel::SetScheme(unsigned int)
  T vgui::Panel::SetShowDragHelper(bool)
  T vgui::Panel::SetSilentMode(bool)
  T vgui::Panel::SetSize(int, int)
@@ -3343,7 +3342,7 @@
  T vgui::RichText::CreateEditMenu()
  T vgui::RichText::CursorToPixelSpace(int, int&, int&)
  T vgui::RichText::CutSelected()
- T vgui::RichText::DrawString(int, int, vgui::RichText::TRenderState&, unsigned long)
+ T vgui::RichText::DrawString(int, int, vgui::RichText::TRenderState&, unsigned int)
  T vgui::RichText::FinishingURL(int, int)
  T vgui::RichText::GetAnimMap()
  T vgui::RichText::GetDescription()
@@ -3530,7 +3529,7 @@
  T vgui::TextEntry::CutSelected()
  T vgui::TextEntry::Delete()
  T vgui::TextEntry::DeleteSelected()
- T vgui::TextEntry::DrawChar(wchar_t, unsigned long, int, int, int)
+ T vgui::TextEntry::DrawChar(wchar_t, unsigned int, int, int, int)
  T vgui::TextEntry::DrawCursor(int, int)
  T vgui::TextEntry::FireActionSignal()
  T vgui::TextEntry::GetAnimMap()
@@ -3575,7 +3574,7 @@
  T vgui::TextEntry::LanguageChanged(int)
  T vgui::TextEntry::LayoutVerticalScrollBarSlider()
  T vgui::TextEntry::MoveCursor(int, int)
- T vgui::TextEntry::NeedsEllipses(unsigned long, int*)
+ T vgui::TextEntry::NeedsEllipses(unsigned int, int*)
  T vgui::TextEntry::OnCreateDragData(KeyValues*)
  T vgui::TextEntry::OnCursorEntered()
  T vgui::TextEntry::OnCursorExited()
@@ -3621,7 +3620,7 @@
  T vgui::TextEntry::SetDrawWidth(int)
  T vgui::TextEntry::SetEditable(bool)
  T vgui::TextEntry::SetEnabled(bool)
- T vgui::TextEntry::SetFont(unsigned long)
+ T vgui::TextEntry::SetFont(unsigned int)
  T vgui::TextEntry::SetHorizontalScrolling(bool)
  T vgui::TextEntry::SetMaximumCharCount(int)
  T vgui::TextEntry::SetMultiline(bool)
@@ -3633,7 +3632,7 @@
  T vgui::TextEntry::SetTextHidden(bool)
  T vgui::TextEntry::SetToFullHeight()
  T vgui::TextEntry::SetToFullWidth()
- T vgui::TextEntry::SetUseFallbackFont(bool, unsigned long)
+ T vgui::TextEntry::SetUseFallbackFont(bool, unsigned int)
  T vgui::TextEntry::SetVerticalScrollbar(bool)
  T vgui::TextEntry::SetWrap(bool)
  T vgui::TextEntry::ShowIMECandidates()
@@ -3656,11 +3655,11 @@
  T vgui::TextImage::SetAllCaps(bool)
  T vgui::TextImage::SetCenterWrap(bool)
  T vgui::TextImage::SetDrawWidth(int)
- T vgui::TextImage::SetFont(unsigned long)
+ T vgui::TextImage::SetFont(unsigned int)
  T vgui::TextImage::SetSize(int, int)
  T vgui::TextImage::SetText(char const*)
  T vgui::TextImage::SetText(wchar_t const*, bool)
- T vgui::TextImage::SetUseFallbackFont(bool, unsigned long)
+ T vgui::TextImage::SetUseFallbackFont(bool, unsigned int)
  T vgui::TextImage::SetWrap(bool)
  T vgui::TextImage::TextImage(char const*)
  T vgui::TextImage::TextImage(wchar_t const*)
@@ -3720,7 +3719,7 @@
  T vgui::TreeNode::SelectPrevChild(vgui::TreeNode*)
  T vgui::TreeNode::SetBgColor(Color)
  T vgui::TreeNode::SetFgColor(Color)
- T vgui::TreeNode::SetFont(unsigned long)
+ T vgui::TreeNode::SetFont(unsigned int)
  T vgui::TreeNode::SetKeyValues(KeyValues*)
  T vgui::TreeNode::SetNodeExpanded(bool)
  T vgui::TreeNode::SetVisible(bool)
@@ -3810,7 +3809,7 @@
  T vgui::TreeView::SetAllowLabelEditing(bool)
  T vgui::TreeView::SetBgColor(Color)
  T vgui::TreeView::SetDragEnabledItems(bool)
- T vgui::TreeView::SetFont(unsigned long)
+ T vgui::TreeView::SetFont(unsigned int)
  T vgui::TreeView::SetImageList(vgui::ImageList*, bool)
  T vgui::TreeView::SetItemBgColor(int, Color const&)
  T vgui::TreeView::SetItemFgColor(int, Color const&)
@@ -3847,8 +3846,6 @@
  T void ImageLoader::CompressSTB<RGB888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  T void ImageLoader::CompressSTB<RGBA8888_t>(unsigned char*, ImageFormat, unsigned char const*, int, int)
  ThreadGetCurrentId
- ThreadInterlockedAssignIf
- ThreadInterlockedExchange
  Warning
  _DefaultRuneLocale
  _Unwind_Resume
@@ -3871,7 +3868,7 @@
  atof
  atoi
  b CFontTextureCache::AllocatePageForChar(int, int, int&, int&, int&, int&, int&)::nFontPageId
- b CFontTextureCache::GetTextureForChars(unsigned long, vgui::FontDrawType_t, wchar_t const*, int*, float**, int)::sTexCoords
+ b CFontTextureCache::GetTextureForChars(unsigned int, vgui::FontDrawType_t, wchar_t const*, int*, float**, int)::sTexCoords
  b CMatSystemTexture::SetTextureRGBA(char const*, int, int, ImageFormat, bool)::nTextureId
  b CUtlSymbol::Initialize()::symbolsInitialized
  b ClipPolygon(int, vgui::Vertex_t*, int, int, vgui::Vertex_t***)::clip
@@ -4200,53 +4197,53 @@
  t ImageLoader::UV88ToRGBA8888(unsigned char const*, unsigned char*, int)
  t ImageLoader::UVLX8888ToRGBA8888(unsigned char const*, unsigned char*, int)
  t ImageLoader::UVWQ8888ToRGBA8888(unsigned char const*, unsigned char*, int)
- t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.19745.vun4Gs.ii
- t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.19746.obxAFg.ii
- t _GLOBAL__sub_I_BitmapFont.stdout.rel_tf_osx_builder.58885.LESvJQ.ii
- t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.19747.9FbHlk.ii
- t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.19748.lUD9rK.ii
- t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.19749.v50qgP.ii
- t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.19750.vwa8YC.ii
- t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.19751.t3iqtH.ii
- t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.19794.fygRaU.ii
- t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.19795.GXBk9A.ii
- t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.19816.8YuSPP.ii
- t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.19825.ipjJmB.ii
- t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.19835.HwCM6z.ii
- t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.19836.ZMdMVV.ii
- t _GLOBAL__sub_I_FontManage.stdout.rel_tf_osx_builder.58887.7Ccusu.ii
- t _GLOBAL__sub_I_FontTextur.stdout.rel_tf_osx_builder.20577.X6OLZh.ii
- t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.19865.DBGr69.ii
- t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.19869.gMqwMc.ii
- t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.55432.qZWQhg.ii
- t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.19909.E2h6D7.ii
- t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.19913.2E2vcN.ii
- t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.19921.7Y5YAa.ii
- t _GLOBAL__sub_I_MatSystemS.stdout.rel_tf_osx_builder.20578.OTf9Jf.ii
- t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.19924.9GH0nN.ii
- t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.19934.VUbte9.ii
- t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.19945.13Eb0j.ii
- t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.19949.zEjDAP.ii
- t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.19954.fPYa7S.ii
- t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.19960.2C7yns.ii
- t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.19973.tuLP9J.ii
- t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.19991.NTdi9k.ii
- t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.20031.BqloHq.ii
- t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.20030.o3UFhL.ii
- t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.20059.WH5JaT.ii
- t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.20074.5nyzf3.ii
- t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.20089.QvCwkF.ii
- t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.20095.K6RoEP.ii
- t _GLOBAL__sub_I_TextureDic.stdout.rel_tf_osx_builder.59056.QcxRyu.ii
- t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.20104.BDQxup.ii
- t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.20117.Czb5eV.ii
- t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.20127.Plhszf.ii
- t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.20137.P44kdn.ii
- t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
- t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.9376.gxVesc.ii
- t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
- t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
- t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.20575.0aXmE3.ii
+ t _GLOBAL__sub_I_AnimatingI.stdout.rel_tf_osx_builder.96208.lrtgQy.ii
+ t _GLOBAL__sub_I_AnimationC.stdout.rel_tf_osx_builder.96209.bcVBr1.ii
+ t _GLOBAL__sub_I_BitmapFont.stdout.rel_tf_osx_builder.99313.3vqrXz.ii
+ t _GLOBAL__sub_I_BitmapImag.stdout.rel_tf_osx_builder.96210.7az4SA.ii
+ t _GLOBAL__sub_I_BuildGroup.stdout.rel_tf_osx_builder.96212.71yXqX.ii
+ t _GLOBAL__sub_I_BuildModeD.stdout.rel_tf_osx_builder.96244.KvCeZu.ii
+ t _GLOBAL__sub_I_Button.stdout.rel_tf_osx_builder.96255.uKTKM9.ii
+ t _GLOBAL__sub_I_CheckButto.stdout.rel_tf_osx_builder.96261.SWf36c.ii
+ t _GLOBAL__sub_I_CircularPr.stdout.rel_tf_osx_builder.96268.66eoVR.ii
+ t _GLOBAL__sub_I_ComboBox.stdout.rel_tf_osx_builder.96277.8PXYbJ.ii
+ t _GLOBAL__sub_I_CvarToggle.stdout.rel_tf_osx_builder.96303.KC26hc.ii
+ t _GLOBAL__sub_I_Divider.stdout.rel_tf_osx_builder.96311.yR5w3W.ii
+ t _GLOBAL__sub_I_EditablePa.stdout.rel_tf_osx_builder.96316.TI9Qwz.ii
+ t _GLOBAL__sub_I_ExpandButt.stdout.rel_tf_osx_builder.96321.Lj7TVr.ii
+ t _GLOBAL__sub_I_FontManage.stdout.rel_tf_osx_builder.99316.DzWkds.ii
+ t _GLOBAL__sub_I_FontTextur.stdout.rel_tf_osx_builder.99505.LgV141.ii
+ t _GLOBAL__sub_I_GraphPanel.stdout.rel_tf_osx_builder.96349.C8mTQl.ii
+ t _GLOBAL__sub_I_ImagePanel.stdout.rel_tf_osx_builder.96376.6scsWC.ii
+ t _GLOBAL__sub_I_KeyValues.stdout.rel_tf_osx_builder.93417.gEdOqp.ii
+ t _GLOBAL__sub_I_Label.stdout.rel_tf_osx_builder.96411.p55FLF.ii
+ t _GLOBAL__sub_I_ListPanel.stdout.rel_tf_osx_builder.96417.UuevlR.ii
+ t _GLOBAL__sub_I_ListViewPa.stdout.rel_tf_osx_builder.96418.Sy0wEt.ii
+ t _GLOBAL__sub_I_MatSystemS.stdout.rel_tf_osx_builder.99531.5JNJ7m.ii
+ t _GLOBAL__sub_I_Menu.stdout.rel_tf_osx_builder.22182.1DfQ6v.ii
+ t _GLOBAL__sub_I_MenuBar.stdout.rel_tf_osx_builder.96437.fGaypT.ii
+ t _GLOBAL__sub_I_MenuButton.stdout.rel_tf_osx_builder.96443.gWApzI.ii
+ t _GLOBAL__sub_I_MenuItem.stdout.rel_tf_osx_builder.96447.d4To5v.ii
+ t _GLOBAL__sub_I_MessageBox.stdout.rel_tf_osx_builder.96455.T8DTl5.ii
+ t _GLOBAL__sub_I_Panel.stdout.rel_tf_osx_builder.96461.xczuTY.ii
+ t _GLOBAL__sub_I_PanelListP.stdout.rel_tf_osx_builder.96463.H78JlL.ii
+ t _GLOBAL__sub_I_ProgressBa.stdout.rel_tf_osx_builder.96490.JyzsWw.ii
+ t _GLOBAL__sub_I_RadioButto.stdout.rel_tf_osx_builder.96525.UZafB7.ii
+ t _GLOBAL__sub_I_RichText.stdout.rel_tf_osx_builder.22186.vRXPMR.ii
+ t _GLOBAL__sub_I_ScalableIm.stdout.rel_tf_osx_builder.96555.ASpokc.ii
+ t _GLOBAL__sub_I_ScrollBar.stdout.rel_tf_osx_builder.96565.IYLizm.ii
+ t _GLOBAL__sub_I_Slider.stdout.rel_tf_osx_builder.96579.JIRMep.ii
+ t _GLOBAL__sub_I_TextEntry.stdout.rel_tf_osx_builder.96599.yPO438.ii
+ t _GLOBAL__sub_I_TextureDic.stdout.rel_tf_osx_builder.99534.DjYfwB.ii
+ t _GLOBAL__sub_I_ToggleButt.stdout.rel_tf_osx_builder.96617.t6OeiE.ii
+ t _GLOBAL__sub_I_TreeView.stdout.rel_tf_osx_builder.96630.DDgXio.ii
+ t _GLOBAL__sub_I_TreeViewLi.stdout.rel_tf_osx_builder.96637.J8kETp.ii
+ t _GLOBAL__sub_I_URLLabel.stdout.rel_tf_osx_builder.96641.FNqzqY.ii
+ t _GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+ t _GLOBAL__sub_I_sse.stdout.rel_tf_osx_builder.93971.7w7uSC.ii
+ t _GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+ t _GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
+ t _GLOBAL__sub_I_vgui_contr.stdout.rel_tf_osx_builder.22484.eSw19J.ii
  t __CreateCMatSystemSurfaceISurface_interface()
  t mat_texture_outline_fonts(CCommand const&)
  t stb__MatchColorsBlock(unsigned char*, unsigned char*, int)

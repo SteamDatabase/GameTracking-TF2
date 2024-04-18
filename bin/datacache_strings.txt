@@ -1,4 +1,4 @@
-	%16.16s : %12s : 0x%08x, 0x%p, 0x%p : %s : %s
+	%16.16s : %12s : 0x%p, 0x%p, 0x%p : %s : %s
 	4p8pH
 	@P`p
 	w4A1
@@ -145,7 +145,6 @@
 4p8pHp4pl
 4p8pHp8pH
 4p8pHpl
-4p<`"Bp
 4plp4p4p8pHp4p8pHp4pl
 4plp4p4p8pHp4pl
 4plp4p4pl
@@ -162,13 +161,13 @@
 9F\}R
 9IMDLCache
 ;G<}C
+;S<}<
 ;V,s-
 ;V<}-
-;V<}J
+;V<}@
 ;W<}6
-;W<}A
+;W<}|
 ;XD}0
-;XD}G
 ;p<}*
 ;y$t>
 <^_[]
@@ -194,12 +193,6 @@
 @_Plat_MSTime
 @_ThreadGetCurrentId
 @_ThreadInMainThread
-@_ThreadInterlockedAssignIf
-@_ThreadInterlockedAssignIf64
-@_ThreadInterlockedDecrement
-@_ThreadInterlockedExchange
-@_ThreadInterlockedExchangeAdd
-@_ThreadInterlockedIncrement
 @_ThreadSleep
 @_Warning
 @__Unwind_Resume
@@ -244,7 +237,7 @@
 @vtable for __cxxabiv1::__si_class_type_info
 @vtable for __cxxabiv1::__vmi_class_type_info
 AVBSCRA
-A`"ARBRB`2AXAYCp
+A`$BRBRBRB`2AXAYCp
 AnimBlock
 Async
 BodyPartHeader_t
@@ -329,6 +322,7 @@ CDataCacheSectionFastFind::CDataCacheSectionFastFind(CDataCache*, IDataCacheClie
 CDataCacheSectionFastFind::DoFind(unsigned int)
 CDataCacheSectionFastFind::OnAdd(unsigned int, memhandle_t__*)
 CDataCacheSectionFastFind::OnRemove(unsigned int)
+CDataCacheSectionFastFind::~CDataCacheSectionFastFind()
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::DestroyResourceStorage(void*)
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::GetRealSize(void*)
 CDataManager<DataCacheItem_t, DataCacheItemData_t, DataCacheItem_t*, CThreadFastMutex>::Lock()
@@ -618,6 +612,7 @@ ConnectTier3Libraries(void* (**)(char const*, int*), int)
 CreateInterfaceInternal(char const*, int*)
 Data manager 'used' memory incorrect
 DataCacheItem_t pool
+DataCacheItem_t::DestroyResource()
 DataCacheItem_t::s_Allocator
 DataCacheSize_f(IConVar*, char const*, float)
 DataMapInit<mstudio_meshvertexdata_t>(mstudio_meshvertexdata_t*)::dataDesc
@@ -858,6 +853,7 @@ OptimizedModel::StripHeader_t::m_DataMap
 OptimizedModel::StripHeader_t_DataDescInit::g_DataMapHolder
 OptimizedModel::Vertex_t::m_DataMap
 OptimizedModel::Vertex_t_DataDescInit::g_DataMapHolder
+P0 P 
 P0pp 
 P@P0PPp
 Q4F;w
@@ -865,13 +861,12 @@ QueuedLoaderVersion004
 RARAp
 RAVATBRBRBp
 RAVATBp
-RBRA`FB`
-RBRBRBRBRBRBRAXARDp
+RBRA`@D`$A`
+RBRBRBRBRBRAXARDp
 RBRBRBRBRBRBRBp
 ReleaseMaterialSystemObjects()
 RestoreMaterialSystemObjects(int)
 Section [%s]: %i resources total %s, %.2f %% of limit (%s)
-SetAsyncInfoIndex(unsigned short, MDLCacheDataType_t, int, int)
 Size in MB.
 StripGroupHeader_t
 StripHeader_t
@@ -930,6 +925,7 @@ Vertex_t
 Warning: Attempted to free a locked resource.
 Xcvar
 \^_[]
+\ffffff.
 _$ffff.
 _CommandLine_Tier0
 _CreateInterface
@@ -939,26 +935,20 @@ _Plat_IsInDebugSession
 _Plat_MSTime
 _ThreadGetCurrentId
 _ThreadInMainThread
-_ThreadInterlockedAssignIf
-_ThreadInterlockedAssignIf64
-_ThreadInterlockedDecrement
-_ThreadInterlockedExchange
-_ThreadInterlockedExchangeAdd
-_ThreadInterlockedIncrement
 _ThreadSleep
 _Warning
 __CreateCDataCacheIDataCache_interface()
 __CreateCMDLCacheIMDLCache_interface()
 __CreateCMDLCacheIStudioDataCache_interface()
 __DATA
-__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.55430.mXKsKU.ii
-__GLOBAL__sub_I_datacache.stdout.rel_tf_osx_builder.56130.Ca1KOW.ii
-__GLOBAL__sub_I_mdlcache.stdout.rel_tf_osx_builder.31269.eCfWF3.ii
-__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.56128.pYpet3.ii
-__GLOBAL__sub_I_studio_vir.stdout.rel_tf_osx_builder.56129.pu6EWh.ii
-__GLOBAL__sub_I_studiobyte.stdout.rel_tf_osx_builder.9931.X6A9C0.ii
-__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.8986.vt30zT.ii
-__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.55484.zcRfnN.ii
+__GLOBAL__sub_I_convar.stdout.rel_tf_osx_builder.93387.oGJRTZ.ii
+__GLOBAL__sub_I_datacache.stdout.rel_tf_osx_builder.94528.v5Dbi2.ii
+__GLOBAL__sub_I_mdlcache.stdout.rel_tf_osx_builder.94529.fscx2Q.ii
+__GLOBAL__sub_I_studio.stdout.rel_tf_osx_builder.94525.awqF6I.ii
+__GLOBAL__sub_I_studio_vir.stdout.rel_tf_osx_builder.94526.JNbGoe.ii
+__GLOBAL__sub_I_studiobyte.stdout.rel_tf_osx_builder.94524.jBSS1j.ii
+__GLOBAL__sub_I_utlbuffer.stdout.rel_tf_osx_builder.93559.DrHPPk.ii
+__GLOBAL__sub_I_utlsymbol.stdout.rel_tf_osx_builder.93577.IPWLiR.ii
 __LINKEDIT
 __TEXT
 __Unwind_Resume
@@ -1050,7 +1040,6 @@ _strncat
 _strncpy
 _studiorender
 _vsnprintf
-`P0PP
 activity
 activitylistversion
 activitymodifierindex
@@ -1667,7 +1656,6 @@ szindex2
 szlabelindex
 sznameindex
 sztypeindex
-t fff.
 t'C;]
 t1ff.
 t4fffff.
@@ -1680,7 +1668,7 @@ target2
 target3
 texture
 textureindex
-tgffffff.
+tfffffff.
 tipMass
 trigger
 triggerindex
