@@ -1,0 +1,1052 @@
+ ( def. "%s" )
+ 2008, Valve Corporation, All rights reserved. ========\n//\n// Purpose: Script initially run after squirrel VM is initialized\n//\n//=============================================================================\n\n//-----------------------------------------------------------------------------\n// General\n//-----------------------------------------------------------------------------\n\nrealPrint <- print\nprint_indent <- 0\n\nfunction print( text )\n{\n\tfor ( local i = print_indent; i > 0; --i )\n\t{\n\t\trealPrint( "  " )\n\t}\n\trealPrint( text )\n}\n\nfunction printl( text )\n{\n\treturn print( text + "\n" );\n}\n\nfunction Msg( text )\n{\n\treturn print( text );\n}\n\nfunction Assert( b, msg = null )\n{\n\tif ( b )\n\t\treturn;\n\t\t\n\tif ( msg != null )\n\t{\n\t\tthrow "Assertion failed: " + msg;\n\t}\n\telse\n\t{\n\t\tthrow "Assertion failed";\n\t}\n}\n\n//-----------------------------------------------------------------------------\n\nfunction FindCircularReference( target )\n{\n\tlocal visits = {}\n\tlocal result = false\n\t\n\tfunction RecursiveSearch( current )\n\t{\n\t\tif ( current in visits )\n\t\t{\n\t\t\treturn;\n\t\t}\n\t\tvisits[current] <- true;\n\t\t\n\t\tforeach( key, val in current )\n\t\t{\n\t\t\tif ( val == target && !IsWeakref( target, key ) )\n\t\t\t{\n\t\t\t\tprint( "    Circular reference to " + target.tostring() + " in key " + key.tostring() + " slot " + val.tostring() + " of object " + current.tostring() + "\n" )\n\t\t\t\tresult = true\n\t\t\t}\n\t\t\telse if ( typeof( val ) == "table" || typeof( val ) == "array" || typeof( val ) == "instance" )\n\t\t\t{\n\t\t\t\tif ( !IsWeakref( target, key ) )\n\t\t\t\t{\n\t\t\t\t\tRecursiveSearch( val )\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t\n\tif ( typeof( target ) == "table" || typeof( target ) == "array" || typeof( target ) == "instance" )\n\t\tRecursiveSearch( target );\n\t\t\n\treturn result\n}\n\nfunction FindCircularReferences( resurrecteds )\n{\n\tprintl( "Circular references:" )\n\n\tif ( resurrecteds == null )\n\t{\n\t\tprintl( "    None");\n\t\treturn\n\t}\n\t\n\tif ( typeof( resurrecteds ) != "array" )\n\t{\n\t\tthrow "Bad input to FindCircularReference"\n\t}\n\n\tforeach( val in resurrecteds )\n\t{\n\t\tFindCircularReference( val )\n\t}\n\t\n\tprint("Resurrected objects: ")\n\tDumpObject( resurrecteds );\n}\t\n\n//-----------------------------------------------------------------------------\n\nfunction ScriptDebugDumpKeys( name, table = null )\n{\n\tif ( table == null )\n\t{\n\t\ttable = getroottable()\n\t}\n\n\tif ( name == "" )\n\t{\n\t\tprintl( table.tostring() + "\n{" );\n\t}\n\telse\n\t{\n\t\tprintl( "Find \"" + name + "\"\n{" );\n\t}\n\t\n\tlocal function PrintKey( keyPath, key, value )\n\t{\n\t\tprintl( "    " + keyPath + " = " + value ); \n\t}\n\t\n\tScriptDebugIterateKeys( name, PrintKey, table );\n\t\n\tprintl( "}" );\n}\n\n//-----------------------------------------------------------------------------\n\nfunction ScriptDebugIterateKeys( name, callback, table = null )\n{\n\tlocal visits = {}\n\tlocal pattern;\n\t\n\tlocal function MatchRegexp( keyPath )\n\t{\n\t\treturn pattern.match( keyPath );\n\t}\n\t\n\tlocal function MatchSubstring( keyPath )\n\t{\n\t\treturn keyPath.find( name ) != null;\n\t}\n\n\tlocal function MatchAll( keyPath )\n\t{\n\t\treturn true;\n\t}\n\t\n\tlocal matchFunc;\n\t\n\tif ( table == null )\n\t{\n\t\ttable = getroottable()\n\t}\n\n\tif ( name == "" )\n\t{\n\t\tmatchFunc = MatchAll\n\t}\n\telse if ( name[0] == '#' ) // exact\n\t{\n\t\tpattern = regexp( "^" + name + "$" )\n\t\tmatchFunc = MatchRegexp\n\t}\n\telse if ( name[0] == '@' ) // regexp\n\t{\n\t\tpattern = regexp( name.slice( 1 ) )\n\t\tmatchFunc = MatchRegexp\n\t}\n\telse // general\n\t{\n\t\tmatchFunc = MatchSubstring\n\t}\n\t\t\n\tScriptDebugIterateKeysRecursive( matchFunc, null, table, visits, callback );\n}\n\n//-----------------------------------------------------------------------------\n\nfunction ScriptDebugIterateKeysRecursive( matchFunc, path, current, visits, callback )\n{\n\tif ( ! ( current in visits ) )\n\t{\n\t\tvisits[current] <- true\n\t\t\n\t\tforeach( key, value in current )\n\t\t{\n\t\t\tif ( typeof(key) == "string" )\n\t\t\t{\n\t\t\t\tlocal keyPath = ( path ) ? path + "." + key : key\n\t\t\t\tif ( matchFunc(keyPath) )\n\t\t\t\t{\n\t\t\t\t\tcallback( keyPath, key, value );\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tif ( typeof(value) == "table" )\n\t\t\t\t{\n\t\t\t\t\tScriptDebugIterateKeysRecursive( matchFunc, keyPath, value, visits, callback )\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n\n//-----------------------------------------------------------------------------\n// Documentation table\n//-----------------------------------------------------------------------------\n\nif ( developer() > 0 )\n{\n\tDocumentation <-\n\t{\n\t\tclasses = {}\n\t\tfunctions = {}\n\t\tinstances = {}\n\t}\n\n\n\tfunction RetrieveNativeSignature( nativeFunction )\n\t{\n\t\tif ( nativeFunction in NativeFunctionSignatures )\n\t\t{\n\t\t\treturn NativeFunctionSignatures[nativeFunction]\n\t\t}\n\t\treturn "<unnamed>"\n\t}\n\t\n\tfunction RegisterFunctionDocumentation( func, name, signature, description )\n\t{\n\t\tif ( description.len() )\n\t\t{\n\t\t\tlocal b = ( description[0] == '#' );\n\t\t\tif ( description[0] == '#' )\n\t\t\t{\n\t\t\t\tlocal colon = description.find( ":" );\n\t\t\t\tif ( colon == null )\n\t\t\t\t{\n\t\t\t\t\tcolon = description.len();\n\t\t\t\t}\n\t\t\t\tlocal alias = description.slice( 1, colon );\n\t\t\t\tdescription = description.slice( colon + 1 );\n\t\t\t\tname = alias;\n\t\t\t\tsignature = "#";\n\t\t\t}\n\t\t}\n\t\tDocumentation.functions[name] <- [ signature, description ]\n\t}\n\n\tfunction Document( symbolOrTable, itemIfSymbol = null, descriptionIfSymbol = null )\n\t{\n\t\tif ( typeof( symbolOrTable ) == "table" )\n\t\t{\n\t\t\tforeach( symbol, itemDescription in symbolOrTable )\n\t\t\t{\n\t\t\t\tAssert( typeof(symbol) == "string" )\n\t\t\t\t\n\t\t\t\tDocument( symbol, itemDescription[0], itemDescription[1] );\n\t\t\t}\n\t\t}\n\t\telse\n\t\t{\n\t\t\tprintl( symbolOrTable + ":" + itemIfSymbol.tostring() + "/" + descriptionIfSymbol );\n\t\t}\n\t}\n\t\n\tfunction PrintHelp( string = "*", exact = false )\n\t{\n\t\tlocal matches = []\n\t\t\n\t\tif ( string == "*" || !exact )\n\t\t{\n\t\t\tforeach( name, documentation in Documentation.functions )\n\t\t\t{\n\t\t\t\tif ( string != "*" && name.tolower().find( string.tolower() ) == null )\n\t\t\t\t{\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tmatches.append( name ); \n\t\t\t}\n\t\t} \n\t\telse if ( exact )\n\t\t{\n\t\t\tif ( string in Documentation.functions )\n\t\t\t\tmatches.append( string )\n\t\t}\n\t\t\n\t\tif ( matches.len() == 0 )\n\t\t{\n\t\t\tprintl( "Symbol " + string + " not found" );\n\t\t\treturn;\n\t\t}\n\t\t\n\t\tmatches.sort();\n\t\t\n\t\tforeach( name in matches )\n\t\t{\n\t\t\tlocal result = name;\n\t\t\tlocal documentation = Documentation.functions[name];\n\t\t\t\n\t\t\tprintl( "Function:    " + name );\n\t\t\tlocal signature;\n\t\t\tif ( documentation[0] != "#" )\n\t\t\t{\n\t\t\t\tsignature = documentation[0];\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tsignature = GetFunctionSignature( this[name], name );\n\t\t\t}\n\t\t\t\n\t\t\tprintl( "Signature:   " + signature );\n\t\t\tif ( documentation[1].len() )\n\t\t\t\tprintl( "Description: " + documentation[1] );\n\t\t\tprint( "\n" ); \n\t\t}\n\t}\n}\nelse\n{\n\tfunction RetrieveNativeSignature( nativeFunction ) { return "<unnamed>"; }\n\tfunction RegisterFunctionDocumentation( func, name, signature, description ) {}\n\tfunction Document( symbolOrTable, itemIfSymbol = null, descriptionIfSymbol = null ) {}\n\tfunction PrintHelp( string = "*", exact = false )\n\t{\n\t\tprintl( "You must have started the script VM in developer mode to use this. Start a map/the app with '-dev'" );\n\t}\n}\n\n//-----------------------------------------------------------------------------\n// VSquirrel support functions\n//-----------------------------------------------------------------------------\n\nfunction VSquirrel_OnCreateScope( name, outer )\n{\n\tlocal result;\n\tif ( !(name in outer) )\n\t{\n\t\tresult = outer[name] <- { __vname=name, __vrefs = 1 };\n\t\tresult.setdelegate( outer );\n\t}\n\telse\n\t{\n\t\tresult = outer[name];\n\t\tresult.__vrefs += 1;\n\t}\n\treturn result;\n}\n\nfunction VSquirrel_OnReleaseScope( scope )\n{\n\tscope.__vrefs -= 1;\n\tif ( scope.__vrefs < 0 )\n\t{\n\t\tthrow "Bad reference counting on scope " + scope.__vname;\n\t}\n\telse if ( scope.__vrefs == 0 )\n\t{\n\t\tdelete scope.getdelegate()[scope.__vname];\n\t\tscope.__vname = null;\n\t\tscope.setdelegate( null );\n\t}\n}\n\n\n//-----------------------------------------------------------------------------\n//\n//-----------------------------------------------------------------------------\nclass CCallChainer\n{\n\tconstructor( prefixString, scopeForThis = null )\n\t{\n\t\tprefix = prefixString;\n\t\tif ( scopeForThis != null )\n\t\t\tscope = scopeForThis;\n\t\telse\n\t\t\tscope = ::getroottable();\n\t\tchains = {};\n\t\t\n\t\t// Expose a bound global function to dispatch to this object\n\t\tscope[ "Dispatch" + prefixString ] <- Call.bindenv( this );\n\t}\n\t\n\tfunction PostScriptExecute() \n\t{\n\t\tforeach( key, value in scope )\n\t\t{\n\t\t\tif ( typeof( value ) == "function" ) \n\t\t\t{\n\t\t\t\tif ( key.find( prefix ) == 0 )\n\t\t\t\t{\n\t\t\t\t\tkey = key.slice( prefix.len() );\n\t\t\t\t\t\n\t\t\t\t\tif ( !(key in chains) )\n\t\t\t\t\t{\n\t\t\t\t\t\t//::print( "Creating new call chain " + key + "\n");\n\t\t\t\t\t\tchains[key] <- [];\n\t\t\t\t\t}\n\t\t\t\t\t\n\t\t\t\t\tlocal chain = chains[key];\n\t\t\t\t\t\n\t\t\t\t\tif ( !chain.len() || chain.top() != value )\n\t\t\t\t\t{\n\t\t\t\t\t\tchain.push( value );\n\t\t\t\t\t\t//::print( "Added " + value + " to call chain " + key + "\n" );\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t\n\tfunction Call( event, ... )\n\t{\n\t\tif ( event in chains )\n\t\t{\n\t\t\tlocal chain = chains[event];\n\t\t\tif ( chain.len() )\n\t\t\t{\n\t\t\t\tlocal i;\n\t\t\t\tlocal args = [];\n\t\t\t\tif ( vargv.len() > 0 )\n\t\t\t\t{\n\t\t\t\t\targs.push( scope );\n\t\t\t\t\tfor ( i = 0; i < vargv.len(); i++ )\n\t\t\t\t\t{\n\t\t\t\t\t\targs.push( vargv[i] );\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tfor ( i = chain.len() - 1; i >= 0; i -= 1 )\n\t\t\t\t{\n\t\t\t\t\tlocal func = chain[i];\n\t\t\t\t\tlocal result;\n\t\t\t\t\tif ( !args.len() )\n\t\t\t\t\t{\n\t\t\t\t\t\tresult = func();\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t{\n\t\t\t\t\t\tresult = func.acall( args ); \n\t\t\t\t\t}\n\t\t\t\t\tif ( result != null && !result )\n\t\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\t\n\t\treturn true;\n\t}\n\t\n\tscope = null;\n\tprefix = null;\n\tchains = null;\n};\n\n\n//-----------------------------------------------------------------------------\n//\n//-----------------------------------------------------------------------------\nclass CSimpleCallChainer\n{\n\tconstructor( prefixString, scopeForThis = null, exactNameMatch = false )\n\t{\n\t\tprefix = prefixString;\n\t\tif ( scopeForThis != null )\n\t\t\tscope = scopeForThis;\n\t\telse\n\t\t\tscope = ::getroottable();\n\t\tchain = [];\n\t\t\n\t\t// Expose a bound global function to dispatch to this object\n\t\tscope[ "Dispatch" + prefixString ] <- Call.bindenv( this );\n\t\t\n\t\texactMatch = exactNameMatch\n\t}\n\t\n\tfunction PostScriptExecute() \n\t{\n\t\tforeach( key, value in scope )\n\t\t{\n\t\t\tif ( typeof( value ) == "function" ) \n\t\t\t{\n\t\t\t\tlocal foundMatch = false;\n\t\t\t\tif ( exactMatch )\n\t\t\t\t{\n\t\t\t\t\tfoundMatch = ( prefix == key );\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tfoundMatch = ( key.find( prefix ) == 0 )\n\t\t\t\t}\n\t\t\t\t\t\t\n\t\t\t\tif ( foundMatch )\n\t\t\t\t{\n\t\t\t\t\tif ( !exactMatch )\n\t\t\t\t\t\tkey = key.slice( prefix.len() );\n\t\t\t\t\t\n\t\t\t\t\tif ( !(chain) )\n\t\t\t\t\t{\n\t\t\t\t\t\t//::print( "Creating new call simple chain\n");\n\t\t\t\t\t\tchain <- [];\n\t\t\t\t\t}\n\t\t\t\t\t\n\t\t\t\t\tif ( !chain.len() || chain != value )\n\t\t\t\t\t{\n\t\t\t\t\t\tchain.push( value );\n\t\t\t\t\t\t//::print( "Added " + value + " to call chain.\n" );\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\t\n\tfunction Call( ... )\n\t{\n\t\tif ( chain.len() )\n\t\t{\n\t\t\tlocal i;\n\t\t\tlocal args = [];\n\t\t\tif ( vargv.len() > 0 )\n\t\t\t{\n\t\t\t\targs.push( scope );\n\t\t\t\tfor ( i = 0; i < vargv.len(); i++ )\n\t\t\t\t{\n\t\t\t\t\targs.push( vargv[i] );\n\t\t\t\t}\n\t\t\t}\n\t\t\tfor ( i = chain.len() - 1; i >= 0; i -= 1 )\n\t\t\t{\n\t\t\t\tlocal func = chain[i];\n\t\t\t\tlocal result;\n\t\t\t\tif ( !args.len() )\n\t\t\t\t{\n\t\t\t\t\tresult = func.pcall( scope );\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tresult = func.pacall( scope, args ); \n\t\t\t\t}\n\t\t\t\tif ( result != null && !result )\n\t\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\t\n\t\treturn true;\n\t}\n\t\n\texactMatch = false\n\tscope = null;\n\tprefix = null;\n\tchain = null;\n};\n\n//-----------------------------------------------------------------------------\n// Late binding: allows a table to refer to parts of itself, it's children,\n// it's owner, and then have the references fixed up after it's fully parsed\n//\n// Usage:\n//    lateBinder <- LateBinder();\n//    lateBinder.Begin( this );\n//    \n//    Test1 <-\n//    {   \n// \t   Foo=1\n//    }   \n//    \n//    Test2 <-\n//    {   \n// \t   FooFoo = "I'm foo foo"\n// \t   BarBar="@Test1.Foo"\n// \t   SubTable = { boo=[bah, "@Test2.FooFoo", "@Test1.Foo"], booboo2={one=bah, two="@Test2.FooFoo", three="@Test1.Foo"} }\n// \t   booboo=[bah, "@Test2.FooFoo", "@Test1.Foo"]\n// \t   booboo2={one=bah, two="@Test2.FooFoo", three="@Test1.Foo"}\n// \t   bah=wha\n//    }   \n//    \n//    lateBinder.End();\n//    delete lateBinder;\n//\n// When End() is called, all of the unresolved symbols in the tables and arrays will be resolved,\n// any left unresolved will become a string prepended with '~', which later code can deal with\n//-----------------------------------------------------------------------------\n\nclass LateBinder\n{\n\t// public:\n\tfunction Begin( target, log = false )\n\t{\n\t\tm_log = log;\n\t\t\n\t\tHookRootMetamethod( "_get", function( key ) { return "^" + key; } );\n\t\tHookRootMetamethod( "_newslot", function( key, value ) { if ( typeof value == "table" ) { m_fixupSet.push( [ key, value ] ); this.rawset( key, value ); };  }.bindenv(this) );\n\t\tm_targetTable = target;\n\t\t\n\t\tLog( "Begin late bind on table " + m_targetTable );\n\t}\n\t\n\tfunction End()\n\t{\n\t\tUnhookRootMetamethod( "_get" );\n\t\tUnhookRootMetamethod( "_newslot" );\n\n\t\tLog( "End late bind on table " + m_targetTable );\n\t\t\n\t\tforeach( subTablePair in m_fixupSet )\n\t\t{\n\t\t\tEstablishDelegation( m_targetTable, subTablePair[1] );\n\t\t}\n\n\t\tLog( "Begin resolution... " )\n\t\tm_logIndent++;\n\t\t\n\t\tlocal found = true;\n\t\t\n\t\twhile ( found )\n\t\t{\n\t\t\tforeach( subTablePair in m_fixupSet )\n\t\t\t{\n\t\t\t\tLog( subTablePair[0] + " = " );\n\t\t\t\tLog( "{" );\n\t\t\t\tif ( !Resolve( subTablePair[1], subTablePair[1], false ) )\n\t\t\t\t{\n\t\t\t\t\tfound = false;\n\t\t\t\t}\n\t\t\t\tLog( "}" );\n\t\t\t}\n\t\t}\n\t\t\t\n\t\tm_logIndent--;\n\t\t\n\t\tforeach( subTablePair in m_fixupSet )\n\t\t{\n\t\t\tRemoveDelegation( subTablePair[1] );\n\t\t}\n\t\t\n\t\tLog( "...end resolution" );\n\t}\n\t\t\n\t// private:\n\tfunction HookRootMetamethod( name, value )\n\t{\n\t\tlocal saved = null;\n\t\tlocal roottable = getroottable();\n\t\tif ( name in roottable )\n\t\t{\n\t\t\tsaved = roottable[name];\n\t\t}\n\t\troottable[name] <- value;\n\t\troottable["__saved" + name] <- saved;\n\t}\n\n\tfunction UnhookRootMetamethod( name )\n\t{\n\t\tlocal saveSlot = "__saved" + name;\n\t\tlocal roottable = getroottable();\n\t\tlocal saved = roottable[saveSlot];\n\t\tif ( saved != null )\n\t\t{\n\t\t\troottable[name] = saved;\n\t\t}\n\t\telse\n\t\t{\n\t\t\tdelete roottable[name];\n\t\t}\n\t\tdelete roottable[saveSlot];\n\t}\n\n\tfunction EstablishDelegation( parentTable, childTable )\n\t{\n\t\tchildTable.setdelegate( parentTable );\n\t\t\n\t\tforeach( key, value in childTable )\n\t\t{\n\t\t\tlocal type = typeof value;\n\t\t\tif ( type == "table" )\n\t\t\t{\n\t\t\t\tEstablishDelegation( childTable, value );\n\t\t\t}\n\t\t}\n\t}\n\t\n\tfunction RemoveDelegation( childTable )\n\t{\n\t\tchildTable.setdelegate( null );\n\t\t\n\t\tforeach( key, value in childTable )\n\t\t{\n\t\t\tlocal type = typeof value;\n\t\t\tif ( type == "table" )\n\t\t\t{\n\t\t\t\tRemoveDelegation( value );\n\t\t\t}\n\t\t}\n\t}\n\n\tfunction Resolve( lookupTable, subTableOrArray, throwException = false )\n\t{\n\t\tm_logIndent++;\n\t\tlocal found = false;\n\t\n\t\tforeach( key, value in subTableOrArray )\n\t\t{\n\t\t\tlocal type = typeof value;\n\t\t\tif ( type == "string" )\n\t\t\t{\n\t\t\t\tif ( value.len() )\n\t\t\t\t{\n\t\t\t\t\tlocal unresolvedId = null;\n\t\t\t\t\tlocal controlChar = value[0]\n\t\t\t\t\tif ( controlChar == '^' )\n\t\t\t\t\t{\n\t\t\t\t\t\tfound = true;\n\t\t\t\t\t\tvalue = value.slice( 1 );\n\t\t\t\t\t\tif ( value in lookupTable )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tsubTableOrArray[key] = lookupTable[value];\n\t\t\t\t\t\t\tLog( key + " = " + lookupTable[value] + " <-- " + value );\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tsubTableOrArray[key] = "~" + value;\n\t\t\t\t\t\t\tunresolvedId = value;\n\t\t\t\t\t\t\tLog( key + " = \"" + "~" + value + "\" (unresolved)" );\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\telse if ( controlChar == '@' )\n\t\t\t\t\t{\n\t\t\t\t\t\tfound = true;\n\t\t\t\t\t\tlocal identifiers = [];\n\t\t\t\t\t\tlocal iLast = 1;\n\t\t\t\t\t\tlocal iNext;\n\t\t\t\t\t\twhile ( ( iNext = value.find( ".", iLast ) ) != null )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tidentifiers.push( value.slice( iLast, iNext ) );\n\t\t\t\t\t\t\tiLast = iNext + 1;\n\t\t\t\t\t\t}\n\t\t\t\t\t\tidentifiers.push( value.slice( iLast ) );\n\t\t\t\t\t\t\n\t\t\t\t\t\tlocal depthSuccess = 0;\n\t\t\t\t\t\tlocal result = lookupTable;\n\t\t\t\t\t\tforeach( identifier in identifiers )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tif ( identifier in result )\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tdepthSuccess++;\n\t\t\t\t\t\t\t\tresult = result[identifier];\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\tif ( depthSuccess == identifiers.len() )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tsubTableOrArray[key] = result;\n\t\t\t\t\t\t\tLog( key + " = " + result + " <-- " + value );\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tsubTableOrArray[key] = "~" + value.slice( 1 );\n\t\t\t\t\t\t\tunresolvedId = value;\n\t\t\t\t\t\t\tLog( key + " = \"" + "~" + value + "\" (unresolved)" );\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\t\n\t\t\t\t\tif ( unresolvedId != null )\n\t\t\t\t\t{\n\t\t\t\t\t\tif ( throwException )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tlocal exception = "Unresolved symbol: " + bind + " in ";\n\t\t\t\t\t\t\tforeach ( entry in m_bindNamesStack )\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\texception += entry;\n\t\t\t\t\t\t\t\texception += "."\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\texception += unresolvedId;\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\tthrow exception; \n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tforeach( key, value in subTableOrArray )\n\t\t{\n\t\t\tlocal type = typeof value;\n\t\t\tlocal isTable = ( type == "table" );\n\t\t\tlocal isArray = ( type == "array" )\n\t\t\tif ( isTable || isArray )\n\t\t\t{\n\t\t\t\tLog( key + " =" );\n\t\t\t\tLog( isTable ? "{" : "[" );\n\t\t\t\t\n\t\t\t\tm_bindNamesStack.push( key );\n\t\t\t\tif ( Resolve( ( isTable ) ? value : lookupTable, value, throwException ) )\n\t\t\t\t{\n\t\t\t\t\tfound = true;\n\t\t\t\t}\n\t\t\t\tm_bindNamesStack.pop();\n\t\t\t\t\n\t\t\t\tLog( isTable ? "}" : "]" );\n\t\t\t}\n\t\t}\n\t\tm_logIndent--;\n\t\treturn found;\n\t}\n\t\n\tfunction Log( string )\n\t{\n\t\tif ( m_log )\n\t\t{\n\t\t\tfor ( local i = 0; i < m_logIndent; i++ )\n\t\t\t{\n\t\t\t\tprint( "  " );\n\t\t\t}\n\t\t\t\n\t\t\tprintl( string );\n\t\t}\n\t}\n\n\tm_targetTable = null;\n\tm_fixupSet = [];\n\tm_bindNamesStack = [];\n\tm_log = false;\n\tm_logIndent = 0;\n}\n\n// support function to assemble help strings for script calls - call once all your stuff is in the VM\n::_PublishedHelp <- {}\nfunction AddToScriptHelp( scopeTable )\n{\n\tforeach (idx, val in scopeTable )\n\t{\n\t\tif (typeof(val) == "function")\n\t\t{\n\t\t\tlocal helpstr = "scripthelp_" + idx\n\t\t\tif ( ( helpstr in scopeTable ) && ( ! (helpstr in ::_PublishedHelp) ) )\n\t\t\t{\n//\t\t\t\tRegisterFunctionDocumentation( val, idx, "#", scopeTable[helpstr] )\n\t\t\t\tRegisterFunctionDocumentation( val, idx, GetFunctionSignature( val, idx ), scopeTable[helpstr] )\n\t\t\t\t::_PublishedHelp[helpstr] <- true\n\t\t\t\tprintl("Registered " + helpstr + " for " + val.tostring)\n\t\t\t}\n\t\t}\n\t}\n}\n
+ archive
+ bytes
+ cheat
+ client
+ clientcmd_can_execute
+ failed to dlopen %s error=%s\n
+ game
+ notconnected
+ notify
+ replicated
+ server_can_execute
+ singleplayer
+"%s" = "%s"
+%.14g
+%f %f %f %f
+%lld
+%s %s %s %s\n
+%s line = (%d) column = (%d) : error %s\n
+%s/bin/linux64/%s
+&AElig;
+&Aacute;
+&Acirc;
+&Agrave;
+&Aring;
+&Atilde;
+&Auml;
+&Ccedil;
+&ETH;
+&Eacute;
+&Ecirc;
+&Egrave;
+&Euml;
+&Iacute;
+&Icirc;
+&Igrave;
+&Iuml;
+&Ntilde;
+&Oacute;
+&Ocirc;
+&Ograve;
+&Oslash;
+&Otilde;
+&Ouml;
+&THORN;
+&Uacute;
+&Ucirc;
+&Ugrave;
+&Uuml;
+&Yacute;
+&aacute;
+&acirc;
+&acute;
+&aelig;
+&agrave;
+&amp;
+&apos;
+&aring;
+&atilde;
+&auml;
+&brvbar;
+&ccedil;
+&cedil;
+&cent;
+&copy;
+&curren;
+&deg;
+&divide;
+&eacute;
+&ecirc;
+&egrave;
+&eth;
+&euml;
+&euro;
+&frac12;
+&frac14;
+&frac34;
+&iacute;
+&icirc;
+&iexcl;
+&igrave;
+&iquest;
+&iuml;
+&laquo;
+&macr;
+&mdash;
+&micro;
+&middot;
+&nbsp;
+&ndash;
+&not;
+&ntilde;
+&oacute;
+&ocirc;
+&ograve;
+&ordf;
+&ordm;
+&oslash;
+&otilde;
+&ouml;
+&para;
+&plusmn;
+&pound;
+&quot;
+&quot;n
+&quot;r
+&raquo;
+&reg;
+&sect;
+&shy;
+&sup1;
+&sup2;
+&sup3;
+&szlig;
+&thorn;
+&times;
+&trade;
+&uacute;
+&ucirc;
+&ugrave;
+&uml;
+&uuml;
+&yacute;
+&yen;
+&yuml;
+'base' cannot be modified
+'break' has to be in a loop block
+'continue' has to be in a loop block
+(%s : 0x%p)
+(instance : 0x%p)
+(qangle : (%f, %f, %f)
+(quaternion : (%f, %f, %f, %f)
+(vector : (%f, %f, %f)
+(vector2D : (%f, %f)
+(vector4D : (%f, %f, %f, %f)
+(weakref : 0x%p [%s] )
+** NOTE: The real value is %.3f but the server has temporarily restricted it to %.3f **\n
+*FUNCTION [%s()] %s line [%d]\n
+*FUNCTION [%s] %s line [%d]\n
+*ZN4SQVM47FindAllClosuresForFunctionBySourceAndLineNumberER8sqvectorI11SQObjectPtrEPKcxE11CHackerator
+, or } expected
+,%03d
+-sqdbg_superverbose
+.nnn
+.ssb
+//===\t======= Copyright 
+/data/src/vscript/languages/squirrel3/squirrel/sqvm.cpp
+/data/src/vscript/languages/squirrel3/vsquirrel3/vsquirrel3.cpp
+0123456789ABCDEF
+0123456789abcdef
+10ConCommand
+10IAppSystem
+10SQInstance
+10SQUserData
+11CSquirrelVM
+11SQDelegable
+11SQGenerator
+12CEmptyConVar
+12SQRefCounted
+13SQCollectable
+14CBaseAppSystemI14IScriptManagerE
+14CScriptManager
+14ConCommandBase
+14IScriptManager
+15CScopedIterator
+15CTier0AppSystemI14IScriptManagerE
+15CTier1AppSystemI14IScriptManagerLi0EE
+15SQFunctionProto
+15SQNativeClosure
+16CDefaultAccessor
+16CDllDemandLoader
+16CSQStateIterator
+18CUtlCharConversion
+19CUtlNoEscConversion
+20ConVar_ServerBounded
+21CUtlCStringConversion
+23IConCommandBaseAccessor
+4SQVM
+4fff>fff>fff>fff>
+5a\v6C
+6ConVar
+6SQBlob
+7IConVar
+7SQArray
+7SQClass
+7SQOuter
+7SQTable
+8CFmtStrNILi256ELb0EE
+8SQStream
+8SQString
+9IScriptVM
+9SQClosure
+9SQWeakRef
+</script>
+<img src="
+<lambda or free run script>
+<null>
+<pre>
+<unknown>
+<unnamed>
+><a href=
+>DLOPEN Error:%s\n
+?333333
+@INDEX@
+@ITERATOR@
+@NATIVE
+@failed to generate formatted error message
+ARRAY
+Accessed null instance
+BOOL
+Bad key string passed to a ISquirrelMetamethodDelegate _get()
+Bad user pointer passed to a ISquirrelMetamethodDelegate _get()
+C33s?
+CCommand::Tokenize: Encountered command which overflows the argument buffer.. Clamped!\n
+CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping!\n
+CLASS
+CSquirrelVM::ExecuteFunction
+CSquirrelVM::ExecuteFunction sq_throwerror
+CThreadEvent::CThreadEvent(bool)
+CThreadEvent::Set()
+CThreadRWLock::LockForWrite()
+CThreadRWLock::UnlockWrite()
+CThreadRWLock::WaitForRead()
+CThreadSpinRWLock::LockForRead()
+CThreadSpinRWLock::SpinLockForWrite(unsigned int)
+CThreadSpinRWLock::UnlockRead()
+CThreadSpinRWLock::UnlockWrite()
+CThreadSyncObject::~CThreadSyncObject()
+CUtlFixedMemory overflow!\n
+CUtlLinkedList overflow! (exhausted index range)\n
+CUtlLinkedList overflow! (exhausted memory allocator)\n
+CUtlRBTree overflow!\n
+CVProfNode::EnterScope()
+CVProfNode::ExitScope()
+CVProfNode::GetSubNode(char const*, int, char const*, int)
+CXXABI_1.3
+CommandLine_Tier0
+ConColorMsg(Color const&, char const*, ...)
+ConMsg(char const*, ...)
+ConVarRef %s doesn't point to an existing ConVar\n
+CreateInterface
+Cross
+DevMsg(char const*, ...)
+DevWarning(char const*, ...)
+DumpObject
+EHANDLE
+Error
+FCVAR_NEVER_AS_STRING
+FLOAT
+FindCircularReferences( %s )
+FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!\n
+Forward
+GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
+GENERATOR
+GLIBCXX_3.4
+GLIBCXX_3.4.21
+GLIBC_2.14
+GLIBC_2.2.5
+GLIBC_2.22
+GLIBC_2.27
+GLIBC_2.29
+GLIBC_2.3
+Ga=o
+Generate a random floating point number within a range, inclusive
+Generate a random integer within a range, inclusive
+GetCPUInformation
+GetFunctionSignature
+HushAsserts
+I@balanced chars expected
+IDENTIFIER
+INSTANCE
+INTEGER
+Initializing script debugger.\n
+Internal error
+Invalid attempt to create a slot
+Invalid character
+Invalid scope handed to script VM\n
+Invalid type specified for SetValue
+Invert
+IsValid
+IsWeakref
+Left
+Length
+Length2D
+Length2DSqr
+LengthSqr
+MakeNamespace
+NATIVECLOSURE
+NAUU
+NULL
+Namespace table '%s' continuation must be a table\n
+Native stack overflow
+No such file
+Norm
+Pitch
+Plat_FloatTime
+Plat_IsInDebugSession
+Plat_localtime
+QAngle argument expected
+Quaternion
+Quaternion argument expected
+RAND_MAX
+RandomFloat
+RandomInt
+RegisterFunctionDocumentation
+SCRIPT PERF WARNING --- "%s" ran long at %fms\n
+SQVM::Call %s
+SQVM::CallNative
+Scale
+Script
+Script debugger disconnected\n
+Script function returned unsupported type\n
+Script running too long, terminating\n
+Script terminated by SQQuerySuspend
+SetPitchYawRoll
+Squirrel
+Squirrel 3.2 stable
+Squirrel debugging only supported on Windows for now.
+TABLE
+THREAD
+ThreadGetCurrentId
+ThreadSleep
+ToKVString
+ToQAngle
+ToQuat
+UCS-2LE
+UCS-4LE
+USERDATA
+USERPOINTER
+UTF-32LE
+UTF-8
+UTLSTRINGTOKEN
+Unaccounted
+Unknown vscript console command %s\n
+VEngineCvar004
+VProcessUtils001
+VScriptManager010
+VSquirrel_OnCreateScope
+VSquirrel_OnReleaseScope
+V_AppendSlash: ran out of space on %s.
+V_MakeAbsolutePath: _getcwd failed.
+V_MakeAbsolutePath: tried to ".." past the root.
+Vector
+Vector argument expected
+Vector2D
+Vector2D argument expected
+Vector4D
+WEAKREF
+Warning
+[%s] %.14g\n
+[%s] ARRAY\n
+[%s] CLASS\n
+[%s] CLOSURE\n
+[%s] GENERATOR\n
+[%s] INSTANCE\n
+[%s] NATIVECLOSURE\n
+[%s] TABLE\n
+[%s] THREAD\n
+[%s] USERDATA\n
+[%s] USERPOINTER\n
+[%s] WEAKREF\n
+[/code]
+[/list]
+[code]
+[img]
+[list]
+[url=
+\nAN ERROR HAS OCCURED [%s]\n
+\nAN ERROR HAS OCCURED [unknown]
+\nAN ERROR HAS OCCURRED [%s]\n
+\nAN ERROR HAS OCCURRED [unknown]\n
+\nCALLSTACK\n
+\nLOCALS\n
+\tClient debugger initialized, waiting for connection from Visual Studio...\n
+\tConnected!\n
+\tfailed to connect.\n
+\x%02x
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+_ZGVbN2v_sin
+_ZGVbN2v_sin@GLIBC_2.22
+_ZGVbN2vv_pow
+_ZGVbN2vv_pow@GLIBC_2.22
+_ZGVbN4vv_powf
+_ZGVbN4vv_powf@GLIBC_2.22
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_replaceEmmPKcm@GLIBCXX_3.4.21
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE14_M_replace_auxEmmmc@GLIBCXX_3.4.21
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_appendEPKcm@GLIBCXX_3.4.21
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_assignERKS4_@GLIBCXX_3.4.21
+_ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE9_M_mutateEmmPKcm@GLIBCXX_3.4.21
+_ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base@GLIBCXX_3.4
+_ZSt18_Rb_tree_incrementPKSt18_Rb_tree_node_base@GLIBCXX_3.4
+_ZSt20__throw_length_errorPKc@GLIBCXX_3.4
+_ZSt28_Rb_tree_rebalance_for_erasePSt18_Rb_tree_node_baseRS_@GLIBCXX_3.4
+_ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_@GLIBCXX_3.4
+_ZTVN10__cxxabiv117__class_type_infoE@CXXABI_1.3
+_ZTVN10__cxxabiv120__si_class_type_infoE@CXXABI_1.3
+_ZTVN10__cxxabiv121__vmi_class_type_infoE@CXXABI_1.3
+__ctype_b_loc
+__ctype_b_loc@GLIBC_2.3
+__ctype_tolower_loc
+__ctype_tolower_loc@GLIBC_2.3
+__ctype_toupper_loc
+__ctype_toupper_loc@GLIBC_2.3
+__cxa_atexit
+__cxa_atexit@GLIBC_2.2.5
+__cxa_begin_catch
+__cxa_begin_catch@CXXABI_1.3
+__cxa_call_unexpected
+__cxa_call_unexpected@CXXABI_1.3
+__cxa_end_catch
+__cxa_end_catch@CXXABI_1.3
+__cxa_finalize
+__cxa_finalize@GLIBC_2.2.5
+__cxa_guard_abort
+__cxa_guard_abort@CXXABI_1.3
+__cxa_guard_acquire
+__cxa_guard_acquire@CXXABI_1.3
+__cxa_guard_release
+__cxa_guard_release@CXXABI_1.3
+__cxa_pure_virtual
+__cxa_pure_virtual@CXXABI_1.3
+__cxa_rethrow
+__cxa_rethrow@CXXABI_1.3
+__dynamic_cast
+__dynamic_cast@CXXABI_1.3
+__gmon_start__
+__gxx_personality_v0
+__gxx_personality_v0@CXXABI_1.3
+__pthread_key_create
+__pthread_key_create@GLIBC_2.2.5
+__vrefs
+_add
+_array_default_delegate
+_attributes
+_base 
+_call
+_charsize_
+_class 
+_class_default_delegate
+_cloned
+_closure_default_delegate
+_cmp
+_cmp must return an integer
+_consts
+_delegate 
+_delslot
+_div
+_errorhandler
+_floatsize_
+_generator_default_delegate
+_get
+_handle_default_delegate
+_inherited
+_instance_default_delegate
+_intsize_
+_lasterror
+_members
+_metamethods
+_metamethodsmap
+_modulo
+_mul
+_newmember
+_newslot
+_nexti
+_nexti failed
+_nexti returned an invalid idx
+_number_default_delegate
+_registry
+_roottable
+_set
+_setjmp
+_setjmp@GLIBC_2.2.5
+_sqdbg_debug_hook_
+_sqdbg_error_handler_
+_stack
+_string_default_delegate
+_sub
+_table_default_delegate
+_thread_default_delegate
+_tostring
+_typeof
+_unm
+_utlstringtoken_default_delegate
+_version_
+_versionnumber_
+_weakref_default_delegate
+a closure with free variables bound cannot be serialized
+abort@GLIBC_2.2.5
+acos
+acosf
+acosf@GLIBC_2.2.5
+addbreakpoint
+added bp %d %s\n
+added watch %d %s\n
+apply
+arith op %c on between '%s' and '%s'
+array resized during sort operation
+asin
+asinf
+asinf@GLIBC_2.2.5
+assert
+assertion failed
+atan
+atan2
+atan2f
+atan2f@GLIBC_2.2.5
+atanf
+atanf@GLIBC_2.2.5
+attempt to call '%s'
+attempt to delete a slot from a %s
+attempt to negate a %s
+attempt to perform a bitwise op on a %s
+attribute
+basic_string::append
+begin
+beginelement
+bin/linux64
+bind
+bind@GLIBC_2.2.5
+bindenv
+bitwise op between '%s' and '%s'
+blob would reach over total blob size limit
+bool
+break
+c x|y|t
+callee
+calloc
+calloc@GLIBC_2.2.5
+can't '++' or '--' a base
+can't '++' or '--' an expression
+can't 'create' a local slot
+can't assign expression
+can't delete 'base'
+can't delete an expression
+cannot apply instanceof between a %s and a %s
+cannot bind a %s as environment object
+cannot break deref/or comma needed after [exp]=exp slot declaration
+cannot clone blob
+cannot clone blob this large
+cannot convert the string
+cannot create a class in a local with the syntax(class <local>)
+cannot create blob
+cannot create blob this large
+cannot create blob with negative size
+cannot delete a slot from %s
+cannot delete an (outer) local
+cannot evaluate unary operator
+cannot iterate %s
+cannot iterate a generator
+cannot resume a vm that is not running any code
+cannot serialize a %s
+cannot suspend an already suspended vm
+cannot suspend through native calls/metamethods
+cannot wakeup a idle thread
+cannot wakeup a running thread
+capture
+case
+castf2i
+casti2f
+catch
+cbrtf
+cbrtf@GLIBC_2.2.5
+ceil
+chdir
+chdir@GLIBC_2.2.5
+class instances do not support the new slot operator
+clear
+clear only works on table and array
+clone
+cloning a %s
+collectgarbage
+compare func failed
+comparison between '%.50s' and '%.50s'
+compilestring
+const
+constant too long
+constructor
+continue
+cos@GLIBC_2.2.5
+cppdelegate
+cvar
+dead
+default
+defparams
+delegate cycle
+desc
+developer
+disabled
+disconnected
+division by zero
+dl_iterate_phdr
+dl_iterate_phdr@GLIBC_2.2.5
+dlclose
+dlclose@GLIBC_2.2.5
+dlerror
+dlerror@GLIBC_2.2.5
+dlopen
+dlopen@GLIBC_2.2.5
+dlsym
+dlsym@GLIBC_2.2.5
+dummy
+ehandle
+else
+empty class
+empty constant
+empty separators string
+enabledebuginfo
+end of statement expected (; or lf)
+endelement
+endswith
+entity handle
+enum
+error parsing add breakpoint
+error parsing add watch
+error parsing remove breakpoint
+error parsing remove watch
+error parsing the string
+escape
+exp@GLIBC_2.29
+expected '%c'
+expected '%s'
+expected ')'
+expected ')' or ','
+expected '='
+expected paren
+expf
+expf@GLIBC_2.27
+exponent expected
+expression expected
+expression expected, found ')'
+extend
+extends
+fabs
+failed to bind the socket
+failed to initialize the debugger
+false
+filter
+find
+float expected for the specified format
+floor
+flush
+foreach
+found func %s -> %p\n
+free
+free@GLIBC_2.2.5
+func
+function 
+function with default parameters cannot have variable number of parameters
+g_ClockSpeedMillisecondsMultiplier
+g_Telemetry
+g_VProfCurrentProfile
+g_pMemAlloc
+generators cannot be tail called
+getattributes
+getbase
+getclass
+getconsttable
+getcwd
+getcwd@GLIBC_2.2.5
+getdelegate
+getinfos
+getroot
+getroottable
+getstackinfos
+getstatus
+go (execution resumed)
+hexadecimal number expected
+iconv
+iconv@GLIBC_2.2.5
+iconv_close
+iconv_close@GLIBC_2.2.5
+iconv_open
+iconv_open@GLIBC_2.2.5
+idle
+idx out of range
+image not found
+inconsistent compare function
+index out of range
+indexing %s with %s
+insert
+instanceof
+integer expected for the specified format
+integer overflow
+internal VM error
+internal compiler error: too many literals
+internal compiler error: too many locals
+internal error (_nexti) wrong argument type
+internal vm error bitwise op failed
+internal vm error, yielding a dead generator
+internal vm error, yielding dead generator
+invalid base type
+invalid class name
+invalid constant [%s.%s]
+invalid environment
+invalid format
+invalid free var index
+invalid index type for an array
+invalid object type
+invalid octal number
+invalid or corrupted closure stream
+invalid origin
+invalid param
+invalid param type
+invalid parameter
+invalid range
+invalid regexp object
+invalid stream
+invalid token '..'
+invalid type
+invalid type tag
+invalid type, expected table
+invalid typemask
+io error
+io error (write function failure)
+io error, read function failure, the origin stream could be corrupted/trucated
+isalnum
+isalnum@GLIBC_2.2.5
+isalpha
+isalpha@GLIBC_2.2.5
+iscntrl
+iscntrl@GLIBC_2.2.5
+islower
+islower@GLIBC_2.2.5
+isprint
+isprint@GLIBC_2.2.5
+ispunct
+ispunct@GLIBC_2.2.5
+isspace
+isspace@GLIBC_2.2.5
+isupper
+isupper@GLIBC_2.2.5
+iswspace
+iswspace@GLIBC_2.2.5
+isxdigit
+isxdigit@GLIBC_2.2.5
+key not found in _get()
+keys
+ld-linux-x86-64.so.2
+letter expected
+letter expected for argument of escape sequence
+libc.so.6
+libdl.so.2
+libm.so.6
+libmvec.so.1
+libpthread.so.0
+libstdc++.so.6
+libtier0.so
+libvstdlib.so
+line
+local
+locals
+log10
+log10f
+log10f@GLIBC_2.2.5
+logf
+logf@GLIBC_2.27
+longjmp
+longjmp@GLIBC_2.2.5
+lstrip
+main
+malloc
+malloc@GLIBC_2.2.5
+match
+mbstowcs
+mbstowcs@GLIBC_2.2.5
+memcmp
+memcmp@GLIBC_2.2.5
+memcpy
+memcpy@GLIBC_2.14
+memmove
+memmove@GLIBC_2.2.5
+memset
+memset@GLIBC_2.2.5
+missing "*/" in comment
+modulo by zero
+native
+native closure expected
+native function
+negative size
+new member only works with classes
+newline in a constant
+newthread
+no closure in the calls stack
+no data left to read
+non-string key
+not enough parameters for the given format string
+not enough params in the stack
+null
+null cannot be used as index
+null is not a valid key
+null key
+null quaternion
+null vector
+null vector2D
+null vector4D
+numeric value expected as return value of the compare function
+object must be a class
+only closure can be tail called
+only generators can be resumed
+open/close char can't be the same
+outer
+overflow in numeric constant
+pAnull qangle
+pacall
+parameter %d has an invalid type '%s' ; expected: '%s'
+paramscheck
+pcall
+pow@GLIBC_2.29
+powf@GLIBC_2.27
+precision format too long
+print
+printf
+pthread_mutex_destroy
+pthread_mutex_destroy@GLIBC_2.2.5
+pthread_mutex_init
+pthread_mutex_init@GLIBC_2.2.5
+pthread_mutex_lock
+pthread_mutex_lock@GLIBC_2.2.5
+pthread_mutex_unlock
+pthread_mutex_unlock@GLIBC_2.2.5
+pthread_mutexattr_init
+pthread_mutexattr_init@GLIBC_2.2.5
+pthread_mutexattr_settype
+pthread_mutexattr_settype@GLIBC_2.2.5
+pthread_once
+pthread_once@GLIBC_2.2.5
+push
+puts
+puts@GLIBC_2.2.5
+rawcall
+rawcall requires at least 2 parameters (callee and this)
+rawdelete
+rawget
+rawget works only on array/table/instance and class
+rawin
+rawnewmember
+rawset
+rawset works only on array/table/class and instance
+readblob
+readn
+ready
+recv
+recv@GLIBC_2.2.5
+reduce
+regexp
+remove
+removebreakpoint
+removed bp %d %s\n
+removed watch %d %s\n
+resize
+resize failed
+resizing to negative length
+resume
+resumed
+resuming active generator
+resuming dead generator
+resurrectunreachable
+reverse
+root calls cannot invoke tailcalls
+rstrip
+running
+s n n
+s s n
+scalar expected : integer, float
+scalar expected : integer, float, or string
+script
+script_guthrie
+search
+seek
+select
+select@GLIBC_2.2.5
+send
+send@GLIBC_2.2.5
+setattributes
+setconsttable
+setdebughook
+setdelegate
+seterrorhandler
+setroot
+setroottable
+sin@GLIBC_2.2.5
+sincosf
+sincosf@GLIBC_2.2.5
+size must be a number
+slice
+slice out of range
+socket
+socket error
+socket failed
+socket@GLIBC_2.2.5
+sort
+split
+sqrt
+srand
+srand@GLIBC_2.2.5
+stack overflow, cannot resize stack while in a metamethod
+startswith
+static
+std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+std::_Rb_tree_increment(std::_Rb_tree_node_base const*)
+std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+std::_Rb_tree_rebalance_for_erase(std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_append(char const*, unsigned long)
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_assign(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>> const&)
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_replace(unsigned long, unsigned long, char const*, unsigned long)
+std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>::_M_replace_aux(unsigned long, unsigned long, unsigned long, char)
+std::__throw_length_error(char const*)
+std_blob
+std_stream
+steam://openurl/
+steam://openurl_external/
+step
+step into
+step return
+strcasecmp
+strcasecmp@GLIBC_2.2.5
+strchr
+strchr@GLIBC_2.2.5
+strcmp
+strcmp@GLIBC_2.2.5
+strcpy
+strcpy@GLIBC_2.2.5
+strftime
+strftime@GLIBC_2.2.5
+string expected for the specified format
+strlen
+strlen@GLIBC_2.2.5
+strncasecmp
+strncasecmp@GLIBC_2.2.5
+strncat
+strncat@GLIBC_2.2.5
+strncpy
+strncpy@GLIBC_2.2.5
+strstr
+strstr@GLIBC_2.2.5
+strtod
+strtod@GLIBC_2.2.5
+strtol
+strtol@GLIBC_2.2.5
+strtoll
+strtoll@GLIBC_2.2.5
+strtoul
+strtoul@GLIBC_2.2.5
+strtoull
+strtoull@GLIBC_2.2.5
+subexpcount
+suspend
+suspended
+swap2
+swap4
+swapfloat
+switch
+table expected
+tell
+temp_reg
+terminate from user
+terminated
+terminated by debugger
+the blob is invalid
+the breakpoint doesn't exists
+the class is locked
+the index '%.50s' does not exist
+the index doesn't exist
+the object is not a class
+the object is not a class instance
+the object is not a closure
+the object is not a nativeclosure
+the object must be a weakref
+the property '%s' already exists
+the stream is invalid
+the target is not a closure
+the type doesn't have a default delegate
+the watch does not exists
+this
+this object cannot be cloned
+tochar
+tofloat
+tointeger
+tolower
+tolower@GLIBC_2.2.5
+too many digits for an Hex number
+top() on a empty array
+toupper
+toupper@GLIBC_2.2.5
+towlower
+towlower@GLIBC_2.2.5
+towupper
+towupper@GLIBC_2.2.5
+true
+trying to inherit from a %s
+trying to modify a class that has already been instantiated
+trying to resume a '%s',only genenerator can be resumed
+trying to set '%s'
+trying to yield a '%s',only genenerator can be yielded
+typecheck
+unexpected character
+unexpected character(control)
+unexpected type %s
+unfinished range
+unfinished string
+unknown
+unknown error
+unknown packet
+unnamed
+unnamedbuffer
+unrecognised escaper char
+update
+usage: script_guthrie <sourcename> <linenum>\n
+userdata
+userpointer
+utlstringtoken
+values
+varargs
+vargv
+vector::_M_default_append
+void
+vscript_perf_warning_spew_ms
+vsnprintf
+vsnprintf@GLIBC_2.2.5
+vswprintf
+vswprintf@GLIBC_2.2.5
+vtable for __cxxabiv1::__class_type_info
+vtable for __cxxabiv1::__si_class_type_info
+vtable for __cxxabiv1::__vmi_class_type_info
+wakeup
+wakeupthrow
+watches
+wcslen
+wcslen@GLIBC_2.2.5
+wcsncat
+wcsncat@GLIBC_2.2.5
+wcsncpy
+wcsncpy@GLIBC_2.2.5
+wcstombs
+wcstombs@GLIBC_2.2.5
+while
+width format too long
+writeblob
+writen
+wrong argument type, expected '%s' got '%.50s'
+wrong index
+wrong indexes
+wrong number of parameters
+wrong number of parameters (%d passed, %d required)
+wrong number of parameters (%d passed, at least %d required)
+wrong parameter
+wrong type
+wrong type(expected class or instance)
+yield

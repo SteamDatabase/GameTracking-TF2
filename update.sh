@@ -5,7 +5,7 @@ cd "${0%/*}"
 
 echo "Processing TF2..."
 
-ProcessDepot ".dylib"
+ProcessDepot ".so"
 ProcessVPK
 FixUCS2
 

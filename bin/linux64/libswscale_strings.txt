@@ -1,0 +1,246 @@
+ ./libswscale/swscale_internal.h
+!(dstStride[0] % 2 || dstStride[1] % 2)
+!(srcStride[0] % 2 || srcStride[1] % 2 || srcStride[2] % 2 || dstStride[0] % 2 || dstStride[1] % 2)
+$D<\"B:Zunsupported planar RGB conversion %s -> %s\n
+%dx%d -> %dx%d is invalid scaling dimension\n
+%dx%d -> %dx%d\n
+%ibpp not supported by yuv2rgb\n
+%s is not supported as input pixel format\n
+%s is not supported as output pixel format\n
+%s output is not supported with half chroma resolution, switching to full\n
+%s scaler, from %s to %s%s 
+(*filterPos)[i] + j < srcW || !filter[i * filterSize + j]
+(*filterPos)[i] < srcW
+(*filterPos)[i] >= 0
+(lastChrSrcY - firstChrSrcY + 1) <= hout_slice->plane[1].available_lines
+(lastLumSrcY - firstLumSrcY + 1) <= hout_slice->plane[0].available_lines
+--prefix=/data/dev/build_ubuntu12_64 --cc=gcc --extra-cflags='-m64 -mfpmath=sse -g -O2 -fno-strict-aliasing -ffast-math -fno-omit-frame-pointer -Wno-unused-parameter' --strip=strip --disable-linux-perf --arch=x86_64 --enable-shared --disable-static --enable-runtime-cpudetect --disable-all --enable-avcodec --enable-avfilter --enable-avutil --enable-avresample --enable-avformat --enable-swscale --enable-parser='h264,hevc' --enable-decoder='aac,h264,hevc,gif,vorbis,mp3,flac,alac,pcm*,valve*,apng,libvpx_vp8,libvpx_vp9' --enable-encoder='h264_vaapi,hevc_vaapi' --enable-demuxer='aac,matroska,gif,ogg,mov,mp3,flac,wav,flv,apng' --enable-hwaccels --enable-vdpau --enable-vaapi --enable-libdrm --enable-muxer='flv,mp4,dash,webm' --disable-decoder='h263,mpeg1video,mpeg2video,vc1,vp8,vp9' --enable-libvpx --enable-libvorbis --enable-protocol='file,rtmp'
+0P(H6V.Np
+3DNOW
+4T,L2R*Jt
+7libswscale/slice.c
+@@@@@@@@$D<\"B:Zd
+Assertion %s failed at %s:%d\n
+Cannot allocate memory.\n
+Clibswscale/utils.c
+Desired dithering only supported in full chroma interpolation for destination format '%s'\n
+Exactly one scaler algorithm must be chosen, got %X\n
+Failed to allocate MMX2FilterCode\n
+Forcing full internal H chroma due to input having non subsampled chroma\n
+Forcing full internal H chroma due to odd output size\n
+GCC: (SteamRT 4.8.4-1ubuntu15~12.04+steamrt1.2+srt2) 4.8.4
+GLIBC_2.14
+GLIBC_2.15
+GLIBC_2.2.5
+GLIBC_2.4
+Gaussian
+LIBAVUTIL_56
+LIBSWSCALE_5
+Lanczos
+MMXEXT
+No accelerated colorspace conversion found from %s to %s.\n
+One of the input parameters to sws_scale() is NULL, please check the calling code\n
+Optimized 2 tap filter code cannot be used\n
+Ordered dither is not supported in full chroma interpolation for destination format '%s'\n
+SWScaler
+Slice parameters %d, %d are invalid\n
+Slices start in the middle!\n
+SwScaler: reducing / aligning filtersize %d -> %d\n
+SwScaler: zero vector in scaling\n
+Warning: data is not aligned! This can lead to a speed loss\n
+Warning: dstStride is not aligned!\n         ->cannot do aligned memory accesses anymore\n
+YUV color matrix differs for YUV->YUV, using intermediate RGB to convert\n
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+_Jv_RegisterClasses
+__cxa_finalize
+__exp2_finite
+__exp_finite
+__gmon_start__
+__isnan
+__pow_finite
+__stack_chk_fail
+a_dither
+abort
+accurate rounding
+accurate_rnd
+alphablend
+area averaging
+arithmetic addition dither
+arithmetic xor dither
+auto
+av_free
+av_freep
+av_get_bits_per_pixel
+av_get_cpu_flags
+av_get_pix_fmt_name
+av_image_alloc
+av_log
+av_malloc_array
+av_malloc_tracked
+av_mallocz_array
+av_mallocz_tracked
+av_opt_get_int
+av_opt_set_defaults
+av_opt_set_int
+av_pix_fmt_desc_get
+av_pix_fmt_get_chroma_sub_sample
+av_pix_fmt_swap_endianness
+averaging area
+bad dst image pointers\n
+bad src image pointers\n
+bayer
+bayer dither
+bicubic
+bicublin
+bitexact
+blend onto a checkerboard
+blend onto a uniform color
+c->chrDstH <= dstH
+c->dstBpc>8
+c->dstH >= dstY
+c->srcBpc == 16
+ceil
+chr srcW=%d srcH=%d dstW=%d dstH=%d xInc=%d yInc=%d\n
+deprecated pixel format used, make sure you did set range correctly\n
+desc
+destination format
+destination height
+destination horizontal chroma position in luma grid/256
+destination is full range
+destination vertical chroma position in luma grid/256
+destination width
+dithered 
+dstY >= ret
+dst_format
+dst_h_chr_pos
+dst_range
+dst_v_chr_pos
+dsth
+dstw
+ehh flags invalid?!
+error diffusion
+error diffusion dither
+error_diffusion
+experimental
+fast bilinear
+fast_bilinear
+filter2Size > 0
+filterSize > 0
+full chroma input
+full chroma interpolation
+full chroma interpolation for destination format '%s' not yet implemented\n
+full_chroma_inp
+full_chroma_int
+gamma
+gamma correct scaling
+gauss
+ignore alpha
+internal error %s -> %s converter\n
+j\n @8X&F>^`
+lanczos
+leave choice to sws
+libavutil.so.56
+libc.so.6
+libm.so.6
+libpthread.so.0
+libswscale license: LGPL version 2.1 or later
+libswscale.so.5
+libswscale/alphablend.c
+libswscale/gamma.c
+libswscale/hscale.c
+libswscale/output.c
+libswscale/swscale.c
+libswscale/swscale_internal.h
+libswscale/swscale_unscaled.c
+libswscale/vscale.c
+libswscale/x86/swscale.c
+libswscale/yuv2rgb.c
+lum srcW=%d srcH=%d dstW=%d dstH=%d xInc=%d yInc=%d\n
+luma bicubic / chroma bilinear
+luma bicubic, chroma bilinear
+memcmp
+memcpy
+memmove
+memset
+minFilterSize > 0
+mmap64
+mode for alpha -> non alpha
+mprotect
+mprotect failed, cannot use fast bilinear scaler\n
+munmap
+n == s->plane[ii].available_lines
+natural bicubic spline
+nearest neighbor
+nearest neighbor / point
+none
+output width is not a multiple of 32 -> no MMXEXT scaler\n
+param0
+param1
+plane_count == nb_components - 1
+print info
+print_info
+scaler flags
+scaler param 0
+scaler param 1
+set dithering algorithm
+sinc
+sizeFactor > 0
+source format
+source height
+source horizontal chroma position in luma grid/256
+source is full range
+source vertical chroma position in luma grid/256
+source width
+srcSliceH > 1
+src_format
+src_h_chr_pos
+src_range
+src_v_chr_pos
+srch
+srcw
+sws: initFilter failed\n
+sws_addVec
+sws_allocVec
+sws_alloc_context
+sws_alloc_set_opts
+sws_cloneVec
+sws_convVec
+sws_convertPalette8ToPacked24
+sws_convertPalette8ToPacked32
+sws_dither
+sws_flags
+sws_freeContext
+sws_freeFilter
+sws_freeVec
+sws_getCachedContext
+sws_getCoefficients
+sws_getColorspaceDetails
+sws_getConstVec
+sws_getContext
+sws_getDefaultFilter
+sws_getGaussianVec
+sws_getIdentityVec
+sws_get_class
+sws_init_context
+sws_isSupportedEndiannessConversion
+sws_isSupportedInput
+sws_isSupportedOutput
+sws_normalizeVec
+sws_printVec2
+sws_scale
+sws_scaleVec
+sws_setColorspaceDetails
+sws_shiftVec
+sws_subVec
+swscale_configuration
+swscale_license
+swscale_version
+swscaler
+uniform_color
+unsupported bayer conversion\n
+unsupported conversion to planar RGB %s -> %s\n
+using %s\n
+using alpha blendaway %s -> %s special converter\n
+using unscaled %s -> %s special converter\n
+x_dither

@@ -1,0 +1,811 @@
+       Sum (ms)         Avg Time/Frame (ms)     Avg Time/Call (ms)\n
+  %10.3f %6.2f      %10.3f %6.2f      %10.3f %6.2f   %6d %6.2f  %s%s\n
+  %10.3f %6.2f      %6d  %s%s\n
+  %52.52s%12d%12.3f%12.3f%7.2f%12.3f%7.2f%12.3f%12.3f%12.3f%12.3f\n
+  ---------- ------      ---------- ------      ---------- ------   ------ ------\n
+  ---------- ------      ------\n
+  ---------------------------------------------------- ----------- ----------- ----------- ------ ----------- ------ ----------- ----------- ----------- -----------\n
+  Scope                                                      Calls Calls/Frame  Time+Child    Pct        Time    Pct   Avg/Frame    Avg/Call Avg-NoChild        Peak\n
+ Avg Time/Frame (ms)\n
+%.0f pct of time accounted for\n
+%8.4f / %8.4f:  %s\n
+%d frames sampled for %.2f seconds\n
+%s test: multithread interleaved push/pop, %s
+%s test: multithread push, multithread pop, %s
+%s test: multithread push, sequential pop, %s
+%s test: multithread push, single thread pop, %s
+%s test: sequential push, multithread pop, %s
+%s test: single thread push, multithread pop, %s
+%s test: single thread push/pop, in order... 
+%s test: single thread push/pop, interleaved... 
+%zu %zu %zu %zu %zu %zu %zu
+(%zu) Descend: %s, (%s), %s\n
+(%zu) readdir failed to find '%s' in '%s'\n
+*** VCR ASSERT FAILED: %s ***\n
+******** BEGIN VPROF REPORT ********\n
+******** END VPROF REPORT ********\n
+-- Hierarchical Call Graph --\n
+-- Profile scopes sorted by average time (including children) --
+-- Profile scopes sorted by average time (without children) --
+-- Profile scopes sorted by peak --
+-- Profile scopes sorted by peak over average (including children) --
+-- Profile scopes sorted by time (including children) --
+-- Profile scopes sorted by time (without children) --
+-- Summary --\n
+-debugbreak
+-etwprofile
+-mpi_worker
+-noassert
+-nowatchdog
+-profile
+-raiseonassert
+/data/src/public/tier0/tslist.h
+/data/src/tier0/assert_dialog.cpp
+/data/src/tier0/platform_posix.cpp
+/data/src/tier0/threadtools.cpp
+/dev/urandom
+/proc/cpuinfo
+/proc/self/cmdline
+/proc/self/statm
+/proc/self/status
+/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+12CCommandLine
+12CStdMemAlloc
+12ICommandLine
+13CWorkerThread
+7CThread
+9CVCRTrace
+9IMemAlloc
+9IVCRTrace
+>CreateSimpleThread: pthread_create failed. Someone not calling pthread_detach() or pthread_join. Ret:%d\n
+@MemAllocOOMError: %u bytes\n
+ASSERT: %s:%i: %s\n
+Always Ignore
+ApproximateProcessMemoryUsage
+AreAllAssertsDisabled
+AssertValidStringPtr
+Assertion Failed
+Assertion Failed: s_dev_urandom_fd >= 0
+Assertion Failed: urandom_result > 0 || ( urandom_result < 0 && errno == EINTR )
+Attempting to load %s\n
+AuthenticAMD
+Average %.2f fps, %.2f ms per frame\n
+Bad node link detected\n
+Break
+Breaking '%s' in '%s'\n
+Brush_Model_Rendering
+BuildCmdLine
+C%s (%d) : 
+CCallStackStorage::CCallStackStorage(int (*)(void**, int, int), unsigned int)
+CClockSpeedInit::Init()
+CCommandLine::AddArgument: exceeded %d parameters
+COM_TimestampedLog
+CPU_MHZ
+CStackTop_CopyParentStack::CStackTop_CopyParentStack(void* const*, int)
+CStackTop_CopyParentStack::~CStackTop_CopyParentStack()
+CStackTop_ReferenceParentStack::CStackTop_ReferenceParentStack(void* const*, int)
+CStackTop_ReferenceParentStack::ReleaseParentStackReferences()
+CStackTop_ReferenceParentStack::~CStackTop_ReferenceParentStack()
+CTSList
+CTSQueue
+CThread::BWaitForThreadSuspendCooperative()
+CThread::CThread()
+CThread::Cleanup()
+CThread::GetCurrentCThread()
+CThread::GetName()
+CThread::GetPriority() const
+CThread::GetResult()
+CThread::GetThreadProc()
+CThread::Init()
+CThread::IsAlive()
+CThread::IsThreadRunning()
+CThread::Join(unsigned int)
+CThread::OnExit()
+CThread::ResumeCooperative()
+CThread::SetName(char const*)
+CThread::SetPriority(int)
+CThread::Sleep(unsigned int)
+CThread::Start(unsigned int)
+CThread::Stop(int)
+CThread::SuspendCooperative()
+CThread::Terminate(int)
+CThread::ThreadProc(void*)
+CThread::WaitForCreateComplete(CThreadEvent*)
+CThread::Yield()
+CThread::~CThread()
+CThreadEvent::CThreadEvent(bool)
+CThreadEvent::Check()
+CThreadEvent::Reset()
+CThreadEvent::Set()
+CThreadEvent::Wait(unsigned int)
+CThreadFastMutex::Lock(unsigned long long, unsigned int) volatile
+CThreadLocalBase::CThreadLocalBase()
+CThreadLocalBase::Get() const
+CThreadLocalBase::Set(void*)
+CThreadLocalBase::~CThreadLocalBase()
+CThreadMutex::TryLock()
+CThreadRWLock::LockForWrite()
+CThreadRWLock::UnlockWrite()
+CThreadRWLock::WaitForRead()
+CThreadSpinRWLock::LockForRead()
+CThreadSpinRWLock::SpinLockForWrite(unsigned int)
+CThreadSpinRWLock::UnlockRead()
+CThreadSpinRWLock::UnlockWrite()
+CThreadSyncObject::AssertUseable()
+CThreadSyncObject::CThreadSyncObject()
+CThreadSyncObject::Wait(unsigned int)
+CThreadSyncObject::operator!() const
+CThreadSyncObject::~CThreadSyncObject()
+CVProfNode::EnterScope()
+CVProfNode::ExitScope()
+CVProfNode::GetSubNode(char const*, int, char const*)
+CVProfNode::GetSubNode(char const*, int, char const*, int)
+CVProfNode::MarkFrame()
+CVProfNode::Pause()
+CVProfNode::Reset()
+CVProfNode::ResetPeak()
+CVProfNode::Resume()
+CVProfNode::SetCurFrameTime(unsigned long)
+CVProfNode::s_iCurrentUniqueNodeID
+CVProfNode::~CVProfNode()
+CVProfile::AddBudgetGroupName(char const*, int)
+CVProfile::BudgetGroupNameToBudgetGroupID(char const*)
+CVProfile::BudgetGroupNameToBudgetGroupID(char const*, int)
+CVProfile::CVProfile()
+CVProfile::DumpNodes(CVProfNode*, int, bool)
+CVProfile::FindBudgetGroupName(char const*)
+CVProfile::FindNode(CVProfNode*, char const*)
+CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
+CVProfile::FreeNodes_R(CVProfNode*)
+CVProfile::GetBudgetGroupColor(int, int&, int&, int&, int&)
+CVProfile::GetCounterGroup(int) const
+CVProfile::GetCounterName(int) const
+CVProfile::GetCounterNameAndValue(int, int&) const
+CVProfile::GetCounterValue(int) const
+CVProfile::GetNumBudgetGroups()
+CVProfile::GetNumCounters() const
+CVProfile::HideBudgetGroup(int, bool)
+CVProfile::OutputReport(int, char const*, int)
+CVProfile::RegisterNumBudgetGroupsChangedCallBack(void (*)())
+CVProfile::ResetCounters(CounterGroup_t)
+CVProfile::SetOutputStream(void (*)(char const*, ...))
+CVProfile::SumTimes(CVProfNode*, int)
+CVProfile::SumTimes(char const*, int)
+CVProfile::Term()
+CVProfile::~CVProfile()
+CWorkerThread::BoostPriority()
+CWorkerThread::CWorkerThread()
+CWorkerThread::Call(unsigned int, unsigned int, bool, unsigned int (*)(int, CThreadEvent* const*, int, unsigned int), CFunctor*)
+CWorkerThread::CallMaster(unsigned int, unsigned int)
+CWorkerThread::CallWorker(unsigned int, unsigned int, bool, CFunctor*)
+CWorkerThread::GetCallHandle()
+CWorkerThread::GetCallParam(CFunctor**) const
+CWorkerThread::PeekCall(unsigned int*, CFunctor**)
+CWorkerThread::Reply(unsigned int)
+CWorkerThread::WaitForCall(unsigned int*)
+CWorkerThread::WaitForCall(unsigned int, unsigned int*)
+CWorkerThread::WaitForReply(unsigned int)
+CWorkerThread::WaitForReply(unsigned int, unsigned int (*)(int, CThreadEvent* const*, int, unsigned int))
+CXXABI_1.3
+CXXABI_1.3.8
+CallAssertFailedNotifyFunc
+CatchAndWriteMiniDump
+Client_Animation
+ColorSpewMessage
+CommandLine_Tier0
+ConColorMsg
+ConColorMsg(Color const&, char const*, ...)
+ConDColorMsg
+ConDLog
+ConDMsg
+ConDWarning
+ConLog
+ConLog(char const*, ...)
+ConMsg
+ConMsg(char const*, ...)
+ConWarning
+ConWarning(char const*, ...)
+Corefile
+CrackSmokingCompiler
+CreateSimpleThread
+CreateSimpleThread(unsigned long long (*)(void*), void*, unsigned long long*, unsigned int)
+DBG_PATHMATCH
+DeclareCurrentThreadIsMainThread
+DecodeBinaryFromString
+DefaultSpewFunc
+DefaultSpewFuncAbortOnAsserts
+Detail_Prop_Rendering
+DevLog
+DevLog(char const*, ...)
+DevMsg
+DevMsg(char const*, ...)
+DevWarning
+DevWarning(char const*, ...)
+Displacement_Rendering
+DoNewAssertDialog
+Dynamic_Light_Rendering
+ENABLE_PATHMATCH
+EncodeBinaryToString
+ErrorV
+FAIL: !IsEmpty()\n
+FAIL: !Validate()\n
+FAIL: Not all items popped\n
+FILE
+FILE: 
+Fast Path Model Rendering
+Fatal assert failed: %s, line %d.  Application exiting.\n
+File: %s\nLine: %i\nExpr: %s\n
+FileSystem
+GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
+GCC: (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+GLIBCXX_3.4
+GLIBCXX_3.4.15
+GLIBC_2.14
+GLIBC_2.17
+GLIBC_2.2.5
+GLIBC_2.3
+GLIBC_2.3.2
+GLIBC_2.3.4
+GLIBC_2.7
+Game
+GenuineIntel
+GetAssertDialogParent
+GetCPUFrequencyResults
+GetCPUInformation
+GetCPUUsage
+GetCallStack
+GetCallStack_Fast
+GetFileAndLineFromAddress
+GetMemoryInformation
+GetModuleNameFromAddress
+GetSpewOutputColor
+GetSpewOutputFunc
+GetSpewOutputGroup
+GetSpewOutputLevel
+GetSymbolNameFromAddress
+GetThreadedLoadLibraryFunc
+HushAsserts
+Ignore All Asserts
+Ignore This File
+Illegal termination of worker thread! Threads must negotiate an end to the thread before the CThread object is destroyed.\n
+InitPME
+InstallProgressReportHandler
+Interpolation
+Is64BitOS
+IsSpewActive
+Jun 25 202421:57:15
+Light_Cache
+LogV
+Lowered '%s' -> '%s'\n
+MainThrd
+Matched '%s' -> '%s'\n
+MbP?/proc/self/exe
+MemAllocOOMError
+MemAllocScratch
+MemFreeScratch
+MinidumpUserStreamInfoAppend
+MinidumpUserStreamInfoGet
+MinidumpUserStreamInfoSetHeader
+MsgV
+N11TSListTests8CListOpsE
+N11TSListTests8CTestOpsE
+N11TSListTests9CQueueOpsE
+NPCs
+NetLog
+NetMsg
+NetWarning
+Networking
+No samples\n
+Occlusion
+Other_Model_Rendering
+Out of memory or address space.  Texture quality setting may be too high.\n
+Out of thread local storage!\n
+Overlays
+POSIX_ASSERT_BACKTRACE
+Parameter file '%s' not found, skipping...
+Particle/Effect_Rendering
+Peak %.2f ms frame\n
+Physics
+Plat_ApplyHardwareDataBreakpointsToNewThread
+Plat_BeginWatchdogTimer
+Plat_DebugString
+Plat_EndWatchdogTimer
+Plat_ExitProcess
+Plat_FastVerifyHardwareKey
+Plat_FloatTime
+Plat_GetCommandLine
+Plat_GetCommandLineA
+Plat_GetMemPageSize
+Plat_GetPagedPoolInfo
+Plat_GetWatchdogTime
+Plat_IsInBenchmarkMode
+Plat_IsInDebugSession
+Plat_MSTime
+Plat_SetBenchmarkMode
+Plat_SetCommandLine
+Plat_SetHardwareDataBreakpoint
+Plat_SetWatchdogHandlerFunction
+Plat_SimpleLog
+Plat_USTime
+Plat_VerifyHardwareKey
+Plat_VerifyHardwareKeyDriver
+Plat_VerifyHardwareKeyPrompt
+Plat_ctime
+Plat_gmtime
+Plat_localtime
+Plat_timegm
+Player
+Prediction
+PushPopThread
+PushThread
+RAISE_ON_ASSERT
+ReleaseThreadHandle
+Replay
+ReportProgress
+Root
+Ropes
+RunTSListTests
+RunTSQueueTests
+SDL_ShowMessageBox
+SecureRandomBytes
+Server Animation
+SetAllAssertsDisabled
+SetAssertDialogParent
+SetAssertFailedNotifyFunc
+SetCPUMonitoringInterval
+SetStackTranslationSymbolSearchPath
+SetThreadedLoadLibraryFunc
+Shadow_Rendering
+ShouldUseNewAssertDialog
+ShutdownPME
+Shutting down telemetry.\n
+Sound
+SpewActivate
+StackToolsNotify_LoadedLibrary
+Static_Prop_Rendering
+Swap_Buffers
+TELEMETRY: Calling tmOpen( %s )...\n
+TSList cannot hold more that %d nodes\n
+Telemetry Warning/Error! %s version %d.%d.%d.%d,\n  but you linked with libTelemetryX64.so version %d.%d.%d.%d!\n  This might work, but it will probably just crash!\n
+Telemetry initialized at level %u.\n
+Telemetry: Failed to load %s: %s\n
+Telemetry: Loading %s...
+Telemetry: Loading unchecked build %s...
+Telemetry: Warning! Unable to load any Telemetry shared libraries!
+Telemetry: Warning! tmGetAPI not found!
+TelemetryInit() failed: tmInitializeContext() returned %d.\n
+TelemetryInit() failed: tmStartup() returned %d, tmLoadTelemetry() returned %d.\n
+TelemetryInitialize() failed: tmOpen returned %d.\n
+TelemetrySetLevel
+TelemetrySetLevel changed from 0x%x to 0x%x\n
+TelemetryTick
+Test bucket %d has an invalid value %d\n
+Tests done, purging test memory...
+Texture_Cache
+Thread failed to initialize\n
+Thread failed to respond, probably exited\n
+Thread(0x%p/0x%x)
+ThreadDetach
+ThreadGetCurrentHandle
+ThreadGetCurrentId
+ThreadGetPriority
+ThreadInMainThread
+ThreadJoin
+ThreadSetAffinity
+ThreadSetDebugName
+ThreadSetPriority
+ThreadSleep
+Tools
+TracerPid:
+TranslateStackInfo
+Unable to determine CPU Frequency\n
+Unaccounted
+Unmatched %s\n
+VCR_GenericPlayback( %s ) - data size in file (%d) different than desired (%d)
+VCR_GenericPlayback( %s ) - event name does not match '%s'
+VCR_GenericPlayback( %s ) - generic data too long (greater than maxLen: %d)
+VCR_GenericRecord( %s ): nameLen too long (%d)
+VCR_GenericRecord( %s ): not recording a VCR file
+VCR_Playback( %s ): not playing back a VCR file
+VGUI
+VoidFnPtrLookup_Tier0
+WarningV
+WatchDog! Server took too long to process (probably infinite loop).\n
+World Rendering
+Your application is compiled with Telemetry.h
+ZeroMemory
+[ func+child   func ]     Count\n
+[ func+child   func ]  [ func+child   func ]  [ func+child   func ]  Count   Peak\n
+[1;31m%s
+[1;33mASSERT:
+\nTesting %d threads:\n
+\t(%zu) comparing %s with %s\n
+_AssertValidReadPtr
+_AssertValidReadWritePtr
+_AssertValidWritePtr
+_DSpewMessage
+_ExitOnFatalAssert
+_ExitOnFatalAssert\n
+_ITM_deregisterTMCloneTable
+_ITM_registerTMCloneTable
+_SpewInfo
+_SpewMessage
+_ZNSt8__detail15_List_node_base7_M_hookEPS0_@GLIBCXX_3.4.15
+_ZNSt8__detail15_List_node_base9_M_unhookEv@GLIBCXX_3.4.15
+_ZSt17__throw_bad_allocv@GLIBCXX_3.4
+_ZSt18_Rb_tree_decrementPSt18_Rb_tree_node_base@GLIBCXX_3.4
+_ZSt20__throw_length_errorPKc@GLIBCXX_3.4
+_ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_@GLIBCXX_3.4
+_ZTIi@CXXABI_1.3
+_ZTVN10__cxxabiv117__class_type_infoE@CXXABI_1.3
+_ZTVN10__cxxabiv120__si_class_type_infoE@CXXABI_1.3
+__cxa_allocate_exception
+__cxa_allocate_exception@CXXABI_1.3
+__cxa_atexit
+__cxa_atexit@GLIBC_2.2.5
+__cxa_begin_catch
+__cxa_begin_catch@CXXABI_1.3
+__cxa_call_unexpected
+__cxa_call_unexpected@CXXABI_1.3
+__cxa_end_catch
+__cxa_end_catch@CXXABI_1.3
+__cxa_finalize
+__cxa_finalize@GLIBC_2.2.5
+__cxa_guard_abort
+__cxa_guard_abort@CXXABI_1.3
+__cxa_guard_acquire
+__cxa_guard_acquire@CXXABI_1.3
+__cxa_guard_release
+__cxa_guard_release@CXXABI_1.3
+__cxa_pure_virtual
+__cxa_pure_virtual@CXXABI_1.3
+__cxa_rethrow
+__cxa_rethrow@CXXABI_1.3
+__cxa_throw
+__cxa_throw@CXXABI_1.3
+__cxa_throw_bad_array_new_length
+__cxa_throw_bad_array_new_length@CXXABI_1.3.8
+__errno_location
+__errno_location@GLIBC_2.2.5
+__gmon_start__
+__gxx_personality_v0
+__gxx_personality_v0@CXXABI_1.3
+__isoc99_fscanf
+__isoc99_fscanf@GLIBC_2.7
+__isoc99_sscanf
+__isoc99_sscanf@GLIBC_2.7
+__lxstat64@GLIBC_2.2.5
+__lxstat@GLIBC_2.2.5
+__printf_chk
+__printf_chk@GLIBC_2.3.4
+__pthread_key_create
+__pthread_key_create@GLIBC_2.2.5
+__sprintf_chk
+__sprintf_chk@GLIBC_2.3.4
+__strcat_chk
+__strcat_chk@GLIBC_2.3.4
+__strcpy_chk
+__strcpy_chk@GLIBC_2.3.4
+__wrap___lxstat
+__wrap___lxstat64
+__wrap___xstat
+__wrap___xstat64
+__wrap_chmod
+__wrap_chown
+__wrap_fopen
+__wrap_fopen64
+__wrap_freopen
+__wrap_lchown
+__wrap_link
+__wrap_lstat
+__wrap_mkdir
+__wrap_mkfifo
+__wrap_mknod
+__wrap_mount
+__wrap_open
+__wrap_open64
+__wrap_opendir
+__wrap_realpath
+__wrap_rename
+__wrap_rmdir
+__wrap_scandir
+__wrap_stat
+__wrap_stat64
+__wrap_symlink
+__wrap_unlink
+__wrap_utime
+__wrap_utimes
+__xmknod
+__xmknod@GLIBC_2.2.5
+__xstat64@GLIBC_2.2.5
+__xstat@GLIBC_2.2.5
+_exit
+_exit@GLIBC_2.2.5
+abort@GLIBC_2.2.5
+access
+access@GLIBC_2.2.5
+alarm
+alarm@GLIBC_2.2.5
+autoMutex__
+backtrace
+backtrace@GLIBC_2.2.5
+backtrace_symbols
+backtrace_symbols@GLIBC_2.2.5
+c.so
+chmod@GLIBC_2.2.5
+clock_gettime
+clock_gettime@GLIBC_2.17
+closedir
+closedir@GLIBC_2.2.5
+command line too long, %i max\n
+console
+core id
+ctime_r
+ctime_r@GLIBC_2.2.5
+currentEvent == type
+developer
+distributed...
+dl_iterate_phdr
+dl_iterate_phdr@GLIBC_2.2.5
+dlclose
+dlclose@GLIBC_2.2.5
+dlerror
+dlerror@GLIBC_2.2.5
+dlopen
+dlopen@GLIBC_2.2.5
+dlsym
+dlsym@GLIBC_2.2.5
+done\n
+failed: %s\n
+false 
+fatalassert_%s_%d
+fclose
+fclose@GLIBC_2.2.5
+feof
+feof@GLIBC_2.2.5
+ferror
+ferror@GLIBC_2.2.5
+fflush
+fflush@GLIBC_2.2.5
+fgetc
+fgetc@GLIBC_2.2.5
+fgets
+fgets@GLIBC_2.2.5
+fopen64@GLIBC_2.2.5
+fopen@GLIBC_2.2.5
+fprintf
+fprintf@GLIBC_2.2.5
+fputs
+fputs@GLIBC_2.2.5
+fread
+fread@GLIBC_2.2.5
+free
+free@GLIBC_2.2.5
+freopen@GLIBC_2.2.5
+fseek
+fseek@GLIBC_2.2.5
+ftell
+ftell@GLIBC_2.2.5
+fwrite
+fwrite@GLIBC_2.2.5
+g_ClockSpeed
+g_ClockSpeedMicrosecondsMultiplier
+g_ClockSpeedMillisecondsMultiplier
+g_ClockSpeedSecondsMultiplier
+g_CurFilePos <= g_FileLen
+g_OldVCRMode != (VCRMode_t)-1
+g_OldVCRMode == (VCRMode_t)-1
+g_Telemetry
+g_VProfCurrentProfile
+g_VProfSignalSpike
+g_dwClockSpeed
+g_pMemAlloc
+g_pVCR
+game/PlaybackTick
+getenv
+getenv@GLIBC_2.2.5
+getloadavg
+getloadavg@GLIBC_2.2.5
+gettimeofday
+gettimeofday@GLIBC_2.2.5
+gmtime_r
+gmtime_r@GLIBC_2.2.5
+isatty
+isatty@GLIBC_2.2.5
+isspace
+isspace@GLIBC_2.2.5
+lchown@GLIBC_2.2.5
+ld-linux-x86-64.so.2
+len == (unsigned char)strlen(pToken)
+libSDL2-2.0.so.0
+libc.so.6
+libdl.so.2
+libpthread.so.0
+libstdc++.so.6
+loadlibrary() - could not get exe path
+localhost
+localtime@GLIBC_2.2.5
+localtime_r
+localtime_r@GLIBC_2.2.5
+m_Lock
+malloc
+malloc@GLIBC_2.2.5
+malloc_usable_size
+malloc_usable_size@GLIBC_2.2.5
+memcmp
+memcmp( msg, tempData, len ) == 0
+memcmp(pToken, test, len) == 0
+memcmp@GLIBC_2.2.5
+memcpy
+memcpy@GLIBC_2.14
+memmove
+memmove@GLIBC_2.2.5
+memset
+memset@GLIBC_2.2.5
+memstats
+mkdir@GLIBC_2.2.5
+mkfifo@GLIBC_2.2.5
+mount@GLIBC_2.2.5
+network
+no affinity...
+opendir@GLIBC_2.2.5
+pass\n
+pclose
+pclose@GLIBC_2.2.5
+physical id
+popen
+popen@GLIBC_2.2.5
+processor
+pthread_attr_init
+pthread_attr_init@GLIBC_2.2.5
+pthread_attr_setstacksize
+pthread_attr_setstacksize@GLIBC_2.2.5
+pthread_cond_destroy
+pthread_cond_destroy@GLIBC_2.3.2
+pthread_cond_init
+pthread_cond_init@GLIBC_2.3.2
+pthread_cond_signal
+pthread_cond_signal@GLIBC_2.3.2
+pthread_cond_timedwait
+pthread_cond_timedwait@GLIBC_2.3.2
+pthread_create
+pthread_create@GLIBC_2.2.5
+pthread_detach
+pthread_detach@GLIBC_2.2.5
+pthread_getschedparam
+pthread_getschedparam@GLIBC_2.2.5
+pthread_getspecific
+pthread_getspecific@GLIBC_2.2.5
+pthread_join
+pthread_join@GLIBC_2.2.5
+pthread_key_delete
+pthread_key_delete@GLIBC_2.2.5
+pthread_kill
+pthread_kill@GLIBC_2.2.5
+pthread_mutex_destroy
+pthread_mutex_destroy@GLIBC_2.2.5
+pthread_mutex_init
+pthread_mutex_init@GLIBC_2.2.5
+pthread_mutex_lock
+pthread_mutex_lock@GLIBC_2.2.5
+pthread_mutex_trylock
+pthread_mutex_trylock@GLIBC_2.2.5
+pthread_mutex_unlock
+pthread_mutex_unlock@GLIBC_2.2.5
+pthread_mutexattr_destroy
+pthread_mutexattr_destroy@GLIBC_2.2.5
+pthread_mutexattr_init
+pthread_mutexattr_init@GLIBC_2.2.5
+pthread_mutexattr_settype
+pthread_mutexattr_settype@GLIBC_2.2.5
+pthread_once
+pthread_once@GLIBC_2.2.5
+pthread_self
+pthread_self@GLIBC_2.2.5
+pthread_setname_np
+pthread_setschedparam
+pthread_setschedparam@GLIBC_2.2.5
+pthread_setspecific
+pthread_setspecific@GLIBC_2.2.5
+raise
+raise@GLIBC_2.2.5
+readdir64
+readdir64@GLIBC_2.2.5
+readlink
+readlink("/proc/self/exe") failed: %s\n
+readlink@GLIBC_2.2.5
+realloc
+realloc@GLIBC_2.2.5
+realpath@GLIBC_2.3
+recv
+recv@GLIBC_2.2.5
+recvfrom
+recvfrom@GLIBC_2.2.5
+rename@GLIBC_2.2.5
+rmdir@GLIBC_2.2.5
+scandir@GLIBC_2.2.5
+sched_yield
+sched_yield@GLIBC_2.2.5
+send
+send@GLIBC_2.2.5
+signal@GLIBC_2.2.5
+simple.log
+srand
+srand@GLIBC_2.2.5
+std::_Rb_tree_decrement(std::_Rb_tree_node_base*)
+std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+std::__detail::_List_node_base::_M_unhook()
+std::__throw_bad_alloc()
+std::__throw_length_error(char const*)
+stderr
+stderr@GLIBC_2.2.5
+strcasecmp
+strcasecmp@GLIBC_2.2.5
+strcasestr
+strcasestr@GLIBC_2.2.5
+strcat
+strcat@GLIBC_2.2.5
+strchr
+strchr@GLIBC_2.2.5
+strcmp
+strcmp@GLIBC_2.2.5
+strcpy
+strcpy@GLIBC_2.2.5
+strdup
+strdup@GLIBC_2.2.5
+strerror
+strerror@GLIBC_2.2.5
+strlen
+strlen@GLIBC_2.2.5
+strncasecmp
+strncasecmp@GLIBC_2.2.5
+strncpy
+strncpy@GLIBC_2.2.5
+strpbrk
+strpbrk@GLIBC_2.2.5
+strrchr
+strrchr@GLIBC_2.2.5
+strstr
+strstr@GLIBC_2.2.5
+strtod
+strtod@GLIBC_2.2.5
+strtol
+strtol@GLIBC_2.2.5
+strtoll
+strtoll@GLIBC_2.2.5
+success!
+symlink@GLIBC_2.2.5
+tempLen <= sizeof( tempData )
+timegm@GLIBC_2.2.5
+timestamped.log
+tmGetAPI
+tolower
+tolower@GLIBC_2.2.5
+true
+typeinfo for CThread
+typeinfo for CWorkerThread
+typeinfo for int
+typeinfo name for CThread
+typeinfo name for CWorkerThread
+uname -m
+unknown
+unlink@GLIBC_2.2.5
+usleep
+usleep@GLIBC_2.2.5
+utime@GLIBC_2.2.5
+utimes@GLIBC_2.2.5
+vector::_M_realloc_insert
+vsnprintf
+vsnprintf@GLIBC_2.2.5
+vtable for CThread
+vtable for CWorkerThread
+vtable for __cxxabiv1::__class_type_info
+vtable for __cxxabiv1::__si_class_type_info
+vtune
+x86_64
+|  |  |  |  |  |  |  |  |  
+|  |  |  |  |  |  |  |  |  |  
+|  |  |  |  |  |  |  |  |  |  |  
+|  |  |  |  |  |  |  |  |  |  |  |  
+|  |  |  |  |  |  |  |  |  |  |  |  |  
