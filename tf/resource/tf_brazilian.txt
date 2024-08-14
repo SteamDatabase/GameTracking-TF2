@@ -133,6 +133,7 @@
 "TF_Timeline_ChangeClass"		"Você trocou para %s1" // localized class name
 "TF_Timeline_ChangeTeam"		"Você entrou na equipe %s1" // localized team name
 "TF_Timeline_Killed"			"Você matou um %s1" // localized class name
+"TF_Timeline_WereKilled"		"Um %s1 matou você" // localized class name
 "TF_Timeline_KilledEngy"		"Você matou um %s1" // localized class name
 "TF_Timeline_WereKilledEngy"	"Um %s1 matou você" // localized class name
 "TF_Timeline_Suicide"			"Você disse \"Adeus, mundo cruel!\""
@@ -141,7 +142,6 @@
 "TF_Timeline_IntelPickedUp"		"Você pegou a maleta"
 "TF_Timeline_IntelCarrier"		"Você matou o portador da maleta"
 "TF_Timeline_IntelDropped"		"Você largou a maleta"
-"TF_Timeline_IntelCaptured"		"You captured the intelligence"
 "TF_Timeline_ObjectBuiltGeneric"		"Você ergueu uma construção"
 "TF_Timeline_ObjectBuilt"				"Você ergueu: %s1" // localized building name
 "TF_Timeline_ObjectDectonatedGeneric"	"Você demoliu a sua construção"
@@ -1518,6 +1518,10 @@
 "TF_TournamentMedal_RGB6_LAN_Silver"			"Segundo Lugar - RGB LAN - Temporada 6"
 "TF_TournamentMedal_RGB6_LAN_Bronze"			"Terceiro Lugar - RGB LAN - Temporada 6"
 "TF_TournamentMedal_RGB6_LAN_Participant"		"Participante - RGB LAN - Temporada 6"
+"TF_TournamentMedal_RGB7_LAN_Gold"				"Primeiro Lugar - RGB LAN - Temporada 7"
+"TF_TournamentMedal_RGB7_LAN_Silver"			"Segundo Lugar - RGB LAN - Temporada 7"
+"TF_TournamentMedal_RGB7_LAN_Bronze"			"Terceiro Lugar - RGB LAN - Temporada 7"
+"TF_TournamentMedal_RGB7_LAN_Participant"		"Participante - RGB LAN - Temporada 7"
 
 "TF_TournamentMedal_Season1"	"Temporada 1"
 "TF_TournamentMedal_Season2"	"Temporada 2"
@@ -1678,13 +1682,20 @@
 "TF_TournamentMedal_AF_Liquidtf_Invite_Participant"				"Participante - Divisão de Convidadas - AsiaFortress Liquid.tf"
 "TF_TournamentMedal_AF_Liquidtf_Invite_Participant_Spring2024"	"Concedida a quem participou da Divisão de Convidadas da temporada de primavera de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_Open_Participant"				"Participante - Divisão Aberta - AsiaFortress Liquid.tf"
+"TF_TournamentMedal_AF_Liquidtf_Open_Participant_Spring2024"	"Concedida aos participantes da Divisão Aberta da temporada de primavera de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_Highlander_Open_1st"				"Primeiro Lugar - Highlander - Divisão Aberta - AsiaFortress Liquid.tf"
 "TF_TournamentMedal_AF_Liquidtf_Highlander_Open_1st_Summer2024"		"Concedida aos campeões da Divisão Aberta de Highlander da temporada de verão de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_Highlander_Open_2nd"				"Segundo Lugar - Highlander - Divisão Aberta - AsiaFortress Liquid.tf"
+"TF_TournamentMedal_AF_Liquidtf_Highlander_Open_2nd_Summer2024"		"Concedida aos vice-campeões da Divisão Aberta de Highlander da temporada de verão de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_Highlander_Open_3rd"				"Terceiro Lugar - Highlander - Divisão Aberta - AsiaFortress Liquid.tf"
+"TF_TournamentMedal_AF_Liquidtf_Highlander_Open_3rd_Summer2024"		"Concedida aos jogadores da equipe em terceiro lugar da Divisão Aberta de Highlander da temporada de verão de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_Highlander_Invite_Participant"				"Participante - Highlander - Divisão de Convidadas - AsiaFortress Liquid.tf"
+"TF_TournamentMedal_AF_Liquidtf_Highlander_Invite_Participant_Summer2024"	"Concedida aos participantes da Divisão de Convidadas de Highlander da temporada de verão de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_Highlander_Open_Participant"				"Participante - Highlander - Divisão Aberta - AsiaFortress Liquid.tf"
+"TF_TournamentMedal_AF_Liquidtf_Highlander_Open_Participant_Summer2024"		"Concedida aos participantes da Divisão Aberta de Highlander da temporada de verão de 2024 da AsiaFortress Liquid.tf."
 "TF_TournamentMedal_AF_Liquidtf_MercenaryMashup_Participant"				"AsiaFortress Liquid.tf Mercenary Mashup"
+"TF_TournamentMedal_AF_Liquidtf_MercenaryMashup_Participant_May2024"		"MCM - Londres - Maio de 2024"
+																				   
 "TF_RETF2_EE22_6v6_Winner"					"Vencedor - 6x6 - RETF2 EE22"
 "TF_RETF2_EE22_6v6_Participant"				"Participante - 6x6 - RETF2 EE22"
 "TF_RETF2_EE22_4v4_Winner"					"Vencedor - 4x4 - RETF2 EE22"
@@ -3088,7 +3099,28 @@
 "TF_TournamentMedal_Firmware_Supercritical"			"Superaltruísmo Supercrítico - Firmware Frenzy 2023"
 "TF_TournamentMedal_Firmware_Supercritical_Desc"	"Um cantil contendo um líquido verde estranho. É dito que ele emula as características do corpo do portador, revertendo qualquer dano sofrido e efetivamente concedendo invulnerabilidade. Infelizmente, a tampa parece estar selada. Concedida a quem doou para a campanha de caridade de novembro de 2023 do grupo Moonlight MvM!"
 
+"TF_TournamentMedal_Magnetic_Fiendish_2024"				"Fucsita Funesta - Magnetic Mayhem 2024"
 "TF_TournamentMedal_Magnetic_Fiendish_2024_Desc"		"A Gray Gravel Co. deve estar sem dinheiro. Os robôs começaram a jogar joias como esta em vez dos habituais maços de notas. Foram encontradas muitas joias, mas a empresa não deve notar se você decidir ficar com uma. Concedida a quem participou da campanha de caridade do grupo Moonlight!"
+"TF_TournamentMedal_Magnetic_Megalomaniacal_2024"		"Mastodonte Megalomaníaco - Magnetic Mayhem 2024"
+"TF_TournamentMedal_Magnetic_Megalomaniacal_2024_Desc"	"Você armou uma armadilha para aqueles empresários suspeitos da Gray Gravel Co., e eles caíram como patinhos. Segundo informações, eles ainda estão se recuperando da notícia do fracasso. Concedida a quem participou da campanha de caridade do grupo Moonlight!"
+"TF_TournamentMedal_Magnetic_Humanitarian_2024"			"Escondidite Ética - Magnetic Mayhem 2024"
+"TF_TournamentMedal_Magnetic_Humanitarian_2024_Desc"	"O nome \"Escondidite\" pode fazer você pensar que esta gema é rara. Só que não: ela foi descoberta por alguém que havia acabado de comer um escondidinho. Mesmo assim, ela é muito procurada, então é uma boa ideia mantê-la escondida. Concedida a quem doou para a campanha de caridade de primavera do grupo Moonlight MvM!"
+"TF_TournamentMedal_Magnetic_Barely_2024"				"Bismutotantalito Benigno - Magnetic Mayhem 2024"
+"TF_TournamentMedal_Magnetic_Barely_2024_Desc"			"Os nossos cientistas não chegaram a um consenso quanto à pronúncia do nome desta gema. Eles pediram a ajuda de linguistas, o que gerou ainda mais debate. O único ponto em que todos concordavam? Que nunca viram uma gema como esta. Concedida a quem doou para a campanha de caridade de primavera do grupo Moonlight MvM!"
+"TF_TournamentMedal_Magnetic_Treasured_2024"			"Turmalina Tentadora - Magnetic Mayhem 2024"
+"TF_TournamentMedal_Magnetic_Treasured_2024_Desc"		"Ao prender a gema que é tão brilhante,\nEnergia flui dos pés à cabeça num instante.\nA sua generosidade não tem fim,\nA gratidão daqueles que você ajudou é grande assim!\nConcedida a quem doou para a campanha de caridade de primavera do grupo Moonlight MvM!"
+
+"TF_TournamentMedal_Osmium_Ordinance_Pyrite"			"Pote de Pirita - Osmium Ordinance 2024"
+"TF_TournamentMedal_Osmium_Ordinance_Pyrite_Desc"		"Veja bem, nós queríamos usar ouro de verdade, mas o pessoal da contabilidade quase teve um piripaque. É só deixar limpinho que ninguém desconfiará. Concedida a quem doou para o evento de caridade Osmium Ordinance do grupo Potato MvM!"
+"TF_TournamentMedal_Osmium_Ordinance_Platinum"			"Pote Platinado - Osmium Ordinance 2024"
+"TF_TournamentMedal_Osmium_Ordinance_Platinum_Desc"		"Esqueça toda aquela conversa sobre humildade e modéstia, você não precisa de nenhum incentivo para mostrar que você claramente é uma pessoa de gosto requintado. Use-a no peito. Ou como um espelho para se admirar. Caso seja uma ocasião especial, faça raspas para decorar o prato. Concedida a quem doou para o evento de caridade Osmium Ordinance do grupo Potato MvM!"
+"TF_TournamentMedal_Osmium_Ordinance_Tungsten"			"Tanque de Tugstênio - Osmium Ordinance 2024"
+"TF_TournamentMedal_Osmium_Ordinance_Tungsten_Desc"		"Fizemos uma pesquisa para saber qual seria o pior material para usar na fabricação de uma medalha, e todos disseram \"tungstênio\". Pena que só tivemos essa ideia após fabricar umas vinte mil unidades. Não deixe o peso rasgar a sua camisa. Concedida a quem participou do evento de caridade Osmium Ordinance do grupo Potato MvM!"
+"TF_TournamentMedal_Osmium_Ordinance_Bohrium"			"Bomba de Bório - Osmium Ordinance 2024"
+"TF_TournamentMedal_Osmium_Ordinance_Bohrium_Desc"		"Trabalhosa de encontrar, provavelmente não radioativa e dificílima de comprar. Essas são as palavras que usaríamos para descrever tanto essa medalha quanto quem a recebeu! Não pergunte como pusemos as mãos nesse material, porque não sabemos a resposta. Concedida a quem participou do evento de caridade Osmium Ordinance do grupo Potato MvM!"
+"TF_TournamentMedal_Osmium_Ordinance_Cobalt"			"Cantina Cativa - Osmium Ordinance 2024"
+"TF_TournamentMedal_Osmium_Ordinance_Cobalt_Desc"		"Os mais esnobes olhariam para uma nobre bugiganga como esta, com dinheiro na mão, e zombariam da sua modéstia. \"Você acha que eu usaria um pedaço de metal como esse? Quem você acha que eu sou!?\". Você não é tão exigente, sabendo que a humildade é uma virtude. Concedida a quem doou para o evento de caridade Osmium Ordinance do grupo Potato MvM!"
+
 "TF_TournamentMedal_Supreme_Strategist"					"Símbolo de Status do Soberano Supremo"
 "TF_TournamentMedal_Supreme_Strategist_Desc"			"Uma medalha especial concedida pelo diretor-executivo da Gray Gravel Co. àqueles que demonstram lealdade à sua causa. Apenas os verdadeiros mestres na arte da liderança militar conseguiram ao menos vislumbrá-la. Ele não recomenda usá-la em público. Concedida a quem criou conteúdo para os eventos do grupo Moonlight MvM!"
 
@@ -5035,7 +5067,7 @@
 "zi_sanitarium_authors"			"Matthew \"Panckakebro\" Hiller\nHarry \"Harry\" Colquhoun\nLiam \"Diva Dan\" Moffitt\nStuffy360\nElián \"iron\" Rodríguez\nLouie \"bakscratch\" Turner"
 "zi_devastation_final1_authors"	"Jordan \"Ismaciodismorphus\" La Rose\nHarry \"Harry\" Colquhoun\nLiam \"Diva Dan\" Moffitt\nAeon \"Void\" Bollig\nAlex \"FGD5\" Stewart"
 "koth_snowtower_authors"		"Aeon \"Void\" Bollig\nAl \"Square\" Rodgers\nEArkham\nKeldos\nKrazyZark\nMaxime \"fubar\" Dupuis\nTim \"sedisocks\" BL\nZach \"Exactol\" Matuson"
-"koth_krampus_authors"			"Artur Eichmann\nJoel \"zythe_\" Morscher\nPhe\nLizard Of Oz\nsky\nLothudus\nParker \"razoldon\"\nIlia \"dotflare\"\nYiming \"Coolchou\" Zhao\nBen \"doctorsteen\" Meyer\nLerd\nScienceDILF"
+"koth_krampus_authors"			"Artur Eichmann\nJoel \"zythe_\" Morscher\nPhe\nLizard Of Oz\nsky\nLothudus\nParker \"razoldon\"\nIlia \"dotflare\"\nYiming \"Coolchou\" Zhao\nBen \"doctorsteen\" Meyer\nLerd\nHirschVA"
 "ctf_haarp_authors"				"Andrew \"Dr. Spud\" Thompson\nFay L. \"nineaxis\" Fabry\nAlex \"Rexy\" Kreeger\nJim \"Timberghost\" Wiser"
 "cp_brew_authors"				"Liam \"Diva Dan\" Moffitt\nEmil Sharafeev\nAlex \"FGD5\" Stewart\nAeon \"Void\" Bollig\nStuffy360\nTim \"Sedisocks\" BL"
 "plr_hacksaw_authors"			"Liam \"Diva Dan\" Moffitt\nViscaedis\nAl \"Square\" Rodgers\nE-Arkham\nAeon \"Void\" Bollig\nJuniper\nAlex \"FGD5\" Stewart\nLauren \"Yrrzy\" Godfrey"
@@ -5541,7 +5573,7 @@
 "TF_MapToken_Snowtower_AdText"		"— Comprar este item apoiará diretamente os criadores do mapa comunitário Snowtower."
 "TF_Map_Krampus"					"Krampus"
 "TF_MapToken_Krampus"				"Selo - Krampus"
-"TF_MapToken_Krampus_Desc"			"Um mapa de Rei do Pedaço\n\nFeito por Artur Eichmann, Joel \"zythe_\" Morscher, Phe, Lizard Of Oz, sky, Lothudus, Parker \"razoldon\", Ilia \"dotflare\", Yiming \"Coolchou\" Zhao, Ben \"doctorsteen\" Meyer, Lerd e ScienceDILF\n\nComprar este item apoiará diretamente os criadores do mapa comunitário Krampus. Demonstre o seu apoio hoje mesmo!"
+"TF_MapToken_Krampus_Desc"			"Um mapa de Rei do Pedaço\n\nFeito por Artur Eichmann, Joel \"zythe_\" Morscher, Phe, Lizard Of Oz, sky, Lothudus, Parker \"razoldon\", Ilia \"dotflare\", Yiming \"Coolchou\" Zhao, Ben \"doctorsteen\" Meyer, Lerd e HirschVA\n\nComprar este item apoiará diretamente os criadores do mapa comunitário Krampus. Demonstre o seu apoio hoje mesmo!"
 "TF_MapToken_Krampus_AdText"		"— Comprar este item apoiará diretamente os criadores do mapa comunitário Krampus."
 "TF_Map_Haarp"						"Haarp"
 "TF_MapToken_Haarp"					"Selo - Haarp"
@@ -5807,6 +5839,7 @@
 "TF_Map_Cachoeira_StrangePrefix"		" e Ensanguentado"
 "TF_Map_Overgrown_StrangePrefix"		" e Descuidado"
 "TF_Map_Hadal_StrangePrefix"			" e Submerso"
+"TF_Map_Applejack_StrangePrefix"		" e Melado"
 "TF_Map_AtomSmash_StrangePrefix"		" e Atômico"
 "TF_Map_Canaveral_StrangePrefix"		" e Orbital"
 "TF_Map_Burghausen_StrangePrefix"		" e Feudal"
@@ -6544,6 +6577,10 @@
 "pd_atom_smash_shield"					"A barreira desapareceu! Deposite o Austrálio!"
 "pd_atom_smash_collect"					"Colete Austrálio e leve-o ao Núcleo para pontuar!"
 "ctf_applejack_team_goal"				"Roube a maleta da base inimiga."
+"cp_hadal_b"							"o Setor B"
+"cp_hadal_c"							"o Setor C"
+"cp_hadal_core"							"o Núcleo Principal"
+"cp_hadal_a"							"o Setor A"
 
 // Win panel strings
 "Winpanel_Team1"			"EQUIPE"
@@ -9159,6 +9196,8 @@
 "ToolFestivizerInProgress"		"Festivizando item"
 "ToolUnusualifierInProgress"	"Incomunizando item"
 "ToolPaintKitInProgress"		"Decorando item"
+"ToolPaintKit_ItemDescFormat"	"%s2 %s1"
+
 "ToolCustomizeTexturePainterlyDescription" "Funciona com a maioria das imagens."
 "ToolCustomizeTextureStencilDescription" "Funciona melhor com ícones, símbolos e texto."
 "ToolCustomizeTextureStencilMatchByIntensity" "Usar gradiente"
@@ -11741,6 +11780,8 @@
 "Attrib_MeterChargeType3"				"O medidor de gasolina carrega com dano causado e/ou ao longo do tempo"
 "Attrib_ConsumesBurning"				"Causa minicrits contra alvos em chamas e os extingue\nDano proporcional à duração restante da queima\nGolpes fatais contra inimigos em chamas concedem velocidade de movimento adicional"
 "Attrib_RepairHealthToMetalRatio"		"Gasta 1 de metal para reparar %s1 de vida de construções"
+"Attrib_EnergyBuffDmdTakenMultipier"	"Usuário %s1% mais vulnerável a dano enquanto ativo"
+
 "Econ_Attrib_UserGeneratedWrapper_1"		"Somente MvM: %s1"
 "Econ_Attrib_UserGeneratedWrapper_2"		"Dia das Bruxas: %s1 (feitiço ativo somente durante o evento)"
 
@@ -18593,6 +18634,7 @@ Direcionais para se movimentar, gatilhos=mais rápido, botão A=próxima linha."
 "TF_sum24_botler_2000"					"Mordomobô 2000"
 "TF_sum24_botler_2000_style1"				"Com sede"
 "TF_sum24_botler_2000_style2"				"Sem sede"
+"TF_sum24_brand_loyalist"				"O Freguês Fiel" // ADD THE
 "TF_sum24_desk_engineer"				"Engenheiro de Escritório"
 "TF_sum24_desk_engineer_style1"				"Atarefado"
 "TF_sum24_desk_engineer_style2"				"Estacionado"
@@ -18628,6 +18670,7 @@ Direcionais para se movimentar, gatilhos=mais rápido, botão A=próxima linha."
 "TF_sum24_aimframe"						"Equipamento de Precisão" // ADD THE
 "TF_sum24_commonwealth"					"Comandante da Comunidade"
 "TF_sum24_tankers_top"					"Casaco do Combatente"
+"TF_sum24_vaudeville_visor"				"A Viseira Vaudeville" // ADD THE
 "TF_sum24_fire_marshal"					"Marechal do Fogo"
 "TF_sum24_invisible_flame"				"Chama Camuflada"
 "TF_sum24_invisible_flame_style1"			"Com camuflagem"
