@@ -191,15 +191,7 @@ $X360
 -shader
 -vulkan
 .pfm
-/data/src/appframework/sdlmgr.cpp
-/data/src/materialsystem/shaderapidx9/TransitionTable.cpp
-/data/src/materialsystem/shaderapidx9/dynamicib.h
-/data/src/materialsystem/shaderapidx9/meshdx8.cpp
-/data/src/materialsystem/shaderapidx9/shaderapidx8.cpp
-/data/src/materialsystem/shaderapidx9/shaderdevicedx8.cpp
-/data/src/materialsystem/shaderapidx9/texturedx8.cpp
 /data/src/public/tier1/UtlSortVector.h
-/data/src/tier1/KeyValues.cpp
 0.0005
 0123456789ABCDEF
 0123456789abcdef
@@ -245,7 +237,6 @@ $X360
 17CShaderDeviceBase
 17CVertexBufferBase
 17IDebugTextureInfo
-17IShaderDynamicAPI
 18CUtlCharConversion
 19CShaderDeviceMgrDx8
 19CUtlNoEscConversion
@@ -263,8 +254,8 @@ $X360
 32 bit buffer (hack)
 333?
 4fff>fff>fff>fff>
+517IShaderDynamicAPI
 5IMesh
-5SetHardwareGammaRamp( %f )\n
 6ConVar
 7CSDLMgr
 7IConVar
@@ -630,6 +621,7 @@ InputSystemVersion001
 Intel
 Invalid shader linkage: %s (%d, %d) : %s (%d, %d)\n
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -772,6 +764,7 @@ SDL_WasInit
 SEPARATETEXTUREMEMORIES %s TEXTURENONLOCALVIDMEM %s TEXTURESYSTEMMEMORY %s\n
 SHADERAPI CAPS:\n
 SetAssertDialogParent
+SetHardwareGammaRamp( %f )\n
 SetWindowGrab( %s )\n
 Shader %s is the wrong version %d, expecting %d\n
 Shader '%s' - All dynamic combos skipped. This is bad!\n
@@ -824,6 +817,7 @@ Total pixel shader sets: %d\n
 Total unique pixel shaders: %d\n
 Total unique vertex shaders: %d\n
 Total vertex shader sets: %d\n
+TransitionTable.cpp
 UCS-2LE
 UCS-4LE
 UNAVAILABLE
@@ -1006,6 +1000,7 @@ dlsym@GLIBC_2.2.5
 dxsupport_linux.cfg
 dxsupport_override
 dxsupport_override.cfg
+dynamicib.h
 error loading %s\n
 exp@GLIBC_2.29
 expf
@@ -1262,6 +1257,7 @@ memmove
 memmove@GLIBC_2.2.5
 memset
 memset@GLIBC_2.2.5
+meshdx8.cpp
 min megabytes
 min megahertz
 min megatexels
@@ -1318,6 +1314,9 @@ sdl_displayindex
 sdl_displayindex_fullscreen
 sdl_double_click_size
 sdl_double_click_time
+sdlmgr.cpp
+shaderapidx8.cpp
+shaderdevicedx8.cpp
 shaders\%s\%s.vcs
 shaders\fxc\%s.vcs
 sin@GLIBC_2.2.5
@@ -1371,6 +1370,7 @@ sub%dx%d.tga
 submrg%dx%d.tga
 symlink@GLIBC_2.2.5
 tan@GLIBC_2.2.5
+texturedx8.cpp
 tolower
 tolower@GLIBC_2.2.5
 too many indices for index buffer. . tell a programmer (%d>%d)\n

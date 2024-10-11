@@ -353,10 +353,6 @@ $X360
 ../vgui/icon_con_medium.vmt
 ..\vgui\maps\menu_thumb_%s
 /data/src/public/tier1/UtlSortVector.h
-/data/src/tier1/KeyValues.cpp
-/data/src/tier1/mempool.cpp
-/data/src/vgui2/vgui_controls/BuildGroup.cpp
-/data/src/vgui2/vgui_controls/Panel.cpp
 0 - no auto-resize
 0 - top-left
 0123456789ABCDEF
@@ -445,6 +441,7 @@ $X360
 9CCallbackI15CDialogGameInfo20PersonaStateChange_tLb0EE
 9CLanGames
 9IGameList
+:ResizeColumnToContents
 </script>
 << NULL >>\n
 <a href=
@@ -455,7 +452,7 @@ $X360
 >[unknown]
 ?333333
 ?CLanGames
-?CQuickListPanel
+?RunGameEngine005
 ?ServerContextMenu
 @ComboBox
 Accel
@@ -497,6 +494,7 @@ Bounce
 Break
 Build Mode Help
 BuildDialog
+BuildGroup.cpp
 BuildGroupPtr
 BuildMode - Error saving file
 BuildModeControls
@@ -535,6 +533,7 @@ COM_TimestampedLog
 CONFIG
 CPanelKeyBindingMapDictionary::m_PanelKeyBindingMapPool
 CPanelMessageMapDictionary::m_PanelMessageMapPool
+CQuickListPanel
 CServerBrowserDialog
 CSmallTextEntry
 CThreadEvent::CThreadEvent(bool)
@@ -735,6 +734,7 @@ GameList
 GameTabs
 GameTags
 GameText
+GameUI
 GetCPUInformation
 GetCommand
 GetNewList
@@ -903,6 +903,7 @@ KeyFocusTicked
 KeyModeSet
 KeyTyped
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -1102,6 +1103,7 @@ PageHide
 PageShow
 PageTab
 PageTabActivated
+Panel.cpp
 Panel::ReloadKeyBindings:  Can't find entry for panel '%s'\n
 Panel::SaveKeyBindings '%s' is read-only!!!\n
 PanelListEmbedded
@@ -1148,6 +1150,7 @@ RadioButton.TextColor
 RadioButtonChecked
 RaisedBorder
 RandomFloat
+Recreate server bowser vgui dialog
 RecursiveLoadFromBuffer:  got EOF instead of keyname
 RecursiveLoadFromBuffer:  got NULL key
 RecursiveLoadFromBuffer:  got conditional between key and value
@@ -1166,7 +1169,6 @@ RemoveServer
 Repaint
 ReplayFilterCheck
 ResetData
-ResizeColumnToContents
 Resource\warning.wav
 RevertToSaved
 RichText
@@ -1179,7 +1181,6 @@ RichText.TextColor
 RichText: textfile parameter '%s' not found.\n
 RichTextInterior
 RoundedCorners
-RunGameEngine005
 SKIN
 STEAMAPPLIST_INTERFACE_VERSION001
 STEAMAPPS_INTERFACE_VERSION008
@@ -1669,6 +1670,7 @@ memcpy
 memcpy@GLIBC_2.14
 memmove
 memmove@GLIBC_2.2.5
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 model_pos
@@ -1781,6 +1783,7 @@ sb_firstopentime
 sb_mod_suggested_maxplayers
 sb_numtimesopened
 sb_quick_list_bit_field
+sb_recreate
 sb_showblacklists
 scaleAmount
 scaleImage
@@ -1949,10 +1952,10 @@ variable
 version_match
 vgui
 vgui/
-vgui/hud/800corner1
-vgui/hud/800corner2
-vgui/hud/800corner3
-vgui/hud/800corner4
+vgui/hud/8x800corner1
+vgui/hud/8x800corner2
+vgui/hud/8x800corner3
+vgui/hud/8x800corner4
 vgui::
 vgui::CheckButton
 vgui::EditablePanel

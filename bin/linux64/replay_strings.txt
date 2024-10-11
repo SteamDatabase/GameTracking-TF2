@@ -357,7 +357,7 @@ $X360
 &yacute;
 &yen;
 &yuml;
-'7base_download_url
+'7Show Replay debug info.
 (%zu) Descend: %s, (%s), %s\n
 (%zu) readdir failed to find '%s' in '%s'\n
 (null)
@@ -383,27 +383,11 @@ $X360
 -quiet
 -replayserverdir
 ...session info download complete.  Freeing.\n
+../common/netmessages.cpp
 .pfm
 .vtf
-/data/src/common/netmessages.cpp
 /data/src/public/tier1/UtlSortVector.h
 /data/src/public/vstdlib/jobthread.h
-/data/src/replay/baserecordingsessionmanager.cpp
-/data/src/replay/cl_downloader.cpp
-/data/src/replay/cl_performancecontroller.cpp
-/data/src/replay/cl_recordingsessionmanager.cpp
-/data/src/replay/cl_replaymanager.cpp
-/data/src/replay/cl_screenshotmanager.cpp
-/data/src/replay/cl_sessionblockdownloader.cpp
-/data/src/replay/cl_sessioninfodownloader.cpp
-/data/src/replay/genericpersistentmanager.h
-/data/src/replay/replaysystem.cpp
-/data/src/replay/sv_recordingsessionmanager.cpp
-/data/src/replay/sv_sessionblockpublisher.cpp
-/data/src/replay/sv_sessionpublishmanager.cpp
-/data/src/replay/sv_sessionrecorder.cpp
-/data/src/tier1/KeyValues.cpp
-/data/src/vtf/vtf.cpp
 /materials/
 0 for low-res screenshots (width=512), 1 for hi-res (width=1024)
 0.7.2
@@ -518,6 +502,7 @@ $X360
 20ConVar_ServerBounded
 20IClientReplayContext
 20IQueryableReplayItem
+20IReplaySerializeable
 20IServerReplayContext
 21CBaseRecordingSession
 21CSessionInfoPublisher
@@ -585,11 +570,11 @@ $X360
 <pre>
 ><a href=
 >[unknown]
-?20IReplaySerializeable
 ?333333
 ????????????????
-?net_SetConVar
+?replay_%i
 @@#Replay_DL_Err_SI_Unknown
+@Validating
 A 'changelevel' or 'map' is required - recording will
 A!;I2
 ABGR8888
@@ -832,10 +817,10 @@ GLIBC_2.4
 GLIBC_2.7
 Ga=o
 GetCPUInformation
+HJob
 Hash succeeded\n
 HashFail
 Height and width must be equal for cubemaps!\n
-Hmaterials\vgui\replay\thumbnails\%s.vtf
 Hostname
 HttpError
 HttpStatus
@@ -888,6 +873,7 @@ JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
 JPEGMEM
 KNQ\r
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -1071,7 +1057,6 @@ Session with no session name found - aborting load for this session.  Data:\n---
 SessionInfoDownloadErrorID
 Should not contain a protocol (e.g: %s)!
 ShouldUseNewAssertDialog
-Show Replay debug info.
 Simulate a delay (in seconds) when publishing replay data via local HTTP.
 Simulate a rename failure during local HTTP publishing, which will force a manual copy & delete.
 SizesDiffer
@@ -1167,7 +1152,6 @@ VTFFileHeader_t
 V_AppendSlash: ran out of space on %s.
 V_MakeAbsolutePath: _getcwd failed.
 V_MakeAbsolutePath: tried to ".." past the root.
-Validating
 Vertical offset for player death camera
 Vertical offset from a sentry on sentry kill
 Virtual array controller messed up
@@ -1307,7 +1291,9 @@ atan2f
 atan2f@GLIBC_2.2.5
 atanf
 atanf@GLIBC_2.2.5
+base_download_url
 base_filename
+baserecordingsessionmanager.cpp
 begin at the start of the next round.
 bin/linux64
 block manager
@@ -1325,6 +1311,13 @@ chdir@GLIBC_2.2.5
 chmod@GLIBC_2.2.5
 chunk exceeds maximum standard length
 chunk not available
+cl_downloader.cpp
+cl_performancecontroller.cpp
+cl_recordingsessionmanager.cpp
+cl_replaymanager.cpp
+cl_screenshotmanager.cpp
+cl_sessionblockdownloader.cpp
+cl_sessioninfodownloader.cpp
 clc_BaselineAck
 clc_ClientInfo
 clc_CmdKeyValues
@@ -1452,6 +1445,7 @@ g_pThreadPool
 g_pVCR
 g_pVGuiLocalize
 gc^A
+genericpersistentmanager.h
 getcwd
 getcwd@GLIBC_2.2.5
 getenv
@@ -1568,6 +1562,7 @@ mat_reducefillrate 0\n
 materials
 materials\vgui\replay\thumbnails
 materials\vgui\replay\thumbnails\%s.vmt
+materials\vgui\replay\thumbnails\%s.vtf
 max_block
 mb_enabled
 mbstowcs
@@ -1613,6 +1608,7 @@ mp_waitingforplayers_cancel must be 0 in order for replay to work!
 nAddedBlocks: %i\n
 nCurBlock: %i\n
 nDumpInterval: %i\n
+net_SetConVar
 net_SignonState
 net_StringCmd
 net_Tick
@@ -1621,7 +1617,6 @@ non-recoverable state
 numFrames
 numMipLevels
 numResources
-o@er
 okOP
 opendir@GLIBC_2.2.5
 out of memory
@@ -1694,7 +1689,6 @@ replay\playoriginalreplay.wav
 replay\playperformance.wav
 replay\record_fail.wav
 replay\rendercomplete.wav
-replay_%i
 replay_%i_edit
 replay_add_fake_replays
 replay_block_dump_interval
@@ -1753,6 +1747,7 @@ replay_sessioninfo_updatefrequency
 replay_stoprecord
 replay_voice_during_playback
 replays.dmx
+replaysystem.cpp
 rmdir@GLIBC_2.2.5
 root
 rt+rld
@@ -1832,6 +1827,10 @@ strtoull@GLIBC_2.2.5
 sub%dx%d.tga
 submrg%dx%d.tga
 success
+sv_recordingsessionmanager.cpp
+sv_sessionblockpublisher.cpp
+sv_sessionpublishmanager.cpp
+sv_sessionrecorder.cpp
 sv_use_steam_voice
 svc_BSPDecal
 svc_ClassInfo
@@ -1899,6 +1898,7 @@ vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
 vtex_dll
+vtf.cpp
 wcscat
 wcscat@GLIBC_2.2.5
 wcschr

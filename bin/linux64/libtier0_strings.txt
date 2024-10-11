@@ -40,12 +40,10 @@
 -profile
 -raiseonassert
 /data/src/public/tier0/tslist.h
-/data/src/tier0/assert_dialog.cpp
-/data/src/tier0/platform_posix.cpp
-/data/src/tier0/threadtools.cpp
 /dev/urandom
 /proc/cpuinfo
 /proc/self/cmdline
+/proc/self/exe
 /proc/self/statm
 /proc/self/status
 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
@@ -75,7 +73,6 @@ Break
 Breaking '%s' in '%s'\n
 Brush_Model_Rendering
 BuildCmdLine
-C%s (%d) : 
 CCallStackStorage::CCallStackStorage(int (*)(void**, int, int), unsigned int)
 CClockSpeedInit::Init()
 CCommandLine::AddArgument: exceeded %d parameters
@@ -192,6 +189,7 @@ CallAssertFailedNotifyFunc
 CatchAndWriteMiniDump
 Client_Animation
 ColorSpewMessage
+ColorSpewMessage2
 CommandLine_Tier0
 ConColorMsg
 ConColorMsg(Color const&, char const*, ...)
@@ -273,13 +271,12 @@ InstallProgressReportHandler
 Interpolation
 Is64BitOS
 IsSpewActive
-Jun 25 202421:57:15
 Light_Cache
 LogV
 Lowered '%s' -> '%s'\n
 MainThrd
 Matched '%s' -> '%s'\n
-MbP?/proc/self/exe
+MbP?true
 MemAllocOOMError
 MemAllocScratch
 MemFreeScratch
@@ -297,6 +294,7 @@ NetWarning
 Networking
 No samples\n
 Occlusion
+Oct  6 202417:59:51
 Other_Model_Rendering
 Out of memory or address space.  Texture quality setting may be too high.\n
 Out of thread local storage!\n
@@ -312,9 +310,12 @@ Plat_DebugString
 Plat_EndWatchdogTimer
 Plat_ExitProcess
 Plat_FastVerifyHardwareKey
+Plat_FileExists
 Plat_FloatTime
 Plat_GetCommandLine
 Plat_GetCommandLineA
+Plat_GetEnv
+Plat_GetExecutablePath
 Plat_GetMemPageSize
 Plat_GetPagedPoolInfo
 Plat_GetWatchdogTime
@@ -330,7 +331,9 @@ Plat_USTime
 Plat_VerifyHardwareKey
 Plat_VerifyHardwareKeyDriver
 Plat_VerifyHardwareKeyPrompt
+Plat_chdir
 Plat_ctime
+Plat_getwd
 Plat_gmtime
 Plat_localtime
 Plat_timegm
@@ -418,6 +421,7 @@ ZeroMemory
 [ func+child   func ]  [ func+child   func ]  [ func+child   func ]  Count   Peak\n
 [1;31m%s
 [1;33mASSERT:
+[38;2;%d;%d;%dm%s
 \nTesting %d threads:\n
 \t(%zu) comparing %s with %s\n
 _AssertValidReadPtr
@@ -526,12 +530,14 @@ access
 access@GLIBC_2.2.5
 alarm
 alarm@GLIBC_2.2.5
+assert_dialog.cpp
 autoMutex__
 backtrace
 backtrace@GLIBC_2.2.5
 backtrace_symbols
 backtrace_symbols@GLIBC_2.2.5
 c.so
+chdir@GLIBC_2.2.5
 chmod@GLIBC_2.2.5
 clock_gettime
 clock_gettime@GLIBC_2.17
@@ -602,6 +608,8 @@ g_dwClockSpeed
 g_pMemAlloc
 g_pVCR
 game/PlaybackTick
+getcwd
+getcwd@GLIBC_2.2.5
 getenv
 getenv@GLIBC_2.2.5
 getloadavg
@@ -653,6 +661,7 @@ pass\n
 pclose
 pclose@GLIBC_2.2.5
 physical id
+platform_posix.cpp
 popen
 popen@GLIBC_2.2.5
 processor
@@ -760,6 +769,8 @@ strlen
 strlen@GLIBC_2.2.5
 strncasecmp
 strncasecmp@GLIBC_2.2.5
+strncat
+strncat@GLIBC_2.2.5
 strncpy
 strncpy@GLIBC_2.2.5
 strpbrk
@@ -777,12 +788,12 @@ strtoll@GLIBC_2.2.5
 success!
 symlink@GLIBC_2.2.5
 tempLen <= sizeof( tempData )
+threadtools.cpp
 timegm@GLIBC_2.2.5
 timestamped.log
 tmGetAPI
 tolower
 tolower@GLIBC_2.2.5
-true
 typeinfo for CThread
 typeinfo for CWorkerThread
 typeinfo for int

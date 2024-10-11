@@ -126,21 +126,18 @@
 &yacute;
 &yen;
 &yuml;
+)5V1Q
 ** NOTE: The real value is %.3f but the server has temporarily restricted it to %.3f **\n
 ,%03d
 -no_compressed_vvds
+../public/studio_virtualmodel.cpp
 .360
 .ani
 .dx80.vtx
 .dx90.vtx
 .sw.vtx
 .vmt
-/data/src/datacache/datacache.cpp
-/data/src/datacache/mdlcache.cpp
-/data/src/public/studio_virtualmodel.cpp
 /data/src/public/tier1/mempool.h
-/data/src/tier1/datamanager.cpp
-/data/src/tier1/mempool.cpp
 0123456789ABCDEF
 0123456789abcdef
 1 - show hitches , 2 - show stalls
@@ -191,7 +188,6 @@
 <pre>
 >*this
 ><a href=
-?[%8.3f] hitch on %s:%s:%d:%d\n
 ?m_Lock
 Alignment fixups failed on ANI swap!\n
 Alignment fixups failed on MDL swap!\n
@@ -256,6 +252,7 @@ CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
 CXXABI_1.3
 CXXABI_1.3.8
+C[%8.3f] hitch on %s:%s:%d:%d\n
 Call to NULL CStudioHdr::GroupStudioHdr()\n
 Cannot find requested cache section "%s"
 CommandLine_Tier0
@@ -552,8 +549,10 @@ control
 cvar
 cycle
 cycleposeindex
+datacache.cpp
 datacachesize
 dataend
+datamanager.cpp
 datastart
 developer
 dl_iterate_phdr
@@ -701,6 +700,7 @@ maxPitch
 maxYaw
 mbstowcs
 mbstowcs@GLIBC_2.2.5
+mdlcache.cpp
 mem_force_flush
 memcmp
 memcmp@GLIBC_2.2.5
@@ -708,6 +708,7 @@ memcpy
 memcpy@GLIBC_2.14
 memmove
 memmove@GLIBC_2.2.5
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 meshOffset

@@ -17,6 +17,7 @@
  client
  clientcmd_can_execute
  failed to dlopen %s error=%s\n
+ game
  notconnected
  notify
  replicated
@@ -277,20 +278,8 @@ $znearer
 -vulkan
 .hdr
 .hdr.vtf
-/data/src/materialsystem/cmaterialsystem.cpp
-/data/src/materialsystem/cmatlightmaps.cpp
-/data/src/materialsystem/cmatrendercontext.cpp
-/data/src/materialsystem/ctexture.cpp
-/data/src/materialsystem/ctexturecompositor.cpp
-/data/src/materialsystem/morph.cpp
-/data/src/materialsystem/shadersystem.cpp
-/data/src/materialsystem/texturemanager.cpp
 /data/src/public/tier0/tslist.h
 /data/src/public/tier1/UtlSortVector.h
-/data/src/tier1/KeyValues.cpp
-/data/src/tier1/mempool.cpp
-/data/src/tier2/renderutils.cpp
-/data/src/vtf/vtf.cpp
 0 - do not support flashlight (don't load flashlight shader combos), 1 - flashlight is supported
 0 = Original Algorithm 1 = New Algorithm
 0.0005
@@ -537,7 +526,7 @@ $znearer
 ????????????????
 ?shader_error
 @10IShaderDLL
-@Job
+@NULL material
 A custom HDR cubemap "%s": cannot be found on disk.\nThis really should have a HDR version, trying a fall back to a non-HDR version.\n
 ABGR8888
 ARGB8888
@@ -750,7 +739,7 @@ GLIBC_2.29
 GLIBC_2.3
 GLIBC_2.7
 Ga=o
-Game shader '%s' trying to override a base shader '%s'.
+Game shader '%s' override shader '%s' from '%s'.
 GenerateMipmaps
 GetCPUInformation
 GetMemoryInformation
@@ -764,7 +753,6 @@ GetThreadId
 Getting a dynamic mesh without resolving the previous one
 HDR Disabled\n
 HDR Enabled\n
-HNULL material
 HW Morph Count
 HW Morphing
 Handling alt-tab in queued mode!\n
@@ -787,6 +775,7 @@ Invalid texture value in CMaterialVar::GetTextureValue\n
 Invalid texture_lookup node, must specify at least texture (or texture_red and texture_blue) or all of them.\n
 Invalid vector component (%d) of variable %s referenced in material %s
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -1022,7 +1011,6 @@ WriteDataToShaderAPITexture
 \tNo morphing done\n
 \tQuad Count Histogram :\n\t\t
 \tRendered Quad Count Histogram :\n\t\t
-_@ game
 _ExitOnFatalAssert
 _ITM_deregisterTMCloneTable
 _ITM_registerTMCloneTable
@@ -1125,6 +1113,9 @@ cl_ejectbrass
 cl_particle_retire_cost
 cl_ragdoll_fade_time
 cl_ragdoll_forcefade
+cmaterialsystem.cpp
+cmatlightmaps.cpp
+cmatrendercontext.cpp
 color-code miplevels 2: normalmaps, 1: everything else
 combine_add
 combine_lerp
@@ -1135,6 +1126,8 @@ convar.
 cos@GLIBC_2.2.5
 cstrike
 cstrike_beta
+ctexture.cpp
+ctexturecompositor.cpp
 cvar
 debug/debugluxelsnoalpha
 debugmorphaccumulator
@@ -1192,7 +1185,7 @@ g_VProfCurrentProfile
 g_pMemAlloc
 g_pThreadPool
 game_shader_dx%d%s
-game_shader_generic*
+game_shader_generic*.so
 getcwd
 getcwd@GLIBC_2.2.5
 grey
@@ -1374,10 +1367,12 @@ memcpy
 memcpy@GLIBC_2.14
 memmove
 memmove@GLIBC_2.2.5
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 mipSkipCount
 monitor gamma (typically 2.2 for CRT and 1.7 for LCD)
+morph.cpp
 morphweight
 no ']' or '}' found in vector key in ParseVectorFromKeyValueString\n
 normalize
@@ -1446,6 +1441,7 @@ readbacktex
 reflectivity
 render/CMatBeginRender
 render/CMatQBeginRender
+renderutils.cpp
 replace
 replace_proxy_IMaterialProxy003
 replay_screenshotresolution
@@ -1455,6 +1451,7 @@ script
 select
 shaderapidx9
 shaderapivk
+shadersystem.cpp
 sin@GLIBC_2.2.5
 sincosf
 sincosf@GLIBC_2.2.5
@@ -1512,6 +1509,7 @@ texture_blue
 texture_lookup
 texture_preload_list.txt
 texture_red
+texturemanager.cpp
 tf2_texture_cache.vpk
 tf_beta
 tf_impactwatertimeenable
@@ -1525,6 +1523,7 @@ towupper
 towupper@GLIBC_2.2.5
 translate_u
 translate_v
+t|zx>
 u64( %lld = 0x%llX )
 unknown\n
 unlitgeneric
@@ -1540,6 +1539,7 @@ vswprintf@GLIBC_2.2.5
 vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
+vtf.cpp
 wcslen
 wcslen@GLIBC_2.2.5
 wcsncat

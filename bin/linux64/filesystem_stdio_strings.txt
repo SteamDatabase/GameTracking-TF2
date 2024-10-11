@@ -193,6 +193,7 @@ $X360
 -fs_nopreloaddata
 -log_opened_files
 -noasync
+../common/crypto.cpp
 .bsp
 .bsp/
 .hdr.
@@ -200,17 +201,9 @@ $X360
 .vpk/
 .zip/
 /EMSA1(
-/data/src/common/crypto.cpp
-/data/src/filesystem/QueuedLoader.cpp
-/data/src/filesystem/basefilesystem.cpp
-/data/src/filesystem/filesystem_async.cpp
-/data/src/filesystem/filesystem_stdio.cpp
-/data/src/filesystem/filetracker.cpp
 /data/src/public/tier0/tslist.h
 /data/src/public/tier1/UtlSortVector.h
 /data/src/public/vstdlib/jobthread.h
-/data/src/tier1/KeyValues.cpp
-/data/src/vpklib/packedstore.cpp
 000000000000000000000000000000000000000000000000000000000000
 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
@@ -747,6 +740,7 @@ InvertibleRSAFunction: specified modulus size is too small
 IteratedHashBase: input data exceeds maximum allowed by hash function 
 KeySize
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -1318,6 +1312,7 @@ PublicExponent
 PutMessage
 Qkkbal
 Queued Loader:\n\n
+QueuedLoader.cpp
 QueuedLoader: %s Creating: %.2f seconds\n
 QueuedLoader: %s: %d Entries\n
 QueuedLoader: Anonymous Job '%s' not found\n
@@ -1480,7 +1475,6 @@ Zjz\v
 \portal\zip
 \t(%zu) comparing %s with %s\n
 \tf\zip
-^vd\I
 _%s.tmp
 _ExitOnFatalAssert
 _ITM_deregisterTMCloneTable
@@ -1632,6 +1626,7 @@ async_suspend
 asyncappend
 asyncwrite
 autoMutex__
+basefilesystem.cpp
 basic_string::_M_construct null not valid
 basic_string::append
 bin/linux64
@@ -1718,12 +1713,15 @@ fileCommentLength
 fileNameLength
 fileno_unlocked
 fileno_unlocked@GLIBC_2.2.5
+filesystem_async.cpp
 filesystem_buffer_size
 filesystem_max_stdio_read
 filesystem_native
 filesystem_report_buffered_io
+filesystem_stdio.cpp
 filesystem_unbuffered_io
 filetime
+filetracker.cpp
 flags
 float( %f )
 fopen64@GLIBC_2.2.5
@@ -1849,6 +1847,7 @@ open /dev/urandom
 opendir@GLIBC_2.2.5
 opened_files.txt
 p09Y
+packedstore.cpp
 pow@GLIBC_2.29
 pthread_mutex_destroy
 pthread_mutex_destroy@GLIBC_2.2.5

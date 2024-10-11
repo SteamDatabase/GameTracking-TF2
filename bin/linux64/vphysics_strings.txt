@@ -117,7 +117,7 @@
  %i:%p:%p:%X  
  ( def. "%s" )
  0 # infinity not used\n
- A/data/src/ivp/ivp_intern/ivp_ball.cxx
+ A../ivp_intern/ivp_ball.cxx
  AMatrix: %s\n
  DUP
  DUPLICATEridge\n
@@ -161,7 +161,7 @@
  top
  upperDelaunay
  visible
-!ragdoll
+!stiff_spring
 "%s" = "%s"
 # 1 color for all\n
 # 1 point per line\n1 
@@ -169,8 +169,8 @@
 # r%d between f%d f%d\n
 # ridge between f%d f%d\n
 #=static_object
+#kb7
 $MATERIAL_INDEX_SHADOW
-$stiff_spring
 %02x
 %6.16g 
 %6.16g %6.16g\n
@@ -323,6 +323,7 @@ $stiff_spring
 *** P_Pop_Eps went smaller than P_DOUBLE_EPS!!
 *** Qhull failed. Retrying with different parameters.\n
 **empty**
++../ivp_utility/ivu_vhash.cxx
 , line %d is the first comment
 , line %d is the first long line
 , line %d is the first short\nline
@@ -330,28 +331,22 @@ $stiff_spring
 - p%d (v%d):
 -----------------\nObject: %s\n
 .  Continue with %d points.\n
+../ivp_collision/ivp_compact_ledge_solver.cxx
+../ivp_collision/ivp_mindist.cxx
+../ivp_collision/ivp_mindist_minimize.cxx
+../ivp_collision/ivp_mindist_recursive.cxx
+../ivp_controller/ivp_actuator.cxx
+../ivp_controller/ivp_actuator_spring.cxx
+../ivp_intern/ivp_friction.cxx
+../ivp_intern/ivp_friction_gaps.cxx
+../ivp_intern/ivp_mindist_friction.cxx
+../ivp_intern/ivp_object.cxx
+../ivp_intern/ivp_physic_private.cxx
+../ivp_utility/ivu_linear.cxx
 ./rbox D4
 .EXE
 .exe
-/data/src/ivp/ivp_collision/ivp_compact_ledge_solver.cxx
-/data/src/ivp/ivp_collision/ivp_mindist.cxx
-/data/src/ivp/ivp_collision/ivp_mindist_minimize.cxx
-/data/src/ivp/ivp_collision/ivp_mindist_recursive.cxx
-/data/src/ivp/ivp_compact_builder/ivp_object_polygon_tetra.cxx
-/data/src/ivp/ivp_compact_builder/ivp_tetra_intrude.cxx
-/data/src/ivp/ivp_controller/ivp_actuator.cxx
-/data/src/ivp/ivp_controller/ivp_actuator_spring.cxx
-/data/src/ivp/ivp_intern/ivp_friction.cxx
-/data/src/ivp/ivp_intern/ivp_friction_gaps.cxx
-/data/src/ivp/ivp_intern/ivp_mindist_friction.cxx
-/data/src/ivp/ivp_intern/ivp_object.cxx
-/data/src/ivp/ivp_intern/ivp_physic_private.cxx
-/data/src/ivp/ivp_utility/ivu_linear.cxx
 /data/src/ivp/ivp_utility/ivu_linear.hxx
-/data/src/ivp/ivp_utility/ivu_vhash.cxx
-/data/src/tier1/datamanager.cpp
-/data/src/vphysics/physics_environment.cpp
-/data/src/vphysics/trace.cpp
 0 1 1 1  # color of points\n
 0123456789ABCDEF
 0123456789abcdef
@@ -363,6 +358,7 @@ $stiff_spring
 10IAppSystem
 10IVP_Object
 10hk_Link_EF
+11CPolyhedron
 11IConvexInfo
 11IVP_Cluster
 11IVP_Mindist
@@ -538,7 +534,6 @@ $stiff_spring
 23IVP_U_Active_Test_Range
 23hk_Breakable_Constraint
 23hk_Prismatic_Constraint
-23hk_Rigid_Body_Binary_EF
 24CLiquidSurfaceDescriptor
 24CPhysicsMotionController
 24IPhysicsFrictionSnapshot
@@ -614,7 +609,7 @@ $stiff_spring
 9IVP_U_SetI8IVP_CoreE
 9IVP_VHash
 9a&g
-</data/src/ivp/ivp_collision/ivp_mindist_event.cxx
+<../ivp_collision/ivp_mindist_event.cxx
 </script>
 <RUSTJE=
 <img src="
@@ -726,6 +721,7 @@ Failed to restore spring enpoints\n
 Farea
 Fcoplanars
 Fd-cdd-in
+Ffixed
 Finner
 First post-merge
 Fmerges
@@ -737,7 +733,6 @@ Fouter
 Fpoint-intersect
 Fsummary
 Ftriangles
-Funknown
 Fvertices
 Fvoronoi
 Fxtremes
@@ -771,7 +766,7 @@ IVP Failed at %s %d\n
 Inertia: %.2f, %.2f, %.2f (inv %.3f, %.3f, %.3f)\n
 IntVal
 KI,DC+
-L?ball_socket
+L?23hk_Rigid_Body_Binary_EF
 L?pulley
 LIST # %s | %s\n
 Last point added to hull was p%d.
@@ -1131,6 +1126,7 @@ axleRatio
 axleratio
 axles
 b_vals 
+ball_socket
 base
 begin
 best merges used centrum instead of vertices
@@ -1206,6 +1202,7 @@ cvar
 cycles of facets merged into coplanar horizon
 dampFactor
 dampening
+datamanager.cpp
 default
 degenerate facets due to dropped neighbors
 degenerate hyperplanes recomputed with gaussian elimination
@@ -1285,7 +1282,6 @@ fgets@GLIBC_2.2.5
 final_convexify_check: ERRORS: %i triangles, %i extrapoints.\n
 finite
 finite@GLIBC_2.2.5
-fixed
 flipped facet
 flipped facets
 for facets and their normals, neighbor and vertex sets
@@ -1368,6 +1364,8 @@ isspace
 isspace@GLIBC_2.2.5
 iswspace
 iswspace@GLIBC_2.2.5
+ivp_object_polygon_tetra.cxx
+ivp_tetra_intrude.cxx
 jumpfactor
 keepUprightTorque
 keepuprighttorque
@@ -1518,6 +1516,7 @@ physic_test: edge->triangle == edge->opposite->triangle in triangle
 physic_test: edges do not properly form a ring in triangle 
 physic_test: tri != tri->other_side->other_side in triangle 
 physic_test: tri->is_hidden && in hash
+physics_environment.cpp
 physik_test: Anzahl der Triangles (%d) != n_triangles (%d)!\n
 points checked for facets' outer planes
 points ignored (didn't create a good new facet)
@@ -1549,7 +1548,6 @@ pulleyPosition
 putchar
 putchar@GLIBC_2.2.5
 pysic_test: tri->calc_areasize() < 1E-6f in triangle: %g
-q=11CPolyhedron
 q\nGA
 qh_addpoint: NULL facet.  Use qh_findbestfacet\n
 qh_addpoint: add p%d (v%d) to hull of %d facets (%2.2g above f%d) and %d outside at %4.4g CPU secs.  Previous was p%d.\n
@@ -2017,6 +2015,7 @@ qsort@GLIBC_2.2.5
 rCz\v
 r_actives %d  ignored_nr %d\n
 radius
+ragdoll
 rand
 rand@GLIBC_2.2.5
 raytraceCenterOffset
@@ -2178,10 +2177,12 @@ towlower
 towlower@GLIBC_2.2.5
 towupper
 towupper@GLIBC_2.2.5
+trace.cpp
 triangle\n
 turnThrottleReduceFast
 turnThrottleReduceSlow
 two facets with the same vertices
+unknown
 useClockwiseRotations
 useLocalPositions
 v[%d]=%1.3e 

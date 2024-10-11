@@ -21,24 +21,40 @@
 /sys/devices/system/node/node%u
 0;FALSE;NO;OFF
 1;TRUE;YES;ON
+CXXABI_1.3
 Cprocess done: 0x%zx\n
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
+GLIBCXX_3.4
+GLIBCXX_3.4.20
 GLIBC_2.14
 GLIBC_2.17
 GLIBC_2.2.5
 GLIBC_2.3
-GLIBC_2.4
 _ITM_deregisterTMCloneTable
 _ITM_registerTMCloneTable
+_ZNSt9bad_allocD1Ev@GLIBCXX_3.4
+_ZSt15get_new_handlerv@GLIBCXX_3.4.20
+_ZTISt9bad_alloc@GLIBCXX_3.4
+_ZTVSt9bad_alloc@GLIBCXX_3.4
+__cxa_allocate_exception
+__cxa_allocate_exception@CXXABI_1.3
 __cxa_atexit
 __cxa_atexit@GLIBC_2.2.5
 __cxa_finalize
 __cxa_finalize@GLIBC_2.2.5
+__cxa_guard_acquire
+__cxa_guard_acquire@CXXABI_1.3
+__cxa_guard_release
+__cxa_guard_release@CXXABI_1.3
+__cxa_throw
+__cxa_throw@CXXABI_1.3
 __environ
 __environ@GLIBC_2.2.5
 __errno_location
 __errno_location@GLIBC_2.2.5
 __gmon_start__
+__gxx_personality_v0
+__gxx_personality_v0@CXXABI_1.3
 __libc_calloc
 __libc_cfree
 __libc_free
@@ -52,8 +68,6 @@ __lxstat64
 __lxstat64@GLIBC_2.2.5
 __lxstat@GLIBC_2.2.5
 __posix_memalign
-__stack_chk_fail
-__stack_chk_fail@GLIBC_2.4
 __xmknod
 __xmknod@GLIBC_2.2.5
 __xstat
@@ -63,8 +77,6 @@ __xstat@GLIBC_2.2.5
 _aligned_malloc
 abandoned_page_purge
 abandoned_page_reset
-abort
-abort@GLIBC_2.2.5
 access
 access@GLIBC_2.2.5
 allocation request is too large (%zu bytes)\n
@@ -122,6 +134,7 @@ lchown
 lchown@GLIBC_2.2.5
 libc.so.6
 libpthread.so.0
+libstdc++.so.6
 limit_os_alloc
 madvise
 madvise@GLIBC_2.2.5
@@ -156,7 +169,6 @@ mi_free_size_aligned
 mi_good_size
 mi_heap_alloc_new
 mi_heap_alloc_new_n
-mi_heap_calloc
 mi_heap_calloc_aligned
 mi_heap_calloc_aligned_at
 mi_heap_check_owned
@@ -188,7 +200,7 @@ mi_heap_rezalloc_aligned_at
 mi_heap_set_default
 mi_heap_strdup
 mi_heap_strndup
-mi_heap_try_new
+mi_heap_try_new(mi_heap_s*, unsigned long, bool)
 mi_heap_visit_blocks
 mi_heap_zalloc
 mi_heap_zalloc_aligned
@@ -323,11 +335,15 @@ rmdir
 rmdir@GLIBC_2.2.5
 scandir
 scandir@GLIBC_2.2.5
+sched_yield
+sched_yield@GLIBC_2.2.5
 searches
 secure level: %d\n
 segments
 show_errors
 show_stats
+std::bad_alloc::~bad_alloc()
+std::get_new_handler()
 stderr
 stderr@GLIBC_2.2.5
 stdout
@@ -350,6 +366,7 @@ touched
 trying to free an already freed arena block: %p, size %zu\n
 trying to free from non-existent arena block: %p, size %zu, memid: 0x%zx\n
 trying to free from non-existent arena: %p, size %zu, memid: 0x%zx\n
+typeinfo for std::bad_alloc
 unable to allocate OS memory (error: %d (0x%x), size: 0x%zx bytes, align: 0x%zx, commit: %d, allow large: %d)\n
 unable to allocate aligned OS memory directly, fall back to over-allocation (size: 0x%zx bytes, address: %p, alignment: 0x%zx, commit: %d)\n
 unable to allocate huge (1GiB) page, trying large (2MiB) pages instead (errno: %i)\n
@@ -373,3 +390,4 @@ verbose
 vfree
 vsnprintf
 vsnprintf@GLIBC_2.2.5
+vtable for std::bad_alloc

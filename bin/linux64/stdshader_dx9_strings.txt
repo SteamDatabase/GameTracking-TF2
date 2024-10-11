@@ -673,7 +673,8 @@ $texture2 texcoord transform
 7IShader
 8CFmtStrNILi256ELb0EE
 8floatcombine
-:FilmDust_dx9
+9TD[
+:params[info.m_nIntro]->GetIntValue() ? 1 : 0
 </script>
 <Refract_DX90
 <img src="
@@ -682,13 +683,12 @@ $texture2 texcoord transform
 >0123456789ABCDEF
 ><a href=
 >bIsModel
-?/data/src/materialsystem/shaderlib/BaseShader.cpp
 ?333333
 ?Cloud_dx9
+?Engine_Post_dx9
 ?Modulate_DX8
 ?MonitorScreen_DX9
 ?WindowImposter_DX90
-?emissive_scroll_blended_pass_vs20
 ?floatcombine_autoexpose
 @UUU@
 @VortWarp_dx9
@@ -702,8 +702,8 @@ AMBIENT_LIGHT
 ANIMBLEND
 APPROX_SRGB_ADAPTER
 ASky_HDR_DX9
-ASpriteCard_DX8
 ASprite_DX9
+ATeeth_DX9
 Aftershock
 Aftershock_dx8
 Aftershock_dx9
@@ -723,6 +723,7 @@ BLURRY_REFRACT
 Base Texture Texcoord Transform
 Base Texture with lighting built in
 Base glow alpha amount for glows/shadows with distance alpha.
+BaseShader.cpp
 Blended texture
 Bloom
 BlurFilterX
@@ -828,7 +829,6 @@ Enables cloak render in a second pass
 Enables weapon sheen render in a second pass
 End value for soft edges for distancealpha.
 Engine_Post
-Engine_Post_dx9
 Error
 Exponent for rim lights
 EyeGlint
@@ -850,6 +850,7 @@ Film dust texture
 Film grain texture
 FilmDust
 FilmDust_DX8
+FilmDust_dx9
 FilmGrain
 FilmGrain_dx8
 FilmGrain_dx9
@@ -1166,6 +1167,7 @@ Silhouette color tint
 Sky_DX9
 Special depth handling, intended for rendering bug workarounds for extremely close polygons
 Sprite
+SpriteCard_DX8
 Sprite_DX8
 Spritecard
 Stage of portal rendering (0, 1, 2)
@@ -1175,7 +1177,6 @@ Subsurface Color
 TANGENTSPACE
 Take the distance-coded alpha mask from the detail texture.
 Teeth
-Teeth_DX9
 Teeth_dx8
 Tells to client code whether the shader is using DX8 vertex/pixel shaders or not
 Texcoord transform
@@ -1369,7 +1370,6 @@ aaEnabled
 aaQualityMode
 aaReduceOnePixelLineBlur
 abort@GLIBC_2.2.5
-accumbuff4sample
 accumbuff4sample_ps20
 accumbuff4sample_ps20b
 accumbuff5sample
@@ -1618,6 +1618,7 @@ effects/flashlight_border
 emissive_scroll_blended_pass_ps20
 emissive_scroll_blended_pass_ps20b
 emissive_scroll_blended_pass_ps30
+emissive_scroll_blended_pass_vs20
 emissive_scroll_blended_pass_vs30
 enables phong lighting
 enables rim lighting
@@ -1873,7 +1874,6 @@ params[SHOWALPHA]->GetIntValue() != 0
 params[info.m_nBaseTexture2NoEnvmap]->GetIntValue()
 params[info.m_nBaseTextureNoEnvmap]->GetIntValue()
 params[info.m_nEnvmap]->IsTexture()
-params[info.m_nIntro]->GetIntValue() ? 1 : 0
 particlesphere_ps20
 particlesphere_ps20b
 particlesphere_vs20
@@ -2142,4 +2142,5 @@ worldvertexalpha_ps20
 worldvertexalpha_ps20b
 writez_vs20
 yDUU
+zDaccumbuff4sample
 {255 255 255}

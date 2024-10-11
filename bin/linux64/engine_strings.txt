@@ -194,7 +194,7 @@
  wav = Write .wav audio file\n
  webm = WebM encoded audio and video\n
  {0x%x, 0x%x}
-!\t@RIFF
+!\t@14IMixerControls
 !xxtestxx
 "%s" %s %s %d %d %d %d\n
 "%s" %s 0 0 0 %d 0\n
@@ -390,6 +390,7 @@ $nodebug
 $nofog
 $surfaceprop
 $surfaceprop2
+$tIEnt %3d: %s class %s\n
 $translucent
 $vertexalpha
 $vertexcolor
@@ -763,7 +764,6 @@ $vertexcolor
 &yuml;
 '%s' not present; not executing.\n
 '+' to speed up, '-' to slow down [current sleep: %d]
-'7Source SDK Base
 'd' to toggle this display
 'p' to pause, 's' to single step, 'r' to resume
 'q' to quit
@@ -792,6 +792,7 @@ $vertexcolor
 (bogus value %d)
 (class %s): Out-of-range value (%f / %f) in SendPropFloat '%s', clamping.\n
 (gain %1.3f : dist ft %1.1f) 
+(knN
 (missing)
 (missing), 
 (no name)
@@ -855,6 +856,7 @@ $vertexcolor
 , detailed dump disabled
 , udp
 ,%03d
+,@UUUUUU
 ,In>T
 - "%s" = "%.2f"\n
 - "%s" = "%i"\n
@@ -881,7 +883,6 @@ $vertexcolor
 --- Total %i connected clients ---\n
 ---- Host_Changelevel ----\n
 ---- Host_NewGame ----\n
------ dt_ShowPartialChangeEnts -----
 ------------------------------------------------------------------------\n
 ---------------------------------\n
 ---------------------\n
@@ -898,6 +899,7 @@ $vertexcolor
 -Target
 -UseStandardError
 -WarningsAsErrors
+-adapter
 -allowdebug
 -allowstalezip
 -audiolanguage
@@ -994,7 +996,6 @@ $vertexcolor
 -showbudget_texture
 -showbudget_texture_global
 -showvprof
--small
 -sndcachedebug
 -spewsentences
 -startmap
@@ -1027,9 +1028,11 @@ $vertexcolor
 -window
 -window_name_suffix
 -windowed
+../common/netmessages.cpp
+../public/dispcoll_common.cpp
 .360
 .360.bsp
-.@CONTEXT_SCENARIO
+.@Adding Context: %s : %s\n
 .RAW files
 .ani
 .arc
@@ -1087,88 +1090,11 @@ $vertexcolor
 //mod/cfg/modsettings.cfg
 /E,/SELECT,%s
 /content/
-/data/src/common/netmessages.cpp
-/data/src/engine/EngineSoundClient.cpp
-/data/src/engine/EngineSoundServer.cpp
-/data/src/engine/GameEventManager.cpp
-/data/src/engine/OcclusionSystem.cpp
-/data/src/engine/Overlay.cpp
-/data/src/engine/audio/private/audio_stream.cpp
-/data/src/engine/audio/private/snd_dev_common.cpp
-/data/src/engine/audio/private/snd_dma.cpp
-/data/src/engine/audio/private/snd_mp3_source.h
-/data/src/engine/audio/private/snd_wave_data.cpp
-/data/src/engine/audio/private/snd_wave_mixer.cpp
-/data/src/engine/audio/private/snd_wave_source.cpp
 /data/src/engine/audio/private/snd_wave_source.h
 /data/src/engine/audio/public/snd_audio_source.h
-/data/src/engine/baseclient.cpp
-/data/src/engine/baseclientstate.cpp
-/data/src/engine/baseserver.cpp
-/data/src/engine/cdll_engine_int.cpp
-/data/src/engine/cl_entityreport.cpp
-/data/src/engine/cl_ents_parse.cpp
-/data/src/engine/cl_main.cpp
-/data/src/engine/cl_parse_event.cpp
-/data/src/engine/cl_pred.cpp
-/data/src/engine/cl_steamauth.cpp
-/data/src/engine/cl_texturelistpanel.cpp
-/data/src/engine/client.cpp
-/data/src/engine/cmd.cpp
-/data/src/engine/cmodel.cpp
-/data/src/engine/console.cpp
-/data/src/engine/debugoverlay.cpp
-/data/src/engine/disp_interface.cpp
-/data/src/engine/dt_send_eng.cpp
-/data/src/engine/enginetool.cpp
-/data/src/engine/enginetrace.cpp
-/data/src/engine/engsoundservice.cpp
-/data/src/engine/gl_lightmap.cpp
-/data/src/engine/gl_rsurf.cpp
-/data/src/engine/gl_screen.cpp
-/data/src/engine/gl_warp.cpp
-/data/src/engine/hltvclient.cpp
-/data/src/engine/hltvserver.cpp
-/data/src/engine/host.cpp
-/data/src/engine/host_saverestore.cpp
-/data/src/engine/l_studio.cpp
-/data/src/engine/lightcache.cpp
-/data/src/engine/matsys_interface.cpp
-/data/src/engine/mod_vis.cpp
-/data/src/engine/net_chan.cpp
-/data/src/engine/net_ws.cpp
-/data/src/engine/net_ws_queued_packet_sender.cpp
-/data/src/engine/networkstringtable.cpp
-/data/src/engine/r_decal.cpp
-/data/src/engine/replayserver.cpp
-/data/src/engine/servermsghandler.cpp
-/data/src/engine/shadowmgr.cpp
-/data/src/engine/spatialpartition.cpp
-/data/src/engine/staticpropmgr.cpp
-/data/src/engine/sv_ents_write.cpp
-/data/src/engine/sv_framesnapshot.cpp
-/data/src/engine/sv_main.cpp
-/data/src/engine/sv_packedentities.cpp
-/data/src/engine/sys_dll.cpp
-/data/src/engine/sys_engine.cpp
-/data/src/engine/vengineserver_impl.cpp
-/data/src/engine/vgui_baseui_interface.cpp
-/data/src/engine/vgui_budgetpanel.cpp
-/data/src/engine/vgui_drawtreepanel.cpp
-/data/src/engine/vgui_vprofpanel.cpp
-/data/src/engine/vprof_record.cpp
 /data/src/public/tier0/tslist.h
 /data/src/public/tier1/UtlSortVector.h
 /data/src/public/vstdlib/jobthread.h
-/data/src/soundsystem/lowlevel/device_sdl.cpp
-/data/src/tier1/KeyValues.cpp
-/data/src/tier1/datamanager.cpp
-/data/src/tier1/lzss.cpp
-/data/src/tier1/mempool.cpp
-/data/src/tier2/renderutils.cpp
-/data/src/vgui2/vgui_controls/BuildGroup.cpp
-/data/src/vgui2/vgui_controls/Panel.cpp
-/data/src/vtf/vtf.cpp
 /proc/meminfo
 /proc/self/status
 /proc/version_signature
@@ -1184,13 +1110,13 @@ $vertexcolor
 0.55
 0123456789ABCDEF
 0123456789abcdef
-04:04:33
 0: no radiosity\n1: radiosity with ambient cube (6 samples)\n2: radiosity with 162 samples\n3: 162 samples for static props, 6 samples for everything else
 0: off\n1: draw light cache entries\n2: draw rays\n
 0=Off, 1=Normal, 2=Wireframe
 0=Off, 1=On, 2=Show Errors
 0Atestscripts\%s
 0x%016llX
+0x%p
 0x%x,
 1 - resize right
 1 - show hitches , 2 - show stalls
@@ -1198,6 +1124,7 @@ $vertexcolor
 1 CPU, Frequency: %.01f %s,  Features: %s\n
 1.0.1.0
 1.0.2, 30-Dec-2001
+1000
 1001
 1002
 1003
@@ -1316,6 +1243,7 @@ $vertexcolor
 10IVideoMode
 10MM_Migrate
 10SVC_Sounds
+10VAllocator
 1100
 1101
 1102
@@ -1873,7 +1801,6 @@ $vertexcolor
 14IBaseCacheInfo
 14IBaseInterface
 14IClientUnknown
-14IMixerControls
 14ISoundServices
 14IStaticPropMgr
 14IVDebugOverlay
@@ -2590,6 +2517,7 @@ $vertexcolor
 19MM_RegisterResponse
 2 - bottom-left
 2 - resize down
+20 fps (50 ms)
 20.0
 2000
 2000.0f
@@ -2697,6 +2625,7 @@ $vertexcolor
 21IVPhysicsDebugOverlay
 21SVC_CreateStringTable
 21SVC_UpdateStringTable
+22:36:40
 22CAudioMixerWave8Stereo
 22CAudioSourceCachedInfo
 22CAudioSourceStreamWave
@@ -2794,13 +2723,13 @@ $vertexcolor
 4000
 40CProportionalIntWithScreenspacePropertyX
 40CProportionalIntWithScreenspacePropertyY
-4@_IMaterialProxy003
+4@Session migrate failed!\n
 4CJob
 4CLog
 4fff>fff>fff>fff>
 4is?Bv
+50/15ms
 5000
-5?tick %i, cmd %s \n
 5CGame
 5CVEfx
 5IGame
@@ -2870,13 +2799,14 @@ $vertexcolor
 9IWaveData
 9SVC_Print
 9a&g
-9gf0B\n
+9gf0B
+;----- dt_ShowPartialChangeEnts -----
 <!-- DMXVersion
 <-- [%s] Split packet %4i/%4i seq %5i size %4i mtu %4llu from %s\n
+<-small
 </script>
 << NULL >>\n
 <<Unassigned>>
-<Too many players!\n
 <a href=
 <directory or VPK filename>  Rebulds sound cache for a given search path.\n
 <filename.cfg> is required, optionally specify "full" to write out all archived convars.\n
@@ -2887,51 +2817,46 @@ $vertexcolor
 <shouldn't see this>
 <slot:userid:"name">\n
 = %i bits (%i bytes)\n
-=File '%s' requested from client %s.\n
+=Cheat code "%s" activated!
+=[%8.3f] hitch on %s:%s:%d:%d\n
+=checkProps
 =hit prop %d\n
-=vtex_dll
 >/proc/self/maps
 >333?
 >433?r=
->@logaddress_delall:  all addresses cleared\n
 >BAY>
+>CAskConnectPanel
 >LRY?
 >hxs
 >hxs?
 >lww?
->valve.
-?-adapter
-?10VAllocator
-?20 fps (50 ms)
 ?333333
 ????????????????
 ???redo
 ???undo
+?CMapLoadHelper::Init, map %s has wrong identifier\n
 ?CPluginUIManager
+?Called RequestFile_OLD
 ?ComboBox
-?DefaultVerySmall
+?Failed to read demo header.\n
 ?Flagged audio device for restart (%s changed from '%s' to '%s')\n
 ?Luxel Value: %d %d %d\n
+?PlaneList: bad model
 ?ServerUploadGameStats001
+?Too many players!\n
 ?UUUUUU
 ?VPhysicsSurfaceProps001
-?VoiceSfx
-?[%8.3f] hitch on %s:%s:%d:%d\n
 ?bench_start
-?cl:  create '%s'
 ?cl_soundscape_flush
 ?engine_no_focus_sleep
+?fff?
 ?ffffff
-?how translucent the budget panel is
-?m_mixLock
-?models/
 ?wwwwww
-@(knN
-@/data/src/public/dispcoll_common.cpp
-@0x%p
 @<a href=
-@CFogUIPanel
-@permanent
+@CDemoUIPanel
+@UUUUUU
+@VFileSystem022
+@gl_screen.cpp
 A Source engine game is required to run mods\n
 A!;I2
 AABBTree_Ray
@@ -2975,7 +2900,6 @@ Add an IP address to the ban list.
 AddRecvTableR: overflowed MAX_DATATABLES
 AddStaticLighting
 Added to banned list
-Adding Context: %s : %s\n
 Adding Property: %s : %s\n
 Addip: "%s<%i><%s><>" %s "%s" by "%s" (IP "%s")\n
 Addip: "<><><>" %s "%s" by "%s" (IP "%s")\n
@@ -3211,6 +3135,7 @@ BugVMFURL
 Build Label:          %8d   # Uniquely identifies each build\n
 Build Mode Help
 BuildDialog
+BuildGroup.cpp
 BuildGroupPtr
 BuildIndicesForWorldSurface
 BuildMode - Error saving file
@@ -3236,7 +3161,6 @@ By default, only non-default values are written out.\n
 Bytes/msg
 C&opy
 CAreaPortalsUIPanel
-CAskConnectPanel
 CAsyncWavDataCache:  %i .wavs total %s, %.2f %% of capacity\n
 CAsyncWavDataCache::AsyncLoadCache
 CAsyncWavDataCache::CloseStreamedLoad
@@ -3267,7 +3191,6 @@ CAudioSourceWave::IsAsyncLoad
 CBaseActionEditDialog
 CBaseActionPlaySoundStartDialog
 CBaseActionWithTargetDialog
-CBaseClient::ActivatePlayer
 CBaseClient::Connect
 CBaseClient::EndTrace
 CBaseClient::OnRequestFullUpdate
@@ -3347,6 +3270,7 @@ CDemoSmootherPanel
 CDemoUIPanel2
 CDispCollTree::Cache
 CDmxElement::UnpackIntoStructure: Mismatched attribute type in attribute "%s"!\n
+CDownloadLists
 CDragDropHelperPanel
 CDrawTreeFrame
 CEngine::Frame
@@ -3361,6 +3285,7 @@ CEngineVGui::Paint
 CEngineVGui::Simulate
 CEntityReportPanel
 CEntityReportPanel::Paint
+CFogUIPanel
 CFrameSnapshot pool
 CFullScreenSelectionPanel
 CGameClient::ActivatePlayer -end
@@ -3459,7 +3384,6 @@ CM_TraceToLeafDisps
 CM_Vis:  buffer not big enough (%i but need %i)\n
 CM_Vis: error
 CM_WriteAreaBits with buffer size < 32\n
-CMapLoadHelper::Init, map %s has wrong identifier\n
 CMapLoadHelper::Init, map %s has wrong version (%i when expecting %i)\n
 CMapLoadHelper::Init, unable to open %s\n
 CMessage
@@ -3513,6 +3437,7 @@ COM_WriteFile: failed on %s\n
 CONFIG_ERROR
 CONTENTROOT
 CONTEXT_GAME_TYPE
+CONTEXT_SCENARIO
 COcclusionSystem::IsOccluded
 COcclusionUIPanel
 COperationListPanel
@@ -3529,7 +3454,6 @@ CPluginGameUIDialog
 CPluginHudMessage
 CPluginMenu
 CPooledVBAllocator_ColorMesh::Init
-CPrecisionSlider
 CProceduralTexturePanel
 CProfileHierarchyPanel
 CProfileHierarchyPanel::ColumnPanels_t
@@ -3677,6 +3601,7 @@ CVideoMode_Common::Init  SetupStartupGraphic
 CVmtTextEntry
 CXXABI_1.3
 CXXABI_1.3.8
+Ca\v6;
 CacheCustomFiles: can't read '%s'.\n
 CacheCustomFiles: can't write '%s'.\n
 CacheSoundsFromResFile:  Unable to find '%s'\n
@@ -3686,7 +3611,6 @@ CalculateCPUUsage
 Call to NULL CStudioHdr::GroupStudioHdr()\n
 Call tree
 CallAssertFailedNotifyFunc
-Called RequestFile_OLD
 Caller: additions to the zip have already been ended
 Caller: can only get memory of a memory zipfile
 Caller: faulty arguments
@@ -3790,7 +3714,6 @@ Changelevel invalid during demo playback\n
 Changing to bugreporter(%s)\n
 Channel %d processing stats for %s (%s)\n
 Channels:\t%d\n
-Cheat code "%s" activated!
 Cheat code "%s" has less than %i code elements!
 Check each new player for Steam blocking compatibility, 1 = message only, 2 >= drop if any member of owning clan blocks,3 >= drop if any player has blocked, 4 >= drop if player has blocked anyone on server
 CheckButton.ArmedBgColor
@@ -4089,6 +4012,7 @@ Customization file '%s' has invalid path.\n
 Customization file '%s' is too big ( >%i bytes).\n
 CvarToggleCheckButton
 CyanRedSlider
+D333?Decal textures
 DAS_CheckNewRoomDSP
 DATA_ERROR
 DATA_ERROR_MAGIC
@@ -4113,7 +4037,6 @@ DPT_Int64
 DPT_String
 DPT_Vector
 DPT_VectorXY
-DPlaneList: bad model
 DSP NODE
 DSP PARSE ERROR! token not found in dsp_presets.txt. Preset: %3.0f \n
 DSP PARSE ERROR!!! dsp_presets.txt: missing } or too many processors in preset #: %d \n
@@ -4135,7 +4058,6 @@ DSP: Warning, failed to allocate filter for delay line.\n
 DSP: Warning, failed to allocate filter.\n
 DSP: Warning, failed to allocate flt for reverb.\n
 DSP: Warning, failed to allocate lfo or mdy for chorus.\n
-DSP: Warning, failed to allocate mod delay.\n
 DSP: Warning, failed to allocate pitch shifter.\n
 DSP: Warning, failed to allocate reverb.\n
 DSP_LoadPresetFile: unable to open '%s'\n
@@ -4174,7 +4096,6 @@ DebugMenu
 DebugOptions
 DebugTextureInfo001
 Decal static props test
-Decal textures
 Decal_Init()
 Decal_Shutdown()
 DecalsBatch
@@ -4189,6 +4110,7 @@ DefaultFixedDropShadow
 DefaultSmall
 DefaultSmallDropShadow
 DefaultUnderline
+DefaultVerySmall
 Default_Mix
 Define Arithmetic Table 0x%02x: 0x%02x
 Define Huffman Table 0x%02x
@@ -4385,7 +4307,6 @@ DownButton
 Download file '%s' %s\n
 Download finished!\n
 DownloadCache
-DownloadLists
 DownloadLists/%s.lst
 DownloadSystem001
 Downloading %s%s.\n
@@ -4442,8 +4363,7 @@ Duplicate attribute name %s encountered!\n
 DynamicSound %s : src %d : channel %d : %d dB : vol %.2f : time %.3f\n
 DynamicSound : Speaker ignored looping sound: %s\n
 Dynamic_Light_Rendering
-E/data/src/engine/audio/private/snd_mix.cpp
-E/data/src/engine/gl_rmain.cpp
+E?VoiceSfx
 EDICT_NUM: bad number %i
 ED_Alloc( %d ) - invalid edict index specified.
 ED_Alloc: No edicts yet
@@ -4477,6 +4397,7 @@ ERROR: couldn't open.\n
 ERROR: demo file protocol %i outdated, engine vnoteersion is %i \n
 ERROR: demo network protocol %i outdated, engine version is %i \n
 EXECUTABLE_PATH
+Eaudio/private/snd_mix.cpp
 Echo log information to the console.
 Echo text to console.
 Edge->
@@ -4484,6 +4405,7 @@ Edit %s Action
 Edit...
 EditMaterial
 EditMenu
+Egl_rmain.cpp
 EmitAmbientSound:  sound not precached: %s\n
 EmitAmbientSound: Init message would overflow signon buffer!\n
 EmitAmbientSound: invalid sentence number: %s
@@ -4530,12 +4452,13 @@ Engine only supports 255 ConVars marked %i\n
 Engine wasn't able to acquire required interfaces!\n
 EngineClientReplay001
 EngineReplay001
+EngineSoundClient.cpp
+EngineSoundServer.cpp
 EngineTraceClient003
 EngineTraceServer003
 EngineVGui()->Init()
 EngineVGui()->Shutdown()
 EngineVGui_Simulate
-Ent %3d: %s class %s\n
 Ent changes: %3d, prop changes: %3d
 Entity %d (class '%s') reported ENTITY_CHANGE_NONE but '%s' changed.\n
 Entity Message to %i, %i bytes written (max is %d)\n
@@ -4609,7 +4532,6 @@ ExtraPanelIcon
 F?V}f
 FADEINOUT
 FADEINOUT "1"\n
-FATAL ERROR: %s\n
 FCMOV 
 FCVAR_CHEAT cvars reverted to defaults.\n
 FCVAR_CLIENTCMD_CAN_EXECUTE prevented running command: %s\n
@@ -4649,7 +4571,6 @@ Failed to find "VTPause()" in "vtuneapi.dll".\n
 Failed to find "VTResume()" in "vtuneapi.dll".\n
 Failed to find file for building soundcache [ %s ]\n
 Failed to find map %s\n
-Failed to find sample rate creating cache data for MP3, cache will be invalid [ %s ]\n
 Failed to find steam.inf or equivalent steam info. May not have proper information to connect to Steam.\n
 Failed to initialize SDL device!\n
 Failed to launch startmovie!\n
@@ -4658,7 +4579,6 @@ Failed to load plugin "%s"\n
 Failed to load server binary\n
 Failed to load sound "%s", file probably missing from disk/repository\n
 Failed to open client state file %s\n
-Failed to read demo header.\n
 Failed to remove local players\n
 Failed to remove remote players\n
 Failed to resolve absolute path of map: %s\n
@@ -4683,6 +4603,7 @@ Fatal Error: Unable to get window info from SDL.
 Fieldname is not unique: %s\nRename it and try again.
 File %d: %s Size:%d\n
 File '%s' requested from %s.\n
+File '%s' requested from client %s.\n
 File '%s' requested from server %s.\n
 File '%s' sent.\n
 File Open
@@ -4879,6 +4800,7 @@ Game skill level (1-3).
 Game started\n
 GameConsole004
 GameDirectory:  %s\n
+GameEventManager.cpp
 GameEventManager: failed to send event '%s'.\n
 GameEventManager: failed to serialize event '%s'.\n
 GameHeader
@@ -4927,7 +4849,7 @@ Gzip compress logfile and rename to logfilename.log.gz on close.
 H1\?r
 HALF-LIFE 2
 HALL Detected \n
-HBCDemoUIPanel
+HCPrecisionSlider
 HKEY_CURRENT_USER\Software\Valve\Source\Language
 HL2DEMO
 HLTV
@@ -5188,10 +5110,8 @@ Join request approved\n
 Join request denied
 Joining team: %s\n
 Joint Stereo
-Jul 17 2024
 Jump To
 Jumping to %s\n
-K333?
 KEY_0
 KEY_1
 KEY_2
@@ -5326,6 +5246,7 @@ KeyFocusTicked
 KeyModeSet
 KeyTyped
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -5351,8 +5272,10 @@ KwV\r
 L %02i/%02i/%04i - %02i:%02i:%02i: %s
 L%02i%02i
 L2Miss
-L?1000
+L>FATAL ERROR: %s\n
 L?333?
+L?Max bytes/sec the host can receive data
+L?delta entity: %i\n
 L?fff?33s?H
 L?fff?fff?
 LINEAR
@@ -5401,6 +5324,7 @@ Limits spectators to chat only every n seconds
 Linear Interp Angles
 Linear Interp Origin
 Lines of crash dump console spew to keep.
+Linux
 Linux 
 List IP addresses on the ban list.
 List Panel
@@ -5559,7 +5483,6 @@ Max %i demos in demoloop\n
 Max SourceTV spectator bandwidth rate allowed, 0 == unlimited
 Max bandwidth rate allowed on server, 0 == unlimited
 Max bytes per second when queueing splitpacket chunks
-Max bytes/sec the host can receive data
 Max dropped packets to process. Lower settings prevent lagged players from simulating too far in the past. Setting of 0 disables cap.
 Max fragment bytes per packet
 Max number of command packets sent to server per second
@@ -5579,7 +5502,7 @@ Maximum queries per second to respond to from anywhere.
 Maximum replay time in seconds
 Maximum supported image dimension is %u pixels
 Maximum updates per second that the server will allow
-MbP?\n
+MbP?
 MemAllocScratch
 MemFreeScratch
 MemTotal: %llu kB
@@ -5938,6 +5861,8 @@ Obtained EMS handle %u
 Obtained XMS handle %u
 Occl %.2f (%d/%d)\n
 Occlusion Tool
+OcclusionSystem.cpp
+Oct  8 2024
 Offloads a bit of decal rendering setup work to the material system queue when enabled.
 OnCancel
 OnChangeChild
@@ -5989,6 +5914,7 @@ Output filename not specified!\n
 OutputLevelSlider
 Overflow error writing string table baseline %s\n
 Overflowed datatable prop list in SendTable '%s'.
+Overlay.cpp
 Overrides IP for multihomed hosts
 Overrides the SourceTV master root address.
 Overrides the max players reported to prospective clients
@@ -6034,6 +5960,7 @@ PageHide
 PageShow
 PageTab
 PageTabActivated
+Panel.cpp
 Panel::ReloadKeyBindings:  Can't find entry for panel '%s'\n
 Panel::SaveKeyBindings '%s' is read-only!!!\n
 PanelListEmbedded
@@ -6239,6 +6166,7 @@ RGB888
 RGB888_BLUESCREEN
 RGBA16161616
 RGBA16161616F
+RIFF
 ROOM Detected \n
 RST%d
 R_AddDynamicLights
@@ -6583,6 +6511,7 @@ SV_CreateBaseline: WriteClassInfos overflow.\n
 SV_CreateBaseline: WriteSendTables overflow.\n
 SV_CreateNetworkStringTables
 SV_CreatePacketEntities: GetEntServerClass failed for ent %d.\n
+SV_EnsureInstanceBaseline: edict %d missing ent
 SV_Frame
 SV_GetInstanceBaseline: missing instance baseline for class '%s'
 SV_InitGameDLL
@@ -6803,7 +6732,6 @@ ServerGameTags001
 ServerRemoteAccess: Sending AdminUI message to non-AdminUI listener\n
 ServerVersion=
 Session Full.\n
-Session migrate failed!\n
 Session option type %d not recognized/n
 SessionKeys
 Set Telemetry count of frames to capture
@@ -7012,6 +6940,7 @@ SoundSpatialDelays
 Sounds [count=%d]
 Source Engine %i (build %d)
 Source Engine Query
+Source SDK Base
 SourceBench.csv
 SourceMod:%d,DS:%d,Crash:%d\n\n
 SourceTV
@@ -7628,7 +7557,6 @@ VEngineServer023
 VEngineServerStringTable001
 VEngineShadowMgr002
 VEngineVGui002
-VFileSystem022
 VGUI
 VGUI Build Mode Editor
 VGUI Hierarchy
@@ -7839,7 +7767,6 @@ Warns
 Watch all fields encoded with this table.
 Watch the named variable.
 Watch this entities data table encoding.
-WatchdogHandler called - server exiting.\n
 WaterReflectEntities
 WaveData
 WaveFixupTmpFile( '%s' ) failed to open file for editing\n
@@ -7888,7 +7815,7 @@ Wrote partial config file "%s" out, to write full file use host_writeconfig "%s"
 XSessionCreate failed with error %d\n
 XboxSystemInterface001
 Y?z7
-Y@ffffff
+Y@skybox/%s_dx80%s
 YellowBlueSlider
 You have been kicked and banned %s by the server.\n
 You have changed your name recently, and must wait %i seconds.\n
@@ -7955,6 +7882,7 @@ ZoomStayout
 [unknown]
 [url=
 \\fileserver\bugs
+\f@CBaseClient::ActivatePlayer
 \n    [%d: huff+mtf 
 \n    combined CRCs: stored = 0x%x, computed = 0x%x
 \n!!!\nCServerPlugin::ClientCommand:  Some entity tried to stuff '%s' to console buffer of entity %i when maxclients was set to %i, ignoring\n\n
@@ -8015,6 +7943,7 @@ _Host_RunFrame_Server
 _Host_RunFrame_Server_Async
 _Host_RunFrame_Sound
 _Host_RunFrame_Upto_MarkFrame
+_IMaterialProxy003
 _ITM_deregisterTMCloneTable
 _ITM_registerTMCloneTable
 _SpewInfo
@@ -8154,7 +8083,7 @@ _setjmp
 _setjmp@GLIBC_2.2.5
 _smooth
 _temp_mapcycle.txt
-`@Linux
+`@Failed to find sample rate creating cache data for MP3, cache will be invalid [ %s ]\n
 a\v6C
 aaquality: %d\n
 aasamples: %d\n
@@ -8229,6 +8158,13 @@ atanf
 atanf@GLIBC_2.2.5
 attenuation
 attributes
+audio/private/audio_stream.cpp
+audio/private/snd_dev_common.cpp
+audio/private/snd_dma.cpp
+audio/private/snd_mp3_source.h
+audio/private/snd_wave_data.cpp
+audio/private/snd_wave_mixer.cpp
+audio/private/snd_wave_source.cpp
 audiosourcecache->Init( host_parms.memsize >> 2 )
 audiosourcecache->Shutdown()
 audit_save_in_memory
@@ -8261,6 +8197,9 @@ banid:  user filter list is full\n
 banip
 banlist
 base_filename
+baseclient.cpp
+baseclientstate.cpp
+baseserver.cpp
 bench_end
 bench_start %s: invalid path.\n
 benchframe
@@ -8331,8 +8270,10 @@ calloc@GLIBC_2.2.5
 cancelselect
 cbrtf
 cbrtf@GLIBC_2.2.5
+cdll_engine_int.cpp
 cellcolor
 centerwrap
+cfg/
 cfg/banned_ip.cfg
 cfg/banned_user.cfg
 cfg/pure_server_full.txt
@@ -8359,13 +8300,13 @@ chdir
 chdir@GLIBC_2.2.5
 cheat_codes
 check "sv_logfile", "sv_logecho", and "logaddress_list"
-checkProps
 check_crc
 check_hash
 checksum
 checksum %d\n
 chmod@GLIBC_2.2.5
 choosesound
+cl:  create '%s'
 cl_allowdownload
 cl_allowupload
 cl_always_flush_models
@@ -8388,7 +8329,9 @@ cl_connectmethod
 cl_debug_player_perf
 cl_downloadfilter
 cl_entityreport
+cl_entityreport.cpp
 cl_entityreport_sorted
+cl_ents_parse.cpp
 cl_flipviewmodels
 cl_flushentitypacket
 cl_fullupdate
@@ -8401,9 +8344,12 @@ cl_lagcompensation
 cl_language
 cl_localnetworkbackdoor
 cl_logofile
+cl_main.cpp
 cl_mouseenable
+cl_parse_event.cpp
 cl_playback_screenshots
 cl_precacheinfo
+cl_pred.cpp
 cl_predict
 cl_predictweapons
 cl_resend
@@ -8418,7 +8364,9 @@ cl_showevents
 cl_showpluginmessages
 cl_simulate_no_quicktime
 cl_soundfile
+cl_steamauth.cpp
 cl_team
+cl_texturelistpanel.cpp
 cl_timeout
 cl_updaterate
 cl_view
@@ -8454,7 +8402,9 @@ closedir
 closedir@GLIBC_2.2.5
 closesocket
 cmd %s
+cmd.cpp
 cmdline,
+cmodel.cpp
 coaching
 code %d bits %d->%d\n
 code lengths %d, 
@@ -8489,6 +8439,7 @@ connect localhost:%d listenserver
 connect@GLIBC_2.2.5
 connecting
 connectionCount
+console.cpp
 console.log
 contextlabel
 contimes
@@ -8544,10 +8495,12 @@ d1_town_03
 d1_trainstation_01
 d1_trainstation_02
 d1_trainstation_03
+d?snd_surround_speaker_pan_radial_weight
 dB drop: %1.4f \n
 da_DK
 danish
 datagram
+datamanager.cpp
 dbg_demofile
 de_DE
 death_tick
@@ -8575,6 +8528,7 @@ debug/debugwireframevertexcolorignorez
 debug/debugworldwireframe
 debug/debugworldwireframezbuffer
 debug/showz
+debugoverlay.cpp
 debugsystemui
 debugsystemui 0
 decallist_t
@@ -8585,7 +8539,6 @@ defaultPanel
 defaultSelectionBG2Color_override
 deletions.bat
 delta [%s]
-delta entity: %i\n
 dem_consolecmd
 dem_datatables
 dem_packet
@@ -8640,6 +8593,7 @@ dev_loadtime_map_start
 developer
 device id,
 deviceID
+device_sdl.cpp
 devshots_nextmap
 devshots_screenshot
 dheader_t
@@ -8656,6 +8610,7 @@ disabledfgcolor2_override
 disconnect;
 disconnect\n
 disp_dynamic
+disp_interface.cpp
 displaystring
 divide = %2.5f \n
 dl_iterate_phdr
@@ -8705,6 +8660,7 @@ dsp_volume
 dsp_water
 dt_ShowPartialChangeEnts
 dt_UsePartialChangeEnts
+dt_send_eng.cpp
 dti_delta_distances.txt
 dti_flush
 dtwarning
@@ -8756,7 +8712,10 @@ engine/shadowbuild
 engine/writestencil
 engine/writez
 engine:  
+enginetool.cpp
 enginetools
+enginetrace.cpp
+engsoundservice.cpp
 entchannel
 enter [%s]
 entityIndex
@@ -8809,6 +8768,7 @@ fff?
 fff?fff?
 fff?fff?fff?fff?fff?fff?
 fffff
+ffffff
 fflush
 fflush@GLIBC_2.2.5
 fg_image
@@ -9001,6 +8961,9 @@ getsockname
 getsockname@GLIBC_2.2.5
 getsockopt
 getsockopt@GLIBC_2.2.5
+gl_lightmap.cpp
+gl_rsurf.cpp
+gl_warp.cpp
 gotoframe
 greek
 group %d: "%s"\n
@@ -9038,10 +9001,13 @@ hltv_proxies
 hltv_slots
 hltv_status
 hltv_title
+hltvclient.cpp
+hltvserver.cpp
 hltvtest->RunFrame()
 hlversion
 holdtime
 holdtime "%.3f"\n
+host.cpp
 host_ShowIPCCallCount
 host_ShowIPCCallCount: %d IPC calls in the past [%d frames, %d ticks]  Avg: [%.2f/frame, %.2f/tick]\n
 host_competitive_ever_enabled
@@ -9056,6 +9022,7 @@ host_runofftime
 host_runofftime would run off %.2f minutes!!! ignoring\n
 host_ruofftime:  must be running a server\n
 host_ruofftime:  only valid in single player\n
+host_saverestore.cpp
 host_showcachemiss
 host_sleep
 host_speeds
@@ -9067,6 +9034,7 @@ hostip
 hostname
 hostname: %s\n
 hostport
+how translucent the budget panel is
 http://
 https://
 hu_HU
@@ -9172,6 +9140,7 @@ killserver
 knob
 ko_KR
 koreana
+l_studio.cpp
 labelText
 landmark
 landmarkName
@@ -9204,6 +9173,7 @@ light:  %d\n
 lightStyleCount
 light_crosshair
 lightcache miss
+lightcache.cpp
 lightcache_maxmiss
 lightprobe
 lightstyles
@@ -9243,6 +9213,7 @@ logaddress_del:  must specify a valid port\n
 logaddress_del:  unable to resolve %s\n
 logaddress_del:  unparseable address\n
 logaddress_delall
+logaddress_delall:  all addresses cleared\n
 logaddress_delall:  no addresses in the list\n
 logaddress_list
 logaddress_list:  no addresses in the list\n
@@ -9268,6 +9239,7 @@ lua/
 lump_t
 lumps
 lzma_persistent_buffer
+lzss.cpp
 m_FullSendTables
 m_QueuedPacketsCS
 m_Signon
@@ -9285,6 +9257,7 @@ m_iTabXDelta
 m_iTabXIndent
 m_iTitleTextInsetXOverride
 m_iTitleTextInsetYOverride
+m_mixLock
 m_mutex
 m_mutexBuffer
 m_nBgTextureId1
@@ -9450,6 +9423,7 @@ materialsrc/lightprobes/%s_hdr
 materialsrc/maps/%s
 matrix
 matrix_array
+matsys_interface.cpp
 maxDistance
 max_block
 maxchars
@@ -9484,6 +9458,7 @@ memory_diff
 memory_list
 memory_mark
 memory_status
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 menuselect
@@ -9518,6 +9493,7 @@ mod_forcetouchdata
 mod_load_showstall
 mod_offline_hdr_switch
 mod_touchalldata
+mod_vis.cpp
 mod_write
 mode label
 model %p [%s] addref %d (%d)\n
@@ -9534,6 +9510,7 @@ modelloader->Init()
 modelloader->Shutdown()
 modelloader->UpdateDynamicModels
 modelprecache
+models/
 models/%s
 models/empty.mdl
 modified
@@ -9575,6 +9552,7 @@ net_SignonState
 net_StringCmd
 net_Tick
 net_blockmsg
+net_chan.cpp
 net_chan_limit_msec
 net_chan_stats_dump
 net_chan_stats_dump_top_msgs
@@ -9614,12 +9592,15 @@ net_status
 net_udp_rcvbuf
 net_usesocketsforloopback
 net_warningthrottle
+net_ws.cpp
+net_ws_queued_packet_sender.cpp
 netchan_t::reliabledata
 netchan_t::unreliabledata
 netspike.txt
 netspike: %s
 network table (server):\n
 networkid
+networkstringtable.cpp
 newPanel
 nextdemo
 nextframe
@@ -9676,6 +9657,7 @@ number of samples to draw in the budget history window.  The lower the better as
 number of world lights to use per vertex
 numframes,
 nvfx
+o@DSP: Warning, failed to allocate mod delay.\n
 okOP
 oldtall
 oldwide
@@ -9697,7 +9679,6 @@ originz
 out of voice sources, won't lipsync %s\n
 outoffocus_bgcolor_override
 output buffer too small for in-memory compression
-outputavi
 outputjpg
 outputtga
 outputwav
@@ -9711,9 +9692,8 @@ overview_tracks
 overview_zoom
 owner %s\n
 p7?D
-p?UUUUUU
-pB50/15ms
 pBSPData->numareas > MAX_MAP_AREAS
+pBWatchdogHandler called - server exiting.\n
 pClass->m_ClassID(%i) >= %i\n
 paintbackground
 paintborder
@@ -9731,6 +9711,7 @@ pending data
 pentLandmark
 performlayout
 perfui
+permanent
 permanently
 picmip: %i forceansio: %i trilinear: %i antialias: %i vsync: %i rootlod: %i reducefillrate: %i\nshadowrendertotexture: %i r_flashlightdepthtexture %i waterforceexpensive: %i waterforcereflectentities: %i mat_motion_blur_enabled: %i mat_queue_mode %i
 pin_corner_to_sibling
@@ -9870,6 +9851,7 @@ r_avglightmap
 r_cleardecals
 r_colorstaticprops
 r_debugrandomstaticlighting
+r_decal.cpp
 r_decal_cover_count
 r_decal_overlap_area
 r_decal_overlap_count
@@ -10036,6 +10018,7 @@ redirect: Current connection method does not allow silent redirects.\n
 redosort
 reflect entities,
 reflectivity
+refresh_gameui_dialogs_modeset\n
 refresh_options_dialog
 relative
 reliable
@@ -10057,6 +10040,7 @@ removeip:  invalid slot %i\n
 rename@GLIBC_2.2.5
 render order option
 rendered
+renderutils.cpp
 replace
 replay  :  %s\n
 replay.cfg
@@ -10074,6 +10058,7 @@ replay_recording
 replay_startrecord
 replay_voice_during_playback
 replays
+replayserver.cpp
 report type %s\n
 reports=%d matches=%d Hash details:
 resolvepath
@@ -10170,6 +10155,7 @@ saverestore->Shutdown()
 saves current video configuration to the registry
 savevmf
 say "Bug Submitted: '%s'"
+sb_recreate\n
 sbrk size: %.2f MB, Used: %.2f MB, #mallocs = %d\n
 scaleAmount
 scaleImage
@@ -10239,6 +10225,7 @@ server_removeban
 server_shutdown
 server_spawn
 serverbrowser_internet
+servermsghandler.cpp
 service
 session_begin %s %d
 setang
@@ -10262,6 +10249,7 @@ setvisible
 severity %s\n
 shadertest/wireframevertexcolor
 shadowdepthtexture: %s\n
+shadowmgr.cpp
 shadowzbuffers
 sheetinset_bottom
 shift & multiply = %2.5f \n
@@ -10304,7 +10292,6 @@ skiptotime "%.3f"\n
 skyName
 sky_urb01
 skybox/%s%s
-skybox/%s_dx80%s
 smallcheckimage
 smooth angles
 smooth edges
@@ -10375,7 +10362,6 @@ snd_spatialize_roundrobin
 snd_stereo_speaker_pan_exponent
 snd_stereo_speaker_pan_radial_weight
 snd_surround_speaker_pan_exponent
-snd_surround_speaker_pan_radial_weight
 snd_surround_speakers
 snd_visualize
 snd_vox_captiontrace
@@ -10428,6 +10414,7 @@ southwest
 sp_%d%s.vhv
 sp_hdr_%d%s.vhv
 spanish
+spatialpartition.cpp
 spawn_tick
 spawning
 speak
@@ -10470,6 +10457,8 @@ staticGameDLLPanel
 staticGameUIFuncs->Initialize
 staticGameUIFuncs->Start
 staticPanel
+staticSizingPanel
+staticpropmgr.cpp
 staticsound
 stay_armed_on_click
 stayout
@@ -10602,8 +10591,10 @@ sv_downloadurl
 sv_dump_edicts
 sv_dumpstringtables
 sv_enableoldqueries
+sv_ents_write.cpp
 sv_filterban
 sv_forcepreload
+sv_framesnapshot.cpp
 sv_instancebaselines
 sv_lan
 sv_log_onefile
@@ -10619,6 +10610,7 @@ sv_logsdir
 sv_logsecret
 sv_lowedict_action
 sv_lowedict_threshold
+sv_main.cpp
 sv_master_share_game_socket
 sv_max_connects_sec
 sv_max_connects_sec_global
@@ -10646,6 +10638,7 @@ sv_netspike_output
 sv_netspike_sendtime_ms
 sv_no_name_changes
 sv_noclipduringpause
+sv_packedentities.cpp
 sv_parallel_packentities
 sv_parallel_sendsnapshot
 sv_password
@@ -10722,6 +10715,8 @@ svc_VoiceInit
 svonly
 swedish
 symlink@GLIBC_2.2.5
+sys_dll.cpp
+sys_engine.cpp
 sys_minidumpexpandedspew
 sys_minidumpspewlines
 system
@@ -10786,6 +10781,7 @@ thai
 theta
 threadpool_affinity
 thumbwidth
+tick %i, cmd %s \n
 tick_in
 tick_out
 tileHorizontally
@@ -10881,7 +10877,6 @@ typeinfo for CThread
 tzset
 tzset@GLIBC_2.2.5
 u64( %lld = 0x%llX )
-u<33s?
 udp/ip  : %s%s\n
 uk_UA
 ukrainian
@@ -10932,6 +10927,7 @@ utimes@GLIBC_2.2.5
 valuestring
 valuetype
 valve
+valve.
 variable
 vaudio_celt
 vaudio_celt_high
@@ -10947,16 +10943,17 @@ vector4
 vector4_array
 vendor id,
 vendorID
+vengineserver_impl.cpp
 version : %s/%d %d %s%s%s\n
 vertex format changes
 vertexes
 vertnormalindices
 vertnormals
 vgui/
-vgui/hud/800corner1
-vgui/hud/800corner2
-vgui/hud/800corner3
-vgui/hud/800corner4
+vgui/hud/8x800corner1
+vgui/hud/8x800corner2
+vgui/hud/8x800corner3
+vgui/hud/8x800corner4
 vgui/white
 vgui::
 vgui::CTreeViewListControl
@@ -10970,6 +10967,8 @@ vgui::Slider
 vgui::TextEntry
 vgui::TileViewPanelEx
 vgui::ivgui()->Start()
+vgui_baseui_interface.cpp
+vgui_budgetpanel.cpp
 vgui_cache_res_files
 vgui_controls is missing a required interface!\n
 vgui_drawfocus
@@ -10983,15 +10982,21 @@ vgui_drawtree_panelptr
 vgui_drawtree_popupsonly
 vgui_drawtree_render_order
 vgui_drawtree_visible
+vgui_drawtreepanel.cpp
 vgui_nav_lock
 vgui_nav_lock_default_button
 vgui_togglepanel
+vgui_ui_scale_factor
+vgui_ui_scale_height
+vgui_ui_scale_width
+vgui_vprofpanel.cpp
 videoconfig
 videoconfig_linux.cfg
 videomode->Init
 vidmem total: %0.3fMB\n
 vidmemstats.txt
 view leaf %d\n
+view.cpp
 violence_ablood
 violence_agibs
 violence_hblood
@@ -11063,6 +11068,7 @@ vprof_playback_step
 vprof_playback_stepback
 vprof_playback_stop
 vprof_prevsibling
+vprof_record.cpp
 vprof_record_start
 vprof_record_start requires a filename\n
 vprof_record_stop
@@ -11090,6 +11096,8 @@ vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
 vtex failed to compile cubemap!\n
+vtex_dll
+vtf.cpp
 vtune
 vtune "pause" | "resume" : Suspend or resume VTune's sampling.\n
 wait
@@ -11131,12 +11139,12 @@ writeid
 writeip
 writing
 www.
-xV42?SV_EnsureInstanceBaseline: edict %d missing ent
+xV42?
 xdg-open "%s" &
 xload
 xload <savename>\n
 xxtestxx 
-y?/data/src/engine/view.cpp
+y?outputavi
 yoffset
 zh_CN
 zh_TW

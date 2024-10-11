@@ -30,7 +30,7 @@
 #%s_Chapter%s_Title
 #%s_DESC
 #%s_NAME
-#>CBaseSaveGameDialog
+#>BaseUI
 #Achievement_Group_%d
 #Bonus_Map_AdvancedChambers
 #Console_Submit
@@ -666,11 +666,6 @@ $frame
 // NOTE:  THIS FILE IS AUTOMATICALLY REGENERATED, \r\n//DO NOT EDIT THIS HEADER, YOUR COMMENTS WILL BE LOST IF YOU DO\r\n// User options script\r\n//\r\n// Format:\r\n//  Version [float]\r\n//  Options description followed by \r\n//  Options defaults\r\n//\r\n// Option description syntax:\r\n//\r\n//  "cvar" { "Prompt" { type [ type info ] } { default } }\r\n//\r\n//  type = \r\n//   BOOL   (a yes/no toggle)\r\n//   STRING\r\n//   NUMBER\r\n//   LIST\r\n//\r\n// type info:\r\n// BOOL                 no type info\r\n// NUMBER       min max range, use -1 -1 for no limits\r\n// STRING       no type info\r\n// LIST          delimited list of options value pairs\r\n//\r\n//\r\n// default depends on type\r\n// BOOL is "0" or "1"\r\n// NUMBER is "value"\r\n// STRING is "value"\r\n// LIST is "index", where index "0" is the first element of the list\r\n\r\n\r\n
 //\r\n//\r\n// Cvar\t-\tSetting\r\n\r\n
 /data/src/public/tier1/UtlSortVector.h
-/data/src/tier1/KeyValues.cpp
-/data/src/tier1/mempool.cpp
-/data/src/vgui2/vgui_controls/BuildGroup.cpp
-/data/src/vgui2/vgui_controls/Panel.cpp
-/data/src/vtf/vtf.cpp
 /materials/
 /tmp/hl2_relaunch
 /vgui/logos
@@ -751,7 +746,6 @@ $frame
 16ControlBoxVisual
 16IObjectContainer
 17CAsyncCtxSaveGame
-17CBitmapImagePanel
 17CCommentaryDialog
 17CGameChapterPanel
 17CMainMenuGameLogo
@@ -831,7 +825,6 @@ $frame
 30COptionsSubKeyboardAdvancedDlg
 32CCreateMultiplayerGameServerPage
 333333
-333?
 34CCreateMultiplayerGameGameplayPage
 36COptionsSubAudioThirdPartyCreditsDlg
 36COptionsSubVideoThirdPartyCreditsDlg
@@ -848,6 +841,7 @@ $frame
 8b  16-May-2010
 9CGameMenu
 9CMenuItem
+:ResizeColumnToContents
 < unknown >
 < unset >
 </script>
@@ -858,8 +852,8 @@ $frame
 <pre>
 <unknown>
 >33s?
->CCvarToggleCheckButton
->CWelcomeDialog
+>CCvarSlider
+>CSessionBrowserDialog
 >[unknown]
 ?333333
 ?<a href=
@@ -867,7 +861,6 @@ $frame
 ?CursorExited
 ?UUUUUU
 ?VMaterialSystem081
-?none
 @CrosshairImagePanelBase
 A!;I2
 ABGR8888
@@ -918,7 +911,9 @@ Audio Languages
 AudioSpokenLanguage
 AutoResize
 AutoSaveImage
-BCSaveGameDialog
+B17CBitmapImagePanel
+B333?
+BCCvarToggleCheckButton
 BGR565
 BGR888
 BGR888_BLUESCREEN
@@ -987,6 +982,7 @@ BrowserItem.res
 Buffer passed to JPEG library is too small
 Build Mode Help
 BuildDialog
+BuildGroup.cpp
 BuildGroupPtr
 BuildMode - Error saving file
 BuildModeControls
@@ -1006,6 +1002,7 @@ CAchievementsDialog
 CAchievementsDialog_XBox
 CBaseDialog
 CBasePanel
+CBaseSaveGameDialog
 CBenchmarkDialog
 CBenchmarkResultsDialog
 CBitmapImagePanel
@@ -1029,7 +1026,6 @@ CCreateMultiplayerGameDialog
 CCreateMultiplayerGameServerPage
 CCustomTabExplanationDialog
 CCvarNegateCheckButton
-CCvarSlider
 CDialogMenu
 CDragDropHelperPanel
 CFooterPanel
@@ -1081,6 +1077,7 @@ COptionsSubVideoThirdPartyCreditsDlg
 COptionsSubVoice
 CPU Player
 CPanelKeyBindingMapDictionary::m_PanelKeyBindingMapPool
+CPanelListPanel
 CPanelListPanelVScroll
 CPanelMessageMapDictionary::m_PanelMessageMapPool
 CPauseDialog
@@ -1090,12 +1087,12 @@ CPropertyLabel
 CQuitQueryBox
 CSaveBeforeQuitQueryDialog
 CSaveGameBrowserDialog
+CSaveGameDialog
 CSaveGameDialogXbox
 CSaveGamePanel
 CScenarioInfoPanel
 CSectionedItem
 CSelectionOverlayPanel
-CSessionBrowserDialog
 CSessionLobbyDialog
 CSessionOptionsDialog
 CSmallTextEntry
@@ -1118,6 +1115,7 @@ CUtlRBTree overflow!\n
 CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
+CWelcomeDialog
 CXXABI_1.3
 CXXABI_1.3.8
 CallAssertFailedNotifyFunc
@@ -1462,7 +1460,6 @@ Friends
 FullPathEdit
 GAME
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
-GCPanelListPanel
 GLIBCXX_3.4
 GLIBC_2.14
 GLIBC_2.2.5
@@ -1736,6 +1733,7 @@ KeyFocusTicked
 KeyModeSet
 KeyTyped
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -2081,6 +2079,7 @@ PageHide
 PageShow
 PageTab
 PageTabActivated
+Panel.cpp
 Panel::ReloadKeyBindings:  Can't find entry for panel '%s'\n
 Panel::SaveKeyBindings '%s' is read-only!!!\n
 PanelListEmbedded
@@ -2166,6 +2165,7 @@ RecursiveLoadFromBuffer:  recursion overflow
 Red Color Slider
 RedPlayers
 RedTeamDescription
+Refresh ALL GameUI Dialogs
 Refresh the options dialog.
 RefreshOptions
 RefreshSaveGames
@@ -2182,7 +2182,6 @@ ResetDXLevelCombo
 ResetData
 ResetStats
 ResetStats_NoConfirm
-ResizeColumnToContents
 Resolution
 Resource/BenchmarkDialog.res
 Resource/BenchmarkResultsDialog.res
@@ -3325,6 +3324,7 @@ memcpy
 memcpy@GLIBC_2.14
 memmove
 memmove@GLIBC_2.2.5
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 messagecolor
@@ -3489,6 +3489,7 @@ realloc
 realloc@GLIBC_2.2.5
 realpath@GLIBC_2.3
 reflectivity
+refresh_gameui_dialogs_modeset
 refresh_options_dialog
 refreshplayerstats
 reloadscheme
@@ -3765,10 +3766,10 @@ version
 vgui
 vgui/
 vgui/crosshairs/crosshair1
-vgui/hud/800corner1
-vgui/hud/800corner2
-vgui/hud/800corner3
-vgui/hud/800corner4
+vgui/hud/8x800corner1
+vgui/hud/8x800corner2
+vgui/hud/8x800corner3
+vgui/hud/8x800corner4
 vgui/playermodels/%s
 vgui/white_additive
 vgui::
@@ -3810,6 +3811,7 @@ vtable for __cxxabiv1::__class_type_info
 vtable for __cxxabiv1::__si_class_type_info
 vtable for __cxxabiv1::__vmi_class_type_info
 vtex_dll
+vtf.cpp
 wait\n
 wcschr
 wcschr@GLIBC_2.2.5

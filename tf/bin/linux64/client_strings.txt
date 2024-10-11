@@ -48,11 +48,11 @@
  (inactive)
  9CHUDAutoAim
  = { <proto text format> }". To set fields within it, use syntax like "
- =FX_Cube
  AOnGameRulesCreationStringChanged: game rules entity (%s) not created
  BackUp() can only be called after Next().
- Bemitter
+ Bm_bFaceLeft
  Botkiller 
+ CDT_WaterBullet
  C_EconWearableGib::FinishModelInitialization: VPhysicsInitNormal() failed for %s.\n
  C_PhysPropClientside::Initialize: VPhysicsInitNormal() failed for %s.\n
  Can't back up over more bytes than were returned by the last call to Next().
@@ -107,11 +107,11 @@
  singleplayer
  with %s.
 !! Missing playermodel on Player Class
+!! Missing printname on Player Class
 !! Missing selectcmd on Player Class
 !!! Missing printname on weapon
 !HEV_AMO0
 !\n\npoint_type
-!\t@TranslationData
 !\t@particle/particle_fire
 !contains
 !float<
@@ -214,7 +214,7 @@
 "????'????????????????????????????????????????????????????\????
 "?If set, the player must be on the specified team to get credit.
 "?Returns true if a specific node has a required number of medalsH
-"@Camo_IMaterialProxy003
+"@BigShot
 "A\n'CMsgGCItemPreviewItemBoughtNotification
 "A\n/CMsgRequestItemPurgatory_RefundPurchaseResponse
 "BIf true, this is only a prefab and will not be made into an object
@@ -226,7 +226,7 @@
 "D\n%CMsgGCRequestSubGCSessionInfoResponse
 "EInherit the values of these definitions, in order from top to bottom.
 "E\n$CMsgGCGetPartnerAccountLink_Response
-"Eprocedural_chamber
+"Em_flRechargeScale
 "F\n\fGCSQLVersion
 "G\n#CMsgGCStorePurchaseFinalizeResponse
 "HWhere the radio tuner goes on the CYOA PDA when this region is selection
@@ -500,6 +500,7 @@
 #FreezePanel_Nemesis_Dead
 #GameType_Passtime
 #GameType_PlayerDestruction
+#GameType_TOW
 #GameType_Training
 #GameType_VSH
 #GameType_ZI
@@ -1032,6 +1033,7 @@
 #Replay_RenderReplay
 #Replay_RenderReplays
 #Replay_RenderSetting_High
+#Replay_RenderSetting_Low
 #Replay_RenderSetting_Max
 #Replay_RenderSetting_Medium
 #Replay_ReplaySavedAlive
@@ -1505,6 +1507,7 @@
 #TF_Duel_Request
 #TF_Duel_Title
 #TF_Duel_WrongClass
+#TF_ENERGYDRINK
 #TF_EnemyDroppedItem
 #TF_Eternaween__AlreadyInUse
 #TF_Eternaween__AuthenticatedServerRequired
@@ -1579,6 +1582,9 @@
 #TF_Item_SelectStyle
 #TF_JAR
 #TF_KART
+#TF_KILLS
+#TF_KNIFE
+#TF_MANGLER
 #TF_MM_Abandon
 #TF_MM_Abandon_NoPenalty
 #TF_MM_Abandon_Title
@@ -1748,6 +1754,7 @@
 #TF_PVE_WaveComplete
 #TF_PVE_WaveCount
 #TF_PVE_WaveCountFail
+#TF_PYRORAGE
 #TF_PartyMemberState_LastTwo
 #TF_PartyMemberState_Plural
 #TF_PartyMemberState_Singular
@@ -1821,8 +1828,10 @@
 #TF_Quest_TurnIn_No
 #TF_RAGE
 #TF_REVENGE
+#TF_Rage
 #TF_Random
 #TF_RedTeam_Name
+#TF_Rescue
 #TF_RichPresence_Display
 #TF_RichPresence_MatchGroup_%s
 #TF_RichPresence_State_%s
@@ -1842,6 +1851,7 @@
 #TF_ScoreBoard_Players
 #TF_ScoreBoard_Point
 #TF_ScoreBoard_Points
+#TF_ScoreBoard_VoteKick
 #TF_Scoreboard_Bot
 #TF_Scoreboard_Name
 #TF_Scoreboard_Ping
@@ -2026,6 +2036,10 @@
 #TF_UseWeddingRing_Title
 #TF_Voice_Unavailable
 #TF_VoteKickReason
+#TF_VoteKickReason_Cheating
+#TF_VoteKickReason_Idle
+#TF_VoteKickReason_Other
+#TF_VoteKickReason_Scamming
 #TF_Vote_Column_Issue
 #TF_Vote_Column_Name
 #TF_Vote_Column_Properties
@@ -2204,7 +2218,6 @@
 #WizardPanel_Finish
 #WizardPanel_Next
 #X_Delete
-#X_DeleteConfirmButton
 #YouTube_CouldNotRetrieveStats
 #YouTube_FileAlreadyUploaded
 #YouTube_LoggingIn
@@ -2304,7 +2317,6 @@ $0enum $1 {\n
 $0option $1;\n
 $0rpc $1(.$2) returns (.$3)
 $3br
-$@Loaded new casual criteria from "%s"\n
 $AAInternal2
 $AAInternal3
 $ALPHADEPTH
@@ -2335,6 +2347,7 @@ $\n k_EGCMsgGetEmailTemplateResponse
 $\n k_EGCMsgWebAPIRegisterInterfaces
 $\n k_ESOMsg_CacheSubscribedUpToDate
 $\n\ngame_state
+$alpha
 $alphatest
 $basetexture
 $basetextureoffset
@@ -2386,6 +2399,7 @@ $spriteRenderMode
 $spriteorientation
 $spriteorigin
 $spritesize
+$tJTF_EjectBrass
 $translucent
 $underwateroverlay
 $var1
@@ -2401,7 +2415,6 @@ $world_mins
 %-30s %-20s (%i %i)
 %-30s %-20s (%s)
 %.0f fps - %s\n
-%.10f
 %.18g
 %.2f                                                                                       %.2f                                                                                           %.2f
 %.2f %.2f %.2f
@@ -2411,7 +2424,6 @@ $world_mins
 %02X 
 %02d: dur(%8.2f) amp(%8.2f) freq(%8.2f)
 %02i:%02i:%02i
-%03i %s::%s - %s
 %04u%02u%02u
 %04u%02u%02u%02u%02u%02u
 %04u-%02u-%02u
@@ -3111,7 +3123,6 @@ $world_mins
 *** Tried to load a non-VTF file as a VTF file!\n
 *** Unable to serialize... have no image data!\n
 *********Client InitSchema time = %f\n
-***\nShared activity collision! %s<->%s\n***\n
 ***\nShared<->Private Activity collision!\n***\n
 ***\nShared<->Private Event collision!\n***\n
 **WARNING** Failed to apply item schema!\n
@@ -3177,7 +3188,7 @@ $world_mins
 *\n\rquestion_type
 *this
 +++ %-20.20s:  %s (was %s)
-+?#TF_Rescue
++?Weapon_RocketPack.BoostersExtend
 +\n#matching_near_you_empty_gameservers
 +\n#matching_near_you_searching_players
 +\n#notification_title_localization_key
@@ -3354,7 +3365,6 @@ $world_mins
 -moveup
 -nocompress
 -nomouse
--particles
 -posedebug
 -precachefontchars
 -precachefontintlchars
@@ -3381,6 +3391,8 @@ $world_mins
 -zoom
 .  Please update your library.  If you compiled the program yourself, make sure that your headers are from the same version of Protocol Buffers as your link-time library.  (Version verification failed in "
 ../%s_large
+../../common/crypto.cpp
+../../public/bone_setup.cpp
 ../Effects/powerup_agility_hud
 ../Effects/powerup_haste_hud
 ../Effects/powerup_king_hud
@@ -3605,6 +3617,38 @@ $world_mins
 ../passtime/hud/portrait_soldier_red
 ../passtime/hud/portrait_spy_blu
 ../passtime/hud/portrait_spy_red
+../shared/Multiplayer/multiplayer_animstate.cpp
+../shared/SoundEmitterSystem.cpp
+../shared/Sprite.cpp
+../shared/SpriteTrail.cpp
+../shared/achievementmgr.cpp
+../shared/animation.cpp
+../shared/base_playeranimstate.cpp
+../shared/basecombatweapon_shared.cpp
+../shared/baseentity_shared.cpp
+../shared/baseplayer_shared.cpp
+../shared/econ/attribute_manager.cpp
+../shared/econ/econ_item.cpp
+../shared/econ/econ_item_description.cpp
+../shared/econ/econ_item_inventory.cpp
+../shared/econ/econ_item_schema.cpp
+../shared/econ/econ_item_view.cpp
+../shared/econ/econ_quests.cpp
+../shared/gamemovement.cpp
+../shared/igamesystem.cpp
+../shared/physics_main_shared.cpp
+../shared/props_shared.cpp
+../shared/ragdoll_shared.cpp
+../shared/soundenvelope.cpp
+../shared/tf/tf_flame.cpp
+../shared/tf/tf_item_inventory.cpp
+../shared/tf/tf_lobby_shared.cpp
+../shared/tf/tf_party.cpp
+../shared/tf/tf_playeranimstate.cpp
+../shared/tf/tf_point_manager.cpp
+../shared/tf/tf_proto_script_obj_def.cpp
+../shared/tf/tf_weapon_jar_gas.cpp
+../shared/tf/tf_weaponbase.cpp
 ../sprites/obj_icons/capture_highlight
 ../sprites/obj_icons/icon_obj_white
 ../vgui/achievements/tf_soldier_kill_spy_killer
@@ -3754,8 +3798,6 @@ $world_mins
 .\n*k_ItemPurgatoryResponse_Finalize_Succeeded
 .\n\vunlock_node
 .dummy
-.eBa\v6;5
-.fff?
 .foo = value".
 .google.protobuf.EnumOptions"l\n
 .google.protobuf.FieldOptions
@@ -3783,7 +3825,6 @@ $world_mins
 //\r\n//\r\n// Cvar\t-\tSetting\r\n\r\n
 //platform/materials/debug/defaultlightmap
 /EMSA1(
-/MumbleLink.%d
 /\n*k_EGCMsgGetGamePersonalDataEntriesResponse
 /\n*k_EMsgGCCoaching_RemoveFromCoachesResponse
 /\n*k_EMsgGCLookupMultipleAccountNamesResponse
@@ -3795,159 +3836,15 @@ $world_mins
 /\n*k_eTFPartyChatType_Synthetic_MemberOffline
 /\n\nEGCItemMsg
 /\n\nget_params
-/data/src/common/crypto.cpp
-/data/src/game/client/c_baseanimating.cpp
-/data/src/game/client/c_basecombatweapon.cpp
-/data/src/game/client/c_baseentity.cpp
-/data/src/game/client/c_baseflex.cpp
-/data/src/game/client/c_baseplayer.cpp
-/data/src/game/client/c_effects.cpp
-/data/src/game/client/c_func_dust.cpp
-/data/src/game/client/c_impact_effects.cpp
-/data/src/game/client/c_particle_system.cpp
-/data/src/game/client/c_pixel_visibility.cpp
-/data/src/game/client/c_rope.cpp
-/data/src/game/client/c_sprite.cpp
-/data/src/game/client/c_te_armorricochet.cpp
-/data/src/game/client/c_te_beamspline.cpp
-/data/src/game/client/c_te_bloodsprite.cpp
-/data/src/game/client/c_te_breakmodel.cpp
-/data/src/game/client/c_te_bspdecal.cpp
-/data/src/game/client/c_te_bubbles.cpp
-/data/src/game/client/c_te_bubbletrail.cpp
-/data/src/game/client/c_te_clientprojectile.cpp
-/data/src/game/client/c_te_decal.cpp
-/data/src/game/client/c_te_dynamiclight.cpp
-/data/src/game/client/c_te_effect_dispatch.cpp
-/data/src/game/client/c_te_energysplash.cpp
-/data/src/game/client/c_te_fizz.cpp
-/data/src/game/client/c_te_footprint.cpp
-/data/src/game/client/c_te_glassshatter.cpp
-/data/src/game/client/c_te_glowsprite.cpp
-/data/src/game/client/c_te_impact.cpp
-/data/src/game/client/c_te_killplayerattachments.cpp
-/data/src/game/client/c_te_legacytempents.cpp
-/data/src/game/client/c_te_muzzleflash.cpp
-/data/src/game/client/c_te_physicsprop.cpp
-/data/src/game/client/c_te_playerdecal.cpp
-/data/src/game/client/c_te_projecteddecal.cpp
-/data/src/game/client/c_te_smoke.cpp
-/data/src/game/client/c_te_sprite.cpp
-/data/src/game/client/c_te_spritespray.cpp
-/data/src/game/client/c_te_worlddecal.cpp
-/data/src/game/client/cdll_client_int.cpp
-/data/src/game/client/client_thinklist.cpp
-/data/src/game/client/client_virtualreality.cpp
-/data/src/game/client/clientleafsystem.cpp
-/data/src/game/client/clientshadowmgr.cpp
-/data/src/game/client/clientsideeffects.cpp
-/data/src/game/client/clientsideeffects_test.cpp
-/data/src/game/client/detailobjectsystem.cpp
-/data/src/game/client/econ/backpack_panel.cpp
-/data/src/game/client/econ/item_model_panel.cpp
-/data/src/game/client/flashlighteffect.cpp
-/data/src/game/client/fx.cpp
-/data/src/game/client/fx_impact.cpp
-/data/src/game/client/fx_quad.cpp
-/data/src/game/client/fx_sparks.cpp
-/data/src/game/client/fx_water.cpp
-/data/src/game/client/generated_proto_tf/base_gcmessages.pb.cc
-/data/src/game/client/generated_proto_tf/econ_gcmessages.pb.cc
-/data/src/game/client/generated_proto_tf/gcsystemmsgs.pb.cc
-/data/src/game/client/generated_proto_tf/steammessages.pb.cc
-/data/src/game/client/generated_proto_tf/tf_gcmessages.pb.cc
-/data/src/game/client/generated_proto_tf/tf_proto_def_messages.pb.cc
-/data/src/game/client/glow_overlay.cpp
-/data/src/game/client/in_camera.cpp
-/data/src/game/client/particlemgr.cpp
-/data/src/game/client/particles_new.cpp
-/data/src/game/client/physics.cpp
-/data/src/game/client/physpropclientside.cpp
-/data/src/game/client/prediction.cpp
-/data/src/game/client/ragdoll.cpp
-/data/src/game/client/replay/replayrenderer.cpp
-/data/src/game/client/smoke_fog_overlay.cpp
-/data/src/game/client/tf/c_tf_fx.cpp
-/data/src/game/client/tf/c_tf_player.cpp
-/data/src/game/client/tf/clientmode_tf.cpp
-/data/src/game/client/tf/tf_fx_blood.cpp
-/data/src/game/client/tf/tf_fx_explosions.cpp
-/data/src/game/client/tf/tf_fx_muzzleflash.cpp
-/data/src/game/client/tf/tf_fx_particleeffect.cpp
-/data/src/game/client/tf/tf_hud_item_progress_tracker.cpp
-/data/src/game/client/tf/tf_partyclient.cpp
-/data/src/game/client/tf/vgui/collection_crafting_panel.cpp
-/data/src/game/client/tf/vgui/tf_casual_criteria.cpp
-/data/src/game/client/tf/vgui/tf_friends_panel.cpp
-/data/src/game/client/tf/vgui/tf_matchmaking_dashboard_parent_manager.cpp
-/data/src/game/client/tf/vgui/tf_playermodelpanel.cpp
-/data/src/game/client/vgui_int.cpp
-/data/src/game/client/vgui_netgraphpanel.cpp
-/data/src/game/client/view.cpp
-/data/src/game/client/viewdebug.cpp
-/data/src/game/client/viewpostprocess.cpp
-/data/src/game/client/viewrender.cpp
-/data/src/game/client/youtubeapi.cpp
-/data/src/game/shared/Multiplayer/multiplayer_animstate.cpp
-/data/src/game/shared/SoundEmitterSystem.cpp
-/data/src/game/shared/Sprite.cpp
-/data/src/game/shared/SpriteTrail.cpp
-/data/src/game/shared/achievementmgr.cpp
-/data/src/game/shared/animation.cpp
-/data/src/game/shared/base_playeranimstate.cpp
-/data/src/game/shared/basecombatweapon_shared.cpp
-/data/src/game/shared/baseentity_shared.cpp
-/data/src/game/shared/baseplayer_shared.cpp
-/data/src/game/shared/econ/attribute_manager.cpp
 /data/src/game/shared/econ/attribute_manager.h
-/data/src/game/shared/econ/econ_item.cpp
-/data/src/game/shared/econ/econ_item_description.cpp
 /data/src/game/shared/econ/econ_item_interface.h
-/data/src/game/shared/econ/econ_item_inventory.cpp
-/data/src/game/shared/econ/econ_item_schema.cpp
-/data/src/game/shared/econ/econ_item_view.cpp
-/data/src/game/shared/econ/econ_quests.cpp
-/data/src/game/shared/gamemovement.cpp
-/data/src/game/shared/physics_main_shared.cpp
-/data/src/game/shared/props_shared.cpp
-/data/src/game/shared/ragdoll_shared.cpp
-/data/src/game/shared/soundenvelope.cpp
-/data/src/game/shared/tf/tf_flame.cpp
-/data/src/game/shared/tf/tf_item_inventory.cpp
-/data/src/game/shared/tf/tf_lobby_shared.cpp
-/data/src/game/shared/tf/tf_party.cpp
-/data/src/game/shared/tf/tf_playeranimstate.cpp
-/data/src/game/shared/tf/tf_point_manager.cpp
-/data/src/game/shared/tf/tf_proto_script_obj_def.cpp
 /data/src/game/shared/tf/tf_proto_script_obj_def.h
-/data/src/game/shared/tf/tf_weapon_jar_gas.cpp
-/data/src/game/shared/tf/tf_weaponbase.cpp
-/data/src/gcsdk/gcclient.cpp
-/data/src/gcsdk/gcclient_sharedobjectcache.cpp
-/data/src/gcsdk/gclogger.cpp
-/data/src/gcsdk/generated_proto/gcsdk_gcmessages.pb.cc
-/data/src/gcsdk/job.cpp
-/data/src/gcsdk/jobmgr.cpp
-/data/src/gcsdk/messagelist.cpp
-/data/src/gcsdk/msgprotobuf.cpp
 /data/src/gcsdk/steamextra/tier1/tsmempool.h
-/data/src/gcsdk/steamextra/tier1/tsmultimempool.cpp
-/data/src/gcsdk/webapi_response.cpp
-/data/src/gcsdk/workthreadpool.cpp
-/data/src/particles/particles.cpp
-/data/src/public/bone_setup.cpp
 /data/src/public/gcsdk/msgprotobuf.h
 /data/src/public/tier0/tslist.h
 /data/src/public/tier1/UtlSortVector.h
 /data/src/public/vstdlib/jobthread.h
 /data/src/thirdparty/protobuf-2.6.1/src/google/protobuf/repeated_field.h
-/data/src/tier1/KeyValues.cpp
-/data/src/tier1/datamanager.cpp
-/data/src/tier1/mempool.cpp
-/data/src/tier2/renderutils.cpp
-/data/src/vgui2/vgui_controls/BuildGroup.cpp
-/data/src/vgui2/vgui_controls/Panel.cpp
-/data/src/vtf/vtf.cpp
 /high
 /materials/
 /mvm/mvm_tank_deploy.wav
@@ -4111,8 +4008,8 @@ $world_mins
 0=Off, 1=Normal, 2=Wireframe
 0=move+shoot from face. 1=move with torso. 2,3,4=shoot with face+mouse cursor. 5+ are probably not that useful.
 0=off, Set all eyes to 1=left, 2=right, 3=middle eye
-0A/data/src/game/shared/igamesystem.cpp
 0A0\r
+0Ahltv_cameraman
 0Q0\r
 0\n+k_EMsgGCRemoveSocketItemResponse_DEPRECATED
 0\n+k_EMsgGCToGC_SendAccountBannedNotifications
@@ -4157,7 +4054,6 @@ $world_mins
 1000.0f
 10000
 100000.0
-1001
 1002
 1003
 1004
@@ -5920,7 +5816,6 @@ $world_mins
 17C_ObjectDispenser
 17C_ObjectSentrygun
 17C_PasstimeReticle
-17C_RecipientFilter
 17C_SingleplayRules
 17C_TEArmorRicochet
 17C_TEBeamRingPoint
@@ -6381,6 +6276,7 @@ $world_mins
 19CObjectControlPanel
 19CPDAPanel_Spy_Invis
 19CPaintKitDefinition
+19CParticleCollection
 19CPhysBoxMultiplayer
 19CPlaybackPanelMovie
 19CProxyItemTintColor
@@ -6458,6 +6354,7 @@ $world_mins
 1=translate the viewmodel with the head motion.
 1C97BEFC54BD7A8B65ACF89F81D4D4ADC565FA45
 1E589A8595423412134FAA2DBDEC95C8D8675E58
+1G%.10f
 1\n,k_EGCMsgGetGamePersonalDataCategoriesRequest
 1\n,k_EMsgGCItemPurgatory_RefundPurchaseResponse
 1\n,k_EMsgGCParty_ClearOtherPartyRequestResponse
@@ -7954,7 +7851,6 @@ $world_mins
 32C_TFProjectile_SpellMeteorShower
 32C_TFWeaponPDAExpansion_Dispenser
 32ConstRefTFPerPlayerMatchCriteria
-33#@ff
 33.0
 333333
 333>33
@@ -8655,7 +8551,6 @@ $world_mins
 56CAchievementTFEngineer_DestroySappersOnNonOwnedBuildings
 58CMsgNotificationOfSuspiciousActivity_MultipleGameInstances
 59CMsgGC_DailyCompetitiveStatsRollup_Response_RankBucketEntry
-5?33s?PlasmaGlowFade
 5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B
 5CSHA1
 5CSave
@@ -8731,8 +8626,10 @@ $world_mins
 7Dragger
 7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE5F83B2D4EA20400EC4557D5ED3E3E7CA5B4B5C83B8E01E5FCF
 7FX_Cube
+7GraphPanel.FgColor
 7IConVar
 7IHudLCD
+7VParticleSystemQuery001
 7\n2k_EMsgGC_Client_UseServerModificationItem_Response
 7\n\tenum_type
 7src_corner_height
@@ -8776,7 +8673,6 @@ $world_mins
 8C_TFSlap
 8C_TFTeam
 8C_Zombie
-8IConsole
 8IEffects
 8IRagdoll
 8IRestore
@@ -8788,8 +8684,7 @@ $world_mins
 8\n\rgcsql_version
 8\n\textension
 8b  16-May-2010
-8m_iOverlayID
-9#TF_PYRORAGE
+8particle/particle_sphere
 90.0
 900.0f
 99.0
@@ -8899,19 +8794,19 @@ $world_mins
 : unexpected channel name "
 :9\n\tkey_field
 :CHudTeamGoal
-:CViewAngleAnimation::RunAnimation called on an empty view animation\n
-:TE_GlowSprite
+:CKeyValueLabelPanel
 :\n6k_ItemPurgatoryResponse_Refund_Failed_CouldNotFindItem
 :\n\fis_war_match
 :\n\nCMsgUpdate
 :effects/christmas_bulb.vmt
 :episodic_intro
 ;$lighting
-;Client session ID (%s).\n
+;Ecritical_pipe_blue
 ;TE_PhysicsProp
 ;\n6k_EMsgGC_GameServer_UseServerModificationItem_Response
 ;\n\fclasses_vars
 ;\n\vcombine_add
+;demoman_red
 < Reload >
 < not bound >
 < unset >
@@ -8923,13 +8818,13 @@ $world_mins
 <<OfflinePracticePanel
 <<illegal>>
 <?xml version="1.0"?><entry xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:yt="http://gdata.youtube.com/schemas/2007"><media:group><media:title type="plain">%s</media:title><media:description type="plain">%s</media:description><media:category scheme="http://gdata.youtube.com/schemas/2007/categories.cat">%s</media:category>%s<media:keywords>%s</media:keywords><media:category scheme="http://gdata.youtube.com/schemas/2007/developertags.cat">%s</media:category></media:group>%s</entry>
-<DT_NextBot
 <\n8ServerMatchmakingState_ACTIVE_MATCH_REQUESTING_LATE_JOIN
 <\n8kServerModificationItemResponse_NotOnAuthenticatedServer
 <\n8k_ItemPurgatoryResponse_Refund_Failed_ItemNotInPurgatory
 <\n\fcombine_lerp
 <\n\ncategories
 <\n\vmatch_group
+<_rt_PowerOfTwoFB
 <a href=
 <a href=item://%u>%s</a>
 <entindex> <fieldname>:  Track changes to entity index entindex, for field fieldname.
@@ -8945,128 +8840,130 @@ $world_mins
 <unknown>
 <yt:accessControl action="list" permission="denied"/>
 <yt:private/>
-=!! Missing printname on Player Class
-=/data/src/particles/particle_sort.cpp
 == Invite %d: Lobby %llu, MatchGroup %s (%d)\n
 ============================================\n
 ========================================\n
+=CHudFilmDemo
 =CRagdoll
 =DT_WeaponSyringeGun
+=TF2ReplayRenders
 =ViewEffects
-=Y?#Replay_RenderSetting_Low
 =\n5matchmaking_last_comp_excessive_reports_auto_ban_time
 =\n9k_ItemPurgatoryResponse_Finalize_Failed_CouldNotFindItems
 =\n\rapply_sticker
-=\r9CTFClassImage
+=\r9333333
 =gff=
+=physpropclientside.cpp
+=sequence number %d too high in sheet file!!!\n
+>1001
 >@33333?
+>ExplosionCore_wall
 >Seconds:%d Fraction:%f Sample:%d  L:%f R:%f\n
->TimerFlash
 >\n\nsale_price
->cl_updaterate
+>blood_impact_backscatter
+>fff?CReplayReminderPanel
+>gameui_activated
 >m_nSceneStringIndex
 ?$AAInternal1
-?$alpha
+?$USINGPIXELSHADER
+?%03i %s::%s - %s
+?***\nShared activity collision! %s<->%s\n***\n
 ?18IReplayItemManager
-?19CParticleCollection
 ?20CEntityMaterialProxy
 ?333333
 ?333?333?333?333?
 ?33s?333?
 ?433333
-?433333s?CFilePublishDialog
+?433333s?
 ?456789:;<=
+?8IConsole
 ????????????????
 ???\f???????\n???\r?\t?\v
 ?ButtonClicked
-?CCasualSidePanel
-?CCollectionCraftingSelectionPanel
-?CConfirmDecodeDialog
-?CGameRules
+?CAvatarImagePanel
+?CCenterStringLabel
+?CConfirmGiftWrapDialog
+?CDisguiseStatus
 ?CGenericNotificationToast
 ?CHudArenaCapPointCountdown
-?CHudDemomanChargeMeter
-?CHudMainMenuOverride
+?CHudArenaNotification
+?CHudHDRDemo
 ?CHudMedicChargeMeter
+?CLIENT:  %s(%s) thinking for %.02f ms!!!\n
+?CMvMScoreboardEnemyInfo
 ?CNextMapWinnerDashboardState
-?CQuestMapItemAdPanel
+?CQuestMapNodePanel
 ?CQuestMapPathsPanel
 ?CQuestObjectivePanel
+?CRecipeComponentItemModelPanel
 ?CReplayBasePanel
-?CReplayListPanel
-?CReplayPerformanceEditorPanel
 ?CReplayRenderDialog
 ?CTFArrowPanel
-?CTFRoundInfo
-?CTFTeamButton
-?CVictoryPanel
+?CTFTextWindow
 ?Changing collision rules within a callback is likely to cause crashes!\n
+?Client Soundscape data dump:\n
+?ClientEffect textures
 ?DDDDDD
-?DT_BaseTempEntity
 ?DT_PhysMagnet
-?DT_TFParachute
 ?DT_TFWeaponBaseMelee
-?Enables/Disables third person
+?Flip view models.
 ?InvertibleRSAFunction: computational error during private key operation
 ?MMDashboard:Exiting state %s\n
 ?TE_BreakModel
 ?TE_MuzzleFlash
-?TF2ReplayRenders
+?TeamTexture_IMaterialProxy003
 ?UUUUUU
 ?Weapon_Slap.OpenHand
 ?\n7matchmaking_last_casual_excessive_reports_auto_ban_time
 ?\n;k_ItemPurgatoryResponse_Finalize_Failed_ItemsNotInPurgatory
-?_rt_FullFrameFB
-?achievement_event
-?bombonomicon_spell_trail
 ?debug/showz
-?drg_cowmangler_muzzleflash_chargeup
 ?fff
 ?fff?333?
-?fff?N14CSimplePhysics7IHelperE
+?fff?CompiledCaptionHeader_t
 ?ffffff
-?functionName
-?iklocks : %-2d : 
-?lessEqualVar
+?light has _fifty_percent_distance of %f but no zero_percent_distance\n
 ?m_bMeasurePerf
 ?m_flPrevCycle
-?m_iTotalScore[0]
-?m_nRandomSeed
+?m_hProjectile
+?m_iMode
 ?models/props_forest/dove.mdl
-?nCreditsDropped
+?particle_sort.cpp
 ?passtime/hud/passtime_pass_to_me_prompt
+?projectile_none
 ?r_cheapwaterstart: %f\n
 ?resource/UI/HudInspectPanel.res
 ?stop_watch_changed
 ?unknown_language
 ?unspecified
-?voice_ban.dt
 ?wwwwww
-?zh_CN
 @333
-@433333
+@33s?
 @@CTFPingPanel
 @@N4vgui5ImageE
+@CBaseViewport
+@CGameRules
 @CHudBaseTimer
 @CHudChatLine
-@CTFFilePublishDialog
-@CTFItemPickupPanel
+@CTFParticlePanel
 @CTFTips
 @DT_BCCLocalPlayerExclusive
-@[%8.3f] hitch on %s:%s:%d:%d\n
 @\n instance_def_type_quest_map_node
 @\n\vping_status
 @\n\vside_scores
+@backward
 @cc_emit
-@originx
-@pda_panel
-@pl(%i) cmd(%i) hash(%i) inst(%i) ack(%s)
+@m_bSendHandle: %d, m_Handle.Get: 0x%p\n
+@m_fDisappearDist
+@m_flDamage
+@m_iRoundsWon
+@m_mouseaccel1
+@pass_get
+@should_never_see_this
 A burning player that gibs has burning gibs.
 A file with this name is already in the pool.
 A protocol message was rejected because it was too big (more than 
 A simple way for the training client to communicate with the server.
 A!;I2
-A333?
 A5fSXbf7
 A9FB57DBA1EEA9BC3E660A909D838D718C397AA3B561A6F7901E0E82974856A7
 A9FB57DBA1EEA9BC3E660A909D838D726E3BF623D52620282013481D1F6E5377
@@ -11037,7 +10934,6 @@ AE_CL_EXCLUDE_PLAYER_SOUND
 AE_CL_PLAYSOUND
 AE_CL_REMOVE_PARTICLE_EFFECT
 AE_CL_STOPSOUND
-AE_EMPTY
 AE_MUZZLEFLASH
 AE_NPC_180TURN
 AE_NPC_ADDGESTURE
@@ -11080,7 +10976,6 @@ AI39si4Oq2O35MHD5qahqODCKQfsssq5STE6ISolJKsvFuxtPpqhG4sQbDF8pGdZ02c-_s5KRB5nhTjq
 AI39si4bpW1q3D0gcWWNWFNHjHgsM7YL3RGCdEAIKV2k_mH5Cwj-YwXinVv933tFhy-6583HcuZ8NWTrvfbB8XTWEI-hYidEjA
 AI39si5JUyCvGdavFg02OusWk9lkSxkpEX99KnJCjTwOzLJH7N9MS40YMFk-o8dTwyO0w2Qi2CSU8qrB4bdTohHj35mAa0iMDQ
 AI39si5q3V-l7DhNbdSn-F2P3l0sUOIOnHBqJC5kvdGsuwpIinmcOH5GFC1PGG0olcZM2ID0Fvbsodj6g0pOUkKhuRNxcEErLQ
-AI39si6dQGxX2TWkOT9V9ihFpKmokaDhqIw3mgJcnnRFjX5f00HMRXqj69Fg1ulTdYF9Aw4wIt5NYHCxQAXHPPEcbQ89rEaCeg
 AI39si79TOshUv9FcIT6cjEH0Q9KK_eEOH1q6-_lIdNIsmHrKcal1R8Uf0TzMhdq-rQ7iUEZ3uqSKlLXa2J-lQvuKwNq5SSnMA
 AI39si7JIn2nj67YoxWPzmsGHO2R-WSpN0su1f3-BF9lVC5jWz9DEOPbOxFz-MiXuaMtoCZnS3nSPjwGfqHenXC6RKGcICI5HQ
 AI39si7XuLuXg3-2T06aVUaM-45HSXYFqzXfyPR6y5K4XotWKf78lfCByXnD1T8Kj9jeIR85NelpjGYGsH8pR3RO4k3TrwlTbw
@@ -11088,6 +10983,7 @@ AIRBOAT
 AIWalkable
 ALIGN_TYPE is wrong, please fix
 ALWAYSGIB
+AParty ID %llu
 ARGB8888
 ARS$
 ATI1N
@@ -11099,7 +10995,6 @@ AWARDED
 A\n\ndefinition
 A\n\rname_loctoken
 AbandonButton
-Abeing_healed_stop
 AbsTagType(unknown)
 Abs_IMaterialProxy003
 Absolute Value
@@ -11246,6 +11141,7 @@ AlreadyCommitted
 AltMode%d
 AltModes
 Altitude
+Am_iBossHealthPercentageByte
 Ambient %s:Unknown command %s\n
 Ambient.Siren
 AmmoDenied
@@ -11499,16 +11395,18 @@ AvatarTextLabel
 AvgDamage
 AvgLum @ %4.2f%%  mat_tonemap_min_avglum = %4.2f%%  Using %d pixels of %d pixels on screen (%3d%%)
 AwardAchievement
+B#X_DeleteConfirmButton
 B-Spline
+B17C_RecipientFilter
 B3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D2A85C8EDD3EC2AEF
 B33KA
 B4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4
 B4E134D3FB59EB8BAB57274904664D5AF50388BA
 BAD ATTRIBUTE IN MVM_UPGRADES: %s\n
 BADFUNCTIONPOINTER
-BCExButton
-BCTFDisconnectConfirmDialog
-BCollision via traces
+BAE_EMPTY
+BCHudWeapon
+BCTFStreakNotice
 BER decode error
 BER decode error: unknown object identifier
 BGImage
@@ -11540,14 +11438,13 @@ BParseFromBuffer
 BParseFromString
 BPostDataLoaded
 BPostDefinitionsLoaded
+BRemap CP Speed to CP
 BRouteWorkItemCompleted called for a job that could not be found!\n
 BSP Files (*.bsp)
-BTF_SPY_BACKSTAB_SNIPERS
 BUCKSHOT
 BUTTON
 B\n\nicon_image
 B\v\n\toperation"5\n
-Ba\v6C
 BackBuffer
 BackButton
 BackToReplaysButton
@@ -11699,6 +11596,7 @@ BaseN_Decoder
 BaseN_Decoder: Log2Base must be between 1 and 7 inclusive
 BaseN_Encoder
 BaseN_Encoder: Log2Base must be between 1 and 7 inclusive
+BaseUI
 Basic Spellbook
 BasicLifeInfo
 BasicTraining_ClassDetailsPanel
@@ -11712,7 +11610,6 @@ BenefactorLevel_IMaterialProxy003
 Beyond this number of degrees, the mouse clamps
 Beyond this number of degrees, the mouse drags the torso
 BgAlpha
-BigShot
 Bind a concommand to a button.
 BitLength
 Bitfield - locks HUD axes to the world - 0=pitch, 1=yaw, 2=roll
@@ -11722,6 +11619,7 @@ Blacklisted '%s' (%s), due to rule '%s' (Class C).\n
 Blacklisted '%s' (%s), due to rule '%s'.\n
 Blank
 BlastJump.Whistle
+Blazehattan
 BlendCubeMapFaceEdges: unsupported image format (%d)
 Blending mip%d %dx%d to
 Block size: %-11s Alloc'd: %8d Num blobs: %5d (%s)\n
@@ -11766,7 +11664,8 @@ BlueprintPanelMousePressed
 BlueprintPanelMouseReleased
 BlurX
 BlurYAndBloom
-Bm_iCurrentMaxRagdollCount
+Bm_lifeState
+Bm_vecPlayerMountPositionTop
 BodygroupPanel
 Bogus DAC index %d
 Bogus DAC value 0x%x
@@ -11832,7 +11731,6 @@ BreakModel_Pumpkin
 BreakableModels
 BreakableSurface_IMaterialProxy003
 Breaking '%s' in '%s'\n
-BresultVar
 Brew
 Briefcase
 BrightTracer
@@ -11840,7 +11738,6 @@ Brimstone
 BronzeMedalText
 BrowseButton
 Brush_Model_Rendering
-Bscripts/objects.txt
 Buffer passed to JPEG library is too small
 Buffer underread! Mismatched type/type-descriptor.\n
 BufferedTransformation: this object can't be reinitialized
@@ -11850,6 +11747,7 @@ Build Mode Help
 BuildCacheSubscribed(%s)
 BuildCount
 BuildDialog
+BuildGroup.cpp
 BuildGroupPtr
 BuildHintLabel_Bright
 BuildHintLabel_Dim
@@ -11885,7 +11783,6 @@ Bullets.DefaultNearmiss
 Bullets.GunshipNearmiss
 Bullets.StriderNearmiss
 BumperCar.Bump
-BumperCar.BumpHard
 BumperCar.GoLoop
 BumperCar.Jump
 BumperCar.JumpLand
@@ -11910,10 +11807,10 @@ BuyButton
 Byre
 Byte size calculation and serialization were inconsistent.  This may indicate a bug in protocol buffers or it may be caused by concurrent modification of the message.
 ByteQueue: size specified for UndoLazyPut is too large
-C#TF_Rage
 C&opy
 C302F41D932A36CDA7A3462F9E9E916B5BE8F1029AC4ACC1
 C302F41D932A36CDA7A3463093D18DB78FCE476DE1A86297
+C333?w
 CAI_BaseNPC
 CAM_Think
 CASH_REWARD_LARGE
@@ -11922,7 +11819,6 @@ CASH_REWARD_NONE
 CASH_REWARD_SMALL
 CATEGORY
 CAboveWaterView
-CAbuseReportDlg
 CAccountPanel
 CAccountSlotItemSelectionPanel
 CAchievementMgr
@@ -11946,7 +11842,6 @@ CAttribute_ItemSlotCriteria
 CAttribute_String
 CAttribute_WorldItemPlacement
 CAutoFittingLabel
-CAvatarImagePanel
 CBC/CTS
 CBC_Encryption: message is too short for ciphertext stealing
 CBackpackPanel
@@ -12010,6 +11905,7 @@ CBaseToolUsageDialog
 CBaseViewModel
 CBaseViewport::AddNewPanel(%s): NULL panel.\n
 CBaseViewport::AddNewPanel: panel with name '%s' already exists.\n
+CBasicControlPanel
 CBasicLifeInfoPanel
 CBasicTraining_ClassDetailsPanel
 CBasicTraining_ClassPanel
@@ -12048,11 +11944,11 @@ CCameraOptionsPanel_Free
 CCaptureFlag
 CCaptureFlagReturnIcon
 CCaptureZone
+CCartViewItemEntry
 CCasualCategory
 CCasualCriteriaHelper: Attempting to set map %s as selected, but not in any valid game modes!\n
 CCasualCriteriaHelper: Map %s is selected, but not in any valid game modes!\n
-CCasualCriteriaPanel
-CCenterStringLabel
+CCasualSidePanel
 CCharInfoLoadoutSubPanel
 CCharacterInfoPanel
 CChatPopup
@@ -12065,7 +11961,6 @@ CClientLeafSystem::ComputeTranslucentRenderLeaf
 CClientLeafSystem::PreRender
 CClientLeafSystem::ProjectFlashlight
 CClientRenderablesList pool
-CClientScoreBoardDialog
 CClientShadowMgr::AddShadowToReceiver
 CClientShadowMgr::BuildFlashlight
 CClientShadowMgr::BuildPerspectiveWorldToFlashlightMatrix
@@ -12087,6 +11982,7 @@ CClientSteamContext logged on = %d\n
 CClientThinkList
 CCoachedByPanel
 CCollectionCraftingPanel
+CCollectionCraftingSelectionPanel
 CCollisionProperty
 CColorCorrection
 CColorCorrectionVolume
@@ -12105,13 +12001,13 @@ CConfirmApplyStrangifierDialog
 CConfirmApplyTeamColorPaintCanDialog
 CConfirmCardUpgradeApplicationDialog
 CConfirmCustomizeTextureDialog
+CConfirmDecodeDialog
 CConfirmDeleteDialog
 CConfirmDeleteItemDialog
 CConfirmDeleteReplayDialog
 CConfirmDialog
 CConfirmDisconnectFromServerDialog
 CConfirmDuckTokenApplicationDialog
-CConfirmGiftWrapDialog
 CConfirmItemPreviewDialog
 CConfirmNameDialog
 CConfirmSpellbookPageApplicationDialog
@@ -12191,7 +12087,6 @@ CDetailObjectSystem::RenderTranslucentDetailObjectsInLeaf
 CDetailObjectSystem::SortSpritesBackToFront
 CDetailObjectSystem::SortSpritesBackToFront -- Sort
 CDirtySpatialPartitionEntityList
-CDisguiseStatus
 CDispenserControlPanel
 CDmxElement::UnpackIntoStructure: Mismatched attribute type in attribute "%s"!\n
 CDominationsPanel
@@ -12201,7 +12096,6 @@ CDrawingPanel
 CDucksLeaderboard
 CDucksLeaderboardManager
 CDummyMaterialProxy::CDummyMaterialProxy()\n
-CDummyMaterialProxy::Init( material = "%s" )\n
 CDummyMaterialProxy::OnBind( %p )\n
 CDummyMaterialProxy::~CDummyMaterialProxy()\n
 CDynamicLight
@@ -12249,6 +12143,7 @@ CEquipSlotItemSelectionPanel
 CEscortHillPanel
 CEscortStatusTeardrop
 CEventPlayListEntry
+CExButton
 CExCheckButton
 CExImageButton
 CExLabel
@@ -12262,6 +12157,7 @@ CEyeballBoss
 CFB_Mode: invalid feedback size
 CFPSPanel
 CFailableAchievement
+CFilePublishDialog
 CFireSmoke
 CFireTrail
 CFlashlightEffect::UpdateLightNew
@@ -12470,6 +12366,7 @@ CHLClient::FrameStageNotify FRAME_NET_UPDATE_START
 CHLClient::FrameStageNotify FRAME_RENDER_END
 CHLClient::FrameStageNotify FRAME_RENDER_START
 CHTMLFindBar
+CHalloween.HeadlessBossAxeHitWorld
 CHalloweenOfferingPanel
 CHalloweenOfferingSelectionPanel
 CHalloweenSoulPack
@@ -12483,7 +12380,6 @@ CHudAchievementTracker
 CHudAlert
 CHudAnimationInfo
 CHudArenaClassLayout
-CHudArenaNotification
 CHudArenaVsPanel
 CHudBaseAccount
 CHudBaseAchievementTracker
@@ -12506,11 +12402,10 @@ CHudCommentary
 CHudControlPointIcons
 CHudCrosshair
 CHudDamageIndicator
+CHudDemomanChargeMeter
 CHudDemomanPipes
 CHudEurekaEffectTeleportMenu
-CHudFilmDemo
 CHudGeiger
-CHudHDRDemo
 CHudHintDisplay
 CHudHintKeyDisplay
 CHudHintKeyDisplay::MsgFunc_KeyHintText: string count != 1.\n
@@ -12518,6 +12413,7 @@ CHudHistoryResource
 CHudInspectPanel
 CHudItemAttributeTracker
 CHudItemEffectMeter
+CHudMainMenuOverride
 CHudMenu
 CHudMenuEngyBuild
 CHudMenuEngyDestroy
@@ -12548,7 +12444,6 @@ CHudVoiceSelfStatus
 CHudVoiceStatus
 CHudVote
 CHudVotePanel
-CHudWeapon
 CHudWeaponSelection
 CIPLocationInfo
 CIconPanel
@@ -12584,12 +12479,10 @@ CJobMgr::CheckForJobTimeouts
 CJobMgr::m_WorkThreadPool
 CJobThreadFuncWorkItem::DispatchCompleted
 CJobThreadFuncWorkItem::ThreadProcess
-CKeyValueLabelPanel
 CKillsPanel
 CLIENT
 CLIENT MAIN ACT: %s\n
 CLIENT SPECIFIC ACT: %s\n
-CLIENT:  %s(%s) thinking for %.02f ms!!!\n
 CLIENT_STEAMID
 CLOSECAPTION
 CLP$
@@ -12881,7 +12774,6 @@ CMvMBossProgressBar
 CMvMBossStatusPanel
 CMvMLootItem
 CMvMPlayerTicketStatusPanel
-CMvMScoreboardEnemyInfo
 CMvMVictoryMannUpEntry
 CMvMVictoryMannUpLoot
 CMvMVictoryMannUpPanel
@@ -12890,7 +12782,7 @@ CMvMVictoryPanelContainer
 CMvMWaveLossPanel
 CNameToolUsageDialog
 CNavButton
-CNavProgress
+CNavigationPanel
 CNetGraphPanel
 CNetGraphPanel::DrawLine2
 CNetGraphPanel::Paint
@@ -12963,7 +12855,6 @@ CParticleEffectBinding::DrawModel
 CParticleFire
 CParticleMSG::UpdateNewEffects
 CParticleMgr::CreateEffect: NULL factory for effect '%s'\n
-CParticleMgr::CreateEffect: factory not found for effect '%s'\n
 CParticleMgr::IncrementFrameCode()
 CParticleMgr::Init:  Manifest '%s' with bogus file type '%s', expecting 'file'\n
 CParticleMgr::LevelInit:  Manifest '%s' contains a particle file '%s' that's not under the particles directory. Custom particles must be placed in the particles directory.\n
@@ -12979,6 +12870,7 @@ CParticleSystemMgr::DrawRenderCache
 CPartyChatPanel
 CPasstimeBall
 CPasstimeGun
+CPerfVisualBenchmark
 CPerformanceTip
 CPhysBox
 CPhysBoxMultiplayer
@@ -13042,8 +12934,8 @@ CProtoBufMsg::InitFromPacket( IMsgNetPacket )
 CProtoBufMsgMemoryPoolMgr:\n
 CPvPRankPanel
 CQuest
+CQuestMapItemAdPanel
 CQuestMapNode
-CQuestMapNodePanel
 CQuestMapPanel
 CQuestMapRegionPanel
 CQuestMapRewardPurchase
@@ -13071,7 +12963,6 @@ CRanksTooltipPanel
 CRawInputConvarOnetimeReset
 CRecLightPanel
 CRecipeButton
-CRecipeComponentItemModelPanel
 CRecordsPanel
 CReflectiveGlassView::Draw
 CRefractiveGlassView::Draw
@@ -13083,16 +12974,17 @@ CReplayBrowserThumbnail
 CReplayBrowserThumbnailRow
 CReplayButton
 CReplayCachedContestData
+CReplayConfirmQuitDialog
 CReplayDetailsPanel
 CReplayEditorFastForwardButton
-CReplayInputPanel
+CReplayListPanel
 CReplayMessageDlg
 CReplayMessagePanel
+CReplayPerformanceEditorPanel
 CReplayPerformanceSaveDlg
 CReplayPreviewPanelBase
 CReplayPreviewPanelMovie
 CReplayPreviewPanelSlideshow
-CReplayReminderPanel
 CReplayRenderOverlay
 CReplayRenderer::LayoffFrame
 CReplayRenderer::LayoffFrame - AppendVideoFrame
@@ -13182,6 +13074,7 @@ CSpectatorMenu
 CSpectatorTargetID
 CSpotlightEnd
 CSprite
+CSprite::DrawModel
 CSprite::GetToolRecordingState
 CSpriteOriented
 CSpriteTrail
@@ -13193,7 +13086,6 @@ CStatsPanel
 CSteamFriendPanel
 CSteamFriendsListPanel
 CSteamJet
-CSteamMatchMaking009
 CSteamWorksGameStatsUploader
 CSteamWorkshopDialog
 CSteamWorkshopItemPanel
@@ -13207,6 +13099,7 @@ CStorePage_New
 CStorePage_Popular
 CStorePage_SpecialPromo
 CStorePanel
+CStorePreviewClassIcon
 CStorePreviewItemIcon
 CStorePreviewItemPanel
 CStorePricePanel
@@ -13296,6 +13189,7 @@ CTFBuffItem
 CTFCannon
 CTFCasualMatchCriteria
 CTFChargedSMG
+CTFClassImage
 CTFClassMenu
 CTFClassMenu_Blue
 CTFClassMenu_Red
@@ -13318,8 +13212,10 @@ CTFDashboardMvMPanel
 CTFDashboardNotification
 CTFDashboardPlaylistPanel
 CTFDemoSupport
+CTFDisconnectConfirmDialog
 CTFDroppedWeapon
 CTFDuelSummary
+CTFFilePublishDialog
 CTFFireAxe
 CTFFists
 CTFFlagCalloutPanel
@@ -13392,6 +13288,7 @@ CTFItem
 CTFItemCardPanel
 CTFItemDiscardPanel
 CTFItemInspectionPanel
+CTFItemPickupPanel
 CTFJar
 CTFJarGas
 CTFJarMilk
@@ -13505,6 +13402,7 @@ CTFRocketLauncher_AirStrike
 CTFRocketLauncher_DirectHit
 CTFRocketLauncher_Mortar
 CTFRocketPack
+CTFRoundInfo
 CTFSMG
 CTFScatterGun
 CTFShotgun
@@ -13547,11 +13445,11 @@ CTFSyringeGun
 CTFTankBoss
 CTFTauntProp
 CTFTeam
+CTFTeamButton
 CTFTeamMenu
 CTFTeamStatus
 CTFTeamStatusPlayerPanel
 CTFTextToolTip
-CTFTextWindow
 CTFThrowable
 CTFTrainingComplete
 CTFUpgradeBoxDialog
@@ -13595,7 +13493,6 @@ CTeleportVortex
 CTempEnts::PhysicsProp: model index %i not found\n
 CTempEnts::Update
 CTesla
-CTestItemBotControls
 CTestItemDialog
 CTestItemRoot
 CTestTraceline
@@ -13666,9 +13563,11 @@ CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
 CVProfile::FindOrCreateCounter(char const*, CounterGroup_t)
+CVictoryPanel
 CVictorySplash
 CViewAngleAnimation
 CViewAngleAnimation::LoadViewAnimFile failed to load script %s\n
+CViewAngleAnimation::RunAnimation called on an empty view animation\n
 CViewRander::DisableFog()
 CViewRender::Draw3DDebuggingInfo
 CViewRender::Draw3dSkyboxworld
@@ -13963,6 +13862,8 @@ CameraFirst
 CameraFree
 CameraFringe
 CameraThird
+Camo_IMaterialProxy003
+Can players call votes to kick players from the server?
 Can't 
 Can't BackUp() after failed Next().
 Can't add Keybindings Context for unnamed panels\n
@@ -14069,7 +13970,6 @@ Ccompetitive_state_changed
 Center Offset
 CenterPrintText
 Certified Compatible
-Cff&?
 ChallengeList
 ChallengeListGroupBox
 ChangeLevel
@@ -14119,6 +14019,7 @@ CipherModeBase: feedback size cannot be specified for this cipher mode
 CircularProgressBar
 CircularProgressBar.BgColor
 CircularProgressBar.FgColor
+Circus
 Clamp Maximum Light Value to Initial Color
 Clamp Minimum Light Value to Initial Color
 Clamp_IMaterialProxy003
@@ -14175,12 +14076,12 @@ Client connected to non-matchmade.\n
 Client out of date -- world version %u, current version %u\n
 Client pitch speed.
 Client reached server_spawn.\n
+Client session ID (%s).\n
 Client yaw speed.
 Client-ID
 Client: Missing precache for particle system "%s"!\n
 ClientArea
 ClientDLL
-ClientEffect textures
 ClientJoinMethod
 ClientLeafSystem002
 ClientProjectile: No model %d!\n
@@ -14232,6 +14133,7 @@ CollectionCrafting_ShowWaiting
 CollectionCrafting_WaitForItemsOnly
 Collections
 Collide rope with the world
+Collision via traces
 Color Correction Mgr
 Color Fade
 Color Light From Control Point
@@ -14274,7 +14176,6 @@ CompetitiveGame_LowerChatWindow
 CompetitiveGame_RestoreChatWindow
 CompetitiveGame_ShowPvPRankPanel
 CompetitiveInquiry
-CompiledCaptionHeader_t
 Completed (Post-Chargeback)
 Completed a training that we don't recognize!?\n
 CompletedCheckOn
@@ -14544,7 +14445,7 @@ DB7C2ABF62E35E668076BEAD2088
 DB7C2ABF62E35E668076BEAD208B
 DB7C2ABF62E35E7628DFAC6561C5
 DBG_PATHMATCH
-DCNavigationPanel
+DCNavProgress
 DCT coefficient out of range
 DCT scaled block size %dx%d not supported
 DEBRIS
@@ -14603,6 +14504,7 @@ DT_BasePlayer
 DT_BaseProjectile
 DT_BasePropDoor
 DT_BaseTeamObjectiveResource
+DT_BaseTempEntity
 DT_BaseViewModel
 DT_Beam
 DT_BeamPredictableId
@@ -14690,6 +14592,7 @@ DT_Merasmus
 DT_MerasmusDancer
 DT_MonsterResource
 DT_MovieExplosion
+DT_NextBot
 DT_ObjectCartDispenser
 DT_ObjectDispenser
 DT_ObjectSapper
@@ -14809,7 +14712,6 @@ DT_TFFlameRocket
 DT_TFGameRules
 DT_TFGameRulesProxy
 DT_TFGasManager
-DT_TFGenericBomb
 DT_TFGlow
 DT_TFHalloweenMinigame
 DT_TFHalloweenMinigame_FallingPlatforms
@@ -14914,7 +14816,6 @@ DT_TFWeaponClub
 DT_TFWeaponDataNonLocal
 DT_TFWeaponFireAxe
 DT_TFWeaponFists
-DT_TFWeaponInvis
 DT_TFWeaponJar
 DT_TFWeaponJarGas
 DT_TFWeaponJarMilk
@@ -14934,7 +14835,6 @@ DT_TFWeaponShovel
 DT_TFWeaponSlap
 DT_TFWeaponSpellBook
 DT_TFWeaponStickBomb
-DT_TFWeaponSword
 DT_TFWeaponThrowable
 DT_TFWeaponWrench
 DT_TFWearable
@@ -14956,7 +14856,6 @@ DT_Tesla
 DT_TestTraceline
 DT_VGuiScreen
 DT_VoteController
-DT_WaterBullet
 DT_WaterLODControl
 DT_WeaponChargedSMG
 DT_WeaponCompoundBow
@@ -14978,6 +14877,7 @@ DT_WeaponPistol_Scout
 DT_WeaponPistol_ScoutPrimary
 DT_WeaponPistol_ScoutSecondary
 DT_WeaponRaygun
+DT_WeaponRevolver
 DT_WeaponRocketLauncher
 DT_WeaponRocketLauncher_AirStrike
 DT_WeaponRocketLauncher_DirectHit
@@ -14986,7 +14886,6 @@ DT_WearableItem
 DT_World
 DT_Zombie
 DUMMY AMMO
-DWeapon_Hands.Push
 DXT1
 DXT1DXT3DXT5
 DXT1_ONEBITALPHA
@@ -15003,6 +14902,7 @@ DamageRadius
 DamagedPlayer
 Dampen Movement Relative to Control Point
 DarkComboBoxBorder
+Darkmarsh
 DashboardContextMenu
 DashboardDimmer
 Data manager 'used' memory incorrect\n
@@ -15281,6 +15181,7 @@ DownloadLabel
 DownloadOverlay
 DownloadProgress
 Downward Fast
+Dpda_panel
 DragDrop
 DragDrop.DragFrame
 DragDrop.DropFrame
@@ -15369,9 +15270,9 @@ Duration of glow effect around incremented achievements
 Dustbowl
 Dynamic_Recipe_Partial_Completion_Warning
 Dynamic_Recipe_Untradable_Text
+Dynamite
 E#TF_Gas
 E2NcUkG2
-E333333
 E87579C11079F43DD824993C2CEE5ED3
 E95E4A5F737059DC60DF5991D45029409E60FC09
 E95E4A5F737059DC60DFC7AD95B3D8139515620F
@@ -15455,6 +15356,7 @@ EditMenu
 EditableTooltip
 Effects/AnimatedSheen/animatedsheen0
 EffectsOwner
+Ehalloween_pumpkin_grab
 Eiffel tower
 Email=%s&Passwd=%s&service=youtube&source=%s
 Embargo
@@ -15513,6 +15415,7 @@ EnableSaveButton
 Enables melee stealing.
 Enables shooting the ball
 Enables the spectator queue system for Arena.
+Enables/Disables third person
 Enclosure
 EncodingLookupArray
 Encountered duplicate attribute definition for attribute "%s"!
@@ -15595,7 +15498,6 @@ EscortItemPanel
 EscortTeardrop
 EstimateFileLabel
 EstimateTimeLabel
-Etf_weapon_wrench_fix
 EvenTextColor
 Event
 Event %s was missing tag %s for wav %s\n
@@ -15648,7 +15550,6 @@ ExplosionCore_MidAir
 ExplosionCore_MidAir_Flare
 ExplosionCore_Wall_Jumper
 ExplosionCore_buildings
-ExplosionCore_wall
 ExplosionEffect
 ExplosionPlayerEffect
 ExplosionSound
@@ -15678,13 +15579,13 @@ Extensions to non-lite types can only be declared in non-lite files.  Note that 
 ExteriorLabel
 ExteriorValueLabel
 Eyeaduct
-F#TF_MANGLER
 FAILED
 FALL
 FATAL
 FCHudArenaPlayerCount
 FCVAR_CHEAT cvars reverted to defaults.\n
 FCVAR_NEVER_AS_STRING
+FDT_TFParachute
 FFFFFFFDFFFFFFFFFFFFFFFFFFFFFFFC
 FFFFFFFDFFFFFFFFFFFFFFFFFFFFFFFF
 FFFFFFFE0000000075A30D1B9038A115
@@ -15752,6 +15653,7 @@ FX_ConcussiveExplosion 1
 FX_ConcussiveExplosion 2
 FX_ConcussiveExplosion 3
 FX_ConcussiveExplosion 4
+FX_Cube
 FX_DebrisFlecks
 FX_Dust
 FX_DustImpact
@@ -15792,6 +15694,7 @@ FX_Sparks 1
 FX_StriderTracer
 FX_Tracer
 FX_WaterRipple
+F[%8.3f] hitch on %s:%s:%d:%d\n
 F\n\floaner_names
 F\n\foptimize_for
 F\n\nQueueEntry
@@ -15965,12 +15868,10 @@ FlashlightState
 Flicker
 Flinch
 Flip Percentage
-Flip view models.
 FloatingNumberLabel
 Flushes async'd captions.
 Flushes the client side soundscapes
 Flushes the sounds.txt system (client only)
-Fmodels/empty.mdl
 FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!\n
 FolderIcon
 FolderUpButton
@@ -16030,6 +15931,7 @@ FrameTitleButton.DisabledBgColor
 FrameTitleButton.DisabledFgColor
 FrameTitleButton.FgColor
 Frames Per Second
+Freaky Fair
 FreeAccountLabel
 FreeCameraSettings
 Freed EMS handle %u
@@ -16100,11 +16002,10 @@ GPUDriverVersion
 GPUDrv
 GPUVendor
 GS marked assigned match as ended\n
-GSNDLVL_
 G\n$instance_def_type_paintkit_operation
 G\n$instance_def_type_paintkit_variables
 Ga=o
-Ga>war definition %s has invalid side index: %d
+Ga>DT_TFGenericBomb
 Gain
 Galleria
 Game Mode Modifier
@@ -16225,7 +16126,6 @@ GrabPreColorCorrectedFrame
 GradientBgPanel
 Granary
 GraphPanel.BgColor
-GraphPanel.FgColor
 Gravel Pit
 Gravestone
 Graveyard
@@ -16241,15 +16141,13 @@ Gunzip: header decoding error
 Gunzip: length check error
 Gunzip: tail too short
 HAT\tK 
-HB$USINGPIXELSHADER
-HBCSprite::DrawModel
-HCBasicControlPanel
 HDR Demo HUD Element toggle.
 HDRDemoText
 HKEY_CURRENT_USER\Software\Valve\Steam\Offline
 HL2_KILL_ODESSAGUNSHIP
 HMAC(
 HMAC: can only be used with a block-based hash function
+HTF_HEAVY_DAMAGE_TAKEN
 HTML.SearchAnimationTime
 HTML.SearchInsetX
 HTML.SearchInsetY
@@ -16287,7 +16185,6 @@ Halloween.BombinomiconSpin
 Halloween.EyeballBossEscapeImminent
 Halloween.EyeballBossEscapeSoon
 Halloween.EyeballBossEscaped
-Halloween.HeadlessBossAxeHitWorld
 Halloween.HeadlessBossDeath
 Halloween.HeadlessBossFootfalls
 Halloween.HeadlessBossSpawn
@@ -16370,7 +16267,7 @@ Hellstone
 Helltower
 Helltrain
 HelpTextLabel
-Hhalloween_pumpkin_grab
+Hentity_capture_flag
 Hide the HUD during freeze-cam
 HideBodygroupCheckBox%d
 HideButton
@@ -16545,7 +16442,6 @@ HuffmanDecoder:
 HunterDamage
 HushAsserts
 Hydro
-I#TF_KILLS
 IA88
 IBSPPACK004
 IDAT stream error
@@ -16586,7 +16482,6 @@ ITEM_FLAG_NOAUTORELOAD
 ITEM_FLAG_NOAUTOSWITCHEMPTY
 ITEM_FLAG_NOITEMPICKUP
 ITEM_FLAG_SELECTONEMPTY
-ITF_REPLAY_SAVE_REPLAY
 IVideoServices002
 I\n%instance_def_type_paintkit_definition
 I\n\nMMCriteria
@@ -16800,6 +16695,7 @@ Invited %s to your party\n
 Invuln
 InvulnLabel
 InvulnLevel_IMaterialProxy003
+Iplayer_damage_dodged
 IsCaptioned
 IsCompletedHighlight
 IsCompletedImage
@@ -16958,7 +16854,6 @@ JPEG Files (*.jpg)
 JPEG datastream contains no image
 JPEG parameter struct mismatch: library thinks size is %u, caller expects %u
 JPEGMEM
-JTF_ENGINEER_REVENGE_CRIT_SENTRY_KILLER
 J\n\rconnect_state
 Job %s attempted to pause even though pauses were disabled\n
 Job %s detected and cleaned up leak of %d lock(s):\n
@@ -16982,7 +16877,9 @@ JoiningLabel
 Journal_DuckBadge
 JumpToItem
 Jungle Inferno Contracts Pass
+K/MumbleLink.%d
 K@<a href=
+KCDummyMaterialProxy::Init( material = "%s" )\n
 KDRButton
 KEY_0
 KEY_1
@@ -17122,6 +17019,7 @@ KeyPair
 KeySize
 KeyTyped
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -17154,9 +17052,10 @@ Kochanek-Bartels Late
 Kong King
 Krampus
 Kritz Or Treat Canteen
-L8start_framed
+L8start %f %f %f
 L<33
-L@CTFStreakNotice
+L>ff
+L@-particles
 LABEL_OPTIONAL
 LABEL_REPEATED
 LABEL_REQUIRED
@@ -17304,6 +17203,7 @@ LoadFromFile
 LoadPresetButton%i
 LoadResFileForCurrentItem
 LoadTestMapButton
+Loaded new casual criteria from "%s"\n
 Loading default settings for "quick turn" sensitivity\n
 Loading default settings for "static xhair" sensitivity\n
 Loading default settings for custom sensitivity\n
@@ -17660,7 +17560,7 @@ Maximum speed any ballistically moving object is allowed to attain per axis.
 Maximum supported image dimension is %u pixels
 Maximum think time in milliseconds, warning is printed if this is exceeded.
 Maximum visible distance
-MbP?
+MbP?body_yaw
 MedalButton
 MedalsHelp
 Medic.AutoCallerAnnounce
@@ -17923,6 +17823,7 @@ N13CPvPRankPanel13RatingState_tE
 N13IEconLootList21IEconLootListIteratorE
 N13sky3dparams_t14NetworkVar_fogE
 N14CBaseWaterView25CSoftwareIntersectionViewE
+N14CSimplePhysics7IHelperE
 N14C_EconItemView26NetworkVar_m_AttributeListE
 N14C_EconItemView47NetworkVar_m_NetworkedDynamicAttributesForDemosE
 N14C_RopeKeyframe16CPhysicsDelegateE
@@ -19308,6 +19209,7 @@ Other replacements:\n\n
 Other textures
 Other_Model_Rendering
 OutOfDateIcon
+Outburst
 Output field 0-2 X/Y/Z
 Output file write error --- out of disk space?
 OutputBuffer
@@ -19335,8 +19237,6 @@ Owner disguised as the player
 OwnerLabel
 P12C_BaseEntity
 P8?2
-P?selfcollisions
-PADT_WeaponRevolver
 PANEL_ARENA_TEAM
 PANEL_ARENA_WIN
 PANEL_CLASS_BLUE
@@ -19454,6 +19354,7 @@ PaintkitConsume
 PaintkitPreviewContainer
 Panel.SlideDown
 Panel.SlideUp
+Panel.cpp
 Panel::ReloadKeyBindings:  Can't find entry for panel '%s'\n
 Panel::SaveKeyBindings '%s' is read-only!!!\n
 PanelListEmbedded
@@ -19486,7 +19387,6 @@ Particlelib: Missing precache for particle system type "%s"!\n
 Particles: Missing '%s'\n
 PartnerAccountType
 PartnerItemPaymentRule
-Party ID %llu
 Party ID %llu, Embedded Options %d
 Party ID %llu, Lobby ID %llu
 Party ID %llu, Overwrite %d
@@ -19560,6 +19460,7 @@ PixelVisibility_EndScene
 Pixels visible: %d (qh:%p) (frame:%d)\n
 Pixels visible: %d (qh:%p) Pixels possible: %d (qh:%p) (frame:%d)\n
 Plane Normal
+PlasmaGlowFade
 Plat_ExitProcess
 Plat_FloatTime
 Plat_IsInDebugSession
@@ -19864,6 +19765,7 @@ PvPRankLevelUpModel
 PvPRankLevelUpXPBar
 PvPRankModelClicked
 PyroHintIcon
+Q9BumperCar.BumpHard
 QC,A
 QUESTION_CASUAL_INQUIRY
 QUESTION_COMP_INQUIRY
@@ -19969,6 +19871,7 @@ Quit after rendering is completed.
 QuitButton
 QuitWhenDone
 QuitWhenDoneChecked
+R@DT_TFWeaponSword
 RADIATION
 RANDOM
 RD.BotDeathExplosion
@@ -20157,7 +20060,6 @@ Reloads hud layout and animation scripts.
 Reloads replay data and display replay browser
 Reloads the Logitech G-15 Keyboard configs.
 Reloads the char info panel
-Remap CP Speed to CP
 Remap Control Point to Scalar
 Remap Control Point to Vector
 Remap Distance Between Two Control Points to Scalar
@@ -20550,6 +20452,7 @@ SHOVEL_SPEED_THINK
 SKIN
 SLIDER
 SLOWBURN
+SNDLVL_
 SNDLVL_100dB
 SNDLVL_105dB
 SNDLVL_110dB
@@ -20789,7 +20692,6 @@ SelectionTextFg
 SelectionUpdate
 Send a joinclass command
 Send a message to the user's party, if they have one
-SendAudio
 Sending request to abandon current match\n
 Sending request to exit matchmaking, marking assigned match as ended\n
 Sending tool request to GC.\n
@@ -21250,6 +21152,7 @@ SteamInternal_FindOrCreateGameServerInterface
 SteamInternal_FindOrCreateUserInterface
 SteamLightGreen
 SteamMatchGameSearch001
+SteamMatchMaking009
 SteamMatchMakingServers002
 SteamNetworking006
 SteamNetworkingSockets012
@@ -21395,7 +21298,6 @@ TAUNTATK_SOLDIER_GRENADE_KILL_WORMSIGN
 TAUNTATK_SPY_FENCING_SLASH_A
 TAUNTATK_SPY_FENCING_SLASH_B
 TAUNTATK_SPY_FENCING_STAB
-TDff
 TEAM_ANY
 TEAM_IS_NOT_OWNERS
 TEAM_IS_OWNERS
@@ -21406,6 +21308,7 @@ TE_Decal
 TE_DispatchEffect %s %s
 TE_DynamicLight
 TE_Explosion
+TE_GlowSprite
 TE_MetalSparks
 TE_ProjectDecal
 TE_ShatterSurface
@@ -21902,6 +21805,7 @@ TF_ENGINEER_REMOVE_SAPPER_LONG_DIST
 TF_ENGINEER_REPAIR_SENTRY_W_MEDIC
 TF_ENGINEER_REPAIR_TEAM_GRIND
 TF_ENGINEER_REVENGE_CRIT_LIFE
+TF_ENGINEER_REVENGE_CRIT_SENTRY_KILLER
 TF_ENGINEER_SENTRY_AVENGES_YOU
 TF_ENGINEER_SENTRY_KILL_CAPS
 TF_ENGINEER_SENTRY_KILL_LIFETIME_GRIND
@@ -21911,7 +21815,6 @@ TF_ENGINEER_TAUNT_KILL
 TF_ENGINEER_TELEPORT_GRIND
 TF_ENGINEER_UPGRADE_BUILDINGS
 TF_ENGINEER_WASTE_METAL_GRIND
-TF_EjectBrass
 TF_FIRE_WATERJUMP
 TF_FLAGEVENT_CAPTURE
 TF_FLAGEVENT_DEFEND
@@ -21986,7 +21889,6 @@ TF_HEAVY_ASSIST_MEDIC_LARGE
 TF_HEAVY_BLOCK_CART
 TF_HEAVY_BLOCK_INVULN_HEAVY
 TF_HEAVY_CLEAR_STICKYBOMBS
-TF_HEAVY_DAMAGE_TAKEN
 TF_HEAVY_DEFEND_CONTROL_POINT
 TF_HEAVY_DEFEND_MEDIC
 TF_HEAVY_EARN_MEDIC_DOMINATION
@@ -22220,6 +22122,7 @@ TF_QuestView_Requirements_StarCount
 TF_REPLAY_BROWSE_REPLAYS
 TF_REPLAY_EDIT_TIME
 TF_REPLAY_PERFORMANCE_MODE
+TF_REPLAY_SAVE_REPLAY
 TF_REPLAY_YOUTUBE_VIEWS
 TF_REPLAY_YOUTUBE_VIEWS_HIGHEST
 TF_REPLAY_YOUTUBE_VIEWS_TIER1
@@ -22369,6 +22272,7 @@ TF_SPY_BACKSTAB_MEDIC_CHARGED
 TF_SPY_BACKSTAB_MEDIC_HEALING_YOU
 TF_SPY_BACKSTAB_MEDIC_PAIR
 TF_SPY_BACKSTAB_QUICK_KILLS
+TF_SPY_BACKSTAB_SNIPERS
 TF_SPY_BREAK_SHIELD_KILL_SNIPER
 TF_SPY_BUMP_CLOAKED_SPY
 TF_SPY_CAMP_POSITION
@@ -22401,10 +22305,6 @@ TF_TEAM_PYROVISION
 TF_ThrowCigarette
 TF_Unique_Prepend_Proper
 TF_Unusualifier_UnusualEffects
-TF_VoteKickReason_Cheating
-TF_VoteKickReason_Idle
-TF_VoteKickReason_Other
-TF_VoteKickReason_Scamming
 TF_WEAPON_BAT
 TF_WEAPON_BAT_FISH
 TF_WEAPON_BAT_GIFTWRAP
@@ -22778,7 +22678,6 @@ TeamRed
 TeamScoresPanel
 TeamStatus_PlayerAlive
 TeamStatus_PlayerDead
-TeamTexture_IMaterialProxy003
 Teams are unbalanced when one team has this many more players than the other team. (0 disables check)
 Teams will be scrambled if one team reaches this streak
 TeamsFullArrow
@@ -22921,6 +22820,7 @@ TimeScaleButton
 TimeScaleSettings
 TimeScaleSlider
 TimeSubmitted
+TimerFlash
 TimerProgress.Active
 TimerProgress.InActive
 TimesOpenedServerBrowser
@@ -23054,6 +22954,7 @@ Tournament_WinConditionsSeconds
 Tournament_WinConditionsWin
 Tournament_WinConditionsWins
 Tours Completed
+Toxic
 Trace found %s, dist %.2f\n
 Trace using: %s\n
 TracePlayerBBoxForGround
@@ -23084,6 +22985,7 @@ TrainingSubTitle
 TrainingTitle
 Transaction Insert
 Transition time in and out of spy invisibility
+TranslationData
 TransparentLightBlack
 Trebuchet24
 TreeNode
@@ -23413,7 +23315,6 @@ VModelInfoClient006
 VOL_NORM
 VP4002
 VPanel
-VParticleSystemQuery001
 VPhysics031
 VPhysicsCollision007
 VPhysicsSurfaceProps001
@@ -23527,6 +23428,8 @@ VoteActive
 VoteBar
 VoteBarPanel
 VoteCountLabel
+VoteKickPlayer
+VoteKickSubMenu
 VoteParameterList
 VotePass
 VotePassed
@@ -23647,7 +23550,6 @@ Weapon_Rainblower.FireLoop
 Weapon_Rainblower.PilotLoop
 Weapon_Rainblower.WindDown
 Weapon_RocketPack.BoostersCharge
-Weapon_RocketPack.BoostersExtend
 Weapon_RocketPack.BoostersFire
 Weapon_RocketPack.BoostersNotReady
 Weapon_RocketPack.BoostersReady
@@ -23763,10 +23665,11 @@ Wutville
 X position on the quest map
 X-GData-Key
 X917RNG: Continuous random number generator test failed.
+XBff&?
 XPSourceShow_Negative
 XPSourceShow_Positive
 Y position on the quest map
-Y@quest loaner id low
+Y@AI39si6dQGxX2TWkOT9V9ihFpKmokaDhqIw3mgJcnnRFjX5f00HMRXqj69Fg1ulTdYF9Aw4wIt5NYHCxQAXHPPEcbQ89rEaCeg
 YYYY
 YYYY-MM-DD hh:mm:ss
 YellowBlood
@@ -23943,6 +23846,7 @@ ZoomPanel
 \n============================================\n
 \nACAttribute_DynamicRecipeComponent_COMPAT_NEVER_SERIALIZE_THIS_OUT
 \nConstruction at %.0f percent\nHealth at %.0f percent
+\nF333333
 \nHealth at %.0f percent
 \n\fCGCMsgTFSync
 \n\fCMsgQuestDef
@@ -24301,7 +24205,7 @@ ZoomPanel
 \n\vvalue_bytes
 \n\vwas_abandon
 \n\vyoutube_url
-\rE#TF_KNIFE
+\rEm_bReadyToBackstab
 \r\nContent-Type: application/atom+xml; charset=UTF-8\r\n\r\n---x\r\nContent-Disposition: form-data; name="apirequest"\r\n\r\n%s\r\n---x\r\nContent-Disposition: form-data; name="video"\r\nContent-Type: %s\r\nContent-Transfer-Encoding: binary\r\n\r\n
 \r\n\tCODE_SIZE
 \r\n\tCONNECTED
@@ -24326,8 +24230,6 @@ ZoomPanel
 \t\t{\r\n\t\t\tLIST\r\n
 \u00
 \x%02x
-]?Client Soundscape data dump:\n
-]G#TF_ENERGYDRINK
 _ExitOnFatalAssert
 _ITM_deregisterTMCloneTable
 _ITM_registerTMCloneTable
@@ -24524,6 +24426,7 @@ _events.txt
 _gamestats.dat
 _rt_Camera
 _rt_FullFrameDepth
+_rt_FullFrameFB
 _rt_FullFrameFB%d
 _rt_FullFrameFB1
 _rt_FullScreen
@@ -24533,7 +24436,6 @@ _rt_ItemModelPanel1
 _rt_ItemModelPanel2
 _rt_LayoffResult
 _rt_ModelImagePanel
-_rt_PowerOfTwoFB
 _rt_Replay_Accum_Sample
 _rt_Replay_Ping
 _rt_Replay_Pong
@@ -24557,12 +24459,14 @@ _shortdesc
 _teamcolor_blue
 _teamcolor_red
 _to_curve_
-`>m_flDamage
-`@CPerfVisualBenchmark
+`@CParticleMgr::CreateEffect: factory not found for effect '%s'\n
+`Aa\v6C
 `\n\titem_name
+a?resource/UI/econ/GenericWaitingDialog.res
 aClassStats
-aFwarp_shield_impact
+aFfx_impact.cpp
 aMapStats
+a\v6;5
 abandon_match
 abandoning_invite_lobby_ids
 abandoning_match_id
@@ -24612,6 +24516,7 @@ achievement_blocks
 achievement_debug
 achievement_earned
 achievement_earned_local
+achievement_event
 achievement_id
 achievement_name
 achievement_notification_test
@@ -24900,7 +24805,7 @@ avg_wait_time_new
 award_width
 axisVar
 b7816vx0i8sng8bwy9es0dirdcsy3im
-b?ffffff
+b?333333
 bCheapWater
 bRunningEnterExit
 bWasRunningAnim
@@ -24963,6 +24868,7 @@ bday_confetti
 beampredictable_id
 begin_xp_lerp
 being_healed_start
+being_healed_stop
 best
 beta.
 beta_stress_test_event_active
@@ -25020,7 +24926,6 @@ blog_forward
 blog_forward_disabled
 blood_bread_biting
 blood_decap
-blood_impact_backscatter
 blood_impact_green_01
 blood_impact_yellow_01
 blooddrops
@@ -25050,10 +24955,10 @@ body
 body_pitch
 body_substring_keys
 body_substring_values
-body_yaw
 bombinomicon_burningdebris
 bombinomicon_burningdebris_halloween
 bombinomicon_effect_on_death
+bombonomicon_spell_trail
 bomibomicon_ring
 boneAnglesX
 boneAnglesY
@@ -25193,6 +25098,14 @@ by_entindex
 by_id
 bytes
 bytes. 
+c_baseanimating.cpp
+c_basecombatweapon.cpp
+c_baseentity.cpp
+c_baseflex.cpp
+c_baseplayer.cpp
+c_effects.cpp
+c_func_dust.cpp
+c_impact_effects.cpp
 c_maxdistance
 c_maxpitch
 c_maxyaw
@@ -25201,7 +25114,38 @@ c_minpitch
 c_minyaw
 c_orthoheight
 c_orthowidth
+c_particle_system.cpp
+c_pixel_visibility.cpp
+c_rope.cpp
+c_sprite.cpp
 c_spy_watch
+c_te_armorricochet.cpp
+c_te_beamspline.cpp
+c_te_bloodsprite.cpp
+c_te_breakmodel.cpp
+c_te_bspdecal.cpp
+c_te_bubbles.cpp
+c_te_bubbletrail.cpp
+c_te_clientprojectile.cpp
+c_te_decal.cpp
+c_te_dynamiclight.cpp
+c_te_effect_dispatch.cpp
+c_te_energysplash.cpp
+c_te_fizz.cpp
+c_te_footprint.cpp
+c_te_glassshatter.cpp
+c_te_glowsprite.cpp
+c_te_impact.cpp
+c_te_killplayerattachments.cpp
+c_te_legacytempents.cpp
+c_te_muzzleflash.cpp
+c_te_physicsprop.cpp
+c_te_playerdecal.cpp
+c_te_projecteddecal.cpp
+c_te_smoke.cpp
+c_te_sprite.cpp
+c_te_spritespray.cpp
+c_te_worlddecal.cpp
 cable/cable
 cable/cable_blue
 cable/cable_red
@@ -25336,6 +25280,7 @@ cctoken
 cctoken "%s"\n
 cctype
 cctype "%s"\n
+cdll_client_int.cpp
 ceilf
 ceilf@GLIBC_2.2.5
 cellcolor
@@ -25616,6 +25561,7 @@ cl_trading_show_requests_from
 cl_training_class_unlock_all
 cl_training_completed_with_classes
 cl_trigger_first_notification
+cl_updaterate
 cl_upspeed
 cl_use_tournament_specgui
 cl_vote_non_input_alpha
@@ -25770,9 +25716,15 @@ client_ragdoll
 client_session_id
 client_session_need
 client_steam_id
+client_thinklist.cpp
 client_version
+client_virtualreality.cpp
 clientinsetx_override
+clientleafsystem.cpp
 clients
+clientshadowmgr.cpp
+clientsideeffects.cpp
+clientsideeffects_test.cpp
 clip2_size
 clip_size
 clipsize_increase_on_kill
@@ -25987,10 +25939,12 @@ cp_burghausen
 cp_canaveral_5cp
 cp_carrier
 cp_cloak
+cp_darkmarsh
 cp_degrootkeep
 cp_degrootkeep_rats
 cp_dustbowl
 cp_foundry
+cp_freaky_fair
 cp_frostwatch
 cp_gorge
 cp_gorge_event
@@ -26246,6 +26200,7 @@ database_audit_table
 datacenter_name
 datacenter_y
 datacenter_y_space
+datamanager.cpp
 dataoffset
 date_time
 days_to_expiration
@@ -26402,7 +26357,6 @@ demo_pause
 demo_resume
 demo_sultan_sword
 demoman_blu
-demoman_red
 demos
 deploy_buff_banner
 depressedBgColor_override
@@ -26450,6 +26404,7 @@ det_y
 det_z
 detail props
 detail/detailsprites
+detailobjectsystem.cpp
 details%i
 details%i_%i
 dev/bloomadd
@@ -26639,6 +26594,7 @@ drg_cow_rockettrail_charged_blue
 drg_cow_rockettrail_normal
 drg_cow_rockettrail_normal_blue
 drg_cowmangler_idle
+drg_cowmangler_muzzleflash_chargeup
 drg_fiery_death
 drg_manmelter_idle
 drg_manmelter_muzzleflash
@@ -26744,6 +26700,8 @@ eb_beam_angry_ring01
 econ
 econ item definition '%s' attachment (team %d idx %d) has no model\n
 econ item definition '%s' attachment has no model\n
+econ/backpack_panel.cpp
+econ/item_model_panel.cpp
 econ_gcmessages.proto
 econ_inventory_connected
 econ_never_show_items_in_cart_count
@@ -26870,6 +26828,7 @@ emission_start_time
 emit noise
 emit_continuously
 emit_instantaneously
+emitter
 emitter lifetime end time (seconds)
 emitter lifetime start time (seconds)
 emitter1
@@ -26936,7 +26895,6 @@ entered_performance_mode
 entity # %i: %s%s%s
 entity %d: Removing sleeping ragdoll\n
 entity %d: start time=%d  duration=%d  num bones=%d
-entity_capture_flag
 entity_killed
 entity_medigun_shield
 entity_revive_marker
@@ -26991,6 +26949,7 @@ eresult_deprecated
 error in transition graph: %s to %s\n
 error loading %s\n
 errors
+es-8R
 es_ES
 escort_progress
 escort_recede
@@ -27152,7 +27111,7 @@ feof
 feof@GLIBC_2.2.5
 festivized_item
 fff?
-fff?fff?CBaseViewport
+fff?fff?CClientScoreBoardDialog
 ffffff
 fflush
 fflush@GLIBC_2.2.5
@@ -27232,6 +27191,7 @@ flaregun_trail_crit_blue
 flaregun_trail_crit_red
 flashlightHandle
 flashlightState
+flashlighteffect.cpp
 flesh
 flex_rules
 flex_smooth
@@ -27377,11 +27337,15 @@ func_proprrespawnzone
 func_tracktrain
 func_useableladder
 function
+functionName
 fwrite
 fwrite@GLIBC_2.2.5
 fx_drawimpactdebris
 fx_drawimpactdust
 fx_drawmetalspark
+fx_quad.cpp
+fx_sparks.cpp
+fx_water.cpp
 g&3g
 g15_dumpplayer
 g15_reload
@@ -27431,7 +27395,6 @@ gamestats
 gamestats.log
 gametype
 gameui_activate
-gameui_activated
 gameui_allowescape
 gameui_allowescapetoshow\n
 gameui_hidden
@@ -27452,12 +27415,22 @@ gc_dir_index_source
 gc_info
 gc_lost_session
 gc_new_session
+gcclient.cpp
+gcclient_sharedobjectcache.cpp
+gclogger.cpp
 gconly
 gcsdk_gcmessages.proto
 gcsystemmsgs.proto
 gcsystemmsgs.proto"j\n'CCommunity_GamePersonalDataCategoryInfo
 generate_rage_on_dmg
 generate_rage_on_heal
+generated_proto/gcsdk_gcmessages.pb.cc
+generated_proto_tf/base_gcmessages.pb.cc
+generated_proto_tf/econ_gcmessages.pb.cc
+generated_proto_tf/gcsystemmsgs.pb.cc
+generated_proto_tf/steammessages.pb.cc
+generated_proto_tf/tf_gcmessages.pb.cc
+generated_proto_tf/tf_proto_def_messages.pb.cc
 german
 get_hits
 get_player
@@ -27504,6 +27477,7 @@ globalname
 gloves
 glow_outline_effect_enable
 glow_outline_width
+glow_overlay.cpp
 glyph_alert
 glyph_collapse
 glyph_expand
@@ -29100,7 +29074,6 @@ hitbox
 hitbox scale
 hl2_episodic
 hllog.txt
-hltv_cameraman
 hltv_changed_mode
 hltv_changed_target
 hltv_chase
@@ -29265,7 +29238,6 @@ hwn_mult_postfiredelay
 hwn_mult_reload_time
 hype_resets_on_jump
 i/o error
-i?CCartViewItemEntry
 iBlastDamage
 iCollide
 iDamageDealt
@@ -29386,6 +29358,7 @@ ignore_enabled
 ignore_enabled_flag
 ignored
 ignored_friend
+iklocks : %-2d : 
 ikrules : %-2d
 image height exceeds user limit
 image not found
@@ -29443,6 +29416,7 @@ impulse_x
 impulse_y
 impulse_z
 in :%4i   %2.2f k/s 
+in_camera.cpp
 in_coaches_list
 in_game_tracker_res
 in_jlook
@@ -29818,6 +29792,8 @@ java_generic_services
 java_multiple_files
 java_outer_classname
 java_string_check_utf8
+job.cpp
+jobmgr.cpp
 join_class
 join_match
 join_party_match
@@ -29879,7 +29855,6 @@ joystick
 joystick_move
 jpeg
 jumping_state
-kCes-8R
 kGameCategory_Arena
 kGameCategory_AttackDefense
 kGameCategory_CP
@@ -30336,10 +30311,11 @@ koth_slime
 koth_snowtower
 koth_suijin
 koth_synthetic_event
+koth_toxic
 koth_undergrove_event
 koth_viaduct
 koth_viaduct_event
-l?backward
+l>@T\tJo
 label
 labelText
 label_token
@@ -30401,6 +30377,7 @@ lengthprop%d
 lengthproxy
 lerp to CP radius speed
 lerp: %5.1f ms
+lessEqualVar
 level
 level_data
 level_down
@@ -30424,7 +30401,6 @@ lifetime_max
 lifetime_min
 lifetime_random
 lifetime_random_exponent
-light has _fifty_percent_distance of %f but no zero_percent_distance\n
 lightindex
 lights
 limit_maxbytes
@@ -30828,7 +30804,6 @@ m_bEnabled
 m_bEnterAnimOn
 m_bExitAnimOn
 m_bExplosive
-m_bFaceLeft
 m_bFadeCorpse
 m_bFadeOut
 m_bFadingOut
@@ -30978,7 +30953,6 @@ m_bPowerupMode
 m_bPrevForceLocalPlayerDraw
 m_bRageDraining
 m_bRainbow
-m_bReadyToBackstab
 m_bRegenerating
 m_bReleaseRagdoll
 m_bReloadedThroughAnimEvent
@@ -30995,7 +30969,6 @@ m_bRightJustify
 m_bRopesHolidayLightsAllowed
 m_bSaveMeParity
 m_bSendHandle
-m_bSendHandle: %d, m_Handle.Get: 0x%p\n
 m_bServerOverridePlacement
 m_bShieldEquipped
 m_bShielded
@@ -31047,6 +31020,7 @@ m_bUseConVarMinMax
 m_bUseCustomAutoExposureMax
 m_bUseCustomAutoExposureMin
 m_bUseCustomBloomScale
+m_bUseHitboxesForRenderBox
 m_bUseItemRenderTarget
 m_bUseItemSounds
 m_bUseNewProjectileCode
@@ -31133,7 +31107,6 @@ m_fBossNormalizedTravelDistance
 m_fChargeBeginTime
 m_fCycleFrequency
 m_fDecay
-m_fDisappearDist
 m_fEffects
 m_fEndWidth
 m_fFModAmplitude
@@ -31267,6 +31240,7 @@ m_flFadeOutLength
 m_flFadeOutModelLength
 m_flFadeOutModelStart
 m_flFadeOutPercentage
+m_flFadeOutStart
 m_flFadeScale
 m_flFadeStartDist
 m_flFallVelocity
@@ -31428,7 +31402,6 @@ m_flRadius
 m_flRageMeter
 m_flRandomLifeTimeOffset
 m_flRecedeTime
-m_flRechargeScale
 m_flRechargeTime
 m_flRedFinaleEndTime
 m_flRedTeamRespawnScale
@@ -31637,7 +31610,6 @@ m_hPlayer
 m_hPlayerOwner
 m_hPrevCarrier
 m_hPrevOwner
-m_hProjectile
 m_hProps
 m_hProps[0]
 m_hRagWearables
@@ -31736,7 +31708,6 @@ m_iBorderCenter
 m_iBorderLeft
 m_iBorderRight
 m_iBorderTop
-m_iBossHealthPercentageByte
 m_iBossState
 m_iBossStunPercentageByte
 m_iBottomBuffer
@@ -31816,6 +31787,7 @@ m_iCurrencyCollected
 m_iCurrencyCollectedForRespec
 m_iCurrencyCollected[0]
 m_iCurrentFriction
+m_iCurrentMaxRagdollCount
 m_iCurrentSection
 m_iCurrentSeed
 m_iCurrentTube
@@ -31969,6 +31941,7 @@ m_iMaxSlots
 m_iMaxTextHeight
 m_iMaxWind
 m_iMaximumDamage
+m_iMedalColumnWidth
 m_iMedalCountWidth
 m_iMedalSpacerWidth
 m_iMedalWidth
@@ -31977,7 +31950,6 @@ m_iMinFriction
 m_iMinGust
 m_iMinWind
 m_iMiniBombCounter
-m_iMode
 m_iModelPanelH
 m_iModelPanelSpacing
 m_iModelPanelW
@@ -32011,6 +31983,7 @@ m_iOutputItemStepY
 m_iOutputItemYPos
 m_iOverlapOffset_X
 m_iOverlapOffset_Y
+m_iOverlayID
 m_iOwner
 m_iOwner[0]
 m_iPacketloss
@@ -32062,7 +32035,6 @@ m_iRobotYStep
 m_iRole
 m_iRopeMaterialModelIndex
 m_iRoundState
-m_iRoundsWon
 m_iScore
 m_iScoreStep
 m_iScoreWidth
@@ -32168,6 +32140,7 @@ m_iTimesUsed
 m_iTitleTextInsetXOverride
 m_iTitleTextInsetYOverride
 m_iTotalScore
+m_iTotalScore[0]
 m_iTourMapWidth
 m_iTourNameWidth
 m_iTourNumberWidth
@@ -32229,7 +32202,6 @@ m_iszWarnSound[0]
 m_itHandle
 m_laserTarget
 m_lastHealthPercentage
-m_lifeState
 m_limitedcapture_workaround
 m_lookAtSpot
 m_lookupFilename
@@ -32239,7 +32211,6 @@ m_maxInterval
 m_minFalloff
 m_minInterval
 m_modelIndex
-m_mouseaccel1
 m_mouseaccel2
 m_mousespeed
 m_mutex
@@ -32430,6 +32401,7 @@ m_nPrecipType
 m_nPrevSequence
 m_nRPM
 m_nRadius
+m_nRandomSeed
 m_nRandomization
 m_nRedActiveXPos
 m_nRedScore
@@ -32752,7 +32724,6 @@ m_vecOrigin[0]
 m_vecOrigin[1]
 m_vecOrigin[2]
 m_vecPlayerMountPositionBottom
-m_vecPlayerMountPositionTop
 m_vecPoints
 m_vecPoints[0]
 m_vecPos
@@ -33040,6 +33011,7 @@ mbstowcs
 mbstowcs@GLIBC_2.2.5
 mean
 medal_clicked
+medal_column_width
 medal_spacer_width
 medals_help
 media
@@ -33092,6 +33064,7 @@ memcpy_s: buffer overflow
 memmove
 memmove@GLIBC_2.2.5
 memmove_s: buffer overflow
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 menu_
@@ -33120,6 +33093,7 @@ merging_key_field
 message
 message $0
 message_set_wire_format
+messagelist.cpp
 messagemode
 messagemode2
 messagemode3
@@ -33318,6 +33292,7 @@ models/effects/bday_gib04.mdl
 models/effects/invulnfx_blue.vmt
 models/effects/invulnfx_red.vmt
 models/effects/resist_shield/resist_shield.mdl
+models/empty.mdl
 models/error.mdl
 models/flag/briefcase.mdl
 models/flag/ticket_case.mdl
@@ -33543,6 +33518,7 @@ msg_fallback
 msg_type
 msgpool_hard_limit
 msgpool_soft_limit
+msgprotobuf.cpp
 msgs
 msgtype
 mtlName
@@ -33696,6 +33672,7 @@ n?yww?
 nBuyBacks
 nCreditsAcquired
 nCreditsBonus
+nCreditsDropped
 nEntityIndex
 nNumBones
 nObjects
@@ -33869,7 +33846,6 @@ numlikes
 numsettings
 numsilver
 o@11IMoveHelper
-o@m_bUseHitboxesForRenderBox
 o\n\nradio_freq
 obj_attachment_sapper
 obj_minisentry
@@ -33986,6 +33962,7 @@ origin
 original
 original_item_id
 original_party_id
+originx
 originy
 originz
 os_type
@@ -34049,9 +34026,8 @@ owner_id
 ownerid
 ownername
 p09Y
-p?CTFParticlePanel
-p?m_flFadeOutStart
-pBcritical_pipe_blue
+p?CCasualCriteriaPanel
+pBDT_TFWeaponInvis
 pWorldObject
 package
 package $0;\n\n
@@ -34119,7 +34095,6 @@ particle/particle_noisesphere
 particle/particle_smokegrenade
 particle/particle_smokegrenade%d
 particle/particle_smokegrenade1
-particle/particle_sphere
 particle/particledefault
 particle/rain
 particle/screenspace_fog
@@ -34142,9 +34117,12 @@ particle_suffix
 particle_use_head_clicked
 particle_xpos
 particle_ypos
+particlemgr.cpp
 particles to map from start to end
+particles.cpp
 particles/particles_manifest.txt
 particlesPerDimension
+particles_new.cpp
 partner_accounts
 party_%llu
 party_criteria_changed
@@ -34162,7 +34140,6 @@ pass_
 pass_ball_blocked
 pass_ball_stolen
 pass_free
-pass_get
 pass_pass_caught
 pass_score
 passedresult
@@ -34191,6 +34168,7 @@ payload_race
 payload_red
 pctChance
 pd_atom_smash
+pd_circus
 pd_cursed_cove_event
 pd_dispenser
 pd_farmageddon
@@ -34246,6 +34224,7 @@ phys_pushscale
 phys_swap
 physdamagescale
 physgun_interactions
+physics.cpp
 physicsmode
 pick_image
 pickup_particle
@@ -34268,6 +34247,7 @@ pixelshigh
 pixelswide
 pixelvis_debug
 pkgitem
+pl(%i) cmd(%i) hash(%i) inst(%i) ack(%s)
 pl_PL
 pl_badwater
 pl_barnblitz
@@ -34352,7 +34332,6 @@ player_condition
 player_connect_client
 player_criteria
 player_currency_changed
-player_damage_dodged
 player_damaged
 player_death
 player_destroyed_pipebomb
@@ -34362,6 +34341,7 @@ player_disguise
 player_distance
 player_entindex
 player_extinguished
+player_font
 player_healedbymedic
 player_healedmediccall
 player_healonhit
@@ -34523,6 +34503,7 @@ prec_
 pred error %6.3f units (%6.3f %6.3f %6.3f)
 predicted
 predicted_experience
+prediction.cpp
 prefab
 prefabs
 preloadDataSize
@@ -34571,6 +34552,7 @@ printname
 private
 proc/icon/item%d_id%lld%lld_w%d_h%d
 proc/icon/mdl_%s_body%d_skin%d_w%d_h%d
+procedural_chamber
 profile
 progress_bar
 progress_bar_blu
@@ -34598,7 +34580,6 @@ projectile_flame_rocket
 projectile_flare
 projectile_grapplinghook
 projectile_healing_bolt
-projectile_none
 projectile_penetration
 projectile_pipe
 projectile_pipe_remote
@@ -34748,6 +34729,7 @@ quaternion differs (net %f %f %f %f - pred %f %f %f %f) delta(%f %f %f %f)\n
 quaternion[] differs (1st diff) (net %f %f %f %f - pred %f %f %f %f) delta(%f %f %f %f)\n
 quaternion_array
 quest loaner id hi
+quest loaner id low
 quest_attrib_index
 quest_def_index
 quest_defindex
@@ -34777,7 +34759,8 @@ quick_equip_bottle
 quickplay_
 quickplay_%d
 quit\n
-r6CStorePreviewClassIcon
+r6CTestItemBotControls
+r@ffffff
 r_3dsky
 r_AirboatViewDampenDamp
 r_AirboatViewDampenFreq
@@ -34961,6 +34944,7 @@ radius_random_exponent
 radius_scale
 radius_start_scale
 ragdoll %d
+ragdoll.cpp
 ragdoll_sleepaftertime
 ragdollconstraint
 ragdolls: %.2f MB
@@ -35120,6 +35104,7 @@ renderers
 rendernow
 rendernow_delay
 rendertime
+renderutils.cpp
 repeated
 repeated_index
 replacement_plural
@@ -35128,6 +35113,7 @@ replay/replay_%s%s
 replay/replay_balloon_arrow_left
 replay/replay_balloon_arrow_right
 replay/replay_camera_%s%s
+replay/replayrenderer.cpp
 replay/thumbnails/%s.vtf
 replayVideo
 replay\cameracontrolerror.wav
@@ -35237,7 +35223,6 @@ resource/ClientScheme.res
 resource/LoadingDiscPanel.res
 resource/PDAControlPanelScheme.res
 resource/SlideshowDisplayScreen.res
-resource/SourceScheme.res
 resource/UI/%s
 resource/UI/AchievementNotification.res
 resource/UI/AnnotationsPanelCallout.res
@@ -35423,7 +35408,6 @@ resource/UI/disguise_menu/spy_blue.res
 resource/UI/disguise_menu/spy_red.res
 resource/UI/disguise_menu_360
 resource/UI/disguise_menu_sc
-resource/UI/econ/GenericWaitingDialog.res
 resource/UI/econ/store/v1/StoreStatusDialog.res
 resource/UI/hud_obj_dispenser.res
 resource/UI/hud_obj_sapper.res
@@ -35575,6 +35559,7 @@ restrict_width
 restriction_type
 restriction_value
 result
+resultVar
 resultstring
 resume_game
 resumecondition
@@ -35801,6 +35786,7 @@ scripts/items/mvm_upgrades.txt
 scripts/mod_textures
 scripts/mvm_level_sound_tweaks.txt
 scripts/mvm_level_sounds.txt
+scripts/objects.txt
 scripts/playerclass_%s
 scripts/playerclasses/civilian
 scripts/playerclasses/demoman
@@ -35872,6 +35858,7 @@ selectrecipe%d
 selfDroppable
 self_inherit_only
 self_mark_for_death
+selfcollisions
 sellitem
 sentry1_range
 sentry1_range_mini
@@ -35889,7 +35876,6 @@ sentrydamage_3
 sentrydamage_4
 separator_height
 separator_width
-sequence number %d too high in sheet file!!!\n
 sequence_max
 sequence_min
 sequence_number
@@ -35999,7 +35985,6 @@ shooter
 short (%i)
 short differs (net %i pred %i) diff(%i)\n
 shotgun
-should_never_see_this
 show paint description
 show_ad_text
 show_annotation
@@ -36191,6 +36176,7 @@ small car
 small_vertical_break_size
 smallcheckimage
 smokeTrail
+smoke_fog_overlay.cpp
 smoothstairs
 snack_attack
 snap %s\n
@@ -36417,7 +36403,6 @@ stars_available
 stars_to_unlock
 stars_total
 start
-start %f %f %f
 start age maximum
 start age minimum
 start control point number
@@ -36443,6 +36428,7 @@ start_fade_out_time
 start_fadeout_exponent
 start_fadeout_max
 start_fadeout_min
+start_framed
 start_radius
 start_search
 start_tall
@@ -36563,6 +36549,7 @@ steam_packages
 steam_player_group
 steam_player_group_size
 steambeta://
+steamextra/tier1/tsmultimempool.cpp
 steamid
 steamids
 steammessages.proto
@@ -36814,6 +36801,7 @@ sv_stopspeed
 sv_suppress_viewpunch
 sv_turbophysics
 sv_vote_holder_may_vote_no
+sv_vote_issue_kick_allowed
 sv_wateraccelerate
 sv_waterdist
 sv_waterfriction
@@ -36834,7 +36822,7 @@ system
 system@GLIBC_2.2.5
 t-rex
 tRNS chunk with incompatible color type
-tZ6CReplayConfirmQuitDialog
+tZ6CReplayInputPanel
 t\n\tcondition
 tabPosition
 tabheight
@@ -37030,7 +37018,21 @@ texture_scroll_rate
 texture_wear_default
 textureid
 textwindow_temp.html
+tf/c_tf_fx.cpp
+tf/c_tf_player.cpp
+tf/clientmode_tf.cpp
 tf/scripts/items/unencrypted/_quest_events.txt
+tf/tf_fx_blood.cpp
+tf/tf_fx_explosions.cpp
+tf/tf_fx_muzzleflash.cpp
+tf/tf_fx_particleeffect.cpp
+tf/tf_hud_item_progress_tracker.cpp
+tf/tf_partyclient.cpp
+tf/vgui/collection_crafting_panel.cpp
+tf/vgui/tf_casual_criteria.cpp
+tf/vgui/tf_friends_panel.cpp
+tf/vgui/tf_matchmaking_dashboard_parent_manager.cpp
+tf/vgui/tf_playermodelpanel.cpp
 tf2_casual_12v12
 tf2_icon
 tf2_icon_offset_x
@@ -37473,6 +37475,7 @@ tf_server_identity_account_id %u\n
 tf_server_identity_token "%s"\n\n
 tf_sheen_alpha_firstperson
 tf_sheen_framerate
+tf_show_all_scoreboard_elements
 tf_show_maps_details_explanation_count
 tf_show_maps_details_explanation_session
 tf_show_preset_explanation_in_class_loadout
@@ -37637,6 +37640,7 @@ tf_weapon_throwable
 tf_weapon_throwable_primary
 tf_weapon_throwable_secondary
 tf_weapon_wrench
+tf_weapon_wrench_fix
 tf_weaponbase_grenade_proj
 tf_weaponbase_melee
 tf_weaponbase_merasmus_grenade
@@ -37706,6 +37710,7 @@ time after uncloaking that the spy is prohibited from attacking
 time coordinate offset
 time noise coordinate scale
 time to sleep when not drawn
+time: %.2f
 timeOffset
 time_all_trusted
 time_banned_until
@@ -37799,6 +37804,7 @@ tournament_readystate 1
 tournament_stateupdate
 tournament_teamname %s
 tournamentstatelabel
+tow_dynamite
 towlower
 towlower@GLIBC_2.2.5
 towupper
@@ -38325,10 +38331,10 @@ vgui/backpack_jewel_paint_splatter
 vgui/black
 vgui/callout_tail
 vgui/crosshairs/%s
-vgui/hud/800corner1
-vgui/hud/800corner2
-vgui/hud/800corner3
-vgui/hud/800corner4
+vgui/hud/8x800corner1
+vgui/hud/8x800corner2
+vgui/hud/8x800corner3
+vgui/hud/8x800corner4
 vgui/hud/autoaim
 vgui/hud/icon_commentary
 vgui/hud/vote_no
@@ -38363,8 +38369,10 @@ vgui::WizardPanel
 vgui::WizardSubPanel
 vgui_cache_res_files
 vgui_controls is missing a required interface!\n
+vgui_int.cpp
 vgui_nav_lock
 vgui_nav_lock_default_button
+vgui_netgraphpanel.cpp
 vgui_screen
 vgui_screen_panel
 vguicancel
@@ -38380,6 +38388,7 @@ video/mp4
 video_entry_ids
 view angles
 view model effect
+view.cpp
 viewCount
 viewModel
 view_files
@@ -38401,6 +38410,7 @@ viewanim_save
 viewanim_test
 viewcart
 viewcombo
+viewdebug.cpp
 viewed.res
 viewer_count
 viewmode_loaner
@@ -38413,6 +38423,8 @@ viewmode_unusual
 viewmodel_fov
 viewmodel_fov_demo
 viewoffset %3.2f, %3.2f, %3.2f
+viewpostprocess.cpp
+viewrender.cpp
 views
 viewset
 viewsource
@@ -38704,6 +38716,7 @@ vo/spy_PositiveVocalization04.mp3
 vo/spy_PositiveVocalization05.mp3
 voice
 voice/icntlk_pl
+voice_ban.dt
 voice_clientdebug
 voice_duck
 voice_duck %d\n
@@ -38780,6 +38793,8 @@ vote_started
 vote_yay
 voteidx
 voteissue
+votekick
+votekickplayer
 voter_id
 votes
 voucher_count
@@ -38823,6 +38838,7 @@ vr_zoom_scope_scale
 vsh_
 vsh_distillery
 vsh_nucleus
+vsh_outburst
 vsh_skirmish
 vsh_tinyrock
 vsnprintf
@@ -38908,6 +38924,7 @@ vtable for std::bad_alloc
 vtable for std::basic_ios<wchar_t, std::char_traits<wchar_t>>
 vtable for std::basic_streambuf<wchar_t, std::char_traits<wchar_t>>
 vtex_dll
+vtf.cpp
 w\n\nServerInfo
 wade
 waiting for lock
@@ -38915,6 +38932,7 @@ waitingtoplay
 war definition %s does not have 'end_time'
 war definition %s does not have 'localized_name'
 war definition %s does not have 'start_time'
+war definition %s has invalid side index: %d
 war definition %s side %s missing side leaderboard name
 war definition %s side %s missing side localization name
 war_definitions
@@ -38926,6 +38944,7 @@ warp max
 warp min
 warp transition start time
 warp transition time (treats min/max as start/end sizes)
+warp_shield_impact
 warp_version
 was_building
 was_destruction
@@ -39019,6 +39038,7 @@ weaponscripts
 wear
 wear_level_%d
 wearable_item
+webapi_response.cpp
 wedding_ring
 weight
 weighted_strings
@@ -39048,6 +39068,7 @@ word_replacements
 work item
 workshop/upload
 workshop_file_id
+workthreadpool.cpp
 world geometry
 world time noise coordinate scale
 worldNormalX
@@ -39080,6 +39101,8 @@ xms_icicle_impact_dryice
 xms_snowburst
 xpos
 xwwwvvsrt
+y?Weapon_Hands.Push
+yDCAbuseReportDlg
 y_increment
 y_pos
 yaw %0.2f\n
@@ -39099,15 +39122,17 @@ your_wait_time
 youtube_account_name
 youtube_http_proxy
 youtube_username
+youtubeapi.cpp
 youtubeupload
 ypos
 yt:rating
 yt:statistics
-z?time: %.2f
 zT?in_graph
 zd?player/hwm
+zh_CN
 zh_TW
 zi_atoll
+zi_blazehattan
 zi_devastation_final1
 zi_murky
 zi_sanitarium
@@ -39126,6 +39151,7 @@ zz|||~zzz
 {height}
 {utuwusuwy{|
 {width}
+}CSendAudio
 }zwxwxvws
 ~z{yyxyuw~
 ~{wyxwtup

@@ -135,6 +135,7 @@
   Player died, but not in a level!!!\n
   PoolName                                   Allocated        Free   Est. Size    Hit Rate\n
   Removed Danger Sound: %d (time:%f)\n
+  Removed Sound: %d (Time:%f)\n
   Schedule cleared: %s\n
   Task: %s\n
   Total: %s\n
@@ -178,11 +179,9 @@
  AGameRulesCreation
  BackUp() can only be called after Next().
  Botkiller 
- Bstart %f %f %f
  CHANGE_TO 
  Can't back up over more bytes than were returned by the last call to Next().
  Cannot execute script because there is no available VM\n
- Cff
  Client[%d]: %s '%s':\n
  DONE, RESUME 
  DONE.
@@ -466,7 +465,7 @@
 "B\n"CMsgGC_Halloween_GrantItemResponse
 "CIf set, the player must be on one of the listed maps to get credit.
 "C\n1CMsgRequestItemPurgatory_FinalizePurchaseResponse
-"DCGunTarget
+"DCNPCSpawnDestination
 "DNumber of bonus objectives required, on top of the primary objective
 "D\n%CMsgGCRequestSubGCSessionInfoResponse
 "EInherit the values of these definitions, in order from top to bottom.
@@ -523,7 +522,7 @@
 "z\n\rMethodOptions
 "|\n(CMsgGCToGCSendAccountBannedNotifications
 #%s_chapter
-#<phys_motor %s does not have a valid axis helper, and self-destructed!\n
+#<SprayCan.Paint
 #@DT_TEWorldDecal
 #Accept_All_Messages
 #Cannot_Be_Spectator
@@ -997,7 +996,6 @@ $0$1$2 $3 = $4
 $0enum $1 {\n
 $0option $1;\n
 $0rpc $1(.$2) returns (.$3)
-$@CCasualCriteriaHelper: Attempting to set map %s as selected, but not in any valid game modes!\n
 $LINUX
 $OSX
 $POSIX
@@ -1019,7 +1017,6 @@ $crackmaterial
 $gender
 $model
 $no_fullbright
-$tGTeamNumber: %d
 $var1
 $var2
 $var3
@@ -1220,7 +1217,6 @@ $var3
 %s : %8.2f:  finished\n
 %s : %8.2f:  ignored %s\n
 %s : %8.2f:  start %s\n
-%s : %8.2f: MOVETO canceled but actor %s not at goal\n
 %s : %8.2f: waiting for actor %s to complete MOVETO but actor not in SCHED_SCENE_GENERIC\n
 %s : %s : %s -- %s "%s"
 %s : Automatically canceling playback\n
@@ -1258,7 +1254,6 @@ $var3
 %s couldn't create ScriptScope!\n
 %s current org: %f %f
 %s directly referenced wave %s (should use game_sounds.txt system instead)\n
-%s doesn't like %s\n\n
 %s doing %s with initiator %s.\n
 %s encoding %s %d format %s %d %s\n
 %s equipped with %s, proficiency is %s\n
@@ -1292,8 +1287,8 @@ $var3
 %s playing CChoreoEvent::SEQUENCE but AI has forced them to do something different\n
 %s put to sleep while in Scripted state!\n
 %s received AE_NPC_HURT_INTERACTION_PARTNER anim event, but it's not interacting with anything.\n
+%s removed itself!\n
 %s repositioned tag: %s : %.3f -> %.3f (%s:%s:%s)\n
-%s set to unnamed schedule!\n
 %s specified '%s' as its first path, but %s doesn't exist
 %s specified '%s' as its first path, but %s is a %s
 %s specified '%s' as its group, but %s is a %s
@@ -1758,7 +1753,7 @@ $var3
 (hInflictor, hAttacker, hWeapon, vecDamageForce, vecDamagePosition, flDamage, nDamageType, nCustomDamageType)
 (id, value) Sets a pose parameter value
 (invalid)
-(knNcable/cable.vmt
+(knN
 (m_nOccluderIndex
 (merge 
 (no conditions)
@@ -2013,6 +2008,8 @@ $var3
 ...done forcing dynamic link neighbors. %f seconds\n
 ...done initializing node neighbors. %f seconds\n
 ...done initializing node positions. %f seconds\n
+../../common/crypto.cpp
+../../public/bone_setup.cpp
 ../HUD/coin_halloween2015_bronze
 ../HUD/coin_halloween2015_gold
 ../HUD/coin_halloween2015_gravel
@@ -2039,6 +2036,35 @@ $var3
 ../hud/ico_powerup_refill_ammo_red
 ../hud/ico_powerup_ubercharge_red
 ../hud/objectives_flagpanel_carried
+../shared/Multiplayer/multiplayer_animstate.cpp
+../shared/SoundEmitterSystem.cpp
+../shared/achievementmgr.cpp
+../shared/animation.cpp
+../shared/base_playeranimstate.cpp
+../shared/basecombatweapon_shared.cpp
+../shared/baseentity_shared.cpp
+../shared/baseplayer_shared.cpp
+../shared/econ/attribute_manager.cpp
+../shared/econ/econ_item.cpp
+../shared/econ/econ_item_inventory.cpp
+../shared/econ/econ_item_schema.cpp
+../shared/econ/econ_item_view.cpp
+../shared/econ/econ_quests.cpp
+../shared/gamemovement.cpp
+../shared/gamerules.cpp
+../shared/physics_main_shared.cpp
+../shared/props_shared.cpp
+../shared/ragdoll_shared.cpp
+../shared/soundenvelope.cpp
+../shared/tf/tf_flame.cpp
+../shared/tf/tf_lobby_shared.cpp
+../shared/tf/tf_party.cpp
+../shared/tf/tf_playeranimstate.cpp
+../shared/tf/tf_point_manager.cpp
+../shared/tf/tf_proto_script_obj_def.cpp
+../shared/tf/tf_weapon_flamethrower.cpp
+../shared/tf/tf_weapon_jar_gas.cpp
+../shared/tf/tf_weaponbase.cpp
 ../vgui/achievements/tf_soldier_kill_spy_killer
 ./google/protobuf/repeated_field.h
 ./google/protobuf/stubs/common.h
@@ -2184,7 +2210,6 @@ $var3
 .\n*k_ItemPurgatoryResponse_Finalize_Succeeded
 .\n\vunlock_node
 .dummy
-.eBa\v6;5
 .foo = value".
 .google.protobuf.EnumOptions"l\n
 .google.protobuf.FieldOptions
@@ -2218,128 +2243,22 @@ $var3
 /\n\nEGCItemMsg
 /\n\nget_params
 /cfg/%s
-/data/src/common/crypto.cpp
 /data/src/game/server/../server/NextBot/Path/NextBotPath.h
-/data/src/game/server/NextBot/NextBot.cpp
 /data/src/game/server/NextBot/NextBotBehavior.h
-/data/src/game/server/NextBot/NextBotGroundLocomotion.cpp
-/data/src/game/server/NextBot/NextBotInterface.cpp
-/data/src/game/server/NextBot/NextBotLocomotionInterface.cpp
 /data/src/game/server/NextBot/Path/NextBotChasePath.h
 /data/src/game/server/NextBot/Path/NextBotPath.h
-/data/src/game/server/NextBot/Path/NextBotPathFollow.cpp
 /data/src/game/server/NextBot/Player/NextBotPlayer.h
-/data/src/game/server/NextBot/Player/NextBotPlayerLocomotion.cpp
-/data/src/game/server/ai_basenpc.cpp
-/data/src/game/server/ai_basenpc_schedule.cpp
-/data/src/game/server/ai_behavior_assault.cpp
-/data/src/game/server/ai_behavior_standoff.cpp
-/data/src/game/server/ai_dynamiclink.cpp
-/data/src/game/server/ai_networkmanager.cpp
-/data/src/game/server/baseanimating.cpp
-/data/src/game/server/basecombatcharacter.cpp
-/data/src/game/server/baseentity.cpp
-/data/src/game/server/baseflex.cpp
-/data/src/game/server/cbase.cpp
-/data/src/game/server/entitylist.cpp
-/data/src/game/server/fire.cpp
-/data/src/game/server/gameinterface.cpp
-/data/src/game/server/generated_proto_tf/base_gcmessages.pb.cc
-/data/src/game/server/generated_proto_tf/econ_gcmessages.pb.cc
-/data/src/game/server/generated_proto_tf/gcsystemmsgs.pb.cc
-/data/src/game/server/generated_proto_tf/steammessages.pb.cc
-/data/src/game/server/generated_proto_tf/tf_gcmessages.pb.cc
-/data/src/game/server/generated_proto_tf/tf_proto_def_messages.pb.cc
-/data/src/game/server/mapentities.cpp
-/data/src/game/server/nav_area.cpp
-/data/src/game/server/nav_edit.cpp
-/data/src/game/server/nav_mesh.cpp
 /data/src/game/server/nav_pathfind.h
-/data/src/game/server/physics.cpp
-/data/src/game/server/physics_main.cpp
-/data/src/game/server/player.cpp
-/data/src/game/server/player_command.cpp
-/data/src/game/server/player_lagcompensation.cpp
-/data/src/game/server/playerlocaldata.cpp
-/data/src/game/server/sceneentity.cpp
-/data/src/game/server/tf/bot/behavior/scenario/capture_point/tf_bot_capture_point.cpp
-/data/src/game/server/tf/bot/behavior/scenario/capture_point/tf_bot_defend_point.cpp
-/data/src/game/server/tf/bot/behavior/scenario/payload/tf_bot_payload_block.cpp
-/data/src/game/server/tf/bot/behavior/scenario/payload/tf_bot_payload_guard.cpp
-/data/src/game/server/tf/bot/behavior/scenario/payload/tf_bot_payload_push.cpp
-/data/src/game/server/tf/bot/behavior/sniper/tf_bot_sniper_attack.cpp
-/data/src/game/server/tf/bot/behavior/spy/tf_bot_spy_leave_spawn_room.cpp
-/data/src/game/server/tf/bot/behavior/tf_bot_behavior.cpp
-/data/src/game/server/tf/bot/behavior/tf_bot_get_ammo.cpp
-/data/src/game/server/tf/bot/behavior/tf_bot_get_health.cpp
-/data/src/game/server/tf/bot/behavior/tf_bot_retreat_to_cover.cpp
-/data/src/game/server/tf/bot/tf_bot.cpp
 /data/src/game/server/tf/bot/tf_bot.h
-/data/src/game/server/tf/bot/tf_bot_vision.cpp
-/data/src/game/server/tf/nav_mesh/tf_nav_mesh.cpp
-/data/src/game/server/tf/nav_mesh/tf_path_follower.cpp
-/data/src/game/server/tf/player_vs_environment/tf_mann_vs_machine_logic.cpp
-/data/src/game/server/tf/player_vs_environment/tf_population_manager.cpp
-/data/src/game/server/tf/player_vs_environment/tf_populator_spawners.cpp
-/data/src/game/server/tf/player_vs_environment/tf_populators.cpp
-/data/src/game/server/tf/tf_client.cpp
-/data/src/game/server/tf/tf_gc_server.cpp
-/data/src/game/server/tf/tf_player.cpp
-/data/src/game/server/timedeventmgr.cpp
-/data/src/game/server/util.cpp
-/data/src/game/shared/Multiplayer/multiplayer_animstate.cpp
 /data/src/game/shared/SharedFunctorUtils.h
-/data/src/game/shared/SoundEmitterSystem.cpp
-/data/src/game/shared/achievementmgr.cpp
-/data/src/game/shared/animation.cpp
-/data/src/game/shared/base_playeranimstate.cpp
-/data/src/game/shared/basecombatweapon_shared.cpp
-/data/src/game/shared/baseentity_shared.cpp
-/data/src/game/shared/baseplayer_shared.cpp
-/data/src/game/shared/econ/attribute_manager.cpp
 /data/src/game/shared/econ/attribute_manager.h
-/data/src/game/shared/econ/econ_item.cpp
-/data/src/game/shared/econ/econ_item_inventory.cpp
-/data/src/game/shared/econ/econ_item_schema.cpp
-/data/src/game/shared/econ/econ_item_view.cpp
-/data/src/game/shared/econ/econ_quests.cpp
-/data/src/game/shared/gamemovement.cpp
-/data/src/game/shared/gamerules.cpp
-/data/src/game/shared/physics_main_shared.cpp
-/data/src/game/shared/props_shared.cpp
-/data/src/game/shared/ragdoll_shared.cpp
-/data/src/game/shared/soundenvelope.cpp
-/data/src/game/shared/tf/tf_flame.cpp
-/data/src/game/shared/tf/tf_lobby_shared.cpp
-/data/src/game/shared/tf/tf_party.cpp
-/data/src/game/shared/tf/tf_playeranimstate.cpp
-/data/src/game/shared/tf/tf_point_manager.cpp
-/data/src/game/shared/tf/tf_proto_script_obj_def.cpp
 /data/src/game/shared/tf/tf_proto_script_obj_def.h
-/data/src/game/shared/tf/tf_weapon_flamethrower.cpp
-/data/src/game/shared/tf/tf_weapon_jar_gas.cpp
-/data/src/game/shared/tf/tf_weaponbase.cpp
-/data/src/gcsdk/gcclient.cpp
-/data/src/gcsdk/gcclient_sharedobjectcache.cpp
-/data/src/gcsdk/gclogger.cpp
-/data/src/gcsdk/generated_proto/gcsdk_gcmessages.pb.cc
-/data/src/gcsdk/job.cpp
-/data/src/gcsdk/jobmgr.cpp
-/data/src/gcsdk/messagelist.cpp
-/data/src/gcsdk/msgprotobuf.cpp
 /data/src/gcsdk/steamextra/tier1/tsmempool.h
-/data/src/gcsdk/steamextra/tier1/tsmultimempool.cpp
-/data/src/gcsdk/workthreadpool.cpp
-/data/src/particles/particles.cpp
-/data/src/public/bone_setup.cpp
 /data/src/public/gcsdk/msgprotobuf.h
 /data/src/public/tier0/tslist.h
 /data/src/public/tier1/UtlSortVector.h
 /data/src/public/vstdlib/jobthread.h
 /data/src/thirdparty/protobuf-2.6.1/src/google/protobuf/repeated_field.h
-/data/src/tier1/KeyValues.cpp
-/data/src/tier1/datamanager.cpp
-/data/src/tier1/mempool.cpp
 0 - players are not allowed to switch weapons while taunting, 1 - players can switch weapons at the start of a taunt (old bug behavior), 2 - players can switch weapons at any time during a taunt.
 0 0 0 30
 0.0001
@@ -3063,6 +2982,7 @@ $var3
 12CRevertSaved
 12CRobotPatrol
 12CRopePhysicsILi10EE
+12CRopePhysicsILi512EE
 12CSceneEntity
 12CServerTools
 12CSpellPickup
@@ -4169,6 +4089,7 @@ $var3
 14CTFFlameRocket
 14CTFGenericBomb
 14CTFLobbyShared
+14CTFPlayerClass
 14CTFPumpkinBomb
 14CTFShotgun_HWG
 14CTFSniperRifle
@@ -5269,7 +5190,6 @@ $var3
 1998
 1999
 19CAI_AssaultBehavior
-19CAI_BaseNPCFlyerNew
 19CAI_ChangeHintGroup
 19CAI_DefMovementSink
 19CAI_LeadGoal_Weapon
@@ -5277,7 +5197,6 @@ $var3
 19CBaseGrenadeContact
 19CBaseParticleEntity
 19CBulletsTraceFilter
-19CCombatCharVisCache
 19CCurrencyPackCustom
 19CCurrencyPackMedium
 19CDecalEmitterSystem
@@ -5553,7 +5472,6 @@ $var3
 20CTFObjectiveResource
 20CTFPEPBrawlerBlaster
 20CTFParachute_Primary
-20CTFPlayerClassShared
 20CTFProjectile_JarGas
 20CTFProjectile_Rocket
 20CTFTeamQuestModifier
@@ -6238,6 +6156,7 @@ $var3
 2\r.EQuestPoints
 2\v.TF_GC_TEAM
 2\v.TF_GC_TEAM:
+3%s set to unnamed schedule!\n
 30.0f
 300.0f
 300.f
@@ -6359,7 +6278,6 @@ $var3
 33333?
 333?
 333?333?
-333@
 33750
 33CAttribute_DynamicRecipeComponent
 33CBroadcastNonOwnerRecipientFilter
@@ -6565,12 +6483,11 @@ $var3
 49CMsgAMGetUserGameStatsResponse_Achievement_Blocks
 49CMsgGC_GameServer_ListResponse_GameServerIdentity
 49CMsgRequestItemPurgatory_FinalizePurchaseResponse
-4@  Removed Sound: %d (Time:%f)\n
-4Ba\v
+4@CSoundEmitterSystem
 4Bentryboxes
 4CGib
 4CSun
-4Dm_iClass
+4D20CTFPlayerClassShared
 4Path
 4\n/k_EGCMsgTerminateGamePersonalDataEntriesRequest
 4\n/k_EMsgGC_Halloween_GrantItemResponse_DEPRECATED
@@ -6584,6 +6501,7 @@ $var3
 4\n\rwinger_pistol
 4\n\vPersonaName
 4fff>fff>fff>fff>
+4player_destroyed_pipebomb
 4vC`c
 5000
 500000
@@ -6596,7 +6514,6 @@ $var3
 56483
 58CMsgNotificationOfSuspiciousActivity_MultipleGameInstances
 59CMsgGC_DailyCompetitiveStatsRollup_Response_RankBucketEntry
-5?Team Fortress
 5AC635D8AA3A93E7B3EBBD55769886BC651D06B0CC53B0F63BCE3C3E27D2604B
 5CBeam
 5CFire
@@ -6616,6 +6533,7 @@ $var3
 5\n1k_ItemPurgatoryResponse_Refund_Failed_NexonWebAPI
 5\n\fgrant_reason
 5\n\vnested_type
+5m_iCurrentTube
 6#TF_Gas
 60.0
 6000
@@ -6742,6 +6660,7 @@ $var3
 8CTFSword
 8CUserCmd
 8CWarData
+8Constant: %3.2f
 8IEffects
 8INextBot
 8IRestore
@@ -6858,9 +6777,11 @@ $var3
 :\n6k_ItemPurgatoryResponse_Refund_Failed_CouldNotFindItem
 :\n\fis_war_match
 :\n\nCMsgUpdate
+:bot_npc_decoy
 ;\n6k_EMsgGC_GameServer_UseServerModificationItem_Response
 ;\n\fclasses_vars
 ;\n\vcombine_add
+;effects/stun
 ;models/brokenglass_piece.mdl
 <!-- DMXVersion
 </script>
@@ -6869,6 +6790,8 @@ $var3
 <<illegal>>
 <<invalid>>
 <<null entity>>
+<BigShot
+<CPasstimeBallSpawn
 <NULL>
 <UNKNOWN STATE>
 <\n8ServerMatchmakingState_ACTIVE_MATCH_REQUESTING_LATE_JOIN
@@ -6880,101 +6803,92 @@ $var3
 <bot id> <command string...>.  Sends specified command on behalf of specified bot
 <img src="
 <logical entity>
+<m_vecAngles[0]
 <no file>
 <null>
 <physfollower_t
 <pre>
 <self>
 <unnamed>
-=%3.2f: NextBotGroundLocomotion::GetBot()->OnLandOnGround\n
-=333?
 ============================================\n
 ========================================\n
-=DT_TFItem
-=G@V\Jfunc_breakable_surf
+=CTFPointManager
+=G@V\Jclears debug overlays
 =General.StopBurning
-=Roam
+=NextBot/NextBotInterface.cpp
 =\n5matchmaking_last_comp_excessive_reports_auto_ban_time
 =\n9k_ItemPurgatoryResponse_Finalize_Failed_CouldNotFindItems
 =\n\rapply_sticker
+=a\v6C
 =fff>
-=fff?
+=nb_player_stop
 =sequence number %d too high in sheet file!!!\n
 >%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f
->/data/src/game/server/NextBot/Path/NextBotPath.cpp
->333333
 >8SendProp
->CAI_Path
+>@ffffff
+>CAI_SentenceBase
 >CBaseFire
->CPhysicsHook
->Soldier.Statue
->Test_CreateEntity
 >\n\nsale_price
->player_destroyed_pipebomb
+>handle_test
+>pda_panel_spy_invis_pocket
 ?&UjC
-?12CRopePhysicsILi512EE
 ?333333
 ?33s?
 ?456789:;<=
 ?<unconnected>
 ???AI_Response bogus index
 ???\f???????\n???\r?\t?\v
-?ApproachObject
-?Bad location input for catapult!\n
 ?CAI_MoveAndShootOverlay
 ?CAnimationLayer
 ?CAreaPortal
-?CGameRules
-?CInfoCameraLink
-?COND_NONE
-?CPlayerDestructionDispenser
-?CTFObjectiveResource
+?CPhysicsHook
+?CTFBotActionPoint
 ?Catmull-Rom Spline
+?Clear memory of server side hints displayed to the player.
+?DT_BaseObjectUpgrade
+?DT_TETFBlood
 ?DT_TFWeaponBaseMelee
 ?DT_TFWeaponBonesaw
-?ERROR: too many nodes in map, deleting last node.\n
 ?Eligible
-?Halloween.HeadlessBossDying
 ?InvertibleRSAFunction: computational error during private key operation
-?Lead
+?LOADOUT_POSITION_INVALID
 ?Looking forward while jumping a gap
 ?Obstructing nav
-?SNDLVL_
 ?TASK_INVALID
 ?TargetCDAudio - Track %d out of range\n
-?Teamplay
-?TeslaHitboxes
+?UUUUUUU@19CCombatCharVisCache
+?WeaponGrapplingHook.Shoot
 ?Weapon_Slap.OpenHand
+?[%8.3f] hitch on %s:%s:%d:%d\n
 ?\n7matchmaking_last_casual_excessive_reports_auto_ban_time
 ?\n;k_ItemPurgatoryResponse_Finalize_Failed_ItemsNotInPurgatory
-?drg_cowmangler_muzzleflash_chargeup
+?body_pitch
 ?ff&?ff&?ff&?
 ?fffff
 ?ffffff
-?fixed_shot_pattern
 ?functionName
-?game_player_equip
 ?m_bChargedShot
-?mod_minigun_can_holster_while_spinning
-?pda_panel_spy_invis_pocket
-?sprites/light_glow02_noz.vmt
-?vban
+?m_iDeflected
+?m_nPanelName
+?models/
 @%d areas chopped into %d\n
-@333?333?
-@@14CTFPlayerClass
-@Bmerasmus_dazed_explosion
+@%s doesn't like %s\n\n
+@@mvm_wave_complete
+@CGameRules
 @Fear
 @NEFl
-@NextBot tickrate changed from %d (%.3fms) to %d (%.3fms)\n
-@OCEntityParticleTrail
-@This should not happen!
-@[%8.3f] hitch on %s:%s:%d:%d\n
+@NavEntMoveTo
+@OCBaseEntityList::AddNonNetworkableEntity: no free slots!\n
+@Scorch
+@TacticalMonitor
 @\n instance_def_type_quest_map_node
 @\n\vping_status
 @\n\vside_scores
 @m_SoundName
-@model_hwm
+@models/buildables/dispenser_lvl2.mdl
 @models/buildables/sentry1_blueprint.mdl
+@player_escort_score
+@rd_rules_state_changed
 A Hiding Spot is off of the Nav Mesh at setpos %.0f %.0f %.0f\n
 A Medic is healing me
 A Professional With Standards
@@ -6994,7 +6908,6 @@ AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA70330870553E5C414CA92619
 AADD9DB8DBE9C48B3FD4E6AE33C9FC07CB308DB3B3C9D20ED6639CCA703308717D4D9B009BC66842AECDA12AE6A380E62881FF2F2D82C68528AA6056583A48F3
 ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
 ABCDEFGHIJKMNPQRSTUVWXYZ23456789
-ACFourWheelServerVehicle
 ACHIEVED
 ACT_180_LEFT
 ACT_180_RIGHT
@@ -8945,11 +8858,9 @@ ACT_WALK_STEALTH
 ACT_WALK_STEALTH_PISTOL
 ACT_WALK_STIMULATED
 ACT_WALK_SUITCASE
-AConstant: %3.2f
 ADDED %s (%s) to transition.\n
 ADDED DEPENDANCY: %s (%s)\n
 ADDED.\n
-ADEF_TYPE_PAINTKIT_VARIABLES
 AE_AMMOCRATE_PICKUP_AMMO
 AE_CLIENT_EFFECT_ATTACH
 AE_CL_BODYGROUP_SET_VALUE
@@ -9050,9 +8961,11 @@ ALWAYS_CRIT
 ALWAYS_FIRE_WEAPON
 ANIMATION
 AOE Attack!
+AParticleTracer
+APhysBlockHeader_t
 AR2AltFire
 ARROW_REMOVE_THINK
-ATFMapsWorkshop
+ARoam
 AUTO_JUMP
 AVOID 
 AVelocity: %.2f %.2f %.2f
@@ -9197,6 +9110,7 @@ AirChargeOnly
 AirCtrlSupressionTime
 Airblast Aim
 Airblast vertical push multiplier from attributes/vulnerabilities ( %f -> %f )
+Ais commodity
 AlgorithmParametersBase: parameter "
 All achievements reset.\n
 All incoming damage to a blue player is multiplied by this value
@@ -9426,6 +9340,7 @@ ApplyPunchImpulseX
 Applying new item schema, version %08X\n
 Approach ascending ladder
 Approach descending ladder
+ApproachObject
 ApproachTarget
 Archimedes!
 Are players allowed to refund their upgrades?
@@ -9479,6 +9394,7 @@ ArraySink: missing OutputBuffer argument
 Arrow alive for %f3.2\n seconds
 ArrowLight
 Ascend
+Asettled long enough
 Ask whether the main sequence is done playing
 Asking FirstTimeSeen for enemy that's not in my memory!!\n
 Asking HasFreeKnowledgeOf for enemy that's not in my memory!!\n
@@ -9581,7 +9497,7 @@ B3312FA7E23EE7E4988E056BE3F82D19181D9C6EFE8141120314088F5013875AC656398D8A2ED19D
 B4050A850C04B3ABF54132565044B0B7D7BFD8BA270B39432355FFB4
 B4E134D3FB59EB8BAB57274904664D5AF50388BA
 BADFUNCTIONPOINTER
-BDT_TFWearableCampaignItem
+BCan't find soundscape: %s\n
 BECOME_SPECTATOR_ON_DEATH
 BEHAVIOR
 BER decode error
@@ -9611,7 +9527,6 @@ BSP Decal
 BYieldingRunGCJob
 B\n\nicon_image
 B\v\n\toperation"5\n
-Ba\v6C
 BackUp() can only be called after a successful Next().
 BackgroundBModel
 Backing off
@@ -9628,6 +9543,7 @@ Bad activity
 Bad field in entity!!\n
 Bad field type\n
 Bad format string in CLocalizeStringTable::ConstructString\n
+Bad location input for catapult!\n
 Bad node type!\n
 Bad position to Target
 Bad pstudiohdr in GetSequenceLinearMotion()!\n
@@ -9708,7 +9624,6 @@ BestEnemy() {\n
 Big Head
 Big Mean Muther Hubbard
 BigNet
-BigShot
 BitLength
 Black Mesa
 BlastImmune
@@ -9761,7 +9676,6 @@ BlueTeleports
 BlueWin
 BlueWins
 Bm_nEntity
-Bmodels/items/target_duck.mdl
 Body facing
 Bodygroup!\n
 Bogus constraint %s (attaches %s to ENTITY NOT FOUND:%s)\n
@@ -9912,6 +9826,7 @@ ByteQueue: size specified for UndoLazyPut is too large
 C14CAI_Pathfinder
 C302F41D932A36CDA7A3462F9E9E916B5BE8F1029AC4ACC1
 C302F41D932A36CDA7A3463093D18DB78FCE476DE1A86297
+C333@
 CAISound
 CAI_AccelDecay
 CAI_AllySpeechManager
@@ -9954,6 +9869,7 @@ CAI_Navigator
 CAI_Navigator::ClearGoal()\n
 CAI_Navigator::StopMoving( %d )\n
 CAI_NetworkManager
+CAI_Path
 CAI_PlayerAlly
 CAI_ProxTester
 CAI_RadialLinkController
@@ -10045,7 +9961,6 @@ CBaseEntity::PhysicsTestEntityPosition
 CBaseEntity::PhysicsTryMove
 CBaseEntity::TakeDamage:  with inputInfo.GetDamageForce() == vec3_origin\n
 CBaseEntity::TakeDamage:  with inputInfo.GetDamagePosition() == vec3_origin\n
-CBaseEntityList::AddNonNetworkableEntity: no free slots!\n
 CBaseEntityOutput
 CBaseFilter
 CBaseFlex::AddSceneEvent:  event failed\n
@@ -10142,8 +10057,10 @@ CCPTimerLogicThink
 CCaptureFlag
 CCaptureFlagReturnIcon
 CCaptureZone
+CCasualCriteriaHelper: Attempting to set map %s as selected, but not in any valid game modes!\n
 CCasualCriteriaHelper: Map %s is selected, but not in any valid game modes!\n
 CChangeLevel
+CChasing victim
 CCheckClient
 CCleanupDefaultRelationShips
 CCollisionProperty
@@ -10224,6 +10141,7 @@ CEntityFlame
 CEntityListSystem
 CEntityMapData::GetNextKey: EOF without closing brace\n
 CEntityMapData::GetNextKey: closing brace without data\n
+CEntityParticleTrail
 CEntitySpawnManager
 CEntitySpawnPoint
 CEntityTouchManager::FrameUpdatePostEntityThink
@@ -10292,6 +10210,7 @@ CFlexCycler
 CFlexSceneFileManager
 CFlextalkActor
 CFogController
+CFourWheelServerVehicle
 CFourWheelVehiclePhysics
 CFuncAreaPortalBase
 CFuncAreaPortalWindow
@@ -10321,7 +10240,6 @@ CFuncRespawnRoomVisualizer
 CFuncRotating
 CFuncSmokeVolume
 CFuncSuggestedBuild
-CFuncTankTrain
 CFuncTrackAuto
 CFuncTrackChange
 CFuncTrackTrain
@@ -10410,6 +10328,7 @@ CGib
 CGibShooter
 CGlobalEntityList::CleanupDeleteList
 CGlobalState
+CGunTarget
 CHANGE LEVEL: %s %s\n
 CHANGE LEVEL: %s\n
 CHANGE_TO
@@ -10479,12 +10398,12 @@ CHECK failed: type == WireFormatLite::TYPE_MESSAGE || type == WireFormatLite::TY
 CHECK failed: uninterpreted_options_field != NULL: 
 CHECK failed: value.size() <= kint32max: 
 CHLTVDirector
-CHalloween.EyeballBossBecomeAlert
 CHalloweenSoulPack
 CHandleTest
 CHeadlessHatman
 CHightower_TeleportVortex
 CIPLocationInfo
+CInfoCameraLink
 CInfoLadderDismount
 CInfoLightingRelative
 CInfoOverlayAccessor
@@ -10798,7 +10717,6 @@ CMultiPlayerAnimState::Update
 CMultiSource
 CMultiplayRules
 CNPCMaker
-CNPCSpawnDestination
 CNPC_Furniture
 CNPC_VehicleDriver
 CNavArea::ComputeAdjacentConnectionHeightChange
@@ -11008,13 +10926,11 @@ CParticleMgr::Init:  Manifest '%s' with bogus file type '%s', expecting 'file'\n
 CParticleMgr::LevelInit:  Manifest '%s' contains a particle file '%s' that's not under the particles directory. Custom particles must be placed in the particles directory.\n
 CParticleMgr::LevelInit:  Manifest '%s' with bogus file type '%s', expecting 'file'\n
 CParticleMgr::LevelInit:  Map particles manifest '%s' specifies more than %d entries.\n
-CParticlePerformanceMonitor
 CParticleSystem
 CParticleSystemMgr compiled using an old IMaterialSystem\n
 CParticleSystemMgr::DrawRenderCache
 CPassengerInfo
 CPasstimeBall
-CPasstimeBallSpawn
 CPasstimeGun
 CPathCorner
 CPathKeyFrame
@@ -11055,6 +10971,7 @@ CPhysicsSpring
 CPhysicsWind
 CPhysicsWire
 CPlasma
+CPlayerDestructionDispenser
 CPlayerLocalData
 CPlayerMove::CheckMovingGround()
 CPlayerMove::FinishCommand
@@ -11076,6 +10993,7 @@ CPointDevShotCamera
 CPointGamestatsCounter
 CPointGamestatsCounter::InputIncrement:  No stat name specified for point_gamestats_counter @%f, %f, %f [ent index %d]\n
 CPointHurt
+CPointNavInterface
 CPointPlayerMoveConstraint
 CPointPopulatorInterface
 CPointProximitySensor
@@ -11163,6 +11081,7 @@ CSOTFRatingData
 CSOTrackerManager
 CSave::WriteHeader() size parameter exceeds 'short'!\n
 CSaveRestoreBuffer::TokenHash() is COMPLETELY FULL!
+CScenarioMonitor
 CSceneEntity
 CSceneEntity %s :"%s" failed to start sequence "%s"\n
 CSceneEntity %s :"%s" unable to find gesture "%s"\n
@@ -11200,7 +11119,6 @@ CSoundControllerImp
 CSoundControllerImp::SystemUpdate
 CSoundControllerImp::SystemUpdate:processcommandlist
 CSoundControllerImp::SystemUpdate:removesounds
-CSoundEmitterSystem
 CSoundEmitterSystem:  Unknown sound level %s\n
 CSoundEmitterSystem:  Warning, unknown channel type in sounds.txt (%s)\n
 CSoundEmitterSystem:  sounds.txt entry '%s' has no waves listed under 'wave' or 'rndwave' key!!!\n
@@ -11220,6 +11138,7 @@ CSpellPickup
 CSpotlightEnd
 CSprite
 CSpriteOriented
+CSpriteTrail
 CSquadSpawner: %3.2f: <<<< Spawning Squad >>>>\n
 CSquadSpawner::Spawn
 CSteamJet
@@ -11291,7 +11210,6 @@ CTFBot
 CTFBot::AccumulateSniperSpots
 CTFBot::OnWeaponFired
 CTFBot::SetupSniperSpotAccumulation
-CTFBotActionPoint
 CTFBotCapturePoint::OnStart
 CTFBotCapturePoint::Update( repath )
 CTFBotController
@@ -11356,7 +11274,6 @@ CTFFlameRocket
 CTFFlameThrower
 CTFFlareGun
 CTFFlareGun_Revenge
-CTFForceRespawn
 CTFGCServerSystem - removing listener to old Steam ID %s\n
 CTFGCServerSystem::MvMVictory() -- no lobby, so not sending results to GC\n
 CTFGCServerSystem::UpdateConnectedPlayersAndServerInfo
@@ -11435,7 +11352,6 @@ CTFPlayerDestructionLogic
 CTFPlayerInfo
 CTFPlayerResource
 CTFPlayertPathCost::operator()
-CTFPointManager
 CTFPointWeaponMimic
 CTFPowerup
 CTFPowerupBottle
@@ -11540,13 +11456,11 @@ CTFWearableRobotArm
 CTFWearableVM
 CTFWrench
 CTSListBase: Misaligned list\n
-CTakeDamageInfo
 CTankSpawner: %3.2f: Failed to create base_boss\n
 CTankTargetChange
 CTankTrainAI
 CTargetCDAudioRep
 CTargetChangeGravity
-CTaunt finished
 CTeam
 CTeamControlPoint
 CTeamControlPointMaster
@@ -11768,7 +11682,6 @@ Can't find nav area on point
 Can't find next assault point
 Can't find rally point
 Can't find remapped item %s
-Can't find soundscape: %s\n
 Can't find spawn position for local player.
 Can't find target of train %s\n
 Can't find the world\n
@@ -11853,8 +11766,6 @@ Catmull-Rom (Norm X)
 Catmull-Rom (Norm)
 Catmull-Rom (Tangent)
 Centers the nav mesh in the world
-Cff&?
-Cff&@
 Cgesture_melee_cheer
 Change players FOV
 Change to a target popfile for MvM
@@ -11871,13 +11782,13 @@ Changed sentry target
 Changelevel to a random map in the mapcycle file
 Changes the density of air for drag computations.
 Changes's player's model
+Changing collision rules within a callback is likely to cause crashes!\n
 Chapter title: %s\n
 CharacterAttributes
 ChargeLevelDegradeThink
 ChasePath::RefreshPath
 ChasePath::Update
 Chasing down the losers
-Chasing victim
 CheapBreakModel
 Check for thinktimes all on same timestamp.
 Checking all connected players are marked connected in lobby:\n
@@ -11921,7 +11832,6 @@ Clear all watches from the game debug overlay
 Clear current focus
 Clear currently loaded bot stuck data
 Clear immobile status
-Clear memory of server side hints displayed to the player.
 Clear the current script scope for this entity
 Clear the given behavior flag(s) for this bot
 Clear the saved checkpoint
@@ -12120,6 +12030,7 @@ Creating new commit record for SObject: %s\n
 Creating objective tracker def %d for quest def %d on item %llu for user %s\n
 Creating tracker for quest %d on item %llu for user %s with %ds0 %ds1 %ds2\n
 Creation Time
+Crecalculate_holidays
 CreditToTeam
 Credits: %d\n
 CreditsMsg
@@ -12268,7 +12179,7 @@ DT_BaseEntity
 DT_BaseFlex
 DT_BaseGrenade
 DT_BaseObject
-DT_BaseObjectUpgrade
+DT_BaseParticleEntity
 DT_BasePlayer
 DT_BaseProjectile
 DT_BasePropDoor
@@ -12460,12 +12371,10 @@ DT_TESmoke
 DT_TESparks
 DT_TESprite
 DT_TESpriteSpray
-DT_TETFBlood
 DT_TETFExplosion
 DT_TETFParticleEffect
 DT_TFBaseBoss
 DT_TFBaseProjectile
-DT_TFBaseRocket
 DT_TFBotHintEngineerNest
 DT_TFCannon
 DT_TFDroppedWeapon
@@ -12479,6 +12388,7 @@ DT_TFGlow
 DT_TFHalloweenMinigame
 DT_TFHalloweenMinigame_FallingPlatforms
 DT_TFHellZap
+DT_TFItem
 DT_TFLaserPointer
 DT_TFLocalPlayerExclusive
 DT_TFLunchBox_Drink
@@ -12509,7 +12419,7 @@ DT_TFProjectile_Arrow
 DT_TFProjectile_BallOfFire
 DT_TFProjectile_Cleaver
 DT_TFProjectile_EnergyBall
-DT_TFProjectile_EnergyRing
+DT_TFProjectile_Flare
 DT_TFProjectile_GrapplingHook
 DT_TFProjectile_HealingBolt
 DT_TFProjectile_Jar
@@ -12573,6 +12483,7 @@ DT_TFWeaponBreakableSign
 DT_TFWeaponBuffItem
 DT_TFWeaponBuilder
 DT_TFWeaponCleaver
+DT_TFWeaponClub
 DT_TFWeaponDataNonLocal
 DT_TFWeaponFireAxe
 DT_TFWeaponFists
@@ -12599,6 +12510,7 @@ DT_TFWeaponStickBomb
 DT_TFWeaponThrowable
 DT_TFWeaponWrench
 DT_TFWearable
+DT_TFWearableCampaignItem
 DT_TFWearableDemoShield
 DT_TFWearableItem
 DT_TFWearableLevelableItem
@@ -12916,7 +12828,6 @@ Dormant entity %s (%s) is thinking!!\n
 Double Cross
 Download of file from cloud failed!\n
 Downward Fast
-Dpeejar_impact
 Draw a debug circle (center, rad, vRgb, a, ztest, duration)
 Draw a debug forward box (cent, min, max, forward, vRgb, a, duration)
 Draw a debug line using color vec (start, end, vRgb, a, ztest, duration)
@@ -12938,6 +12849,7 @@ DropItem() - Didn't create!\n
 DropItem() - No item name!\n
 DropRune
 Dropped flag trace started solid!\nWiggle around each axis to find a safer fit!\n
+Dsprites/bubble.vmt
 Duck.Quack
 Dump all global entities/states
 Dump all response_rules.txt and rules (requires restart)
@@ -12982,12 +12894,12 @@ E2NcUkG2
 E87579C11079F43DD824993C2CEE5ED3
 E95E4A5F737059DC60DF5991D45029409E60FC09
 E95E4A5F737059DC60DFC7AD95B3D8139515620F
-E@T\tI
 EASY
 EBotType
 ECDSA
 ECHEM
 ECON
+ECTFForceRespawn
 ECollisionGroup
 ECritType
 EDIT.ToggleAttribute
@@ -13018,7 +12930,6 @@ EDIT_SPLIT.MarkedArea
 EDIT_SPLIT.NoMarkedArea
 EDIT_TOGGLE_PLACE_MODE
 EDIT_WARP_TO_MARK
-EEngineerBuildDispenser
 EFL_BOT_FROZEN
 EFL_CHECK_UNTOUCH
 EFL_DIRTY_ABSANGVELOCITY
@@ -13078,7 +12989,7 @@ EMoveCollide
 EMoveType
 EMsg  MessageName                                         Count      %             KB      %    Avg/Msg       KBPS  Msg Saved      %       KB Saved      %\n
 EMsg  MessageName                                         Count      %          Bytes      %     MsgPS    Avg/Msg       KBPS\n
-EMvMEngineerTeleportSpawn
+EMvMEngineerBuildSentryGun
 ENABLED
 ENABLE_PATHMATCH
 ENERGY_BALL_REMOVE_THINK
@@ -13215,6 +13126,7 @@ EmitAmbientSound:  Raw wave emitted '%s' (ent %i)\n
 EmitSound:  '%s' emitted as '%s' (ent %i)\n
 EmitSound:  Raw wave emitted '%s' (ent %i)\n
 Emitsound
+Emodels/stickygib.mdl
 Emote
 Empty %s (%s) at %.2f, %.2f, %.2f\n
 Enable Medieval Mode auto-roleplaying.\n
@@ -13265,7 +13177,7 @@ Engineer.Incoming0%i
 Engineer.MVM_AutoBuildingTeleporter02
 Engineer.MVM_BattleCry07
 EngineerBuild
-EngineerBuildTeleportEntrance
+EngineerBuildDispenser
 EngineerBuilding
 EngineerMoveToBuild
 Ensure that an entity's script scope has been created
@@ -13300,6 +13212,7 @@ EnumValueOptions
 Enums must contain at least one value.
 EnvMicrophone %s specifies a non-existent speaker name: %s\n
 Epsilon
+Epsilon now %f\n
 EqualityComparisonFilter
 EquivalentTo
 Erase any previously placed walkable positions.
@@ -13333,6 +13246,7 @@ EscortFlagCarrier
 EscortSquadLeader
 EstimateLength
 Eternaween
+Etf/bot/behavior/medic/tf_bot_medic_heal.cpp
 Event
 Event %s was missing tag %s for wav %s\n
 EventChangeAttributes
@@ -13425,9 +13339,10 @@ FAILED to compile and execute script file named %s\n
 FALSE
 FATAL
 FButtons
+FCFuncTankTrain
 FCTFAutobalance
+FCTakeDamageInfo
 FCVAR_NEVER_AS_STRING
-FChanging collision rules within a callback is likely to cause crashes!\n
 FContents
 FDmgType
 FEntityEFlags
@@ -13508,6 +13423,7 @@ FSurf
 FTFBotAttributeType
 FTFNavAttributeType
 FTaunts
+FUsing legacy SetAngles.\nDo not use me! Move to SetAbsAngles or SetLocalAngles please!\n
 FX_FireBullets: LookupWeaponInfoSlot failed for weapon %s\n
 FX_FireBullets: weapon alias for ID %i not found\n
 FX_RicochetSound.Ricochet
@@ -13573,7 +13489,6 @@ Failed!
 FallbackToDCPing
 Falling back to item schema from local file.\n
 FastHexToBuffer() wants non-negative integers, not 
-Fdrg_cow_muzzleflash_charged
 Fear: Couldn't find hint node\n
 FeedbackSize
 Feel free to add support for more if you need it.
@@ -13721,6 +13636,7 @@ Follow: (%d) %s (%s)
 Follow: NULL
 Follow: No mark set\n
 Follow: NoteFailedFollow() (%d, %f)\n
+Follow: NoteSuccessfulFollow()\n
 Follow: TASK_SET_FOLLOW_TARGET_MARK\n
 Follow: Target moved\n
 Follow: Wait Point
@@ -13809,6 +13725,7 @@ FuncTrackTrain '%s' has no target.\n
 FuncTrain '%s' has no target.\n
 Further than
 G1A1F
+G@T\tJ
 GAMEEVENTSMANAGER002
 GAMEROOT
 GC is requesting us to reserve %d slots.\n
@@ -13836,8 +13753,6 @@ GCQuestStrangeEvent
 GCSQL_VERSION_BASELINE
 GCSQL_VERSION_BOOLTYPE
 GENTLE MANNE of LEISURE
-GEpsilon now %f\n
-GFollow: NoteSuccessfulFollow()\n
 GLIBCXX_3.4
 GLIBCXX_3.4.14
 GLIBCXX_3.4.18
@@ -13886,7 +13801,6 @@ GState: %s
 G\n$instance_def_type_paintkit_operation
 G\n$instance_def_type_paintkit_variables
 Ga=o
-Ga>DT_TFWeaponClub
 Game Mode Modifier
 Game paused time showing up negative (rt %f pausestart %f)\n
 Game server authentication: FAILURE!\n
@@ -14299,7 +14213,8 @@ HALLOWEEN: eyeball_escaped (max_dps %3.2f) (health %d) (level %d)\n
 HALLOWEEN: eyeball_spawn (max_health %d) (player_count %d) (level %d)\n
 HALLOWEEN: merasmus_escaped (max_dps %3.2f) (health %d) (level %d)\n
 HAS FL_FLY
-HB/data/src/game/server/NextBot/NextBotVisionInterface.cpp
+HB%3.2f: NextBotGroundLocomotion::GetBot()->OnLandOnGround\n
+HB19CAI_BaseNPCFlyerNew
 HB@T\tJ
 HCAI_GoalEntity
 HEARING
@@ -14349,6 +14264,7 @@ Had to force COND_NEW_ENEMY\n
 Hair of the Dog
 Half-Life 2
 Halloween.EyeballBossAcquiredVictim
+Halloween.EyeballBossBecomeAlert
 Halloween.EyeballBossBecomeEnraged
 Halloween.EyeballBossBigLaugh
 Halloween.EyeballBossCalmDown
@@ -14372,6 +14288,7 @@ Halloween.HeadlessBossAxeHitFlesh
 Halloween.HeadlessBossAxeHitWorld
 Halloween.HeadlessBossBoo
 Halloween.HeadlessBossDeath
+Halloween.HeadlessBossDying
 Halloween.HeadlessBossFootfalls
 Halloween.HeadlessBossLaugh
 Halloween.HeadlessBossPain
@@ -14675,9 +14592,9 @@ I've finished my leave panic sequence
 I've finished my spawn sequence
 I've fully materialized
 I've picked up the flag! Running it in...
-I/data/src/game/server/tf/bot/behavior/medic/tf_bot_medic_heal.cpp
 I333
 IEngineSoundServer003
+IEngineerBuildTeleportEntrance
 IGNORED due to being marked "Don't save".\n
 IGNORED, no across_transition flag & no globalname\n
 IGNORED, outside transition volume.\n
@@ -15823,7 +15740,7 @@ Items in Collection %s: Have a gap in rarity tiers
 ItemsGameFile
 IteratedHashBase: input data exceeds maximum allowed by hash function 
 IvanTheSpaceBiker
-JDblood_impact_backscatter
+JDduelinitiatorclass:%s,dueltargetclass:%s
 J\n\rconnect_state
 Jar.Explode
 JarCollisionThink
@@ -15852,6 +15769,7 @@ KeyHintText
 KeyPair
 KeySize
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -15894,8 +15812,8 @@ Kochanek-Bartels Late
 Kong King
 L<15CTFTankBossBody
 L=10CTFBotBody
+L>333?
 L?1001
-L?is commodity
 LABEL_OPTIONAL
 LABEL_REPEATED
 LABEL_REQUIRED
@@ -15911,7 +15829,6 @@ LEVEL DESIGN ERROR: Sprite %s with bad scale %f [0..%f]\n
 LOADOUT_POSITION_ACTION
 LOADOUT_POSITION_BUILDING
 LOADOUT_POSITION_HEAD
-LOADOUT_POSITION_INVALID
 LOADOUT_POSITION_MELEE
 LOADOUT_POSITION_MISC
 LOADOUT_POSITION_MISC2
@@ -16069,7 +15986,6 @@ MATCH_FINISHED_ABANDON
 MATCH_SUCCEEDED
 MAX_EDICTS
 MAX_PLAYERS
-MCAI_SentenceBase
 MDLCache004
 MEDIUM_HULL
 MEDIUM_TALL_HULL
@@ -16346,7 +16262,7 @@ Maximum travel distance between a bot's Sentry gun and the currently contested p
 MaximumState
 May a flag be captured?
 May not have cleaned up on NPC death\n
-MbP?teamplay_round_win
+MbP?COND_NONE
 Mb`?particle/sparkles
 MeasureThink
 Medic.AutoCallerAnnounce
@@ -16546,9 +16462,9 @@ MvM tour "%s" specified invalid difficulty '%s'
 MvM tour "%s" unable to locate mission "%s"
 MvM.SentryBusterSpin
 MvMDeployBomb
-MvMEngineerBuildSentryGun
 MvMEngineerBuildTeleportExit
 MvMEngineerIdle
+MvMEngineerTeleportSpawn
 MvMVictory
 MvM_UpgradesBegin
 MvM_UpgradesDone
@@ -17404,7 +17320,6 @@ Nav mesh cannot be mutated after load\n
 NavAreaFilter
 NavEndArea: Out of memory\n
 NavEntDestroyEntity
-NavEntMoveTo
 NavEntWait
 NavMesh Visibility List Lengths:  min = %d, avg = %d, max = %d\n
 NavPlace.db
@@ -17442,6 +17357,17 @@ Next map vote for candidate %d resulted in invalid map.\n
 Next map vote winner is candidate %d, '%s'\n
 Next: %s
 Next: -NONE-
+NextBot tickrate changed from %d (%.3fms) to %d (%.3fms)\n
+NextBot/NextBot.cpp
+NextBot/NextBotBehavior.h
+NextBot/NextBotGroundLocomotion.cpp
+NextBot/NextBotLocomotionInterface.cpp
+NextBot/NextBotVisionInterface.cpp
+NextBot/Path/NextBotChasePath.h
+NextBot/Path/NextBotPath.cpp
+NextBot/Path/NextBotPath.h
+NextBot/Path/NextBotPathFollow.cpp
+NextBot/Player/NextBotPlayerLocomotion.cpp
 NextBotCombatCharacter
 NextBotCombatCharacter::DoThink
 NextBotExpensive
@@ -17456,6 +17382,7 @@ NextLevel
 NextLevel CVAR
 Nextbot combat character
 Nil time value
+Nm_iRoundsWon
 No %s file found. May be unable to create items.\n
 No %s found.\n
 No AI Network to Use
@@ -17875,7 +17802,8 @@ Owner disguised as the player
 P11CBaseEntity
 P8?2
 P?%d queries, %d misses (%d free) suc spec = %d wasted spec=%d\n
-P@CSpriteTrail
+P@CParticlePerformanceMonitor
+PACTFObjectiveResource
 PARENT_DEFINES
 PARTICLE SYSTEM: Unable to load manifest file '%s'\n
 PARTNER_PERFECT_WORLD
@@ -17981,7 +17909,6 @@ Particle system index %d greater than zero
 Particle/Effect_Rendering
 ParticleEffectNames
 ParticleEffectStop
-ParticleTracer
 ParticleTrailEndSize
 ParticleTrailLifetime
 ParticleTrailMaterial
@@ -18059,7 +17986,6 @@ Perfect
 Performance Warning: large friction system (%d objects)!!!\n
 PeriodicSpawn
 PersonaNameReplacementToken
-PhysBlockHeader_t
 PhysObjectHeader_t
 Physics object pointer unexpectedly non-null before restore. Should be creating physics object in CreatePhysics()?\n
 Physics queue not empty, error!\n
@@ -18294,7 +18220,6 @@ PrecacheGibsForModel
 PrecacheScriptSound '%s' failed, no such sound script entry\n
 PrecacheSoundScript
 Prefab
-PrepareStickybombTrap
 Prerequisite commands me to move to an entity
 Prerequisite commands me to wait
 Prerequisite has been disabled
@@ -18370,10 +18295,9 @@ Pyro.Incoming01
 Q&A: '%s' answered the Hello from '%s'\n
 Q&A: '%s' answered the Question from '%s'\n
 Q&A: '%s' couldn't answer '%s'\n
-Q8>vgui_screen
+Q8>BaseCombatWeapon.WeaponDrop
 Q9waterripple
 QAngle: %.2f %.2f %.2f
-QBCPointNavInterface
 QUESTION_CASUAL_INQUIRY
 QUESTION_COMP_INQUIRY
 QUESTION_MAP_QUALITY
@@ -18820,7 +18744,6 @@ Robot.Collide
 Robot.Death
 Robot.Greeting
 Robot.Pain
-RobotBehavior
 Rocket attack!
 Rockets: %d / %d
 Roll Speed
@@ -19014,6 +18937,7 @@ SHA-256
 SHOVEL_SPEED_THINK
 SMALL_CENTERED_HULL
 SMELLY UNFORTUNATE
+SNDLVL_
 SNDLVL_100dB
 SNDLVL_105dB
 SNDLVL_110dB
@@ -19170,7 +19094,6 @@ SayText2
 Scale time for physics
 Scales the damage a player does while being healed with the medigun.
 Scans the maps directory and reports any missing/out-of-date navigation files.
-ScenarioMonitor
 Scene %s has %d actors, but scene entity only has %d actors\n
 Scene '%s' missing!\n
 Scene '%s' with two stop point events!\n
@@ -19181,7 +19104,6 @@ Schedule not found
 Schedule: %s (time: %.2f)\n
 ScheduledFollowPath to goal entity %s failed\nCan't execute script %s\n
 ScheduledMoveToGoalEntity to goal entity %s failed\nCan't execute script %s\n
-Scorch
 Score difference between teams before server changes maps
 Score for escorting the train, in points per second
 ScoreBlue
@@ -19623,7 +19545,6 @@ Sends a command string to all bots
 Sends a real game event to everything. Parameters are passed in a squirrel table.
 Sentry Spot
 Sentry build orientation
-Sentry built
 Sentry destroyed
 Sentry hint has NULL nav area!\n
 Sentry is safe - building a teleport exit
@@ -19821,6 +19742,7 @@ SetRepeatedString
 SetRepeatedUInt32
 SetRepeatedUInt64
 SetRequiredObserverTarget
+SetResolvePlayerCollisions
 SetRotationSpeed
 SetRoundRespawnFreezeEnabled
 SetScale
@@ -19890,7 +19812,7 @@ Setting m_flSuddenDeathTime to %f\n
 Setting sv_visiblemaxplayers to %d for MvM\n
 Setting tf_mm_servermode=0 due to sv_password\n
 Settings player %d to rematch vote state %d.\n
-Sg%s\%s
+Sgzh_CN
 ShadowCastDistThink
 Shake the screen.
 ShakeRopes
@@ -19989,6 +19911,7 @@ Sniper.Incoming0%i
 SniperAttack
 SniperLurk
 Soldier.Incoming01
+Soldier.Statue
 SolidToPlayerMovement
 Solving ragdoll self penetration! %s (%s) (%d v %d)\n
 SomeDude
@@ -20062,7 +19985,6 @@ SpliceEdit: Out of memory.\n
 SplitContext:  warning, ignoring context '%s', missing colon separator!\n
 SpotlightLength
 SpotlightWidth
-SprayCan.Paint
 Sprite Spray
 Spy.Incoming0%i
 Spy.MVM_Chuckle
@@ -20071,6 +19993,7 @@ SpyAttack
 SpyBackstab
 SpyEscape
 SpyHide
+SpyInfiltrate
 SpyLeaveSpawnRoom
 SpySap
 Sqrt2
@@ -20497,6 +20420,7 @@ TAUNT_LONG
 TAUNT_MISC_ITEM
 TAUNT_SHOW_ITEM
 TAUNT_SPECIAL
+TDff
 TEAM_ANY
 TEAM_INVALID
 TEAM_IS_NOT_OWNERS
@@ -20534,6 +20458,7 @@ TFBotSpawner: Unknown field '%s'\n
 TFBotSpawner: attribute error: '%s'\n
 TFBotSpawner: need to specify ItemName in ItemAttributes.\n
 TFDeathCallingCard
+TFMapsWorkshop
 TFMark
 TFMatchLeaveReason
 TFMatchLeaveReason_ADMIN_KICK
@@ -21351,7 +21276,6 @@ Tactical: Cover Medium
 Tactical: Enemy Disadvantage
 Tactical: Pinch
 Tactical: Spawn
-TacticalMonitor
 Tags
 Tags : 
 Take away money from a player for reasons such as ie. spending.
@@ -21377,6 +21301,7 @@ Task:
 Task: %s (#%d), 
 Task: None
 Tasks
+Taunt finished
 Taunt our victim
 Taunt.GuitarRiff
 Taunt.MedicHeroic
@@ -21394,9 +21319,13 @@ Team "RED" triggered "Intermission_Win_Limit"\n
 Team "Red" current score "%d" with "%d" players\n
 Team "Red" final score "%d" with "%d" players\n
 Team %s: %d\n
+Team Fortress
+Team Fortress 2 Base Boss
 Team Fortress 2 Player
 Team Fortress 2 Weapon
 TeamAutoBalance
+TeamNumber: %d
+Teamplay
 Teams are balanced if consecutive imbalance measures for the same team are triggered in less time (seconds)
 Teams are unbalanced when one team has this many more players than the other team. (0 disables check)
 Teams will be scrambled if one team reaches this streak
@@ -21442,6 +21371,7 @@ Template16
 TemplateEntityData_t
 Terminator
 Terrify
+TeslaHitboxes
 Test Item %d
 Test a clientside dispatch effect.\n\tUsage: test_dispatcheffect <effect name> <distance away> <flags> <magnitude> <scale>\n\tDefaults are: <distance 1024> <flags 0> <magnitude 0> <scale 0>\n
 Test command that drops an entity blocker out in front of the player.
@@ -21449,6 +21379,7 @@ Test networking visibility distance
 Test the selected set for being on stairs
 TestItems
 TestItemsBotUpdate
+Test_CreateEntity
 Test_CreateEntity( %s ) failed.
 Test_CreateEntity: requires entity classname argument.
 Test_EHandle
@@ -21765,10 +21696,9 @@ UTIL_LoadAndSpawnEntitiesFromScript: Failed to spawn entity, type: '%s'\n
 UTIL_ParticleEffect:  Disabled\n
 UTIL_ShowMessageAll
 UTIL_TranslateSoundName
-UUU?nCreditsDropped
-UUU@models/weapons/w_grenade.mdl
+UUU?RobotBehavior
+UUU@
 UUUUUU
-UUUUUUU@BaseCombatWeapon.WeaponDrop
 UberAttackEnemySentry
 Un-invisible a spy.
 Unable to Find Attribute %s when parsing EndlessParseBotUpgrades \n
@@ -21961,7 +21891,6 @@ Using legacy GetLeftVector, which actually returns the RIGHT vector for compatib
 Using legacy GetPhysAngularVelocity.\nDo not use me! Use GetPhysAngularVelocity on the entity instead.\n
 Using legacy GetPhysVelocity.\nDo not use me! Use GetPhysVelocity on the entity instead.\n
 Using legacy GetVelocity.\nDo not use me! Do not use me! Move to GetAbsVelocity please!\n
-Using legacy SetAngles.\nDo not use me! Move to SetAbsAngles or SetLocalAngles please!\n
 Using legacy SetVelocity.\nDo not use me! Move to SetAbsVelocity please!\n
 Using map cycle file '%s'.  ('%s' was not found.)\n
 Using map cycle file '%s'.\n
@@ -22222,7 +22151,6 @@ WeaponDatafile
 WeaponGrapplingHook.ImpactDefault
 WeaponGrapplingHook.ImpactFlesh
 WeaponGrapplingHook.ImpactFleshLoop
-WeaponGrapplingHook.Shoot
 WeaponLogNameID
 WeaponMedi_Shield.Burn
 WeaponMedi_Shield.Burn_lp
@@ -22450,7 +22378,7 @@ You must set maxplayers to 32 to host Mann vs. Machine\n
 Z tolerance for adding new nav areas.
 Z0000
 ZAWMBEEZ
-ZESpyInfiltrate
+ZEPrepareStickybombTrap
 Z\n\tstar_type
 Zap!
 ZapContext
@@ -22545,7 +22473,7 @@ Zrange
 \\n\nRegionLink
 \\n\tlanguages
 \f*[\n\fEQuestPoints
-\f@%s removed itself!\n
+\f@start %f %f %f
 \fI@CPostFrameNavigationHook
 \n    Actual    : 
 \n    Field type: 
@@ -23294,6 +23222,7 @@ _setjmp
 _setjmp@GLIBC_2.2.5
 _title
 _to_curve_
+`>%s : %8.2f: MOVETO canceled but actor %s not at goal\n
 `\n\titem_name
 a trigger_changelevel doesn't have a map
 aaaaaaaazzzzzzzz
@@ -23403,7 +23332,11 @@ aggregate_value
 ai_LOS_mode
 ai_ally_speech_manager
 ai_auto_contact_solver
+ai_basenpc.cpp
+ai_basenpc_schedule.cpp
 ai_battle_line
+ai_behavior_assault.cpp
+ai_behavior_standoff.cpp
 ai_block_damage
 ai_changehintgroup
 ai_changetarget
@@ -23432,6 +23365,7 @@ ai_default_efficient
 ai_drawbattlelines
 ai_drop_hint
 ai_dump_hints
+ai_dynamiclink.cpp
 ai_efficiency_override
 ai_enable_fear_behavior
 ai_expression_frametime
@@ -23459,6 +23393,7 @@ ai_navigator_generate_spikes
 ai_navigator_generate_spikes_strength
 ai_network
 ai_network_build_helper
+ai_networkmanager.cpp
 ai_no_local_paths
 ai_no_node_cache
 ai_no_select_box
@@ -23645,6 +23580,7 @@ area%i
 area_cap_point
 area_time_to_cap
 arena_changeclass
+arena_lumberyard_event
 arena_match_maxstreak
 arena_round_start
 arena_win_panel
@@ -23778,7 +23714,11 @@ base_gcmessages.proto
 base_gcmessages.proto"X\n
 base_item_name
 base_player_teleported
+baseanimating.cpp
 baseclass
+basecombatcharacter.cpp
+baseentity.cpp
+baseflex.cpp
 baseitem
 baseitem_def_index
 basename
@@ -23826,6 +23766,7 @@ blocking team %d
 blocking team %s
 blood_bread_biting
 blood_decap
+blood_impact_backscatter
 blood_spray_red_01
 blood_spray_red_01_far
 bloodimpact
@@ -23835,7 +23776,6 @@ blue_score
 blue_score_prev
 blue_teleport
 body
-body_pitch
 body_rightleft
 body_shell
 body_substring_keys
@@ -23923,7 +23863,6 @@ bot_nav_useoffsetpaths
 bot_nav_wpdeceldistance
 bot_nav_wpdistance
 bot_npc_archer
-bot_npc_decoy
 bot_proxy
 bot_radio_waves
 bot_randomnames
@@ -23989,6 +23928,7 @@ c_p2rec.mdl
 c_sapper.mdl
 c_sapper_xmas.mdl
 c_sd_sapper.mdl
+cable/cable.vmt
 cable/cable_lit.vmt
 cable/chain.vmt
 cable/rope.vmt
@@ -24067,6 +24007,7 @@ catmullrom
 catmullrom_normalize
 catmullrom_normalize_x
 catmullrom_tangent
+cbase.cpp
 cbrtf
 cbrtf@GLIBC_2.2.5
 cc_bot_selectweapon
@@ -24167,7 +24108,6 @@ classname %s used to create wrong class type\n
 classname missing from entity!\n
 clear_debug_overlays
 clearoncontact
-clears debug overlays
 cleats_conc.StepLeft
 cleats_conc.StepRight
 cleats_dirt.StepLeft
@@ -24584,6 +24524,7 @@ danish
 data
 data_center_population
 database_audit_table
+datamanager.cpp
 daylightsavings
 dayofweek
 dayofyear
@@ -24798,6 +24739,7 @@ drg_cow_explosioncore_charged_blue
 drg_cow_explosioncore_normal
 drg_cow_explosioncore_normal_blue
 drg_cow_idle
+drg_cow_muzzleflash_charged
 drg_cow_muzzleflash_charged_blue
 drg_cow_muzzleflash_normal
 drg_cow_muzzleflash_normal_blue
@@ -24805,6 +24747,7 @@ drg_cow_rockettrail_charged
 drg_cow_rockettrail_charged_blue
 drg_cow_rockettrail_normal
 drg_cow_rockettrail_normal_blue
+drg_cowmangler_muzzleflash_chargeup
 drg_fiery_death
 drg_manmelter_muzzleflash
 drg_manmelter_projectile
@@ -24845,7 +24788,6 @@ duel_ban_expiration
 duel_minigame
 duel_status
 duel_wins
-duelinitiatorclass:%s,dueltargetclass:%s
 dump_all_caches
 dump_entity_sizes
 dump_globals
@@ -24906,7 +24848,6 @@ effects/repair_claw_trail_blue.vmt
 effects/repair_claw_trail_red.vmt
 effects/sniperdot_blue.vmt
 effects/sniperdot_red.vmt
-effects/stun
 ehandle
 el_GR
 electrocuted_gibbed_blue
@@ -25015,6 +24956,7 @@ entity_spawn_manager
 entity_spawn_point
 entityflame
 entityid
+entitylist.cpp
 entitytable_t
 entries
 entry_activity
@@ -25312,9 +25254,9 @@ fclose@GLIBC_2.2.5
 featured
 featured_item_idx
 feign_death
-ffF@
+ffF@Sentry built
 fff?
-fff@33
+fff@DT_TFBaseRocket
 ffffff
 fflush
 fflush@GLIBC_2.2.5
@@ -25357,6 +25299,7 @@ fire particle blue
 fire particle blue crit
 fire particle red
 fire particle red crit
+fire.cpp
 fire_absorbrate
 fire_dmgbase
 fire_dmginterval
@@ -25390,6 +25333,7 @@ fish_dormant
 fish_notice
 fish_notice__arm
 fixed_match_size
+fixed_shot_pattern
 fixedlength
 fixedlength\n
 flAbandonTimeLimit
@@ -25559,6 +25503,7 @@ func_break_max_pieces
 func_break_reduction_factor
 func_breakable
 func_breakable with invalid propdata %d.\n
+func_breakable_surf
 func_breakdmg_bullet
 func_breakdmg_club
 func_breakdmg_explosive
@@ -25682,6 +25627,7 @@ game_info
 game_init
 game_intro_viewpoint
 game_newmap
+game_player_equip
 game_player_manager
 game_player_team
 game_playerdie
@@ -25701,6 +25647,7 @@ game_text_tf
 game_ui
 game_weapon_manager
 game_zone_player
+gameinterface.cpp
 gamematerial
 gamemonkey
 games
@@ -25720,6 +25667,9 @@ gc msg %s, SteamID %llu
 gc msg %s, SteamID %llu, version %hd, job source %llu, job target %llu
 gc_dir_index_source
 gc_info
+gcclient.cpp
+gcclient_sharedobjectcache.cpp
+gclogger.cpp
 gconly
 gcsdk_gcmessages.proto
 gcsystemmsgs.proto
@@ -25730,6 +25680,13 @@ gear_limit
 gearratio
 generate_rage_on_dmg
 generate_rage_on_heal
+generated_proto/gcsdk_gcmessages.pb.cc
+generated_proto_tf/base_gcmessages.pb.cc
+generated_proto_tf/econ_gcmessages.pb.cc
+generated_proto_tf/gcsystemmsgs.pb.cc
+generated_proto_tf/steammessages.pb.cc
+generated_proto_tf/tf_gcmessages.pb.cc
+generated_proto_tf/tf_proto_def_messages.pb.cc
 generic_actor
 german
 gesture_height
@@ -27265,6 +27222,7 @@ gustduration
 h@33333Co@CAI_BasePhysicsFlyingBot
 hFollower
 hPathCorner
+hS33
 hUnreachableEnt
 h\n\rresponse_code
 halfhealth
@@ -27305,7 +27263,6 @@ hand scale
 hand_L
 hand_scale
 handle_dummy
-handle_test
 handle_train_movement
 hap_HasDevice
 hardware
@@ -27773,12 +27730,14 @@ jaw_clencher
 jaw_drop
 jaw_talking
 jklmnopqrstuvwxyzyxwvutsrqponmlkj
+job.cpp
+jobmgr.cpp
 join_player_id
 joinclass
 jointeam
 jointeam_nomenus
 jumping_state
-k>DT_TFProjectile_Flare
+k>DT_TFProjectile_EnergyRing
 kGameCategory_Arena
 kGameCategory_AttackDefense
 kGameCategory_CP
@@ -30860,6 +30819,7 @@ m_iChallengeIndex
 m_iChangedVariables
 m_iChargeEffect
 m_iChargeLevel
+m_iClass
 m_iClassIgnore
 m_iClassModelParity
 m_iClassname
@@ -30889,7 +30849,6 @@ m_iCurrentFade
 m_iCurrentGameMaterial
 m_iCurrentMaxRagdollCount
 m_iCurrentSection
-m_iCurrentTube
 m_iCurrentWaveIdx
 m_iCustomDamageType
 m_iCustomParticleIndex
@@ -30913,7 +30872,6 @@ m_iDefaultFOV
 m_iDefaultOwner
 m_iDefaultStyle
 m_iDefenses
-m_iDeflected
 m_iDelay
 m_iDesiredBuildRotations
 m_iDesiredOverlay
@@ -31085,7 +31043,6 @@ m_iRole
 m_iRopeMaterialModelIndex
 m_iRotationInterpolator
 m_iRoundState
-m_iRoundsWon
 m_iScore
 m_iScreenHeight
 m_iScreenWidth
@@ -31804,7 +31761,6 @@ m_nOuterMaxDist
 m_nOverlayMaterial
 m_nOverlaySequence
 m_nOverlaySize
-m_nPanelName
 m_nPauseState
 m_nPendingSequence
 m_nPhysgunState
@@ -32519,7 +32475,6 @@ m_vecAngVelocity
 m_vecAngle1
 m_vecAngle2
 m_vecAngles
-m_vecAngles[0]
 m_vecAngles[1]
 m_vecAngularVelocity
 m_vecAtRestOrigin
@@ -32701,6 +32656,7 @@ mapcycle.txt
 mapcyclefile
 mapcyclefile convar is not a valid path.\n
 mapcyclefile convar not set.\n
+mapentities.cpp
 maplist
 mapname
 mapname "%s"\n
@@ -32850,6 +32806,7 @@ memcpy_s: buffer overflow
 memmove
 memmove@GLIBC_2.2.5
 memmove_s: buffer overflow
+mempool.cpp
 memset
 memset@GLIBC_2.2.5
 menuclosed
@@ -32862,6 +32819,7 @@ merasmus_blood_bits
 merasmus_book_attack
 merasmus_dancer
 merasmus_dazed
+merasmus_dazed_explosion
 merasmus_decap
 merasmus_escape_warning
 merasmus_escaped
@@ -32883,6 +32841,7 @@ message
 message $0
 message_set_wire_format
 messageattenuation
+messagelist.cpp
 messagesound
 messagevolume
 method
@@ -32964,6 +32923,7 @@ mod_mark_attacker_for_death
 mod_max_primary_clip_override
 mod_maxhealth_drain_rate
 mod_medic_healed_deploy_time
+mod_minigun_can_holster_while_spinning
 mod_no_reload_display_only
 mod_pierce_resists_absorbs
 mod_projectile_heat_seek_power
@@ -32974,6 +32934,7 @@ mod_use_metal_ammo_type
 modelName
 model_display_flags
 model_hands
+model_hwm
 model_inventory
 model_player
 model_player_per_class
@@ -32984,7 +32945,6 @@ model_vision_filtered
 model_world
 modelindex
 modelname
-models/
 models/%s
 models/%s.mdl
 models/Weapons/w_grenade.mdl
@@ -33072,7 +33032,6 @@ models/buildables/%s%s
 models/buildables/dispenser.mdl
 models/buildables/dispenser_blueprint.mdl
 models/buildables/dispenser_light.mdl
-models/buildables/dispenser_lvl2.mdl
 models/buildables/dispenser_lvl2_light.mdl
 models/buildables/dispenser_lvl3.mdl
 models/buildables/dispenser_lvl3_light.mdl
@@ -33132,6 +33091,7 @@ models/items/medkit_small_bday.mdl
 models/items/plate.mdl
 models/items/plate_robo_sandwich.mdl
 models/items/plate_sandwich_xmas.mdl
+models/items/target_duck.mdl
 models/items/tf_gift.mdl
 models/passtime/ball/passtime_ball.mdl
 models/passtime/ball/passtime_ball_halloween.mdl
@@ -33258,7 +33218,6 @@ models/props_well/computer_cart01.mdl
 models/props_well/hand_truck01.mdl
 models/roller_vehicledriver.mdl
 models/soldier_statue/soldier_statue.mdl
-models/stickygib.mdl
 models/vgui/12v12_badge.mdl
 models/vgui/competitive_badge.mdl
 models/weapons/c_models/c_balloon_default.mdl
@@ -33287,6 +33246,7 @@ models/weapons/c_models/stattrack.mdl
 models/weapons/c_models/urinejar.mdl
 models/weapons/v_models/v_baseball.mdl
 models/weapons/w_bullet.mdl
+models/weapons/w_grenade.mdl
 models/weapons/w_models/w_arrow.mdl
 models/weapons/w_models/w_arrow_xmas.mdl
 models/weapons/w_models/w_baseball.mdl
@@ -33457,6 +33417,7 @@ msg_fallback
 msg_type
 msgpool_hard_limit
 msgpool_soft_limit
+msgprotobuf.cpp
 msgs
 msgtype
 mul_nonrocketjump_attackrate
@@ -33622,13 +33583,13 @@ mvm_squad_surplus_reward
 mvm_tank_destroyed_by_players
 mvm_tours
 mvm_wave
-mvm_wave_complete
 mvm_wave_failed
 my_team:0
 my_team:1
 nBuyBacks
 nCreditsAcquired
 nCreditsBonus
+nCreditsDropped
 nHintType
 nNodeID
 nObjects
@@ -33648,6 +33609,7 @@ nav_add_to_selected_set
 nav_add_to_selected_set_by_id
 nav_analyze
 nav_analyze_scripted
+nav_area.cpp
 nav_area_bgcolor
 nav_area_max_size
 nav_begin_area
@@ -33690,6 +33652,7 @@ nav_drag_selection_volume_zmin_offset
 nav_draw_limit
 nav_dump_selected_set_positions
 nav_edit
+nav_edit.cpp
 nav_end_area
 nav_end_deselecting
 nav_end_drag_deselecting
@@ -33722,6 +33685,7 @@ nav_merge_mesh
 nav_merge_mesh: Out of memory\n
 nav_no_hostages
 nav_no_jump
+nav_pathfind.h
 nav_place_floodfill
 nav_place_list
 nav_place_pick
@@ -34142,6 +34106,7 @@ particle_test_attach_mode
 particle_test_file
 particle_test_start
 particle_test_stop
+particles.cpp
 particles/particles_manifest.txt
 partner_accounts
 party_id
@@ -34179,6 +34144,7 @@ pda_panel
 pda_panel_spy_invis
 pda_panel_spy_invis_pocket_hm
 pda_panel_spy_invis_pocket_ttg
+peejar_impact
 peejar_impact_milk
 peejar_impact_small
 peekEyeDist
@@ -34213,6 +34179,7 @@ phys_keepupright
 phys_lengthconstraint
 phys_magnet
 phys_motor
+phys_motor %s does not have a valid axis helper, and self-destructed!\n
 phys_penetration_error_time
 phys_pulleyconstraint
 phys_pushscale
@@ -34229,6 +34196,7 @@ phys_upimpactforcescale
 physdamagescale
 physgun_interactions
 physgun_pickup
+physics.cpp
 physicsSpeed
 physics_budget
 physics_cannister
@@ -34236,6 +34204,7 @@ physics_constraints
 physics_debug_entity
 physics_entity_solver
 physics_highlight_active
+physics_main.cpp
 physics_npc_solver
 physics_prop_ragdoll
 physics_report_active
@@ -34304,6 +34273,7 @@ player_changename
 player_chargedeployed
 player_chat
 player_class
+player_command.cpp
 player_condition
 player_connect
 player_criteria
@@ -34315,7 +34285,6 @@ player_distance
 player_domination
 player_dropobject
 player_entindex
-player_escort_score
 player_extinguished
 player_footstep
 player_healed
@@ -34330,6 +34299,7 @@ player_is_owner
 player_jumping
 player_key
 player_killed_achievement_zone
+player_lagcompensation.cpp
 player_loadsaved
 player_object_array_element
 player_old_armor
@@ -34366,6 +34336,7 @@ playeractivity
 playerclass
 playerhealth
 playerhealthfrac
+playerlocaldata.cpp
 playermodel
 playerpenetratecount
 playerperf
@@ -34738,7 +34709,6 @@ rd_robot_dispenser
 rd_robot_explosion
 rd_robot_impact
 rd_robot_killed
-rd_rules_state_changed
 read /dev/random
 read /dev/urandom
 readdir64
@@ -34749,7 +34719,6 @@ realloc@GLIBC_2.2.5
 really freaking heavy
 realpath@GLIBC_2.3
 reason
-recalculate_holidays
 recalculate_truce
 recall
 receiver
@@ -35020,6 +34989,7 @@ scene_showfaceto
 scene_showlook
 scene_showmoveto
 scene_showunlock
+sceneentity.cpp
 scenefilecache.so
 scenes
 scenes/bot/merasmus/low/bomb_attack_00%d.vcd
@@ -35197,6 +35167,7 @@ server_address
 server_bootcamp.cfg
 server_casual.cfg
 server_casual_max_rounds_win_conditions.cfg
+server_casual_max_rounds_win_conditions_custom.cfg
 server_casual_max_rounds_win_conditions_mannpower.cfg
 server_casual_rounds_win_conditions.cfg
 server_casual_stopwatch_win_conditions.cfg
@@ -35259,7 +35230,6 @@ setmodel
 setpos
 setpos into world, use noclip to unstick yourself!\n
 setpos_exact
-settled long enough
 setup_length
 sf14.Merasmus.DuckHunt.BonusDucks
 sf14.Merasmus.Soccer.GoalBlue
@@ -35550,7 +35520,6 @@ sprintf
 sprintf@GLIBC_2.2.5
 spritename
 sprites/blueglow1.vmt
-sprites/bubble.vmt
 sprites/fire_floor.vmt
 sprites/flamelet1
 sprites/flamelet2
@@ -35565,6 +35534,7 @@ sprites/heatwave
 sprites/laserbeam.vmt
 sprites/lgtning.vmt
 sprites/light_glow02_add_noz.vmt
+sprites/light_glow02_noz.vmt
 sprites/light_glow03.vmt
 sprites/physbeam.vmt
 sprites/plasma1.vmt
@@ -35683,6 +35653,7 @@ stderr@GLIBC_2.2.5
 steam://openurl/
 steam://openurl_external/
 steam_id
+steamextra/tier1/tsmultimempool.cpp
 steamid
 steamids
 steammessages.proto
@@ -36117,6 +36088,7 @@ teamplay_round_restart_seconds
 teamplay_round_selected
 teamplay_round_stalemate
 teamplay_round_start
+teamplay_round_win
 teamplay_setup_finished
 teamplay_team_ready
 teamplay_teambalanced_player
@@ -36175,7 +36147,29 @@ texture_wear_default
 textureframe
 texturename
 texturescale
+tf/bot/behavior/scenario/capture_point/tf_bot_capture_point.cpp
+tf/bot/behavior/scenario/capture_point/tf_bot_defend_point.cpp
+tf/bot/behavior/scenario/payload/tf_bot_payload_block.cpp
+tf/bot/behavior/scenario/payload/tf_bot_payload_guard.cpp
+tf/bot/behavior/scenario/payload/tf_bot_payload_push.cpp
+tf/bot/behavior/sniper/tf_bot_sniper_attack.cpp
+tf/bot/behavior/spy/tf_bot_spy_leave_spawn_room.cpp
+tf/bot/behavior/tf_bot_behavior.cpp
+tf/bot/behavior/tf_bot_get_ammo.cpp
+tf/bot/behavior/tf_bot_get_health.cpp
+tf/bot/behavior/tf_bot_retreat_to_cover.cpp
+tf/bot/tf_bot.cpp
+tf/bot/tf_bot_vision.cpp
+tf/nav_mesh/tf_nav_mesh.cpp
+tf/nav_mesh/tf_path_follower.cpp
+tf/player_vs_environment/tf_mann_vs_machine_logic.cpp
+tf/player_vs_environment/tf_population_manager.cpp
+tf/player_vs_environment/tf_populator_spawners.cpp
+tf/player_vs_environment/tf_populators.cpp
 tf/scripts/items/unencrypted/_quest_events.txt
+tf/tf_client.cpp
+tf/tf_gc_server.cpp
+tf/tf_player.cpp
 tf2_casual_12v12
 tf2_ladder_6v6
 tf_airblast_cray
@@ -37171,6 +37165,7 @@ time_banned_until
 time_delay
 time_limit_reached
 time_submitted
+timedeventmgr.cpp
 timer_length
 times_to_fire
 timesincecombat
@@ -37570,9 +37565,11 @@ user_data_downloaded
 uses_ammo_while_aiming
 uses_credits
 uses_method
+util.cpp
 utime@GLIBC_2.2.5
 utimes@GLIBC_2.2.5
 utlstringtoken
+v@Lead
 vLastKnownLocation
 vLastSeenLocation
 vLocationWhenUnreachable
@@ -37620,6 +37617,7 @@ var_field_type
 variable
 variable_template
 variant
+vban
 vcd error, gesture %s of model %s is marked as STUDIO_LOOPING!\n
 vdisp_%04d
 vecAngleDiffMin
@@ -37682,6 +37680,7 @@ version_checksum_ex
 version_verbose
 vgui/screens/vgui_overlay
 vgui/white
+vgui_screen
 vgui_screen_team
 vgui_slideshow_display
 victim:0
@@ -37979,6 +37978,7 @@ work item
 workshop/%llu
 workshop/%s.ugc%llu
 workshop_file_id
+workthreadpool.cpp
 worldNormalX
 worldNormalY
 worldNormalZ
@@ -38023,7 +38023,7 @@ xpos
 y?Weapon_Hands.Push
 yCBlockCapture
 yDCAI_SpeechFilter
-yDnb_player_stop
+yDThis should not happen!
 y_pos
 yaw: %f
 yielding
@@ -38032,14 +38032,13 @@ your_wait_time
 youtube_account_name
 ypos
 z?time: %.2f
-zh_CN
 zh_TW
 zipline
 zombie_lifetime
 zombie_type
 zombiezombiezombiezombie
 zone_id
-zt?DT_BaseParticleEntity
+zt?ERROR: too many nodes in map, deleting last node.\n
 zz_blue_koth_timer
 zz_red_koth_timer
 zz_stopwatch_timer

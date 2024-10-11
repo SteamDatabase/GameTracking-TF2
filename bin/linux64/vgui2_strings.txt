@@ -9,7 +9,6 @@
  client
  clientcmd_can_execute
  failed to dlopen %s error=%s\n
- game
  notconnected
  notify
  replicated
@@ -180,8 +179,6 @@ $X360
 //KEY_PAD_DIVIDE
 /?KEY_SLASH
 /content/
-/data/src/tier1/KeyValues.cpp
-/data/src/vgui2/src/vgui.cpp
 0 0 0 0
 0 0 0 196
 0 0 0 255
@@ -238,13 +235,14 @@ $X360
 ;:KEY_SEMICOLON
 </script>
 << NULL >>\n
+<Unknown font>
 <img src="
 <pre>
 =+KEY_EQUAL, L
 ><a href=
->@Delete
 >[unknown]
-?<Unknown font>
+? game
+?tiled
 AutoLoginUser
 BASE_PATH
 Bad -insert_search_path - Can't resolve pathname for '%s'
@@ -328,6 +326,7 @@ DBG_PATHMATCH
 DLOPEN Error:%s\n
 DebugTextureInfo001
 Default
+Delete
 Deleting in-use vpanel: %s/%s %p.\n
 DevMsg
 DevMsg(char const*, ...)
@@ -449,6 +448,7 @@ KeyCodeUnhandled
 KeyFocusTicked
 KeyTyped
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -881,6 +881,7 @@ image not found
 input()->RunFrame()
 inset
 int( %d = 0x%X )
+isproportional
 isspace
 isspace@GLIBC_2.2.5
 iswspace
@@ -928,6 +929,7 @@ nNKEY_N
 newPanel
 oOKEY_O
 offset
+only
 opendir@GLIBC_2.2.5
 outline
 pPKEY_P
@@ -1032,7 +1034,6 @@ tTKEY_T
 tall
 tchinese
 thai
-tiled
 tolower
 tolower@GLIBC_2.2.5
 toupper
@@ -1055,6 +1056,7 @@ update cursor positions
 utime@GLIBC_2.2.5
 utimes@GLIBC_2.2.5
 vVKEY_V
+vgui.cpp
 vgui/%s
 vgui_spew_fonts
 vsnprintf

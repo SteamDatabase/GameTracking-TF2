@@ -188,13 +188,6 @@ $treeswaystrength
 //platform/materials/debug/debugvertexcolor
 //platform/materials/debug/debugworldwireframe
 //platform/materials/debug/env_cubemap_model
-/data/src/studiorender/r_studio.cpp
-/data/src/studiorender/r_studiodecal.cpp
-/data/src/studiorender/r_studiodraw.cpp
-/data/src/studiorender/r_studioflex.cpp
-/data/src/studiorender/studiorender.cpp
-/data/src/studiorender/studiorendercontext.cpp
-/data/src/tier1/KeyValues.cpp
 0123456789ABCDEF
 0123456789abcdef
 0x%016llX
@@ -231,7 +224,7 @@ $treeswaystrength
 24CGlintTextureRegenerator
 27IKeyValuesDumpContextAsText
 29CKeyValuesDumpContextAsDevMsg
-4Other textures
+4debug/modelstats
 4fff>fff>fff>fff>
 5a\v6C
 6ConVar
@@ -246,7 +239,6 @@ $treeswaystrength
 ><a href=
 >DLOPEN Error:%s\n
 ?333333
-?CUtlFixedMemory overflow!\n
 Bad data found in model "%s" (bad bone weights)\n
 CCommand::Tokenize: Encountered command which overflows the argument buffer.. Clamped!\n
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping!\n
@@ -264,6 +256,7 @@ CStudioRender::R_StudioFlexVerts
 CStudioRender::R_StudioRenderFinal
 CStudioRender::R_StudioRenderModel
 CThreadFastMutex::Lock(unsigned long long, unsigned int) volatile
+CUtlFixedMemory overflow!\n
 CUtlLinkedList overflow! (exhausted index range)\n
 CUtlLinkedList overflow! (exhausted memory allocator)\n
 CVProfNode::EnterScope()
@@ -308,6 +301,7 @@ HushAsserts
 IVideoServices002
 InputSystemVersion001
 KeyValues Error: %s in file %s\n
+KeyValues.cpp
 KeyValues::LoadFromBuffer(%s%s%s): Begin
 KeyValues::LoadFromBuffer(%s%s%s): End
 KeyValues::LoadFromFile(%s%s%s): Begin
@@ -332,6 +326,7 @@ NAUU
 NULL
 NetworkSystemVersion001
 No such file
+Other textures
 Other_Model_Rendering
 Plat_IsInDebugSession
 Plat_localtime
@@ -473,7 +468,6 @@ chdir
 chdir@GLIBC_2.2.5
 cos@GLIBC_2.2.5
 cvar
-debug/modelstats
 developer
 dl_iterate_phdr
 dl_iterate_phdr@GLIBC_2.2.5
@@ -533,7 +527,7 @@ memset
 memset@GLIBC_2.2.5
 models/obsolete/obsolete
 nonflexed 
-p?/data/src/studiorender/r_studiogettriangles.cpp
+p?r_studiogettriangles.cpp
 pow@GLIBC_2.29
 powf@GLIBC_2.27
 proc_eyeglint
@@ -550,7 +544,11 @@ r_glint_alwaysdraw
 r_glint_procedural
 r_hwmorph
 r_randomflex
+r_studio.cpp
 r_studio_stats
+r_studiodecal.cpp
+r_studiodraw.cpp
+r_studioflex.cpp
 rand
 rand@GLIBC_2.2.5
 script
@@ -590,6 +588,8 @@ strtoul@GLIBC_2.2.5
 strtoull
 strtoull@GLIBC_2.2.5
 studio_queue_mode
+studiorender.cpp
+studiorendercontext.cpp
 swskinned 
 tan@GLIBC_2.2.5
 tolower
