@@ -1611,6 +1611,10 @@
 #TF_MM_QueueState_LeaveQueue
 #TF_MM_QueueState_Multiple
 #TF_MM_QueueState_Standby
+#TF_MM_Queue_Error_Ping_Text
+#TF_MM_Queue_Error_Ping_URL
+#TF_MM_Queue_Error_VACIssue_Text
+#TF_MM_Queue_Error_VACIssue_URL
 #TF_MM_RankUpMatch
 #TF_MM_Rejoin_Abandon
 #TF_MM_Rejoin_Leave
@@ -3694,6 +3698,7 @@ $world_mins
 .CMsgPaintKit_OperationStageH
 .CMsgPaintKit_Operation_Sticker
 .CMsgPaintKit_VariablesH
+.CMsgPartyMMError.Type"3\n
 .CMsgProcessMatchVoteKick.Vote
 .CMsgProtoDefHeader
 .CMsgProtoDefHeader"
@@ -5483,6 +5488,7 @@ $world_mins
 16CMsgGCClientPing
 16CMsgHttpResponse
 16CMsgPartyChatMsg
+16CMsgPartyMMError
 16CMsgSaxxyAwarded
 16CMsgTFClientInit
 16CNavigationPanel
@@ -5513,6 +5519,7 @@ $world_mins
 16CTFHudTimeStatus
 16CTFHudWeaponAmmo
 16CTFItemCardPanel
+16CTFMMIssueDialog
 16CTFParticlePanel
 16CTFPlaylistPanel
 16CTFRenderTargets
@@ -6966,6 +6973,7 @@ $world_mins
 24CEnginePostMaterialProxy
 24CGCClientJobInitPurchase
 24CGCClientJobPartyChatMsg
+24CGCClientJobPartyMMError
 24CGCClientMatchMakerStats
 24CGCGoldenWrenchBroadcast
 24CGCLookupAccountResponse
@@ -8837,6 +8845,7 @@ $world_mins
 <null>
 <pre>
 <tpdamage_2
+<unknown (%d)>
 <unknown>
 <yt:accessControl action="list" permission="denied"/>
 <yt:private/>
@@ -8976,6 +8985,7 @@ ABCDEFGHIJKMNPQRSTUVWXYZ23456789
 ABGR8888
 ACHIEVED
 ACID
+ACTFMMIssueDialog
 ACTOR
 ACT_180_LEFT
 ACT_180_RIGHT
@@ -10983,7 +10993,6 @@ AIRBOAT
 AIWalkable
 ALIGN_TYPE is wrong, please fix
 ALWAYSGIB
-AParty ID %llu
 ARGB8888
 ARS$
 ATI1N
@@ -12189,6 +12198,7 @@ CGCClientHelloResponse
 CGCClientJobClientGoodbye
 CGCClientJobClientWelcome
 CGCClientJobPartyChatMsg
+CGCClientJobPartyMMError
 CGCClientJobSteamDatagramTicket
 CGCClientMatchMakerStats
 CGCClientMatchmakingProgress
@@ -12683,6 +12693,7 @@ CMsgPartyClearOtherPartyRequest
 CMsgPartyClearPendingPlayer
 CMsgPartyInvitePlayer
 CMsgPartyKickMember
+CMsgPartyMMError
 CMsgPartyPromoteToLeader
 CMsgPartyQueueForMatch
 CMsgPartyQueueForMatchResponse"D\n
@@ -15520,7 +15531,7 @@ ExpandButton.Color
 ExpandableList
 Expected "
 Expected %s found %s ( raw '%s' )! (prev: %s)\n
-Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.
+Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.H
 Expecting %s, got %s
 Expecting '%s'
 Expecting ',', didn't find it!
@@ -17282,6 +17293,7 @@ LowerMainWeapon
 LowerMiddleSolid
 Lowered '%s' -> '%s'\n
 LwH'
+M*IY.P
 MANN_UP
 MATCH_FAILED_ABANDON
 MATCH_FAILED_GC
@@ -17975,6 +17987,7 @@ N5GCSDK12CProtoBufMsgI14CGCMsgTFSyncExEE
 N5GCSDK12CProtoBufMsgI15CMsgClientHelloEE
 N5GCSDK12CProtoBufMsgI15CMsgConVarValueEE
 N5GCSDK12CProtoBufMsgI16CMsgPartyChatMsgEE
+N5GCSDK12CProtoBufMsgI16CMsgPartyMMErrorEE
 N5GCSDK12CProtoBufMsgI16CMsgSaxxyAwardedEE
 N5GCSDK12CProtoBufMsgI16CMsgTFClientInitEE
 N5GCSDK12CProtoBufMsgI17CMsgAcknowledgeXPEE
@@ -18145,6 +18158,7 @@ N5GCSDK22CProtoBufMsgMemoryPoolI14CGCMsgTFSyncExEE
 N5GCSDK22CProtoBufMsgMemoryPoolI15CMsgClientHelloEE
 N5GCSDK22CProtoBufMsgMemoryPoolI15CMsgConVarValueEE
 N5GCSDK22CProtoBufMsgMemoryPoolI16CMsgPartyChatMsgEE
+N5GCSDK22CProtoBufMsgMemoryPoolI16CMsgPartyMMErrorEE
 N5GCSDK22CProtoBufMsgMemoryPoolI16CMsgSaxxyAwardedEE
 N5GCSDK22CProtoBufMsgMemoryPoolI16CMsgTFClientInitEE
 N5GCSDK22CProtoBufMsgMemoryPoolI17CMsgAcknowledgeXPEE
@@ -19387,6 +19401,7 @@ Particlelib: Missing precache for particle system type "%s"!\n
 Particles: Missing '%s'\n
 PartnerAccountType
 PartnerItemPaymentRule
+Party ID %llu
 Party ID %llu, Embedded Options %d
 Party ID %llu, Lobby ID %llu
 Party ID %llu, Overwrite %d
@@ -19775,6 +19790,8 @@ QUESTION_RANDOM_CRIT
 QUEST_POINTS_ADVANCED
 QUEST_POINTS_EXPERT
 QUEST_POINTS_NOVICE
+QUEUE_KICK_AUTH
+QUEUE_KICK_NO_PING
 QhZ\nd
 Qkkbal
 Quad
@@ -20208,6 +20225,7 @@ Resource/UI/LeaderboardEntry.res
 Resource/UI/LeaderboardEntryRank.res
 Resource/UI/LeaderboardSpreadEntry.res
 Resource/UI/LoadoutPresetPanel.res
+Resource/UI/MMIssueDialog.res
 Resource/UI/MainBuyMenu.res
 Resource/UI/MapInfoMenu.res
 Resource/UI/MapInfoMenu_SC.res
@@ -23759,6 +23777,7 @@ ZoomPanel
 [PartyClient] Member %s now %s\n
 [PartyClient] Party update received for party %llu, but our current party is %llu, forcing update\n
 [PartyClient] Re-joining party %llu we previously had queued messages for.  Triggering full resend of options.\n
+[PartyClient] Received MM Error %s\n
 [PartyClient] Received party chat message with invalid actor, type %d, actor %s: "%s"\n
 [PartyClient] Received party chat message with unknown type %d, actor %s: "%s"\n
 [PartyClient] Requesting exit queue for %s\n
@@ -23778,10 +23797,11 @@ ZoomPanel
 [ReliableMsg] %s send TYPE MISMATCH for %s\n
 [ReliableMsg] %s started for %s\n
 [ReliableMsg] %s successfully sent for %s\n
+[SDR Ping] Failed to send %s ping fix, connected to GC [%s], last update [%s], sent initial fix [%d]\n
 [SDR Ping] Forcing ping refresh\n
-[SDR Ping] Initial ping fix sent\n
 [SDR Ping] No current ping data. Pending refresh: %i, Sent initial fix: %i\n
 [SDR Ping] Ping data is current as of %s. Pending refresh: %i, Sent initial fix: %i\n
+[SDR Ping] Sent %s ping fix\n
 [TF Workshop] Invalid character %c in map name\n
 [TF Workshop] Invalid map name: _ cannot appear consecutively nor at the beginning/end of a map name\n
 [TF Workshop] Map display name must be at least 2 characters and not more than %u characters\n
@@ -30044,6 +30064,7 @@ k_EMsgGCPaintItemResponse
 k_EMsgGCParty_ChatMsg
 k_EMsgGCParty_InvitePlayer
 k_EMsgGCParty_KickMember
+k_EMsgGCParty_MMError
 k_EMsgGCParty_PromoteToLeader
 k_EMsgGCParty_QueueForMatch
 k_EMsgGCParty_QueueForStandby
