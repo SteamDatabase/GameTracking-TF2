@@ -19,6 +19,7 @@
 #base is NULL 
 #include
 #include is NULL 
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -166,7 +167,9 @@ $include
 -DLOPEN Error:%s\n
 -NoVConfig
 -game
+-gamepadui
 -insert_search_path
+-nogamepadui
 -tempcontent
 -vproject
 .360
@@ -217,6 +220,7 @@ $include
 ?333333
 Adding directory to pakfile [ %s ]\n
 Adding file to pakfile [ %s ]\n
+Alien Swarm
 Alignment
 Appid based mounting is not supported on non-engine DLL projects.
 AutoLoginUser
@@ -265,11 +269,13 @@ CompressedLightCube
 ConColorMsg(Color const&, char const*, ...)
 ConMsg(char const*, ...)
 ConVarRef %s doesn't point to an existing ConVar\n
+Counter-Strike: Source
 CreateInterface
 Created '%s' in lump pak in '%s'.\n
 Creating %s\n
 DBG_PATHMATCH
 DataOffset
+Day of Defeat: Source
 DebugTextureInfo001
 DecompressVis: 0 repeat
 Decompressed size differs from header, BSP may be corrupt\n
@@ -292,6 +298,7 @@ Error! Couldn't read file %s - final BSP compression failed!\n
 Error! Failed to compress BSP '%s'!\n
 Error! Missing VTF Conversion function\n
 FCVAR_NEVER_AS_STRING
+Fa@a
 Failed to CRC the bsp\n
 Failed to convert '%s' in '%s'.\n
 Failed to find valid lump filename for bsp %s.\n
@@ -312,6 +319,7 @@ Fullness
 GAME
 GAMEBIN
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
+GLIBC_2.11
 GLIBC_2.14
 GLIBC_2.2.5
 GLIBC_2.22
@@ -326,6 +334,11 @@ HDR dtl prp lght
 HDR leaf ambient lighting
 HDR lightdata
 HDR worldlights
+Half-Life 2
+Half-Life 2: Deathmatch
+Half-Life 2: Lost Coast
+Half-Life Deathmatch: Source
+Half-Life: Source
 HushAsserts
 IBSPPACK004
 If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
@@ -407,8 +420,12 @@ LUMP_WORLDLIGHTS
 LUMP_WORLDLIGHTS_HDR
 LUMP_XZIPPAKFILE
 LZMA Decompression failed (%i)\n
+LZMA Decompression overflowed (%zu > %zu)\n
+LZMA Decompression overflowed (read: %zu > %zu or write: %zu > %zu)\n
 LZMA encode failed (%i)\n
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?\n
+Left 4 Dead
+Left 4 Dead 2
 Line %i is incomplete\n
 LoadFromBuffer: missing {
 LoadFromFile
@@ -435,6 +452,8 @@ ParseEpar: token too long
 Passed non-directory to AddDirToPak [ %s ]\n
 Plat_IsInDebugSession
 Plat_localtime
+Portal
+Portal 2
 PreloadDirectoryEntries
 Qkkbal
 QueuedLoaderVersion004
@@ -448,11 +467,17 @@ RecursiveLoadFromBuffer:  got } in key
 RecursiveLoadFromBuffer:  recursion overflow
 RepackBSP given invalid input data\n
 Repacking BSP: Created '%s' in lump pak\n
+SDK_EXEC_DIR
 SIZE DANGER!\n
 SIZE OVERFLOW!!!\n
 SearchPaths
 Setup file '%s' doesn't exist in subdirectory '%s'.\nCheck your -game parameter or VCONFIG setting.
 Should not be using filesystem_steam anymore!
+Source SDK (Legacy)
+Source SDK Base 2006
+Source SDK Base 2007
+Source SDK Base 2013 Multiplayer
+Source SDK Base 2013 Singleplayer
 Static Prop '%s' failed to resolve actual model in '%s'.\n
 StaticPropDictLump_t
 StaticPropLeafLump_t
@@ -461,9 +486,12 @@ StaticPropLumpV5_t
 StaticPropLump_t
 SteamAppId
 SteamAppUser
+SteamDeck
+SteamTenFoot
 SteamUserPassphrase
 Stripping LDR: %s\n
 Swapping %s\n
+Team Fortress 2
 ThreadGetCurrentId
 ThreadInMainThread
 Token too large on line %i\n
@@ -523,7 +551,6 @@ Zjz\v
 [url=
 \nLevel flags = %x\n
 \t(%zu) comparing %s with %s\n
-_%s.tmp
 _ITM_deregisterTMCloneTable
 _ITM_registerTMCloneTable
 _ZGVbN2v_sin
@@ -605,6 +632,7 @@ __xstat64@GLIBC_2.2.5
 __xstat@GLIBC_2.2.5
 _dir.vpk
 _english
+_fstXXXXXX.tmp
 _hdr
 aFaces
 abort@GLIBC_2.2.5
@@ -711,6 +739,8 @@ extraFieldLength
 false 
 fclose
 fclose@GLIBC_2.2.5
+fdopen
+fdopen@GLIBC_2.2.5
 fflush
 fflush@GLIBC_2.2.5
 fileCommentLength
@@ -905,13 +935,14 @@ memmove@GLIBC_2.2.5
 memory buffer
 memset
 memset@GLIBC_2.2.5
-mgd_
 minTess
 minZ
 mins
 mkdir failed %s\n
 mkdir@GLIBC_2.2.5
 mkfifo@GLIBC_2.2.5
+mkstemps64
+mkstemps64@GLIBC_2.11
 mod_write
 modelIndex
 modelType
@@ -934,7 +965,7 @@ numfaces
 numleafbrushes
 numleaffaces
 numsides
-o@VMaterialSystem081
+o@VMaterialSystem082
 occluder polygons
 occluder vert ind
 occluders
@@ -1070,15 +1101,11 @@ swapcompactsurfaceheader_t
 swapmoppsurfaceheader_t
 symlink@GLIBC_2.2.5
 temp
-tempnam
-tempnam@GLIBC_2.2.5
 texdata
 texinfo
 texinfo_t
 texinfos
 textureVecsTexelsPerWorldUnits
-tmpnam
-tmpnam@GLIBC_2.2.5
 tolower
 tolower@GLIBC_2.2.5
 toupper

@@ -528,6 +528,7 @@
 #GameUI_Language_Italian
 #GameUI_Language_Japanese
 #GameUI_Language_Korean
+#GameUI_Language_Latam_Spanish
 #GameUI_Language_Norwegian
 #GameUI_Language_Polish
 #GameUI_Language_Portuguese
@@ -2330,6 +2331,7 @@ $C0_Y
 $C0_Z
 $CHEAPWATERENDDISTANCE
 $CHEAPWATERSTARTDISTANCE
+$DECK
 $HDRCOLORSCALE
 $LINUX
 $MotionBlurInternal
@@ -2532,7 +2534,6 @@ $world_mins
 %keywords
 %ld%c
 %llX
-%lld
 %llu %u
 %llu\t%12s %12s\n
 %llu_thumb.jpg
@@ -3227,6 +3228,7 @@ $world_mins
 +camyawright
 +commandermousemove
 +connect
++connect 
 +context_action
 +duck
 +forward
@@ -3236,7 +3238,6 @@ $world_mins
 +helpme
 +helpme_server
 +inspect
-+inspect_server
 +jlook
 +jump
 +klook
@@ -3344,6 +3345,7 @@ $world_mins
 -forward
 -g15
 -game
+-gamepadui
 -gamestatsfileoutputonly
 -gamestatslogging
 -gamestatsloggingtofile
@@ -3369,6 +3371,7 @@ $world_mins
 -moveright
 -moveup
 -nocompress
+-nogamepadui
 -nomouse
 -posedebug
 -precachefontchars
@@ -4400,6 +4403,7 @@ $world_mins
 11IClientMode
 11IEconRootUI
 11IGameSystem
+11IMoveHelper
 11IPrediction
 11IRefCounted
 11IVTFTexture
@@ -8876,8 +8880,8 @@ $world_mins
 >m_nSceneStringIndex
 ?$AAInternal1
 ?$USINGPIXELSHADER
-?%03i %s::%s - %s
 ?***\nShared activity collision! %s<->%s\n***\n
+?+inspect_server
 ?18IReplayItemManager
 ?20CEntityMaterialProxy
 ?333333
@@ -8901,13 +8905,13 @@ $world_mins
 ?CHudMedicChargeMeter
 ?CLIENT:  %s(%s) thinking for %.02f ms!!!\n
 ?CMvMScoreboardEnemyInfo
-?CNextMapWinnerDashboardState
 ?CQuestMapNodePanel
 ?CQuestMapPathsPanel
 ?CQuestObjectivePanel
 ?CRecipeComponentItemModelPanel
 ?CReplayBasePanel
 ?CReplayRenderDialog
+?CSimplePanelToolTip
 ?CTFArrowPanel
 ?CTFTextWindow
 ?Changing collision rules within a callback is likely to cause crashes!\n
@@ -8924,6 +8928,7 @@ $world_mins
 ?TeamTexture_IMaterialProxy003
 ?UUUUUU
 ?Weapon_Slap.OpenHand
+?[Tick %d] %03i %s::%s - %s
 ?\n7matchmaking_last_casual_excessive_reports_auto_ban_time
 ?\n;k_ItemPurgatoryResponse_Finalize_Failed_ItemsNotInPurgatory
 ?debug/showz
@@ -8941,7 +8946,7 @@ $world_mins
 ?passtime/hud/passtime_pass_to_me_prompt
 ?projectile_none
 ?r_cheapwaterstart: %f\n
-?resource/UI/HudInspectPanel.res
+?start_framed
 ?stop_watch_changed
 ?unknown_language
 ?unspecified
@@ -11318,6 +11323,7 @@ ArrowIcon
 ArrowIcons
 ArrowImage
 ArrowLight
+Aserverblacklist
 Assertion Failed: !m_bNeedsSort
 Assertion Failed: cubMaxPlaintext <= ULONG_MAX / cBlocks
 Assertion Failed: false
@@ -12801,6 +12807,7 @@ CNetGraphPanel::Paint
 CNetGraphPanel::PaintLineArt
 CNewParticleEffect::DrawModel
 CNextMapVotingDashboardState
+CNextMapWinnerDashboardState
 CNotificationQueuePanel
 CNotificationToastControl
 CNotificationsPresentPanel
@@ -13056,7 +13063,6 @@ CShadowDepthView::Draw
 CSimTimer
 CSimpleControlPoint
 CSimpleEmitter
-CSimplePanelToolTip
 CSimpleSimTimer
 CSimpleWorldView::SSAO_DepthPass
 CSlideshowDisplay
@@ -14349,7 +14355,6 @@ CraftableLabel
 CraftableTextLabel
 CraftingClosed
 Crasher!
-Crashes this client for testing.
 Create In Hierarchy
 Create(%s)
 CreateActivationCircle
@@ -15533,7 +15538,7 @@ ExpandButton.Color
 ExpandableList
 Expected "
 Expected %s found %s ( raw '%s' )! (prev: %s)\n
-Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.8
+Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.H
 Expecting %s, got %s
 Expecting '%s'
 Expecting ',', didn't find it!
@@ -16191,6 +16196,7 @@ HUDBlueTeamSolid
 HUDDeathWarning
 HUDRedTeamSolid
 Haarp
+Hack to get this convar to be re-set on first launch.
 Hacksaw
 Hadal
 Half-Lambert Normals
@@ -17115,6 +17121,7 @@ LabelOption5
 Landfall
 LanguageMenu
 LaserPointer0
+Latam_Spanish
 Late precache of %s\n
 LateWeaponPrecache
 Laughter
@@ -17895,7 +17902,6 @@ N30CConfirmCustomizeTextureDialog17CroppedImagePanelE
 N30CConfirmCustomizeTextureDialog18FilteredImagePanelE
 N33PrecachePostProcessingGlowEffects20ClientEffectRegisterE
 N45CMarketNameGenerator_EconItemInterfaceWrapper47CMarketNameGenerator_SelectiveAttributeIteratorE
-N4vgui10BuildGroupE
 N4vgui10CheckImageE
 N4vgui10ClickPanelE
 N4vgui10GraphPanelE
@@ -19199,9 +19205,9 @@ Opens voice menu 3
 Operands
 Operation %s does not specify a lootlist or that it uses credits.
 OperationDefinition %s does not have '%s'
-OperationDefinition %s does not have 'name'
 OperationDefinition couldn't find item def from gateway name '%s'
 OperationDefinition couldn't find item def from required name '%s'
+OperationDefinition does not have 'name'
 OpponentData
 OptOutCheckbox
 Optimize for not copying data if didn't receive a network update (1), and also for not repredicting if there were no errors (2).
@@ -19276,6 +19282,9 @@ PARTNER_PERFECT_WORLD
 PASS Time
 PASSABLE
 PC_EFFECTS_THINK
+PDump
+PDumpSmall
+PDumpVerySmall
 PENDING_INVITE
 PENDING_JOIN_REQUEST
 PF\n%d %d\n-1.000000\n
@@ -21164,6 +21173,7 @@ SteamClient020
 SteamController pitch factor.
 SteamController yaw factor.
 SteamController008
+SteamDeck
 SteamFriends017
 SteamGameCoordinator001
 SteamGameStats001
@@ -21181,6 +21191,7 @@ SteamMatchMakingServers002
 SteamNetworking006
 SteamNetworkingSockets012
 SteamNetworkingUtils004
+SteamTenFoot
 SteamUser023
 SteamUtils010
 SteamWorkshopButtonSubButton
@@ -23333,7 +23344,7 @@ VGui_DrawHud
 VGui_PreRender
 VGy#
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VMaterialSystemStub001
 VModEnable %d
 VModelInfoClient006
@@ -23803,7 +23814,7 @@ ZoomPanel
 [ReliableMsg] %s send TYPE MISMATCH for %s\n
 [ReliableMsg] %s started for %s\n
 [ReliableMsg] %s successfully sent for %s\n
-[SDR Ping] Failed to send %s ping fix, connected to GC [%s], last update [%s], sent initial fix [%d]\n
+[SDR Ping] Failed to send %s ping fix, connected to GC [%d], last update [%u], sent initial fix [%d]\n
 [SDR Ping] Forcing ping refresh\n
 [SDR Ping] No current ping data. Pending refresh: %i, Sent initial fix: %i\n
 [SDR Ping] Ping data is current as of %s. Pending refresh: %i, Sent initial fix: %i\n
@@ -23813,6 +23824,8 @@ ZoomPanel
 [TF Workshop] Map display name must be at least 2 characters and not more than %u characters\n
 [TF Workshop] Map filename must be at least 6 characters and not more than %u characters ending in .bsp\n
 [Taunt(s) in loadout]\n
+[Tick %d] Full latch reset!\n
+[Tick %d] Partial latch reset!\n
 [UGC] Prepared map does not appear to exist\n
 [UGC] StartItemUpdate failed\n
 [code]
@@ -24374,7 +24387,6 @@ __cxa_end_catch
 __cxa_finalize
 __cxa_finalize@GLIBC_2.2.5
 __cxa_free_exception
-__cxa_get_exception_ptr
 __cxa_guard_abort
 __cxa_guard_acquire
 __cxa_guard_release
@@ -24744,6 +24756,7 @@ asdf
 ashtray
 asinf
 asinf@GLIBC_2.2.5
+aspectratiooffset
 asset_class_bucket
 asset_class_export
 assister
@@ -25489,6 +25502,9 @@ cl_meathook_neck_pivot_ingame_fwd
 cl_meathook_neck_pivot_ingame_up
 cl_mouseenable
 cl_mouselook
+cl_movehelper_process
+cl_movehelper_process_imp
+cl_movehelper_process_vel
 cl_mute_all_comms
 cl_muzzleflash_dlight_1st
 cl_mvm_wave_status_visible_during_wave
@@ -25519,6 +25535,7 @@ cl_phys_timescale
 cl_pitchdown
 cl_pitchspeed
 cl_pitchup
+cl_pred_doresetlatch
 cl_pred_optimize
 cl_pred_track
 cl_pred_track <entindex> <fieldname>\n
@@ -26979,6 +26996,7 @@ error in transition graph: %s to %s\n
 error loading %s\n
 errors
 es-8R
+es_419
 es_ES
 escort_progress
 escort_recede
@@ -27091,6 +27109,7 @@ eyeglow_R
 eyelids
 eyes_rightleft
 eyes_updown
+f@player/hwm
 fCwwwwww
 faceandhair
 faceposermodel
@@ -27255,6 +27274,8 @@ fog_endskybox
 fog_maxdensity
 fog_maxdensityskybox
 fog_override
+fog_radial
+fog_radialskybox
 fog_start
 fog_startskybox
 follow_attachment
@@ -27312,7 +27333,7 @@ fputc
 fputc@GLIBC_2.2.5
 fr_FR
 frags
-frame %d
+frame %lld
 frame_blGrip
 frame_bottomGrip
 frame_brGrip
@@ -30371,6 +30392,7 @@ last_shot_crits
 last_target
 last_valid_class
 lastdisguise
+latam
 late_join_eligible
 latitude
 laurels
@@ -30850,6 +30872,7 @@ m_bFirstHit
 m_bFlipViewModel
 m_bFloatLerpWrap
 m_bFogEnable
+m_bFogRadial
 m_bForceClose
 m_bForceLocalPlayerDraw
 m_bForceShowBackpackRarities
@@ -31560,6 +31583,7 @@ m_fog.endLerpTo
 m_fog.farz
 m_fog.lerptime
 m_fog.maxdensity
+m_fog.radial
 m_fog.start
 m_fog.startLerpTo
 m_forceupdate
@@ -32253,6 +32277,7 @@ m_nAmount
 m_nAnimScale
 m_nAnimationParity
 m_nArenaNumChanges
+m_nAspectRatioOffset
 m_nAttachIndex
 m_nAttachIndex[0]
 m_nAttachment
@@ -32648,6 +32673,7 @@ m_skybox3d.fog.dirPrimary
 m_skybox3d.fog.enable
 m_skybox3d.fog.end
 m_skybox3d.fog.maxdensity
+m_skybox3d.fog.radial
 m_skybox3d.fog.start
 m_skybox3d.origin
 m_skybox3d.scale
@@ -33495,6 +33521,7 @@ mousehint
 mouseinputenabled
 mouseoveritempanel
 mouth
+moveHelper->ProcessImpacts(cl)
 move_scale
 move_x
 move_y
@@ -33879,7 +33906,7 @@ numkills
 numlikes
 numsettings
 numsilver
-o@11IMoveHelper
+o@vOldLocalVel: %f %f %f\n
 o\n\nradio_freq
 obj_attachment_sapper
 obj_minisentry
@@ -34910,6 +34937,8 @@ r_flashlightvisualizetrace
 r_flex
 r_hand_grip
 r_handposes_engineer
+r_lightmap_bicubic
+r_lightmap_bicubic_set
 r_mapextents
 r_maxmodeldecal
 r_modelwireframedecal
@@ -34979,7 +35008,7 @@ radius_random
 radius_random_exponent
 radius_scale
 radius_start_scale
-ragdoll %d
+ragdoll %lld
 ragdoll.cpp
 ragdoll_sleepaftertime
 ragdollconstraint
@@ -35307,6 +35336,7 @@ resource/UI/HudDamageAccount.res
 resource/UI/HudDemomanCharge.res
 resource/UI/HudDemomanPipes.res
 resource/UI/HudHealthAccount.res
+resource/UI/HudInspectPanel.res
 resource/UI/HudItemAttributeTracker.res
 resource/UI/HudItemEffectMeter.res
 resource/UI/HudItemEffectMeter_Action.res
@@ -35748,6 +35778,7 @@ sc_yaw_sensitivity_default
 scale emission to used control points
 scaleAmount
 scaleImage
+scaleProportional
 scaleVar
 scale_bias
 scale_uv
@@ -35840,7 +35871,6 @@ scripts/population/mvm_mannworks.pop
 scripts/propdata.txt
 scripts/protodefs/proto_defs.vpd
 scripts/protodefs/unencrypted/
-scripts/quest_maps.txt
 scripts/soundscapes_%s.txt
 scripts/soundscapes_manifest.txt
 scripts/surfaceproperties_manifest.txt
@@ -35939,7 +35969,6 @@ server_steam_id
 server_trusted
 server_version
 serveranimdata
-serverblacklist
 serverbrowser
 serverbrowser_favorites
 serverbrowser_friends
@@ -35989,8 +36018,6 @@ setclosebuttonvisible
 setfilter
 setinfo %s "%s"\n
 setinputenabled
-setlocale
-setlocale@GLIBC_2.2.5
 setpos
 setpos_exact
 settick_
@@ -36464,7 +36491,6 @@ start_fade_out_time
 start_fadeout_exponent
 start_fadeout_max
 start_fadeout_min
-start_framed
 start_radius
 start_search
 start_tall
@@ -36836,6 +36862,7 @@ sv_stickysprint_default
 sv_stopspeed
 sv_suppress_viewpunch
 sv_turbophysics
+sv_viewmodel_lag_do_angles
 sv_vote_holder_may_vote_no
 sv_vote_issue_kick_allowed
 sv_wateraccelerate
@@ -37127,7 +37154,6 @@ tf_construction_build_rate_multiplier
 tf_contract_competitive_show
 tf_contract_progress_report_item_hold_time
 tf_contract_progress_show
-tf_crashclient
 tf_damage_disablespread
 tf_dashboard_slide_time
 tf_datacenter_ping_debug
@@ -38280,6 +38306,9 @@ usetitlesafe
 utility
 utime@GLIBC_2.2.5
 utimes@GLIBC_2.2.5
+vNewAbsVel: %f %f %f\n\n
+vNewLocalVel: %f %f %f\n
+vOldAbsVel: %f %f %f\n
 v\n\nitem_logic
 v_centermove
 v_centerspeed
@@ -39176,7 +39205,6 @@ ypos
 yt:rating
 yt:statistics
 zT?in_graph
-zd?player/hwm
 zh_CN
 zh_TW
 zi_atoll

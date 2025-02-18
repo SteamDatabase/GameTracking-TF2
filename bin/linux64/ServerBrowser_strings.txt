@@ -189,6 +189,7 @@
 #vgui_TimeLeftMinutesSeconds
 #vgui_TimeLeftSecond
 #vgui_TimeLeftSeconds
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -346,7 +347,9 @@ $X360
 ,%03d
 -defaultgamedir
 -game
+-gamepadui
 -insecure
+-nogamepadui
 -vguimessages
 ../vgui/icon_con_high.vmt
 ../vgui/icon_con_low.vmt
@@ -441,7 +444,7 @@ $X360
 9CCallbackI15CDialogGameInfo20PersonaStateChange_tLb0EE
 9CLanGames
 9IGameList
-:ResizeColumnToContents
+:BaseInputDialog
 </script>
 << NULL >>\n
 <a href=
@@ -483,7 +486,6 @@ AutoRetryAlert
 AutoRetryJoin
 Backspace
 Bad format string in CLocalizeStringTable::ConstructString\n
-BaseInputDialog
 Bias
 Blacklisted '%s' (%s), due to rule '%s' (Class C).\n
 Blacklisted '%s' (%s), due to rule '%s'.\n
@@ -980,7 +982,6 @@ MouseWheeled
 Move
 MoveScrollBar
 MoveScrollBarDirect
-N4vgui10BuildGroupE
 N4vgui10CheckImageE
 N4vgui10ClickPanelE
 N4vgui10GraphPanelE
@@ -1150,7 +1151,6 @@ RadioButton.TextColor
 RadioButtonChecked
 RaisedBorder
 RandomFloat
-Recreate server bowser vgui dialog
 RecursiveLoadFromBuffer:  got EOF instead of keyname
 RecursiveLoadFromBuffer:  got NULL key
 RecursiveLoadFromBuffer:  got conditional between key and value
@@ -1169,6 +1169,7 @@ RemoveServer
 Repaint
 ReplayFilterCheck
 ResetData
+ResizeColumnToContents
 Resource\warning.wav
 RevertToSaved
 RichText
@@ -1278,6 +1279,7 @@ SteamAPI_SetTryCatchCallbacks
 SteamAPI_UnregisterCallback
 SteamClient020
 SteamController008
+SteamDeck
 SteamFriends017
 SteamInput006
 SteamInternal_ContextInit
@@ -1287,6 +1289,7 @@ SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
 SteamNetworking006
+SteamTenFoot
 SteamUser023
 SteamUtils010
 StopPanelAnimations
@@ -1366,7 +1369,7 @@ VGUI_System010
 VGUI_ivgui008
 VGuiModuleServerBrowser001
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VP4002
 VPanel
 VPhysicsCollision007
@@ -1506,6 +1509,7 @@ defaultSelectionBG2Color_override
 default_download
 depressedBgColor_override
 depressedFgColor_override
+destroy server browser for resize
 developer
 dialog
 direction
@@ -1777,16 +1781,17 @@ rotation
 runevent
 runeventchild
 sb_close_browser_on_connect
+sb_destroy_for_resize
 sb_dontshow_maxplayer_warning
 sb_filter_incompatible_versions
 sb_firstopentime
 sb_mod_suggested_maxplayers
 sb_numtimesopened
 sb_quick_list_bit_field
-sb_recreate
 sb_showblacklists
 scaleAmount
 scaleImage
+scaleProportional
 screenx
 screeny
 script
@@ -1828,8 +1833,6 @@ servers/icon_secure_deny
 servers/serverbrowser_%language%.txt
 setclosebuttonvisible
 setinputenabled
-setlocale
-setlocale@GLIBC_2.2.5
 settitlebarvisible
 setvisible
 shift

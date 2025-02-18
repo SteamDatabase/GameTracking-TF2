@@ -258,6 +258,7 @@
 #GameUI_Language_Italian
 #GameUI_Language_Japanese
 #GameUI_Language_Korean
+#GameUI_Language_Latam_Spanish
 #GameUI_Language_Norwegian
 #GameUI_Language_Polish
 #GameUI_Language_Portuguese
@@ -364,6 +365,7 @@
 #vgui_ok
 $3br
 $AlphaTestReference
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -424,7 +426,7 @@ $vertexcolor
 %4.0f ms : %s\n
 %4d: Flags:0x%8.8x %s\n
 %4d: Flags:0x%8.8x RefCount:%2d %s\n
-%5.2f MB (%d bytes)\n
+%5.2f MB (%zu bytes)\n
 %5.2f MB: %s\n
 %5.2f MB: total\n
 %6.2fms       %5.2f    %6.2fms    %4d        %4d          %s\n
@@ -834,6 +836,7 @@ $vertexcolor
 +Key
 +Target
 +connect
++connect %s
 +demoui2
 +host_timer_spin_ms
 +jlook\n
@@ -933,6 +936,7 @@ $vertexcolor
 -full
 -fullscreen
 -game
+-gamepadui
 -heapcheck
 -height
 -hideconsole
@@ -963,6 +967,7 @@ $vertexcolor
 -nodev
 -nodns
 -nogamedll
+-nogamepadui
 -nohltv
 -noip
 -nomaster
@@ -1108,6 +1113,7 @@ $vertexcolor
 0.15
 0.25
 0.55
+00:25:52
 0123456789ABCDEF
 0123456789abcdef
 0: no radiosity\n1: radiosity with ambient cube (6 samples)\n2: radiosity with 162 samples\n3: 162 samples for static props, 6 samples for everything else
@@ -2484,7 +2490,6 @@ $vertexcolor
 1997
 1998
 1999
-19:19:50
 19CAreaPortalsUIPanel
 19CAudioSourceMemWave
 19CBudgetHistoryPanel
@@ -2526,8 +2531,6 @@ $vertexcolor
 2003
 2004
 2005
-2006
-2007
 2008
 2009
 2011
@@ -2543,7 +2546,7 @@ $vertexcolor
 2021
 2022
 2023
-2025
+2024
 2026
 2027
 2028
@@ -2802,7 +2805,7 @@ $vertexcolor
 9gf0B
 ;----- dt_ShowPartialChangeEnts -----
 <!-- DMXVersion
-<-- [%s] Split packet %4i/%4i seq %5i size %4i mtu %4llu from %s\n
+<-- [%s] Split packet %4i/%4i seq %5i size %4zd mtu %4llu from %s\n
 <-small
 </script>
 << NULL >>\n
@@ -2914,6 +2917,7 @@ After this many seconds without a message from a client, the client is dropped
 After this many seconds without receiving a packet from the server, the client will disconnect itself
 Alias a command.
 Alias name is too long\n
+Alien Swarm
 All Categories
 All Files (*.*)
 All playback is fully async (sound doesn't play until data arrives).
@@ -4097,7 +4101,6 @@ Debug test scripts.
 DebugMenu
 DebugOptions
 DebugTextureInfo001
-Dec 11 2024
 Decal static props test
 Decal_Init()
 Decal_Shutdown()
@@ -4603,6 +4606,7 @@ Fast Bwd
 Fast Fwd
 Fatal Error:  Unable to create game window!
 Fatal Error: Unable to get window info from SDL.
+Feb 18 2025
 Fieldname is not unique: %s\nRename it and try again.
 File %d: %s Size:%d\n
 File '%s' requested from %s.\n
@@ -4692,6 +4696,8 @@ FogEndSky
 FogEndText
 FogEndTextSky
 FogOverride
+FogRadial
+FogRadialSky
 FogStart
 FogStartSky
 FogStartText
@@ -4874,6 +4880,7 @@ Half-Life 2: Episode One
 Half-Life 2: Episode Two
 Half-Life 2: Lost Coast
 Half-Life Deathmatch: Source
+Half-Life: Source
 Hammer001
 Handle Count %d (%llu bytes)\n
 Has competitive ever been enabled this run?
@@ -4937,7 +4944,6 @@ HueSlider
 Huffman code size table overflow
 Huffman table 0x%02x was not defined
 HushAsserts
-I u3
 I-0?z7
 IA88
 IBSPPACK004
@@ -5291,6 +5297,8 @@ LOG_OUT
 LOWPASS
 LOWPASS_4TAP
 LZMA Decompression failed (%i)\n
+LZMA Decompression overflowed (%zu > %zu)\n
+LZMA Decompression overflowed (read: %zu > %zu or write: %zu > %zu)\n
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?\n
 Label.BgColor
 Label.DisabledFgColor1
@@ -5304,11 +5312,14 @@ Lag all incoming network data (including loopback) by this many milliseconds.
 Language (from HKCU\Software\Valve\Steam\Language)
 LanguageMenu
 LastGameNameUsed
+Latam_Spanish
 Layer I
 Layer II
 Layer III
 Leaf %d, Area %d, Cluster %d\n
 LeafBrushes
+Left 4 Dead
+Left 4 Dead 2
 Legacy SVC_VoiceInit - got a set for sv_use_steam_voice convar, assuming Steam voice\n
 Legacy game DLL may not support terrain vphysics collisions with this BSP!\n
 Legacy variable with no effect!  This was deleted and then added as a temporary kludge to prevent players from being banned by servers running old versions of SMAC
@@ -5324,6 +5335,7 @@ LightStyle with NULL value!\n
 Light_Cache
 LightcacheGet
 Lighting Verts
+LightmapBicubic
 Limits spectators to chat only every n seconds
 Linear Interp Angles
 Linear Interp Origin
@@ -5406,6 +5418,8 @@ MATSYS_VIDCFG_FLAGS_DISABLE_SPECULAR: %s\n
 MATSYS_VIDCFG_FLAGS_ENABLE_PARALLAX_MAPPING: %s\n
 MATSYS_VIDCFG_FLAGS_FORCE_HWSYNC: %s\n
 MATSYS_VIDCFG_FLAGS_FORCE_TRILINEAR: %s\n
+MATSYS_VIDCFG_FLAGS_LIGHTMAP_BICUBIC: %s\n
+MATSYS_VIDCFG_FLAGS_NO_WINDOW_BORDER: %s\n
 MATSYS_VIDCFG_FLAGS_REDUCE_FILLRATE: %s\n
 MATSYS_VIDCFG_FLAGS_USE_Z_PREFILL: %s\n
 MATSYS_VIDCFG_FLAGS_WINDOWED: %s\n
@@ -5620,7 +5634,6 @@ Music volume
 Must have smoothing selection active\n
 N17CAudioSourceCache15SearchPathCacheE
 N17CAudioSourceVoice14CWaveDataVoiceE
-N4vgui10BuildGroupE
 N4vgui10CheckImageE
 N4vgui10ClickPanelE
 N4vgui10GraphPanelE
@@ -5706,13 +5719,13 @@ NET_BufferToBufferDecompress with improperly sized dest buffer (%u in, %u needed
 NET_BufferToBufferDecompress: Snappy decompression failed\n
 NET_BufferToBufferDecompress: header said %d bytes would be decompressed, but we LZSS decompressed %d\n
 NET_CloseNetChannel: unknown channel.\n
-NET_GetLong:  Ignoring duplicated split packet %i of %i ( %i bytes ) from %s\n
-NET_GetLong:  Split packet (%d of %d) has invalid size %d (split size %d)\n
+NET_GetLong:  Ignoring duplicated split packet %i of %i ( %zd bytes ) from %s\n
+NET_GetLong:  Split packet (%d of %d) has invalid size %zd (split size %d)\n
 NET_GetLong:  Split packet from %s has a packetCount * splitSize that exceeds NET_MAX_MESSAGE (%d * %d > %d)\n
 NET_GetLong:  Split packet from %s with inconsistent split size (number %i/ count %i) where size %i not equal to initial size of %i and count of %i\n
 NET_GetLong:  Split packet from %s with invalid split size (number %i/ count %i) where size %i is out of valid range [%llu - %llu]\n
 NET_GetLong:  Split packet from %s with too many split parts (number %i/ count %i) where %llu is max count allowed\n
-NET_GetLong:  Split packet sequence's final packet overflows NET_MAX_MESSAGE(packetCount %d, final packet %d bytes, NET_MAX_MESSAGE %d)\n
+NET_GetLong:  Split packet sequence's final packet overflows NET_MAX_MESSAGE(packetCount %d, final packet %zd bytes, NET_MAX_MESSAGE %d)\n
 NET_GetPacket
 NET_Init( bDedicated )
 NET_OpenSockets
@@ -6008,6 +6021,7 @@ Plat_GetPagedPoolInfo
 Plat_IsInBenchmarkMode
 Plat_IsInDebugSession
 Plat_MSTime
+Plat_OpenURL: Failed to execute '%s'\n
 Plat_SetBenchmarkMode
 Plat_SetWatchdogHandlerFunction
 Plat_USTime
@@ -6054,6 +6068,7 @@ PopulateFileList
 PopulateFileNameCompletion
 Popups Only
 Portal
+Portal 2
 Position:  %s\n
 Power Savings Mode
 Precache brush models
@@ -6410,6 +6425,7 @@ SAVE_HEADER
 SCR_Init()
 SCR_Shutdown()
 SCR_UpdateScreen
+SDK_EXEC_DIR
 SDL Audio
 SDL Audio Device\n
 SDLDefaultDevice
@@ -6595,6 +6611,7 @@ ScreenHeight
 ScreenMSAA
 ScreenMSAAQuality
 ScreenMonitorGamma
+ScreenNoBorder
 ScreenWidth
 ScreenWindowed
 Screenshot file
@@ -6945,7 +6962,12 @@ SoundSpatialDelays
 Sounds [count=%d]
 Source Engine %i (build %d)
 Source Engine Query
+Source SDK (Legacy)
 Source SDK Base
+Source SDK Base 2006
+Source SDK Base 2007
+Source SDK Base 2013 Multiplayer
+Source SDK Base 2013 Singleplayer
 SourceBench.csv
 SourceMod:%d,DS:%d,Crash:%d\n\n
 SourceTV
@@ -7060,6 +7082,7 @@ SteamAPI_WriteMiniDump
 SteamAppUser
 SteamClient020
 SteamController008
+SteamDeck
 SteamFriends017
 SteamGameServer015
 SteamGameServerStats001
@@ -7079,6 +7102,7 @@ SteamMatchMakingServers002
 SteamNetworking006
 SteamNetworkingSockets012
 SteamNetworkingUtils004
+SteamTenFoot
 SteamUser023
 SteamUserPassphrase
 SteamUtils010
@@ -7136,7 +7160,7 @@ TESTSCRIPT: waiting for checkpoint '%s'%s\n
 TEXT NOT SET YET
 TGA doesn't match source data.\n
 TODO demo file name
-TODO: Refusing to discard %u bytes\n
+TODO: Refusing to discard %zu bytes\n
 TODO: SV_User_f.\n
 TUNNEL Detected \n
 TabActiveBorder
@@ -7223,7 +7247,8 @@ This can be used to limit the value of cl_interp_ratio for connected clients (on
 This game is full.\n
 This game is no longer available.\n
 This map is not final!!  Needs to be rebuilt without -keepstalezip and without -onlyents\n
-This mod requires appid: %d. Please install it to play this mod.
+This mod requires %s (%d) to be installed. Please install it to play this mod.
+This mod requires that you own %s (%d). Please purchase it, and install it to play this mod.
 This model has problems. . see a programmer.
 This sets the minimum value for cl_cmdrate. 0 == unlimited.
 ThreadDetach
@@ -7562,6 +7587,7 @@ VEngineServer022
 VEngineServer023
 VEngineServerStringTable001
 VEngineShadowMgr002
+VEngineVGui001
 VEngineVGui002
 VGUI
 VGUI Build Mode Editor
@@ -7578,7 +7604,7 @@ VGUI_ivgui008
 VGui_DrawHierarchy
 VGy#
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VModelInfoClient006
 VModelInfoServer003
 VModelInfoServer004
@@ -8732,6 +8758,7 @@ entity_set_keyvalue %s %f %f %f "%s" "%s"
 envmap
 episodic
 error loading %s\n
+es_419
 es_ES
 examples:\n
 exec
@@ -8815,6 +8842,10 @@ fog_end %i\n
 fog_endskybox %i\n
 fog_override 0\n
 fog_override 1\n
+fog_radial 0\n
+fog_radial 1\n
+fog_radialskybox 0\n
+fog_radialskybox 1\n
 fog_start %i\n
 fog_startskybox %i\n
 fogui
@@ -9150,6 +9181,7 @@ labelText
 landmark
 landmarkName
 lastBarWidth
+latam
 lchown@GLIBC_2.2.5
 ld-linux-x86-64.so.2
 leafmindisttowater
@@ -9931,6 +9963,8 @@ r_lightcachecenter
 r_lightcachemodel
 r_lightinterp
 r_lightmap
+r_lightmap_bicubic
+r_lightmap_bicubic,
 r_lightstyle
 r_lockpvs
 r_lod
@@ -10080,7 +10114,6 @@ resource/icon_newfolder
 resource/icon_play_once
 resource/replay_%language%.txt
 resource/serverevents.res
-resource/tf_%language%.txt
 resource/youtube_%language%.txt
 resource\BaseActionCDTrackStartDialog.res
 resource\BaseActionPauseDialog.res
@@ -10160,10 +10193,11 @@ saverestore->Shutdown()
 saves current video configuration to the registry
 savevmf
 say "Bug Submitted: '%s'"
-sb_recreate\n
+sb_destroy_for_resize\n
 sbrk size: %.2f MB, Used: %.2f MB, #mallocs = %d\n
 scaleAmount
 scaleImage
+scaleProportional
 scandir@GLIBC_2.2.5
 schinese
 screenshot screenshots/%s.jpg\n
@@ -10480,8 +10514,10 @@ stdout@GLIBC_2.2.5
 steam.cfg
 steam.inf
 steam://
+steam://install/%d
 steam://openurl/
 steam://openurl_external/
+steam://store/%d
 steam://store_demo/220
 steam://store_demo/400
 steam_appid.txt
@@ -10687,6 +10723,7 @@ sv_stressbots
 sv_tags
 sv_timeout
 sv_unlockedchapters
+sv_use_steam_networking
 sv_use_steam_voice
 sv_useexplicitdelete
 sv_visiblemaxplayers
@@ -10992,6 +11029,7 @@ vgui_nav_lock
 vgui_nav_lock_default_button
 vgui_togglepanel
 vgui_ui_scale_factor
+vgui_ui_scale_factor_deck_additional
 vgui_ui_scale_height
 vgui_ui_scale_width
 vgui_vprofpanel.cpp
@@ -11007,6 +11045,7 @@ violence_agibs
 violence_hblood
 violence_hgibs
 vmf file maps/%s.vmf\n
+vmodule_resetparents\n
 voice_avggain
 voice_buffer_ms
 voice_debugfeedback
@@ -11146,6 +11185,7 @@ writing
 www.
 xV42?
 xdg-open "%s" &
+xdg-open '%s' &
 xload
 xload <savename>\n
 xxtestxx 

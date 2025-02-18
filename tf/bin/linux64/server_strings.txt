@@ -193,6 +193,7 @@
  KEH
  Lobby member %s is in state %s\n
  Lobby member %s no longer connected, lobby is incorrect\n
+ Maul
  Moving 
  Outdent() without matching Indent().
  Parameter to BackUp() can't be negative.
@@ -535,7 +536,10 @@
 #EntFire:Generate and entity i/o event
 #GameType_Passtime
 #GameType_PlayerDestruction
+#GameType_TOW
 #GameType_Training
+#GameType_VSH
+#GameType_ZI
 #GameUI_Language_Brazilian
 #GameUI_Language_Bulgarian
 #GameUI_Language_Czech
@@ -550,6 +554,7 @@
 #GameUI_Language_Italian
 #GameUI_Language_Japanese
 #GameUI_Language_Korean
+#GameUI_Language_Latam_Spanish
 #GameUI_Language_Norwegian
 #GameUI_Language_Polish
 #GameUI_Language_Portuguese
@@ -571,6 +576,7 @@
 #Gametype_EscortRace
 #Gametype_Koth
 #Gametype_MVM
+#Gametype_PlayerDestruction
 #Gametype_RobotDestruction
 #Gametype_SD
 #HL2_Chapter10_Title
@@ -996,6 +1002,7 @@ $0$1$2 $3 = $4
 $0enum $1 {\n
 $0option $1;\n
 $0rpc $1(.$2) returns (.$3)
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -1981,6 +1988,7 @@ $var3
 -damage
 -defaultgamedir
 -frozen
+-gamepadui
 -gamestatsfileoutputonly
 -gamestatslogging
 -gamestatsloggingtofile
@@ -1990,6 +1998,7 @@ $var3
 -makedevshots
 -makereslists
 -name
+-nogamepadui
 -noscripting
 -scriptlang
 -server_script does not recognize a language named '%s'. virtual machine did NOT start.\n
@@ -6135,6 +6144,7 @@ $var3
 29ITriggerPlayerRespawnOverride
 29NextBotTraversableTraceFilter
 2Fort
+2Fort Invasion
 2Q.CMsgGC_Client_UseServerModificationItem_Response.EServerModificationItemResponse"
 2[.CMsgGC_GameServer_UseServerModificationItem_Response.EServerModificationItemServerResponse"
 2\n*matchmaking_casual_low_priority_expiration
@@ -6816,7 +6826,6 @@ $var3
 ========================================\n
 =CTFPointManager
 =G@V\Jclears debug overlays
-=General.StopBurning
 =NextBot/NextBotInterface.cpp
 =\n5matchmaking_last_comp_excessive_reports_auto_ban_time
 =\n9k_ItemPurgatoryResponse_Finalize_Failed_CouldNotFindItems
@@ -6830,6 +6839,8 @@ $var3
 >@ffffff
 >CAI_SentenceBase
 >CBaseFire
+>CPhysicsHook
+>General.StopBurning
 >\n\nsale_price
 >handle_test
 >pda_panel_spy_invis_pocket
@@ -6843,7 +6854,6 @@ $var3
 ?CAI_MoveAndShootOverlay
 ?CAnimationLayer
 ?CAreaPortal
-?CPhysicsHook
 ?CTFBotActionPoint
 ?Catmull-Rom Spline
 ?Clear memory of server side hints displayed to the player.
@@ -6854,6 +6864,7 @@ $var3
 ?Eligible
 ?InvertibleRSAFunction: computational error during private key operation
 ?LOADOUT_POSITION_INVALID
+?Ladder.StepRight
 ?Looking forward while jumping a gap
 ?Obstructing nav
 ?TASK_INVALID
@@ -9160,6 +9171,7 @@ Already specified WaitBetweenSpawnsAfterDeath time, WaitBetweenSpawns won't be u
 AltMode%d
 AltModes
 Alternative dispatch spawn, same as the one in CEntities, for convenience.
+Altitude
 AlwaysCrit
 AlwaysFireWeapon
 AmNot
@@ -9330,6 +9342,7 @@ Anywhere
 Aperture Science Prototype XR7
 App%u.%s
 Append the skill level of the bot to the bot's name
+Applejack
 Applied Impulse: %f
 Applied redirect to maintain minimum Z ( %f -> %f )
 Applied updated item schema from GC. %d bytes, version %08X.\n
@@ -9426,6 +9439,8 @@ Associated Operation
 Asteroid
 Async write of downloaded file %s failed\n
 At destination
+Atoll
+Atom Smash
 Attachment index for attachment mode
 Attack and Reload
 Attack2Axis
@@ -9581,6 +9596,7 @@ BallHistSampleThink
 BallNeutralSec
 BallPower_PackThink
 BallPower_PowerThink
+Banana Bay
 Barbed
 Barnblitz
 Barricade_Achievement_Check
@@ -9630,6 +9646,7 @@ BitLength
 Black Mesa
 BlastImmune
 BlastJump.Whistle
+Blazehattan
 BleedPlayerEx
 Block size: %-11s Alloc'd: %8d Num blobs: %5d (%s)\n
 BlockPaddingScheme
@@ -9650,6 +9667,7 @@ Blocked for Red
 Blocking load of scene from '%s'\n
 Blood Sprite
 Blood Stream
+Bloodwater
 BlowHorn
 Blue Previous Points: 
 Blue Setup Gate
@@ -9696,6 +9714,7 @@ Boo!
 Boolean default must be true or false.
 Boolean value. If nonzero, override mdl collision with a perfect sphere collider.
 BoomerBile
+Borneo
 Bot '%s' couldn't find a path from nav mesh %d to nav mesh %d.\n
 Bot '%s' not on the nav mesh.\n
 Bot '%s' tried to move to a point that isn't on the nav mesh (%.2f %.2f %.2f).\n
@@ -9735,6 +9754,8 @@ Branch14
 Branch15
 Branch16
 BrassModel
+Brazil
+Bread Space
 BreakModelRocketDud
 BreakModel_Pumpkin
 BreakThink
@@ -9754,7 +9775,9 @@ Breakable.Metal
 BreakableModels
 BreakablePropTouch
 Breaking '%s' in '%s'\n
+Brew
 BrightTracer
+Brimstone
 Bubble Trail
 Buckshot
 Buddha Mode off...\n
@@ -9822,7 +9845,9 @@ BumperCar.Spawn
 BumperCar.SpawnFromLava
 BumperCar.SpeedBoostStart
 BumperCar.SpeedBoostStop
+Burghausen
 Buttons.snd%d
+Byre
 Byte size calculation and serialization were inconsistent.  This may indicate a bug in protocol buffers or it may be caused by concurrent modification of the message.
 ByteQueue: size specified for UndoLazyPut is too large
 C14CAI_Pathfinder
@@ -11277,6 +11302,7 @@ CTFFlameRocket
 CTFFlameThrower
 CTFFlareGun
 CTFFlareGun_Revenge
+CTFForceRespawn
 CTFGCServerSystem - removing listener to old Steam ID %s\n
 CTFGCServerSystem::MvMVictory() -- no lobby, so not sending results to GC\n
 CTFGCServerSystem::UpdateConnectedPlayersAndServerInfo
@@ -11629,6 +11655,7 @@ C\n!instance_def_type_quest_objective
 C\n\rhave_versions
 C\n\tmenu_step
 Cache the group spawn tables
+Cachoeira
 Cactus Canyon
 CalcSequenceIndex: can't find '%s'.\n
 CalculateMatchSkillRatingAdjustments(): Invalid team!\n
@@ -11644,6 +11671,7 @@ CallNPCThink
 CallVoteFailed
 Called wrong RunTask()\n
 Called wrong StartTask()\n
+Camber
 Camera in use by other player.
 Camera.SnapShot
 Can Opener
@@ -11718,6 +11746,7 @@ CanFitAtNode() called with no network!\n
 CanGetWet
 CanJump
 CanPlayerMove
+Canaveral
 Cancel
 Cancel Other Sequences: %s
 CancelTaunt
@@ -11757,6 +11786,8 @@ Carnival of Carnage
 Cart is missing
 Cart.Explode
 Cart.WarningSingle
+Cascade
+Cashworks
 Casual 12v12 Active
 Casual 12v12 Full
 Casual 6v6 Active
@@ -11768,6 +11799,7 @@ Catmull-Rom
 Catmull-Rom (Norm X)
 Catmull-Rom (Norm)
 Catmull-Rom (Tangent)
+Cauldron
 Centers the nav mesh in the world
 Cgesture_melee_cheer
 Change players FOV
@@ -11807,6 +11839,7 @@ Checks if this TFBot has the given weapon restriction flags
 Checks if we are in a squad
 Chell
 Chest.Step
+Chilly
 ChooseEnemy() {\n
 Chops all selected areas into their component 1x1 areas
 Chops all selected areas into their component 1x1 areas and re-merges them together into larger areas
@@ -11817,6 +11850,7 @@ Christmas.GiftPickup
 Chucklenuts
 Cine died!\n
 CipherModeBase: feedback size cannot be specified for this cipher mode
+Circus
 Clamp head turns to a max of 20 degrees per think.
 Clamping ApplyAbsVelocityImpulse(%f,%f,%f) on %s\n
 Clamping ApplyLocalVelocityImpulse(%f,%f,%f) on %s\n
@@ -11882,6 +11916,7 @@ CloseAreaportalThink
 CloseCaption
 Closer than
 ClosestPoint
+Coal Pit
 Code forced %s(%s), to be the target of scripted sequence %s, but it can't play it.\n
 Cofactor
 Collection %s referenced by item %s not found
@@ -11972,6 +12007,7 @@ Coroutine_DebugAssert
 Coroutine_DebugBreak
 Coroutine_YieldToMain
 CorpseFallThink
+Corruption
 CostMultiplier
 Could not AllocSound() for Client Reserve! (DLL)\n
 Could not AllocSound() for InsertSound() (Game DLL)\n
@@ -12002,6 +12038,7 @@ Couldn't set relationship to unknown entity or class (%s)!\n
 Couldn't walk to target
 Count = %d\n
 Crashed!: speed %.2f, lastSpeed %.2f\n
+Crasher!
 Crazed Gunman
 Create In Hierarchy
 Create a physics prop
@@ -12073,6 +12110,7 @@ Current sound patches: %d\n
 CurrentSpeed: %.3f  
 Currently holding an item? Eg. capture flag
 Currently in overtime?
+Cursed Cove
 Curve
 Custom game-specific analysis...
 Custom game-specific analysis...DONE\n
@@ -12083,6 +12121,7 @@ CustomMaxTimeShots
 CustomMinShots
 CustomMinTimeShots
 CustomOddsCover
+Cutter
 Cycle: %.5f (%.5f)
 D$hJ
 D35E472036BC4FB7E13C785ED201E065F98FCFA5B68F12A32D482EC7EE8658E98691555B44C59311
@@ -12590,6 +12629,7 @@ DanceThink1
 DanceThink2
 Dangling
 Dangling pointer to physics entity!!!\n
+Darkmarsh
 Data manager 'used' memory incorrect\n
 DataMap
 DeGroot Keep
@@ -12692,6 +12732,7 @@ DevMsg
 DevMsg(char const*, ...)
 DevWarning
 DevWarning(char const*, ...)
+Devastation
 Devshots: Loading point_devshot_camera positions from %s. \n
 Devshots: No point_devshot_camera in %s. Moving to next map.\n
 Did not create any objective trackers for quest %d on item %llu for user %s with %ds0 %ds1 %ds2\n
@@ -12773,6 +12814,7 @@ Distance to surface: %d\n
 Distance within which bots looking for any enemies will find them.
 DistanceLimitThink
 DistanceTotal
+Distillery
 Divide by Zero
 DmeParticleChild
 DmeParticleOperator
@@ -12829,6 +12871,7 @@ DoorOpenMoveDone
 DoorSound.Null
 Dormant entity %s (%s) is thinking!!\n
 Double Cross
+Doublefrost
 Download of file from cloud failed!\n
 Downward Fast
 Draw a debug circle (center, rad, vRgb, a, ztest, duration)
@@ -12892,6 +12935,7 @@ Dustbowl
 Dynamic Light
 Dynamic Link Error: (%s) unable to form between nodes %d and %d\n
 Dynamic prop %s: no sequence named:%s\n
+Dynamite
 E,>sB
 E2NcUkG2
 E87579C11079F43DD824993C2CEE5ED3
@@ -12902,7 +12946,6 @@ EBotType
 ECDSA
 ECHEM
 ECON
-ECTFForceRespawn
 ECollisionGroup
 ECritType
 EDIT.ToggleAttribute
@@ -13123,6 +13166,7 @@ Editing:\n%s\n%s
 Eff: %s, Move: %s\n
 Eiffel tower
 ElectroThinkContext
+Embargo
 Emerge
 EmitAmbientSound:  '%s' emitted as '%s' (ent %i)\n
 EmitAmbientSound:  Raw wave emitted '%s' (ent %i)\n
@@ -13152,6 +13196,7 @@ Enables melee stealing.
 Enables player lag compensation
 Enables shooting the ball
 Enables the spectator queue system for Arena.
+Enclosure
 EncodingLookupArray
 Encountered duplicate attribute definition for attribute "%s"!
 Encountered func_breakablesurf that has a material applied to more than one surface!\n
@@ -13220,6 +13265,7 @@ EqualityComparisonFilter
 EquivalentTo
 Erase any previously placed walkable positions.
 Erases current game stats and writes out a blank stats file
+Erebus
 Error
 Error in SetSection input: %s\n
 Error loading cfg/vscript_convar_allowlist.txt\n
@@ -13281,7 +13327,7 @@ Existing commit record for SObject is more up to date: %s\n
 Exit animation %s failed to cache target points properly!\n
 Expected "
 Expected %s found %s ( raw '%s' )! (prev: %s)\n
-Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.
+Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.X2
 Expected result speed: %f
 Expecting ',', didn't find it!
 Expecting '[', didn't find it!
@@ -13491,6 +13537,7 @@ Failed to write file to cloud\n
 Failed!
 FallbackToDCPing
 Falling back to item schema from local file.\n
+Farmageddon
 FastHexToBuffer() wants non-negative integers, not 
 Fear: Couldn't find hint node\n
 FeedbackSize
@@ -13701,6 +13748,7 @@ Format: ent_teleport <entity name>\n
 Format: find_ent <substring>\n
 Format: find_ent_index <index>\n
 FormationSize
+Fortezza
 FortuneActivate
 Forward distance between high five partners
 Found %d matches.\n
@@ -13717,9 +13765,13 @@ Frame %8d/tick %8d: %3d run of %3d, %3d sliders, %3d blocked slides, scheduled %
 Frame %8d/tick %8d: frame out of budget (%.2fms > %.2fms)\n
 FrameUpdatePostEntityThink
 Freakin' Unbelievable
+Freaky Fair
 Free Sound List is full!\n
 FreezeCamTaunt
 Friction multiplier when sliding against surfaces while trapped in an air current
+Frostcliff
+Frostwatch
+Frosty
 Frozen
 Full body scale for minibosses.
 FullRound
@@ -13804,6 +13856,7 @@ GState: %s
 G\n$instance_def_type_paintkit_operation
 G\n$instance_def_type_paintkit_variables
 Ga=o
+Galleria
 Game Mode Modifier
 Game paused time showing up negative (rt %f pausestart %f)\n
 Game server authentication: FAILURE!\n
@@ -14123,6 +14176,7 @@ Gets the weapon's name
 Gets the weapon's print name
 Gets this entity's owner
 Ghost Fort
+Ghoulpit
 GibShooter Body is <= 1!\n
 Give a supply of ammo for current weapon..\n
 Give item to player.\n\tArguments: <item_name>
@@ -14164,6 +14218,7 @@ Going back to my existing sentry nest and reusing a sentry hint
 Gold Rush
 GoldenRatio
 Gorge
+Gorge Event
 Got a NaN velocity on %s\n
 Got matched response for with record: %s\n
 Got version %d\n
@@ -14175,6 +14230,8 @@ GrantOrRemoveAllUpgrades
 Grants or removes all upgrades the player has purchased.
 Graph not ready for FindBackAwayNode!\n
 Gravel Pit
+Gravestone
+Graveyard
 Gravity while parachute is deployed
 GravityTouch
 Grim Bloody Fable
@@ -14233,6 +14290,7 @@ HIDEHUD_CROSSHAIR
 HIDEHUD_FLASHLIGHT
 HIDEHUD_HEALTH
 HIDEHUD_INVEHICLE
+HIDEHUD_MATCH_STATUS
 HIDEHUD_METAL
 HIDEHUD_MISCSTATUS
 HIDEHUD_NEEDSUIT
@@ -14263,7 +14321,10 @@ HUD_PRINTCENTER
 HUD_PRINTCONSOLE
 HUD_PRINTNOTIFY
 HUD_PRINTTALK
+Haarp
+Hacksaw
 Had to force COND_NEW_ENEMY\n
+Hadal
 Hair of the Dog
 Half-Life 2
 Halloween.EyeballBossAcquiredVictim
@@ -14396,6 +14457,7 @@ HapPunch
 HapSetConst
 HapSetDrag
 Hard 
+Hardwood
 Has TF-specific area attribute bits
 Has area attribute bits
 HasAction
@@ -14418,6 +14480,7 @@ HasWeaponRestriction
 HashTransformation: can't truncate a 
 HashVerificationFilter: message hash or MAC not valid
 HashVerificationFilterFlags
+Hassle Castle
 Hat-Wearing MAN
 Have Entity say string, and teamOnly or not
 Have a player pickup a nearby named entity
@@ -14437,7 +14500,9 @@ Heartbeat!\n
 Heat: %.1f
 Heavy.Battlecry03
 Heavy.Incoming0%i
+Hellstone
 Helltower
+Helltrain
 Here I am!
 Here I come!
 Herr Doktor
@@ -14454,6 +14519,7 @@ Highlight non-contiguous connections
 Highlight special areas
 Highlight special areas marked by hand
 Highlights constraint system graph for an entity
+Highpass
 Hightower
 Hint Group: %s
 Hint Type Range is backwards - Fixing up.\n
@@ -15259,6 +15325,7 @@ InputSetPoseParameterName
 InputSetPoseValue
 InputSetPosition
 InputSetPositionImmediately
+InputSetRadial
 InputSetRainbow
 InputSetRedKothClockActive
 InputSetRedTeamGoalString
@@ -15813,6 +15880,7 @@ Kochanek-Bartels
 Kochanek-Bartels Early
 Kochanek-Bartels Late
 Kong King
+Krampus
 L<15CTFTankBossBody
 L=10CTFBotBody
 L>333?
@@ -15858,20 +15926,24 @@ Label
 Ladder #%d (Team %s)\n
 Ladder #%d\n
 Ladder dismount
-Ladder.StepRight
+Landfall
 Landmark name '%s' too long (32 chars)\n
 Large Funnel
 LastSpawnOutput
 LastSpawnWarningSound
+Latam_Spanish
 Late precache of %s (file missing?)\n
 Late precache of %s -- not necessarily a bug now that we allow ~everything to be dynamically loaded.\n
 Late precache of %s, need to rebuild modelsounds.cache\n
 Late precache of %s\n
 LateWeaponPrecache
+Laughter
 Launch target: %s
 LaunchRockets
+Lava Pit
 Layer %s: Weight: %.2f, Cycle: %.2f
 Laying sticky bombs!
+Lazarus
 Lead behavior - bad transition?
 Lead goal entity activated for an NPC that doesn't have the lead behavior\n
 Leader didn't speak due to Nag timer.\n
@@ -15960,6 +16032,7 @@ Loot list %s: Unknown or missing holiday "%s"
 Lootlist "%s" contains lootlist "%s", which contains item "%s", which has end drop date.
 Lootlist "%s" contains lootlist "%s", which contains item "%s", which has start drop date.
 Lootlist %s
+Los Muertos
 Lost handle to async handle for downloaded file write!
 Lost my sentry - retreat!
 Lost patience with my hiding spot
@@ -16123,6 +16196,7 @@ Mann Manor
 Mannpower.DominantPlayerOtherTeam
 Mannpower.PlayerIsDominant
 Mannpower.PlayerIsNoLongerDominant
+Mannsylvania
 ManualAccelSpeed
 ManualDecelSpeed
 Manually run the OnLandOnGround callback. Typically invoked when bot lands on the ground after being in the air
@@ -16146,6 +16220,7 @@ MapID
 MapIndex
 MapStatsUpdate
 MapVersion
+Maple Ridge Event
 Mark an Area with no Place name. Useful for finding stray areas missed when Place Painting.
 Mark cliff areas, post-processing approximation
 Mark the current location as a walkable position. These positions are used as seed locations when sampling the map to generate a Navigation Mesh.
@@ -16273,6 +16348,8 @@ Medic.Incoming0%i
 Medieval mode changes take effect after the next map change.\n
 MedigunHealTargetThink
 Mega Baboon
+Megalo
+Megaton
 Melee attacking nearby threat
 MeleeAttack
 MeleeOnlySuddenDeath
@@ -16384,8 +16461,12 @@ ModifyLinks
 ModifySpeed
 Modulus
 ModulusSize
+Moldergrove
+Monster Bash
 MontgomeryRepresentation: Montgomery representation requires an odd modulus
+Moonshine Event
 MoreGun
+Mossrock
 Motion Disabled
 Mountain Lab
 Mounting downward ladder
@@ -16431,6 +16512,7 @@ Multiplier for how much air control players have when Parachute is deployed
 Multiplier for how much air control players have when in Kart Mode
 Multiplier on air control when player is in an air current (such as airblast)
 Multisource %s enabled (%d inputs)\n
+Murky
 Must NOT be jumping
 Must be alive
 Must be at least double-jumping
@@ -17549,6 +17631,7 @@ Note: Strange link found between nodes in AI node graph\n
 NoteSpeaking( %f, %f ) (stop at %f)\n
 Noticed better victim
 NotificationType
+Nucleus VSH
 NullRNG: NullRNG should only be passed to functions that don't need to generate random bytes
 Num ticks simulated : %d\n
 Number of Waves to Complete before bomb reset
@@ -17594,6 +17677,7 @@ ObjectiveInstance
 Obsolete / Unused
 Obstruction %f\n
 Octopus.StepCommon
+Odyssey
 Offered Quests
 Offsets the bot yaw.
 Old nav file for %s\n
@@ -17747,9 +17831,9 @@ OpenPGP decode error
 Operands
 Operation %s does not specify a lootlist or that it uses credits.
 OperationDefinition %s does not have '%s'
-OperationDefinition %s does not have 'name'
 OperationDefinition couldn't find item def from gateway name '%s'
 OperationDefinition couldn't find item def from required name '%s'
+OperationDefinition does not have 'name'
 Opportunistic attack or self defense!
 Opportunistically sapping an enemy object between my victim and I
 Opportunistically using buff item
@@ -17772,9 +17856,12 @@ Ouch! I'm under attack
 Out of ammo
 Out of scope
 OutColor
+Outburst
 Output help for script functions, optionally with a search string
 OutputBuffer
 OutputStringPointer
+Overcast
+Overgrown
 OverlayName1
 OverlayName10
 OverlayName2
@@ -17952,6 +18039,7 @@ Passtime.Throw
 Passtime.Tv1
 Passtime.Tv2
 Passtime.Tv3
+Patagonia
 Path away from best sound too short!\n
 Path failed
 Path::Compute(goal)
@@ -17978,6 +18066,8 @@ PayloadBlock
 PayloadGuard
 PayloadPush
 PegLeg.StepRight
+Pelican Peak
+Penguin Peak
 Per-team styles blocks are no longer valid. Use "skin_red" and "skin_blu" in a style entry instead.
 Percent chance of a birthday beach ball spawning at each round start
 Percentage chance that a random item is a rare.
@@ -17988,7 +18078,9 @@ Percentage of total fake props players have to destroy before Merasmus reveals h
 Perfect
 Performance Warning: large friction system (%d objects)!!!\n
 PeriodicSpawn
+Perks
 PersonaNameReplacementToken
+Phoenix
 PhysObjectHeader_t
 Physics object pointer unexpectedly non-null before restore. Should be creating physics object in CreatePhysics()?\n
 Physics queue not empty, error!\n
@@ -18001,7 +18093,9 @@ Physics_RunThinkFunctions
 Physics_SimulateEntity
 Picker %i/%s - ent %s model %s\n
 Pickled Paws
+Pier
 Pipeline
+Pit of Death
 PitchShift
 Placed %d areas on the ground\n
 Placed npc_generic in solid!!! (%s)\n
@@ -18153,6 +18247,7 @@ Point value:
 PointerToPrimeSelector
 Points Override
 PointsScored
+Polar
 PolynomialMod2: division by zero
 Poopy Joe
 Poor
@@ -18222,6 +18317,7 @@ PrecacheEntityFromTable
 PrecacheGibsForModel
 PrecacheScriptSound '%s' failed, no such sound script entry\n
 PrecacheSoundScript
+Precipice
 Prefab
 Prerequisite commands me to move to an entity
 Prerequisite commands me to wait
@@ -18259,6 +18355,7 @@ Print, to the console, an entity's current criteria set used to select responses
 PrintHelp( "%s" );
 Prints server lobby object
 Probable duplicate node placed at %s\n
+Probed
 ProcessMatchVoteKick
 ProcessQueryCacheUpdate
 Projected Decal
@@ -18477,6 +18574,7 @@ Recipe component count min less than 0: %s
 Recipe definition %d: Missing required field "input_items"
 Recipe definition %d: Missing required field "output_items"
 Recipe definition index %d must be greater than or equal to zero
+Reckoner
 RecomputeBlockers
 Recomputes lighting values
 Recomputes the component update interval
@@ -18772,6 +18870,7 @@ Rotation Spin Roll
 Rotation Spin Yaw
 Rotation Yaw Flip Random
 Rotation Yaw Random
+Rotunda
 RoundElapsedSec
 RoundEndReason
 RoundIndex
@@ -18785,6 +18884,7 @@ Route Destination No Longer Valid
 Rubber.BulletImpact
 Rule '%s' is disabled.\n
 Rumble
+Rumford
 Run %s %d
 Run a vcd on the player currently under your crosshair. Optional parameter is the .vcd name (default is 'scenes/heavy_test.vcd')
 Run a vscript file
@@ -19083,6 +19183,8 @@ SUSPEND_FOR
 SUSPICIOUS
 Sampling walkable space...
 Samurai.Conch
+Sandcastle
+Sanitarium
 Sap target gone
 SapperThink
 Sapping a Sentry
@@ -19514,6 +19616,7 @@ Seek and destroy - we have lots of time
 Seek and destroy until a point becomes available
 Seek and destroy until the point unlocks
 SeekAndDestroy
+Selbyen
 Select a corner of the currently marked Area. Use multiple times to access all four corners.
 Select nav areas where both dimensions are larger than the given size.
 Select the bot you are aiming at for further debug operations.
@@ -19822,6 +19925,7 @@ ShadowCastDistThink
 Shake the screen.
 ShakeRopes
 SharedObjectCache for %s (%d types):\n
+Sharkbay
 Shells: %d / %d
 Shifting mesh by %f,%f\n
 Shifts the selected areas by the specified amount
@@ -19885,6 +19989,8 @@ SimpleKeyingInterface: this object doesn't support resynchronization
 Simplified path\n
 Simplified_Chinese
 SingleItemDescription
+Sinshine
+Sinthetic
 Size of bsp file '%s' is %u bytes.\n
 Size of flame damage entities.
 Size of nav file '%s' is %u bytes.\n
@@ -19895,9 +20001,12 @@ Skipping unrecongized subcriterion '%s' in '%s'\n
 Skipping: %s\tNext map: %s\n
 Skips SetupBones when npc's are outside the PVS
 Skips the next map in the map rotation for the server.
+Skirmish
+Slasher
 Sleeping
 Slightly Downward
 Slightly Upward
+Slime
 Slot:  %s (%d)\n
 SlotDef%d
 SlotQuality%d
@@ -19915,6 +20024,11 @@ Sniper Spot
 Sniper.Incoming0%i
 SniperAttack
 SniperLurk
+SnowVille
+Snowfall
+Snowplow
+Snowtower
+Snowycoast
 Soldier.Incoming01
 Soldier.Statue
 SolidToPlayerMovement
@@ -19924,6 +20038,7 @@ Someone Else
 Someone else picked up the flag
 Someone has the flag - attacking the enemy defenders
 Sort particles
+Soul-Mill
 Soulless
 Sound Speed: %.3f\n
 SoundCommand_t
@@ -19985,9 +20100,11 @@ SpellRollFinish
 SpellTransposeTeleport
 Spew touch link activity
 Spews all currently active quest trackers
+Spineyard
 Splash.SplashSound
 SpliceEdit: Out of memory.\n
 SplitContext:  warning, ignoring context '%s', missing colon separator!\n
+Spookeyridge
 SpotlightLength
 SpotlightWidth
 Sprite Spray
@@ -20081,6 +20198,7 @@ SteamAPI_UnregisterCallResult
 SteamAPI_UnregisterCallback
 SteamClient020
 SteamController008
+SteamDeck
 SteamFriends017
 SteamGameCoordinator001
 SteamGameServer015
@@ -20100,6 +20218,7 @@ SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
 SteamNetworking006
+SteamTenFoot
 SteamUser023
 SteamUtils010
 Steamworks Stats: Ending SERVER session id: %llu\n
@@ -20179,6 +20298,8 @@ Success!
 Successful teleport
 Successfully loaded particle effects manifest '%s' for map '%s'\n
 SuddenDeathTimeStart
+Suijin
+Sulfur
 Super Jump
 Super Speed
 Suppress listing of disabled issues in the vote setup screen.
@@ -21376,6 +21497,7 @@ Template16
 TemplateEntityData_t
 Terminator
 Terrify
+Terror
 TeslaHitboxes
 Test Item %d
 Test a clientside dispatch effect.\n\tUsage: test_dispatcheffect <effect name> <distance away> <flags> <magnitude> <scale>\n\tDefaults are: <distance 1024> <flags 0> <magnitude 0> <scale 0>\n
@@ -21529,6 +21651,7 @@ Timelimit (in seconds) of the stalemate round.
 TimeoutThink
 Times the cost of each active object
 Tiny Baby Man
+Tiny Rock
 To connect areas, mark an area, highlight a second area, then invoke the connect command. Make sure the cursor is directly north, south, east, or west of the marked area.
 To connect two Areas, mark the first Area, highlight the second Area, then invoke the connect command. Note that this creates a ONE-WAY connection from the first to the second Area. To make a two-way connection, also connect the second area to the first.
 To disconnect areas, mark an area, highlight a second area, then invoke the disconnect command. This will remove all connections between the two areas.
@@ -21631,6 +21754,7 @@ Tournament mode per-team class limit for Soldiers.\n
 Tournament mode per-team class limit for Spies.\n
 Tournament mode server convar that forces clients to not display the domination icons above players dominating them.
 Tournament.PlayerReady
+Toxic
 Trace found %s, dist %.2f\n
 Trace using: %s\n
 Trace: %d, contents %d, enumerate %d\n
@@ -21669,6 +21793,7 @@ Trying to place my teleport exit
 Trying to precache breakable prop, but has no model name\n
 Trying to start a new lag compensation session while one is already active!\n
 Ts\ne
+Turbine Event
 Turn an entity index integer to an HScript representing that entity's script instance.
 Turn off a particular trace output by file or function name
 Turn off a particular trace output by table/instance
@@ -21932,7 +22057,7 @@ VGUI_ivgui008
 VISION
 VM Did not start!\n
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VModEnable
 VModelInfoServer004
 VOL_NORM
@@ -21990,6 +22115,7 @@ Value: ON
 ValueNames
 ValueTag
 ValveBiped.Weapon_bone
+Vanguard
 Vantage point reached
 Variable value definitions"/\n
 Variation of spawn interval +/-
@@ -22003,6 +22129,7 @@ Vel %.1f %.1f %.1f   Ang: %.1f %.1f %.1f\n
 Velocity Inherit from Control Point
 Velocity Random
 Velocity Repulse from World
+Venice
 VerifierFilter: digital signature not valid
 Vertical view fixup when eyes are near water plane.
 VerticalGlowSize
@@ -22136,6 +22263,7 @@ Warning: Spawning AI script conditions (%s) associated with an non-existant NPC\
 Warning: Unused import: "
 Warning: system time went backward by %d seconds\n
 Warps the player to the marked area.
+Watergate
 Wave paused\n
 Wave unpaused\n
 WaveSpawn
@@ -22312,6 +22440,7 @@ Wooden.Large
 Wooden.Medium
 Wooden.Small
 Wooden.Tiny
+Woods
 Work Item for Work Pool %s completed but job no longer existed to notify\n
 Work on my Sentry
 Work on my Teleporter
@@ -22365,6 +22494,7 @@ WriteUBitLong called with no active message\n
 WriteVec3Coord called with no active message\n
 WriteVec3Normal called with no active message\n
 Writes the selected set to disk for merging into another mesh via nav_merge_mesh.
+Wutville
 X position on the quest map
 X917RNG: Continuous random number generator test failed.
 XAxis
@@ -23149,7 +23279,6 @@ __cxa_end_catch
 __cxa_finalize
 __cxa_finalize@GLIBC_2.2.5
 __cxa_free_exception
-__cxa_get_exception_ptr
 __cxa_guard_abort
 __cxa_guard_acquire
 __cxa_guard_release
@@ -23584,13 +23713,14 @@ area %d is unblocked by a nav blocker\n
 area%i
 area_cap_point
 area_time_to_cap
+arena_byre
 arena_changeclass
 arena_lumberyard_event
 arena_match_maxstreak
+arena_perks
 arena_round_start
 arena_win_panel
 arenateampanel
-armageddon
 armor_max
 armor_piercing
 armory_attributes
@@ -24259,20 +24389,44 @@ country
 counts_as_assister
 coverDist
 coverTolerance
+cp_altitude
+cp_ambush_event
 cp_badlands
+cp_brew
+cp_burghausen
+cp_canaveral_5cp
+cp_carrier
+cp_darkmarsh
 cp_degrootkeep
+cp_degrootkeep_rats
 cp_dustbowl
+cp_fortezza
 cp_foundry
+cp_freaky_fair
+cp_frostwatch
 cp_gorge
+cp_gorge_event
 cp_granary
 cp_gravelpit
+cp_gravelpit_snowy
 cp_gullywash_final1
+cp_hadal
+cp_hardwood_final
+cp_lavapit_final
 cp_manor_event
 cp_mercenarypark
+cp_mossrock
 cp_mountainlab
+cp_overgrown
 cp_process_final
+cp_reckoner
 cp_snakewater_final1
+cp_snowplow
+cp_spookeyridge
+cp_sulfur
 cp_sunshine
+cp_sunshine_event
+cp_vanguard
 cp_well
 cpm_restrict_team_cap_win
 cpname
@@ -24395,11 +24549,23 @@ cs_CZ
 cspinup
 cstring
 ctf_2fort
+ctf_2fort_invasion
+ctf_applejack
+ctf_crasher
 ctf_doublecross
+ctf_doublecross_snowy
 ctf_flag_captured
+ctf_frosty
+ctf_haarp
+ctf_helltrain_event
+ctf_landfall
 ctf_mannpower
 ctf_overtime
+ctf_pelican_peak
+ctf_penguin_peak
+ctf_snowfall_final
 ctf_turbine
+ctf_turbine_winter
 ctf_well
 ctype
 cull_control_point
@@ -25107,6 +25273,7 @@ erff
 erff@GLIBC_2.2.5
 error in transition graph: %s to %s\n
 errors
+es_419
 es_ES
 escape_hell
 escaped_loot_island
@@ -25418,6 +25585,7 @@ fogColor
 fogEnable
 fogEnd
 fogMaxDensity
+fogRadial
 fogStart
 fogblend
 fogcolor
@@ -25429,6 +25597,7 @@ foglerptime
 fogmaxdensity
 fogparams_t
 fogplayerparams_t
+fogradial
 fogstart
 followPointTolerance
 follow_attachment
@@ -28218,15 +28387,34 @@ kochanek
 kochanek_early
 kochanek_late
 koreana
+koth_bagel_event
+koth_brazil
 koth_cachoeira
+koth_cascade
 koth_harvest_final
+koth_highpass
 koth_king
 koth_krampus
 koth_lakeside_event
+koth_lazarus
+koth_los_muertos
+koth_maple_ridge_event
+koth_megalo
 koth_megaton
+koth_moonshine_event
+koth_overcast_final
+koth_probed
+koth_rotunda
+koth_sawmill_event
 koth_sharkbay
+koth_slasher
 koth_slaughter_event
 koth_slime
+koth_snowtower
+koth_suijin
+koth_synthetic_event
+koth_toxic
+koth_undergrove_event
 koth_viaduct
 koth_viaduct_event
 krampus_melee
@@ -28242,6 +28430,7 @@ last_duel_status
 last_duel_timestamp
 last_shot_crits
 last_valid_class
+latam
 late_join_eligible
 latitude
 launchDirection
@@ -29358,6 +29547,7 @@ m_bFirstFacing
 m_bFirstHit
 m_bFlipViewModel
 m_bFogEnable
+m_bFogRadial
 m_bFollowNavFailed
 m_bForceClosed
 m_bForceConditionsGather
@@ -30523,6 +30713,7 @@ m_fog.endLerpTo
 m_fog.farz
 m_fog.lerptime
 m_fog.maxdensity
+m_fog.radial
 m_fog.start
 m_fog.startLerpTo
 m_force
@@ -32238,6 +32429,7 @@ m_skybox3d.fog.dirPrimary
 m_skybox3d.fog.enable
 m_skybox3d.fog.end
 m_skybox3d.fog.maxdensity
+m_skybox3d.fog.radial
 m_skybox3d.fog.start
 m_skybox3d.origin
 m_skybox3d.scale
@@ -32249,6 +32441,7 @@ m_skyboxData.fog.dirPrimary
 m_skyboxData.fog.enable
 m_skyboxData.fog.end
 m_skyboxData.fog.maxdensity
+m_skyboxData.fog.radial
 m_skyboxData.fog.start
 m_skyboxData.origin
 m_skyboxData.scale
@@ -33944,7 +34137,6 @@ numsilver
 nutsnbolts_build
 nutsnbolts_repair
 nutsnbolts_upgrade
-o@PO
 o\n\nradio_freq
 obj_attachment_sapper
 obj_capture_damage
@@ -34058,6 +34250,7 @@ overwrite_existing
 owned_game_servers
 owner
 owner_account_id
+owner_entindex
 owner_id
 ownerid
 owninginstance
@@ -34147,7 +34340,18 @@ payload
 payload_pushed
 payload_race
 pctChance
+pd_atom_smash
+pd_circus
+pd_cursed_cove_event
 pd_dispenser
+pd_farmageddon
+pd_galleria
+pd_mannsylvania
+pd_monster_bash
+pd_pit_of_death_event
+pd_selbyen
+pd_snowville_event
+pd_watergate
 pda_click
 pda_engineer
 pda_panel
@@ -34237,13 +34441,40 @@ pl(%i) cmd(%i) hash(%i) inst(%i) ack(%s)
 pl_PL
 pl_badwater
 pl_barnblitz
+pl_bloodwater
+pl_borneo
+pl_breadspace
 pl_cactuscanyon
+pl_camber
+pl_cashworks
+pl_chilly
+pl_coal_event
 pl_corruption
+pl_embargo
+pl_emerge
+pl_enclosure_final
+pl_fifthcurve_event
 pl_frontier_final
+pl_frostcliff
 pl_goldrush
+pl_hasslecastle
+pl_millstone_event
+pl_odyssey
+pl_patagonia
+pl_phoenix
+pl_pier
+pl_precipice_event_final
+pl_rumble_event
+pl_rumford_event
+pl_sludgepit_event
+pl_snowycoast
+pl_spineyard
 pl_swiftwater_final1
+pl_terror_event
 pl_thundermountain
 pl_upward
+pl_venice
+pl_wutville_event
 placementOrigin
 placementattachment
 placementbone
@@ -34358,6 +34589,10 @@ playing_commentary
 playoverscript
 playoverscript\n
 playsound
+plr_bananabay
+plr_cutter
+plr_hacksaw
+plr_hacksaw_event
 plr_hightower
 plr_hightower_event
 plr_pipeline
@@ -35127,7 +35362,6 @@ scripts/population/*.pop
 scripts/propdata.txt
 scripts/protodefs/proto_defs.vpd
 scripts/protodefs/unencrypted/
-scripts/quest_maps.txt
 scripts/sentences.txt
 scripts/soundscapes_%s.txt
 scripts/soundscapes_manifest.txt
@@ -35925,6 +36159,7 @@ sv_unlag_fixstuck
 sv_unlockedchapters
 sv_usercmd_custom_random_seed
 sv_vehicle_autoaim_scale
+sv_viewmodel_lag_do_angles
 sv_visiblemaxplayers
 sv_vote_allow_spectators
 sv_vote_bots_allowed
@@ -37206,6 +37441,7 @@ tournament_player_readystate
 tournament_readystate
 tournament_stateupdate
 tournament_teamname
+tow_dynamite
 towlower
 towlower@GLIBC_2.2.5
 towupper
@@ -37777,6 +38013,12 @@ vscript_convar_allowlist
 vscript_script_hooks
 vscripts
 vsh_
+vsh_distillery
+vsh_maul
+vsh_nucleus
+vsh_outburst
+vsh_skirmish
+vsh_tinyrock
 vsnprintf
 vsnprintf@GLIBC_2.2.5
 vswprintf
@@ -38043,6 +38285,12 @@ youtube_account_name
 ypos
 z?time: %.2f
 zh_TW
+zi_atoll
+zi_blazehattan
+zi_devastation_final1
+zi_murky
+zi_sanitarium
+zi_woods
 zipline
 zombie_lifetime
 zombie_type

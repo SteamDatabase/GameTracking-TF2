@@ -20,6 +20,7 @@
 #base is NULL 
 #include
 #include is NULL 
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -155,6 +156,8 @@ $X360
 (%zu) readdir failed to find '%s' in '%s'\n
 ** NOTE: The real value is %.3f but the server has temporarily restricted it to %.3f **\n
 **** WARNING: Transition table overflow. Grab Brian\n
+***** Invalid pixel shader index (out of range) for %s (%d of %d).\n
+***** Invalid vertex shader index (out of range) for %s (%d of %d).\n
 ,%03d
 - game
 -1 = use hardware caps. 0 = use hardware srgb. 1 = use shader srgb(software lookup)
@@ -168,6 +171,7 @@ $X360
 -force_device_id
 -force_vendor_id
 -forcenovsync
+-gamepadui
 -gl_debug
 -gl_dump_strings
 -glmdisableclipplanes
@@ -180,6 +184,7 @@ $X360
 -maxdxlevel
 -mousegrab
 -no_compressed_verts
+-nogamepadui
 -noglslcontrolflow
 -nomousegrab
 -nonqwerty
@@ -386,6 +391,7 @@ ConColorMsg(Color const&, char const*, ...)
 ConMsg(char const*, ...)
 ConVar.mat_dxlevel
 ConVar.mat_picmip
+ConVar.r_lightmap_bicubic
 ConVarRef %s doesn't point to an existing ConVar\n
 CopyBitsFromHostSurface
 CopyStaticMeshIndexBufferToTempMeshIndexBuffer
@@ -492,11 +498,11 @@ Failed to lock index buffer in CIndexBufferDx8::LockIndexBuffer\n
 Failed to lock vertex buffer in CVertexBufferDx8::Lock\n
 FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!\n
 Force frame syncing to lock a managed texture.
+Force-on toggle for testing radial fog on/off. -1 = default. 0 = force off. 1 = force on. This is not a cheat for the joy of playing with this set on if a player wants the new behaviour on old maps.
 ForceHardwareSync_WithManagedTexture
 Forcefully resetting device (%s), resources release level was %d.\n
 GAME
 GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
-GET4GET1
 GLIBC_2.14
 GLIBC_2.2.5
 GLIBC_2.22
@@ -633,6 +639,8 @@ KeyValues::SaveToFile: couldn't open file "%s" in path "%s".\n
 KeyValuesSystem
 L=33s?
 LZMA Decompression failed (%i)\n
+LZMA Decompression overflowed (%zu > %zu)\n
+LZMA Decompression overflowed (read: %zu > %zu or write: %zu > %zu)\n
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?\n
 LoadCubeTextureFromVTF: VTF dimensions do not match texture\n
 LoadCubeTextureFromVTF: couldn't get texture level description\n
@@ -786,6 +794,8 @@ ShaderShadow010
 ShouldUseNewAssertDialog
 ShowPixels
 Size of Texture Memory : %d kb\n
+SteamDeck
+SteamTenFoot
 Swap_Buffers
 T %1.2f %1.2f %1.2f 
 T%d %.2f %.2f 
@@ -847,7 +857,7 @@ VERTEX_USERDATA_SIZE(%d)|
 VEngineCvar004
 VFileSystem022
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VP4002
 VProcessUtils001
 VShaderUtil001
@@ -1275,7 +1285,7 @@ powf@GLIBC_2.27
 ps-file %s ps-index %d
 ps_dynamic
 ps_static
-psh 0x%8.8x: static combo:%9d dynamic combos:%6d refcount:%4d "%s"\n
+psh 0x%p: static combo:%9d dynamic combos:%6d refcount:%4d "%s"\n
 pthread_mutex_destroy
 pthread_mutex_destroy@GLIBC_2.2.5
 pthread_mutex_init
@@ -1296,6 +1306,7 @@ qsort@GLIBC_2.2.5
 r_pix_recordframes
 r_pix_start
 r_pixelfog
+r_radialfog_force
 r_shader_srgb
 raise
 raise@GLIBC_2.2.5
@@ -1315,6 +1326,8 @@ sdl_displayindex_fullscreen
 sdl_double_click_size
 sdl_double_click_time
 sdlmgr.cpp
+setlocale
+setlocale@GLIBC_2.2.5
 shaderapidx8.cpp
 shaderdevicedx8.cpp
 shaders\%s\%s.vcs
@@ -1391,7 +1404,7 @@ vertex
 vs-file %s vs-index %d
 vs_dynamic
 vs_static
-vsh 0x%8.8x: static combo:%9d dynamic combos:%6d refcount:%4d "%s"\n
+vsh 0x%p: static combo:%9d dynamic combos:%6d refcount:%4d "%s"\n
 vsnprintf
 vsnprintf@GLIBC_2.2.5
 vswprintf

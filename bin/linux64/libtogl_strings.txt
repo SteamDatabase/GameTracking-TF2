@@ -28,6 +28,7 @@
 #include is NULL 
 #version %s\n%s
 #version %s\n%s//ATTRIBMAP-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx-xx\n
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -199,6 +200,7 @@ $X360
 -disable_srgbtex
 -disableboneuniformbuffers
 -disablemaxvertexshaderconstanthints
+-gamepadui
 -gl_amd_pinned_memory
 -gl_debug
 -gl_disable_arb_buffer_storage
@@ -220,6 +222,7 @@ $X360
 -glmwriteshaderslotsoptional
 -glslcontrolflow
 -glslmode
+-nogamepadui
 -nouserclip
 .xyzw
 // [GL remembering that oT%d maps to %s]\n
@@ -2936,6 +2939,8 @@ Shader Compile Time: %u ms (Count: %d) / Query: %u ms \n
 Shader Link Time   : %u ms (Count: %d) / Query: %u ms \n
 ShatteredGlass_ps
 ShatteredGlass_vs
+SteamDeck
+SteamTenFoot
 TANG
 TERMVALUE
 TESS
@@ -2981,7 +2986,7 @@ VBAllocTracker001
 VEngineCvar004
 VFileSystem022
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VP4002
 VProcessUtils001
 VTBladeXP2

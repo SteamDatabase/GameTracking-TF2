@@ -38,6 +38,7 @@
 #include
 #include is NULL 
 $$$$$$$HighlyUnlikelyPathForInitializationPurposes#######
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -191,8 +192,10 @@ $X360
 -EncodingParameters
 -fs_logbins
 -fs_nopreloaddata
+-gamepadui
 -log_opened_files
 -noasync
+-nogamepadui
 ../common/crypto.cpp
 .bsp
 .bsp/
@@ -396,7 +399,6 @@ $X360
 68A5E62CA9CE6C1C299803A6C1530B514E182AD8B0042A59CAD29F43
 6A91174076B1E0E19C39C031FE8685C1CAE040E5C69A28EF
 6ConVar
-75Pt
 7830A3318B603B89E2327145AC234CC594CBDD8D3DF91610A83441CAEA9863BC2DED5D5AA8253AA10A2EF1C98B9AC8B57F1117A72BF2C7B9E7C1AC4D77FC94CA
 7BC382C63D8C150C3C72080ACE05AFA0C2BEA28E4FB22787139165EFBA91F90F8AA5814A503AD4EB04A8C7DD22CE2826
 7D5A0975FC2C3057EEF67530417AFFE7FB8055C126DC5C6CE94A4B44F330B5D9
@@ -569,7 +571,6 @@ CVProfNode::EnterScope()
 CVProfNode::ExitScope()
 CVProfNode::GetSubNode(char const*, int, char const*, int)
 CXXABI_1.3
-CXXABI_1.3.1
 CXXABI_1.3.8
 CallAssertFailedNotifyFunc
 Calling AddBufferToZip with unknown compression type\n
@@ -704,6 +705,7 @@ GCC: (SteamRT 10.3.0-3+steamrt3.1+bsrt3.1) 10.3.0
 GLIBCXX_3.4
 GLIBCXX_3.4.21
 GLIBCXX_3.4.9
+GLIBC_2.11
 GLIBC_2.14
 GLIBC_2.2.5
 GLIBC_2.29
@@ -752,6 +754,8 @@ KeyValues::RecursiveSaveToFile: TODO, missing code for TYPE_COLOR.\n
 KeyValues::SaveToFile: couldn't open file "%s" in path "%s".\n
 KeyValuesSystem
 LZMA Decompression failed (%i)\n
+LZMA Decompression overflowed (%zu > %zu)\n
+LZMA Decompression overflowed (read: %zu > %zu or write: %zu > %zu)\n
 LZMA file handle: failed reading forward to desired seek position\n
 LZMA file handle: seeking backwards beyond backseek buffer size ( %u ), replaying read & decompression of %u bytes. Should avoid large back seeks in compressed files or increase backseek buffer sizing.
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?\n
@@ -1369,6 +1373,8 @@ Simulate a delay of up to a set msec per file operation
 Size mismatch determining size of signed data block (%d vs %d)
 Size of per file buffers. 0 for none
 Sounds
+SteamDeck
+SteamTenFoot
 StolenIV
 StreamTransformation: this object doesn't support random access
 StreamTransformationFilter: PKCS_PADDING and ONE_AND_ZEROS_PADDING cannot be used with 
@@ -1383,7 +1389,7 @@ StringStore: missing InputBuffer argument
 SubgroupGenerator
 SubgroupOrder
 SubgroupOrderSize
-Submit:%5dms AsyncDuration:%5dms Tag:%d Thread:%8.8x Size:%7d %s%s\n
+Submit:%5dms AsyncDuration:%5dms Tag:%d Thread:%llx Size:%7d %s%s\n
 TF_SignerBase: the recoverable message part is too long for the given key and algorithm
 TF_SignerBase: this algorithm does not support messsage recovery or the key is too short
 Terminator
@@ -1428,7 +1434,7 @@ VBaseFileSystem011
 VEngineCvar004
 VFileSystem022
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VP4002
 VPK chunk hash hash does not match. File corrupted or modified.\n
 VPK dir file hash does not match. File corrupted or modified.\n
@@ -1476,7 +1482,6 @@ Zjz\v
 \portal\zip
 \t(%zu) comparing %s with %s\n
 \tf\zip
-_%s.tmp
 _ExitOnFatalAssert
 _ITM_deregisterTMCloneTable
 _ITM_registerTMCloneTable
@@ -1544,8 +1549,6 @@ __cxa_finalize
 __cxa_finalize@GLIBC_2.2.5
 __cxa_free_exception
 __cxa_free_exception@CXXABI_1.3
-__cxa_get_exception_ptr
-__cxa_get_exception_ptr@CXXABI_1.3.1
 __cxa_guard_abort
 __cxa_guard_abort@CXXABI_1.3
 __cxa_guard_acquire
@@ -1610,6 +1613,7 @@ __xmknod@GLIBC_2.2.5
 __xstat64@GLIBC_2.2.5
 __xstat@GLIBC_2.2.5
 _dir
+_fstXXXXXX.tmp
 _hdr_
 _setjmp
 _setjmp@GLIBC_2.2.5
@@ -1701,6 +1705,8 @@ failed to read %d bytes\n
 false 
 fclose
 fclose@GLIBC_2.2.5
+fdopen
+fdopen@GLIBC_2.2.5
 feof
 feof@GLIBC_2.2.5
 ferror
@@ -1834,6 +1840,8 @@ mkdir "%%fs_target%%\bin"\n
 mkdir "%s"\n
 mkdir@GLIBC_2.2.5
 mkfifo@GLIBC_2.2.5
+mkstemps64
+mkstemps64@GLIBC_2.11
 mod_write
 models\
 mount@GLIBC_2.2.5
@@ -1965,8 +1973,6 @@ strtoull@GLIBC_2.2.5
 symlink@GLIBC_2.2.5
 sysconf
 sysconf@GLIBC_2.2.5
-tmpnam
-tmpnam@GLIBC_2.2.5
 tolower
 tolower@GLIBC_2.2.5
 toupper

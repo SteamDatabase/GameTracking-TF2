@@ -718,6 +718,7 @@ Animation Frame for $flashlight
 Apply tint by albedo (controlled by spec exponent texture
 BASEALPHAENVMAPMASK
 BEyes_dx9
+BICUBIC_LIGHTMAP
 BLURRY_REFRACT
 Base Texture Texcoord Transform
 Base Texture with lighting built in
@@ -818,6 +819,7 @@ ENVMAP_MASK
 Emissive blend strength
 Emissive scroll vec
 Enable Flesh interior blend pass
+Enable bi-cubic (high quality) lightmap sampling.
 Enable bloom
 Enable emissive blend pass
 Enable glow/shadow for distance coded textures.
@@ -1235,7 +1237,7 @@ VEngineCvar004
 VFileSystem022
 VISUALIZE_DOF
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VMaterialSystemConfig002
 VP4002
 VProcessUtils001
@@ -1850,6 +1852,7 @@ pShaderAPI->GetCurrentNumBones() > 0
 pShaderAPI->GetIntRenderingParameter(INT_RENDERPARM_ENABLE_FIXED_LIGHTING)
 pShaderAPI->GetIntRenderingParameter(INT_RENDERPARM_ENABLE_FIXED_LIGHTING)!=0
 pShaderAPI->GetPixelFogCombo()
+pShaderAPI->GetPixelFogCombo1( true )
 pShaderAPI->GetSceneFogMode() == MATERIAL_FOG_LINEAR_BELOW_FOG_Z
 pShaderAPI->IsHWMorphingEnabled()
 pShaderAPI->IsHWMorphingEnabled() && !bTreeSway
@@ -1904,6 +1907,8 @@ r_bloomtintexponent
 r_bloomtintg
 r_bloomtintr
 r_flashlight_version2
+r_lightmap_bicubic
+r_lightmap_bicubic.GetBool() ? 1 : 0
 r_lightwarpidentity
 r_rimlight
 r_showz_power

@@ -1,4 +1,4 @@
-                ^d
+                
         %3d %3d %3d %3d %3d %3d %3d %3d
         %4u %4u %4u %4u %4u %4u %4u %4u
     Component %d: %dhx%dv q=%d
@@ -9,14 +9,19 @@
  ( def. "%s" )
  ReadToken overflow
  archive
+ black
+ bold
  bytes
  cheat
  client
  clientcmd_can_execute
  failed to dlopen %s error=%s\n
+ light
  notconnected
  notify
+ regular
  replicated
+ semibold
  server_can_execute
  singleplayer
 "%s" = "%s"
@@ -52,6 +57,7 @@
 #vgui_TimeLeftSecond
 #vgui_TimeLeftSeconds
 $3br
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -234,13 +240,21 @@ $vertexcolor
 ,%03d
 - game
 --- Missing Vgui material %s\n
+-black
+-bold
 -disable_matsurf_noculls
 -dontusegamedir
+-freetype
 -game
+-gamepadui
 -insecure
+-light
+-nogamepadui
 -pixel_offset_x
 -pixel_offset_y
 -quiet
+-regular
+-semibold
 -vguifocus
 -vguimessages
 .pfm
@@ -276,6 +290,7 @@ $vertexcolor
 12ColumnButton
 12IVguiMatInfo
 13CBoolProperty
+13IVGuiFontImpl
 14CBaseAppSystemI17IMatSystemSurfaceE
 14CColorProperty
 14CFloatProperty
@@ -330,7 +345,6 @@ $vertexcolor
 8CFmtStrNILi256ELb0EE
 8b  16-May-2010
 9a&g
-:column
 </script>
 << NULL >>\n
 <a href=
@@ -367,7 +381,6 @@ ApplyChanges
 ApplyDataToControls
 ApplySchemeSettings
 Arial
-Arial Black
 Arial Bold
 Arithmetic table 0x%02x was not defined
 ArmItem
@@ -434,6 +447,8 @@ CCIR601 sampling not implemented yet
 CCommand::Tokenize: Encountered command which overflows the argument buffer.. Clamped!\n
 CCommand::Tokenize: Encountered command which overflows the tokenizer buffer.. Skipping!\n
 CDragDropHelperPanel
+CLinuxFont: Non-AA'ed fonts not implemented currently (font "%s")\n
+CLinuxFont: Underline not implemented currently (font "%s")\n
 CMatSystemSurface::PaintTraverse
 CMatSystemSurface::PaintTraverse popups loop
 COLORCORRECTION_VERSION_1
@@ -518,7 +533,6 @@ Corrupt JPEG data: bad arithmetic code
 Corrupt JPEG data: found marker 0x%02x instead of RST%d
 Corrupt JPEG data: premature end of data segment
 Couldn't find bitmap font file '%s'\n
-Couldn't find custom font file '%s'\n
 Couldn't find script file %s\n
 Couldn't parse script file: expected 'event', found '%s'\n
 Couldn't parse script file: expected <event name>, found nothing\n
@@ -526,7 +540,6 @@ Couldn't parse script sequence '%s': expected '{', found '%s'\n
 Couldn't parse script sequence '%s': expected <anim command>, found '%s'\n
 Courier
 Courier New
-CreateFallbackFont - Failed to create fallback font\n
 CreateFromMemory - FT_New_Memory_Face failed. font:%s error:%d\n
 CreateFromMemory - FT_Request_Size failed on %s / %s\n
 CreateFromMemory - Font %s has no valid charmap\n
@@ -568,6 +581,7 @@ DeletePanelButton
 Depth must be 1 for cubemaps!\n
 DevMsg
 DevMsg(char const*, ...)
+DevWarning(char const*, ...)
 DialogVariables
 Didn't expect more than one scan
 DisarmItem
@@ -610,6 +624,7 @@ ExpandButton
 ExpandButton.Color
 Expanded
 FCVAR_NEVER_AS_STRING
+FONTCONFIG_PATH
 FT_Done_Face
 FT_Done_FreeType
 FT_Get_Char_Index
@@ -635,13 +650,14 @@ Failed to open TGA conversion module vtex_dll Factory (is null): %s\n
 Failed to open TGA conversion module vtex_dll Factory: %s\n
 Failed to open TGA conversion module vtex_dll: %s\n
 Failed to open TGA: %s\n
-FcConfigGetCurrent
+FcConfigAppFontAddFile
+FcConfigSetCurrent
 FcConfigSubstitute
 FcDefaultSubstitute
 FcFontList
 FcFontMatch
 FcFontSetDestroy
-FcInit
+FcInitLoadConfigAndFonts
 FcObjectSetAdd
 FcObjectSetCreate
 FcObjectSetDestroy
@@ -659,6 +675,7 @@ Fira Sans
 FlashWindow
 Flicker
 FmtStrVSNPrintf truncated to %d without QUIET_TRUNCATION specified!\n
+FontInfo
 ForceStereoRenderToFrameBuffer
 Fractional sampling not implemented yet
 Frame.AutoSnapRange
@@ -707,7 +724,6 @@ GetCharABCWidths - Error in FL_Load_Glyph: ch:%x error:%x\n
 GetCharRGBA - Error in FL_Load_Glyph: glyph_index:%d error:%x\n
 GetCharRGBA - Error in FT_Select_Size: %x\n
 GetCharRGBA - nSkipRows(%d) > rgbaTall(%d) ch:%d\n
-GetCharRGBA - selected_face->glyph->bitmap.width is 0 for ch:%d %s\n
 GetCharRGBA called on CBitmapFont.
 GetCommand
 GetState
@@ -938,6 +954,7 @@ ListViewPanel
 LoadControlSettings failed! Invalid resource filename!\n
 LoadFromBuffer: missing {
 LoadFromFile
+LookupFallbackFont - Failed to create fallback font\n
 Lowered '%s' -> '%s'\n
 Lucida Console
 Lucidia Console
@@ -991,7 +1008,6 @@ MouseWheeled
 Move
 MoveScrollBar
 MoveScrollBarDirect
-N4vgui10BuildGroupE
 N4vgui10CheckImageE
 N4vgui10ClickPanelE
 N4vgui10GraphPanelE
@@ -1076,6 +1092,7 @@ Noto Sans CJK JP
 Noto Sans CJK KR
 Noto Sans CJK SC
 Noto Sans CJK TC
+Noto Sans Thai
 Num Lock
 Num Lock Toggle
 NumericInputOnly
@@ -1098,6 +1115,8 @@ Opened temporary file %s
 Other textures
 Outline fonts textures.
 Output file write error --- out of disk space?
+PANGO_LIBDIR
+PANGO_SYSCONFDIR
 PF\n%d %d\n-1.000000\n
 PIN_BOTTOMLEFT
 PIN_BOTTOMRIGHT
@@ -1107,6 +1126,7 @@ PIN_CENTER_RIGHT
 PIN_CENTER_TOP
 PIN_TOPLEFT
 PIN_TOPRIGHT
+PLATFORM
 PNG not finalized
 PNG output not set
 PNG\r\n
@@ -1184,6 +1204,7 @@ SDLMgrInterface001
 SDL_CreateSystemCursor
 SDL_GetMouseState
 SDL_GetWindowSize
+SDL_setenv
 SKIN
 Sampling factors too large for interleaved scan
 ScalableImagePanel
@@ -1253,6 +1274,8 @@ Start Of Frame 0x%02x: width=%u, height=%u, components=%d
 Start Of Scan: %d components
 Start of Image
 StatusLabel
+SteamDeck
+SteamTenFoot
 StopPanelAnimations
 StoreUndo
 Suspension not allowed here
@@ -1348,7 +1371,7 @@ VGUI_White
 VGUI_ivgui008
 VGy#
 VMDLLIB001
-VMaterialSystem081
+VMaterialSystem082
 VP4002
 VPanel
 VPhysicsCollision007
@@ -1392,6 +1415,8 @@ Zjz\v
 [ no resource file associated with dialog ]
 [/code]
 [/list]
+[CFontManager] Forcing freetype2 for %s\n
+[CMatSystemSurface] FcConfigAppFontAddFile failed for %s\n
 [code]
 [img]
 [list]
@@ -1525,7 +1550,6 @@ bg_image
 bgcolor
 bin/linux64
 blinkFgColor_override
-bold
 bool
 border_override
 brighttext
@@ -1549,6 +1573,7 @@ cl_hud_minmode
 clientinsetx_override
 closedir
 closedir@GLIBC_2.2.5
+column
 compress2
 compressBound
 compressBound@ZLIB_1.2.0
@@ -1637,6 +1662,7 @@ fillcolor_override
 filtered
 firecommand
 float( %f )
+fontconfig/fonts.conf
 fopen64@GLIBC_2.2.5
 fopen@GLIBC_2.2.5
 fprintf
@@ -1662,6 +1688,7 @@ fread
 fread@GLIBC_2.2.5
 free
 free@GLIBC_2.2.5
+freetype2
 freopen@GLIBC_2.2.5
 fullname
 fwrite
@@ -1670,6 +1697,7 @@ g_KVMutex
 g_Telemetry
 g_VProfCurrentProfile
 g_pMemAlloc
+gamepadui/fonts/NotoSans-Regular.ttf
 gc^A
 getcwd
 getcwd@GLIBC_2.2.5
@@ -1758,6 +1786,7 @@ iswspace
 iswspace@GLIBC_2.2.5
 itemID
 itemIndex
+japanese
 jpeg
 keybindings
 keybindings\n
@@ -1765,6 +1794,7 @@ keyboardFocusColor_override
 keyboardinputenabled
 keycode
 kh9F
+korean
 labelText
 lastBarWidth
 lchown@GLIBC_2.2.5
@@ -1937,6 +1967,9 @@ reloadscheme
 rename@GLIBC_2.2.5
 render targets
 replace
+resource/FontInfo.kv
+resource/linux_fonts/NotoSansCJK-Regular.ttc
+resource/linux_fonts/NotoSansThai.ttf
 result
 rightText
 rmdir@GLIBC_2.2.5
@@ -1947,7 +1980,9 @@ sAmTb
 scalable
 scaleAmount
 scaleImage
+scaleProportional
 scandir@GLIBC_2.2.5
+schinese
 screenx
 screeny
 script
@@ -1959,8 +1994,6 @@ selectionTextColor_override
 selfDroppable
 setclosebuttonvisible
 setinputenabled
-setlocale
-setlocale@GLIBC_2.2.5
 settitlebarvisible
 setvisible
 shift
@@ -2042,6 +2075,7 @@ tRNS chunk with incompatible color type
 tabPosition
 tabposition
 tan@GLIBC_2.2.5
+tchinese
 temp
 textAlignment
 textHidden
@@ -2050,6 +2084,7 @@ textinsetx
 textinsety
 textureid
 tf_debug_tabcontainer
+thai
 thumbwidth
 tileHorizontally
 tileImage
@@ -2110,6 +2145,7 @@ vgui::
 vgui::HFont
 vgui_cache_res_files
 vgui_controls is missing a required interface!\n
+vgui_font_reload
 vgui_nav_lock
 vgui_nav_lock_default_button
 vsnprintf

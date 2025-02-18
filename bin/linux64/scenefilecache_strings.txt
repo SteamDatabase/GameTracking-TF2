@@ -166,6 +166,8 @@ GLIBC_2.29
 GLIBC_2.3
 If set, attempt to keep a persistent buffer for the LZMA decoder dictionary. This avoids re-allocating a ~16-64meg buffer for each operation, at the expensive of keeping extra memory around when it is not in-use.
 LZMA Decompression failed (%i)\n
+LZMA Decompression overflowed (%zu > %zu)\n
+LZMA Decompression overflowed (read: %zu > %zu or write: %zu > %zu)\n
 LZMA stream: Unexpected LZMA properties size: %hu, expecting %u. Version mismatch?\n
 MGiI
 No such file

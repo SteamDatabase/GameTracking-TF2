@@ -31,6 +31,7 @@
 #base is NULL 
 #include
 #include is NULL 
+$DECK
 $LINUX
 $Material
 $OSX
@@ -268,10 +269,12 @@ $znearer
 -dx9
 -forceallmips
 -game
+-gamepadui
 -glmspew
 -makereslists
 -matscan
 -no_texture_stream
+-nogamepadui
 -noshaderapi
 -r_emulate_gl
 -threads
@@ -691,6 +694,7 @@ ERROR[%s]: implements field can only appear once, seen a second time as 'impleme
 ERROR[paintkit_template %s]: Couldn't find template '%s' which we claim to implement.\n
 ERROR[paintkit_template %s]: Detected cycle in paintkit template dependency chain: 
 EditorRenderStateList_t pool
+Enable bi-cubic (high quality) lightmap sampling.
 Enable/Disable specularity for perf testing.  Will cause a material reload upon change.
 Enable/Disable specularity for visual testing.  Will not reload materials and will not affect perf.
 EndRender
@@ -905,6 +909,8 @@ Shutdown
 Specified 0.0 for high value, that is illegal in this field. Substituting %.5f\n
 Specified 0.0 for low value, that is illegal in this field. Substituting %.5f\n
 StandardRenderStateList_t pool
+SteamDeck
+SteamTenFoot
 Subrect
 Swap_Buffers
 TGA doesn't match source data.\n
@@ -947,7 +953,8 @@ VEngineCvar004
 VFileSystem022
 VMDLLIB001
 VMT patch file has no include key - invalid!\n
-VMaterialSystem081
+VMaterialSystem080
+VMaterialSystem082
 VMaterialSystemConfig002
 VMaterialSystemStub001
 VP4002
@@ -1188,6 +1195,8 @@ game_shader_dx%d%s
 game_shader_generic*.so
 getcwd
 getcwd@GLIBC_2.2.5
+getenv
+getenv@GLIBC_2.2.5
 grey
 greyalphazero
 groups
@@ -1422,6 +1431,7 @@ r_fastzreject
 r_flashlightdepthtexture
 r_flex
 r_lightcache_zbuffercache
+r_lightmap_bicubic
 r_overlayfademax
 r_overlayfademin
 r_portal_stencil_depth

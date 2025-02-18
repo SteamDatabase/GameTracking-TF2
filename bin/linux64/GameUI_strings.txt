@@ -227,6 +227,7 @@
 #GameUI_Language_Italian
 #GameUI_Language_Japanese
 #GameUI_Language_Korean
+#GameUI_Language_Latam_Spanish
 #GameUI_Language_Norwegian
 #GameUI_Language_Polish
 #GameUI_Language_Portuguese
@@ -275,6 +276,7 @@
 #GameUI_NoOtherPlayersInGame
 #GameUI_NoSaveGamesToDisplay
 #GameUI_NoVRTooltip
+#GameUI_NoWindowBorder
 #GameUI_None
 #GameUI_OK
 #GameUI_Options
@@ -373,6 +375,7 @@
 #PropertyDialog_Cancel
 #PropertyDialog_OK
 #QueryBox_Cancel
+#Start_Server_SteamNetworking
 #SysMenu_Close
 #SysMenu_Maximize
 #SysMenu_Minimize
@@ -463,6 +466,7 @@
 #vgui_TimeLeftSeconds
 #vgui_ok
 $3br
+$DECK
 $LINUX
 $OSX
 $POSIX
@@ -491,6 +495,7 @@ $frame
 %s - %s: Pin Sibling
 %s string image, int src_corner_height, int src_corner_width, int draw_corner_height, int draw_corner_width
 %s%02i
+%s's Server
 %s*.bns
 %s, bool textHidden, bool editable, bool unicode, bool NumericInputOnly, int maxchars
 %s, int SubTabPosition
@@ -646,7 +651,9 @@ $frame
 -dontusegamedir
 -dxlevel
 -game
+-gamepadui
 -insecure
+-nogamepadui
 -nostartupsound
 -quiet
 -steam
@@ -841,7 +848,7 @@ $frame
 8b  16-May-2010
 9CGameMenu
 9CMenuItem
-:ResizeColumnToContents
+:BaseInputDialog
 < unknown >
 < unset >
 </script>
@@ -860,7 +867,7 @@ $frame
 ????????????????
 ?CursorExited
 ?UUUUUU
-?VMaterialSystem081
+?VMaterialSystem082
 @CrosshairImagePanelBase
 A!;I2
 ABGR8888
@@ -930,7 +937,6 @@ Backspace
 Bad format string in CLocalizeStringTable::ConstructString\n
 Bad map name!\n
 BaseGameUIPanel
-BaseInputDialog
 BenchmarkButton
 BestMoments
 Bias
@@ -1220,6 +1226,7 @@ ConVar.mat_reducefillrate
 ConVar.mat_trilinear
 ConVar.mat_vsync
 ConVar.r_flashlightdepthtexture
+ConVar.r_lightmap_bicubic
 ConVar.r_rootlod
 ConVar.r_shadowrendertotexture
 ConVar.r_waterforceexpensive
@@ -1365,6 +1372,7 @@ Empty JPEG image (DNL not supported)
 Empty input file
 EnableBotsCheck
 EnableSaveButton
+EnableSteamNetworkingCheck
 End Of Image
 EngineClientReplay001
 Error
@@ -1756,6 +1764,7 @@ Label.TextDullColor
 Label1
 LabelChanged
 LanguageMenu
+Latam_Spanish
 LeaderboardDialog_
 LeftArrow
 LevelLoadingFinished
@@ -1881,7 +1890,6 @@ Mute
 MuteButton
 Muted
 N10CBasePanel16CAsyncJobContextE
-N4vgui10BuildGroupE
 N4vgui10CheckImageE
 N4vgui10ClickPanelE
 N4vgui10GraphPanelE
@@ -2182,6 +2190,7 @@ ResetDXLevelCombo
 ResetData
 ResetStats
 ResetStats_NoConfirm
+ResizeColumnToContents
 Resolution
 Resource/BenchmarkDialog.res
 Resource/BenchmarkResultsDialog.res
@@ -2406,6 +2415,7 @@ Snd_MusicVolume
 Snd_PitchQuality
 Snd_Surround_Speakers
 Software\Valve\Half-Life\Settings\User Token 2
+Someone
 SoundQuality
 SourceVirtualReality001
 Space
@@ -2432,6 +2442,7 @@ SteamAPI_GetHSteamUser
 SteamApp
 SteamClient020
 SteamController008
+SteamDeck
 SteamFriends017
 SteamInput006
 SteamInternal_ContextInit
@@ -2442,6 +2453,7 @@ SteamMatchGameSearch001
 SteamMatchMaking009
 SteamMatchMakingServers002
 SteamNetworking006
+SteamTenFoot
 SteamUser023
 SteamUtils002
 SteamUtils010
@@ -2943,7 +2955,7 @@ disabledfgcolor2_override
 disconnect
 disconnect\n
 disconnect\ndeathmatch 0\nprogress_enable\nexec %s\n
-disconnect\nwait\nwait\nsv_lan 1\nsetmaster enable\nmaxplayers %i\nsv_password "%s"\nhostname "%s"\nprogress_enable\nmap %s\n
+disconnect\nwait\nwait\nsv_lan %d\nsv_use_steam_networking %d\nsetmaster enable\nmaxplayers %i\nsv_password "%s"\nhostname "%s"\nprogress_enable\nmap %s\n
 disconnect\nwait\nwait\nsv_lan 1\nsetmaster enable\nmaxplayers 1\n\nhostname "Speaker Test"\nprogress_enable\nmap test_speakers\n
 displaystring
 dl_iterate_phdr
@@ -2995,6 +3007,7 @@ end of stream
 engine 
 english
 error loading %s\n
+es_419
 es_ES
 exec userconfig.cfg\nhost_writeconfig\n
 exp@GLIBC_2.29
@@ -3208,6 +3221,7 @@ koreana
 labelText
 language
 lastBarWidth
+latam
 lchown@GLIBC_2.2.5
 ld-linux-x86-64.so.2
 leftText
@@ -3295,7 +3309,7 @@ mat_monitorgamma
 mat_motion_blur_enabled
 mat_queue_mode
 mat_savechanges\n
-mat_setvideomode %i %i %i\n
+mat_setvideomode %i %i %i %i\n
 materials/VGUI/logos/UI
 materials/VGUI/logos/UI/%s.vmt
 materials/vgui/crosshairs/%s
@@ -3541,6 +3555,7 @@ save/half-life-%03i.sav
 save_history_count
 scaleAmount
 scaleImage
+scaleProportional
 scandir@GLIBC_2.2.5
 scenario
 schinese
@@ -3565,8 +3580,6 @@ selfDroppable
 setclosebuttonvisible
 setinfo %s "%s"\n
 setinputenabled
-setlocale
-setlocale@GLIBC_2.2.5
 setpause
 settitlebarvisible
 setvisible
@@ -3675,6 +3688,7 @@ sv_cheats
 sv_password
 sv_player_funnel_into_portals
 sv_unlockedchapters
+sv_use_steam_networking
 swedish
 symlink@GLIBC_2.2.5
 system
@@ -3791,6 +3805,8 @@ vgui::QueryBox
 vgui::Slider
 vgui_cache_res_files
 vgui_controls is missing a required interface!\n
+vgui_drawfocus
+vgui_drawtree
 vgui_message_dialog_modal
 vgui_nav_lock
 vgui_nav_lock_default_button
@@ -3798,6 +3814,7 @@ violence_ablood
 violence_agibs
 violence_hblood
 violence_hgibs
+vmodule_resetparents
 voice_modenable
 voice_scale
 voiceicon
