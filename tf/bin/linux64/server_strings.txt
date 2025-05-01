@@ -11880,7 +11880,6 @@ ClearAllEffects
 ClearAllWeaponRestrictions
 ClearAttribute
 ClearAttributeTF
-ClearBehaviorFlag
 ClearField
 ClearFlags
 ClearFlagsThink
@@ -13327,7 +13326,7 @@ Existing commit record for SObject is more up to date: %s\n
 Exit animation %s failed to cache target points properly!\n
 Expected "
 Expected %s found %s ( raw '%s' )! (prev: %s)\n
-Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.X2
+Expected integerInteger out of rExpect a decimalExpected double.Expected identifExpected string.
 Expected result speed: %f
 Expecting ',', didn't find it!
 Expecting '[', didn't find it!
@@ -15657,7 +15656,6 @@ IsAssisterDomination
 IsAssisterRevenge
 IsAttemptingToMove
 IsAttentionFocused
-IsBehaviorFlagSet
 IsBlocked
 IsBotAttr
 IsBottleneck
@@ -16327,6 +16325,7 @@ Maximum number of connected real players in MvM
 Maximum number of defenders in MvM
 Maximum number of edicts allowed before slowing duck spawn rate
 Maximum number of edicts allowed before spawning a duck
+Maximum number of invaders in MvM
 Maximum number of players (per-team) that can be any one class.
 Maximum of how hard the player is pushed away from physics objects.
 Maximum prop breakable piece count (-1 = model default)
@@ -19234,6 +19233,7 @@ ScriptAddIncomingConnection
 ScriptAllowThirdPersonCamera
 ScriptArePlayersInHell
 ScriptCanBeDebuffed
+ScriptClearBehaviorFlag
 ScriptClimbUpToLedge
 ScriptComputeClosestPointInPortal
 ScriptComputeDirection
@@ -19399,6 +19399,7 @@ ScriptIsAirDashing
 ScriptIsAreaTraversable
 ScriptIsAttackDefenseMode
 ScriptIsAttentionFocusedOn
+ScriptIsBehaviorFlagSet
 ScriptIsBirthday
 ScriptIsBotOfType
 ScriptIsCarryingRune
@@ -19479,6 +19480,7 @@ ScriptSendGlobalGameEvent
 ScriptSetActionPoint
 ScriptSetAngles
 ScriptSetAttentionFocus
+ScriptSetBehaviorFlag
 ScriptSetCondDuration
 ScriptSetDifficulty
 ScriptSetDisguiseAmmoCount
@@ -19766,7 +19768,6 @@ SetAttribute
 SetAttributeTF
 SetAttributes
 SetAutoJump
-SetBehaviorFlag
 SetBlueTeamRespawnWaveTime
 SetBodyGroup
 SetBodygroup
@@ -20110,6 +20111,7 @@ SpotlightWidth
 Sprite Spray
 Spy.Incoming0%i
 Spy.MVM_Chuckle
+Spy.MVM_TeaseVictim
 Spy.TeaseVictim
 SpyAttack
 SpyBackstab
@@ -21565,8 +21567,8 @@ The lifetime of a decoy, in seconds
 The maximum height difference allowed for two high-fivers.
 The maximum number of areas to draw in edit mode
 The maximum number of kick votes a player can call during an MvM mission started by matchmaking. (0 = disabled)
-The maxmimum size of the long term chat msg bucket.
-The maxmimum size of the short term chat msg bucket.
+The maximum size of the long term chat msg bucket.
+The maximum size of the short term chat msg bucket.
 The minimum percentage of wave money players must collect in order to qualify for min bonus - 0.1 to 1.0.  Half the bonus amount will be awarded when reaching min ratio, and half when reaching max.
 The minimum ratio of eligible players needed to pass a vote.  Min 0.1, Max 1.0.
 The multiple by which a player must exceed the median kills by in order to be considered dominant
@@ -36928,6 +36930,7 @@ tf_mvm_engineer_teleporter_uber_duration
 tf_mvm_force_victory
 tf_mvm_jump_to_wave
 tf_mvm_max_connected_players
+tf_mvm_max_invaders
 tf_mvm_min_players_to_start
 tf_mvm_miniboss_scale
 tf_mvm_missioncycle.res
