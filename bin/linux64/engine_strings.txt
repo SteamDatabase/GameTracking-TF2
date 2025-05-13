@@ -322,6 +322,7 @@
 #Replay_SingleWordDateAndTime
 #Replay_Today
 #Replay_Yesterday
+#Server_NoPerms
 #Steam_FinishedBug_Text
 #Steam_FinishedBug_WorkingTitle
 #Steam_SubmittingBug_WorkingText
@@ -6474,6 +6475,7 @@ SSE2
 SSE2 code is %s\n
 STEAM UserID %s is already\nin use on this server
 STEAM UserID %s is banned
+STEAM UserID %s is not friends with the host!
 STEAMAPPLIST_INTERFACE_VERSION001
 STEAMAPPS_INTERFACE_VERSION008
 STEAMAUTH: Client %s received failure code %d\n
@@ -7813,6 +7815,7 @@ When playing demo, start telemetry on tick #
 When playing demo, stop telemetry on tick #
 When set, rcon failed authentications will never ban this address, e.g. '127.0.0.1'
 Where the netspike data be written?  Sum of the following values: 1=netspike.txt, 2=ordinary server log
+Whether or not only friends should be allowed to join the game
 Whether the server should relay the disconnect reason to clients.
 While playing back a .vprof file, step to the next tick.
 While playing back a .vprof file, step to the previous tick.
@@ -10602,6 +10605,7 @@ sv.Init( bDedicated )
 sv.Shutdown()
 sv_SE
 sv_allow_color_correction
+sv_allow_server_adverisement_to_master_server
 sv_allow_voice_from_file
 sv_allow_wait_command
 sv_allowdownload
@@ -10636,6 +10640,7 @@ sv_ents_write.cpp
 sv_filterban
 sv_forcepreload
 sv_framesnapshot.cpp
+sv_friends_only
 sv_instancebaselines
 sv_lan
 sv_log_onefile

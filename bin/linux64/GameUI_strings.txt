@@ -375,6 +375,10 @@
 #PropertyDialog_Cancel
 #PropertyDialog_OK
 #QueryBox_Cancel
+#Server_Visibility_FriendsOnly
+#Server_Visibility_Global
+#Server_Visibility_Local
+#Server_Visibility_Unlisted
 #Start_Server_SteamNetworking
 #SysMenu_Close
 #SysMenu_Maximize
@@ -678,7 +682,6 @@ $frame
 /vgui/logos
 0 - no auto-resize
 0 - top-left
-0 B}w
 0.7.2
 0123456789ABCDEF
 0123456789abcdef
@@ -2615,6 +2618,7 @@ VarsMenu
 Version mismatch, expecting %f, got %f
 VertScrollBar
 Virtual array controller messed up
+VisibilityType
 VoiceReceive
 Warning
 Warning! Encountered old format VTF file; please rebuild it!\n
@@ -2956,7 +2960,7 @@ disabledfgcolor2_override
 disconnect
 disconnect\n
 disconnect\ndeathmatch 0\nprogress_enable\nexec %s\n
-disconnect\nwait\nwait\nsv_lan %d\nsv_use_steam_networking %d\nsetmaster enable\nmaxplayers %i\nsv_password "%s"\nhostname "%s"\nprogress_enable\nmap %s\n
+disconnect\nwait\nwait\n%s\n%s\n%s\nmaxplayers %i\nsv_password "%s"\nhostname "%s"\nprogress_enable\nmap %s\n
 disconnect\nwait\nwait\nsv_lan 1\nsetmaster enable\nmaxplayers 1\n\nhostname "Speaker Test"\nprogress_enable\nmap test_speakers\n
 displaystring
 dl_iterate_phdr
@@ -3581,6 +3585,7 @@ selfDroppable
 setclosebuttonvisible
 setinfo %s "%s"\n
 setinputenabled
+setmaster enable\nsv_allow_server_adverisement_to_master_server 1
 setpause
 settitlebarvisible
 setvisible
@@ -3681,15 +3686,19 @@ subtitle
 success
 supportsvr
 sv_SE
+sv_allow_server_adverisement_to_master_server 0
 sv_bonus_challenge %i\n
 sv_bonus_map_challenge_update
 sv_bonus_map_complete
 sv_bonus_map_unlock
 sv_cheats
+sv_friends_only 0
+sv_friends_only 1
+sv_lan 0\nsv_use_steam_networking 1
+sv_lan 1\nsv_use_steam_networking 0
 sv_password
 sv_player_funnel_into_portals
 sv_unlockedchapters
-sv_use_steam_networking
 swedish
 symlink@GLIBC_2.2.5
 system
