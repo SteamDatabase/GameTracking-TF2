@@ -168,7 +168,7 @@
 # intersect f%d f%d\n
 # r%d between f%d f%d\n
 # ridge between f%d f%d\n
-#@sys:friction
+#=static_object
 $MATERIAL_INDEX_SHADOW
 %02x
 %6.16g 
@@ -231,6 +231,7 @@ $MATERIAL_INDEX_SHADOW
 &Otilde;
 &Ouml;
 &THORN;
+&UUU
 &Uacute;
 &Ucirc;
 &Ugrave;
@@ -317,12 +318,11 @@ $MATERIAL_INDEX_SHADOW
 *** Done with convex pointsoup.\n\n
 *** ERROR *** Excessive amount of children: %d\n
 *** ERROR *** Excessive sizelevel (%d) for element\n
-*** IVP_SurfaceBuilder_Halfspacesoup::convert_halfspacesoup_to_compact_surface - skipping ledge due to invalid topology
 *** IVP_SurfaceBuilder_Pointsoup::convert_pointsoup_to_template_polygon - couldn't build convex hull! Skipping object...\n
 *** P_Pop_Eps went smaller than P_DOUBLE_EPS!!
 *** Qhull failed. Retrying with different parameters.\n
 **empty**
-*=UUU
++../ivp_utility/ivu_vhash.cxx
 , line %d is the first comment
 , line %d is the first long line
 , line %d is the first short\nline
@@ -333,22 +333,24 @@ $MATERIAL_INDEX_SHADOW
 ../ivp_collision/ivp_compact_ledge_solver.cxx
 ../ivp_collision/ivp_mindist.cxx
 ../ivp_collision/ivp_mindist_minimize.cxx
+../ivp_collision/ivp_mindist_recursive.cxx
 ../ivp_controller/ivp_actuator.cxx
 ../ivp_controller/ivp_actuator_spring.cxx
 ../ivp_intern/ivp_friction.cxx
 ../ivp_intern/ivp_friction_gaps.cxx
 ../ivp_intern/ivp_mindist_friction.cxx
+../ivp_intern/ivp_object.cxx
 ../ivp_intern/ivp_physic_private.cxx
 ../ivp_utility/ivu_linear.cxx
 ./rbox D4
 .EXE
-.G33s?fff?
 .exe
 /data/src/ivp/ivp_utility/ivu_linear.hxx
 0 1 1 1  # color of points\n
 0123456789ABCDEF
 0123456789abcdef
 012354
+0@sys:buoyancy
 10CTraceAABB
 10CTraceCone
 10ConCommand
@@ -517,7 +519,6 @@ $MATERIAL_INDEX_SHADOW
 23CVPhysPtrSaveRestoreOps
 23IConCommandBaseAccessor
 23IPhysicsConstraintGroup
-23IPhysicsFluidController
 23IVP_Actuator_Four_Point
 23IVP_Actuator_Stabilizer
 23IVP_Actuator_Suspension
@@ -558,6 +559,7 @@ $MATERIAL_INDEX_SHADOW
 26IVP_Controller_Independent
 26IVP_Controller_Raycast_Car
 26IVP_Event_Manager_Standard
+26IVP_SurfaceManager_Polygon
 26IVP_U_Active_Float_Delayed
 26IVP_U_Active_Value_Manager
 26hk_Local_Constraint_System
@@ -588,6 +590,7 @@ $MATERIAL_INDEX_SHADOW
 36IVP_3D_Solver_DISTANCE_OF_TWO_POINTS
 36IVP_Collision_Delegator_Root_Mindist
 36IVP_Liquid_Surface_Descriptor_Simple
+4@core_status %lx  trans %f %f %f  rot %f %f %f\n
 4OFF %d %d 1\n
 4VECT %d %d 1\n
 4fff>fff>fff>fff>
@@ -605,31 +608,28 @@ $MATERIAL_INDEX_SHADOW
 9IVP_U_SetI8IVP_CoreE
 9IVP_VHash
 9a&g
-;DoubleVal
 <../ivp_collision/ivp_mindist_event.cxx
 </script>
 <RUSTJE=
 <img src="
 <pre>
-=../ivp_intern/ivp_object.cxx
-=Degenerate Triangle\n
 ><a href=
-?../ivp_collision/ivp_mindist_recursive.cxx
+?*** IVP_SurfaceBuilder_Halfspacesoup::convert_halfspacesoup_to_compact_surface - skipping ledge due to invalid topology
 ?/data/src/ivp/ivp_physics/ivp_time_event.hxx
 ?20IVP_Ray_Hit_Listener
-?26IVP_SurfaceManager_Polygon
+?23IPhysicsFluidController
 ?333333
-?@\nAt %02d:%02d:%02d & %2.5g CPU secs, qhull has created %d facets and merged %d.\n The current hull contains %d facets and %d vertices.  Last point was p%d\n
+?333@
+?Degenerate Triangle\n
 ?Virtual mesh!\n
 ?es-8R
-?static_object
+?fff?
 ?vphysics:player
 @20IVP_Collision_Filter
-@UUUUUU
-@sys
-@sys:buoyancy
+@vphysics_save_cphysicsspring_t
 A333
 AZEl
+A\nAt %02d:%02d:%02d & %2.5g CPU secs, qhull has created %d facets and merged %d.\n The current hull contains %d facets and %d vertices.  Last point was p%d\n
 Ang Velocity: %.2f, %.2f, %.2f \n
 Angle-postmerge
 Angle-postmerge-with-random
@@ -696,11 +696,14 @@ DevMsg(char const*, ...)
 Disabled
 Distance [%d] - [%d] : %f\n
 Distance-roundoff
+DoubleVal
+E33s?fff?
 ERRONEOUS
 ERRONEOUS and NEIGHBORING FACETS to output\n
 ERROR in read Matrix
 Error
 Error-roundoff
+F17IVP_Listener_Hull
 FArea-total
 FCVAR_NEVER_AS_STRING
 FCentrums
@@ -782,8 +785,8 @@ Mass: %.1f (inv %.3f)\n
 Material: %s : density(%.1f), thickness(%.2f), friction(%.2f), elasticity(%.2f)\n
 Matrix:
 MbP?
+MbP?q=\n
 Mbp?
-Mbp?\
 NAUU
 NULL edge in check_concavity.
 No 2d representation
@@ -816,6 +819,7 @@ Point [%d] :
 Polygon[{
 Poutput-forced
 Pprecision-ignore
+Psys:friction
 Pulse[F %g, L %g, H %g, %d:%d](
 Q0-no-premerge
 Q1-no-angle-sort
@@ -1065,8 +1069,6 @@ a ridge with more than two neighbors
 aXE/[
 abort@GLIBC_2.2.5
 accel1 
-acos
-acos@GLIBC_2.2.5
 acosf
 acosf@GLIBC_2.2.5
 actives_inactives  
@@ -1079,18 +1081,14 @@ angDragCoefficient
 angVelocity
 angles computed for ridge convexity
 angularVelocity
-asin
-asin@GLIBC_2.2.5
 asinf
 asinf@GLIBC_2.2.5
 asleepSinceCreation
 at error exit
-atan
 atan2
 atan2@GLIBC_2.2.5
 atan2f
 atan2f@GLIBC_2.2.5
-atan@GLIBC_2.2.5
 atanf
 atanf@GLIBC_2.2.5
 attached to %d controllers\n
@@ -1192,7 +1190,7 @@ coplanar points during partitioning
 coplanar ridge
 coplanar/concave merges due to avoiding old merge
 coplanarset for f
-core_status %lx  trans %f %f %f  rot %f %f %f\n
+cos@GLIBC_2.2.5
 counterTorqueFactor
 countertorquefactor
 cpu seconds for qhull after input
@@ -1268,6 +1266,8 @@ errorTolerance
 error_in_impact_system_missed_impact
 exact:
 exp@GLIBC_2.29
+expf
+expf@GLIBC_2.27
 facets before post merge
 facets created altogether
 fastcarspeed
@@ -1312,7 +1312,6 @@ gearCount
 gearRatio
 getcwd
 getcwd@GLIBC_2.2.5
-gfffff
 good 
 good facets found
 gravityEnabled
@@ -1548,7 +1547,6 @@ pulleyPosition
 putchar
 putchar@GLIBC_2.2.5
 pysic_test: tri->calc_areasize() < 1E-6f in triangle: %g
-q=../ivp_utility/ivu_vhash.cxx
 q\nGA
 qh_addpoint: NULL facet.  Use qh_findbestfacet\n
 qh_addpoint: add p%d (v%d) to hull of %d facets (%2.2g above f%d) and %d outside at %4.4g CPU secs.  Previous was p%d.\n
@@ -2055,8 +2053,7 @@ shiftUpRPM
 similar
 similar and redundant
 simplices merged into coplanar horizon
-sincos
-sincos@GLIBC_2.2.5
+sin@GLIBC_2.2.5
 sincosf
 sincosf@GLIBC_2.2.5
 skidMaterial
@@ -2227,7 +2224,6 @@ vphysics_save_constraintsliding_t
 vphysics_save_cphysicsconstraint_t
 vphysics_save_cphysicsconstraintgroup_t
 vphysics_save_cphysicsobject_t
-vphysics_save_cphysicsspring_t
 vphysics_save_cshadowcontroller_t
 vphysics_save_cvehiclecontroller_t
 vphysics_save_motioncontroller_t
@@ -2272,8 +2268,6 @@ xmin
 yfriction
 ymax
 ymin
-z>17IVP_Listener_Hull
-zD333@
 zero diagonal on back substitution
 zero divisors during back substitute
 zero divisors during gaussian elimination
