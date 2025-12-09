@@ -174,6 +174,7 @@
 "%s" (%d): 
 "%s" = "%s"
 "&Operation this node is associated with
+"&\n$CWorkshop_AddSpecialPayment_Response"W\n$CWorkshop_GetSpecialPayments_Request
 "'Sort by this group, then alhpabetically"
 "'The name of an item to give as a reward
 ") is not compatible with this reflection object (which is for type "
@@ -2247,8 +2248,8 @@
 #base
 #base is NULL 
 #cancel
-#chat_party
 #chat_say
+#chat_say_party
 #chat_say_team
 #collectors
 #community
@@ -2964,7 +2965,7 @@ $world_mins
 (\r"h\n\nCSOWarData
 (\r"|\n CMsgGCIncrementKillCountResponse
 (\r:8\n\tallow_add
-(\t"(\n&CWorkshop_SetItemPaymentRules_Response*
+(\t"(\n&CWorkshop_SetItemPaymentRules_Response"
 (\t":\n$CMsgGCMsgMasterSetDirectory_Response
 (\t":\n'CMsgGC_Client_UseServerModificationItem
 (\t"A\n0CCommunity_GetGamePersonalDataCategories_Request
@@ -3033,11 +3034,13 @@ $world_mins
 (\v20.CMsgTFQuickplay_ScoreServersResponse.ServerInfo
 (\v22.CMsgAMGetUserGameStatsResponse.Achievement_Blocks
 (\v22.CMsgGC_GameServer_ListResponse.GameServerIdentity
+(\v25.CWorkshop_GetSpecialPayments_Response.SpecialPayment
 (\v2;.CMsgNotificationOfSuspiciousActivity.MultipleGameInstances
 (\v2<.CMsgGC_DailyCompetitiveStatsRollup_Response.RankBucketEntry
 (\v2=.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
 (\v2=.CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule
 (\v2>.CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule
+(\v2@.CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule
 (\v2A.CWorkshop_PopulateItemDescriptions_Request.SingleItemDescription"F\n!CWorkshop_GetContributors_Request
 (\v2I.CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock
 (\v2\f.CMsgFieldID"R\n
@@ -7646,6 +7649,7 @@ $world_mins
 2\r.EQuestPoints
 2\v.TF_GC_TEAM
 2\v.TF_GC_TEAM:
+2koth_abbey
 3 - bottom-right
 3 - down & right
 3.0f
@@ -8059,6 +8063,7 @@ $world_mins
 35CTFAchievementTeleporterTimingKillsI16CBaseAchievementE
 35CTFAchievementTeleporterTimingKillsI18CBaseTFAchievementE
 35CViewEffectsSaveRestoreBlockHandler
+35CWorkshop_AddSpecialPayment_Request
 36CAchievementTFDemoman_KillXDefending
 36CAchievementTFDoomsday_DefendCarrier
 36CAchievementTFDoomsday_PlayEachClass
@@ -8149,6 +8154,8 @@ $world_mins
 36CTypedProtoBufScriptObjectDefinitionI22CMsgPaintKit_VariablesL13ProtoDefTypes6EE
 36CTypedProtoBufScriptObjectDefinitionI23CMsgPaintKit_DefinitionL13ProtoDefTypes9EE
 36CTypedProtoBufScriptObjectDefinitionI27CMsgPaintKit_ItemDefinitionL13ProtoDefTypes8EE
+36CWorkshop_AddSpecialPayment_Response
+36CWorkshop_GetSpecialPayments_Request
 36C_TFProjectile_ThrowableBreadMonster
 36DF0AAFD8B8D7597CA10520D04B
 37CAchievementTFDemoman_FreezeTauntRump
@@ -8203,6 +8210,7 @@ $world_mins
 37CSchemaAttributeType_ItemSlotCriteria
 37CTFHudRobotDestruction_RobotIndicator
 37CTraceFilterIgnoreFriendlyCombatItems
+37CWorkshop_GetSpecialPayments_Response
 37CWorkshop_SetItemPaymentRules_Request
 37C_OP_MovementRotateParticleAroundAxis
 37C_TFProjectile_SpellTransposeTeleport
@@ -8557,6 +8565,7 @@ $world_mins
 520883949DFDBC42D3AD198640688A6FE13F41349554B49ACC31DCCD884539816F5EB4AC8FB1F1A6
 52CCommunity_TerminateGamePersonalDataEntries_Response
 52CMsgGC_GameServer_UseServerModificationItem_Response
+52CWorkshop_GetSpecialPayments_Response_SpecialPayment
 53CAchievementTFSoldier_KillAirborneTargetWhileAirborne
 54CAchievementTFEngineer_SentryKillPlayersCapturingPoint
 54CAchievementTFEngineer_ShotgunKillPreviousSentryTarget
@@ -8587,6 +8596,7 @@ $world_mins
 6127C24C05F38A0AAAF65C0EF02C
 61CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule
 62 81 101 255
+63CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule
 64.0
 64210519E59C80E70FA7E9AB72243049FEB8DEECC146B9B1
 64CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription
@@ -11011,6 +11021,7 @@ AWARDED
 A\n\ndefinition
 A\n\rname_loctoken
 AbandonButton
+Abbey
 AbsTagType(unknown)
 Abs_IMaterialProxy003
 Absolute Value
@@ -16071,6 +16082,7 @@ GameUI_ReportPlayer_Griefing
 GameUI_ReportPlayer_Harassment
 GameUI_ReportPlayer_Idle
 GaussianNoise_IMaterialProxy003
+Gavle
 Geiger.BeepHigh
 Geiger.BeepLow
 General
@@ -17562,6 +17574,7 @@ MaterialSystemHardwareConfig012
 Materials
 Materials using the pupil proxy must have a field called $lighting which has a value of 0.5!\n
 MatrixRotate_IMaterialProxy003
+Matterhorn
 Maul
 MaurerRandomnessTest: 
 Max Active Snow Volume Count!\n
@@ -19112,6 +19125,7 @@ NumberLabel1
 NumberLabel2
 NumberLabel3
 NumericInputOnly
+Nutcracker
 OAEP-
 OBJ_ATTACHMENT_SAPPER
 OBJ_DISPENSER
@@ -20993,6 +21007,7 @@ ShuffleProgress
 Shutdown %i predictable entities and %i client-created entities\n
 ShutdownRequest
 SidePanelActive
+Sidewinder
 SignatureVerificationFilterFlags
 SigningExplanation
 SilverMedalText
@@ -21094,6 +21109,7 @@ SpecCarriedImage
 Special Delivery
 SpecialEvent
 SpecialEvents
+SpecialPayment
 Specifies the minimum number of players needed to launch a 12v12 match. Set to -1 to disable.
 Spectate next player
 Spectate player by partial name, steamid, or userid
@@ -21752,6 +21768,7 @@ TF_DMG_CUSTOM_MERASMUS_GRENADE
 TF_DMG_CUSTOM_MERASMUS_PLAYER_BOMB
 TF_DMG_CUSTOM_MERASMUS_ZAP
 TF_DMG_CUSTOM_MINIGUN
+TF_DMG_CUSTOM_NUTCRACKER
 TF_DMG_CUSTOM_PENETRATE_ALL_PLAYERS
 TF_DMG_CUSTOM_PENETRATE_MY_TEAM
 TF_DMG_CUSTOM_PENETRATE_NONBURNING_TEAMMATE
@@ -23693,6 +23710,7 @@ Wingman warrior hack related to turn axes.
 WinningNextMapVote
 WinningTeamLabel
 Winpanel_CapturePointsRemaining
+Winter Ridge
 WizardData
 WizardSubPanel.BgColor
 WizardTall
@@ -23702,6 +23720,7 @@ Work Item for Work Pool %s completed but job no longer existed to notify\n
 Workaround limitations on mouse capture in some environments
 WorkingLogo
 WorkshopButton
+WorkshopDirectPaymentRule
 WorkshopItemPaymentRule
 World Rendering
 World Traveler
@@ -23885,10 +23904,12 @@ ZoomPanel
 \n#CMsgPaintKit_Operation_StickerStage
 \n#CMsgPaintKit_Operation_TextureStage
 \n#CMsgQuestMapNodeCondition_NodeState
+\n#CWorkshop_AddSpecialPayment_Request
 \n$CMsgEconPlayerStrangeCountAdjustment
 \n$CMsgNotificationOfSuspiciousActivity
 \n$CMsgTFQuickplay_ScoreServersResponse
 \n$CMsgUpdateHalloweenMerasmusLootLevel
+\n%CWorkshop_GetSpecialPayments_Response
 \n%CWorkshop_SetItemPaymentRules_Request
 \n%EServerModificationItemServerResponse
 \n%d total counted strings.
@@ -26042,6 +26063,7 @@ cp_vanguard
 cp_well
 cpname
 cpncntn
+cppl_gavle
 craft
 craft_item
 craft_token
@@ -26119,6 +26141,7 @@ ctf_mannpower
 ctf_pelican_peak
 ctf_penguin_peak
 ctf_pressure
+ctf_sidewinder
 ctf_snowfall_final
 ctf_turbine_winter
 ctf_well
@@ -26275,6 +26298,7 @@ datacenter_y
 datacenter_y_space
 datamanager.cpp
 dataoffset
+date
 date_time
 days_to_expiration
 de_DE
@@ -29028,6 +29052,7 @@ goto_page_
 goto_page_%d
 gotoreplays
 grant_operation_pass
+grant_self_made
 greaterVar
 greek
 grenade_launcher_mortar_mode
@@ -30400,6 +30425,7 @@ koth_toxic
 koth_undergrove_event
 koth_viaduct
 koth_viaduct_event
+koth_winter_ridge
 l>@T\tJo
 label
 labelText
@@ -30903,6 +30929,7 @@ m_bFiresUnderwater
 m_bFiringWholeClip
 m_bFirstHit
 m_bFlipViewModel
+m_bFlipViewModels
 m_bFloatLerpWrap
 m_bFogEnable
 m_bFogRadial
@@ -33815,6 +33842,8 @@ net_graphshowinterp
 net_graphshowlatency
 net_graphsolid
 net_graphtext
+net_payment_row_usd
+net_payment_us_usd
 net_scale
 netmsg
 network
@@ -34264,6 +34293,8 @@ payload
 payload_blu
 payload_race
 payload_red
+payment_row_usd
+payment_us_usd
 pctChance
 pd_atom_smash
 pd_circus
@@ -34273,6 +34304,7 @@ pd_farmageddon
 pd_galleria
 pd_mannsylvania
 pd_monster_bash
+pd_nutcracker
 pd_pit_of_death_event
 pd_selbyen
 pd_snowville_event
@@ -34526,6 +34558,7 @@ plr_hacksaw
 plr_hacksaw_event
 plr_hightower
 plr_hightower_event
+plr_matterhorn
 plr_pipeline
 plus_sign
 pm"U
@@ -35800,7 +35833,6 @@ save_search_criteria
 saveentityindex
 saxxy
 saxxy award category
-say_party
 sb_close_browser_on_connect
 sb_dontshow_maxplayer_warning
 sb_firstopentime
@@ -36370,6 +36402,7 @@ special3
 special_attributes_only
 special_delivery
 special_events
+special_payments
 special_score
 specialevent_placeholder
 specindex
@@ -38351,6 +38384,7 @@ utility
 utime@GLIBC_2.2.5
 utimes@GLIBC_2.2.5
 vNewAbsVel: %f %f %f\n\n
+v\n,associated_workshop_file_for_direct_payments
 v\n\nitem_logic
 v_centermove
 v_centerspeed

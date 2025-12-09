@@ -418,6 +418,7 @@
 "%s<%i><%s><>" connected, address "%s"\n
 "%s<%i><%s><>" entered the game\n
 "&Operation this node is associated with
+"&\n$CWorkshop_AddSpecialPayment_Response"W\n$CWorkshop_GetSpecialPayments_Request
 "'Sort by this group, then alhpabetically"
 "'The name of an item to give as a reward
 ") is not compatible with this reflection object (which is for type "
@@ -1043,6 +1044,7 @@ $var3
 %04u-%02u-%02u %02u:%02u:%02u
 %04u-%02u-%02uT%02u:%02u:%02uZ
 %08X:
+%127s %f %f
 %255s %255s
 %3.1f  (%s) --> (%s),%.1f) \n
 %3.1f  (%s) --> (%s)\n
@@ -1171,6 +1173,7 @@ $var3
 %f %f %f %f
 %f: Player %s at [%0.2f %0.2f %0.2f] took %f damage from %s, type %s\n
 %hu:%u:%u%c
+%i %63s %63s
 %i %i %i %i
 %i (wc:%i; z:%i)
 %i : %s (ground %i %s)\n
@@ -1667,7 +1670,7 @@ $var3
 (\r"h\n\nCSOWarData
 (\r"|\n CMsgGCIncrementKillCountResponse
 (\r:8\n\tallow_add
-(\t"(\n&CWorkshop_SetItemPaymentRules_Response*
+(\t"(\n&CWorkshop_SetItemPaymentRules_Response"
 (\t":\n$CMsgGCMsgMasterSetDirectory_Response
 (\t":\n'CMsgGC_Client_UseServerModificationItem
 (\t"A\n0CCommunity_GetGamePersonalDataCategories_Request
@@ -1736,11 +1739,13 @@ $var3
 (\v20.CMsgTFQuickplay_ScoreServersResponse.ServerInfo
 (\v22.CMsgAMGetUserGameStatsResponse.Achievement_Blocks
 (\v22.CMsgGC_GameServer_ListResponse.GameServerIdentity
+(\v25.CWorkshop_GetSpecialPayments_Response.SpecialPayment
 (\v2;.CMsgNotificationOfSuspiciousActivity.MultipleGameInstances
 (\v2<.CMsgGC_DailyCompetitiveStatsRollup_Response.RankBucketEntry
 (\v2=.CMsgEconPlayerStrangeCountAdjustment.CStrangeCountAdjustment
 (\v2=.CWorkshop_SetItemPaymentRules_Request.PartnerItemPaymentRule
 (\v2>.CWorkshop_SetItemPaymentRules_Request.WorkshopItemPaymentRule
+(\v2@.CWorkshop_SetItemPaymentRules_Request.WorkshopDirectPaymentRule
 (\v2A.CWorkshop_PopulateItemDescriptions_Request.SingleItemDescription"F\n!CWorkshop_GetContributors_Request
 (\v2I.CWorkshop_PopulateItemDescriptions_Request.ItemDescriptionsLanguageBlock
 (\v2\f.CMsgFieldID"R\n
@@ -6168,6 +6173,7 @@ $var3
 2\r.EQuestPoints
 2\v.TF_GC_TEAM
 2\v.TF_GC_TEAM:
+2koth_abbey
 3%s set to unnamed schedule!\n
 30.0f
 300.0f
@@ -6357,6 +6363,7 @@ $var3
 35CTFBotEngineerBuildTeleportEntrance
 35CTFProjectile_ThrowableBreadMonster
 35CTraceFilterPlayersNPCsPhysicsProps
+35CWorkshop_AddSpecialPayment_Request
 36CAI_MappedActivityBehavior_Temporary
 36CCountUserGeneratedAttributeIterator
 36CMsgAMGetUserGameStatsResponse_Stats
@@ -6385,6 +6392,8 @@ $var3
 36CTypedProtoBufScriptObjectDefinitionI22CMsgPaintKit_VariablesL13ProtoDefTypes6EE
 36CTypedProtoBufScriptObjectDefinitionI23CMsgPaintKit_DefinitionL13ProtoDefTypes9EE
 36CTypedProtoBufScriptObjectDefinitionI27CMsgPaintKit_ItemDefinitionL13ProtoDefTypes8EE
+36CWorkshop_AddSpecialPayment_Response
+36CWorkshop_GetSpecialPayments_Request
 36DF0AAFD8B8D7597CA10520D04B
 36GroundLocomotionCollisionTraceFilter
 37CGCSystemMsg_GetPurchaseTrust_Request
@@ -6397,6 +6406,7 @@ $var3
 37CTFHalloweenMinigame_FallingPlatforms
 37CTraceFilterIgnoreFriendlyCombatItems
 37CTriggerAddOrRemoveTFPlayerAttributes
+37CWorkshop_GetSpecialPayments_Response
 37CWorkshop_SetItemPaymentRules_Request
 37INextBotComponentScriptInstanceHelper
 384B
@@ -6522,6 +6532,7 @@ $var3
 520883949DFDBC42D3AD198640688A6FE13F41349554B49ACC31DCCD884539816F5EB4AC8FB1F1A6
 52CCommunity_TerminateGamePersonalDataEntries_Response
 52CMsgGC_GameServer_UseServerModificationItem_Response
+52CWorkshop_GetSpecialPayments_Response_SpecialPayment
 54CSchemaAttributeType_DynamicRecipeComponentDefinedItem
 56483
 58CMsgNotificationOfSuspiciousActivity_MultipleGameInstances
@@ -6553,6 +6564,7 @@ $var3
 60CWorkshop_SetItemPaymentRules_Request_PartnerItemPaymentRule
 6127C24C05F38A0AAAF65C0EF02C
 61CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule
+63CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule
 64210519E59C80E70FA7E9AB72243049FEB8DEECC146B9B1
 64CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription
 659EF8BA043916EEDE8911702B22
@@ -8985,6 +8997,7 @@ AVelocity: %.2f %.2f %.2f
 AWARDED
 A\n\ndefinition
 A\n\rname_loctoken
+Abbey
 AbsTagType(unknown)
 Accel (time*time)
 Accel/Deaccel (cosine)
@@ -13892,6 +13905,7 @@ GameTypeID
 GameUI011
 Gamerules: entering state #%d\n
 Gamerules: entering state '%s'\n
+Gavle
 Gear: %d, RPM %4d
 Geiger
 General.BurningFlesh
@@ -16077,7 +16091,6 @@ MEDIUM_HULL
 MEDIUM_TALL_HULL
 MGF1
 MGiI
-MH2M
 MINIBOSS
 MOD_WRITE
 MOVECOLLIDE_COUNT
@@ -16307,6 +16320,7 @@ Math Counter %s ignoring MULTIPLY because it is disabled\n
 Math Counter %s ignoring SETVALUE because it is disabled\n
 Math Counter %s ignoring SETVALUENOFIRE because it is disabled\n
 Math Counter %s ignoring SUBTRACT because it is disabled\n
+Matterhorn
 Maul
 MaurerRandomnessTest: 
 Max Eyeball DPS taken = %3.2f\n
@@ -17663,6 +17677,7 @@ Number of seconds the flag's return time will be credited for each second the fl
 Number of stickies to place per square inch
 Number of times players can change their class when mp_force_random_class is being used.
 Numnutz
+Nutcracker
 OAEP-
 OBJ_ATTACHMENT_SAPPER
 OBJ_DISPENSER
@@ -18085,6 +18100,7 @@ Pelican Peak
 Penguin Peak
 Per-team styles blocks are no longer valid. Use "skin_red" and "skin_blu" in a style entry instead.
 Percent chance of a birthday beach ball spawning at each round start
+Percent chance of a christmas beach ball spawning at each round start
 Percentage chance that a random item is a rare.
 Percentage chance that a random item is common.
 Percentage chance that a random item is unique.
@@ -20001,6 +20017,7 @@ Shows that bones that are setup every think
 Shows trigger brushes
 Shut down wrote to '%s'\n
 Sidekick
+Sidewinder
 SignatureVerificationFilterFlags
 Simple Cubic
 SimpleKeyingInterface: this object doesn't support resynchronization
@@ -20108,6 +20125,7 @@ SpeakThink
 Speaking [from QUEUE]
 Special Attack
 SpecialEvent
+SpecialPayment
 Specifies the item whitelist file to use.
 Specifies the minimum number of players needed to launch a 12v12 match. Set to -1 to disable.
 Speed %.1f  T/S/B (%.0f/%.0f/%.1f)
@@ -20902,6 +20920,7 @@ TF_DMG_CUSTOM_MERASMUS_PLAYER_BOMB
 TF_DMG_CUSTOM_MERASMUS_ZAP
 TF_DMG_CUSTOM_MINIGUN
 TF_DMG_CUSTOM_NONE
+TF_DMG_CUSTOM_NUTCRACKER
 TF_DMG_CUSTOM_PENETRATE_ALL_PLAYERS
 TF_DMG_CUSTOM_PENETRATE_MY_TEAM
 TF_DMG_CUSTOM_PENETRATE_NONBURNING_TEAMMATE
@@ -21805,6 +21824,7 @@ TriggerLootIslandAchievement2
 TriggerProximity - Missing measure target or measure target with no origin!\n
 TriggerTouchThink
 TriggerTrackChange
+Trigger_Mouth_Hurt
 TruncatedDigestSize
 Try to clear all the debug overlay info
 TryToPickupBuilding
@@ -22456,6 +22476,7 @@ Will transmit all entities to client, regardless of PVS conditions (will still s
 WinLimit
 WindThink
 WindThinkContext
+Winter Ridge
 WoodChunks
 Wooden.Huge
 Wooden.Large
@@ -22467,6 +22488,7 @@ Work Item for Work Pool %s completed but job no longer existed to notify\n
 Work on my Sentry
 Work on my Teleporter
 Work on my buildings
+WorkshopDirectPaymentRule
 WorkshopItemPaymentRule
 World Decal
 World friction.
@@ -22651,10 +22673,12 @@ Zrange
 \n#CMsgPaintKit_Operation_StickerStage
 \n#CMsgPaintKit_Operation_TextureStage
 \n#CMsgQuestMapNodeCondition_NodeState
+\n#CWorkshop_AddSpecialPayment_Request
 \n$CMsgEconPlayerStrangeCountAdjustment
 \n$CMsgNotificationOfSuspiciousActivity
 \n$CMsgTFQuickplay_ScoreServersResponse
 \n$CMsgUpdateHalloweenMerasmusLootLevel
+\n%CWorkshop_GetSpecialPayments_Response
 \n%CWorkshop_SetItemPaymentRules_Request
 \n%EServerModificationItemServerResponse
 \n%d total counted strings.
@@ -24527,6 +24551,7 @@ cpoint7
 cpoint7_parent
 cpoint8
 cpoint9
+cppl_gavle
 cpr_cp_names
 cpr_printname
 cpr_priority
@@ -24592,6 +24617,7 @@ ctf_overtime
 ctf_pelican_peak
 ctf_penguin_peak
 ctf_pressure
+ctf_sidewinder
 ctf_snowfall_final
 ctf_turbine
 ctf_turbine_winter
@@ -24725,6 +24751,7 @@ data
 data_center_population
 database_audit_table
 datamanager.cpp
+date
 daylightsavings
 dayofweek
 dayofyear
@@ -27400,6 +27427,7 @@ gordon_precriminal
 goto action point
 graball
 grant_operation_pass
+grant_self_made
 greek
 grenade1
 grenade2
@@ -28451,6 +28479,7 @@ koth_toxic
 koth_undergrove_event
 koth_viaduct
 koth_viaduct_event
+koth_winter_ridge
 krampus_melee
 krampus_ranged
 label
@@ -29580,6 +29609,7 @@ m_bFirstCollisionAfterLaunch
 m_bFirstFacing
 m_bFirstHit
 m_bFlipViewModel
+m_bFlipViewModels
 m_bFogEnable
 m_bFogRadial
 m_bFollowNavFailed
@@ -34047,6 +34077,8 @@ nearz
 neck_trans
 needs_weapon
 negative_int_value
+net_payment_row_usd
+net_payment_us_usd
 netmsg
 networkid
 never craftable
@@ -34373,6 +34405,8 @@ path_track_passed
 payload
 payload_pushed
 payload_race
+payment_row_usd
+payment_us_usd
 pctChance
 pd_atom_smash
 pd_circus
@@ -34382,6 +34416,7 @@ pd_farmageddon
 pd_galleria
 pd_mannsylvania
 pd_monster_bash
+pd_nutcracker
 pd_pit_of_death_event
 pd_selbyen
 pd_snowville_event
@@ -34631,6 +34666,7 @@ plr_hacksaw
 plr_hacksaw_event
 plr_hightower
 plr_hightower_event
+plr_matterhorn
 plr_pipeline
 plug_breakable
 point0
@@ -35722,6 +35758,7 @@ special3
 special_delivery
 special_dsp
 special_events
+special_payments
 special_score
 special_taunt
 specialevent_placeholder
@@ -36633,6 +36670,7 @@ tf_cart_duck_drop_rate
 tf_cart_soul_drop_rate
 tf_cart_spell_drop_rate
 tf_cheapobjects
+tf_christmas_ball_chance
 tf_clamp_airducks
 tf_clamp_back_speed
 tf_clamp_back_speed_min
@@ -37861,6 +37899,7 @@ v@Lead
 vLastKnownLocation
 vLastSeenLocation
 vLocationWhenUnreachable
+v\n,associated_workshop_file_for_direct_payments
 v\n\nitem_logic
 v_angle
 v_skin
