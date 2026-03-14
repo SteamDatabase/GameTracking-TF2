@@ -1,0 +1,25 @@
+name: Update
+
+on:
+    workflow_dispatch:
+        inputs:
+            branch:
+                description: 'TF2 Branch'
+                required: false
+                default: 'public'
+                type: string      
+
+concurrency:
+    group: ${{ github.workflow }}
+    cancel-in-progress: true
+
+jobs:
+    process:
+        permissions:
+            contents: write
+            statuses: write
+        uses: steamtracking/gametracking/.github/workflows/gametracking.yml@master    
+        secrets: inherit
+        with:
+          branch: ${{ github.event.inputs.branch }}
+          appid: 440
